@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="items.xsl"?>
+<!--
+    Here are listed all the known items in Invertika. This file defines
+    their name, icon, description, weight, etc. It also defines which sprite
+    to use in the case of visible equipment and which sounds to play on certain
+    events related to the item.
+
+    The 'weapon_type' attribute is kept for 0.0 client compatibility. Not to be
+    confused with 'weapon-type'.
+-->
+<items>
+    <version revision="$Revision$" />
+
+    <item id="-1" type="hairsprite" name="Flat ponytail">
+        <sprite>hairstyle1.xml</sprite>
+    </item>
+    <item id="-2" type="hairsprite" name="Bowl cut">
+        <sprite>hairstyle2.xml</sprite>
+    </item>
+    <item id="-3" type="hairsprite" name="Combed back">
+        <sprite>hairstyle3.xml</sprite>
+    </item>
+    <item id="-4" type="hairsprite" name="Emo">
+        <sprite>hairstyle4.xml</sprite>
+    </item>
+    <item id="-5" type="hairsprite" name="Mohawk">
+        <sprite>hairstyle5.xml</sprite>
+    </item>
+    <item id="-6" type="hairsprite" name="Pompadour">
+        <sprite>hairstyle6.xml</sprite>
+    </item>
+    <item id="-7" type="hairsprite" name="Center parting/Short and slick">
+        <sprite>hairstyle7.xml</sprite>
+    </item>
+    <item id="-8" type="hairsprite" name="Long and slick">
+        <sprite>hairstyle8.xml</sprite>
+    </item>
+    <item id="-9" type="hairsprite" name="Short and curly">
+        <sprite>hairstyle9.xml</sprite>
+    </item>
+    <item id="-10" type="hairsprite" name="Pigtails">
+        <sprite>hairstyle10.xml</sprite>
+    </item>
+    <item id="-11" type="hairsprite" name="Long and curly">
+        <sprite>hairstyle11.xml</sprite>
+    </item>
+    <item id="-12" type="hairsprite" name="Parted">
+        <sprite>hairstyle12.xml</sprite>
+    </item>
+    <item id="-13" type="hairsprite" name="Perky ponytail">
+        <sprite>hairstyle13.xml</sprite>
+    </item>
+    <item id="-14" type="hairsprite" name="Wave">
+        <sprite>hairstyle14.xml</sprite>
+    </item>
+    <item id="-15" type="hairsprite" name="Mane">
+        <sprite>hairstyle15.xml</sprite>
+    </item>
+    <item id="-16" type="hairsprite" name="Bun">
+        <sprite>hairstyle16.xml</sprite>
+    </item>
+
+    <!-- Treating the base sprite as equipment too will be useful when we
+         implement other playable races -->
+    <item id="-100" type="racesprite" name="Human">
+        <sprite gender="male">player_male_base.xml</sprite>
+        <sprite gender="female">player_female_base.xml</sprite>
+    </item>
+	
+	<!-- Invertika Items -->
+	
+	<!-- Waffen 10001 - 20000 -->	
+	<item id="10001"
+        image="weapon-dagger-knive.png"
+        name="Messer"
+        description="Ein kleines Messer, die perfekte Waffe für Anfänger."
+        effect="+5 Damage, 1 Range"
+        type="equip-1hand"
+        weapon_type="1"
+        weight="20"
+        weapon-type="knife"
+        attack-min="5"
+        attack-delta="5"
+        attack-target="multi"
+        attack-shape="cone"
+        attack-range="32"
+        attack-angle="135"
+        max-per-slot="1">
+        <sprite>weapon-dagger.xml</sprite>
+        <sound event="strike">short-sword-miss1.ogg</sound>
+        <sound event="hit">short-sword-hit1.ogg</sound>
+    </item>
+	
+	<item id="10002"
+        image="weapon-dagger-dagger.png"
+        name="Dolch"
+        description="Ein einfacher Dolch."
+        effect="+15 Damage, 1 Range"
+        type="equip-1hand"
+        weapon_type="1"
+        weight="60"
+        weapon-type="knife"
+        attack-min="5"
+        attack-delta="10"
+        attack-target="multi"
+        attack-shape="cone"
+        attack-range="32"
+        attack-angle="135"
+        max-per-slot="1">
+        <sprite>weapon-dagger.xml</sprite>
+        <sound event="strike">short-sword-miss1.ogg</sound>
+        <sound event="hit">short-sword-hit1.ogg</sound>
+    </item>
+	
+	<!-- Ruestungen und Kleidung 20001 - 30000 -->
+	<item id="20001"
+        image="armor-chest-cottonshirt.png"
+        name="Baumwollshirt"
+        description="Ein Shirt aus Baumwolle."
+        effect="+2% Defense"
+        type="equip-torso"
+        weight="15"
+        defense="2"
+        max-per-slot="1">
+        <sprite gender="male">chest-cotton-male.xml|#2b454d,72818c,b7c0c5,ffffff</sprite>
+        <sprite gender="female">chest-cotton-female.xml|#2b454d,72818c,b7c0c5,ffffff</sprite>
+    </item>
+	
+	<item id="20002"
+        image="armor-legs-shorts.png|W:#6c858a,ffffff"
+        name="Baumwollhose"
+        description="Eine Hose aus Baumwolle."
+        effect="+2% Defense"
+        type="equip-legs"
+        weight="10"
+        defense="2"
+        max-per-slot="1">
+        <sprite gender="male">leg-shorts-male.xml|#6c858a,ffffff</sprite>
+        <sprite gender="female">leg-shorts-female.xml|#6c858a,ffffff</sprite>
+    </item>
+	
+	<item id="20003"
+        image="armor-head-axehat.png"
+        name="Axt Hut"
+        description="Ein einzigartiger Hut."
+        effect="+500% Defense"
+        type="equip-head"
+        weight="20"
+        defense="500"
+        max-per-slot="1">
+        <sprite>head-axehat.xml</sprite>
+    </item>
+	
+	<item id="20004"
+        image="armor-head-fancyhat.png"
+        name="Lustiger Hut"
+        description="Ein lustiger Hut."
+        effect="+5% Defense"
+        type="equip-head"
+        weight="25"
+        defense="5"
+        max-per-slot="1">
+        <sprite>head-fancyhat.xml</sprite>
+    </item>
+	 
+	<!-- Power Ups 30001 - 40000 -->
+    <item id="30001"
+        image="use-potion-a.png|G:#22ff22"
+        name="Kaktussaft"
+        description="Ein leckeres Getränk."
+        effect="+15 HP"
+        type="usable"
+        hp="15"
+        weight="25"
+        max-per-slot="999"/>
+		
+	<item id="30002"
+        image="use-potion-a.png|G:#7A67AB"
+        name="Hemlock"
+        description="Ein leichtes Gift."
+        effect="Unbekannt."
+        type="usable"
+        hp="-100"
+
+        weight="25"
+        max-per-slot="999"/>
+	
+	<item id="30003"
+        image="use-potion-a.png|G:#33294B"
+        name="Nogatch Hemlock"
+        description="Ein tödliches Gift."
+		script="poison.lua"
+        effect="Der Tod."
+        type="usable"
+        hp="-9999"
+        weight="25"
+        max-per-slot="999"/>
+		
+	<item id="30004"
+        image="use-potion-a.png|G:#AEDB11"
+        name="Hop und Ex"
+        description="Der Modedrink der Wüstenbewohner."
+        effect="Unbekannt."
+        type="usable"
+        hp="-2500"
+        weight="25"
+        max-per-slot="999"/>
+		
+	<item id="30005"
+        image="use-potion-a.png|G:#C38F03"
+        name="Wurzelhans"
+        description="Ein seltsames Getränk..."
+        effect="Unbekannt."
+        type="usable"
+        hp="-30"
+        weight="25"
+        max-per-slot="999"/>
+		
+    <item id="30006"
+        image="use-food-beer.png"
+        name="Bier"
+        description="Ein frisches Bier."
+        effect="+20 HP"
+        type="usable"
+        hp="20"
+        weight="400"
+        max-per-slot="999"/>
+		
+    <item id="30007"
+        image="use-food-milk.png"
+        name="Milch"
+        description="Eine frische Packung Milch."
+        effect="+150 HP"
+        type="usable"
+        hp="150"
+        weight="300"
+        max-per-slot="999"/>
+		
+    <item id="30008"
+        image="use-food-pangalactic-gargle-blaster.png"
+        name="Pangalaktischer Donnergurgler"
+        description="Der Drink fuer alle die auf der Suche nach der Frage sind."
+		script="pangalactic-gargle-blaster.lua"
+        effect="+500 HP"
+        type="usable"
+        hp="500"
+        weight="300"
+        max-per-slot="999"/>
+		
+    <item id="30009"
+        image="use-food-chocolatebar.png"
+        name="Schokoladentafel"
+        description="Feinste Schokolade aus Ceri Dra."
+        effect="+20 HP"
+        type="usable"
+        hp="20"
+        weight="25"
+        max-per-slot="999"/>
+		
+	<item id="30010"
+        image="use-food-cake.png"
+        name="Keks"
+        description="Ein leckerer Keks."
+        effect="+15 HP"
+        type="usable"
+        weight="25"
+		max-per-slot="999"/>
+		
+    <item id="30011"
+        image="use-food-roastedmaggot.png"
+        name="Geröstete Made"
+        description="Eine geröstete Made. Lecker."
+        effect="+150 HP"
+        type="usable"
+        hp="150"
+        weight="290"
+        max-per-slot="999"/>
+	
+    <item id="30012"
+        image="use-food-apple.png"
+        name="Apfel"
+        description="Ein leckerer Apfel."
+        effect="+50 HP"
+        type="usable"
+        hp="50"
+        weight="70"
+        max-per-slot="999"/>
+		
+	<item id="30013"
+        image="use-potion-a.png|G:#7A67AB"
+        name="Gatch Hemlock"
+        description="Ein schweres Gift."
+        effect="Unbekannt."
+        type="usable"
+        hp="-2000"
+        weight="25"
+        max-per-slot="999"/>
+		
+	<!-- Sonstige 40001 - 50000 -->
+	<item id="40001"
+        image="generic-emptybottle.png"
+        name="Leere Flasche"
+        description="Eine leere Flasche."
+        effect=""
+        type="generic"
+        weight="20"
+        max-per-slot="999"/>
+		
+	<item id="40002"
+        image="generic-iten.png"
+        name="IP Paket"
+        description="Ein IP Paket, welche Geheimnisse birgt es?"
+        effect=""
+        type="generic"
+        weight="1"
+        max-per-slot="999"/>
+		
+	<item id="40003"
+        image="generic-canister.png"
+        name="Benzinkanister"
+        description="Ein Bezinkanister gefüllt mit Benzin."
+        effect=""
+        type="generic"
+        weight="20"
+        max-per-slot="999"/>	
+		
+	<item id="40004"
+        image="generic-scorpionstinger.png|W:#a08040,e0e0e0"
+        name="Skorpion Stachel"
+        description="Ein giftiger Skorpion Stachel."
+        effect=""
+        type="generic"
+        weight="12"
+        max-per-slot="999"/>
+		
+    <item id="40005"
+        image="generic-maggotslime.png"
+        name="Madenschleim"
+        description="Schleimiger Madenschleim"
+        effect=""
+        type="generic"
+        weight="10"
+        max-per-slot="999"/>
+		
+    <item id="40006"
+        image="generic-casinocoins.png"
+        name="Casino Münzen"
+        description="Ein paar Casino Münzen."
+        effect=""
+        type="generic"
+        weight="10"
+        max-per-slot="999"/>
+		
+    <item id="40007"
+        image="generic-bugleg.png"
+        name="Insektenbein"
+        description="Das Bein eines Insektes."
+        effect=""
+        type="generic"
+        weight="15"
+		max-per-slot="999"/>
+		
+    <item id="40008"
+        image="generic-towel.png"
+        name="Handtuch"
+        description="Ein praktisches Handtuch für alle Gelegenheiten."
+        type="generic"
+        weight="20"
+		max-per-slot="1"/>
+		
+    <item id="40009"
+        image="generic-fabric.png"
+        name="Königlicher Passierschein"
+        description="Ein Königlicher Passierschein der zum Betreten des Palstes berechtigt."
+        type="generic"
+        weight="10"
+		max-per-slot="1"/>
+</items>
