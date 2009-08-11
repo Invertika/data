@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<monsters>
+	<!-- Invertika Monster ID's > 1000-->
+	<monster id="1001" name="Killermade" targetCursor="small">
+        <sprite>monster-maggot.xml</sprite>
+        <sound event="hit">maggot-hit1.ogg</sound>
+        <sound event="hit">maggot-hit2.ogg</sound>
+        <sound event="miss">maggot-miss1.ogg</sound>
+        <sound event="die">maggot-dying1.ogg</sound>
+        <attributes
+            hp="1000"
+            size="4"
+            speed="64"
+            attack-min="10"
+            attack-delta="2"
+            attack-magic="0"
+            hit="10"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <exp>1000</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="true"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="15"
+            range="32"
+            angle="10"
+            animation="attack"
+            />
+    </monster>
+	
+	<monster id="1002" name="Made" targetCursor="small">
+        <sprite>monster-maggot.xml</sprite>
+        <sound event="hit">maggot-hit1.ogg</sound>
+        <sound event="hit">maggot-hit2.ogg</sound>
+        <sound event="miss">maggot-miss1.ogg</sound>
+        <sound event="die">maggot-dying1.ogg</sound>
+        <drop item="30001" percent="20"/>
+		<drop item="40005" percent="20"/>
+		<drop item="30011" percent="20"/>
+        <attributes
+            hp="20"
+            size="4"
+            speed="64"
+            attack-min="10"
+            attack-delta="2"
+            attack-magic="0"
+            hit="10"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <vulnerability element="fire" factor="1.5"/>
+        <vulnerability element="earth" factor="0.7"/>
+        <exp>10</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="32"
+            angle="10"
+            animation="attack"
+            />
+    </monster>
+	
+    <monster id="1003" name="Skorpion">
+        <sprite>monster-scorpion.xml|#4d422d,826242,d8c282,ffffff</sprite>
+        <sound event="hit">scorpion-hit1.ogg</sound>
+        <sound event="hit">scorpion-hit2.ogg</sound>
+        <sound event="hit">scorpion-hit3.ogg</sound>
+        <sound event="hit">scorpion-hit4.ogg</sound>
+        <sound event="miss">scorpion-miss1.ogg</sound>
+        <drop item="40004" percent="20"/>
+        <exp>20</exp>
+        <attributes
+            hp="20"
+            size="8"
+            speed="192"
+            attack-min="10"
+            attack-delta="2"
+            attack-magic="0"
+            hit="10"
+            evade="10"
+            physical-defence="5"
+            magical-defence="0"
+            />
+        <!-- doesn't move much, but attacks when you are comming too close. -->
+        <behavior
+            aggressive="true"
+            cowardly="false"
+            track-range="2"
+            stroll-range="1"
+            attack-distance="64"
+            />
+        <!-- slow, strong, long-range tail attack-->
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="5"
+            aft-delay="15"
+            damage-factor="3"
+            range="64"
+            angle="10"
+            particle-effect="graphics/particles/attack.particle.xml"
+            action="special1"
+            />
+        <!-- fast, weak, short-range scissor attack -->
+        <attack id="2"
+            priority="4"
+            type="physical"
+            pre-delay="3"
+            aft-delay="3"
+            damage-factor="1"
+            range="32"
+            angle="45"
+            />
+    </monster>
+	
+	<!-- Schwache Made für das Vacare -->
+	<monster id="1004" name="Made" targetCursor="small">
+        <sprite>monster-maggot.xml</sprite>
+        <sound event="hit">maggot-hit1.ogg</sound>
+        <sound event="hit">maggot-hit2.ogg</sound>
+        <sound event="miss">maggot-miss1.ogg</sound>
+        <sound event="die">maggot-dying1.ogg</sound>
+        <drop item="30001" percent="20"/>
+		<drop item="40005" percent="20"/>
+        <attributes
+            hp="10"
+            size="4"
+            speed="64"
+            attack-min="10"
+            attack-delta="2"
+            attack-magic="0"
+            hit="10"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <vulnerability element="fire" factor="1.5"/>
+        <vulnerability element="earth" factor="0.7"/>
+        <exp>0</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+    </monster>
+	
+	<monster id="1005" name="Riesenmade" targetCursor="large">
+        <sprite>monster-maggot-giant.xml</sprite>
+        <sound event="hit">maggot-hit1.ogg</sound>
+        <sound event="hit">maggot-hit2.ogg</sound>
+        <sound event="miss">maggot-miss1.ogg</sound>
+        <sound event="die">maggot-dying1.ogg</sound>
+        <drop item="30001" percent="9"/>
+        <drop item="30002" percent="1"/>
+        <drop item="30004" percent="7.5"/>
+        <attributes
+            hp="20"
+            size="4"
+            speed="64"
+            attack-min="10"
+            attack-delta="2"
+            attack-magic="0"
+            hit="10"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+    </monster>
+	
+	<monster id="1006" name="Roter Skorpion">
+        <sprite>monster-scorpion.xml|#791d0a,cd5d27,f28d54,ffffff</sprite>
+        <sound event="hit">scorpion-hit1.ogg</sound>
+        <sound event="hit">scorpion-hit2.ogg</sound>
+        <sound event="hit">scorpion-hit3.ogg</sound>
+        <sound event="hit">scorpion-hit4.ogg</sound>
+        <sound event="miss">scorpion-miss1.ogg</sound>
+        <drop item="30006" percent="20"/>
+        <drop item="30004" percent="1"/>
+        <drop item="30005" percent="5"/>
+        <exp>50</exp>
+        <attributes
+            hp="20"
+            size="8"
+            speed="192"
+            attack-min="20"
+            attack-delta="10"
+            attack-magic="0"
+            hit="30"
+            evade="30"
+            physical-defence="5"
+            magical-defence="0"
+            />
+        <!-- also quite lazy when unprovoked but much more territorial
+        than the normal one-->
+        <behavior
+            aggressive="true"
+            cowardly="false"
+            track-range="6"
+            stroll-range="1"
+            attack-distance="64"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            element="fire"
+            pre-delay="5"
+            aft-delay="10"
+            damage-factor="1"
+            range="64"
+            angle="10"
+            />
+    </monster>
+	
+	<monster id="1007" name="Schwarzer Skorpion">
+        <sprite>monster-scorpion.xml|#0d1313,435a5a,879999,ffffff</sprite>
+        <sound event="hit">scorpion-hit1.ogg</sound>
+        <sound event="hit">scorpion-hit2.ogg</sound>
+        <sound event="hit">scorpion-hit3.ogg</sound>
+        <sound event="hit">scorpion-hit4.ogg</sound>
+        <sound event="miss">scorpion-miss1.ogg</sound>
+        <drop item="30003" percent="15"/>
+        <drop item="30009" percent="10"/>
+        <drop item="30010" percent="8"/>
+        <attributes
+            hp="20"
+            size="4"
+            speed="64"
+            attack-min="10"
+            attack-delta="2"
+            attack-magic="0"
+            hit="10"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+    </monster>
+	
+	<monster id="1008" name="Fledermaus">
+        <sprite>monster-bat.xml</sprite>
+        <sound event="die">bat-dying1.ogg</sound>
+        <sound event="hit">bat-hit1.ogg</sound>
+        <drop item="30010" percent="1.5"/>
+        <drop item="30013" percent="4"/>
+        <drop item="30012" percent="1.5"/>
+        <drop item="40006" percent="0.7"/>
+        <attributes
+            hp="20"
+            size="4"
+            speed="64"
+            attack-min="10"
+            attack-delta="2"
+            attack-magic="0"
+            hit="10"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+    </monster>
+</monsters>
