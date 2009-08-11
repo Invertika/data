@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="orthogonal" width="133" height="60" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="music" value="tmw_faith.ogg"/>
+ </properties>
+ <tileset name="arena" firstgid="1" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/arena.png"/>
+ </tileset>
+ <tileset name="inn" firstgid="257" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/inn.png"/>
+ </tileset>
+ <tileset name="woodland_indoor" firstgid="513" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/woodland_indoor.png"/>
+ </tileset>
+ <tileset name="collision" firstgid="769" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision.png"/>
+ </tileset>
+ <tileset name="inn2" firstgid="771" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/ivk_inn1.png"/>
+ </tileset>
+ <tileset name="desert1" firstgid="1027" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/desert1.png"/>
+ </tileset>
+ <tileset name="inn_x2" firstgid="1283" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/inn_x2.png"/>
+ </tileset>
+ <tileset name="inn_x3" firstgid="1299" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/inn_x3.png"/>
+ </tileset>
+ <layer name="Ground" width="133" height="60">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3aPS8EURiG4ZnZRM/6LNkGHR2dBIVOYhU6CQqdVkdHx5Kg9O1/4C9t69mwIbLZM8ly3rPn3MVVTiZznnummmaeZU0AAAAAAAAAAAAAAAAAAAAEIy/gm/XmLoMFfLPe3KWS/Z+p4tOyrERutfh+XhfrzUNoYkPqkdukCZqgCZqgCZr4gyYaOoQLuazE1cSQVGVYRmRUxmRcJmgiue/EZGtXqcnAL9MyI7NfaCKNJuZkvkMPbQuyyHciqSaWuvTQtkYTSTWxXqKJLZpIqontEk3sl2hiR3Yjt5dIEwclmjgs0QTiaeJIjrv0cCKnNJFUE2dyLo0OPVzJtdz8QBPxN9FyK3dyLw/yKE/yLC+Oa63PPlTWm/faRC+szz5U1pvTRHisNw+5Cd//N1m3QBPus3nV/d88ec/tW+iXJnzolyZ8vRvWewAAAAAAAAAAAAAAAABAaj4AsY/ij7B8AAA=
+  </data>
+ </layer>
+ <layer name="Fringe" width="133" height="60">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3au04CQRTG8bMg3uKlwEv0gayNrY/gg1iqT6CJWhrtVCjEWHiprKxHoz3eYutZDQLj7uygLhDn/0tOlMmB3ex+HBayIgAAAAAAAAAAAAAAAAAAAAjNYCGf1x3O4XVHCs3q1jZDszLQ6z0QuY1E7qKfPXeogwzcWL3X5Oeba0nPxISeo8kfnqdOPep2nlK29dv9qLec90Ym5koi81rGegw9JtIfc6Jb4ky48jemuRgPPBuuOfEf2Z8d+M6IOxMbhc/yldQ/VUr+P+v1lxLey777k9aXlInhwOeCzTUnTvX4rWmta515nId+6Xf12ZlY1cd7WlXmxxcj7kxsam1Zx/ZQ379HWseRX3+avPpdfXYmtosiO1q7xezthyJrTuxrHbQc27LO2XPNwoXWZdRcS+t3yavf1cf1RDYj7uuJEz2GtQ6Oo91vXz/Ya3Z/ucN+3/1oIBPZsr53/MU1Zt79cY58r13JRDYjYX4XndYMzZTaf8dsrIUu9N8njPW4zhwJdk4gXWhz4l4z8eBRITMSViZe9Hy/elTIQpsTyGaETKCda05c6fpil6tCPnvOSHomGutJ9+XZ9zbF97sl3Qs3o2uzhWbPUEvfaEJ/L/O5TB4/uOZEvF4uijx36V6rhci9LxX9W82pasJnaOwtonwLAAAAAAAAAAAAAAAAAJCvd+SFI2ywfAAA
+  </data>
+ </layer>
+ <layer name="Over" width="133" height="60">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3ZvQlCMRAA4CSFP40O4hi6ga5j9QRtrBScT1dwAQMWBhR9TxDRfB8E7kgCgUtxcCEAAAAAAAAAAAAAwP+apFvcy3G/yAc5Hqb7O0BdjjGEU/z2KwCgHuuOPfgmXVcXhw/0+Uv9QlW2Lerd5gwAAAAAAFCnJoawKmYJ0zfnCjPziJ92Luq3y/G+yOcvajvK++MHZxb+BAAAAAAAAAAAAPDEBX9olxSwfAAA
+  </data>
+ </layer>
+ <layer name="Collision" width="133" height="110" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3UyW7cMBQFUcP5/3/OIpvGBdV6jAaS0imgYEOQOJb9++fn55ckSZIkSZIkSZIkSZIkSZIkuYxXszXHXfPvzXV0HZ/f5jh7c87q1dx17zNQPdfRd66J+6judfSdP72Jz/F75rpiXZqo779yLpVxZnj/23uaqO+/ci6VcWZ4XxPH6Wkif+YzTTy7ic+z6Rmr1cvWfEffr67j2/jfvp/Vq7ljjivpOSdN1Pf/FjRR3/9b0ER9/29BE/X9v4XRd6mJ+Rh9l5pYl9F3ron5GH3nszbx1P1WGH3no89ohSbunnv0na/QRD7b+3br/W/f7TVxNZpon0U+n2W/mtBEdY1noon2WeSZ3M3WvJoY28SIFpIRa9JE+ywqz69k5Fo00T6LPI/ecY6uf+s7Tczzf6Jn/taa/+f7njWeiSbaZ5HPz2xibzxNrNXE3jq21ppjaOI5TVTHqa6/9Y4mNKGJ9Zs4c22aeEYT1bEqa9fE2k3ctQZNrNXE6P1qQhPVNZ6JJtpnkc9n2a8mNFFd45loYp39j/jbGL3X0WeBf2gCiSaQaAKJJo7Tu74V9vP5+8ziHjSBRBNI3tCEpvp4QxPoQxNINIFEE0g0geRJTejmHJ7UBM5BE0g0gUQTSDSBRBNINIFEE0g0gUQTSDSBRBNINIFEE0g0gUQTSFZqYjXznFdyxTWTJEmSJEmSJEmSJEmS5BP8C89Z9ZqY5AAA
+  </data>
+ </layer>
+ <objectgroup name="Object" width="0" height="0">
+  <object name="External Map Events" type="SCRIPT" x="0" y="0">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/iw-roststock_embassy-o00-o00-o00.lua"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

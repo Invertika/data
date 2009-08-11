@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="orthogonal" width="130" height="55" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="music" value="ext_recorder.ogg"/>
+ </properties>
+ <tileset name="collision" firstgid="1" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision.png"/>
+ </tileset>
+ <tileset name="inn" firstgid="3" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/inn.png"/>
+ </tileset>
+ <tileset name="ivk_inn1" firstgid="259" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/ivk_inn1.png"/>
+ </tileset>
+ <tileset name="woodland_indoor" firstgid="515" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/woodland_indoor.png"/>
+ </tileset>
+ <tileset name="woodland_indoor_x2" firstgid="771" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/woodland_indoor_x2.png"/>
+ </tileset>
+ <tileset name="woodland_indoor_x3" firstgid="787" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/woodland_indoor_x3.png"/>
+ </tileset>
+ <tileset name="inn_x2" firstgid="803" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/inn_x2.png"/>
+ </tileset>
+ <tileset name="inn_x3" firstgid="819" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/inn_x3.png"/>
+ </tileset>
+ <layer name="Ground" width="130" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3SMU7DMBSAYWdhZWGCIQy9AWUDrgmcAHoBWi5AuQFcpVtdkcGqVBxVjZ1G3/BJsWVV1Xv/JoSwAQAAAAAAAICRuDgTtec0dVdnovacpm42sMvMua/ac5q6u2ge3Q/03e7dt0f+Tu05Td1u1h/RciBt5pyzCjoo1cFXtI6emxBeEq/N3/2+vu/W3d7/O+d866B4B29xn++JxYH99n23c5s562Ac0g6WcZ+rxOeB/fZ9dwo6KN/BGOlABzrQgQ50oAMd6EAHOtCBDnSgg/p0gA5IO/gZsd+gg1IdzDsP0WPnKbmvTQflXTch3DT1/wcAAAAAAAAAAABQzhbtu2pFuG8AAA==
+  </data>
+ </layer>
+ <layer name="Fringe" width="130" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3ZzUkDQRgG4DWLgnpRIYo2YAGJtiCeDViAogVoFQYP2oF2oB3owQKsyBmyIWvMsCE/S2KeB16+2c0wzOEjO+xmGQAAAAAAAADA/3ZW1O3GIFul8WZxHR1XrNWc50aZ2nejl1Eu690KM3SYZ9lRnq59B/nvRK1Q23mvTqq/XjNkv7R2tBOyO/nSwALpVFyzWLpF7QzVx8S8h8Ygo+axnLqJ+6k+qJrH8vpa+5tp5o3rvOKa5XcVcl3kpjSOuR3j91gvat81s3YXcj+DsNqewjn0OfHOitXxEnrgVR/UYm+Kd4Hz9hZ64F0frLyP0AOf+qAWi/x/AJFzIpFzYn3Ww3NhY8SzYfh+/9vySainxbidqOU5rUQdZx3nRCLnRAAAAAAAAAAAAIB6/ACK7g8GuG8AAA==
+  </data>
+ </layer>
+ <layer name="Over" width="130" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3SsQkAAAgDQfcWd3cCC+2Eu/JJmQgAAAAAAAAAAACAH3Loddzxkx8AAAAAAAAAAAAAAAAAAAAAAFsNgIUmeLhvAAA=
+  </data>
+ </layer>
+ <layer name="Collision" width="130" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3S0QrCMAwF0OD/f7Svo1RX0ZpsORcO3UpRdptHRDwAAAAAAAAAAAAKisUzs3Pj3izj/uzcJ//JvjnYmZU5WP0d/jMHq3PyyTyZg2s463r1Tl7FHFzDWderd7I72T3d3VWS3dPd7U7292EOqDMH3ya7ny6qJ7ufLuKwVkx2P11UT3Y/XcRhrZzsnu6uerL76SKG59kdZCa7ny5ieJ7dwfF93H+3/vIM++egcrL76Ur/AAAAAAAAAAAA0M8TV80W47hvAAA=
+  </data>
+ </layer>
+ <objectgroup name="Object" width="0" height="0">
+  <object name="Warp to City" type="WARP" x="768" y="1120" width="64" height="32">
+   <properties>
+    <property name="DEST_MAP" value="ow-o0000-o0000-o0000"/>
+    <property name="DEST_X" value="4288"/>
+    <property name="DEST_Y" value="4768"/>
+   </properties>
+  </object>
+    <object name="External Map Events" type="SCRIPT" x="0" y="0">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/iw-selphie_timlet_m_punkt-o00-o00-o00.lua"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

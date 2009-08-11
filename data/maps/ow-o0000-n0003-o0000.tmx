@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="orthogonal" width="200" height="200" tilewidth="32" tileheight="32">
+ <tileset name="collision" firstgid="1" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision.png"/>
+ </tileset>
+ <tileset name="desert1" firstgid="3" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/desert1.png"/>
+ </tileset>
+ <tileset name="desert2" firstgid="259" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/desert2.png"/>
+ </tileset>
+ <tileset name="desert_x2" firstgid="515" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/desert_x2.png"/>
+ </tileset>
+ <tileset name="desert_x3" firstgid="531" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/desert_x3.png"/>
+ </tileset>
+ <tileset name="desert_x5" firstgid="547" tilewidth="32" tileheight="160">
+  <image source="../graphics/tiles/desert_x5.png"/>
+ </tileset>
+ <tileset name="ivk_desert1" firstgid="553" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/ivk_desert1.png"/>
+ </tileset>
+ <tileset name="ivk_ground1" firstgid="809" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/ivk_ground1.png"/>
+ </tileset>
+ <tileset name="trans_woodland-desert" firstgid="1065" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/trans_woodland-desert.png"/>
+ </tileset>
+ <layer name="Ground" width="200" height="200">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3bUU7UQBzH8W4g6oN32cRDqfdQ4gFA8V0FTqAH8wJCsiQE/G3Lbst0Zj4Pn/DGDt1+t+Xf2ZNhGE4AAODWmxWsAQAAmNerW69XsA4AAMaZ0QIAlONeDAAAAADqZb4HAO1xfcc54PgDUJ7rAQAAh3AfCQAAAAAAAAAAAAAA09mHDwAAAFCW+Qy8HL0BAAAAAK37u4I1tMRcGQAAAOjFdgVrAADwbAYAAABokZkHAAAAAAC1MNOGddMoAAAAADCntc4c17ouAAAAAAAAAI735RRILgEAAAAAAACA4Roq8fF0/7n8YYHXLL3/C6b6NtLGzV1Dm/LrhBL29fF991mvD3p1ted+Sx/07v2jc/9hLzf6oHOP+/gffdArfUCmD8j0AZk+INMHZPqATB+Q6QMyfUCmD8j0AZk+4Knt7qc+INMHZPqATB+Q6aNOb3dKr6N1PfbxbgVrYH7bBX5nj33AVPqATB+Q6QMyfUCmD8j0AZk+ICvRx+cNNTrr8HNyiT4+jRznC6r0VR+z9HE+cpx/UpVrfczSx/3+l/s+rsLxLv038zzn+tjr0OtHj8ezRT2/n/pg6vv5e1N+RtCCP/poytj/k5h3HGrO7yQs8f2GKX5sys8IWvRLH1TO83PI9AGZPiDTB2T6gEwfkOkDMn2UVeqZH9PoAzJ9QKYPyPQBmT4g0wdk+oBMH5DpAzJ9QKYPyPQBmT4gq7WPpfa92k/LQ7X2AS9BH5Dpozz3dOulD8j0AZk+INMHZPqgZdvhuPmHPiDTB2T6gEwfkOkDshb7sF+DubTYB8xFH5DpAzJ9QKYPyPQBmT4g0wdk+jie55Ht0gdk+oBMH5DpAzJ9QKYPyEr08Q/dq0v7AHECAA==
+  </data>
+ </layer>
+ <layer name="Fringe" width="200" height="200">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3cQU4DMQwF0NFs4B7A/a8IXRUhhDoorh37PamrLpI03/GimTkOAAAAgF7ezuN4//p8nP/7HrhTL3fOlnmi93RyZiavHZwte7N/XGVPeYSzZS57A0Rwtsxm/+ksO9/Z42eavHb6y8539visYR/p7Ld8y/xz+J3pzNnCjT2Ha9TMY/xOe6i8T9PuindbD7U8O1/yzAqrcuQ+IPCdmuVGbwBgJec+AKvpLXSWne/s8QGo69EeMe0uCz1UvSteYQ6Qxf+VdCFrcM1fNaM3sBuZgtrUKJPJP8RQW3SWne/s8QGoS4+gs6p3WQDYn34C16gZOpFnAKrSowAAAAAAevD+OSJMzVXXdZFrl1x5xxAR5Ar2poaJIFcwl/okglzBbM4AIlTJVfY8sscnRva+Zo8PQF1VekSVedCL9xoCN+qeCJ1z1Xlt5MnKlTwTISpXU58hgQg71MsOc2RP7gkD8JPeAMBKzn0AVtNb6Cw739njA1CXHkFnniEBIIp+AteoGTqRZwCq0qMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKCWl/M4Xs/sWQAAAAAAAAAAAAAAAAAAAAAAPMcnZVyDDQBxAgA=
+  </data>
+ </layer>
+ <layer name="Over" width="200" height="200">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3cvQrCMBQG0NDBFnFz6u/7v5cv4t10ERRq0ibnwLcndOl3E5ISAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALw8Si8AAAAAAAAAAABoytilNEXmyPJF1sjWlV41AAAAAAAAAPzu0xm5s3AAAIBj66OzDXobAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANCYe1d6BQAAAEDLaphN9LGHoYJ97KmG7woAAAAAAAAAQLvcfwEAAChnz06m3wEAAGc1Rp+ZInNkiayRTccBAAAA4M3VvAgAAAAAAAAAAAAOw1s3kJ/7tACchX9FAIBzMXMAAADI76KLAQAAZHPTwQAAAAAAAIA/cR4JAAAAAAA8AUpIaqMAcQIA
+  </data>
+ </layer>
+ <layer name="Collision" width="200" height="200">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3d227bOhRF0cD//9FFH4rmthLZ4mWTHAPYr5FMclrn1Kn7eHt7exhj4gBf6QOy1ftY+d6pb/U+oCd9tPfbelrvdehjPuv/X7X3lqt96Oh1vdft5H0ZsbYnry+1zX5v0cc9s/ePvnr08ezPcwbOtMJ7i+dHH9Z0D/qgmkrncbU+VrrXZIfXcIrV+qhg9nrNvv5MVT//gBZmn7VX/uxo9j3zlT2pQR99fLem1nmMluusD6qp9N6ij3l6rLu9bEsftdiLa0atkz7uqbx21X5XvLdez+PW/z/Dmlrt3dWfs8JZWfH5sdr93jX63Fb9+TOs2AdcdfdsV+hj9vV34NnQR4U+oCp97M3e3qOPcazzevRxLvv+O32sa/a+zb7+CPqATB/8pNVn4aueMX3srdLvir9X4R6u0Ac97PJ5pT6w/5k++M5PZ2KXZ8MV+tiDPexDH7Sy4znSB1edeE70wQirnjF9cMXsM+L7faAeffDZzPfqavRBK1V/l+UOfUCmD0Za7azpg9kqnz998KyTzsuJfZz2enndiX20Zv3aq7Km+oBMH5DpAzJ9QKYPyPQB2cg+dNjWSes56/vnPD/2tuv3Gv6m5b9Jt+sa8bxVzsKo7xjSx1lO+u6qFvRBNZUa1sc+Kp2rXeiDVcw4p/rYn/19nT7oYfSZ8vkHPVTZ+9n3ka6vj7XN3rsK13/mDD973vXBKV455/rgN1XOhz+/oocdv9dwlEp9VLkP1tX6DFXqg3l2PgN3Xps+SHyPuz520vMzshnXrUAftLbCeer1eQmc9HvC+qC69Bn5iLOrj7mqrf1Jz4Yr9IH9z/TBFaeeEX1AtmMfO76mynZea2eJ2fs/+/o/0Qdk+mCEVc9Y1T4q3tNfVe+rt1P/DknVPqACfdDKjudIH/S0+tnSB+85Cx/pAzJ9MNpK500fkOkDMn1A9jDGGGOMMcYYY4wxxhhjjDHGGGOMMcYYc2tgBaPPsj5Yyej3eX2wEn3AdfqAefQBmT4g0wdk+oBMH5DpAzJ9QKYPyPQBmT4g0wcrmHVG9QGZPliB5wfUow/I9AFZhT5mX7+FCutYzQ7rYV/bsI57qrCvs69PHzvsa4U+oCp9QKYPyPQBmT4g0wdk+oBMH5Dpg1NdOff6gEwfnMrzA+7RB2Sn9dHytZ60bqc6rQ94xml9eH7wjNP6gGfoo47P/w6rvZnPHkCmD8j0AZk+INMHZPqATB8fWQve0wdk+oBMH5DpAzJ9QKYPyPQBmT4g0wdk+oBMH5C16kNj7Kj686PyvbG/6s8PfTBT9efHDNaDf/QBmT6+sh78o4/xrPc69AGZPiDTByOtdt5Wu1/W9vm8VT97+oBMH5DpAzJ9QDaiD/2xKn1A5r+vINMHZPqATB+Q6QMyfUCmD8h27GO318M8+oBsxz6gFX1Apg/I9AGZPiB7GGN+nD91RGkGAHECAA==
+  </data>
+ </layer>
+ <objectgroup name="Object" width="0" height="0">
+  <object name="External Map Events" type="SCRIPT" x="0" y="0">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/ow-o0000-n0003-o0000.lua"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

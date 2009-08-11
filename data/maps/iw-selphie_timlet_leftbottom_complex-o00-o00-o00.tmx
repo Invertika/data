@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="orthogonal" width="168" height="112" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="music" value="ext_recorder.ogg"/>
+ </properties>
+ <tileset name="collision" firstgid="1" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision.png"/>
+ </tileset>
+ <tileset name="inn" firstgid="3" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/inn.png"/>
+ </tileset>
+ <tileset name="inn2" firstgid="259" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/ivk_inn1.png"/>
+ </tileset>
+ <tileset name="inn_x3" firstgid="515" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/inn_x3.png"/>
+ </tileset>
+ <tileset name="inn_x2" firstgid="531" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/inn_x2.png"/>
+ </tileset>
+ <layer name="Ground" width="168" height="112">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3dTW4TQRCA0YlQUBZAhAwbWCAwexYcgiNwU+AEwAkgV8kOW8JSFNrtnknbVW3e4gkp88PM1Keg4LR9O03TLQAAAAAAAAAAAAAAAMAJPNp4XHFV2fdqwflGUbq3Yz7n3qK76mW18aJiVdl3teB8oyjdW+/n/PLvn+8u+l9/dFe9rDfeV6wr+64XnG8UpXs75nPuLbqrXj42qO275HyjOPVzznrt+swpus8vG19n+naEa4/u88nG04Jn9+5Vn6ft8/vGj5l+HuHao/tsnZM+9anPPPQZT5/6zEyf+sxsey9+PtJnVi3PafeaWW1bbZ9RRff5a+P3TDdHuPbsfe5eM6ttq+0zqug+s1x79j53r5nVttX2GdUxnveri2l6fRE/91FEN5BZ9GyIbyCz6Nnw8Jajrwl29Elm+iQzfZKZPslMn2SmT05tzvrilj6tL172nM/lPntbTe3rbFv6PHS+Udy971M85/trjg+5rqxJflvZ9vzett732duc9cUtfVpfvOw5n8t99jbndb6WPqNfk8z6+mb0vZzqPvU55tx6XM+S9cajr0XW5zh93v19+utp/+/Qt24b4Xft9Tlmn2+m/Q22bhulT+uPxuvzw7S/wdZto/TZOid95umzB32OTZ/x9KnP6Ab1eR59LllvPPpa5O31+flojD5HuE/fP897btYf6zNzn+hTn+PQpz4z06c+M9OnPjPbzsH/L+kzK98/9ZmZPvWZmT71mZk+9ZnZdg5+PtJnVi1z8vkIZO7T5yOQuU+fj0DmPv9X0bMhvoHMomfDw1uOvibY0SeZ6ZPM9Elm+iQzfZKZPjm11vftv5zKfV42Hlv7+qHtS8/bum3f16JnQ/l9+0vv0b/dr9Rn6fjSsaVzrwrbS8ft+8yA2nGfZhxT+ntWCWZD+/v2b/cr9dly/L591o3bl5z384xj9n0tejbEv4aYWfRsiG8gs+jZEN9AZtGzIb6BzKJnQ3wDmUXPhj5z7P25URl8SzAb/m3t0FrOkt7vO53BTYLZEP9vaGbRsyG+gcyiZ0N8A5lFz4Y4mT4HINO1AAAAAAAAAAAAAAAA+f0BhwIQ1AAmAQA=
+  </data>
+ </layer>
+ <layer name="Fringe" width="168" height="112">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3dwWrUUBQG4JmpLehKUXfqTvQFRHcurQ8gdilYrXtbBPcquHGlgrpVQX0E30bfQJcK3tIWppmZNGkSc+7k++BwJ71hJjChzD83ZzIaAQAAAAAAAAAAAAAAAAAvGs6XuTIeja6OZ8ec5iL4UHNcJm8bzpe5nt7jG+PZMae5tvxI9bPivuuF7W81x2Xyeerx08JYnK/rVnqP18ezY05zbfmV6nfFfTcK299rjsvqZWFs6m56jzfGs2NOc30onp+3a45wHPdTbaZ6sD8uqkd9HWBQF1JdnFOX+jyoJfQ41Xaqnf1xUe30dYADEymH55zf2TMvHzURKYf3nd+beJfqfQv75K7tfBQph/ed35v4kuprC/twWKQcnlN+L/qT6u/U9srk8Dhvn2UiH8Gwrab/dWuT488PVZP1dehak/V16FqT9XUA6jlYR97s+0BgjoN15O2+DwQAAABoLNJ1xrldn/ws1fOpbevQ7Yt0nXHf1ycf9BdX7TN+nerN/uPdfuOhrkMftb6pv7gdB/3FVfuMP6b6tP94t5/TOnT7Il1nnPP1ycV+46Fqu/+IWYt6jJ8Utrem/qbfeE/b/UfMqtpjXNZvXPZ7DEfNvVowN0SRcnik/N7090COOgfvlcyVPW9UXfUfRcrhfef3tt3sYG5oIuXwvvM7zbWdjyLl8JzzO3vkI4B6uspHkXJ4pPxODJFy+LLld5qLlMPld4oi5XD5PX/W34nM90sMSaQcLr/ny/q7/D5EkXK4/J4/6+/ye2TyEUA97o8AAMD/4ncpAIBd7t9BZO7fAQAALKuyfga9DvStrJ8hWq/D6VRnMn5+6ivrZ6ja63ByMhqdmrR7XF3K7XiHrKyfQa8DQDdWx4fvO1FWWxX3W1QPO3ydec9NXFV7Oc+Pq9+HIrcirqq9nJc7+Gx6rkZuOVsz49yptzuZ6+L8hEXq9nI6P4nM+UmXmvYfXZtzfq6mz4RrJZ8LVybzH/dh+vVP+L4eAAAAAAAAAAAAAACAzP0DOWjx7wAmAQA=
+  </data>
+ </layer>
+ <layer name="Over" width="168" height="112">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3csQ2AMBAEQTfnBpDI6YYSaNcpEYmF70Ez6SfbwH1rAAAAAAAAAAAAAAAAAAD19HQAPNjTAQAftaUD4OZIBwAAAAAAAAAAAAAAAFHn5B3edE3eAQAAAAAAAAAAAAAAAAAAAP7OfxAq8x8EAAAAAAAAAAAAgMp6OgAAFrA/ojL7IwAAAAAAAAAAAAAAAABWGKOmAs4AJgEA
+  </data>
+ </layer>
+ <layer name="Collision" width="168" height="112" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3U226rMBQE0Kj//9HnyQ8HORtzMQNkjbTUVKbOxh717/P5/AEAAAAAAAAAAAAAAAAAAOwwkurZar/qO5+wljzv3u+jP69+pzucl37OP+eWrc9/2+MN1t7ls/i8dg5vyqxzHtn7TrOn+zn6riPn8KZc+X9AP6/v5567utPa1ed8ZtK90s/f6efIHstn0r3ST/2snkn36sxzG12vzkU/5/Vzmb/Fz2/PvMHoeezp59Nz136OJN0r/ZyfK8/77PNL90o/52fmeafv/Snke9J3g1RJ3w3Hu5yeCZqW9BzQ05KeA3p6Sc8ETS/pmaDpJT0TNL2kZ4Kml/RM0PSSngmaXtIz8W4jqZ6t9qu+8wlr6XNv2fM3e/a/oy3zj7zbyHs/ZS3Vx2VmdrPtf1db5h95tzdlxjmfdU/VWW9dS3dQP/dFP/PW5vssPq+928h7P2Xt7HM+M7/Uz7Xop37q5/3W7tzPM5PuoH7qZ5V0B1P9fHr0M29tvs/i89q7vSn6mbdl/pF3G3nvp6wl7yM9x12MpHq22u/KLs1YI28k1bPVfld2acYaeSOpnq32u7JLM9bIG0n17J79npL03TAW/STZz9H1Xqp+7vnOO62RN5Lq2Wq/K7s0Y428kVTPVvtd2aUZa+SNpHq22u/KLs1YI28k1bN79ntK0nfD+j18Fp+X0U9m93Mt+ol+3i/pu2Es+smd+/mrSd8NUiV9NxzvcnomaHpJzwRNS3oO6GlJzwE9vaRngqaX9EzQ9JKeCZpe0jNB00t6Jmh6Sc/Eu30Wn5ep1t6e9N3w/z1Ud/SLSd8NUiV9NxxPen7e7WjS8/NuR3PGHkf23Pr9W/fmXv3c2uUZ/bxL0nfD8egn+plJ+m443q/e36/t+/flcyLVLOl7IaclPcfdZgEAAAAAAAAAAAAAAO7vH+lFtywAJgEA
+  </data>
+ </layer>
+ <objectgroup name="Object" width="0" height="0">
+  <object name="Warp to City" type="WARP" x="1600" y="2976" width="64" height="32">
+   <properties>
+    <property name="DEST_MAP" value="ow-o0000-o0000-o0000"/>
+    <property name="DEST_X" value="896"/>
+    <property name="DEST_Y" value="5312"/>
+   </properties>
+  </object>
+  <object name="Warp to City" type="WARP" x="2720" y="2976" width="64" height="32">
+   <properties>
+    <property name="DEST_MAP" value="ow-o0000-o0000-o0000"/>
+    <property name="DEST_X" value="1504"/>
+    <property name="DEST_Y" value="5312"/>
+   </properties>
+  </object>
+  <object name="Warp to City" type="WARP" x="3840" y="1792" width="64" height="32">
+   <properties>
+    <property name="DEST_MAP" value="ow-o0000-o0000-o0000"/>
+    <property name="DEST_X" value="1216"/>
+    <property name="DEST_Y" value="5824"/>
+   </properties>
+  </object>
+  <object name="Warp to City" type="WARP" x="3584" y="1056" width="64" height="32">
+   <properties>
+    <property name="DEST_MAP" value="ow-o0000-o0000-o0000"/>
+    <property name="DEST_X" value="448"/>
+    <property name="DEST_Y" value="5824"/>
+   </properties>
+  </object>
+  <object name="External Map Events" type="SCRIPT" x="0" y="0">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/iw-selphie_timlet_leftbottom_complex-o00-o00-o00.lua"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

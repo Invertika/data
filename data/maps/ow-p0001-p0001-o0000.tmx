@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="orthogonal" width="200" height="200" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="music" value="ivk_deep_loneliness.ogg"/>
+  <property name="overlay0image" value="graphics/images/ambient/sandstorm.png"/>
+  <property name="overlay0parallax" value="1.0"/>
+  <property name="overlay0scrollX" value="4"/>
+  <property name="overlay0scrollY" value="-1"/>
+  <property name="overlay1image" value="graphics/images/ambient/sandstorm.png"/>
+  <property name="overlay1parallax" value="1.5"/>
+  <property name="overlay1scrollX" value="8"/>
+  <property name="overlay1scrollY" value="-2"/>
+  <property name="overlay2image" value="graphics/images/ambient/sandstorm.png"/>
+  <property name="overlay2parallax" value="2.0"/>
+  <property name="overlay2scrollX" value="12"/>
+  <property name="overlay2scrollY" value="-3"/>
+ </properties>
+ <tileset name="collision" firstgid="1" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision.png"/>
+ </tileset>
+ <tileset name="desert1" firstgid="3" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/desert1.png"/>
+ </tileset>
+ <tileset name="desert2" firstgid="259" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/desert2.png"/>
+ </tileset>
+ <tileset name="desert_x2" firstgid="515" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/desert_x2.png"/>
+ </tileset>
+ <tileset name="desert_x3" firstgid="531" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/desert_x3.png"/>
+ </tileset>
+ <tileset name="desert_x5" firstgid="547" tilewidth="32" tileheight="160">
+  <image source="../graphics/tiles/desert_x5.png"/>
+ </tileset>
+ <tileset name="ivk_desert1" firstgid="553" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/ivk_desert1.png"/>
+ </tileset>
+ <tileset name="ivk_ground1" firstgid="809" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/ivk_ground1.png"/>
+ </tileset>
+ <layer name="Ground" width="200" height="200">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3dQW6dMBQFUJRM0jbDdB9dwtv/qqoqiio1bYEPmGv7DM78wsf+9rMNz8uyPAMAAAAAAAAAAAAAw6qADK4XAOZTARkAAAAA2KcCMgAAAABAui8BGQCAdxWQAQAAAAAAgN8qIAMAzKwCMsCZKiADAAAAAAAA86qADAAAAAAAAFzHdwcAgFEY1wAAAAAAQB8qIAMAkKkCMgAA7FEBGQAA4FEVkCHJmffjR8D19MoZMfcJAAAAAHhXARkAAAAAAAAAoHfOegEAAAAAAGsqIAMAjKICMgDAGu93PkcFZABIYc8yADOqgAwA0Jr5HwAAAJDg7WlZvj/dn+OXryE5gM/slRyXvpcRVECGFpLGbQAAANDa6yBz4grIAAAAs7AeDmP4pi0TpAIy7KUNAfxd8n68UdZEAOAItb1xmad+ljw2hb22zmf08/9XARmA/t09xvCuVQAgmRqVezujK+YIR39vNSLOVgEZAABm9hKQgfYqIAPAo9Qz+dNrQAba0P7b2zNf0Bbhei33F969l3EL32ICZmd8DMCsepivzHANQD/UbhmV89AAjGbWmu/RNb9Z71sPjuxRN9aDPuiDAbiaNbU52Rs6hr3f7fGdH6B3j4xbKiA3bT0yzrHngxlUQAZgPt6pS0vqXceoGwFwtgrIAB+sicN97qoNaPfbVECGEdn3y9XO6uP+VQ/yDMN8tHugV9YHz+F/AKBf+nB6sfasbn2Wjf+ArfxHMiJr4HCOCsgAzOmKc+zOxgMA9OHImYqeakI9ZYU1nmcAANb8BNdRCagAcQIA
+  </data>
+ </layer>
+ <layer name="Fringe" width="200" height="200">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3duw3CMBAAUCcrACMAEwATAJPQsBEjsCWRKFKZfJCxid+TTnKkFFfkcskVdggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAbqs2dwaQnuccgJTm9Bm9CaBOn97/egNAvab0AP0CAGA631swj3oAIDW9BgAAAIAUzJ0AAAAAAAAAAAAAAAAAAAAAAAAAAADgv9xG3ndPmgWUadvFbkTscyUIGR26OEbi0fTrU7YMIZ9zF5dIPJt+fc2WIQAAAAAAAAAAAAAAAAAAAKmt2xA2bfx6iL2BqNHYOrE3EEsytT8MsTcQxNkbiCX69r8DeFM7pGK+A3ElzXf0AUpT+nwnVjNqiV8w3wEAAAAAAAAAAAAAAAAAAAAAAAAAAAAgJeeNQFxJ541AaUo/bwRyct4IAAAAAAAAANTtBX/DfEQAcQIA
+  </data>
+ </layer>
+ <layer name="Over" width="200" height="200">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3dIQ4AIQwEQD6JAI+5/z8APtAEwwFhJllXUV2xTQkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALhVHikTqbsWhI3a5Ny3dAsAAAAAAAAAAAAAAAAAAAAA4DW6gSCmGwgAAIAbuO9AzH0HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4jX8jEPNvBAAAAAAAAAAAAAD4QwcHHphIAHECAA==
+  </data>
+ </layer>
+ <layer name="Collision" width="200" height="200">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3c7W7jNhCG0SD3f9FFURQFungTSyLF4fAcwH9tiTPPOpsPf399fX17eHjEB/AnfUCmD8j0AZk+INMHZPqATB+Q6QMyfUCmD8j0AZk+IFvVx2lNnna/XXj/gEwf7OqNvdUHZPqATB+Q6QMyfUCmj17Mcix9QKYPyPQBmT4g0wdk+mCGLjulD8j0AVm1PipdC1TrAyrRB2T6gEwfkOkDMn1Apg/I9DGWs+xFH5Dpg6oq7KU+GKnbLukDMn1Apg/I9AGZPiDTB2T6gEwfkHXvo/O9MV/3PuAJfUCmD8j0AZk+INMHZPqATB9nMetr9AGZPiDTxzuc8Z70AZk+INMHZPqATB+Q6QMyfUD2pA9d0Z33D8j0wW9O3g99QKYPyPSxnvOvSx+Q6QMyfezDnMa4co4n9DHy/kY8V/fzTna87xV97HhOnOmE949d3ZmLWY6lD8j0UctPszCn9+kDMn28y1nvRR/7Mrf59AGZPta6+rNc3qWPusxlPX1Apo8ezHAOfUCmD8j0AZk+INPHucz9d/pYy9nXpg/I9AGZPiDTB2T6gEwfkOljHOfYjz4g0wez7bxf+oBMH3Qz+vPIT+3j1Pvmcyf3wXmu7ro+INMHZNX6qHQtUK0PqEQfYznLXvQBmT4g0wdk+oBMH4xWaaeeXkele4Fqnvahrb7M1vtHB6fMb8Wu6gMyfTDL94VHVdWvj33pAzJ9cIK7+/FbD2/3ced19AGZPiDTB2T6OIc5X6cPKqqyk/rgbzvuwBvXrA/I9FFX5dlUva7RKs8AVtMH5Ab0sT/z+9OovdYHFXy6g/4+6mc7XSv7260PPrd6th32avUZQmX6gEwfezCjeX46W32sNeP8R3xmIP/QxxjOsCd9MMP/9+rqnlX5bAd98KZP900fZ+t25qP3qGsf3ebOGlU+G8j7x3lmzvvp/zuq2f36P3XCPe5m1u7N+DqPn1393stsVb4+784Z1vXTbEb38WQP3tqhFXuqjz1Vf/9Ir73bvu12vR2MOO8q39/pzhlCpg/u6LA3n9xDh/uEWfRxjbM6y0l9nHKfjHNSH3CVPmo4dQZP79vvJ9b15Nyc+R70gfln+oBMH1xx2r6cdr+JM+jh6hz9/Bzu00cNd+ZgbvNV6+POtVS6fnqp1EeV64B/VeqDecz4Hn3c48ye2eX89AGZPqim0j7qAzuQORtmq/YZQ28/R3Xd72+VE871hD4qG3X+6TnM9hl9sKO3dlYfkOnjHmc2RvVz1Adk+uCT+Vf/vPhZOt7Tzj75e7YRz3OVPiDbvY+711X5nqjjtx5m9bF6P1e/PowyY4/1AZk+/jPr3x/2pQ/I9AGZPvb0ZGY7zXz1ta5+fXrptk/d7gdG0gdkV35vwMPjxMdfJ24pDwBxAgA=
+  </data>
+ </layer>
+ <objectgroup name="Object" width="0" height="0">
+  <object name="External Map Events" type="SCRIPT" x="0" y="0">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/ow-p0001-p0001-o0000.lua"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
