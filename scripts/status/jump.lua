@@ -1,6 +1,15 @@
--- This status jumps from being to being
--- Thats all it does.
-
+-------------------------------------------------------------
+-- This status jumps from being to being                   --
+-- Thats all it does.                                      --
+----------------------------------------------------------------------------------
+--  Copyright 2009 The Mana World Development Team                              --
+--                                                                              --
+--  This file is part of The Mana World.                                        --
+--                                                                              --
+--  The Mana World  is free software; you can redistribute  it and/or modify it --
+--  under the terms of the GNU General  Public License as published by the Free --
+--  Software Foundation; either version 2 of the License, or any later version. --
+----------------------------------------------------------------------------------
 
 
 function tick(target, ticknumber)
