@@ -24,9 +24,9 @@ atinit(function()
 end)
 
 function nomo_talk(npc, ch)
-	local adminPrivileges = get_quest_var(ch, "admin_house01")
+	local count = tmw.chr_inv_count(ch, 40010) 
 	
-	if adminPrivileges~="true" then
+	if count < 1 then
 		do_message(npc, ch, invertika.get_random_element("Blub...",
 	  "Wenn ich das bloß wüsste...",
 	  "Der Regenwurm, der Regenwurm...",
@@ -35,7 +35,7 @@ function nomo_talk(npc, ch)
 	  "Das glaube ich allerdings nicht."))			
 	else
 		tmw.chr_warp(ch,  61, 3936, 3488) 
-		do_message(npc, ch, "Willkommen auf der dunklen Seite. Die Kekse liegen im Haus.")
+		do_message(npc, ch, "Du bist in Besitz des Schlüssels. Willkommen auf der dunklen Seite. Die Kekse liegen im Haus.")
 	end
 	do_npc_close(npc, ch)
 end
