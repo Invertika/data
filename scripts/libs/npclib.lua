@@ -41,7 +41,7 @@ function walkaround_small(npc)
     wasmall_timer[npc] = math.random(1, 10)
     local x = math.random(-32, 32) + wasmall_startx[npc]
     local y = math.random(-32, 32) + wasmall_starty[npc]
-    tmw.being_walk(npc, x, y, 500)
+    tmw.being_walk(npc, x, y, 2)
   end
 end
 
@@ -68,7 +68,7 @@ function walkaround_wide(npc)
     wawide_timer[npc] = math.random(1, 10)
     local x = math.random(-128, 128) + wawide_startx[npc]
     local y = math.random(-128, 128) + wawide_starty[npc]
-    tmw.being_walk(npc, x, y, 500)
+    tmw.being_walk(npc, x, y, 2)
   end
 end
 
@@ -90,7 +90,7 @@ function walkaround_map(npc)
     wam_timer[npc] = math.random(1, 10)
     local x = math.random(-128, 128) + tmw.posX(npc)
     local y = math.random(-128, 128) + tmw.posY(npc)
-    tmw.being_walk(npc, x, y, 500)
+    tmw.being_walk(npc, x, y, 2)
   end
 end
 
