@@ -71,7 +71,7 @@ end)
  end
 
  function wache_trigger(ch, id)
-   if (tmw.being_type(obj) ~= TYPE_MONSTER) then --- Nur Player durchlassen
+   if (tmw.being_type(ch) ~= TYPE_MONSTER) then --- Nur Player durchlassen
 	 local count = tmw.chr_inv_count(ch, 40009)
 	 
 	 if count == 0 then
@@ -343,8 +343,8 @@ function stadtwache_talk(npc, ch)
 end
 
 function palastwache_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Zutritt nur mit Königlichem Passierschein!",
-	  "Du benötigst einen Königlichem Passierschein um den Palast zu betreten.",
-	  "Ohne Königlichen Passierschein kein Zutritt!"))
+	do_message(npc, ch, invertika.get_random_element("Zutritt nur mit königlichen Passierschein!",
+	  "Du benötigst einen königlichen Passierschein um den Palast zu betreten.",
+	  "Ohne königlichen Passierschein kein Zutritt!"))
 	  do_npc_close(npc, ch)
 end
