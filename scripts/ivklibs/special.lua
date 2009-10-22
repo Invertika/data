@@ -34,7 +34,7 @@ function elevator_gm_house_01_talk(npc, ch) --- NPC für die Netheksäule
 									 "Ich möchte nicht Fahrstuhl fahren.")
 								   
 		if v == 1 then
-		    tmw.chr_warp(ch, 20001, 125 * TILESIZE, DEFAULT_Y_POS) 		
+		    tmw.chr_warp(ch, 20001, 125 * TILESIZE, 25 * TILESIZE) 		
 			break;
 		elseif v == 2 then
 		    tmw.chr_warp(ch, 20002, DEFAULT_X_POS, DEFAULT_Y_POS) 		
@@ -48,10 +48,10 @@ function elevator_gm_house_01_talk(npc, ch) --- NPC für die Netheksäule
 		elseif v == 5 then
 		    tmw.chr_warp(ch, 20023, DEFAULT_X_POS, DEFAULT_Y_POS) 		
 			break;
-		elseif v == 7 then
+		elseif v == 6 then
 		    tmw.chr_warp(ch, 20027, DEFAULT_X_POS, DEFAULT_Y_POS) 		
 			break;
-		elseif v == 8 then	
+		elseif v == 7 then	
 			break;
 		end
 	end
