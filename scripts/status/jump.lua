@@ -14,16 +14,16 @@
 
 function tick(target, ticknumber)
     if (ticknumber % 10 == 0) then
-        tmw.being_say(target, "I have the jumping bug!")
+        mana.being_say(target, "I have the jumping bug!")
     end
     
-    if (tmw.being_get_status_time(target, 2) < 2000) then
-        tmw.being_set_status_time(target, 2, 6000)
+    if (mana.being_get_status_time(target, 2) < 2000) then
+        mana.being_set_status_time(target, 2, 6000)
     end
     
     if (ticknumber % 50 ~= 0) then return end
     
-    local victims = tmw.get_beings_in_circle(tmw.posX(target), tmw.posY(target), 64)
+    local victims = mana.get_beings_in_circle(mana.posX(target), mana.posY(target), 64)
     local count = #victims
 
     if i == 0 then return end
@@ -40,14 +40,14 @@ function tick(target, ticknumber)
             victim = nil
             i = -1
         else
-            i = tmw.being_type(victim)
+            i = mana.being_type(victim)
         end
     until (i == TYPE_MONSTER or i == TYPE_CHARACTER or remaining == 0)
 
     if (victim == nil) then return end
     
-    tmw.being_remove_status(target, 2)
+    mana.being_remove_status(target, 2)
 
-    tmw.being_apply_status(victim, 2, 6000)
-    tmw.being_say(victim, "Now I have the jumping bug")
+    mana.being_apply_status(victim, 2, 6000)
+    mana.being_say(victim, "Now I have the jumping bug")
 end
