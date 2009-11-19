@@ -25,7 +25,7 @@ function bank_get_account_balance(ch)
 	local acc_bal = get_quest_var(ch, "bank_account_balance")
 	
 	if acc_bal=="" then
-		tmw.chr_set_quest(ch, "bank_account_balance", 0)
+		mana.chr_set_quest(ch, "bank_account_balance", 0)
 		return 0
 	else
 		return tonumber(acc_bal)
@@ -44,12 +44,12 @@ function bank_calc_interest(ch)
 	   
 	   if timeDifference ~=  0 then	  
 		  newMoney = math.floor(INTEREST_PER_SECOND * timeDifference)
-		  tmw.chr_set_quest(ch, "bank_account_balance", acc_bal+newMoney)		  
+		  mana.chr_set_quest(ch, "bank_account_balance", acc_bal+newMoney)		  
 	   end
 	 end
  end
  
- tmw.chr_set_quest(ch, "bank_last_visit",  currentTime)
+ mana.chr_set_quest(ch, "bank_last_visit",  currentTime)
  return newMoney
 end
 
@@ -64,12 +64,12 @@ end
 --- Geld auf Konto einzahlen / Dialog
 function bank_pay_money_to_account_dlg(npc, ch, money)
 	bank_calc_interest(ch)
-	local PlayerMoney=tmw.chr_money(ch)
+	local PlayerMoney=mana.chr_money(ch)
 	
 	if PlayerMoney >= money then
-		tmw.chr_money_change(ch, -money)
+		mana.chr_money_change(ch, -money)
 		local acc_bal = bank_get_account_balance(ch) 
-		tmw.chr_set_quest(ch, "bank_account_balance", acc_bal+money)
+		mana.chr_set_quest(ch, "bank_account_balance", acc_bal+money)
 		do_message(npc, ch, "Das Geld wurde auf dein Konto eingezahlt!")
 	else
 		do_message(npc, ch, "Soviel Geld hast du nicht!")	
@@ -82,9 +82,9 @@ function bank_get_money_from_account_dlg(npc, ch, money)
 	bank_calc_interest(ch)
 	local acc_bal = bank_get_account_balance(ch)
 	if acc_bal >= money then
-		tmw.chr_money_change(ch, money)
+		mana.chr_money_change(ch, money)
 		local new_money=acc_bal-money
-		tmw.chr_set_quest(ch, "bank_account_balance",  new_money)
+		mana.chr_set_quest(ch, "bank_account_balance",  new_money)
 		do_message(npc, ch, "Das Geld wurde dir ausgezahlt!")
 	else
 		do_message(npc, ch, "Soviel Guthaben hast du nicht!")
@@ -125,7 +125,7 @@ function banker_talk(npc, ch)
 		elseif v2 == 7 then --- 50000
 			bank_pay_money_to_account_dlg(npc, ch, 50000)
 		elseif v2 == 8 then --- 50000
-			bank_pay_money_to_account_dlg(npc, ch, tmw.chr_money(ch))
+			bank_pay_money_to_account_dlg(npc, ch, mana.chr_money(ch))
 		end
 	elseif v == 3 then --- Geld von Konto abheben
 		local v2 = do_choice(npc, ch, "500", "1000", "2000", "5000", "10000", "25000", "50000", "Alles")

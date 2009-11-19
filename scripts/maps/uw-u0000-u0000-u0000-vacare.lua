@@ -23,7 +23,7 @@ atinit(function()
  create_inter_map_warp_trigger(19002, 19002, 19002, 19002) --- Intermap warp
  
  --- Erster Start
- tmw.trigger_create(115 * TILESIZE, 15 * TILESIZE, 50 * TILESIZE, 23 * TILESIZE, "firststart_trigger", 0, true) --- Erste Meldung
+ mana.trigger_create(115 * TILESIZE, 15 * TILESIZE, 50 * TILESIZE, 23 * TILESIZE, "firststart_trigger", 0, true) --- Erste Meldung
  
  --- Zelan
  create_npc("Zelan", 154, 132 * TILESIZE + 16, 21 * TILESIZE + 16, zelan_talk, nil) --- Zelan
@@ -58,12 +58,12 @@ end)
  	---local first = get_quest_var(ch, "vacare_first_start")
 	
 	---if first=="" then
-     tmw.chatmessage(ch, "Willkommen bei Invertika.")
-     tmw.chatmessage(ch, "Zum Bewegen benutze bitte die Cursortasten.")
-     tmw.chatmessage(ch, "Um mit NPCs zu reden, klicke mit der rechten Maustaste auf sie.") 
-	 tmw.chatmessage(ch, "Das Spiel kann auch mit der Maus gesteuert werden.") 
-	 tmw.chatmessage(ch, "Folge dem Weg und du wirst das Vacare finden.") 
-	 ---tmw.chr_set_quest(ch, "vacare_first_start", 1)
+     mana.chatmessage(ch, "Willkommen bei Invertika.")
+     mana.chatmessage(ch, "Zum Bewegen benutze bitte die Cursortasten.")
+     mana.chatmessage(ch, "Um mit NPCs zu reden, klicke mit der rechten Maustaste auf sie.") 
+	 mana.chatmessage(ch, "Das Spiel kann auch mit der Maus gesteuert werden.") 
+	 mana.chatmessage(ch, "Folge dem Weg und du wirst das Vacare finden.") 
+	 ---mana.chr_set_quest(ch, "vacare_first_start", 1)
   ---end
  end
 
@@ -98,8 +98,8 @@ function ancoise_talk(npc, ch)
 								     "Nein.")
 								   
 		  if v == 1 then
-			  tmw.chr_set_quest(ch, "vacare_fence", 1)
-			  tmw.chr_warp(ch,  19002, 141 * TILESIZE, 42 * TILESIZE) 
+			  mana.chr_set_quest(ch, "vacare_fence", 1)
+			  mana.chr_warp(ch,  19002, 141 * TILESIZE, 42 * TILESIZE) 
 			  do_message(npc, ch, "Bitteschön.")
 			  break;
 	      elseif v == 2 then
@@ -116,12 +116,12 @@ end
 function kolbert_talk(npc, ch)
 	if (get_quest_var(ch, "vacare_first_weapon")=="") then
       do_message(npc, ch, "Du willst kämpfen? Nun gut zum Kämpfen benötigtst du erst einmal eine Waffe.")
-      tmw.chr_inv_change(ch, 10001, 1)
+      mana.chr_inv_change(ch, 10001, 1)
       do_message(npc, ch, "So hier hast du einen kleinen Dolch. Nun gehe in das Inventory und rüste ihn mittels Equip aus.")
 	  do_message(npc, ch, "Nun begib dich in die Nähe eines Gegners und drücke a. Dadurch wird der Gegner anvisiert.")
 	  do_message(npc, ch, "Nun musst du in seiner Nähe die Strg Taste drücken und schon greifst du ihn an.")
 	  do_message(npc, ch, "Viel Erfolg.")
-      tmw.chr_set_quest(ch, "vacare_first_weapon", 1)
+      mana.chr_set_quest(ch, "vacare_first_weapon", 1)
 	else
 	  do_message(npc, ch, "Du schon wieder. Du weist es doch. Zum Gegner, a drücken und  dann Strg um zum Angriff überzugehen. Einfach oder?")
 	  do_message(npc, ch, "Noch ein kleiner Tipp. Mit y kannst du Gegenstände aufheben die ein Gegner verliert.")
@@ -143,8 +143,8 @@ function valaia_talk(npc, ch)
 	
 	if (get_quest_var(ch, "vacare_first_trade")=="") then
       do_message(npc, ch, "Ich sehe du hast gar kein Geld bei dir. Nun ja ich will mal nicht so sein, nimm ein bischen von meinem.")
-      tmw.chr_money_change(ch, 500)
-      tmw.chr_set_quest(ch, "vacare_first_trade", 1)
+      mana.chr_money_change(ch, 500)
+      mana.chr_set_quest(ch, "vacare_first_trade", 1)
     end
 	
     do_message(npc, ch, "Also fangen wir am besten mit dem Handel zwischen dir und einem NPC. Du kannst bei einem NPC Dinge kaufen und auch verkaufen. Was du kaufen kannst und was nicht legt der NPC fest. Was möchtest du tun?")
@@ -155,9 +155,9 @@ function valaia_talk(npc, ch)
 									 "Nichts danke.")
 								   
 		if v == 1 then
-			tmw.npc_trade(npc, ch, false, { {10001, 10, 20} })
+			mana.npc_trade(npc, ch, false, { {10001, 10, 20} })
 		elseif v == 2 then
-			tmw.npc_trade(npc, ch, true, { {10001, 10, 20} })
+			mana.npc_trade(npc, ch, true, { {10001, 10, 20} })
 		elseif v == 3 then
 			break
 		end
@@ -205,7 +205,7 @@ function vacare_talk(npc, ch)
 								     "Nein.")
 								   
 		if v == 1 then
-			tmw.chr_warp(ch,  61, 179 * TILESIZE, 151 * TILESIZE) 
+			mana.chr_warp(ch,  61, 179 * TILESIZE, 151 * TILESIZE) 
 			do_message(npc, ch, "Willkommen in Selphi Timlet. Das Abenteuer beginnt...")
 			break;
 		elseif v == 2 then

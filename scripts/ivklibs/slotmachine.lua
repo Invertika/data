@@ -46,9 +46,9 @@ function slotmachine_talk(npc, ch)
 	elseif v == 8 then break
 	end
 	
-	local PlayerMoney=tmw.chr_money(ch)
+	local PlayerMoney=mana.chr_money(ch)
 	if PlayerMoney >= money then
-	  tmw.chr_money_change(ch, -money)
+	  mana.chr_money_change(ch, -money)
 	
 	  local arrayCount = table.getn( SLOT_MACHINE_FIELDS ) -- Anzahl der Elemente  ermitteln
 	  local r1 = math.random(1, arrayCount)
@@ -57,7 +57,7 @@ function slotmachine_talk(npc, ch)
 	
 	  if(r1 == r2 and r2 == r3) then
 	    do_message(npc, ch, string.format("%s - %s - %s\nOh Gratulation du hast gewonnen :)", SLOT_MACHINE_FIELDS[r1], SLOT_MACHINE_FIELDS[r2], SLOT_MACHINE_FIELDS[r3]))	
-		tmw.chr_money_change(ch, money*10) --- TODO Jackpot Variable
+		mana.chr_money_change(ch, money*10) --- TODO Jackpot Variable
 	  else
 	    do_message(npc, ch, string.format("%s - %s - %s\nMmm du hast leider verloren.", SLOT_MACHINE_FIELDS[r1], SLOT_MACHINE_FIELDS[r2], SLOT_MACHINE_FIELDS[r3]))	
 	  end	

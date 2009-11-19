@@ -30,7 +30,7 @@ function get_karma_score(ch)
 	local karma_score = get_quest_var(ch, "karma_score")
 	
 	if karma_score=="" then
-		tmw.chr_set_quest(ch, "karma_score", 0)
+		mana.chr_set_quest(ch, "karma_score", 0)
 		return 0
 	else
 		return tonumber(karma_score)
@@ -40,11 +40,11 @@ end
 --- Erhöht den Karmawert
 function increase_karma_score(ch, value)	
 	local karma_score = get_karma_score(ch)
-	tmw.chr_set_quest(ch, "karma_score", karma_score+value)
+	mana.chr_set_quest(ch, "karma_score", karma_score+value)
 end
 
 --- Senkt den Karmawert
 function decrease_karma_score(ch, value)	
 	local karma_score = get_karma_score(ch)
-	tmw.chr_set_quest(ch, "karma_score", karma_score-value)
+	mana.chr_set_quest(ch, "karma_score", karma_score-value)
 end

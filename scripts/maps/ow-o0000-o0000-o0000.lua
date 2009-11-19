@@ -59,8 +59,8 @@ atinit(function()
  create_npc("Palastwache", 123, 188 * TILESIZE + 16, 68 * TILESIZE + 16, palastwache_talk, nil) --- Palastwache
  
  --- Trigger für die Überwachung des Torbereiches
- tmw.trigger_create(145 * TILESIZE, 17 * TILESIZE, 5 * TILESIZE, 52 * TILESIZE, "wache_trigger", 1, true) --- Trigger Tor 1
- tmw.trigger_create(183 * TILESIZE, 17 * TILESIZE, 5 * TILESIZE, 52 * TILESIZE, "wache_trigger", 2, true) --- Trigger Tor 2 
+ mana.trigger_create(145 * TILESIZE, 17 * TILESIZE, 5 * TILESIZE, 52 * TILESIZE, "wache_trigger", 1, true) --- Trigger Tor 1
+ mana.trigger_create(183 * TILESIZE, 17 * TILESIZE, 5 * TILESIZE, 52 * TILESIZE, "wache_trigger", 2, true) --- Trigger Tor 2 
 end)
 
  function get_wache_say()
@@ -71,18 +71,18 @@ end)
  end
 
  function wache_trigger(ch, id)
-   if (tmw.being_type(ch) ~= TYPE_MONSTER) then --- Nur Player durchlassen
-	 local count = tmw.chr_inv_count(ch, 40009)
+   if (mana.being_type(ch) ~= TYPE_MONSTER) then --- Nur Player durchlassen
+	 local count = mana.chr_inv_count(ch, 40009)
 	 
 	 if count == 0 then
-	   local x = tmw.posX(ch)
-	   local y = tmw.posY(ch)
-	   tmw.chr_warp(ch, tmw.get_map_id(), x, 70 * TILESIZE) 
+	   local x = mana.posX(ch)
+	   local y = mana.posY(ch)
+	   mana.chr_warp(ch, mana.get_map_id(), x, 70 * TILESIZE) 
 	   
 	   if (id == 1) then
-	     tmw.being_say(wache1, get_wache_say())
+	     mana.being_say(wache1, get_wache_say())
 	   elseif (id == 2) then
-	     tmw.being_say(wache2, get_wache_say())
+	     mana.being_say(wache2, get_wache_say())
 	   end
 	 end
   end
@@ -107,10 +107,10 @@ function julia_talk(npc, ch)
 								     "Nichts. Danke.")
 								   
 		if v == 1 then
-			tmw.npc_trade(npc, ch, false, { {10001, 10, 20}, {20001, 10, 30}, {20002, 10, 50} })
+			mana.npc_trade(npc, ch, false, { {10001, 10, 20}, {20001, 10, 30}, {20002, 10, 50} })
 			break
 		elseif v == 2 then
-			tmw.npc_trade(npc, ch, true, { {10001, 10, 20}, {20001, 10, 30}, {20002, 10, 50} })
+			mana.npc_trade(npc, ch, true, { {10001, 10, 20}, {20001, 10, 30}, {20002, 10, 50} })
 			break
 		elseif v == 3 then
 			do_message(npc, ch, "Ich wünsche dir noch viel Spaß!")
@@ -129,8 +129,8 @@ function bruce_talk(npc, ch)
 	local firstVisit = get_quest_var(ch, "selphi_timlet_bruce_first_time")
 	
 	if firstVisit~="false" then
-		tmw.chr_money_change(ch, 1000)
-		tmw.chr_set_quest(ch, "selphi_timlet_bruce_first_time", "false")
+		mana.chr_money_change(ch, 1000)
+		mana.chr_set_quest(ch, "selphi_timlet_bruce_first_time", "false")
 		do_message(npc, ch, "Ahhh ich verstehe, du bist neu hier. Hier ein paar Münzen fuer den Anfang...")		
 	else
 		do_message(npc, ch, "Hi, schön dich wieder zu sehen.")
@@ -175,7 +175,7 @@ end
 function nobur_talk(npc, ch)
 	do_message(npc, ch, "Ich brauche Skorpionstachel. Eine ganze Menge, so zwei Dutzend oder drei, vielleicht auch vier Dutzend. Das wird eine leckere Suppe.")
 	
-	local count = tmw.chr_inv_count(ch, 40004) 
+	local count = mana.chr_inv_count(ch, 40004) 
 	
 	if count > 0 then
 	  do_message(npc, ch, "Ich sehe du hast ein paar Stachel. Magst du sie mir geben?")
@@ -186,11 +186,11 @@ function nobur_talk(npc, ch)
 								   
 		if v == 1 then
 			if (get_quest_var(ch, "selphi_timlet_norbur_scorpion_stingers")=="") then
-			  tmw.chr_set_quest(ch, "selphi_timlet_norbur_scorpion_stingers", count)
+			  mana.chr_set_quest(ch, "selphi_timlet_norbur_scorpion_stingers", count)
 			else
 			  local dbcount = get_quest_var(ch, "selphi_timlet_norbur_scorpion_stingers");
 			  dbcount = dbcount + count
-			  tmw.chr_set_quest(ch, "selphi_timlet_norbur_scorpion_stingers", dbcount)
+			  mana.chr_set_quest(ch, "selphi_timlet_norbur_scorpion_stingers", dbcount)
 			  
 			  if dbcount > 200 then
 			    do_message(npc, ch, "Also wenn ich es mir recht überlege, habe ich schon genug Stachel. Trotzdem danke.")
@@ -198,31 +198,31 @@ function nobur_talk(npc, ch)
 			  end
 			end
 			
-			tmw.chr_inv_change(ch, 40004, -count)
+			mana.chr_inv_change(ch, 40004, -count)
 		
 			if count < 10 then
 			  do_message(npc, ch, "Nimm diese Münzen als Dank.")
-			  tmw.chr_money_change(ch, 50) 
+			  mana.chr_money_change(ch, 50) 
 			  break;
 			elseif count < 20 then
 			  do_message(npc, ch, "Nimm diese Münzen als Dank.")
-			  tmw.chr_money_change(ch, 150) 
+			  mana.chr_money_change(ch, 150) 
 			  break;
 			elseif count < 30 then
 			  do_message(npc, ch, "Nimm diese Münzen als Dank.")
-			  tmw.chr_money_change(ch, 350) 
+			  mana.chr_money_change(ch, 350) 
 			  break;
 			elseif count < 40 then
 			  do_message(npc, ch, "Nimm diese Münzen als Dank.")
-			  tmw.chr_money_change(ch, 500) 
+			  mana.chr_money_change(ch, 500) 
 			  break;
 			elseif count < 150 then
 			  do_message(npc, ch, "Nimm diesen lustigen Hut als Dankeschön.")
-			  tmw.chr_inv_change(ch, 20004, 1)
+			  mana.chr_inv_change(ch, 20004, 1)
 			  break;
 			elseif count >= 150 then
 			  do_message(npc, ch, "Nimm diese Münzen als Dank.")
-			  tmw.chr_money_change(ch, 2500) 
+			  mana.chr_money_change(ch, 2500) 
 			  break;
 			end
 			

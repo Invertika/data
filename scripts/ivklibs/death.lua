@@ -27,10 +27,10 @@ function increase_death_counter(ch)
 	local death_counter = get_quest_var(ch, "death_counter")
 	
 	if death_counter=="" then
-		tmw.chr_set_quest(ch, "death_counter", 1)
+		mana.chr_set_quest(ch, "death_counter", 1)
 	else
 		death_counter = death_counter+1
-		tmw.chr_set_quest(ch, "death_counter", death_counter)
+		mana.chr_set_quest(ch, "death_counter", death_counter)
 	end
 end
 
@@ -48,7 +48,7 @@ end
 --- Berechnet eine bestimmte Menge Geld für den Tod
 --- und zieht sie dem Spieler ab
 function pay_death_price(ch)
-	local PlayerMoney=tmw.chr_money(ch)
+	local PlayerMoney=mana.chr_money(ch)
 	local DeathPay=PlayerMoney / 100 * PERCENT_MONEY_REDUCE_PER_DEATH
-    tmw.chr_money_change(ch, -DeathPay)
+    mana.chr_money_change(ch, -DeathPay)
 end

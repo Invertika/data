@@ -2,5 +2,5 @@
 -- The HP regeneration effect is handled separately based on the heal value in items.xml
 
 function use(user)
-	tmw.being_say(user, "*mampf*mampf*mampf*")
+	mana.being_say(user, "*mampf*mampf*mampf*")
 end

@@ -39,7 +39,7 @@ function nethek_talk(npc, ch)
 			local mapID = nethek.get_nethek_warp_map(ch)
 			local x = nethek.get_nethek_warp_x(ch)
 			local y = nethek.get_nethek_warp_y(ch)
-			tmw.chr_warp(ch, mapID, x, y) 
+			mana.chr_warp(ch, mapID, x, y) 
 			break;
 		elseif v == 2 then
 			break;
@@ -62,12 +62,12 @@ function monty_talk(npc, ch)
 	   return
 	elseif deathCount == 2500 then
 	   do_message(npc, ch, "Du bist nun schon ziemlich oft tot gewesen. Vielleicht hilft dir ein bischen Geld darüber hinweg.")
-	   tmw.chr_money_change(ch, 50000)
+	   mana.chr_money_change(ch, 50000)
 	   do_npc_close(npc, ch)
 	   return
 	elseif deathCount == 5000 then
 	   do_message(npc, ch, "Du stirbst wohl extra wegen dem Geld oder? Naja ich gebs dir, ich brauch kein Geld mehr.")
-	   tmw.chr_money_change(ch, 150000)
+	   mana.chr_money_change(ch, 150000)
 	   do_npc_close(npc, ch)
 	   return
 	end
