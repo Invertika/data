@@ -55,16 +55,17 @@ end)
 
 --- Erster Start
  function firststart_trigger(ch, id)
- 	---local first = get_quest_var(ch, "vacare_first_start")
+     local first = get_quest_var(ch, "vacare_first_start")
 	
-	---if first=="" then
+     if first=="" then
+     mana.chatmessage(ch, "ch id:." + ch)
      mana.chatmessage(ch, "Willkommen bei Invertika.")
      mana.chatmessage(ch, "Zum Bewegen benutze bitte die Cursortasten.")
      mana.chatmessage(ch, "Um mit NPCs zu reden, klicke mit der rechten Maustaste auf sie.") 
 	 mana.chatmessage(ch, "Das Spiel kann auch mit der Maus gesteuert werden.") 
 	 mana.chatmessage(ch, "Folge dem Weg und du wirst das Vacare finden.") 
-	 ---mana.chr_set_quest(ch, "vacare_first_start", 1)
-  ---end
+	 mana.chr_set_quest(ch, "vacare_first_start", 1)
+     end
  end
 
 function zelan_talk(npc, ch)
