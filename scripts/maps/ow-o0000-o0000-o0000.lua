@@ -41,6 +41,7 @@ atinit(function()
  create_npc("Tonver", 104, 17 * TILESIZE + 16, 181 * TILESIZE + 16, tonver_talk, nil) --- Tonver
  create_npc("Elmes", 142, 114 * TILESIZE + 16, 180 * TILESIZE + 16, elmes_talk, nil) --- Elmes
  create_npc("Nepuret", 126, 90 * TILESIZE + 16, 185 * TILESIZE + 16, nepuret_talk, nil) --- Nepuret 
+ create_npc("Nero", 120, 162 * TILESIZE + 16, 175 * TILESIZE + 16, nero_talk, nil) --- Nero
  
  create_npc("Wache", 121, 39 * TILESIZE + 16, 51 * TILESIZE + 16, colloseumwache_talk, nil) --- Colloseumwache
  create_npc("Wache", 121, 44 * TILESIZE + 16, 51 * TILESIZE + 16, colloseumwache_talk, nil) --- Colloseumwache
@@ -314,6 +315,16 @@ function nepuret_talk(npc, ch)
 	  "Nein, ich stehe hier nicht zum Spaß. Ich achte darauf das niemand gefährliches sich diesem Haus nähert.",
 	  "Man muss immer achtsam sein, sonst ist man plötzlich weg vom Fenster.",
 	  "Ich diene bereits seit vielen Jahren als persönliche Wache von Averin."))
+	  do_npc_close(npc, ch)
+end
+
+function nero_talk(npc, ch)
+	do_message(npc, ch, invertika.get_random_element("Wo man den königlichen Passierschein bekommt? Ja das weiss ich *kicher*.",
+	  "Averin vergibt die königlichen Passierscheine.",
+	  "Ja, ich habe einen königlichen Passierschein! Ob du ihn bekommst? Nein, besorge dir selber einen!",
+	  "Averin... la la la - Frag dort!",
+	  "Ich habe es mit dem Feuer... ich kann nicht von ihm lassen.",
+	  "Averin ist die Person mit der du reden solltest, nicht ich!"))
 	  do_npc_close(npc, ch)
 end
 
