@@ -16,6 +16,59 @@
 
 require "data/scripts/libs/npclib"
 
+require "data/scripts/libs/npclib"
+require "data/scripts/ivklibs/invertika"
+
 atinit(function()
- ---create_npc("Banker", 122, 180 * TILESIZE + 16, 160 * TILESIZE + 16, banker.banker_talk, nil) --- Banker (Debug)
+ create_npc("Averin", 125, 175 * TILESIZE + 16, 25 * TILESIZE + 16, averin_talk, nil) --- Elmo
 end)
+
+function averin_talk(npc, ch)
+	do_message(npc, ch, "Hallo, was ist dein Begehr?")
+
+	if (get_quest_var(ch, "selphi_timlet_royal_pass")=="") then ---Keine Questvar gesetzt
+	  while true do 
+		  local v = do_choice(npc, ch, "Wer bist du?",
+					      "Ich suche einen königlichen Passierschein.",
+					      "Nichts. Danke.")
+								    
+		  if v == 1 then
+			  do_message(npc, ch, invertika.get_random_element("Ich bin Averin, Chef der königlichen Palastwache.",
+			  "Mein Name ist Averin. Mir untersteht die königliche Palastwache.",
+			  "Ich bin Averin und bin zuständig für die Sicherheit des Palastes.",
+			  "Mein Name tut nichs zur Sache, oder doch?",
+			  "Ich bin für die Sicherheit im Selphi Timlet zuständig.",
+			  "Ich sichere mit den Palastwachen die Stadt."))
+			  break
+		  elseif v == 2 then
+			  do_message(npc, ch, "Du möchtest also einen königlichen Passierschein? Nun gut, aber vorher musst du mir einen Gefallen tun. Bringe diesen Brief bitte in die Botschaft in Roststock.")
+			  mana.chr_inv_change(ch, 40011, 1)
+			  mana.chr_set_quest(ch, "selphi_timlet_royal_pass", 1)
+			  break
+		  elseif v == 3 then
+			  do_message(npc, ch, "Dann gehe wie du gekommen bist.")
+			  break
+		  end
+	  end
+	else if (get_quest_var(ch, "selphi_timlet_royal_pass")==1) then
+	  local count = mana.chr_inv_count(ch, 40012) 
+	
+	  if count > 0 then
+	      mana.chr_inv_change(ch, 40012, -1)
+	      mana.chr_inv_change(ch, 40009, 1)
+	      mana.chr_set_quest(ch, "selphi_timlet_royal_pass", 2)
+	      do_message(npc, ch, "Danke für deine Hilfe. Hier ist dein königlicher Passierschein."))
+	  else
+	      do_message(npc, ch, invertika.get_random_element("Wo ist die Antwort?",
+	      "Du solltest doch eine Antwort von der Botschaft mitbringen?",
+	      "Hast du das Antwortschtreiben vergessen?"))
+	  end
+	end
+	else if (get_quest_var(ch, "selphi_timlet_royal_pass")==2) then --- Hier kann der Quest weitergeführt werden
+	  do_message(npc, ch, invertika.get_random_element("Danke für deine Hilfe.",
+	  "Wenn ich wieder mal jemanden brauche, sage ich es dir.",
+	  "Im Moment habe ich nichts für dich."))
+	end
+
+	do_npc_close(npc, ch)
+end
