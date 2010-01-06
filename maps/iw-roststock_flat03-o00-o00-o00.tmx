@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="orthogonal" width="60" height="60" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="music" value="faith.ogg"/>
+ </properties>
+ <tileset firstgid="1" name="arena" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/arena.png"/>
+ </tileset>
+ <tileset firstgid="257" name="inn" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/inn.png"/>
+ </tileset>
+ <tileset firstgid="513" name="woodland_indoor" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/woodland_indoor.png"/>
+ </tileset>
+ <tileset firstgid="769" name="collision" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision.png"/>
+ </tileset>
+ <tileset firstgid="771" name="inn2" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/ivk_inn1.png"/>
+ </tileset>
+ <tileset firstgid="1027" name="desert1" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/desert1.png"/>
+ </tileset>
+ <tileset firstgid="1283" name="inn_x2" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/inn_x2.png"/>
+ </tileset>
+ <tileset firstgid="1299" name="inn_x3" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/inn_x3.png"/>
+ </tileset>
+ <layer name="Ground" width="60" height="60">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3PsQ4BURRFUSMEJQ2KKWhQK/D/HzWtUygneZmIvIlZxcrNPd3umtmsAwAAAGCyVrGOTTQxj0UsP3foX7unZB+HOMY2dl+q3VNyiWvc4hTnAdqerXZPySOe8Yr7QG3PVrunZGjjlHv71O7Rq1evXr169Y6PXr169eodJ73/3QsAAADAb70BBXoLDUA4AAA=
+  </data>
+ </layer>
+ <layer name="Fringe" width="60" height="60">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3WXwoBQQDH8TW1J/DEgxe5gGNwA27APTiA4gacQ14pf14pf155wCvlJ2prW+w2RbO+n/q1u81Mza+pbTwPAAAAAAAA+G/ZzOc5UxO8lzS/GGONi8bqOVHW5vNcF+V8z8v7wfdSPVehrhWdbTWl57tX10Oob01d6ynte1HX67Nv4dmxoWczpX0B13RMkCRjrpqpy1xZRHR6N+aioXpslK2yU0Ym3pir7p2Oykk5R/R9NQZ3/Nv/CnBZS3f9tsV933b9t3W1157Ffm3Xf1tfex1Y7Nd2PX6rbB4BAAAAAABAcjcBwXHLQDgAAA==
+  </data>
+ </layer>
+ <layer name="Over" width="60" height="60">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAAAAAAADwZkvEChtAOAAA
+  </data>
+ </layer>
+ <layer name="Collision" width="60" height="60" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3QWwqAMBADQNH739lPRaRYX13CBIJCa93pvEzTHNZWRs/Gy8vLy8vLm1Fe3qTy8iaVlzepvLxJHeW9kv3e/fP4XtXbG95s79X74OXlHeNtrfd8y8tbwfskvLy8vLy8d//11H52VmXvm6nu7Znn6/OreP+6T97xs/Hy8vLy8vJmlJc3qby8SeXdsgL2KV7cQDgAAA==
+  </data>
+ </layer>
+ <objectgroup name="Object" width="60" height="60">
+  <object name="External Map Events" type="SCRIPT" x="-2560" y="0">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/iw-roststock_flats-o00-o00-o00.lua"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
