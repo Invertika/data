@@ -165,7 +165,7 @@ end
 
 function saria_talk(npc, ch)
 	do_message(npc, ch, invertika.get_random_element("Die Wueste ist riesig, drum bleib ich hier.",
-	  "Huete dich vor der Wueste. Dort treiben rote Skropione ihr Unwesen.",
+	  "Hüte dich vor der Wüste. Dort treiben rote Skropione ihr Unwesen.",
 	  "Ey da nicht anfassen, da habe ich einen Sonnenbrand.",
 	  "Alle meine Skorpione, sind in der Wüste.",
 	  "Ich liebe Staedte mit Mauern.",

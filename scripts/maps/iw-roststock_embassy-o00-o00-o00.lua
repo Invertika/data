@@ -17,5 +17,33 @@
 require "data/scripts/libs/npclib"
 
 atinit(function()
- ---create_npc("Banker", 122, 180 * TILESIZE + 16, 160 * TILESIZE + 16, banker.banker_talk, nil) --- Banker (Debug)
+ create_npc("Botschafter", 148, 51 * TILESIZE + 16, 31 * TILESIZE + 16, botschafter_talk, nil)
 end)
+
+function botschafter_talk(npc, ch)
+	if (get_quest_var(ch, "selphi_timlet_royal_pass")=="") then ---Keine Questvar gesetzt
+	do_message(npc, ch, invertika.get_random_element("Ich bin hier der Botschafter. Ich vertrete Selphi Timlet in Roststock.",
+	  "Ich bin schon viele Jahre hier.",
+	  "Kenne ich dich?",
+	  "Was ist denn? Nichts. Gut dann lass mich weiter arbeiten.",
+	  "Im Moment nicht ich bin beschäftigt",
+	  "Ich würde mal gerne zum Meer."))
+	  do_npc_close(npc, ch)
+	elseif (get_quest_var(ch, "selphi_timlet_royal_pass")==1)
+	   local count = mana.chr_inv_count(ch, 40011) 
+	   
+	   if count > 0 then
+	      mana.chr_inv_change(ch, 40011, -1)
+	      mana.chr_inv_change(ch, 40012, 1)
+	      mana.chr_set_quest(ch, "selphi_timlet_royal_pass", 2)
+	      do_message(npc, ch, "Oh ein Brief. Warte einen Moment... Hier nimm diese Antwort und bringe sie Averin."))
+	   end
+	elseif (get_quest_var(ch, "selphi_timlet_royal_pass")>=2)
+	  do_message(npc, ch, invertika.get_random_element("Danke für deine Hilfe.",
+	  "Dankeschön.",
+	  "Nein es ist nichts mehr.",
+	  "Ich muss nun weiterarbeiten."))
+	end
+
+	do_npc_close(npc, ch)
+end

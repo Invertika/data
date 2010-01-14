@@ -50,21 +50,24 @@ function averin_talk(npc, ch)
 			  break
 		  end
 	  end
-	else if (get_quest_var(ch, "selphi_timlet_royal_pass")==1) then
+	elseif (get_quest_var(ch, "selphi_timlet_royal_pass")==1) then --- Hier kann der Quest weitergeführt werden
+	  do_message(npc, ch, invertika.get_random_element("Mach die schnell auf den Weg.",
+	  "Was machst du noch hier? Schnell, der Brief ist wichtig.",
+	  "Du bist ja immer noch hier? Müsstest du nicht längst auf dem Weg nach Roststock sein?"))
+	elseif (get_quest_var(ch, "selphi_timlet_royal_pass")==2) then
 	  local count = mana.chr_inv_count(ch, 40012) 
 	
 	  if count > 0 then
 	      mana.chr_inv_change(ch, 40012, -1)
 	      mana.chr_inv_change(ch, 40009, 1)
-	      mana.chr_set_quest(ch, "selphi_timlet_royal_pass", 2)
+	      mana.chr_set_quest(ch, "selphi_timlet_royal_pass", 3)
 	      do_message(npc, ch, "Danke für deine Hilfe. Hier ist dein königlicher Passierschein."))
 	  else
 	      do_message(npc, ch, invertika.get_random_element("Wo ist die Antwort?",
 	      "Du solltest doch eine Antwort von der Botschaft mitbringen?",
 	      "Hast du das Antwortschtreiben vergessen?"))
 	  end
-	end
-	else if (get_quest_var(ch, "selphi_timlet_royal_pass")==2) then --- Hier kann der Quest weitergeführt werden
+	elseif (get_quest_var(ch, "selphi_timlet_royal_pass")==3) then
 	  do_message(npc, ch, invertika.get_random_element("Danke für deine Hilfe.",
 	  "Wenn ich wieder mal jemanden brauche, sage ich es dir.",
 	  "Im Moment habe ich nichts für dich."))
