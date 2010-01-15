@@ -28,7 +28,6 @@ function botschafter_talk(npc, ch)
 	  "Was ist denn? Nichts. Gut dann lass mich weiter arbeiten.",
 	  "Im Moment nicht ich bin beschäftigt",
 	  "Ich würde mal gerne zum Meer."))
-	  do_npc_close(npc, ch)
 	elseif (get_quest_var(ch, "selphi_timlet_royal_pass")==1)
 	   local count = mana.chr_inv_count(ch, 40011) 
 	   

@@ -17,5 +17,15 @@
 require "data/scripts/libs/npclib"
 
 atinit(function()
- ---create_npc("Banker", 122, 180 * TILESIZE + 16, 160 * TILESIZE + 16, banker.banker_talk, nil) --- Banker (Debug)
+ create_npc("Björn", 160, 75 * TILESIZE + 16, 24 * TILESIZE + 16, bjoern_talk, nil) --- Banker (Debug)
 end)
+
+function bjoern_talk(npc, ch)
+	do_message(npc, ch, invertika.get_random_element("Velera sucht mich? Einen Schluck trinke ich aber noch.",
+	  "Lustig hier, oder?",
+	  "Du möchtest auch was trinken, dann ab zum Barmann!",
+	  "Prost. Wer? Velera? Joah meine Freundin.",
+	  "Ja schon wieder ein Sandsturm. Jeden Tag einer...",
+	  "Willkommen in Roststock. Trink doch was mit.")) 
+	 do_npc_close(npc, ch)
+end

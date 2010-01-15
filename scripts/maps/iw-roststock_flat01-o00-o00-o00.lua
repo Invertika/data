@@ -17,5 +17,15 @@
 require "data/scripts/libs/npclib"
 
 atinit(function()
- ---create_npc("Banker", 122, 180 * TILESIZE + 16, 160 * TILESIZE + 16, banker.banker_talk, nil) --- Banker (Debug)
+ create_npc("Velera", 175, 24 * TILESIZE + 16, 27 * TILESIZE + 16, velera_talk, nil)
 end)
+
+function velera_talk(npc, ch)
+	do_message(npc, ch, invertika.get_random_element("Ja schon wieder ein Sandsturm. So wie immer...",
+	  "Warum Roststock Roststock heißt? Also wenn du da nicht selbst draufkommst.",
+	  "Ich wohne hier seitdem ich denken kann...",
+	  "Mein Freund Björn ist, schon wieder nicht hier...",
+	  "Ich bin Velera. Wie bitte? Ja ich bin vergeben.",
+	  "Heute ist mal wieder einer dieser seltsamen Tage.")) 
+	 do_npc_close(npc, ch)
+end
