@@ -61,7 +61,7 @@ function averin_talk(npc, ch)
 	      mana.chr_inv_change(ch, 40012, -1)
 	      mana.chr_inv_change(ch, 40009, 1)
 	      mana.chr_set_quest(ch, "selphi_timlet_royal_pass", 3)
-	      do_message(npc, ch, "Danke für deine Hilfe. Hier ist dein königlicher Passierschein."))
+	      do_message(npc, ch, "Danke für deine Hilfe. Hier ist dein königlicher Passierschein.")
 	  else
 	      do_message(npc, ch, invertika.get_random_element("Wo ist die Antwort?",
 	      "Du solltest doch eine Antwort von der Botschaft mitbringen?",

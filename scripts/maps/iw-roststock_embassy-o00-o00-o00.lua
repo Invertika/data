@@ -28,16 +28,16 @@ function botschafter_talk(npc, ch)
 	  "Was ist denn? Nichts. Gut dann lass mich weiter arbeiten.",
 	  "Im Moment nicht ich bin beschäftigt",
 	  "Ich würde mal gerne zum Meer."))
-	elseif (get_quest_var(ch, "selphi_timlet_royal_pass")==1)
+	elseif (get_quest_var(ch, "selphi_timlet_royal_pass")==1) then
 	   local count = mana.chr_inv_count(ch, 40011) 
 	   
 	   if count > 0 then
 	      mana.chr_inv_change(ch, 40011, -1)
 	      mana.chr_inv_change(ch, 40012, 1)
 	      mana.chr_set_quest(ch, "selphi_timlet_royal_pass", 2)
-	      do_message(npc, ch, "Oh ein Brief. Warte einen Moment... Hier nimm diese Antwort und bringe sie Averin."))
+	      do_message(npc, ch, "Oh ein Brief. Warte einen Moment... Hier nimm diese Antwort und bringe sie Averin.")
 	   end
-	elseif (get_quest_var(ch, "selphi_timlet_royal_pass")>=2)
+	elseif (get_quest_var(ch, "selphi_timlet_royal_pass")>=2) then
 	  do_message(npc, ch, invertika.get_random_element("Danke für deine Hilfe.",
 	  "Dankeschön.",
 	  "Nein es ist nichts mehr.",
