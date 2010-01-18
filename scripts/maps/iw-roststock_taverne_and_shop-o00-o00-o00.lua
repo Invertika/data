@@ -15,6 +15,7 @@
 ----------------------------------------------------------------------------------
 
 require "data/scripts/libs/npclib"
+require "data/scripts/ivklibs/invertika"
 
 atinit(function()
  create_npc("Björn", 160, 75 * TILESIZE + 16, 24 * TILESIZE + 16, bjoern_talk, nil) --- Banker (Debug)
