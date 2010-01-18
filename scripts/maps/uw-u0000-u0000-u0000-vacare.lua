@@ -173,17 +173,15 @@ function valaia_talk(npc, ch)
 end
 
 function asam_talk(npc, ch)
-    do_message(npc, ch, "Bedenke bitte das es auch einige Regeln gibt an die du dich halten musst. Also dann wollen wir mal.")
+    do_message(npc, ch, "Die erste Devise von Invertika ist, das es so wenige Regeln wie möglich geben soll. Ganz einfach aus dem Grund das ich der Meinung bin das jede Regel doch eine gewisse Einschränkung darstellt. Doch gibt es einige Empfehlungen: ")
 
-	do_message(npc, ch, "Regel Nummero 1: Seit nett zueinander.")
+	do_message(npc, ch, "Nummero 1: Seit nett zueinander.")
 	
-	do_message(npc, ch, "Regel Nummero 2: Es sollen keine gewaltverherrlichenden, sexuellen, rassistischen etc. Dinge als Charaktername benutzt werden.")
+	do_message(npc, ch, "Nummero 2: Kein SPAM!")
 	
-	do_message(npc, ch, "Regel Nummero 3: Kein SPAM!")
+	do_message(npc, ch, "Nummero 3: Die Spielsprache ist Deutsch. Dies bezieht sich nur auf den offnen Chat (im Fenster General). In Gildenchats darf natürlich jede andere Sprache gesprochen werden.")
 	
-	do_message(npc, ch, "Regel Nummero 4: Die Spielsprache ist Deutsch. Dies bezieht sich nur auf den offnen Chat (im Fenster General). In Gildenchats darf natürlich jede andere Sprache gesprochen werden.")
-	
-    do_message(npc, ch, "Das waren sie schon. Vier Regeln die für ein gutes Klima sorgen sollen. Ich wünsche dir viel Spaß.")
+    do_message(npc, ch, "Wie gesagt sind dies Empfehlungen, aber wer weiß was die anderen Spieler machen wenn sie euch beim Spammen erwischen :) Ich wünsche dir viel Spaß.")
 	do_npc_close(npc, ch)
 end
 
