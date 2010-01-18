@@ -64,7 +64,7 @@ end)
      mana.chatmessage(ch, "Um mit NPCs zu reden, klicke mit der rechten Maustaste auf sie.") 
 	 mana.chatmessage(ch, "Das Spiel kann auch mit der Maus gesteuert werden.") 
 	 mana.chatmessage(ch, "Folge dem Weg und du wirst das Vacare finden.") 
-	 mana.chr_set_quest(ch, "vacare_first_start", 1)
+	 ---mana.chr_set_quest(ch, "vacare_first_start", 1)
      ---end
  end
 
