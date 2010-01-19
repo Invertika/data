@@ -5,7 +5,7 @@
 -- anderer Dinge.                                                               --
 --                                                                              --
 ----------------------------------------------------------------------------------
---  Copyright 2008 The Invertika Development Team                               --
+--  Copyright 2008-2010 The Invertika Development Team                               --
 --                                                                              --
 --  This file is part of Invertika.                                             --
 --                                                                              --
@@ -15,6 +15,7 @@
 ----------------------------------------------------------------------------------
 
 require "data/scripts/libs/npclib"
+require "data/scripts/ivklibs/invertika"
 
 atinit(function()
  create_npc("Velera", 175, 24 * TILESIZE + 16, 27 * TILESIZE + 16, velera_talk, nil)

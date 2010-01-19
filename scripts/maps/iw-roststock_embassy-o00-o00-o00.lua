@@ -5,7 +5,7 @@
 -- anderer Dinge.                                                               --
 --                                                                              --
 ----------------------------------------------------------------------------------
---  Copyright 2008 The Invertika Development Team                               --
+--  Copyright 2008-2010 The Invertika Development Team                               --
 --                                                                              --
 --  This file is part of Invertika.                                             --
 --                                                                              --
@@ -15,6 +15,7 @@
 ----------------------------------------------------------------------------------
 
 require "data/scripts/libs/npclib"
+require "data/scripts/ivklibs/invertika"
 
 atinit(function()
  create_npc("Botschafter", 162, 51 * TILESIZE + 16, 31 * TILESIZE + 16, botschafter_talk, nil)

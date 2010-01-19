@@ -5,7 +5,7 @@
 -- anderer Dinge.                                                               --
 --                                                                              --
 ----------------------------------------------------------------------------------
---  Copyright 2008 The Invertika Development Team                               --
+--  Copyright 2008-2010 The Invertika Development Team                          --
 --                                                                              --
 --  This file is part of Invertika.                                             --
 --                                                                              --
@@ -15,7 +15,18 @@
 ----------------------------------------------------------------------------------
 
 require "data/scripts/libs/npclib"
+require "data/scripts/ivklibs/invertika"
 
 atinit(function()
- ---create_npc("Banker", 122, 180 * TILESIZE + 16, 160 * TILESIZE + 16, banker.banker_talk, nil) --- Banker (Debug)
+ create_npc("Marle", 158, 27 * TILESIZE + 16, 29 * TILESIZE + 16, marle_talk, nil)
 end)
+
+function marle_talk(npc, ch)
+	do_message(npc, ch, invertika.get_random_element("Ich würde gerne mal Effendi besuchen.",
+	  "Die beste Freundin von Effendi ist Anne. habe ich zumindestens gehört.",
+	  "Eigentlich heißt er garnicht Effendi sondern Effendi der Erste.",
+	  "Du hättest dir ruhig die Schuhe abputzen können. Jetzt ist hier alles voller Sand.",
+	  "In den westlichen Gegenend soll es manchmal sogar Schnee geben habe ich gehört.",
+	  "Frühler sammelte ich Porzellanfiguren.")) 
+	 do_npc_close(npc, ch)
+end
