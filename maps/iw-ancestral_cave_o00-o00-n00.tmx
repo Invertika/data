@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="70" height="70" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="music" value="cavesong.ogg"/>
+ </properties>
+ <tileset firstgid="1" name="collision" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision.png"/>
+ </tileset>
+ <tileset firstgid="3" name="ivk_special1" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/ivk_special1.png"/>
+ </tileset>
+ <tileset firstgid="259" name="cave" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave.png"/>
+ </tileset>
+ <tileset firstgid="387" name="cave_x2" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/cave_x2.png"/>
+ </tileset>
+ <tileset firstgid="403" name="cave_bilevel" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave_bilevel.png"/>
+ </tileset>
+ <tileset firstgid="659" name="cave_ani_wetwall" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave_ani_wetwall.png"/>
+ </tileset>
+ <layer name="Ground" width="70" height="70">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3WvUoDQRSG4VhZqY2KjdpoYaE2ioitIuIFpFV7IckFiKZR79pPyMI6zM+ZZYWZ3TfwFJswQ+Zlc7LTtclkCgAAAAAAAACA7BTwHUpzIsdyZdR+Wde4jmS7gLPHXMul3Bt9ypd8Z6xxXchNAWePeZA7WXe8et77tSGbshX4vO0t8P6tPBZw9pg9eZLnhJfVmfblQA5X15a1vr12Czh7qstM5gmLQBfLWt9edKELXeiS6vIuH5mWI+jSFV3G0eVUzuQ8s0PznNM8Bw2tS1czZx+6/J3PS7qMar7kzhG6+OdIzV0sz2bNXMidIzV36XNuDGm+WGaDdW4MsUtsNljnhrVnTV1is8EyN3wNQj1r6uI7W87vx9cg1LO2Lu7Z2tepRtb/ohq7uGdrX3edMUPoEpsVOfdDaq9au/R5b/j2qrVL13vDuletXf4bXersAgAAAAAAAAB9+wFfaHNCkEwAAA==
+  </data>
+ </layer>
+ <layer name="Fringe" width="70" height="70">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3YSwrCMBAA0OYePYJXcK8L9248hd2IuPJzFa+pgkUJNTbSQmvfg6FMST9JJwm0KAAAAAAAAPp1CkVxvscl5F236Od1BmEW0nnKuttXGRTj8jJ/6/sv47LKnG9jVIbPeVP/NyMek+09qmc8aqN6y1dRXjbktSqKNs8cm/g717WQqpe4bZv7Dt21Zbt6PQlRnjKF9WWqltHx23nyHcyfv9V23U21Vx90RS1Bd3L+S4zdcUJ9JW2nFiDbvuN5M6X9h9/YtwEAAAAAgL7cAABAIQ6QTAAA
+  </data>
+ </layer>
+ <layer name="Over" width="70" height="70">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3PMQ0AMAwEsc/cIAh/oGXRdLClA3AJAAAAAAAAAAAAAAAAAPznVDILdW2fAwAAAAC8dQGxLO71kEwAAA==
+  </data>
+ </layer>
+ <layer name="Collision" width="70" height="70">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3S0QqDMAxAUfH/P3rvJZupqInrKRwY2pXm4r5t2w4AAAAAAMBlMmvcV33nTnTRRRdddOndZYV+V67qWXTp1WXcP55TPUuX72XVLpn3K3aZXdWzPN0l2h/9t3qWDl2O9r3dal2eWvvwu7vortFM0buzXatnvrvLzPzfnneVmT3TZebM6plnukRzzHwnq3Y5anS2YVdXdYlm/5cu0b1/Pcuso7O6ys6SbZA5q3rmp7tkz6qe+WyXu1f1zLoAAAAAAPTwAT3iMJCQTAAA
+  </data>
+ </layer>
+ <objectgroup name="Object" width="70" height="70" x="-1" y="-1">
+  <object name="External Map Events" type="SCRIPT" x="0" y="0">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/iw-ancestral_cave_o00-o00-n01-n09.lua"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
