@@ -295,6 +295,24 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
             magical-defence="0"
             mutation="50"
             />
+         <!-- sehr agressiv und gefährlich -->   
+            
+            <behavior
+            aggressive="true"
+            cowardly="false"
+            track-range="6"
+            stroll-range="1"
+            attack-distance="64"
+            />
+            <attack id="1"
+            priority="1"
+            type="physical"
+            element="fire"
+            pre-delay="5"
+            aft-delay="10"
+            damage-factor="1"
+            range="64"
+            />
     </monster>
 	
 	<monster id="8" name="Fledermaus">
