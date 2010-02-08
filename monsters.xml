@@ -44,8 +44,8 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
             hp="1000"
             size="4"
             speed="2.0"
-            attack-min="10"
-            attack-delta="2"
+            attack-min="100"
+            attack-delta="25"
             attack-magic="0"
             hit="10"
             evade="5"
@@ -130,7 +130,7 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
             hp="20"
             size="8"
             speed="6.0"
-            attack-min="10"
+            attack-min="13"
             attack-delta="2"
             attack-magic="0"
             hit="10"
@@ -212,13 +212,20 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
         <drop item="30001" percent="9"/>
         <drop item="30002" percent="1"/>
         <drop item="30004" percent="7.5"/>
-		<exp>50</exp>
+		<exp>75</exp>
+		<behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
         <attributes
-            hp="20"
+            hp="50"
             size="4"
             speed="2.0"
-            attack-min="10"
-            attack-delta="2"
+            attack-min="25"
+            attack-delta="5"
             attack-magic="0"
             hit="10"
             evade="5"
@@ -240,7 +247,7 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
         <drop item="30005" percent="5"/>
         <exp>50</exp>
         <attributes
-            hp="20"
+            hp="25"
             size="8"
             speed="6.0"
             attack-min="20"
@@ -283,20 +290,18 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
         <drop item="30010" percent="8"/>
 		<exp>100</exp>
         <attributes
-            hp="200"
+            hp="100"
             size="4"
             speed="7.0"
-            attack-min="50"
-            attack-delta="20"
+            attack-min="30"
+            attack-delta="10"
             attack-magic="8"
             hit="10"
             evade="5"
             physical-defence="30"
             magical-defence="0"
             mutation="50"
-            />
-         <!-- sehr agressiv und gefährlich -->   
-            
+            />           
             <behavior
             aggressive="true"
             cowardly="false"
@@ -324,12 +329,19 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
         <drop item="30012" percent="1.5"/>
         <drop item="40006" percent="0.7"/>
 		<exp>80</exp>
+		<behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+         />
         <attributes
-            hp="20"
+            hp="50"
             size="4"
             speed="2.0"
-            attack-min="10"
-            attack-delta="2"
+            attack-min="20"
+            attack-delta="4"
             attack-magic="0"
             hit="10"
             evade="5"
