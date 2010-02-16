@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
 <map version="1.0" orientation="orthogonal" width="70" height="70" tilewidth="32" tileheight="32">
  <properties>
   <property name="music" value="cavesong.ogg"/>
@@ -24,15 +23,15 @@
  </tileset>
  <layer name="Ground" width="70" height="70">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3QsQkCQRRF0TWyARUL0MBcETFVRCxgS1K79iWCbDCsyfKDM3DCD/NuP+u6HgAAAAAAYlngD9XsYhvHkX7f2JuhTSwKbG85xSFuIz3jFe8/bob2cS6wveUe15hP6BKPAttb1hM3+VoV2K6LLrrooksduuiiiy666FKBLrrooosuulSgiy666KKLLhXooosuAAAAAAD1fACSCRcxkEwAAA==
+   H4sIAAAAAAAAA+3YQUrEQBAF0JmVF1DxALpwr4i4VUTcZpgLTC7hBdRbW0Iaiu+vTouDpDpfeDAZksH+qVR3er/dbPYiIiIiIiIiIiIiIuZsAf/D0lybK3PXyP+1XoMuzekCxl5zb27Nc6N382E+f3ENujEPCxh7zYt5MoPZOXhcnDgDOXeY8X3Oo3ldwNhrLmBc4wSPiyiX4gAG+FyuOV/A2FtymbvHh0oumIXP0X/nP2fJhd3nlueoXDtuf9ZN9BsZ68XfW3yGsF4wS4b9RpZ6Yfe2HGMWx5Ihl1rfxWdnjblENb/mXNjcU47Xmgv2SeUSr19a1r5/6T8ZconmV1zns94T5ddLLjhGD9dt0drEfzdXVxlywXnaP0tsLVxbG9fWctlywbHg+3FUB9h32Dm+tnzNZMgFn322b4DZ+Hcg1qv9uf7aHnKJ5iHWa9i52Hd6qZdoHmJ7C1HdYE7Zc4nG6HsQnuOPozm9h1yi/srywncINs/3Ui9svzbqM9G+Z2/9JeqrbI+SZcf2urLm8jbBvurXNC3rvjH4bjf9ftZc2L4D27tF0XuW7y+Zc2H7s3P10LrXm/E5+k/KRbn0lIuIiIiIiIiIiIjIsX0BzGg4apBMAAA=
   </data>
  </layer>
  <layer name="Fringe" width="70" height="70">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3U0QmDMBAA0GQPB2o36B46Qu0qrln7pQgqJ8Q08B4cgeSSHIFcSgAAAAAAAGW9c0rjHJ8c2/coU07zXrUL+FOtv0sX/B+1z+Ve/RzDxVg7Wtu7kzZNwXytgp/nZjybBxbRvhvNBwAAAAAAAAAAgNK+Ib3mOJBMAAA=
+   H4sIAAAAAAAAA+3YSUrEQBjF8UoWKijoSgUFh4UKCg4XcFjZN/Ae9hHUq3gsh4XTRleKutDXdBq0/AimtGiq8v/Bo5o0geTxZSDOAQAAAAAAAAAAxHVSOHeqnBXN9juMczjJOxr2AUS0UDq3WPZ/L2ldLn+/b869bKqHraqLba07DXrJ2a562Ku62Nd6kHEvx0q3Jje6v94qd8qFcln0t19pva62h6Q7tDP+H886h5eGz55cnNf8Z/XS0pq+afO8DHS8tedrLx1/hxZjXmwjehaPKmOBeVenT4n2Wnffnda5zSizgRlXJpTHhPuxrOicVpW1wMwp88pHr5OM3wObWlcXG8qkMpVYL/676L3yEGPmE+vF96pO3ujlh1i9pHYd+ZgXG73YuI5szIuNebExLzbmxfbXb7dWBt+GAQAAAAAAAAAAQn0CsGIaR5BMAAA=
   </data>
  </layer>
- <layer name="Over" width="70" height="70">
+ <layer name="Over" width="70" height="70" visible="0">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA+3PMQ0AMAwEsc/cIAh/oGXRdLClA3AJAAAAAAAAAAAAAAAAAPznVDILdW2fAwAAAAC8dQGxLO71kEwAAA==
   </data>
@@ -42,7 +41,7 @@
    H4sIAAAAAAAAA+3QsQ3AMADDsCD/H92pHxSVBxrgAdY951wAAAAAAAA+8+fqr4tN3tWfddFFF1102VOs/qyLLrroosueYvVnXXTRRRdd9hSrP+uiiy666LKnWP1ZF10AAAAAAJY9eXEODpBMAAA=
   </data>
  </layer>
- <objectgroup name="Object" width="70" height="70" x="-1" y="-1">
+ <objectgroup name="Object" width="70" height="70" x="-1" y="-1" visible="0">
   <object name="External Map Events" type="SCRIPT" x="0" y="0">
    <properties>
     <property name="FILENAME" value="scripts/maps/iw-ancestral_cave_o00-o00-n01-n09.lua"/>
