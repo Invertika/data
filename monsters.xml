@@ -350,6 +350,37 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
             mutation="50"
             />
     </monster>
+    
+    <monster id="9" name="König Rex" targetCursor="large">
+        <sprite>monsters/monster-lizard.xml</sprite>
+        <!-- Kommt noch
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>-->
+        <drop item="20005" percent="1"/>
+		<exp>500</exp>
+		<behavior
+            aggressive="true"
+            cowardly="false"
+            track-range="10"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attributes
+            hp="5000"
+            size="10"
+            speed="8.0"
+            attack-min="100"
+            attack-delta="90"
+            attack-magic="0"
+            hit="10"
+            evade="5"
+            physical-defence="30"
+            magical-defence="9"
+            mutation="90"
+            />
+    </monster>
 	
 	<!-- Invertika Testmonster ID's >= 10000-->
 	<monster id="10000" name="Ipsum">
