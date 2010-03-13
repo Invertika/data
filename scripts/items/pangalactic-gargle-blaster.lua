@@ -9,8 +9,12 @@ function use(user)
 	  "Wo ist mein Bademantel?",
 	  "Wieviel ist sieben mal sechs?"))
 	  
-	  local x = mana.posX(user)
+	  local x = mana.posX(user) + 128
 	  local y = mana.posY(user)
 	  
-	  mana.being_walk(user, x+128, y, 400)
+	  local save = mana.being_get_speed(user)
+	  
+	  mana.being_walk(user, x , y , 400 )
+	  
+	  mana.being_set_speed(user, save)
 end
