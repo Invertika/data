@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="70" height="70" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="music" value="cavesong.ogg"/>
+ </properties>
+ <tileset firstgid="1" name="collision" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision.png"/>
+ </tileset>
+ <tileset firstgid="3" name="ivk_special1" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/ivk_special1.png"/>
+ </tileset>
+ <tileset firstgid="259" name="cave" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave.png"/>
+ </tileset>
+ <tileset firstgid="387" name="cave_x2" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/cave_x2.png"/>
+ </tileset>
+ <tileset firstgid="403" name="cave_bilevel" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave_bilevel.png"/>
+ </tileset>
+ <tileset firstgid="659" name="cave_ani_wetwall" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave_ani_wetwall.png"/>
+ </tileset>
+ <tileset firstgid="915" name="Woodland_graveyard_ground" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/Woodland_graveyard_ground.png"/>
+ </tileset>
+ <tileset firstgid="979" name="Woodland_graveyard_x3" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/Woodland_graveyard_x3.png"/>
+ </tileset>
+ <layer name="Ground" width="70" height="70">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3YQUpDQQzG8XblBap4ALtwr4i4rYh4gJ7CC7joVr212Tx4DDMhmVfLJO9f+G0eM9B8zUzaHrebzREAAAAAAAAAAHE9wHsYzb3Yiyej+cu6p3QndgPUrnkWj+LN6Fv8iF/HntKDeBmgds27eBVXhc/Ks6+Gct3k1Hh+EB8D1K65Ver9TzcD1H6pXE7kQr9s/b2wplzolzZtJnn7LFMutZpbM7o23+fPIuay5C7RsomeizcfT89M6yPnomXgyai2JmsuHtlyqZ0jS/3lfVzbFzkXb7949mTNpTWjrRlmyqVn7mTLpfw+1pNP9Fwsn3XPTJrW1s7cmnPR9q0hl577KWou1vp6Z3ykXHqzqe3TzlTmXKy/Kct1UftlydnwrI+ey7n/142ci/W+8M7pDLnMv5ctlWEeXcrouQAAAAAAAADAuf0B0V6po5BMAAA=
+  </data>
+ </layer>
+ <layer name="Fringe" width="70" height="70">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3YSwrCMBAA0BS8goo30ht4D7sRt+pVvKZd2E0Q21hDTfoeDIGStkM+E9oQAAAAAAAA8ro2Idy6uDdp9+3zpFO849wJ/CnjwpDdau4Mvnfqon3FO23UDvn0rPidpdkWPM+/9Ejsn3hEL9am8vV1iNr4+lTrysePZevr7tg6kVqnAXrOUyC3sw/EUabWY/8v6nKxbwAAAAAAAKjEEyCMX1iQTAAA
+  </data>
+ </layer>
+ <layer name="Over" width="70" height="70">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3PMQ0AMAwEsc/cIAh/oGXRdLClA3AJAAAAAAAAAAAAAAAAAPznVDILdW2fAwAAAAC8dQGxLO71kEwAAA==
+  </data>
+ </layer>
+ <layer name="Collision" width="70" height="70" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3QsQ3AMADDsCD/H92pHxSVBxrgAdY951wAAAAAAAA+8+fqr4tN3tWfddFFF1102VOs/qyLLrroosueYvVnXXTRRRdd9hSrP+uiiy666LKnWP1ZF10AAAAAAJY9eXEODpBMAAA=
+  </data>
+ </layer>
+ <objectgroup name="Object" width="70" height="70" x="-1" y="-1">
+  <object name="External Map Events" type="SCRIPT" x="0" y="0">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/iw-ancestral_cave_o00-o00-n01-n09.lua"/>
+   </properties>
+  </object>
+  <object name="Skelette" type="SPAWN" x="689" y="752" width="952" height="891">
+   <properties>
+    <property name="MAX_BEINGS" value="20"/>
+    <property name="MONSTER_ID" value="10"/>
+    <property name="SPAWN_RATE" value="1"/>
+   </properties>
+  </object>
+  <object name="Fledermaus" type="SPAWN" x="791" y="832" width="819" height="692">
+   <properties>
+    <property name="MAX_BEINGS" value="8"/>
+    <property name="MONSTER_ID" value="8"/>
+    <property name="SPAWN_RATE" value="0.1"/>
+   </properties>
+  </object>
+  <object name="Eidechse" type="SPAWN" x="1169" y="1501" width="333" height="121">
+   <properties>
+    <property name="MAX_BEINGS" value="1"/>
+    <property name="MONSTER_ID" value="9"/>
+    <property name="SPAWN_RATE" value="0.1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
