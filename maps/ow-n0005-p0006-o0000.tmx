@@ -1,54 +1,51 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="200" height="200" tilewidth="32" tileheight="32">
-  <tileset name="collision" firstgid="1" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/collision.png" />
-  </tileset>
-  <tileset name="ivk_ground1" firstgid="3" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/ivk_ground1.png" />
-  </tileset>
-  <tileset name="Woodland_ground" firstgid="259" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/Woodland_ground.png" />
-  </tileset>
-  <tileset name="Woodland_village" firstgid="515" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/Woodland_village.png" />
-  </tileset>
-  <tileset name="Woodland_village_x2" firstgid="771" tilewidth="32" tileheight="64">
-    <image source="../graphics/tiles/Woodland_village_x2.png" />
-  </tileset>
-  <tileset name="Woodland_x2" firstgid="787" tilewidth="32" tileheight="64">
-    <image source="../graphics/tiles/Woodland_x2.png" />
-  </tileset>
-  <tileset name="Woodland_x3" firstgid="803" tilewidth="32" tileheight="96">
-    <image source="../graphics/tiles/Woodland_x3.png" />
-  </tileset>
-  <layer name="Ground" width="200" height="200">
-    <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3DAQ0AAAwCIJ/B/l2t8ACw0Uuqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqvo4YmiglgBxAgA=
+ <tileset firstgid="1" name="collision" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision.png"/>
+ </tileset>
+ <tileset firstgid="3" name="ivk_ground1" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/ivk_ground1.png"/>
+ </tileset>
+ <tileset firstgid="259" name="Woodland_ground" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/Woodland_ground.png"/>
+ </tileset>
+ <tileset firstgid="515" name="Woodland_village" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/Woodland_village.png"/>
+ </tileset>
+ <tileset firstgid="771" name="Woodland_village_x2" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/Woodland_village_x2.png"/>
+ </tileset>
+ <tileset firstgid="787" name="Woodland_x2" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/Woodland_x2.png"/>
+ </tileset>
+ <tileset firstgid="819" name="Woodland_x3" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/Woodland_x3.png"/>
+ </tileset>
+ <layer name="Ground" width="200" height="200">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3dy5HbRhQFUCEGJeEQFIJDkDPQhCBvvJa0cAhO1WSpporFYvML4F4MzuLsXzffrddNgDOfp0+fPhf7dvB28OXgL1hZuv/v9bVgr9ifdN8/Okd+FewZ+5Hu+0f9nH7n5BmyxaPS/b62a/lJfxb0Sfdrm0u58d3AfqX7cQve7z7ObPuT7r2tu3YfMne2L91fH5m5s33pHtqr87lj1nRK9wm/nc4aWemR7gvGWZGTvHQvcDsn7izywW3ndxZ5kQ9u50VO5IPrOXFXkQ/Gfjz5+SMfe3CcIc5Z8oGMyAevZMRdRD4YcxeRD8bMEPnguuOzd3cR+WDMfV0+uJ0Rv62XD25L99oWpT8zZKRZ+vNiff6ekXxwf1bSPdgs/fnQwd/Jkw/uJyfywW17nyvp/Wdb9paT9H6zTXvJSXqf2baPnpP0/vIxpPtYPmj3EWdJek/5eNI9LR+0S/e1fNAu3dvyQbut30nS+8c+pPtcPmiX7nX5oF263+WDdumelw/apftePmiX7n35oFm69+WDdun+lw+apftfPmiXzoB80CydAfmgXToH8kGzdA7kg2bpHMgH7dJZkA+apbMgHzRLZ0E+aPfflM+EfNDq65TPhHzQSj5gzPkKxswPGJMPGHO+gjHzA8bkAy77fvDHlM+EfNCobXbIBy3+nPpmh3zQonF2yAct5AMu+3vqPFvJBw1aZ4d80EA+YEw+4LLW73XlgwbNs0M+SPpn6p4d8kFS++yQD5LkAy77PvWfreSDlC3MDvkg5d8p3/vyQau235nLB02cr2BMPmBMPmDs28GXKd//8kGrLdzR03vEfm3hO970HrFP3yfPz2FkC7NDPkjx/RWMyQeMbeG7K/kg5ceU7335oNXPg19Tvv/lg1bHjLQ/Q0/vEfvWfk9P7w/7dnwPq/mcld4faD5npfcGjlq/703vCxy1vu+e3hd413hXT+8JvGucIek9gVNt7/Wm9wNOtc2Q9H7AuaZ3s9J7AeeOz0Pepo7nhum9gJH3nCTPW+k9gFuS76Ck1w73SL0Pn1433CvxnlZ6zfCItb/bSq8XHrH2OSu9XnjUmhlJrxWesdZdJL1OeNYa7/um1wjPWuNdrfQa4RVLf5+VXh+8Yum7enp98Kol7+rptcEclvpdVXpdMIel7urpdcFclrirp9cEc1niHpJeE8xp7meG6fXAnOa+h6TXA3Obc4ak1wJzkw8Ym/OMlV4LLGGuGZJeByxhrv+XkF4HLMH8gLG5nqWn1wFLmOtZenodsJQ5zljpNcBS5rijp9cAS5njNyHpNcBSnK9gbI7n6Ok1wJJenSHp+mFJrz4HSdcPS3r1OUi6fljaK2esdO2wtFfOWOnaYWmv/I3FdO2whmfvIem6YS3PnLPSNcNanpkh6ZphTY++s5iuF9Z0fOfkkbt6ul5Y2yPnrHStkHDvXT1dJyTcO0PSdULKPTMkXSOk3DND0jVC0q0Zkq4Pkm7NkHR9kHZthqRrg7Rr7/ema4MGo3NWui5ocel3humaoMWlvyeXrglaXPp7WemaoMn5++/peqDJ+R0kXQ80kQ8Ykw8YO/8OK10PNDE/YEw+YEw+YMzzDxgzP2Ds/Lcg6Xqgyfl77ul6oM3pM5B0LdDm9IyVrgXanJ6x0rVAo/cZkq4DGh1nyFtBHQAAAAAAAAAAAAAAAADP+h9eoYPuAHECAA==
   </data>
-  </layer>
-  <layer name="Fringe" width="200" height="200">
-    <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3BgQAAAADDoPlTX+EAVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfAYtCPEnAHECAA==
+ </layer>
+ <layer name="Fringe" width="200" height="200">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3BgQAAAADDoPlTX+EAVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfAYtCPEnAHECAA==
   </data>
-  </layer>
-  <layer name="Over" width="200" height="200">
-    <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3BgQAAAADDoPlTX+EAVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfAYtCPEnAHECAA==
+ </layer>
+ <layer name="Over" width="200" height="200">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3BgQAAAADDoPlTX+EAVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfAYtCPEnAHECAA==
   </data>
-  </layer>
-  <layer name="Collision" width="200" height="200">
-    <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3TAQkAMAzAsDH/oi9g9AoSqITuzKykDLj8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AFtJX17LBpJNQBxAgA=
+ </layer>
+ <layer name="Collision" width="200" height="200">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3dsY0YMRRDwYP7L9rBZQYoOCOlnQF+Ayu+eP/8/Pz8cc7Fu0H7G7nv3g3a38h9927S/lbue/cV7e/s7jx+td/BbR5n7fdx+rhV++2cPm7Vflenj1u139zp4ybtDTh93KK9B6ePG7R34fRxk/ZOvnrcqb2brxx3a+/n9eN+7Q29fNyvvaGXjze0d/Tq8Y72ll483tLe02vHW9p7eu14T3tTLx1vau/qleNd7W29cHxDe2e3Ht/R3tqNx7e093bb8V3t7d1w0N7g8sG/2ptcOkja21w4+F/treqDG7Q3qw9u0N6uPrhBe8P6YF17x/rgBu0964N17U3rg3XtXeuDde1t64MbtDeuD9a1d64P1rW3rg/WtfeuD9a1N68P1rV3rw+WtXevD9a1t68PlrW3rw/WtfevD5a1968P1rUb0AfL2g3og2XtBvTBunYH+mBZuwN9sKzdgT5Y125BHyxrt6APlrVb0AfL2i3og2XtFvTBsnYL+mBZuwV9sKzdgj5Y1m5BH6xqd6APlrU70Aer2g3og2XtBvTBsnYD+mBVe//6YFl7//pgWXv/+mBZe//6YFV7+/pgWXv7+mBVe/f6YFl79/pgWXv3+mBVe/P6YFl78/pgWXvz+mBZe/P6YFl78/pgWXvz+mBZe/P6YFl78/pgXXv3+mBZe/f6YFV78/pgWXvz+mBZe/P6YFl78/pgWXvz+mBZe/P6YFl78/pgXXv3+mBde/v6YFl7+/pgXXv/+mBduwF9sKzdgD5Y1+5AHyxrd6AP1rVb0AfL2i3og3XtHvTBsnYP+uAG7S70wQ30AWf6gDN9wJk+INMHnOkDzvQBZ/qATB9wpg/I9AFn+oAzfUCmDzjTB2T6gDN9QKYPONMHZPqATB9wpg/I9AGZPiDTB2T6gDN9QKYPyPQBmT4g0wec6QMyfUCmDzjTB2T6gEwfcKYPONMHZPqAM31Apg840wec6QMyfcCZPiDTB5zpAzJ9wJk+INMHnOkDzvQBmT4g0wec6QMyfUCmD8j0AZk+INMHZPqATB+Q6QMyfUCmD8j0AWf6gEwfkOkDzvQBmT7gTB+Q6QMyfUCmD8j0AZk+INMHZPqATB+Q6QMyfUCmD8j0AZk+INMHZOl/Oc653/sLUg+ZyABxAgA=
   </data>
-  </layer>
-  <objectgroup name="Object" width="0" height="0">
-
-    <object name="External Map Events" type="SCRIPT" x="0" y="0">
-      <properties>
-        <property name="FILENAME" value="scripts/maps/ow-n0005-p0006-o0000.lua">
-        </property>
-      </properties>
-    </object>
-  </objectgroup>
+ </layer>
+ <objectgroup name="Object" width="0" height="0">
+  <object name="External Map Events" type="SCRIPT" x="0" y="0">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/ow-n0005-p0006-o0000.lua"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>
