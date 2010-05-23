@@ -14,7 +14,7 @@
 --  Software Foundation; either version 2 of the License, or any later version. --
 ----------------------------------------------------------------------------------
 
-dofile("data/scripts/libs/libmana-constants.lua")
+require "scripts/libs/libmana-constants"
 
 
 -- Table that associates to each NPC pointer the handler function that is
