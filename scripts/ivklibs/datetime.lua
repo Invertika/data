@@ -16,7 +16,7 @@
 
 module("datetime", package.seeall)
 
-require "data/scripts/libs/npclib"
+require "scripts/libs/npclib"
 
 --- Konstanten
 YEAR_ZERO_REALITY = 2008;

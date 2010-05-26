@@ -16,7 +16,7 @@
 
 module("karma", package.seeall)
 
-require "data/scripts/libs/npclib"
+require "scripts/libs/npclib"
 
 --- Konstanten
 KARMA_DEVIL = -666

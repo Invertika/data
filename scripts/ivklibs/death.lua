@@ -16,8 +16,8 @@
 
 module("death", package.seeall)
 
-require "data/scripts/libs/npclib"
-require "data/scripts/ivklibs/nethek"
+require "scripts/libs/npclib"
+require "scripts/ivklibs/nethek"
 
 --- Konstanten
 PERCENT_MONEY_REDUCE_PER_DEATH = 15 --- Prozent des Bargeldes welches abgezogen wird beim Tod

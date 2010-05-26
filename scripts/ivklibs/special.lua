@@ -15,7 +15,7 @@
 
 module("special", package.seeall)
 
-require "data/scripts/libs/npclib"
+require "scripts/libs/npclib"
 
 --- Fahrstuhl für GM Haus 01
 function elevator_gm_house_01_talk(npc, ch) --- NPC für die Netheksäule

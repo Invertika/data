@@ -31,4 +31,4 @@
 
 -- Probleme: zur zeit keine globalen Variablen möglich
 
-require "data/scripts/libs/npclib"
+require "scripts/libs/npclib"

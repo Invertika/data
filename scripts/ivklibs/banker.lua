@@ -15,7 +15,7 @@
 
 module("banker", package.seeall)
 
-require "data/scripts/libs/npclib"
+require "scripts/libs/npclib"
 
 --- Konstanten
 INTEREST_PER_SECOND = 0.00004 --- Zinsen pro Sekunde

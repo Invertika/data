@@ -1,5 +1,5 @@
-require "data/scripts/libs/npclib"
-require "data/scripts/ivklibs/invertika"
+require "scripts/libs/npclib"
+require "scripts/ivklibs/invertika"
 
 function use(user)
 	mana.being_say(user, invertika.get_random_element("Galaktisch...",

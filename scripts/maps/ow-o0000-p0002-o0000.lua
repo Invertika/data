@@ -14,7 +14,7 @@
 --  Software Foundation; either version 2 of the License, or any later version. --
 ----------------------------------------------------------------------------------
 
-require "data/scripts/libs/npclib"
+require "scripts/libs/npclib"
 
 dofile("data/scripts/ivklibs/warp.lua")
 

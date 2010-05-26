@@ -14,9 +14,9 @@
 --  Software Foundation; either version 2 of the License, or any later version. --
 ----------------------------------------------------------------------------------
 
-require "data/scripts/libs/npclib"
-require "data/scripts/ivklibs/banker"
-require "data/scripts/ivklibs/slotmachine"
+require "scripts/libs/npclib"
+require "scripts/ivklibs/banker"
+require "scripts/ivklibs/slotmachine"
 
 atinit(function() 
  create_npc("Banker", 107, 45 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker

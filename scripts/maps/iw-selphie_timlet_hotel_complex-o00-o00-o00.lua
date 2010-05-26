@@ -14,10 +14,10 @@
 --  Software Foundation; either version 2 of the License, or any later version. --
 ----------------------------------------------------------------------------------
 
-require "data/scripts/libs/npclib"
+require "scripts/libs/npclib"
 
-require "data/scripts/libs/npclib"
-require "data/scripts/ivklibs/invertika"
+require "scripts/libs/npclib"
+require "scripts/ivklibs/invertika"
 
 atinit(function()
  create_npc("Averin", 125, 175 * TILESIZE + 16, 25 * TILESIZE + 16, averin_talk, nil) --- Elmo

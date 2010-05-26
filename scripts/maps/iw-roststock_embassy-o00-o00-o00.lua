@@ -14,8 +14,8 @@
 --  Software Foundation; either version 2 of the License, or any later version. --
 ----------------------------------------------------------------------------------
 
-require "data/scripts/libs/npclib"
-require "data/scripts/ivklibs/invertika"
+require "scripts/libs/npclib"
+require "scripts/ivklibs/invertika"
 
 atinit(function()
  create_npc("Botschafter", 162, 51 * TILESIZE + 16, 31 * TILESIZE + 16, botschafter_talk, nil)

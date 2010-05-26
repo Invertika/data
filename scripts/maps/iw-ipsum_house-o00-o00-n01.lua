@@ -14,8 +14,8 @@
 --  Software Foundation; either version 2 of the License, or any later version. --
 ----------------------------------------------------------------------------------
 
-require "data/scripts/libs/npclib"
-require "data/scripts/ivklibs/special"
+require "scripts/libs/npclib"
+require "scripts/ivklibs/special"
 
 atinit(function()
  special.create_elevator_gm_house_01_talk(78 * TILESIZE + 16, 22 * TILESIZE + 16) --- Fahrstuhl
