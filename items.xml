@@ -110,6 +110,31 @@
         <sound event="strike">short-sword-miss1.ogg</sound>
         <sound event="hit">short-sword-hit1.ogg</sound>
     </item>
+    
+     <item id="10003"
+        image="weapon-bow-forestbow.png"
+        name="Robins Bogen"
+        description="Ein Bogen für die Rächer unter uns."
+        effect="+70 Damage, 5 Range"
+        type="equip-2hand"
+        weapon_type="10"
+        weight="80"
+        max-per-slot="1"
+        weapon-type="bow"
+        attack-min="100"
+        attack-delta="25"
+        attack-range="300"
+        missile-particle="graphics/particles/arrow.particle.xml"
+        view="1200"/>
+        
+      <item id="10004"
+        image="weapon-arrow-arrow.png"
+        name="Robins Pfeil"
+        description="Ein Pfeil für die Rächer unter uns."
+        effect="+25 Damage"
+        type="equip-ammo"
+        weight="1"
+        max-per-slot="999"/>
 	
 	<!-- Ruestungen und Kleidung 20001 - 30000 -->
 	<item id="20001"
@@ -171,6 +196,43 @@
         weight="5"
         defense="1"
         max-per-slot="1">
+    </item>
+    
+    <item id="20006"
+        image="armor-head-fairy_hat.png"
+        name="Robins Hut"
+        description="Der Hut für alle Rächer unter uns."
+        effect="+500% Defense"
+        type="equip-head"
+        weight="20"
+        defense="500"
+        max-per-slot="1">
+        <sprite>head-fairy_hat.xml</sprite>
+    </item>
+    
+        <item id="20007"
+        image="armor-chest-desertshirt.png"
+        name="Robins Shirt"
+        description="Das Shirt für alle Rächer unter uns."
+        effect="+6% Defense"
+        type="equip-torso"
+        weight="30"
+        defense="500"
+        max-per-slot="1">
+        <sprite gender="male">chest-leather-male.xml|#443c21,85794a,beb590,ffffff;#824035,d6a19a</sprite>
+        <sprite gender="female">chest-leather-female.xml|#251e06,443c21,71653b,a0945e;#b6574a</sprite>
+    </item>
+    
+        <item id="20008"
+        image="armor-legs-chaps.png"
+        name="Robins Hose"
+        description="Das Shirt für alle Rächer unter uns."
+        effect="+6% Defense"
+        type="equip-legs"
+        defense="500"
+        weight="40">
+        <sprite gender="male">leg-chaps-male.xml</sprite>
+        <sprite gender="female">leg-chaps-female.xml</sprite>
     </item>
 	 
 	<!-- Power Ups 30001 - 40000 -->
