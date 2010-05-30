@@ -42,6 +42,8 @@ atinit(function()
  create_npc("Elmes", 142, 114 * TILESIZE + 16, 180 * TILESIZE + 16, elmes_talk, nil) --- Elmes
  create_npc("Nepuret", 126, 90 * TILESIZE + 16, 185 * TILESIZE + 16, nepuret_talk, nil) --- Nepuret 
  create_npc("Nero", 120, 162 * TILESIZE + 16, 175 * TILESIZE + 16, nero_talk, nil) --- Nero
+ create_npc("Bernie", 136, 12 * TILESIZE + 16, 19 * TILESIZE + 16, bernie_talk, nil) --- Bernie
+ create_npc("Valeria", 108, 14 * TILESIZE + 102, 19 * TILESIZE + 16, valeria_talk, nil) --- Valeria
  
  create_npc("Wache", 121, 39 * TILESIZE + 16, 51 * TILESIZE + 16, colloseumwache_talk, nil) --- Colloseumwache
  create_npc("Wache", 121, 44 * TILESIZE + 16, 51 * TILESIZE + 16, colloseumwache_talk, nil) --- Colloseumwache
@@ -358,4 +360,67 @@ function palastwache_talk(npc, ch)
 	  "Du benötigst einen königlichen Passierschein um den Palast zu betreten.",
 	  "Ohne königlichen Passierschein kein Zutritt!"))
 	  do_npc_close(npc, ch)
+end
+
+function bernie_talk(npc, ch)
+	do_message(npc, ch, "Hey du, du brauchst ihn doch bestimmt, den Niedermetzler 3000. Das ist genau das richtige für dich, da kannst du garnicht widerstehen. Komm schon für nur 99999 Aki gehört er dir?")
+	
+	while true do 
+		local v = do_choice(npc, ch, "Her damit!",
+								     "Lieber nicht...")
+								   
+		if v == 1 then
+		    local PlayerMoney=mana.chr_money(ch)
+		    if PlayerMoney >= 99999 then
+			mana.chr_money_change(ch, -99999)
+			mana.chr_inv_change(ch, 10005, 1)
+			do_message(npc, ch, invertika.get_random_element("Viel Spaß mit deinem Niedermetzler 3000.",
+	  "Nun hast du ihn, den Niedermetzler 3000.",
+	  "Bitteschön, der Niedermetzler 3000, die ultimative Waffe."))
+		      break;
+		    else
+		      do_message(npc, ch, invertika.get_random_element("Du hast nicht genug Geld, komm später wieder.",
+	  "So nicht, das Geld benötigst du schon.",
+	  "Ne ne ne. Kram erstmal das Geld zusammen!"))
+		      break;
+		    end
+		elseif v == 2 then
+			do_message(npc, ch, invertika.get_random_element("Dann halt nicht. Aber vielleicht später?",
+	  "Wer nicht will der hat schon...",
+	  "Okay ein ander Mal vielleicht."))
+			break
+		end
+	end
+	do_npc_close(npc, ch)
+end
+
+function valeria_talk(npc, ch)
+	do_message(npc, ch, "Soll ich dich heilen?")
+
+	while true do 
+		local v = do_choice(npc, ch, "Alles heilen (1000 Aki)", "Nur 1000 HP (kostenlos)", "Nein ich brauche keine Heilung")
+								   
+		if v == 1 then
+		    local PlayerMoney=mana.chr_money(ch)
+		    if PlayerMoney >= 1000 then
+			mana.chr_money_change(ch, -1000)
+			mana.being_heal(ch);
+			do_message(npc, ch, invertika.get_random_element("Du  bist vollständig geheilt.",
+	  "Fertig. Du kannst wieder deines Weges gehen."))
+		    else
+		      do_message(npc, ch, invertika.get_random_element("Du benötigst mehr Aki.",
+	  "Du hast keine 1000 Aki."))
+		    end
+		elseif v == 2 then
+			mana.being_heal(ch, 1000)
+			do_message(npc, ch, invertika.get_random_element("Ich habe dir 1000 HP geschenkt.",
+	  "Du siehst wieder frisch aus."))
+			break
+		elseif v == 3 then
+			do_message(npc, ch, invertika.get_random_element("Wie du wünscht.",
+	  "Entschuldigung, ich wollte mich dir nicht aufdrängen."))
+			break
+		end
+	end
+	do_npc_close(npc, ch)
 end
