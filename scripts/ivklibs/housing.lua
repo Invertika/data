@@ -31,4 +31,4 @@
 
 -- Probleme: zur zeit keine globalen Variablen möglich
 
-require "scripts/libs/npclib"
+require "scripts/lua/npclib"

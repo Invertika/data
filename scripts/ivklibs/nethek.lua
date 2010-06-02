@@ -16,7 +16,7 @@
 
 module("nethek", package.seeall)
 
-require "scripts/libs/npclib"
+require "scripts/lua/npclib"
 
 --- Konstanten
 DEFAULT_MAP = 61 --- Defaulkarte

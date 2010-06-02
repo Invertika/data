@@ -14,7 +14,7 @@
 --  Software Foundation; either version 2 of the License, or any later version. --
 ----------------------------------------------------------------------------------
 
-require "scripts/libs/npclib"
+require "scripts/lua/npclib"
 
 atinit(function()
  create_npc("Luor", 116, 34 * TILESIZE + 16, 24 * TILESIZE + 16, luor_talk, nil) --- Luor

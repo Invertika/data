@@ -14,7 +14,7 @@
 --  Software Foundation; either version 2 of the License, or any later version. --
 ----------------------------------------------------------------------------------
 
-require "scripts/libs/npclib"
+require "scripts/lua/npclib"
 require "scripts/ivklibs/datetime"
 require "scripts/ivklibs/invertika"
 require "scripts/ivklibs/nethek"

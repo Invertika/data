@@ -16,7 +16,7 @@
 
 module("slotmachine", package.seeall)
 
-require "scripts/libs/npclib"
+require "scripts/lua/npclib"
 
 --- Konstanten
 SLOT_MACHINE_FIELDS = { "7", "Kirsche", "Banane", "Pfirsich", "Kiwi", "Schatztruhe"}; --- Felder der Slotmaschine

@@ -16,7 +16,7 @@
 
 module("invertika", package.seeall)
 
-require "scripts/libs/npclib"
+require "scripts/lua/npclib"
 
 --- Gibt ein zufällig eines der übergebenen Argumente zurück
 function get_random_element(...)

@@ -1,4 +1,4 @@
-require "scripts/libs/npclib"
+require "scripts/lua/npclib"
 require "scripts/ivklibs/invertika"
 
 function use(user)

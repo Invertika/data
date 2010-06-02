@@ -16,7 +16,7 @@
 
 module("death", package.seeall)
 
-require "scripts/libs/npclib"
+require "scripts/lua/npclib"
 require "scripts/ivklibs/nethek"
 
 --- Konstanten
