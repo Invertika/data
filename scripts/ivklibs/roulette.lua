@@ -62,15 +62,17 @@ function roulette_talk(npc, ch)
     else
       mana.chr_money_change(ch, -money)
 		end
-
+    
     do_message(npc, ch, "Auf was möchtest du setzen?")
     local v = do_choice(npc, ch,"Farbe",
                                 "Gleich/Ungleich",
+                                "Hoch/Tief",
                                 "Zahl")
     local w = 0
     if v == 1 then w = do_choice(npc, ch,"Rot","Schwarz")
     elseif v == 2 then w = do_choice(npc, ch,"Gleich","Ungleich")
-    elseif v == 3 then w = do_choice(npc, ch,
+    elseif v == 3 then w = do_choice(npc, ch,"Hoch","Tief")
+    elseif v == 4 then w = do_choice(npc, ch,
       "0","1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", 
       "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", 
       "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36")
@@ -88,14 +90,14 @@ function roulette_talk(npc, ch)
         do_message(npc, ch, text_loose)
       end
     elseif v == 1 and w == 2 then ---Farbe schwarz
-      if roulette_is_red(random_number) == false then
+      if roulette_is_red(random_number) == false and not random_number == 0 then
         do_message(npc, ch, text_win .. tostring(1*money) .. " Aki gewonnen")
         mana.chr_money_change(ch, 2*money)
       else
         do_message(npc, ch, text_loose)
       end
     elseif v == 2 and w == 1 then ---Zahl gleich
-      if random_number%2 == 0 then
+      if random_number%2 == 0  and not random_number == 0 then
         do_message(npc, ch, text_win .. tostring(1*money) .. " Aki gewonnen")
         mana.chr_money_change(ch, 2*money)
       else
@@ -108,7 +110,21 @@ function roulette_talk(npc, ch)
       else
         do_message(npc, ch, text_loose)
       end
-    elseif v == 3 then  ---Zahl gleich Zufallszahl?
+    elseif v == 3 and w == 1 then ---Zahl hoch
+      if random_number >= 19  and random_number <= 36 then
+        do_message(npc, ch, text_win .. tostring(1*money) .. " Aki gewonnen")
+        mana.chr_money_change(ch, 2*money)
+      else
+        do_message(npc, ch, text_loose)
+      end
+    elseif v == 3 and w == 2 then ---Zahl tief
+      if random_number >= 1  and random_number <= 18 then
+        do_message(npc, ch, text_win .. tostring(1*money) .. " Aki gewonnen")
+        mana.chr_money_change(ch, 2*money)
+      else
+        do_message(npc, ch, text_loose)
+      end
+    elseif v == 4 then  ---Zahl gleich Zufallszahl
       if w == random_number then
         do_message(npc, ch, text_win .. tostring(36*money) .. " Aki gewonnen")
         mana.chr_money_change(ch, 37*money)
