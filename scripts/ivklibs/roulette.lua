@@ -1,11 +1,11 @@
 ----------------------------------------------------------------------------------
--- Games - Roulette                                                    			    --
---                                                                              --
--- 					                           																		      --
---                                                             								  --
+-- Roulette                                                          			--
+-- Dieses Skript implementiert ein Roulettespiel                                --
+-- 					                           								    --
+--                                                             					--
 --                                                                              --
 ----------------------------------------------------------------------------------
---  Copyright 2008, 2009 The Invertika Development Team                         --
+--  Copyright 2010 The Invertika Development Team                               --
 --                                                                              --
 --  This file is part of Invertika.                                             --
 --                                                                              --
