@@ -5,7 +5,7 @@
 -- anderer Dinge.                                                               --
 --                                                                              --
 ----------------------------------------------------------------------------------
---  Copyright 2008 The Invertika Development Team                               --
+--  Copyright 2008-2010 The Invertika Development Team                          --
 --                                                                              --
 --  This file is part of Invertika.                                             --
 --                                                                              --
@@ -19,17 +19,7 @@ require "scripts/ivklibs/banker"
 require "scripts/ivklibs/slotmachine"
 
 atinit(function() 
- create_npc("Banker", 107, 45 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
- create_npc("Banker", 107, 60 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
- create_npc("Banker", 107, 75 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
- create_npc("Brecht", 117, 118 * TILESIZE + 16, 47 * TILESIZE + 16, brecht_talk, nil) --- Brecht
- 
- create_npc("Slotmaschine", 20001, 125 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
- create_npc("Slotmaschine", 20001, 127 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
- create_npc("Slotmaschine", 20001, 129 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
- create_npc("Slotmaschine", 20001, 131 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
- create_npc("Slotmaschine", 20001, 133 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
- create_npc("Slotmaschine", 20001, 135 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+ create_npc("Brecht", 117, 20 * TILESIZE + 16, 15 * TILESIZE + 16, brecht_talk, nil) --- Brecht
 end)
 
 function brecht_talk(npc, ch)
