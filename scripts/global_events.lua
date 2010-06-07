@@ -23,7 +23,7 @@
 function on_chr_death(ch)
 end
 
--- This function is called when the player clicks on the “OK” button after
+-- This function is called when the player clicks on the ï¿½OKï¿½ button after
 -- the death message appeared. It should be used to implement the respawn 
 -- mechanic (for example: warp the character to the respawn location and 
 -- bring HP above zero in some way) 
