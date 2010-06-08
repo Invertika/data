@@ -59,7 +59,7 @@ local gravestone_data =
  {151, 37, "Hier liegt der Arzt Nepomuk - und alle die er nicht heilte neben Ihm." },
  {109, 41, "Auf des Gärtners Grab stand:\nJetzt ist Sense!" },
  {118, 41, "Rest in Pieces" },
- {127, 41, "Keine Grabinschrift mehr erkennbar" },
+ {127, 41, "Nummer 5 lebt!" },
  {139, 41, "Keine Grabinschrift mehr erkennbar" },
  { 94, 45, "Keine Grabinschrift mehr erkennbar" },
  {115, 45, "Keine Grabinschrift mehr erkennbar" },
@@ -72,7 +72,7 @@ local gravestone_data =
  {133, 53, "Keine Grabinschrift mehr erkennbar" }
 }
 -- Angezeigter Name - keiner
-local gravestone_npc_name = ""
+local gravestone_npc_name = "Grabstein"
 -- ID des unsichtbaren NPC
 local gravestone_npc_id = 20001
 
