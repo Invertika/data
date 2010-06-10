@@ -129,15 +129,70 @@ function jane_talk(npc, ch)
 end
 
 function bruce_talk(npc, ch)
-	local firstVisit = get_quest_var(ch, "selphi_timlet_bruce_first_time")
-	
-	if firstVisit~="false" then
+  --[[ Reset quest and give Madenschleim and Skorpion Stachel for debugging purposes
+  mana.chr_inv_change(ch, 40005, 20)
+  mana.chr_inv_change(ch, 40004, 50)
+  mana.chr_set_quest(ch, "selphi_timlet_bruce_quest", 0)
+  --]]
+  -- quest init
+  if tonumber(get_quest_var(ch, "selphi_timlet_bruce_quest")) == nil then
+    mana.chr_set_quest(ch, "selphi_timlet_bruce_quest", 0)
+  end
+  -- quest get/set functions
+  function get_qstatus() return tonumber(get_quest_var(ch, "selphi_timlet_bruce_quest")) end
+  function set_qstatus(x) mana.chr_set_quest(ch, "selphi_timlet_bruce_quest", tonumber(x)) end
+  
+	if get_qstatus()==0 then
 		mana.chr_money_change(ch, 1000)
-		mana.chr_set_quest(ch, "selphi_timlet_bruce_first_time", "false")
+		set_qstatus(1)
 		do_message(npc, ch, "Ahhh ich verstehe, du bist neu hier. Hier ein paar Münzen fuer den Anfang...")		
-	else
-		do_message(npc, ch, "Hi, schön dich wieder zu sehen.")
-	end
+	elseif get_qstatus()==1 then
+    do_message(npc, ch, "Siehst du die Maden auf den Straßen? Die reinste Plage!\nDieses gefräßige Ungeziefer vernichtet das letzte bisschen Vegetation in der Stadt!\nWillst du uns helfen, unsere schöne Stadt von diesen ekelhaften Würmern zu befreien?")
+    set_qstatus(do_choice(npc, ch, "Nein.","Ja."))
+  end
+  if get_qstatus()==2 then
+    do_message(npc, ch, "Bring mir 20 Madenschleim als Beleg für deine Arbeit, dann werde ich dich belohnen.")
+    set_qstatus(3)
+  elseif get_qstatus()==3 and mana.chr_inv_count(ch, 40005) < 20 then
+    do_message(npc, ch, "Bring mir 20 Madenschleim als Beleg für deine Arbeit, dann werde ich dich belohnen.")
+  elseif get_qstatus()==3 and mana.chr_inv_count(ch, 40005) >= 20 then
+    do_message(npc, ch, "Fabelhaft, du hast 20 Madenschleim gesammelt!\nDanke für deine Hilfe.")
+    mana.chr_inv_change(ch, 40005, -20)
+    --mana.chr_give_exp(ch, attribute, amount)
+    set_qstatus(4)
+  elseif get_qstatus()==4 then
+    do_message(npc, ch, "In der Spielothek findet Danielas Geburtstagsparty statt.\nBist du so nett, und bringst ihr mein Geschenk?\nIch habe dort Hausverbot, weil ich meine Spielschulden nicht bezahlt habe.")
+    mana.chr_inv_change(ch, 40002, 1)
+    set_qstatus(do_choice(npc, ch, "Nein.","Ja.")+3)
+    if get_qstatus()==5 then
+      do_message(npc, ch, "Sehr nett von dir. Die Spielothek ist im süd-westlichen Teil der Stadt. Gib Daniela das Geschenk.")
+    end
+  elseif get_qstatus()==5 then
+    do_message(npc, ch, "Die Spielothek ist im süd-westlichen Teil der Stadt. Gib Daniela das Geschenk.")
+  elseif get_qstatus()==6 then
+    do_message(npc, ch, "Sie hat sich über ihr Geschenk gefreut? Danke, du hast mir sehr geholfen! Nimm diese Flasche Pangalaktischen Donnergurgler als Dank.")
+    mana.chr_inv_change(ch, 30008, 1)
+    set_qstatus(7)
+  elseif get_qstatus()==7 then
+    do_message(npc, ch, "Lust auf eine neue Herausforderung?")
+    mana.chr_inv_change(ch, 40002, 1)
+    set_qstatus(do_choice(npc, ch, "Nein.","Ja.")+6)
+    if get_qstatus()==8 then
+      do_message(npc, ch, "Ich brauche 50 Skorpionstachel, um ein Faß Wurzelhans zu brauen.\nLass dich nicht stechen.")
+    end
+  elseif get_qstatus()==8 then
+    if mana.chr_inv_count(ch, 40004) >= 50 then
+      do_message(npc, ch, "Das hast du gut gemacht! Nimm diesen Hut als Dank!")
+      mana.chr_inv_change(ch, 40004, -50)
+      mana.chr_inv_change(ch, 20004, 1)
+      set_qstatus(9)
+    else
+      do_message(npc, ch, "Ich brauche 50 Skorpionstachel. Nicht mehr, und nicht weniger!")
+    end
+  elseif get_qstatus()>=9 then
+    do_message(npc, ch, "Ich habe momentan keine Aufgabe für dich.")
+  end
+
 	do_npc_close(npc, ch)
 end
 
