@@ -158,13 +158,13 @@ function bruce_talk(npc, ch)
   elseif get_qstatus()==3 and mana.chr_inv_count(ch, 40005) >= 20 then
     do_message(npc, ch, "Fabelhaft, du hast 20 Madenschleim gesammelt!\nDanke für deine Hilfe.")
     mana.chr_inv_change(ch, 40005, -20)
-    --mana.chr_give_exp(ch, attribute, amount)
+    mana.chr_give_exp(ch, 100, 750)
     set_qstatus(4)
   elseif get_qstatus()==4 then
     do_message(npc, ch, "In der Spielothek findet Danielas Geburtstagsparty statt.\nBist du so nett, und bringst ihr mein Geschenk?\nIch habe dort Hausverbot, weil ich meine Spielschulden nicht bezahlt habe.")
-    mana.chr_inv_change(ch, 40002, 1)
     set_qstatus(do_choice(npc, ch, "Nein.","Ja.")+3)
     if get_qstatus()==5 then
+      mana.chr_inv_change(ch, 40015, 1)
       do_message(npc, ch, "Sehr nett von dir. Die Spielothek ist im süd-westlichen Teil der Stadt. Gib Daniela das Geschenk.")
     end
   elseif get_qstatus()==5 then
