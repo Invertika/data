@@ -1,51 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <map version="1.0" orientation="orthogonal" width="133" height="60" tilewidth="32" tileheight="32">
  <properties>
   <property name="music" value="faith.ogg"/>
  </properties>
- <tileset name="arena" firstgid="1" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="arena" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/arena.png"/>
  </tileset>
- <tileset name="inn" firstgid="257" tilewidth="32" tileheight="32">
+ <tileset firstgid="257" name="inn" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/inn.png"/>
  </tileset>
- <tileset name="woodland_indoor" firstgid="513" tilewidth="32" tileheight="32">
+ <tileset firstgid="513" name="woodland_indoor" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/woodland_indoor.png"/>
  </tileset>
- <tileset name="collision" firstgid="769" tilewidth="32" tileheight="32">
+ <tileset firstgid="769" name="collision" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/collision.png"/>
  </tileset>
- <tileset name="inn2" firstgid="771" tilewidth="32" tileheight="32">
+ <tileset firstgid="771" name="inn2" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/ivk_inn1.png"/>
  </tileset>
- <tileset name="desert1" firstgid="1027" tilewidth="32" tileheight="32">
+ <tileset firstgid="1027" name="desert1" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/desert1.png"/>
  </tileset>
- <tileset name="inn_x2" firstgid="1283" tilewidth="32" tileheight="64">
+ <tileset firstgid="1283" name="inn_x2" tilewidth="32" tileheight="64">
   <image source="../graphics/tiles/inn_x2.png"/>
  </tileset>
- <tileset name="inn_x3" firstgid="1299" tilewidth="32" tileheight="96">
+ <tileset firstgid="1299" name="inn_x3" tilewidth="32" tileheight="96">
   <image source="../graphics/tiles/inn_x3.png"/>
+ </tileset>
+ <tileset firstgid="1315" name="pots_x2" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/pots_x2.png"/>
+ </tileset>
+ <tileset firstgid="1331" name="Woodland_indoor_x3" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/woodland_indoor_x3.png"/>
  </tileset>
  <layer name="Ground" width="133" height="60">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3XsRWDMBBEQVAHFO+SXBMpJfCcaFfWBJNc+je5+zyOGwAAAAAAAAAAAIAa52C2dPM312C2dPM3X6ZLN7eJPunmNtEn3dwm+qSb20SfdPPVN/EZv91XkG6++ib+Ubq5TfRJN7eJPunmNtEn3dwm+qSbr74Jf4dN7CDd3Cb6pJvbRJ90c5vok25uE33SzW2iT7q5TfRJN7eJPunmAAAAAAAAAAAAu3kApXo6U7B8AAA=
+   H4sIAAAAAAAAC+3XzRHBYBiFUbL0s1CAEjSAFpSgBOUoSU22sjQ2GOS+8Z3FWcgiMrnPmM91OplcAQAAAAAAAAAAAChj2jG09ObPrDqGlt78mcuXLX9wz1cdg9/9jvTmQzexDr7rU4G9/6GJWW/eW9w98yfXNgXeeXXpzYf+nUg6FHgGTdTiPNFGE+fu9evOE2008Y/Sm7fUhPOEJh45T2jikfOEJsYqvfnYm3jnf8dYpDcfexOf2PZ2vX2xz+nNW26iqvTmmqgnvbkm6klvrol60ptrop705pqoJ725JupJbw4AAAAAAAAAANCaG32eyxGwfAAA
   </data>
  </layer>
  <layer name="Fringe" width="133" height="60">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3ayy4DYRjG8Zlh2mq5Aac7cAm23IE9Ents2FPspW6AWrkTp5VE4rRg57QgsXB6GtNIRqtjMm3fGf9f8uabebV88T2Z+Sat4wAAAAAAAAAAAAAAAAAAAMCqsus4a268XiNFL/p5n/d7FVR5VS70O6I6jTBf/FTR/23Ljdez4iRmZjrl2Pj86paC9a1q3HXj9WqWdTwQysqo+1Wten/V6zceo2ai2fuT+Lmv45wqH3rPo+Z2lZJMrDdYnzi9DR2PdPn6YeU6UfRbv8aqotawpOp3k+mNGchEKcXrYcGg1nBINewm0xs3kAlk14rWd1VV9qL1a8hEtm1qffdUFS9av4Z7R7Zta313VFUvWr+G6wTCyEQ2TCS4L+XekQ1TCWcC6TStHMyoZlVzTTKRxHNHwbd9jm/zysGCajGoRuI8d1yrd2O8rNvXHA+CeR5qPDI05zjPHU/qPRsv6840x/NgnhcaL1WTRj/zRGfcKgN3QSbuNT6kIMdor1dl4C3IwbvGDzLx71neT6A72E8gjP0EwlrtJ+rfKevx23Peqb9j7RzNvXCfAgAAAAAAAAAAAAAAAJCwT7TkagGwfAAA
+   H4sIAAAAAAAAC+3auW7UUBTGcS/cJIAEBQKJsDQgJiD2ggQk1oJQUgEtINEDDfQQoKBD4QUgVDwBr8BWISGxFdCxFSBRsH1XthWPxx47EydzPfn/pCPbx8vcsY/ta894HgAAAAAAAAAAAAAAAAAAAJpkyve8W355Ls+KYG7TRZZruRHFsGKo4jpZryu0N60Vet5Y2DkOz5vWvrzvl+cW08sudfGqx5rJGlcNTISd4/PVre0uuRYf3/XG80ZNe25Gw0d+ec66nhqfiLez2Y8iMW7acwc0fVBxKDUs80H7dVm8XHZoa2Jll22s0ueu9ovXT0yqBk6FUT4ZT7P5Y4rjihMmmj6iOKowiiHFsJn9POt7ELW9CW7nnPO95O5ofFMfrx9WXdeJs6qBc2HneFWTfd4PdXiS2pd3K36f0w5+77pqYikb1XHdoNjo15M7PCDXCbjpho7vTcVUUC1vlfUn0Fz2fnxPx/exYjqYvT8X5RNcJwbbAx3fh4qZoFreoiYGX1H/vShPTQyGkzX2S+lPNJ8938/UXBNojr06f/fF5/B51cEFxUXFpYKa6PW5I23EuD3tom1q4464nS0Nty9gm3dr23vi7V9WHVxRXI0jq9fnjo/KfXI8XPdUbXwWRL/NPFe8cKjNvTx3/FDup+Phujdq49sg+m3mneJ9zrnXT3N97sD8fVYNfIlr96uG3xpQx1hYv1UDf+I6+KvhP2piyUv6E5Zr/Qn0R9KfsFzsT2Dx0Z9AVll/InlfsUbD/SZ/XjI/Pb0rs2zy37aw4L9uZfOz29uSmt5qoshbdqdpXydZb8x0zrfsO5pWpi15n5l+12Kl38dl275W0+sa8K7KFb+4TwEAAAAAAAAAAAAAAACo2X+Sq1VvsHwAAA==
   </data>
  </layer>
  <layer name="Over" width="133" height="60">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3UIQEAIAwAwUH/LDSAZAg0Bskm7hK8+ggAAAAAAAAAAAAA+GP17AKgouEN5eyWXQC36RMAAAAAAAAAAAAAAAAAAAAAAABPB04FvCOwfAAA
+   H4sIAAAAAAAAC+3WwQ0AEBREQZSmYB1QmYOzs8QXmangnTabEgAAAAAAAAAAAADcMUp0AfCiZhueM3N0Aey6nQAADlUfFwAAAAAAAAAAAAAAAAAAAPjcAuevb6GwfAAA
   </data>
  </layer>
  <layer name="Collision" width="133" height="110">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3U0YqrQBBF0ZD5/3/OU0AKdNTWVFW7NixmbkKYNn2477/X6w0AAAAAAAAAAAAAQBvLRl5bvjfy+b19P7/28+znr34/vtbB1vmPvnbFXY+W/fe/bZ0j+87P/J8x+lpmFXb5X9n3/MRNVC/7nvfuYJY6PFP2nXfexNo5t87f7bkqqtzZTVQv+847b+JMHZ4p+847bOLKc1R6rrWy7/yJm6he9p1X3cTy79+5iYr/ri6rPedYe3/rc9nf50yW32eVbMImnlL2XdtEvbLv2ibqlX3XNlGv7Lu2iXpl37VN1Cv7rkc3sXzvjp+/+juVfrJ/iwAAAAAAAAAAAN3c3ezPF5+1ynNX/75Gz9PhGb/nvOLMM939ViPn6/LcNvG7ujyvTYx39Hwdnmf5e2X6TTahmE0o9oRN2NSxnrAJHcsmFLMJxWxCMZtQbKZN2M01zbQJXZNNKGYTitmEYjahmE0oZhOK2YRiNqGYTShmE4rZhGI2oZhNKGYTitmEYp020U38njvpeGYAAAAAAAAAAIAZfACH62W3mOQAAA==
+   H4sIAAAAAAAAC+3U2WrDQAwF0JL+/z/3qWCE9yWSxufCoUkcZ2asSz+/Pz8fAAAAAAAAAAAAAADamObKZ9NrR+7f2tPSGtP75/5u3bt1395ntfS9eL6teypZeo5nPts70ydz1/pzs7xrH9kzP9qPuOczn2WmQi+3kj3nN3aierLnvLcHo6TDmbJn3rkTS/tc23+3c1VUOWc7UT3ZM+/ciTPpcKbsmXfoxJ37qHSupWTP/I2dqJ7smVfqxHTN+PrONaq/72K636cyt9bamkvX1+7Lfo4jiTOrkDOd6JDsWZ/thzyX7Pl2/j8xarJnrRP1kj1rnaiX7FnrRL1kz1on6iV71lc7sefa3PW137ly/ejaS99bW2fPHubW3POb0/dsdxEAAAAAAAAAAKCbpzP6+eJZq5y7+vO6up8OZ/zf5x17Hmn2a7myvy7n1onvpct5deJ6ju6vw3mmryuT70QnJEYnJOYNndCpY3lDJ+RYdEJidEJidEJidEJiRuqE3tyTkToh90QnJEYnJEYnJEYnJEYnJEYnJEYnJEYnJEYnJEYnJEYnJEYnJEYnJEYnJEYnJKZTJ7qJz7mTjnsGAAAAAAAAAAAYwR/VfGr4mOQAAA==
   </data>
  </layer>
  <objectgroup name="Object" width="0" height="0">
