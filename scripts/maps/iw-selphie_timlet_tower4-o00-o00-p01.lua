@@ -5,7 +5,7 @@
 -- anderer Dinge.                                                               --
 --                                                                              --
 ----------------------------------------------------------------------------------
---  Copyright 2008 The Invertika Development Team                               --
+--  Copyright 2008 - 2010 The Invertika Development Team                        --
 --                                                                              --
 --  This file is part of Invertika.                                             --
 --                                                                              --
@@ -15,12 +15,10 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
-
-require "scripts/lua/npclib"
 require "scripts/ivklibs/invertika"
 
 atinit(function()
- create_npc("Averin", 125, 175 * TILESIZE + 16, 25 * TILESIZE + 16, averin_talk, nil) --- Elmo
+ create_npc("Averin", 125, 15 * TILESIZE + 16, 15 * TILESIZE + 16, averin_talk, nil) --- Elmo
 end)
 
 function averin_talk(npc, ch)
