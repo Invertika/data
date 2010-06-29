@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="30" height="30" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="music" value="inside2.ogg"/>
+ </properties>
+ <tileset firstgid="1" name="collision" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision.png"/>
+ </tileset>
+ <tileset firstgid="3" name="inn" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/inn.png"/>
+ </tileset>
+ <tileset firstgid="259" name="inn2" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/ivk_inn1.png"/>
+ </tileset>
+ <tileset firstgid="515" name="woodland_indoor" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/woodland_indoor.png"/>
+ </tileset>
+ <tileset firstgid="771" name="inn_x2" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/inn_x2.png"/>
+ </tileset>
+ <tileset firstgid="787" name="inn_x3" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/inn_x3.png"/>
+ </tileset>
+ <layer name="Ground" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC/vJwMDwcxSP4hGGWYGYDYqR2eh8VirbKwzEIlAMYrtD2epY5KhprzIQq0AxiB2OxkdmU9PeJ0zE41F7R+0dtZd0e6ePMP+O2jtqLzXxLxqbP4pH8VDBAOeE0LkQDgAA
+  </data>
+ </layer>
+ <layer name="Fringe" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+2ROw4BURSGb2YFbMujoqRTeVRYAo2aDYhHb2yDApVXovVaABJfMcVtZjQnh8j5ki83557k/ydznTMMQ5MOdr/Q28dBzC6FacVv8VkEzi0D2cwteTvcJ+Qe2B2Fe8/kXfCakHtjdxfufZD3xJdw7icqkQXdWtfEFraVe3+NIe9d5Bwpv/uYvglOlXv/lRzm8aT8P0tY9uYZhjj37jKYFe6tY8ObV7jGTTT3sIo14V7DMOJ5A4swjCoQDgAA
+  </data>
+ </layer>
+ <layer name="Over" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3RwQkAIAxD0dC1vau4WnUnu0QtyH+Qe0gkAMjhJu3IseomyLL4Vj02GJHJFvhIqy4A4JkL42XsbxAOAAA=
+  </data>
+ </layer>
+ <layer name="Collision" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+2SQQoAMAjDxP8/evfBwB1qN0kh51RqRkQCAAioxNVhkvcmrq0neCsOvPpNT11+9br+ueJU3en07h26XAAvswBYeNLPEA4AAA==
+  </data>
+ </layer>
+ <objectgroup name="Object" width="30" height="30">
+  <object name="Warp to City 1" type="WARP" x="-4224" y="352" width="32" height="32">
+   <properties>
+    <property name="DEST_MAP" value="ow-o0000-o0000-o0000"/>
+    <property name="DEST_X" value="2112"/>
+    <property name="DEST_Y" value="5312"/>
+   </properties>
+  </object>
+  <object name="Warp to Inner" type="WARP" x="-3840" y="192" width="32" height="32">
+   <properties>
+    <property name="DEST_MAP" value="ow-o0000-o0000-o0000"/>
+    <property name="DEST_X" value="2432"/>
+    <property name="DEST_Y" value="5024"/>
+   </properties>
+  </object>
+  <object name="Warp to City  2" type="WARP" x="-3456" y="352" width="32" height="32">
+   <properties>
+    <property name="DEST_MAP" value="ow-o0000-o0000-o0000"/>
+    <property name="DEST_X" value="2752"/>
+    <property name="DEST_Y" value="5312"/>
+   </properties>
+  </object>
+  <object name="Level Up" type="WARP" x="-2400" y="-960" width="32" height="32">
+   <properties>
+    <property name="DEST_MAP" value="iw-selphie_timlet_hotel_complex-o00-o00-o00"/>
+    <property name="DEST_X" value="4640"/>
+    <property name="DEST_Y" value="1152"/>
+   </properties>
+  </object>
+  <object name="Level Up" type="WARP" x="-1440" y="-960" width="32" height="32">
+   <properties>
+    <property name="DEST_MAP" value="iw-selphie_timlet_hotel_complex-o00-o00-o00"/>
+    <property name="DEST_X" value="5600"/>
+    <property name="DEST_Y" value="1152"/>
+   </properties>
+  </object>
+  <object name="Level Down" type="WARP" x="480" y="-416" width="32" height="32">
+   <properties>
+    <property name="DEST_MAP" value="iw-selphie_timlet_hotel_complex-o00-o00-o00"/>
+    <property name="DEST_X" value="3680"/>
+    <property name="DEST_Y" value="672"/>
+   </properties>
+  </object>
+  <object name="Level Down" type="WARP" x="-480" y="-416" width="32" height="32">
+   <properties>
+    <property name="DEST_MAP" value="iw-selphie_timlet_hotel_complex-o00-o00-o00"/>
+    <property name="DEST_X" value="2720"/>
+    <property name="DEST_Y" value="672"/>
+   </properties>
+  </object>
+  <object name="Level Down" type="WARP" x="480" y="736" width="32" height="32">
+   <properties>
+    <property name="DEST_MAP" value="iw-selphie_timlet_tower3-o00-o00-o00"/>
+    <property name="DEST_X" value="480"/>
+    <property name="DEST_Y" value="480"/>
+   </properties>
+  </object>
+  <object name="Level Down" type="WARP" x="-480" y="736" width="32" height="32">
+   <properties>
+    <property name="DEST_MAP" value="iw-selphie_timlet_hotel_complex-o00-o00-o00"/>
+    <property name="DEST_X" value="2720"/>
+    <property name="DEST_Y" value="1824"/>
+   </properties>
+  </object>
+  <object name="Warp to City 6" type="WARP" x="-1440" y="736" width="32" height="32">
+   <properties>
+    <property name="DEST_MAP" value="ow-o0000-o0000-o0000"/>
+    <property name="DEST_X" value="2912"/>
+    <property name="DEST_Y" value="4448"/>
+   </properties>
+  </object>
+  <object name="Warp to City 5" type="WARP" x="-2400" y="736" width="32" height="32">
+   <properties>
+    <property name="DEST_MAP" value="ow-o0000-o0000-o0000"/>
+    <property name="DEST_X" value="1952"/>
+    <property name="DEST_Y" value="4448"/>
+   </properties>
+  </object>
+  <object name="Warp to City 3" type="WARP" x="-2400" y="-416" width="32" height="32">
+   <properties>
+    <property name="DEST_MAP" value="ow-o0000-o0000-o0000"/>
+    <property name="DEST_X" value="1920"/>
+    <property name="DEST_Y" value="5952"/>
+   </properties>
+  </object>
+  <object name="Warp to City 4" type="WARP" x="-1440" y="-416" width="32" height="32">
+   <properties>
+    <property name="DEST_MAP" value="ow-o0000-o0000-o0000"/>
+    <property name="DEST_X" value="2944"/>
+    <property name="DEST_Y" value="5952"/>
+   </properties>
+  </object>
+  <object name="Level Up" type="WARP" x="-2400" y="192" width="32" height="32">
+   <properties>
+    <property name="DEST_MAP" value="iw-selphie_timlet_hotel_complex-o00-o00-o00"/>
+    <property name="DEST_X" value="4640"/>
+    <property name="DEST_Y" value="2304"/>
+   </properties>
+  </object>
+  <object name="Level Up" type="WARP" x="-1440" y="192" width="32" height="32">
+   <properties>
+    <property name="DEST_MAP" value="iw-selphie_timlet_hotel_complex-o00-o00-o00"/>
+    <property name="DEST_X" value="5600"/>
+    <property name="DEST_Y" value="2304"/>
+   </properties>
+  </object>
+  <object name="Warp to City 7" type="WARP" x="-4384" y="1280" width="32" height="32">
+   <properties>
+    <property name="DEST_MAP" value="ow-o0000-o0000-o0000"/>
+    <property name="DEST_X" value="2208"/>
+    <property name="DEST_Y" value="5824"/>
+   </properties>
+  </object>
+  <object name="Warp to City 8" type="WARP" x="-3552" y="1280" width="32" height="32">
+   <properties>
+    <property name="DEST_MAP" value="ow-o0000-o0000-o0000"/>
+    <property name="DEST_X" value="2624"/>
+    <property name="DEST_Y" value="5760"/>
+   </properties>
+  </object>
+  <object name="External Map Events" type="SCRIPT" x="-5120" y="-1600">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/iw-selphie_timlet_tower3-o00-o00-p01.lua"/>
+   </properties>
+  </object>
+  <object name="Warp Down" type="WARP" x="-4480" y="1152" width="64" height="64">
+   <properties>
+    <property name="DEST_MAP" value="20004"/>
+    <property name="DEST_X" value="2688"/>
+    <property name="DEST_Y" value="3168"/>
+   </properties>
+  </object>
+  <object name="Warp Up" type="WARP" x="-3840" y="1504" width="64" height="128">
+   <properties>
+    <property name="DEST_MAP" value="20004"/>
+    <property name="DEST_X" value="730"/>
+    <property name="DEST_Y" value="2720"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
