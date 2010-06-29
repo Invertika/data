@@ -1,51 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <map version="1.0" orientation="orthogonal" width="200" height="200" tilewidth="32" tileheight="32">
- <tileset name="collision" firstgid="1" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="collision" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/collision.png"/>
  </tileset>
- <tileset name="desert1" firstgid="3" tilewidth="32" tileheight="32">
+ <tileset firstgid="3" name="desert1" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/desert1.png"/>
  </tileset>
- <tileset name="desert2" firstgid="259" tilewidth="32" tileheight="32">
+ <tileset firstgid="259" name="desert2" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/desert2.png"/>
  </tileset>
- <tileset name="desert_x2" firstgid="515" tilewidth="32" tileheight="64">
+ <tileset firstgid="515" name="desert_x2" tilewidth="32" tileheight="64">
   <image source="../graphics/tiles/desert_x2.png"/>
  </tileset>
- <tileset name="desert_x3" firstgid="531" tilewidth="32" tileheight="96">
+ <tileset firstgid="531" name="desert_x3" tilewidth="32" tileheight="96">
   <image source="../graphics/tiles/desert_x3.png"/>
  </tileset>
- <tileset name="desert_x5" firstgid="547" tilewidth="32" tileheight="160">
+ <tileset firstgid="547" name="desert_x5" tilewidth="32" tileheight="160">
   <image source="../graphics/tiles/desert_x5.png"/>
  </tileset>
- <tileset name="ivk_desert1" firstgid="553" tilewidth="32" tileheight="32">
+ <tileset firstgid="553" name="ivk_desert1" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/ivk_desert1.png"/>
  </tileset>
- <tileset name="ivk_ground1" firstgid="809" tilewidth="32" tileheight="32">
+ <tileset firstgid="809" name="ivk_ground1" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/ivk_ground1.png"/>
  </tileset>
- <tileset name="trans_woodland-desert" firstgid="1065" tilewidth="32" tileheight="32">
+ <tileset firstgid="1065" name="trans_woodland-desert" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/trans_woodland-desert.png"/>
+ </tileset>
+ <tileset firstgid="1193" name="ivk_nethek_x8" tilewidth="32" tileheight="256">
+  <image source="../graphics/tiles/ivk_nethek_x8.png"/>
  </tileset>
  <layer name="Ground" width="200" height="200">
   <data encoding="base64" compression="gzip">
-   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
+   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
   </data>
  </layer>
  <layer name="Fringe" width="200" height="200">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3VsQ2AMAxEUUuekmwC05MuihESnSnem+Ca048AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgH5HRozsXgH/dM5vXP4Bm9oNHYGldkNH4Ek34J1uAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwxQ2LLm4aAHECAA==
+   H4sIAAAAAAAAA+3VMQqAMBBE0QX3WF5YT2kRJMElYJcU78H00/0IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFjvPNqA6sqIO1e/gH28zRjboSPQfbuhI1DpBszpBgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfzysYlHUAHECAA==
   </data>
  </layer>
  <layer name="Over" width="200" height="200">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3BgQAAAADDoPlTX+EAVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfAYtCPEnAHECAA==
+   H4sIAAAAAAAAA+3VoQ0AMAgAQZKuw/7zIXBVkIqau+Rn+AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+C9PBwAT9zd8BIAN3wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHhTJAi82gBxAgA=
   </data>
  </layer>
- <layer name="Collision" width="200" height="200" visible="0">
+ <layer name="Collision" width="200" height="200">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3ZwUrDQABF0ZL//2jpqlq5TbUJmWTOgYcKLmIml6Aut9ttMbMc8Js+oOkDmj6g6QOaPqDpA5o+oOkDmj6g6QOaPqDpA5o+oOkDmj6g6QOaPqDpA5o+oOkDmj6g6QOaPqDpA5o+oOkDmj6g6QOaPqDpA5o+oO3Zh+44O+8PaPqApg9of+lDR8xm7/eHpjizT/rw7HN1fv+Apg9o+oC2ZR8642q8P6DpA5r/D0Lz/oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6mJuzf00f17c8fVz7Ph70MZe/nLXnQh8zc/br3CO+8yz8pI85LE+fv/qaB/fm2pztZ/QxL2e/zj2ax7t/3/U8POhjXs59nT7m47zfpw9o+oCmD2j6gKYPaPqApg9o+oCmjzEtG43PuI9j2aoLrWzDvRvDnl1o6v/ch2Md/fxr5bWj77mZmZmZmZmZmZmZmZmZmZmZmdnZRzv6bGbfkUa4htEdcYZHP5NrP98MbdyNch3sb69n86pt3I10LZzfldq4G+16YCT6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaIuZvdwXdLb3sABxAgA=
+   H4sIAAAAAAAAA+3ZwUrDQABF0ZL//2jpqlq5TbUJmWTOgYcKLmIml6Aut9ttMbMc8Js+oOkDmj6g6QOaPqDpA5o+oOkDmj6g6QOaPqDpA5o+oOkDmj6g6QOaPqDpA5o+oOkDmj6g6QOaPqDpA5o+oOkDmj6g6QOaPqDpA5o+oO3Zh+44O+8PaPqApg9of+lDR8xm7/eHpjizT/rw7HN1fv+Apg9o+oC2ZR8642q8P6DpA5r/D0Lz/oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6mJuzf00f17c8fVz7Ph70MZe/nLXnQh8zc/br3CO+8yz8pI85LE+fv/qaB/fm2pztZ/QxL2e/zj2ax7t/3/U8POhjXs59nT7m47zfpw9o+oCmD2j6gKYPaPqApg9o+oCmjzEtG43PuI9j2aoLrWzDvRvDnl1o6v/ch2Md/fxr5bWj77mZmZmZmZmZmZmZmZmZmZmZmdnZRzv6bGbfkUa4htEdcYZHP5NrP98MbdyNch3sb69n86pt3I10LZzfldq4G+16YCT6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaPqApg9o+oCmD2j6gKYPaIuZvdwXdLb3sABxAgA=
   </data>
  </layer>
  <objectgroup name="Object" width="0" height="0">
