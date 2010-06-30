@@ -34,8 +34,6 @@ function nethek_talk(npc, ch)
 								     "Nein.")
 								   
 		if v == 1 then
-			death.increase_death_counter(ch)
-			death.pay_death_price(ch)
 			local mapID = nethek.get_nethek_warp_map(ch)
 			local x = nethek.get_nethek_warp_x(ch)
 			local y = nethek.get_nethek_warp_y(ch)
@@ -99,6 +97,7 @@ function monty_talk(npc, ch)
 	   "Ja ja, wer länger stirbt ist früher tot.",
 	   "Ich sehe Tote wandeln. Aber du bist mein Favorit.",
 	   "Sterben ist dein Hobby, oder?",
+	   "Du bist ja schon wieder da...",
 	   "3, 2, 1, Tod.",
 	   "Nichts ist so grün wie der Tod, nicht wahr Frischling?",
 	   "Dem Godmode Spieler konnte nur noch ein Avatarspieler etwas entgegensetzen. Zum Glück passiert es nur sehr selten. Gibt immer so viele Tote...",
