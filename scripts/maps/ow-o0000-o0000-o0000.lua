@@ -23,7 +23,7 @@ dofile("data/scripts/ivklibs/warp.lua")
 
 atinit(function()
  create_inter_map_warp_trigger(62, 72, 56, 6) --- Intermap warp
- nethek.create_netheksaeule(180 * TILESIZE + 16 + 16, 125 * TILESIZE + 16) --- Netheksäule
+ nethek.create_netheksaeule(180 * TILESIZE + 16, 125 * TILESIZE + 16) --- Netheksäule
 
  create_npc("Elmo", 103, 176 * TILESIZE + 16, 154 * TILESIZE + 16, elmo_talk, nil) --- Elmo
  create_npc("Sam", 103, 183 * TILESIZE + 16, 154 * TILESIZE + 16, sam_talk, nil) --- Sam
@@ -42,8 +42,8 @@ atinit(function()
  create_npc("Elmes", 142, 114 * TILESIZE + 16, 180 * TILESIZE + 16, elmes_talk, nil) --- Elmes
  create_npc("Nepuret", 126, 90 * TILESIZE + 16, 185 * TILESIZE + 16, nepuret_talk, nil) --- Nepuret 
  create_npc("Nero", 120, 162 * TILESIZE + 16, 175 * TILESIZE + 16, nero_talk, nil) --- Nero
- create_npc("Bernie", 136, 12 * TILESIZE + 16, 19 * TILESIZE + 16, bernie_talk, nil) --- Bernie
- create_npc("Valeria", 108, 15 * TILESIZE + 16, 48 * TILESIZE + 16, valeria_talk, nil) --- Valeria
+ create_npc("Bernie", 136, 13 * TILESIZE + 16, 9 * TILESIZE + 16, bernie_talk, nil) --- Bernie
+ create_npc("Valeria", 108, 26 * TILESIZE + 16, 49 * TILESIZE + 16, valeria_talk, nil) --- Valeria
  
  create_npc("Wache", 121, 39 * TILESIZE + 16, 51 * TILESIZE + 16, colloseumwache_talk, nil) --- Colloseumwache
  create_npc("Wache", 121, 44 * TILESIZE + 16, 51 * TILESIZE + 16, colloseumwache_talk, nil) --- Colloseumwache
