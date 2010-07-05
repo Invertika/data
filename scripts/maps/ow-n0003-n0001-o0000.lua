@@ -15,9 +15,11 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
+require "scripts/ivklibs/nethek"
 
 dofile("data/scripts/ivklibs/warp.lua")
 
 atinit(function()
  create_inter_map_warp_trigger(28, 12, 24, 34) --- Intermap warp
+ nethek.create_netheksaeule(96 * TILESIZE, 102 * TILESIZE + 16) --- Netheksäule
 end)

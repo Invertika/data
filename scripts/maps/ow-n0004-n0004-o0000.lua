@@ -21,5 +21,5 @@ dofile("data/scripts/ivklibs/warp.lua")
 
 atinit(function()
  create_inter_map_warp_trigger(36, 26, 38, 48) --- Intermap warp
- nethek.create_netheksaeule(121 * TILESIZE + 16, 114 * TILESIZE + 16) --- Netheks�ule
+ nethek.create_netheksaeule(122 * TILESIZE, 114 * TILESIZE + 16) --- Netheksäule
 end)
