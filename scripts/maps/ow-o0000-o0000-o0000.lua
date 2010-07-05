@@ -23,7 +23,7 @@ dofile("data/scripts/ivklibs/warp.lua")
 
 atinit(function()
  create_inter_map_warp_trigger(62, 72, 56, 6) --- Intermap warp
- nethek.create_netheksaeule(180 * TILESIZE + 16, 125 * TILESIZE + 16) --- Netheksäule
+ nethek.create_netheksaeule(181 * TILESIZE, 125 * TILESIZE + 16) --- Netheksäule
 
  create_npc("Elmo", 103, 176 * TILESIZE + 16, 154 * TILESIZE + 16, elmo_talk, nil) --- Elmo
  create_npc("Sam", 103, 183 * TILESIZE + 16, 154 * TILESIZE + 16, sam_talk, nil) --- Sam
