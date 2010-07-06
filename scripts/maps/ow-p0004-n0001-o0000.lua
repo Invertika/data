@@ -15,6 +15,7 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
+require "scripts/ivklibs/nethek"
 
 dofile("data/scripts/ivklibs/warp.lua")
 
@@ -78,6 +79,7 @@ local gravestone_npc_id = 20001
 
 atinit(function()
  create_inter_map_warp_trigger(105, 111, 101, 89) --- Intermap warp
+ nethek.create_netheksaeule(95 * TILESIZE, 85 * TILESIZE + 16) --- Netheksäule
  create_npc(gravestone_npc_name, gravestone_npc_id, gravestone_data[1][1]*32+16, gravestone_data[1][2]*32+16, gravestone_talk01, nil) --- Grabstein1
  create_npc(gravestone_npc_name, gravestone_npc_id, gravestone_data[2][1]*32+16, gravestone_data[2][2]*32+16, gravestone_talk02, nil) --- Grabstein2
  create_npc(gravestone_npc_name, gravestone_npc_id, gravestone_data[3][1]*32+16, gravestone_data[3][2]*32+16, gravestone_talk03, nil) --- Grabstein3
