@@ -15,6 +15,7 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
+require "scripts/ivklibs/invertika"
 require "scripts/ivklibs/nethek"
 
 dofile("data/scripts/ivklibs/warp.lua")
@@ -80,6 +81,11 @@ local gravestone_npc_id = 20001
 atinit(function()
  create_inter_map_warp_trigger(105, 111, 101, 89) --- Intermap warp
  nethek.create_netheksaeule(138 * TILESIZE, 125 * TILESIZE + 16) --- Netheksäule
+ --- Wachen am Tor
+ wache = create_npc("Stadtwache", 123, 84 * TILESIZE + 16, 187 * TILESIZE + 16, stadtwache_talk, nil) --- Stadtwache
+ create_npc("Stadtwache", 123, 87 * TILESIZE + 16, 187 * TILESIZE + 16, stadtwache_talk, nil) --- Stadtwache
+ mana.trigger_create(85 * TILESIZE, 186 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "wache_trigger", 1, true) --- Trigger Tor
+ --- Grabsteine
  create_npc(gravestone_npc_name, gravestone_npc_id, gravestone_data[1][1]*32+16, gravestone_data[1][2]*32+16, gravestone_talk01, nil) --- Grabstein1
  create_npc(gravestone_npc_name, gravestone_npc_id, gravestone_data[2][1]*32+16, gravestone_data[2][2]*32+16, gravestone_talk02, nil) --- Grabstein2
  create_npc(gravestone_npc_name, gravestone_npc_id, gravestone_data[3][1]*32+16, gravestone_data[3][2]*32+16, gravestone_talk03, nil) --- Grabstein3
@@ -131,6 +137,31 @@ atinit(function()
  create_npc(gravestone_npc_name, gravestone_npc_id, gravestone_data[49][1]*32+16, gravestone_data[49][2]*32+16, gravestone_talk49, nil) --- Grabstein49
 end)
 
+
+--- Stadtwache Sprechfunktion
+function stadtwache_talk(npc, ch)
+ do_message(npc, ch, invertika.get_random_element("Hier darf niemand durch!",
+ "Glaub mir, da willst du nicht rein...",
+ "Lyet steht unter Quarantäne. Wegen der Seuche.",
+ "Meinen Vorgänger hat die Seuche auch schon erwischt... Aber was soll man machen, so viele Städte gibt es nicht zu bewachen.",
+ "Kein Zugang für Minderjährige! Und nein, auch nicht für Volljährige!",
+ "Wer eintritt wird eines grausamen und schmerzhaften Todes bestraft. So oder so.",
+ "Wieso sollte wer da rein wollen? Sind doch eh schon alle tot..."))
+ do_npc_close(npc, ch)
+end
+
+--- Stadtwache Trigger
+function wache_trigger(ch, id)
+ if (mana.being_type(ch) == TYPE_CHARACTER) then --- Nur Spieler beachten
+  mana.chr_warp(ch, mana.get_map_id(), mana.posX(ch), 190 * TILESIZE) --- Zurückversetzen des Spielers
+  mana.being_say(wache, invertika.get_random_element("Kein Durchgang!",
+  "Zwing uns nicht dir weh zu tun! Kein Durchgang!",
+  "Du darfst hier nicht durch!",
+  "Draußen bleiben!",
+  "Zutritt verboten!",
+  "Hier darf keiner durch!"))
+ end
+end
 
 --- Grabstein Sprechfunktionen
 function gravestone_talk01(npc, ch) do_message(npc, ch, gravestone_data[1][3]) do_npc_close(npc, ch) end
