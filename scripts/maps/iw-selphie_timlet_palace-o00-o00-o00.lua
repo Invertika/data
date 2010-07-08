@@ -17,8 +17,8 @@
 require "scripts/lua/npclib"
 
 atinit(function()
- create_npc("Luor", 116, 34 * TILESIZE + 16, 24 * TILESIZE + 16, luor_talk, nil) --- Luor
- create_npc("Krenel", 150, 41 * TILESIZE + 16, 56 * TILESIZE + 16, krenel_talk, nil) --- Krenel
+ create_npc("Luor", 20, 34 * TILESIZE + 16, 24 * TILESIZE + 16, luor_talk, nil) --- Luor
+ create_npc("Krenel", 54, 41 * TILESIZE + 16, 56 * TILESIZE + 16, krenel_talk, nil) --- Krenel
 end)
 
 function luor_talk(npc, ch)
@@ -30,6 +30,7 @@ function krenel_talk(npc, ch)
     				do_message(npc, ch, invertika.get_random_element("Wir müssen Aktivität vortäuschen...",
 	  "Aktivität simulieren... Also steh hier nicht rum. Los hop hop!",
 	  "Ich täusche Aktivität vor, also schau nicht so und mache das gleiche.",
-	  "Wenn wir das nicht tun ist alles zu spät."))
+	  "Wenn wir das nicht tun ist alles zu spät.",
+	  "Das ganze Invertika Team macht das so... aber psssst..."))
 	do_npc_close(npc, ch)
 end

@@ -22,8 +22,8 @@ dofile("data/scripts/ivklibs/warp.lua")
 
 atinit(function()
  create_inter_map_warp_trigger(19001, 19001, 19001, 19001) --- Intermap warp
- create_npc("Nethek", 20001, 36 * TILESIZE + 16, 154 * TILESIZE + 16, nethek_talk, nil) --- Nethek
- create_npc("Monty", 145, 107 * TILESIZE + 16, 92 * TILESIZE + 16, monty_talk, nil) --- Monty
+ create_npc("Nethek", 1, 36 * TILESIZE + 16, 154 * TILESIZE + 16, nethek_talk, nil) --- Nethek
+ create_npc("Monty", 49, 107 * TILESIZE + 16, 92 * TILESIZE + 16, monty_talk, nil) --- Monty
 end)
 
 function nethek_talk(npc, ch)

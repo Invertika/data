@@ -23,31 +23,31 @@ atinit(function()
  create_inter_map_warp_trigger(19002, 19002, 19002, 19002) --- Intermap warp
  
  --- Zelan
- create_npc("Zelan", 154, 132 * TILESIZE + 16, 21 * TILESIZE + 16, zelan_talk, nil) --- Zelan
+ create_npc("Zelan", 58, 132 * TILESIZE + 16, 21 * TILESIZE + 16, zelan_talk, nil) --- Zelan
  
   --- Zeitungsjunge
- create_npc("Jack", 130, 159 * TILESIZE + 16, 31 * TILESIZE + 16, jack_talk, nil) --- Jack
+ create_npc("Jack", 34, 159 * TILESIZE + 16, 31 * TILESIZE + 16, jack_talk, nil) --- Jack
  
  --- Zaun NPC 
- create_npc("Ancoise", 121, 137 * TILESIZE + 16, 41 * TILESIZE + 16, ancoise_talk, nil) --- Ancoise
+ create_npc("Ancoise", 25, 137 * TILESIZE + 16, 41 * TILESIZE + 16, ancoise_talk, nil) --- Ancoise
 
  --- Kampf NPC's
- create_npc("Kolbert", 126, 156 * TILESIZE + 16, 66 * TILESIZE + 16, kolbert_talk, nil) --- Kolbert
+ create_npc("Kolbert", 30, 156 * TILESIZE + 16, 66 * TILESIZE + 16, kolbert_talk, nil) --- Kolbert
  
  --- Levelup NPC
- create_npc("Syntyche", 121, 142 * TILESIZE + 16, 110 * TILESIZE + 16, syntyche_talk, nil) --- Syntyche
+ create_npc("Syntyche", 25, 142 * TILESIZE + 16, 110 * TILESIZE + 16, syntyche_talk, nil) --- Syntyche
  
  --- Handel Valaia 
- create_npc("Valaia", 156, 102 * TILESIZE + 16, 83 * TILESIZE + 16, valaia_talk, nil) --- Valaia
+ create_npc("Valaia", 60, 102 * TILESIZE + 16, 83 * TILESIZE + 16, valaia_talk, nil) --- Valaia
  
  --- Regeln Asam 
- create_npc("Asam", 168, 66 * TILESIZE + 16, 130 * TILESIZE + 16, asam_talk, nil) --- Asam
+ create_npc("Asam", 72, 66 * TILESIZE + 16, 130 * TILESIZE + 16, asam_talk, nil) --- Asam
  
   --- Leben und Sterben Corona  
- create_npc("Corona ", 108, 89 * TILESIZE + 16, 135 * TILESIZE + 16, corona_talk, nil) --- Corona 
+ create_npc("Corona ", 12, 89 * TILESIZE + 16, 135 * TILESIZE + 16, corona_talk, nil) --- Corona 
  
  --- Verlassen des Vacare
- create_npc("Vacare", 20001, 103 * TILESIZE, 139 * TILESIZE + 16, vacare_talk, nil) --- Vacare
+ create_npc("Vacare", 1, 103 * TILESIZE, 139 * TILESIZE + 16, vacare_talk, nil) --- Vacare
 end)
 
 function zelan_talk(npc, ch)

@@ -76,7 +76,7 @@ local gravestone_data =
 -- Angezeigter Name - keiner
 local gravestone_npc_name = "Grabstein"
 -- ID des unsichtbaren NPC
-local gravestone_npc_id = 20001
+local gravestone_npc_id = 1
 
 atinit(function()
  create_inter_map_warp_trigger(105, 111, 101, 89) --- Intermap warp

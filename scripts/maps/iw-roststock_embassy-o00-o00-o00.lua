@@ -13,12 +13,12 @@
 --  under the terms of the GNU General  Public License as published by the Free --
 --  Software Foundation; either version 2 of the License, or any later version. --
 ----------------------------------------------------------------------------------
-
+ 
 require "scripts/lua/npclib"
 require "scripts/ivklibs/invertika"
 
 atinit(function()
- create_npc("Botschafter", 162, 51 * TILESIZE + 16, 31 * TILESIZE + 16, botschafter_talk, nil)
+ create_npc("Botschafter", 66, 51 * TILESIZE + 16, 31 * TILESIZE + 16, botschafter_talk, nil)
 end)
 
 function botschafter_talk(npc, ch)

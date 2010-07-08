@@ -19,7 +19,7 @@ require "scripts/ivklibs/banker"
 require "scripts/ivklibs/slotmachine"
 
 atinit(function() 
- create_npc("Brecht", 117, 20 * TILESIZE + 16, 15 * TILESIZE + 16, brecht_talk, nil) --- Brecht
+ create_npc("Brecht", 21, 20 * TILESIZE + 16, 15 * TILESIZE + 16, brecht_talk, nil) --- Brecht
 end)
 
 function brecht_talk(npc, ch)

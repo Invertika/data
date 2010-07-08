@@ -20,7 +20,7 @@ require "scripts/ivklibs/special"
 
 atinit(function()
  special.create_elevator_gm_house_01_talk(125 * TILESIZE + 16, 22 * TILESIZE + 16) --- Fahrstuhl
- create_npc("Nomo", 116, 48 * TILESIZE + 16, 23 * TILESIZE + 16, nomo_talk, nil) --- Nomo
+ create_npc("Nomo", 20, 48 * TILESIZE + 16, 23 * TILESIZE + 16, nomo_talk, nil) --- Nomo
 end)
 
 function nomo_talk(npc, ch)

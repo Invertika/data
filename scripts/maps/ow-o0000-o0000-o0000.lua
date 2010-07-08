@@ -25,41 +25,41 @@ atinit(function()
  create_inter_map_warp_trigger(62, 72, 56, 6) --- Intermap warp
  nethek.create_netheksaeule(181 * TILESIZE, 125 * TILESIZE + 16) --- Netheksäule
 
- create_npc("Elmo", 103, 176 * TILESIZE + 16, 154 * TILESIZE + 16, elmo_talk, nil) --- Elmo
- create_npc("Sam", 103, 183 * TILESIZE + 16, 154 * TILESIZE + 16, sam_talk, nil) --- Sam
- create_npc("Julia", 106, 170 * TILESIZE + 16, 152 * TILESIZE + 16, julia_talk, nil) --- Julia
- create_npc("Jane", 108, 182 * TILESIZE + 16, 145 * TILESIZE + 16, jane_talk, nil) --- Jane
- create_npc("Bruce", 103, 190 * TILESIZE + 16, 160 * TILESIZE + 16, bruce_talk, nil) --- Bruce
- create_npc("Felix", 138, 187 * TILESIZE + 16, 94 * TILESIZE + 16, felix_talk, nil) --- Felix
- create_npc("Saria", 108, 42 * TILESIZE + 16, 100 * TILESIZE + 16, saria_talk, nil) --- Saria
- create_npc("Nobur", 113, 186 * TILESIZE + 16, 179 * TILESIZE + 16, nobur_talk, nil) --- Nobur
- create_npc("Alex", 120, 76 * TILESIZE + 16, 10 * TILESIZE + 16, alex_talk, nil) --- Alex
- create_npc("Inard", 157, 74 * TILESIZE + 16, 142 * TILESIZE + 16, inard_talk, nil) --- Inard
- create_npc("Belart", 137, 108 * TILESIZE + 16, 132 * TILESIZE + 16, belart_talk, nil) --- Belart
- create_npc("Imangi", 163, 138 * TILESIZE + 16, 157 * TILESIZE + 16, imangi_talk, nil) --- Imangi
- create_npc("Ortana", 104, 97 * TILESIZE + 16, 49 * TILESIZE + 16, ortana_talk, nil) --- Ortana
- create_npc("Tonver", 104, 17 * TILESIZE + 16, 181 * TILESIZE + 16, tonver_talk, nil) --- Tonver
- create_npc("Elmes", 142, 114 * TILESIZE + 16, 180 * TILESIZE + 16, elmes_talk, nil) --- Elmes
- create_npc("Nepuret", 126, 90 * TILESIZE + 16, 185 * TILESIZE + 16, nepuret_talk, nil) --- Nepuret 
- create_npc("Nero", 120, 162 * TILESIZE + 16, 175 * TILESIZE + 16, nero_talk, nil) --- Nero
- create_npc("Bernie", 136, 13 * TILESIZE + 16, 9 * TILESIZE + 16, bernie_talk, nil) --- Bernie
- create_npc("Valeria", 108, 26 * TILESIZE + 16, 49 * TILESIZE + 16, valeria_talk, nil) --- Valeria
+ create_npc("Elmo", 7, 176 * TILESIZE + 16, 154 * TILESIZE + 16, elmo_talk, nil) --- Elmo
+ create_npc("Sam", 7, 183 * TILESIZE + 16, 154 * TILESIZE + 16, sam_talk, nil) --- Sam
+ create_npc("Julia", 10, 170 * TILESIZE + 16, 152 * TILESIZE + 16, julia_talk, nil) --- Julia
+ create_npc("Jane", 12, 182 * TILESIZE + 16, 145 * TILESIZE + 16, jane_talk, nil) --- Jane
+ create_npc("Bruce", 7, 190 * TILESIZE + 16, 160 * TILESIZE + 16, bruce_talk, nil) --- Bruce
+ create_npc("Felix", 42, 187 * TILESIZE + 16, 94 * TILESIZE + 16, felix_talk, nil) --- Felix
+ create_npc("Saria", 10, 42 * TILESIZE + 16, 100 * TILESIZE + 16, saria_talk, nil) --- Saria
+ create_npc("Nobur", 17, 186 * TILESIZE + 16, 179 * TILESIZE + 16, nobur_talk, nil) --- Nobur
+ create_npc("Alex", 24, 76 * TILESIZE + 16, 10 * TILESIZE + 16, alex_talk, nil) --- Alex
+ create_npc("Inard", 61, 74 * TILESIZE + 16, 142 * TILESIZE + 16, inard_talk, nil) --- Inard
+ create_npc("Belart", 41, 108 * TILESIZE + 16, 132 * TILESIZE + 16, belart_talk, nil) --- Belart
+ create_npc("Imangi", 67, 138 * TILESIZE + 16, 157 * TILESIZE + 16, imangi_talk, nil) --- Imangi
+ create_npc("Ortana", 8, 97 * TILESIZE + 16, 49 * TILESIZE + 16, ortana_talk, nil) --- Ortana
+ create_npc("Tonver", 8, 17 * TILESIZE + 16, 181 * TILESIZE + 16, tonver_talk, nil) --- Tonver
+ create_npc("Elmes", 46, 114 * TILESIZE + 16, 180 * TILESIZE + 16, elmes_talk, nil) --- Elmes
+ create_npc("Nepuret", 30, 90 * TILESIZE + 16, 185 * TILESIZE + 16, nepuret_talk, nil) --- Nepuret 
+ create_npc("Nero", 24, 162 * TILESIZE + 16, 175 * TILESIZE + 16, nero_talk, nil) --- Nero
+ create_npc("Bernie", 40, 13 * TILESIZE + 16, 9 * TILESIZE + 16, bernie_talk, nil) --- Bernie
+ create_npc("Valeria", 10, 26 * TILESIZE + 16, 49 * TILESIZE + 16, valeria_talk, nil) --- Valeria
  
- create_npc("Wache", 121, 39 * TILESIZE + 16, 51 * TILESIZE + 16, colloseumwache_talk, nil) --- Colloseumwache
- create_npc("Wache", 121, 44 * TILESIZE + 16, 51 * TILESIZE + 16, colloseumwache_talk, nil) --- Colloseumwache
+ create_npc("Wache", 25, 39 * TILESIZE + 16, 51 * TILESIZE + 16, colloseumwache_talk, nil) --- Colloseumwache
+ create_npc("Wache", 25, 44 * TILESIZE + 16, 51 * TILESIZE + 16, colloseumwache_talk, nil) --- Colloseumwache
  
- create_npc("Wache", 125, 26 * TILESIZE + 16, 165 * TILESIZE + 16, bankwache_talk, nil) --- Bankwache
- create_npc("Wache", 125, 31 * TILESIZE + 16, 165 * TILESIZE + 16, bankwache_talk, nil) --- Bankwache
- create_npc("Wache", 125, 45 * TILESIZE + 16, 165 * TILESIZE + 16, bankwache_talk, nil) --- Bankwache
- create_npc("Wache", 125, 49 * TILESIZE + 16, 165 * TILESIZE + 16, bankwache_talk, nil) --- Bankwache
+ create_npc("Wache", 29, 26 * TILESIZE + 16, 165 * TILESIZE + 16, bankwache_talk, nil) --- Bankwache
+ create_npc("Wache", 29, 31 * TILESIZE + 16, 165 * TILESIZE + 16, bankwache_talk, nil) --- Bankwache
+ create_npc("Wache", 29, 45 * TILESIZE + 16, 165 * TILESIZE + 16, bankwache_talk, nil) --- Bankwache
+ create_npc("Wache", 29, 49 * TILESIZE + 16, 165 * TILESIZE + 16, bankwache_talk, nil) --- Bankwache
  
- create_npc("Stadtwache", 123, 110 * TILESIZE + 16, 196 * TILESIZE + 16, stadtwache_talk, nil) --- Stadtwache
- create_npc("Stadtwache", 123, 117 * TILESIZE + 16, 196 * TILESIZE + 16, stadtwache_talk, nil) --- Stadtwache
+ create_npc("Stadtwache", 27, 110 * TILESIZE + 16, 196 * TILESIZE + 16, stadtwache_talk, nil) --- Stadtwache
+ create_npc("Stadtwache", 27, 117 * TILESIZE + 16, 196 * TILESIZE + 16, stadtwache_talk, nil) --- Stadtwache
  
- wache1 = create_npc("Palastwache", 123, 143 * TILESIZE + 16, 68 * TILESIZE + 16, palastwache_talk, nil) --- Palastwache
- create_npc("Palastwache", 123, 150 * TILESIZE + 16, 68 * TILESIZE + 16, palastwache_talk, nil) --- Palastwache
- wache2 = create_npc("Palastwache", 123, 181 * TILESIZE + 16, 68 * TILESIZE + 16, palastwache_talk, nil) --- Palastwache
- create_npc("Palastwache", 123, 188 * TILESIZE + 16, 68 * TILESIZE + 16, palastwache_talk, nil) --- Palastwache
+ wache1 = create_npc("Palastwache", 27, 143 * TILESIZE + 16, 68 * TILESIZE + 16, palastwache_talk, nil) --- Palastwache
+ create_npc("Palastwache", 27, 150 * TILESIZE + 16, 68 * TILESIZE + 16, palastwache_talk, nil) --- Palastwache
+ wache2 = create_npc("Palastwache", 27, 181 * TILESIZE + 16, 68 * TILESIZE + 16, palastwache_talk, nil) --- Palastwache
+ create_npc("Palastwache", 27, 188 * TILESIZE + 16, 68 * TILESIZE + 16, palastwache_talk, nil) --- Palastwache
  
  --- Trigger für die Überwachung des Torbereiches
  mana.trigger_create(145 * TILESIZE, 17 * TILESIZE, 5 * TILESIZE, 52 * TILESIZE, "wache_trigger", 1, true) --- Trigger Tor 1

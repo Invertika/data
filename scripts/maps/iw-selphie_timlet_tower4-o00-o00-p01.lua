@@ -18,7 +18,7 @@ require "scripts/lua/npclib"
 require "scripts/ivklibs/invertika"
 
 atinit(function()
- create_npc("Averin", 125, 15 * TILESIZE + 16, 15 * TILESIZE + 16, averin_talk, nil) --- Elmo
+ create_npc("Averin", 29, 15 * TILESIZE + 16, 15 * TILESIZE + 16, averin_talk, nil) --- Elmo
 end)
 
 function averin_talk(npc, ch)

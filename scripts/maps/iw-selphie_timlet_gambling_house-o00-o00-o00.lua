@@ -19,13 +19,13 @@ require "scripts/ivklibs/slotmachine"
 require "scripts/ivklibs/invertika"
 
 atinit(function() 
- create_npc("Slotmaschine", 20001, 25 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
- create_npc("Slotmaschine", 20001, 27 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
- create_npc("Slotmaschine", 20001, 29 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
- create_npc("Slotmaschine", 20001, 31 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
- create_npc("Slotmaschine", 20001, 33 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
- create_npc("Slotmaschine", 20001, 35 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
- create_npc("Daniela", 106, 25 * TILESIZE + 16, 27 * TILESIZE + 16, daniela_talk, nil)
+ create_npc("Slotmaschine", 1, 25 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+ create_npc("Slotmaschine", 1, 27 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+ create_npc("Slotmaschine", 1, 29 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+ create_npc("Slotmaschine", 1, 31 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+ create_npc("Slotmaschine", 1, 33 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+ create_npc("Slotmaschine", 1, 35 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+ create_npc("Daniela", 10, 25 * TILESIZE + 16, 27 * TILESIZE + 16, daniela_talk, nil)
 end)
 
 function daniela_talk(npc, ch)

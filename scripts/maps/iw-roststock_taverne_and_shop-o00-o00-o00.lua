@@ -18,7 +18,7 @@ require "scripts/lua/npclib"
 require "scripts/ivklibs/invertika"
 
 atinit(function()
- create_npc("Björn", 160, 75 * TILESIZE + 16, 24 * TILESIZE + 16, bjoern_talk, nil) --- Banker (Debug)
+ create_npc("Björn", 64, 75 * TILESIZE + 16, 24 * TILESIZE + 16, bjoern_talk, nil) --- Banker (Debug)
 end)
 
 function bjoern_talk(npc, ch)

@@ -18,8 +18,8 @@ require "scripts/lua/npclib"
 require "scripts/ivklibs/invertika"
 
 atinit(function()
- create_npc("Manitu", 143, 55 * TILESIZE + 16, 23 * TILESIZE + 16, manitu_talk, nil) --- Der grosse Manitu
- create_npc("S.A.N.D.R.A.", 140, 30 * TILESIZE + 16, 22 * TILESIZE + 16, sandra_talk, nil) --- S.A.N.D.R.A.
+ create_npc("Manitu", 47, 55 * TILESIZE + 16, 23 * TILESIZE + 16, manitu_talk, nil) --- Der grosse Manitu
+ create_npc("S.A.N.D.R.A.", 44, 30 * TILESIZE + 16, 22 * TILESIZE + 16, sandra_talk, nil) --- S.A.N.D.R.A.
 end)
 
 function manitu_talk(npc, ch)

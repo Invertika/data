@@ -61,5 +61,5 @@ end
 
 --- Erzeugt einen NPC für die Netheksäule
 function create_elevator_gm_house_01_talk(xpos, ypos)
-	create_npc("Fahrstuhl", 20001, xpos, ypos, elevator_gm_house_01_talk, nil) --- Fahrstuhl
+	create_npc("Fahrstuhl", 1, xpos, ypos, elevator_gm_house_01_talk, nil) --- Fahrstuhl
 end
