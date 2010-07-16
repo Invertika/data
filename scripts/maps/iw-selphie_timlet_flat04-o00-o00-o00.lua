@@ -17,5 +17,10 @@
 require "scripts/lua/npclib"
 
 atinit(function()
- ---create_npc("Banker", 122, 180 * TILESIZE + 16, 160 * TILESIZE + 16, banker.banker_talk, nil) --- Banker (Debug)
+ create_npc("Haitan", 67, 62 * TILESIZE + 16, 29 * TILESIZE + 16, haitan_talk, nil) --- Haitan
 end)
+
+function haitan_talk(npc, ch)
+	do_message(npc, ch, "Bitte bring doch ein paar von den Skorpionen im Keller um.")
+	do_npc_close(npc, ch)
+end
