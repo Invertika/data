@@ -15,6 +15,7 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
+require "scripts/ivklibs/invertika"
 
 atinit(function()
  create_npc("Luor", 20, 34 * TILESIZE + 16, 24 * TILESIZE + 16, luor_talk, nil) --- Luor
