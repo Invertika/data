@@ -33,9 +33,6 @@ function rezeptionist_talk(npc, ch)
   function get_qstatus() return tonumber(get_quest_var(ch, quest_name)) end
   function set_qstatus(x) mana.chr_set_quest(ch, quest_name, tonumber(x)) end
   
-	mana.chr_inv_change(ch, 40002, 10) --- IP Pakete
-	mana.chr_inv_change(ch, 40004, 10, 40005, 10) ---Skorpionstachel, Madenschleim
-	mana.chr_inv_change(ch, 30006, 10, 30007, 10) ---Bier, Milch
   if get_qstatus() == 0 then
     do_message(npc, ch, "Willkommen im Hotel. Was kann ich für dich tun?")
 	  local v = do_choice(npc, ch, "Hast du arbeit für mich?","Nichts, danke")
