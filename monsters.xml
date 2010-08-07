@@ -381,6 +381,57 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
             mutation="90"
             />
     </monster>
+
+<monster id="10" name="Kellerskorpion">
+        <sprite>monsters/monster-scorpion.xml|#4C4C4C,7F7F7F,CCCCCC,ffffff</sprite>
+        <sound event="hit">monsters/scorpion/scorpion-hit1.ogg</sound>
+        <sound event="hit">monsters/scorpion/scorpion-hit2.ogg</sound>
+        <sound event="hit">monsters/scorpion/scorpion-hit3.ogg</sound>
+        <sound event="hit">monsters/scorpion/scorpion-hit4.ogg</sound>
+        <sound event="miss">monsters/scorpion/scorpion-miss1.ogg</sound>
+        <drop item="40016" percent="50"/>
+        <exp>15</exp>
+        <attributes
+            hp="20"
+            size="8"
+            speed="6.0"
+            attack-min="13"
+            attack-delta="2"
+            attack-magic="0"
+            hit="10"
+            evade="10"
+            physical-defence="5"
+            magical-defence="0"
+            />
+        <!-- doesn't move much, but attacks when you are comming too close. -->
+        <behavior
+            aggressive="true"
+            cowardly="false"
+            track-range="2"
+            stroll-range="1"
+            attack-distance="64"
+            />
+        <!-- slow, strong, long-range tail attack-->
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="5"
+            aft-delay="15"
+            damage-factor="3"
+            range="64"
+            particle-effect="graphics/particles/attack.particle.xml"
+            action="special1"
+            />
+        <!-- fast, weak, short-range scissor attack -->
+        <attack id="2"
+            priority="4"
+            type="physical"
+            pre-delay="3"
+            aft-delay="3"
+            damage-factor="1"
+            range="32"
+            />
+    </monster>
 	
 	<!-- Invertika Testmonster ID's >= 10000-->
 	<monster id="10000" name="Ipsum">
