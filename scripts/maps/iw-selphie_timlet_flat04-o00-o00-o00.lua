@@ -28,7 +28,6 @@ function haitan_talk(npc, ch)
 			--- Questvariable anpassen
 			mana.chr_set_quest(ch, "selphi_timlet_haitan_scorpions", 1)
 			do_message(npc, ch, "Sammle ihre Stachel als Beweis. Solche Skorpione habe ich noch nirgendwo sonst gesehen.")
-			do_npc_close(npc, ch)
 		else
 			do_message(npc, ch, invertika.get_random_element("Na dann halt nicht...",
 				"Und wie soll ich dann bitte schön an meine Vorräte kommen? Die Jugend von heute...",
@@ -36,7 +35,6 @@ function haitan_talk(npc, ch)
 				"Ich hätte dich auch dafür belohnt, na ja...",
 				"...",
 				"Dann muss ich wohl jemand anderen fragen"))
-			do_npc_close(npc, ch)
 		end
 	elseif (get_quest_var(ch, "selphi_timlet_haitan_scorpions")==1) then
 		local count = mana.chr_inv_count(ch, 40016)
@@ -61,4 +59,5 @@ function haitan_talk(npc, ch)
 			"Du darfst gerne mehr töten, aber leider kann ich dir nichts mehr dafür geben",
 			"Leider sind immer noch Skorpione da unten..."))
 	end
+	do_npc_close(npc, ch)
 end
