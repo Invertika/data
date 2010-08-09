@@ -27,7 +27,7 @@ function haitan_talk(npc, ch)
 		local v = do_choice(npc, ch, "Aber natürlich!", "Die sind doch bestimmt gefährlich, nein!", "Aber ich bin Sternbild Skorpion! Die zu töten bringt mir Unglück!")
 		if v == 1 then
 			--- Questvariable anpassen
-			mana.chr_set_quest(ch, "selphi_timlet_haitan_scorpions", 1)
+			mana.chr_set_quest(ch, "selphi_timlet_haitan_scorpions", "1")
 			do_message(npc, ch, "Sammle ihre Stachel als Beweis. Solche Skorpione habe ich noch nirgendwo sonst gesehen.")
 		else
 			do_message(npc, ch, invertika.get_random_element("Na dann halt nicht...",
@@ -37,7 +37,7 @@ function haitan_talk(npc, ch)
 				"...",
 				"Dann muss ich wohl jemand anderen fragen"))
 		end
-	elseif (get_quest_var(ch, "selphi_timlet_haitan_scorpions")==1) then
+	elseif (get_quest_var(ch, "selphi_timlet_haitan_scorpions")=="1") then
 		local count = mana.chr_inv_count(ch, 40016)
 		if count < 30 then
 			--- Noch nicht genug umgebracht
