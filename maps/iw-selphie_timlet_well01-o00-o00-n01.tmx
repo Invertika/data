@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="29" height="32" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="music" value="inside2.ogg"/>
+ </properties>
+ <tileset firstgid="1" name="collision" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision_32_32.png"/>
+ </tileset>
+ <tileset firstgid="3" name="cave_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave_32_32.png"/>
+ </tileset>
+ <tileset firstgid="131" name="cave_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/cave_32_64.png"/>
+ </tileset>
+ <tileset firstgid="147" name="cave_bilevel" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave_bilevel.png"/>
+ </tileset>
+ <layer name="Ground" width="29" height="32">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA62WzU4UQRSFb7kAjGiAwIiJJIKOA7gRZeRvowYchY2y6QAbYKeGBNgYJSEDb8gb4BOIbgghUU9lbqVvF/XXM7P40t3VVffcqrp1ujMiytpkCkyDYX4e4edpq12+e9aBnmYBLIInoAaqYAAMgiFuN/pV7rskcrUZjuSt+QBWwSyYA3XwCIyDCW5fZOrcd03k+hq8AW9F7lUxxrQ9Vriq1rwmQS9YBg2wAp6DGfCC21eZFe5bEbl+BJ/Ausi9LsaYtpfQm1Wtec1znBDbYAfsWprfHX2XRW6yzdzreb1P0NwHB+DQ0vT1P7KejyPxL/l6Jdqa4AScJmqWJePrWaBPhfIa7Oui9s9EzdESMftUzkVgLyRXDk19TicDY76p/H5UtbgD+lUxh2tq5fEb/AW/+Nmlqc+prP1tKta4j4fQ2cB1E2xRnsddcA/8Qxspt6auJVn7do2H+Ay+gK8ijzGxLgOWpl5T43M1yv2lScUaj/Ej8O7cWlu9psbn5ij3l71ErRDnYl9vq1xTr6nxuQal+4sk49h/KK+hXtYy+/pAaOoz4vK5spoKMW+pmzUk91VqxmK6/NjWHBSx7RpqRzOklVHx/MXolmbm0PR9DyrWuHY9V491eWwP+f9r2vHcAuqmx7nm1E3N+w6PS9W01zf0nXChPW5HpWtqD6xR+NsSYx96B0LzKcf0/dNqD0z9r/LRhN6J0HzFMZc8mtoDG1TO92Jr/45jrnk0ffVj6r2TfxffvmpN17ekQuGcYuxFNEM5duJXqWemLHLtU/ynG8h1iM3rPw99jWOADgAA
+  </data>
+ </layer>
+ <layer name="Fringe" width="29" height="32">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGAWjgL7AmZGBwYURU/wZED8H4hdA/BKIXyHJxVJoZzDQvhBGhB0w87+hqftFornNBORBfrkPxA+A+CEQP0Lik2snNQDIHS+QMHp44wOpWOKOUDjgUjcQfqfETg1GCJbGEgaU2mlLQF4baKcOmr3I7pADsvmR+LQKW5g7dIFYjxGSnqltJ3JZgIxBdqGnIS4S4wIG0M0BlQXfidQrRaad6IAYO0HxqgnEWhTaCQtT5PJHiBEzDelSyW8gwAY0ix2I3zMgwhuURtDTECmAUFkjBjRPHIj/gziMCDtpCdSA9qhD8x8sPkFlLCnlKrmAjREzDdHav2JY4ozadqLHM3IYw0ASFdMqPpCPZE8RneysR7KniU529gPtmQDEE4F4Ep3sHAUjFwAAUBCHq4AOAAA=
+  </data>
+ </layer>
+ <layer name="Over" width="29" height="32">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGAWjYBQQA7iBeAoQSxOh1oORgcGTkcYOAoJQoB1hQBwOxBFUtg/kX2L8Sm9QAfRnJR3CthVoRxsQtwNxBxB3UtFOUNhKQfFgDGNiwDMgfj7QjhgFwxbQMo9IIpkNwzxUtmOogMFazo8C6gFYeh+NZ/IBcnmErdzAJY+tDEMvf4ZT2YMcDoT8BQAJC35/gA4AAA==
+  </data>
+ </layer>
+ <layer name="Collision" width="29" height="32" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+2U3QrAIAiFpfd/6N0OST3Hn2AjQViYfUddLRFZ13/pcpilbRebZlqGnsMyo9p1XqUnUW2MdfcY3YvWHp0x8S9EcaZf0ZmeJlZ3Rx2MVZgVRtedfed5a1ZXxqzeTbHQee3yskz9jdTjMZn3Ac1BdbFMdJ6V2Vr9m2ZaPe56d7x7PsVEtFwmxqpqidjWfnHiX2R6WpjZZBhZR5kPg7KFZ4AOAAA=
+  </data>
+ </layer>
+ <objectgroup name="Object" width="29" height="32">
+  <object name="Warp to ow-o0000-o0000-o0000.tmx" type="WARP" x="608" y="992" width="64" height="32">
+   <properties>
+    <property name="DEST_MAP" value="ow-o0000-o0000-o0000"/>
+    <property name="DEST_X" value="4000"/>
+    <property name="DEST_Y" value="2640"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
