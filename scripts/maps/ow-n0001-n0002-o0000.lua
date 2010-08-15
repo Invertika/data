@@ -15,6 +15,7 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
+require "scripts/ivklibs/invertika"
 
 dofile("data/scripts/ivklibs/warp.lua")
 
