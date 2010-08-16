@@ -38,7 +38,7 @@ function rezeptionist_talk(npc, ch)
 	  local v = do_choice(npc, ch, "Hast du arbeit für mich?","Nichts, danke")
 		if v == 1 then
       do_message(npc, ch, "In der Tat, es gibt da ein paar Dinge, die du für mich erledigen kannst. Mein Wlan Kabel ist undicht, deshalb brauche ich neue IP Pakete. Für die Unkosten gebe ich dir einen Scheck.")
-			mana.chr_money_change(ch, 500) --- Momentan Geld für die IP Pakete; sollte ein Scheck sein sobald implementiert
+      mana.chr_inv_change(ch, 40017, 1) --- 500 Aki Scheck 
 			set_qstatus(1) --- Erste Quest aktiviert
 		elseif v == 2 then
       do_message(npc, ch, "Wiedersehen")

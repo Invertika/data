@@ -223,7 +223,7 @@ function banker_talk(npc, ch)
       if acc_bal >= 500 then
         mana.chr_set_quest(ch, "bank_account_balance", acc_bal-500)
         mana.chr_inv_change(ch, 40017, 1)
-        do_message(npc, ch, "Bittesehr, hier ist ihr Scheck.")
+        do_message(npc, ch, "Bittesehr, hier ist dein Scheck.")
       else
         do_message(npc, ch, "Dein Bankguthaben reicht dafür nicht aus!")
       end
