@@ -22,10 +22,10 @@ dofile("data/scripts/ivklibs/warp.lua")
 atinit(function()
  create_inter_map_warp_trigger(1, 57, 3, 13) --- Intermap warp
 
- create_npc("Jurkan", 29, 80 * TILESIZE + 16, 115 * TILESIZE + 16, jurkan_talk, nil) --- Jurkan
- create_npc("Holzbein", 38, 83 * TILESIZE + 16, 115 * TILESIZE + 16, holzbein_talk, nil) --- Holzbein
- create_npc("seeseekey", 20, 93 * TILESIZE + 16, 118 * TILESIZE + 16, seeseekey_talk, nil) --- seeseekey
- create_npc("Delegan", 11, 81 * TILESIZE + 16, 122 * TILESIZE + 16, delegan_talk, nil) --- Delegan
+ create_npc("Jurkan", 33, 80 * TILESIZE + 16, 115 * TILESIZE + 16, jurkan_talk, nil) --- Jurkan
+ create_npc("Holzbein", 42, 83 * TILESIZE + 16, 115 * TILESIZE + 16, holzbein_talk, nil) --- Holzbein
+ create_npc("seeseekey", 24, 93 * TILESIZE + 16, 118 * TILESIZE + 16, seeseekey_talk, nil) --- seeseekey
+ create_npc("Delegan", 15, 81 * TILESIZE + 16, 122 * TILESIZE + 16, delegan_talk, nil) --- Delegan
 end)
 
 function jurkan_talk(npc, ch)
