@@ -46,7 +46,6 @@ function holzbein_talk(npc, ch)
 	do_message(npc, ch, invertika.get_random_element("Wo ist mein Kamel?",
 	  "Lieber Arm dran, als Arm ab.",
 	  "Steck den Spaltenvektor in die Vektorspalte.",
-	  "ICH habe euch geschaffen, das mit Invertika ist alles Quatsch!!!!!",
 	  "Um Pirat zu werden, musst du schon mehr machen als CDs brennen!",
 	  "Der Tisch ist neidisch auf mein Holzbein.",
 	  "Wo ist meine Brille?",
