@@ -445,7 +445,7 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
 	<behavior
             aggressive="true"
             cowardly="false"
-            track-range="12"
+            track-range="5"
             stroll-range="4"
             attack-distance="32"
             />
@@ -461,6 +461,16 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
             physical-defence="30"
             magical-defence="9"
             mutation="50"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="5"
+            aft-delay="20"
+            damage-factor="1"
+            range="64"
+            particle-effect="graphics/particles/attack.particle.xml"
+            action="attack"
             />
     </monster>
 	
