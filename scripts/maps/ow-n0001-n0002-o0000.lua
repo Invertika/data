@@ -53,6 +53,23 @@ function holzbein_talk(npc, ch)
 	  do_npc_close(npc, ch)
 end
 
+function seeseekey_talk(npc, ch)
+	do_message(npc, ch, invertika.get_random_element("Da sind meine Sprüche schon wieder weg...",
+	  "Ich hasse Schleichwerbung! Und nun geh bitte ich muss mit meinem Android Telefon auf seeseekey.net gehen.",
+	  "Mmm wenn ich das so Skripte müsste das alles zusammenpassen. PENG!",
+	  "Anne wo bist du?",
+	  "Wenn du mich über 20 mal ansprichst passiert etwas tolles. Oder auch nicht...",
+	  "So dann wollen wir mal das Development Team motivieren.",
+	  "Invertika oder Videos drehen? Schwierige Wahl...",
+	  "C# oder Python. Wähle ... aber entscheide weise...",
+	  "Coke Vanilla + Waldmeisterbrause - 50 zu 50 - Köstlich, ein Getränk für die Götter.",
+	  "Soll ich dir ein Geheimnis verraten? Ich sage nur Selphi Timlet...",
+	  "Eckig Eckig sind alle meine Karten *sing*.",
+	  "Wie Freitag und schon 19 Uhr? Oh Gott, ich muss zum Bloggerstammtisch.",
+	  "Dwight Schulz ist Republikaner. Murdok vom A-Team ist Republikaner. Reginald Barclay ist Republikaner. Oh Gott die Weit ist so böse..."))
+	do_npc_close(npc, ch)
+end
+
 function delegan_talk(npc, ch)
 	do_message(npc, ch, invertika.get_random_element("Zu eckig, zu pixelig, zu virtuell! Neubauen!",
 	  "Ob jeder so einfach Berge, Täler, Seen und Flüsse aus dem nichts erschaffen kann?",
