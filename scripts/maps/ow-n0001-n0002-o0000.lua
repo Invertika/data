@@ -5,7 +5,7 @@
 -- anderer Dinge.                                                               --
 --                                                                              --
 ----------------------------------------------------------------------------------
---  Copyright 2008 The Invertika Development Team                               --
+--  Copyright 2008 - 2010 The Invertika Development Team                        --
 --                                                                              --
 --  This file is part of Invertika.                                             --
 --                                                                              --
@@ -25,7 +25,7 @@ atinit(function()
  create_npc("Jurkan", 33, 80 * TILESIZE + 16, 115 * TILESIZE + 16, jurkan_talk, nil) --- Jurkan
  create_npc("Holzbein", 42, 83 * TILESIZE + 16, 115 * TILESIZE + 16, holzbein_talk, nil) --- Holzbein
  create_npc("seeseekey", 24, 93 * TILESIZE + 16, 118 * TILESIZE + 16, seeseekey_talk, nil) --- seeseekey
- create_npc("Delegan", 15, 81 * TILESIZE + 16, 122 * TILESIZE + 16, delegan_talk, nil) --- Delegan
+ create_npc("Delegan", 87, 81 * TILESIZE + 16, 122 * TILESIZE + 16, delegan_talk, nil) --- Delegan
 end)
 
 function jurkan_talk(npc, ch)
@@ -54,7 +54,16 @@ function holzbein_talk(npc, ch)
 end
 
 function delegan_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Ich bin nicht implementiert. Na und?"))
+	do_message(npc, ch, invertika.get_random_element("Zu eckig, zu pixelig, zu virtuell! Neubauen!",
+	  "Ob jeder so einfach Berge, Täler, Seen und Flüsse aus dem nichts erschaffen kann?",
+	  "Sonne, Mond und Sterne, ich bau mir eine Taverne.",
+	  "Mauszeiger hier, Mauszeiger dort und alles ist hin fort.",
+	  "Ups... Sollte hier nicht "Leretica" stehen?",
+	  "Ich glaube ich habe was vergessen. Naja, sie kommen ja immer noch durch die Fenster rein.",
+	  "Ach herje... wo war noch gleich der eingebaute Geheimraum?!",
+	  "Muh, Muh, Muh, macht die Kuh, Mäh, Mäh, Mäh, macht das Schaf, Wuff, Wuff, Wuff, macht der Enzyan... dieses doofe Lied... will mir nicht aus dem Kopf...",
+	  "Gut, Dann kommt der Berg eben dort hin. Kein Problem. Wird sofort erledigt.",
+	  "Brauchen sie einen Urwald mit kurzen Lieferzeiten und für wenig Geld?  Nicht verzagen, Mapper fragen."))
 	do_npc_close(npc, ch)
 end
 
