@@ -26,6 +26,8 @@ atinit(function()
  create_npc("Holzbein", 42, 83 * TILESIZE + 16, 115 * TILESIZE + 16, holzbein_talk, nil) --- Holzbein
  create_npc("seeseekey", 24, 93 * TILESIZE + 16, 118 * TILESIZE + 16, seeseekey_talk, nil) --- seeseekey
  create_npc("Delegan", 87, 81 * TILESIZE + 16, 122 * TILESIZE + 16, delegan_talk, nil) --- Delegan
+ create_npc("bulldog98", 53, 87 * TILESIZE + 16, 122 * TILESIZE + 16, bulldog98_talk, nil) --- bulldog98
+  create_npc("Saturn", 3, 89 * TILESIZE + 16, 114 * TILESIZE + 16, saturn_talk, nil) --- Saturn
 end)
 
 function jurkan_talk(npc, ch)
@@ -84,8 +86,27 @@ function delegan_talk(npc, ch)
 	do_npc_close(npc, ch)
 end
 
+function bulldog98_talk(npc, ch)
+	do_message(npc, ch, invertika.get_random_element("Wenn du aufhören willst zu rauchen, höre auch auf Windows zu nutzten. Es wird dir dabei helfen.",
+	  "(Linux...) Hält, was andere versprechen.",
+	  "Die große Welt paßt nicht durch kleine Fenster - Linux!",
+	  "Freie Software für eine freie Welt.",
+	  "Linux - der Quellcode möge mit dir sein.",
+	  "Linux - Wir brauchen keine Fensterputzer.",
+	  "Während man in Redmond noch bootet, wird in Villa Pinguin schon gearbeitet...",
+	  "Warum können Pinguine nicht fliegen? Was nicht fliegt kann auch nicht abstürzen.",
+	  "Linux - damit der Ausnahmefehler nicht zur Regel wird. ",
+	  "Durch einen schrecklichen Zufall versterben in einer Woche zuerst Linus Torvalds und, drei Tage später, Bill Gates. Als Gates in den Himmel kommt, sagt Gott zu ihm Hallo, Herr Gates, schön sie zu sehen! In Anbetracht ihrer großen Verdienste um die Entwicklung der PCs kriegen sie hier ihr eigenes Häuschen, und, glauben Sie mir, das kriegt hier nicht jeder!\nGott nimmt Gates an die Hand und führt ihn vor einen kleinen Flachdachbungalow. Die Fußmatte an der Tür ist mit dem Windows-Logo versehen und eine kleine ready-for-windows-Fahne weht im Vorgärtchen. Gates denkt sich Joh, ganz nett, dreht sich um.... und traut seinen Augen nicht. Auf der nächsten Wolke, hoch über ihm, steht ein italienischer Palazzo, komplett mit Balustrade und sechs dorischen Säulen. Der Palazzo ist gelb-schwarz gestrichen, über und über mit Pinguin-Symbolen, Graffiti, -Fahnen und -Transparenten,
+Marmorpinguinen übersät.\nGates wendet sich an Gott und sagt, schwer brüskiert: Was ist DAS denn? Wieso kriegt der Torvalds so'n Palast da hingestellt? Das billig System von dem benutzt doch keiner!! Häh??? Wieso lebt der hier in so nem Haus??? Gott dreht sich um, schaut Gates tief in die Augen und sagt Das ist nicht Torvalds Haus. Das ist meins."))
+	do_npc_close(npc, ch)
+end
 
-
+function saturn_talk(npc, ch)
+	do_message(npc, ch, invertika.get_random_element("What is music? Music is the emotion of sound and the sound of emotion.",
+	  "What is sound? Sound is any audible vibration.",
+	  "What is emotion? Now that is a tough one."))
+	do_npc_close(npc, ch)
+end
 
 
 
