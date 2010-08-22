@@ -20,6 +20,10 @@ require "scripts/ivklibs/invertika"
 module("trap", package.seeall)
 
 -- EXPERIMENTAL FUNCTION. MAY CAUSE SERVER SEGFAULTS
+-- see: http://bugs.manasource.org/view.php?id=205
+--
+-- Usage:
+-- ------------
 -- trap_activate(ch, chance, radius, monster_ids)
 --
 -- Parameters:
@@ -28,6 +32,7 @@ module("trap", package.seeall)
 -- chance: 0-100, probability of the trap
 -- radius: radius in which the monsters spawn
 -- monster_ids: array of monster ids
+--
 -- Example:
 -- ------------
 -- monster_ids={4,10,10,4,10,10}
