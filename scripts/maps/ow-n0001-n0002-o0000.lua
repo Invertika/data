@@ -77,7 +77,7 @@ function delegan_talk(npc, ch)
 	  "Ob jeder so einfach Berge, Täler, Seen und Flüsse aus dem nichts erschaffen kann?",
 	  "Sonne, Mond und Sterne, ich bau mir eine Taverne.",
 	  "Mauszeiger hier, Mauszeiger dort und alles ist hin fort.",
-	  "Ups... Sollte hier nicht "Leretica" stehen?",
+	  "Ups... Sollte hier nicht \"Leretica\" stehen?",
 	  "Ich glaube ich habe was vergessen. Naja, sie kommen ja immer noch durch die Fenster rein.",
 	  "Ach herje... wo war noch gleich der eingebaute Geheimraum?!",
 	  "Muh, Muh, Muh, macht die Kuh, Mäh, Mäh, Mäh, macht das Schaf, Wuff, Wuff, Wuff, macht der Enzyan... dieses doofe Lied... will mir nicht aus dem Kopf...",
@@ -96,8 +96,7 @@ function bulldog98_talk(npc, ch)
 	  "Während man in Redmond noch bootet, wird in Villa Pinguin schon gearbeitet...",
 	  "Warum können Pinguine nicht fliegen? Was nicht fliegt kann auch nicht abstürzen.",
 	  "Linux - damit der Ausnahmefehler nicht zur Regel wird. ",
-	  "Durch einen schrecklichen Zufall versterben in einer Woche zuerst Linus Torvalds und, drei Tage später, Bill Gates. Als Gates in den Himmel kommt, sagt Gott zu ihm Hallo, Herr Gates, schön sie zu sehen! In Anbetracht ihrer großen Verdienste um die Entwicklung der PCs kriegen sie hier ihr eigenes Häuschen, und, glauben Sie mir, das kriegt hier nicht jeder!\nGott nimmt Gates an die Hand und führt ihn vor einen kleinen Flachdachbungalow. Die Fußmatte an der Tür ist mit dem Windows-Logo versehen und eine kleine ready-for-windows-Fahne weht im Vorgärtchen. Gates denkt sich Joh, ganz nett, dreht sich um.... und traut seinen Augen nicht. Auf der nächsten Wolke, hoch über ihm, steht ein italienischer Palazzo, komplett mit Balustrade und sechs dorischen Säulen. Der Palazzo ist gelb-schwarz gestrichen, über und über mit Pinguin-Symbolen, Graffiti, -Fahnen und -Transparenten,
-Marmorpinguinen übersät.\nGates wendet sich an Gott und sagt, schwer brüskiert: Was ist DAS denn? Wieso kriegt der Torvalds so'n Palast da hingestellt? Das billig System von dem benutzt doch keiner!! Häh??? Wieso lebt der hier in so nem Haus??? Gott dreht sich um, schaut Gates tief in die Augen und sagt Das ist nicht Torvalds Haus. Das ist meins."))
+	  "Durch einen schrecklichen Zufall versterben in einer Woche zuerst Linus Torvalds und, drei Tage später, Bill Gates. Als Gates in den Himmel kommt, sagt Gott zu ihm Hallo, Herr Gates, schön sie zu sehen! In Anbetracht ihrer großen Verdienste um die Entwicklung der PCs kriegen sie hier ihr eigenes Häuschen, und, glauben Sie mir, das kriegt hier nicht jeder!\nGott nimmt Gates an die Hand und führt ihn vor einen kleinen Flachdachbungalow. Die Fußmatte an der Tür ist mit dem Windows-Logo versehen und eine kleine ready-for-windows-Fahne weht im Vorgärtchen. Gates denkt sich Joh, ganz nett, dreht sich um.... und traut seinen Augen nicht. Auf der nächsten Wolke, hoch über ihm, steht ein italienischer Palazzo, komplett mit Balustrade und sechs dorischen Säulen. Der Palazzo ist gelb-schwarz gestrichen, über und über mit Pinguin-Symbolen, Graffiti, -Fahnen und -Transparenten, Marmorpinguinen übersät.\nGates wendet sich an Gott und sagt, schwer brüskiert: Was ist DAS denn? Wieso kriegt der Torvalds so'n Palast da hingestellt? Das billig System von dem benutzt doch keiner!! Häh??? Wieso lebt der hier in so nem Haus??? Gott dreht sich um, schaut Gates tief in die Augen und sagt Das ist nicht Torvalds Haus. Das ist meins."))
 	do_npc_close(npc, ch)
 end
 
