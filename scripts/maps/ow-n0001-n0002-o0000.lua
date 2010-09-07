@@ -27,7 +27,8 @@ atinit(function()
  create_npc("seeseekey", 24, 93 * TILESIZE + 16, 118 * TILESIZE + 16, seeseekey_talk, nil) --- seeseekey
  create_npc("Delegan", 87, 81 * TILESIZE + 16, 122 * TILESIZE + 16, delegan_talk, nil) --- Delegan
  create_npc("bulldog98", 53, 87 * TILESIZE + 16, 122 * TILESIZE + 16, bulldog98_talk, nil) --- bulldog98
-  create_npc("Saturn", 3, 89 * TILESIZE + 16, 114 * TILESIZE + 16, saturn_talk, nil) --- Saturn
+ create_npc("Saturn", 3, 89 * TILESIZE + 16, 114 * TILESIZE + 16, saturn_talk, nil) --- Saturn
+ create_npc("subnet_zero", 115 , 89 * TILESIZE + 16, 122 * TILESIZE + 16, subnet_zero_talk, nil) --- subnet_zero
 end)
 
 function jurkan_talk(npc, ch)
@@ -107,5 +108,22 @@ function saturn_talk(npc, ch)
 	do_npc_close(npc, ch)
 end
 
-
-
+function subnet_zero_talk(npc, ch)
+	do_message(npc, ch, invertika.get_random_element("Reboot tut gut!",
+	  "Never change a running system!",
+	  "If the helpdesk thinks your question is stupid, we will set you on fire.",
+	  "Termine sind nicht verbindlich.",
+	  "Ich flieg mit Jean-Luc.",
+	  "In welches Layer gehören die Palmen?",
+	  "Sie haben doch ein Netzwerkplan oder?",
+	  "Sie haben doch ein Backup gemacht oder?",
+	  "Sie haben leider keine Backupleitung.",
+	  "Das Passwort müssen wir ändern. Das haben sie ja per Mail versendet.",
+	  "Ich leite sie mal an den Kollegen weiter... *klack* Mist, aufgelegt!",
+	  "Starten sie mal neu. Ja, einfach Stecker ziehen.",
+	  "Das Gerät ist rot und viereckig.",
+	  "Was essen wir'n heute?",
+	  "Verdammter PROXY!",
+	  "Verdammte AXT!"))
+	do_npc_close(npc, ch)
+end
