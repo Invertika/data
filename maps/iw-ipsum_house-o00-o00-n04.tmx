@@ -1,113 +1,104 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="100" height="100" tilewidth="32" tileheight="32">
- <properties>
-  <property name="music" value="inside.ogg"/>
- </properties>
- <tileset name="collision" firstgid="1" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/xold_collision_32_32.png"/>
- </tileset>
- <tileset name="inn" firstgid="3" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/xold_inn1_32_32.png"/>
- </tileset>
- <tileset name="inn2" firstgid="259" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/xold_inn2_32_32.png"/>
- </tileset>
- <tileset name="christmastree" firstgid="515" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/xold_christmastree_32_256.png"/>
- </tileset>
- <tileset name="Snow_x3" firstgid="571" tilewidth="32" tileheight="96">
-  <image source="../graphics/tiles/xold_snow_32_96.png"/>
- </tileset>
- <tileset name="desert_32_96" firstgid="587" tilewidth="32" tileheight="96">
-  <image source="../graphics/tiles/xold_desert_32_96.png"/>
- </tileset>
- <tileset name="inn_32_96" firstgid="603" tilewidth="32" tileheight="96">
-  <image source="../graphics/tiles/xold_inn_32_96.png"/>
- </tileset>
- <tileset name="ivk_inn1" firstgid="619" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/xold_inn2_32_32.png"/>
- </tileset>
- <tileset name="ivk_special1" firstgid="875" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/xold_special1_32_32.png"/>
- </tileset>
- <tileset name="desert1" firstgid="1131" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/xold_desert1_32_32.png"/>
- </tileset>
- <layer name="Ground" width="100" height="100">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3YwUnEUBiF0UdEca9WoC1Yl3agVakVqBWorczOBzOLWUjIJIH7S87ibMJLCPdbBLJrre0AAAAAAAAAgFWddRcLnC+8f+6zppz968xlgc3HXHXXCyy9f+6zppw9PvMwtPY47K+lNx9z290tsPT+uc+acvb4zFNv8Tzsr6U3H3O/QenN9dCjsvTmeuhRWXpzPfSoLL25HnpUlt78lB7p99m6l+714K2t92+wsvTmY967j4PP7mYD0puf0mOtf4OVpTcf89V9H/y0/LfW93x70pvroUdl6c310KOy9OZ66FFZenM99KgsvbkeelSW3lwPPSpLb66HHpWlN9dDj8rSm+uhR2XpzfXQo7L05nroUVl6cz30qCy9uR56VJbeXA89KktvrocelaU310OPytKb66FHZenN9dCjsvTmeuhRWXpzPfSoLL25HnpUlt5cj//TAwAAAAAAAIBpfgEDV8uHQJwAAA==
-  </data>
- </layer>
- <layer name="Fringe" width="100" height="100">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3aS07CQBjA8QngRTyOV9AboJL4QDC+EgXFjadwpWtj3HoEdx7BvXu/hmmoDdDpY9qvw/+XfIE+aCfzzatWYwAAAAAAAAAAAAAAAMK33zWmL3FlYygx6M6PRfsv7Hbf7juUz2eJWWJ7kLjGkb3GrT1+kLpGdM51Yt+lxFPifnE5omMj+/1YYmy343Pjct7Yz6Et1yRRthf5fO3WU48A/HvrGfMu8SmxvdV0aRD76s0DzYn6xYfNAfnQhXzoEM8fP+RDFfpH85g/9CIfzUv2j29yAax11jFmJHEnMZGYStxLPEjMJB4lTiROJYad+W9cz42vPZY4b/i3AAAg2x7zZrDy5PbXXzHgYDcjV1nH8R/1VQ7zwmZh/F9Ijh0a6oWxLL8m5tN11ySHujHfoS5VjwUubZfxp7gyawDqvV4+6lvDGhCr0ccQItr1cln1UudaftW9yF0+GuuLZ8IFjfkBfCnb3vM8M+S5V/q6Zcu5Q79WhXzooiUfmuffOtdJWvJRhSL1pq0dhJSPJlT9znCT8qGtLywTcj7aUP9pWvORrkvX54ciOWhj3rTxWYfr1gXkDiHz+a6Vv+fq1Ob364zHgLui/6tGPwuHSy7JdzuQJ3esP4urop35bquu69jQ20EdYwLjDgAAAAAAAAAAAAAA7fMHtY0fBUCcAAA=
-  </data>
- </layer>
- <layer name="Over" width="100" height="100">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3BMQEAAADCoPVP7WULoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgBt5RKnmQJwAAA==
-  </data>
- </layer>
- <layer name="Collision" width="100" height="100">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO2UW6qEMBQExf0v+n5dGCVqYh51TKqhYEBHk+oc923bdhERERERERERERERERERERERWZIVQzt/6mO1jmjnufNhH3HYTr9nDu3a+TiGdp47F/bBk1rn7KGdl87J7KFdOx/H0M5L50PYHn5Dr2d17CMW9hGLFUM7t49jaOf2cQztnOgjcte086/PR8k6c+6lnX+9j7s87SF1nXYeuQ9iDbTzln1E6LA2tPPI83HOiDXRznP72C9+U+m1Btp5z/l4ekYPp3fPzHkf7fxL36vWSe2Rdr5yH6nQzlv10bq/3G9L69DOR81HzfNGzirtPML3qtc5f/u/qMyU3P3QzlfpIze08+h9jF4H7Ty3jycvI71dvavFGmjnI+cjysz9JnXuotI7UfuJyoqhnbfso7bDkv/X3Hv3X9q583EM7dw+jqGdl/QRuaNWa6Odj56PN88deQ5o5yt8r+72cr5GO4/WB30OaOd0H7T/c2jnNX2kZj13z6UZeT6i0mJvvXL37Jr30s7p71W00M4j9kHN1f/1qMycq/3RznP6mL2b39DOV52Pq9DO3/SR01Xqni90TDv/yny8PQNv3hOVWVKyF9o53Ue03mnnJX20+h70TO7zr+6jnbeajxHnfNQ7orJiaOciIiIiIiIiIiIiIiIiIlLPHw7m9cpAnAAA
-  </data>
- </layer>
- <objectgroup name="Object" width="0" height="0" y="-1">
-  <object name="External Map Events" type="SCRIPT" x="0" y="0">
-   <properties>
-    <property name="FILENAME" value="scripts/maps/iw-ipsum_house-o00-o00-n04.lua"/>
-   </properties>
-  </object>
-  <object name="Riesenmaden" type="SPAWN" x="784" y="1660" width="832" height="864">
-   <properties>
-    <property name="MAX_BEINGS" value="50"/>
-    <property name="MONSTER_ID" value="5"/>
-    <property name="SPAWN_RATE" value="50"/>
-   </properties>
-  </object>
-  <object name="Maden" type="SPAWN" x="788" y="1256" width="832" height="864">
-   <properties>
-    <property name="MAX_BEINGS" value="50"/>
-    <property name="MONSTER_ID" value="2"/>
-    <property name="SPAWN_RATE" value="50"/>
-   </properties>
-  </object>
-  <object name="Skorpione" type="SPAWN" x="1664" y="1300" width="832" height="864">
-   <properties>
-    <property name="MAX_BEINGS" value="50"/>
-    <property name="MONSTER_ID" value="3"/>
-    <property name="SPAWN_RATE" value="50"/>
-   </properties>
-  </object>
-  <object name="Rote Skorpione" type="SPAWN" x="1032" y="1636" width="832" height="864">
-   <properties>
-    <property name="MAX_BEINGS" value="50"/>
-    <property name="MONSTER_ID" value="6"/>
-    <property name="SPAWN_RATE" value="50"/>
-   </properties>
-  </object>
-  <object name="Schwarze Skorpione" type="SPAWN" x="1696" y="1236" width="832" height="864">
-   <properties>
-    <property name="MAX_BEINGS" value="50"/>
-    <property name="MONSTER_ID" value="7"/>
-    <property name="SPAWN_RATE" value="50"/>
-   </properties>
-  </object>
-  <object name="Fledermaeuse" type="SPAWN" x="1200" y="1312" width="832" height="864">
-   <properties>
-    <property name="MAX_BEINGS" value="50"/>
-    <property name="MONSTER_ID" value="7"/>
-    <property name="SPAWN_RATE" value="50"/>
-   </properties>
-  </object>
-  <object name="Killermaden" type="SPAWN" x="1536" y="1568" width="832" height="864">
-   <properties>
-    <property name="MAX_BEINGS" value="50"/>
-    <property name="MONSTER_ID" value="1"/>
-    <property name="SPAWN_RATE" value="50"/>
-   </properties>
-  </object>
- </objectgroup>
+  <properties>
+    <property name="music" value="inside.ogg" />
+  </properties>
+  <tileset name="collision" firstgid="1" tilewidth="32" tileheight="32">
+    <image source="../graphics/tiles/xold_collision_32_32.png" />
+  </tileset>
+  <tileset name="inn" firstgid="2001" tilewidth="32" tileheight="32">
+    <image source="../graphics/tiles/xold_inn1_32_32.png" />
+  </tileset>
+  <tileset name="inn2" firstgid="4001" tilewidth="32" tileheight="32">
+    <image source="../graphics/tiles/xold_inn2_32_32.png" />
+  </tileset>
+  <tileset name="christmastree" firstgid="6001" tilewidth="32" tileheight="32">
+    <image source="../graphics/tiles/xold_christmastree_32_256.png" />
+  </tileset>
+  <tileset name="Snow_x3" firstgid="8001" tilewidth="32" tileheight="96">
+    <image source="../graphics/tiles/xold_snow_32_96.png" />
+  </tileset>
+  <tileset name="desert_32_96" firstgid="10001" tilewidth="32" tileheight="96">
+    <image source="../graphics/tiles/xold_desert_32_96.png" />
+  </tileset>
+  <tileset name="inn_32_96" firstgid="12001" tilewidth="32" tileheight="96">
+    <image source="../graphics/tiles/xold_inn_32_96.png" />
+  </tileset>
+  <tileset name="ivk_inn1" firstgid="14001" tilewidth="32" tileheight="32">
+    <image source="../graphics/tiles/xold_inn2_32_32.png" />
+  </tileset>
+  <tileset name="ivk_special1" firstgid="16001" tilewidth="32" tileheight="32">
+    <image source="../graphics/tiles/xold_special1_32_32.png" />
+  </tileset>
+  <tileset name="desert1" firstgid="18001" tilewidth="32" tileheight="32">
+    <image source="../graphics/tiles/desert1_32_32.png" />
+  </tileset>
+  <layer name="Ground" width="100" height="100">
+    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/Iv7J3+DX+DV+9P8f/f9H///R/3/0/x/9/0f//9H/f/T/H/3/R///0f9/9P8f/f9H////9/9/NL4f/f9H///R/3/0/x/9/0f//9H/f/T/H/3/R///0f9/9P8f/f9H///h//9f/vV/jV/jX/uA//+rt2jj//+bgnWbtrE2/8avfzNNfi7//x8Tfv/JB/z/Q9//urBu09Zv87d/+mv8Gn/Hp/LZbejyc/X//5nw+18+4P8f+v7XhXWbtn6bf5zm4p/4VD67DV1+rv7/a/88/P9t6PJz9f/b4P//t//fhi4/V/+/Df7/f/v/bejyc/X/2+D//7f/34YuP1f/vw3+/3/7/23o8nP1/9vg//+3/9+GLj9X/78N/v9/+/9t6PJz9f/b4P//pf/fBtfb0OXn6v+3wf//b/+/DV1+rv7//yVcfz78/w+j///h+v8/4je4OUf3/4f/34YuP1f//9Po/3+6/v/PoP//p7/+////fxu6/Fz9vzsft8nl/X/9/7ehy8/V//8y+v9frv//K36Dm23h/x/+fxu6/Fz9/zb4///t/7ehy8/V/2+D///f/n8buvxc/f82+P//7f+3ocvP1f9vg///3/5/G7oM/f9n+/Pb4P//t//fhi4/V/+/Df7/f/v/bejyc/X/2+D//7f/34YuP1f/vw3+/3/7/23o8nP1/9vg//+3/9+GLj9X/78N/v9/+/9t6PJz9f/b4P//t//fhi4/V/+/Df7/f/v/bejyc/X/2+D//7f/34YuP1f/vw3+/3/7/23o8nP1/9vg//+3//9c0fo2/78N/v9/+/9t6PJz9f/b4P//t//fhi4/V/+/Df7/f/v/bejyc/X/2+D//7f/34YuP1f/vw3+/3/7/23o8nP1/9vg//+3/9+GLj9X/78N/v9/+/9t6PJz9f/b4P//t//fhi4/V/+/Df7/f/v/bejyc/X/2+D/If//f+O7t6HLz9X/b4P//9/+fxu6/Fz9/zb4///t/7ehy8/V/2+D///f/n8buvxc/f82+P//7f+3ocvP1f9vg///3/5/G7r8XP3/Nvj//+3/t6HLz9X/b4P//9/+fxu6/Fz9/zb4///t/7ehy8/V/2+D///f/n8buvxc/f82+P+/+f9fB7fb0OXn6v+3wf//b/+/DV1+rv5/G/z///b/29Dl5+r/t8H//2//vw1dfq7+fxv8///2/9vQ5efq/7fB//9v/78NXX6u/n8b/P//9v/b0OXn6v+3wf//b/+/DV1+rv5/G/z///b/29Dl5+r/t8H//2//vw1dfvT//3f+/0d4/ej/P/r/j/7/o///6P8/+v+P/v+j///o/z/6/4/+/6P//+j/P/r//////6Mx/uj/P/r/j/7/o///6P8/+v+P/v+j///o/z/6/4/+f9v//z/tEt4IQJwAAA==</data>
+  </layer>
+  <layer name="Fringe" width="100" height="100">
+    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6NHz0/en70/Oj50fOj50fPj54fPT96fvT86PnR86PnR8//758fDfBHz4+eHz0/en70/Oj50fOj50fPj54fPT96fvT86Pn///OjEd78/CFHv8av8QfT//80/f8fR///w4/kO3z+p+jff7B+9ofRz7+X/v8Xen+b7/H+H6Uw/mz9/g/twECbP9377E+l///lXn8GD3z3J+jvfzT9/0/Uv01bg+efoT/xN/D6c48cbv8w/fxH9PcfPT96fvT8f//59579Gr/Gf0D//1X0/7/r8xub/+j5IT2//efy/x89P3cP5OI/eia//2g+/t/1/Gg+/t/xGPvxe/5oPv5f9fxIPn7un/+/2Y8bB/z/oedH8vFz//jykf5oLn70/OjZ+Pz9n/4av8Y/QP//Z+j//yz9/5+j///z9P9/gf7/L9L//yX6/99D//976f9/36fyzm3bGtj/IP3/H/o5fvdHz4+eHz0/en70/Oj50XPz85+Mb2zyo+f/o8/7zO0/+hvc2OSDnh+9vPn5j2+Yq5u+/9ETPj+i14c976M7fvT8f//5kf53j687/t9Alx/psvd/fi7s6SaYPxv9/ej55p4f2bsfPT+s55vWBbfh3W+6z59Pz4f4AD+iuzw/rH9+Nuj9IfP/o+dn//nZmPMfPT96fq6fH/F1/LmJLrfxh76pZ6ivH83d+z3/b6TXD5OP/t/+/L9xfn70/Oj52Xo+lN/fJ2Z4n766cN/n3djz8ne5scmPnh/i8//X+bhx4P8vff7fMh8fKuc/m88P00/6f8t8fBPP16Hb/9v44P9P8/Fz8XzTa4Y/n+bj69Dnh/38/3k+/r9A/+7z/9b56NLytvHD15mDr/POj57w+dmk4Sa/4Gez3x89P3p+rp/b6r2v83wdf/tHzzfzbILysznnP9vPj/Txj54fPbd/bqODYzL1Izn7/89zm7m8TZsfPT/3z4/m6fbPbXTfj574803w2TcBY9NzWz/2/+988LNNZzw/jD5+9Pzo+dHzzTw/gvKj50fPj54fPT96fvT86PnR86PnR8+Pnh89P3p+9Pz///nRCH/0/Oj50fOj50fPj54fPT96fvT86PnRc9vn/wE8SLBcQJwAAA==</data>
+  </layer>
+  <layer name="Over" width="100" height="100">
+    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6NHz0/en70/Oj50fOj50fPj54fPT96fvT86PnR86PnR8//758fDfBHz4+eHz0/en70/Oj50fOj50fPj54fPT96fvT86Pn///OjEf7o+dHzo+dHz4+eHz0/en70/Oj50fOj50fPj54fPf//f340wh89P3p+9Pzo+dHzo+dHz4+eHz0/en70/Oj50fOj5///z49G+KPnR8+Pnh89P3p+9Pzo+dHzo+dHz4+eHz0/en70/P//+dEIf/T86PnR86PnR8+Pnh89P3p+9Pzo+dHzo+dHz4+e//8/Pxrhj54fPT96fvT86PnR86PnR8+Pnh89P3p+9Pzo+dHz///nRyP80fOj50fPj54fPT96fvT86PnR86PnR8+Pnh89P3r+///8aIQ/en70/Oj50fOj50fPj54fPT96fvT86PnR86PnR8///58fjfBHz4+eHz0/en70/Oj50fOj50fPj54fPbd9/h95RKnmQJwAAA==</data>
+  </layer>
+  <layer name="Collision" width="100" height="100">
+    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6tX+PX+DV+9P8f/f9H///R/3/0/x/9/0f//9H/f/T/H/3/R///0f9/9P8f/f9H////9/9/NL4f/f9H///R/3/0/x/9/0f//9H/f/T/H/3/R///0f9/9P8f/f9H//////9/NMYf/f9H///R/7/u/38+Prehy8/V/3+Ngc/+//zchi4/V//3n9hn/398bkOXn+v//xqd3////NyGHj9X//ef2Gf/f3xuQ5efq///GgOf/f/5uQ1dfq7+7z+xz/7/+NyGLj/X//81Or//f/W5Dd63ocfP1f/9J/bZ/x+f29Dl5/r/v0bksx/9/4f//+5zm3d+9P+fvf93n9u886P//+z9v/vc5p0f/f9n7/8/H5/b0OXn6v8/H5/b0OXn6v8/H5/b0OXn6v8/W8/PJuwPfW5Dl5+r//9/4XkfPG/T9jZ0GaLXz/bn/19/bhpD7Pvb0OXn6v8/18/PBQ63ocvP1f/f9/k67/y/7bkNXX6u/v//tueHgdNt6PJz9X//8f/ufvdz8fxs4XAbuvxc/f9Dn5tgfBN9dJ9NMG/T323o8nP1//+/P7Ex3oYuP1f///n43IYuP1f/f5/nfdvf9NwG3m3avO9zG7r8XP3/m3w+BN6HvPu+z23o8nP1/0Gkv+HnZ4PeXxfmzxWtb/P//z89tx3Pbejyc/X/n4/Pbejyc/X//zc8P2w8bkOXn6v/+0/37+5z0/ff5DPU1zeBw23o8nP1/2/6+dmA+aFPF6fb0OXn6v8/288Po4/3fW5Dl5+r//98fG5Dl5+r/7/v83Xe8Z/3ef9D2m569zZ0+bn6/8/H5zZ0+bn6/8/28/9G+Lehy8/V/7tP7LP/tzzfFG63ocvP1f9/Np6vA/frvPN1n9vQ5efq//9/eTaNpfvdbejyc/X/n4vn56pf89yGLj9X//9hPD+sfm773IYuP1f/v+nptrnNO3hu285/vs47X+e5DV1+rv7/oc83AWPo2QT7Q/q9DV1+rv7/8/G5DV1+rv7/c/X8bPZ9E+zb0OXn6v//X3824T80vtvQ5efq/+bxf///+3Mbuvxc/f/n43Mbuvxc/X/o2fSdeWJtbvPez/VzG7r8XP3//03PbfC5TZubntvQ5efq//9/ed5nLLehy8/V/38Yzw+rn9s+t6HLz9X/u0/ss/d9vgkYm57bwh9qdxu6/Fz9/32e923/dZ4fVh//b/3/z8fnNnT50f//3/n/H+H1o///6P8/+v+P/v+j///o/z/6/4/+/6P//+j/P/r/j/7/o///6P//////j8b4o///6P8/+v+P/v+j///o/z/6/4/+/6P//+j/P/r/bf///wAO5vXKQJwAAA==</data>
+  </layer>
+  <objectgroup name="Object" width="0" height="0" y="-1">
+    <object name="External Map Events" type="SCRIPT" x="0" y="0">
+      <properties>
+        <property name="FILENAME" value="scripts/maps/iw-ipsum_house-o00-o00-n04.lua" />
+      </properties>
+    </object>
+    <object name="Riesenmaden" type="SPAWN" x="784" y="1660" width="832" height="864">
+      <properties>
+        <property name="MAX_BEINGS" value="50" />
+        <property name="MONSTER_ID" value="5" />
+        <property name="SPAWN_RATE" value="50" />
+      </properties>
+    </object>
+    <object name="Maden" type="SPAWN" x="788" y="1256" width="832" height="864">
+      <properties>
+        <property name="MAX_BEINGS" value="50" />
+        <property name="MONSTER_ID" value="2" />
+        <property name="SPAWN_RATE" value="50" />
+      </properties>
+    </object>
+    <object name="Skorpione" type="SPAWN" x="1664" y="1300" width="832" height="864">
+      <properties>
+        <property name="MAX_BEINGS" value="50" />
+        <property name="MONSTER_ID" value="3" />
+        <property name="SPAWN_RATE" value="50" />
+      </properties>
+    </object>
+    <object name="Rote Skorpione" type="SPAWN" x="1032" y="1636" width="832" height="864">
+      <properties>
+        <property name="MAX_BEINGS" value="50" />
+        <property name="MONSTER_ID" value="6" />
+        <property name="SPAWN_RATE" value="50" />
+      </properties>
+    </object>
+    <object name="Schwarze Skorpione" type="SPAWN" x="1696" y="1236" width="832" height="864">
+      <properties>
+        <property name="MAX_BEINGS" value="50" />
+        <property name="MONSTER_ID" value="7" />
+        <property name="SPAWN_RATE" value="50" />
+      </properties>
+    </object>
+    <object name="Fledermaeuse" type="SPAWN" x="1200" y="1312" width="832" height="864">
+      <properties>
+        <property name="MAX_BEINGS" value="50" />
+        <property name="MONSTER_ID" value="7" />
+        <property name="SPAWN_RATE" value="50" />
+      </properties>
+    </object>
+    <object name="Killermaden" type="SPAWN" x="1536" y="1568" width="832" height="864">
+      <properties>
+        <property name="MAX_BEINGS" value="50" />
+        <property name="MONSTER_ID" value="1" />
+        <property name="SPAWN_RATE" value="50" />
+      </properties>
+    </object>
+  </objectgroup>
 </map>
