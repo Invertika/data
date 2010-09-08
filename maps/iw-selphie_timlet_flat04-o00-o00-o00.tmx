@@ -1,107 +1,99 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="104" height="50" tilewidth="32" tileheight="32">
- <properties>
-  <property name="music" value="inside.ogg"/>
- </properties>
- <tileset firstgid="1" name="collision" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/xold_collision_32_32.png"/>
- </tileset>
- <tileset firstgid="3" name="inn1_32_32" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/xold_inn1_32_32.png"/>
- </tileset>
- <tileset firstgid="259" name="inn2_32_32" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/xold_inn2_32_32.png"/>
- </tileset>
- <tileset firstgid="515" name="woodland_indoor" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/xold_woodland_indoor1_32_32.png"/>
- </tileset>
- <tileset firstgid="771" name="inn_32_64" tilewidth="32" tileheight="64">
-  <image source="../graphics/tiles/xold_inn_32_64.png"/>
- </tileset>
- <tileset firstgid="787" name="inn_32_96" tilewidth="32" tileheight="96">
-  <image source="../graphics/tiles/xold_inn_32_96.png"/>
- </tileset>
- <layer name="Ground" width="104" height="50">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3V0Q2CMBSF4aqJ4Vl8R4MbOKomDqAzKBOIE6gTuAM+WRKJDYEWKpqL/g9fYuS2OfSkmimlMgAAAAAAAAAAAAAAAEFG2liYwPisPpwxENCBTahNLSYD+3NT1GLWppzJlbHKvGGWUEAHNrG28BB5rmuyRzmTb8YmYgEd2Cw9RW+s7XKP3F47eEoEdNC3fsrnnTj2OWqpdnlKWzgJ6OBb/WyG1bN139f1U5y3eYaufsxzLq//x366MKMf0f24fq/azP96PzdBiv+RPNdKWzsy5rPXH+9Hqq22azhLP7IV73RWrzvoYt67vrsLyAAAAAAAAAAAAAAA6IcHkwqOgkBRAAA=
-  </data>
- </layer>
- <layer name="Fringe" width="104" height="50">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3WyUrDQBzH8SFBpS2iIgqtiF7VJ1CPenJ5EZc38iYu4F19guoTqOB2UE9WPagn119ICkmakJQusfb7gR9DZtLJpH9mWmMAAAAAAAAAAAAAAACQRk7JK4WsF4KAfstti0pJGUv5uZwVP5b3jRUsN52kxzamV+mz2/vcrYjvadzrm1KmlZkWPXuiRfP+NUXVtGQn9/kNKkMJ884qc8p8yjnr5dRnRVlt3pRtMWwH26oRXY+2eX9VHfly3MA8l9qbV8q11T37p2pb77ygdseq7V+M6HcceH13au+Vh5jfhRNfThtY46PmryhPXVCfydD1rt55T9m30vX7vWrsTXkP3XMeir8+zv4O7/EkH5r/U/my3PVvKJv1TQFP1D4px/TH3T/QvOVk6tAEz/isE3eOlb2xpPuXlGXjnmE32iu3HfZ/OuzM1J4lWeeiznVG3e/U51m1eenw+vw3a8q6cevzrdr8UB8AAAAAAAAAAAAAAAJ+AVAXIY9AUQAA
-  </data>
- </layer>
- <layer name="Over" width="104" height="50">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3Vyw2DMBQEQMQpSmdpIZ92CKEEWiKflrINgOAQgsWMtBc/S7b1ZLuqAAAAAAAAAABge471eO0wUYMSnP69gRUMuafP5JV0O7uzTc57T9p63vjSOb9wTW7rLskC+gPT3nkzPzv7a0rx0JdNOieXpNcfAAAAAAAAAKBAX6xpJR1AUQAA
-  </data>
- </layer>
- <layer name="Collision" width="104" height="50" visible="0">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3T0QqFIAwAUOn/P/o+XRCp0Fks5QwOhKlzDo9SygEAAAAAAAAAAMDr/lF/98To/HZtmz8yZyay7320P/W5y8m/2X6exVt3f5dvNTO1XtXeM17v8dRbGXmTq5i5i6vae8brPSLnucs1sv7rdoq2ph16tVNE68zugf7E12XbKaL1ZffgyV5mnwEAAAAAAACANfwAJwuAgkBRAAA=
-  </data>
- </layer>
- <objectgroup name="Object" width="104" height="50">
-  <object name="Warp to City" type="WARP" x="992" y="-1888" width="32" height="32">
-   <properties>
-    <property name="DEST_MAP" value="ow-o0000-o0000-o0000"/>
-    <property name="DEST_X" value="2080"/>
-    <property name="DEST_Y" value="2656"/>
-   </properties>
-  </object>
-  <object name="Warp to City" type="WARP" x="1376" y="-1888" width="32" height="32">
-   <properties>
-    <property name="DEST_MAP" value="ow-o0000-o0000-o0000"/>
-    <property name="DEST_X" value="2272"/>
-    <property name="DEST_Y" value="2656"/>
-   </properties>
-  </object>
-  <object name="Warp to city" type="WARP" x="2528" y="-1888" width="32" height="32">
-   <properties>
-    <property name="DEST_MAP" value="ow-o0000-o0000-o0000"/>
-    <property name="DEST_X" value="2848"/>
-    <property name="DEST_Y" value="2656"/>
-   </properties>
-  </object>
-  <object name="Warp to city" type="WARP" x="992" y="-928" width="32" height="32">
-   <properties>
-    <property name="DEST_MAP" value="ow-o0000-o0000-o0000"/>
-    <property name="DEST_X" value="2080"/>
-    <property name="DEST_Y" value="3072"/>
-   </properties>
-  </object>
-  <object name="Warp to city" type="WARP" x="1760" y="-928" width="32" height="32">
-   <properties>
-    <property name="DEST_MAP" value="ow-o0000-o0000-o0000"/>
-    <property name="DEST_X" value="2464"/>
-    <property name="DEST_Y" value="3072"/>
-   </properties>
-  </object>
-  <object name="Warp to city" type="WARP" x="2144" y="-928" width="32" height="32">
-   <properties>
-    <property name="DEST_MAP" value="ow-o0000-o0000-o0000"/>
-    <property name="DEST_X" value="2656"/>
-    <property name="DEST_Y" value="3072"/>
-   </properties>
-  </object>
-  <object name="Warp to City" type="WARP" x="992" y="992" width="32" height="32">
-   <properties>
-    <property name="DEST_MAP" value="ow-o0000-o0000-o0000"/>
-    <property name="DEST_X" value="2080"/>
-    <property name="DEST_Y" value="3808"/>
-   </properties>
-  </object>
-  <object name="External Map Events" type="SCRIPT" x="0" y="-2880">
-   <properties>
-    <property name="FILENAME" value="scripts/maps/iw-selphie_timlet_flat04-o00-o00-o00.lua"/>
-   </properties>
-  </object>
-  <object name="Warp to flat04-n01" type="WARP" x="1920" y="896" width="64" height="64">
-   <properties>
-    <property name="DEST_MAP" value="iw-selphie_timlet_flat04-o00-o00-n01"/>
-    <property name="DEST_X" value="1952"/>
-    <property name="DEST_Y" value="960"/>
-   </properties>
-  </object>
- </objectgroup>
+  <properties>
+    <property name="music" value="inside.ogg" />
+  </properties>
+  <tileset firstgid="1" name="collision" tilewidth="32" tileheight="32">
+    <image source="../graphics/tiles/xold_collision_32_32.png" />
+  </tileset>
+  <tileset firstgid="2001" name="inn1_32_32" tilewidth="32" tileheight="32">
+    <image source="../graphics/tiles/xold_inn1_32_32.png" />
+  </tileset>
+  <tileset firstgid="4001" name="inn2_32_32" tilewidth="32" tileheight="32">
+    <image source="../graphics/tiles/xold_inn2_32_32.png" />
+  </tileset>
+  <tileset firstgid="6001" name="woodland_indoor" tilewidth="32" tileheight="32">
+    <image source="../graphics/tiles/indoor8_32_32.png" />
+  </tileset>
+  <tileset firstgid="8001" name="inn_32_64" tilewidth="32" tileheight="64">
+    <image source="../graphics/tiles/xold_inn_32_64.png" />
+  </tileset>
+  <tileset firstgid="10001" name="inn_32_96" tilewidth="32" tileheight="96">
+    <image source="../graphics/tiles/xold_inn_32_96.png" />
+  </tileset>
+  <layer name="Ground" width="104" height="50">
+    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/Iv7J3+DX+DV+9P8f/f9H///R/3/0/x/9/0f//9H/f/T/H/3/R///0f9/9P8f/f9H////9/9/NL4f/f9H///R/3/0/x/9/0f//9H/f/T/H/3/R///0f9/9P8f/f9H/////////zbGf/nX/zV+jX/t/2X//ze83/H8bOKIvm5Dp5+r///HhN9/suH/f9Nvuvl7//9//3u03fT/Lk434Rj7/z/4m97cxsC+DZ1+rv7/PxN+/8vX+P9/f4s2XxdGF6evi+Nt/g/Yt6HTz9X/f82v+X/Q9jbtfrZh4P9/GP3/D/+a//8jfoObafRz+f/bjP9ni7ZDMLr0/iM633f//6fR//90+v9frv//09/j/3/Gb3AzjX4u/38bOt6Wtn/67xBvO/T50PwYevs03IQL2vt07r7/83F+von//w8/mp8b/38bOv6w/2/oe5u2pv3/3+fnb/t/0f//cv0/8Mro/xP9fVP7v+I3cGP6036Dm+fl/2vz8/+W/3fx+EX0//qW+Jkx/Wh+/t/5fzOmv+w3cDJ40/99ufv/+v//qVu0+dH/f/T/H/3/R///0f9/9P8f/f9H///R/3/0/x/9/0f///ny/x+N80f//9H/f/T/H/3/R///0f9/9P8f/f9H///R/3/0/x/9/0f//9H//////x+N8cP+//8AGfWpIkBRAAA=</data>
+  </layer>
+  <layer name="Fringe" width="104" height="50">
+    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6NHz0/en70/Oj50fOj50fPj54fPT96fvT86PnR86PnR8//758fDfBHz4+eHz0/en70/Oj50fOj50fPj54fPT96fvT86Pn///OjEf5wnn/z1/81fo1/i/7/b//6Nzb90fNDfH7xby8//0ual/+K/v9f33J+rvS92PPO++76t5f//3/pOfldfo1f4yn9//R3ubHpN/r8Ob9D/7M/V2n3K2le/jf6/6+65fy87/Pf/yzB/X/b89t+/Gv8Gr/dxzd/5j//AdHmP7yBPr/+b/Br/Bq/Af3/x34D+fsmmO/7YH5+h9/g1/g1fsff4KaW/+96fnOlgflpnt+S/v6tvkH6vM/zh/8G7v9/xG+wue2m57f/HWlO6P+/4+/480d+zPM3k676zX+DX+PX+Fs7Oguf/xaRz/H83frZLtFrj/5/73fst8Hzp/8G7v9/xm8Qb3Ob5yHBf0T/P/x5MD//Q2d8fxvR+m+n//8dnXkY+tx/foLo9Yr+/7ozP3/5bxD+358fyHdXxm96fh+C/1P0/+/9joL/o9+A5uo3uOmtHz2xJyYnf9pvMCw/sc///f+fyMgf9huEOv7n+v9/+m8wPD/47qb2vx39/tv/BqLDfieSld95QG/+f+X5y36Dvi75ufq/6fev+A3eD89Ye8zPY5qbz/4/Pj//f3sOfgPyBX4DmZ/fl+bm+z+anx89P3p+9Pzo+dHzo+dHz4+eHz0/en70/Oj5eff8aMA/en70/Oj50fOj50fPj54fPT96fvT86PnR86PnR8///58fjfDDnv8HkZFDnkBRAAA=</data>
+  </layer>
+  <layer name="Over" width="104" height="50">
+    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6NHz0/en70/Oj50fOj50fPj54fPT96fvT86PnR86PnR8//758fDfBHz4+eHz0/en70/Oj50fOj50fPj54fPT96fvT86Pn///OjEf7o+f/j8+63H/7ucsN3P3p+9Px/4fltf4Mbm/x//vlVv8Ov8Wv87/T/X03/f/c73Nj8/1dPS+Nd0/8vO+Me+vx92/xsPN/6DX6NX+OT3+CmVj96fq6eH83Pj54fPZuf/4N05v/5Q9abP3pu91z9aF6+8eebALj1G/wav8Yd+v+f9aP5+dHzo+dHz4+eHz0/en70/Oj50fOj50fPj54fPT96/l/5/AipHz0/en70/Oj50fOj50fPj54fPT96fvT86PnR86Pn///Pj0b4Yc//Azyn71NAUQAA</data>
+  </layer>
+  <layer name="Collision" width="104" height="50" visible="0">
+    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6tX+PX+DV+9P8f/f9H///R/3/0/x/9/0f//9H/f/T/H/3/R///0f9/9P8f/f9H////9/9/NL4f/f9H///R/3/0/x/9/0f//9H/f/T/H/3/R///0f9/9P8f/f9H//////9/NMYf/f9H///R/3/0//9v/N88/u+3ed63vf/E+v86bT7kuQ1t/t/w/+5jPut+120fe/d9n28Cxvs8t6HH/9v+/3Wf7rtDMDf1ZT77JvDBcxOM29Dj/23//7pP990hmJv6Mp99HXw29XWb5za0+X/D////9HTHdNvx3YZOP1f////T83XHeRs6/Vz9//9tz4fg83XHeRs6/Vz9//9Pz9cd323o9P+F//8akc9+9P8f/f9H///R/3/0/x/9/0f//9H/f/T/H/3/R///0f9/vv7/R+P+0f9/9P8f/f9H///R/3/0/x/9/0f//9H/f/T/H/3/R///0f9/9P//////R2P8sP//PycLgIJAUQAA</data>
+  </layer>
+  <objectgroup name="Object" width="104" height="50">
+    <object name="Warp to City" type="WARP" x="992" y="-1888" width="32" height="32">
+      <properties>
+        <property name="DEST_MAP" value="ow-o0000-o0000-o0000" />
+        <property name="DEST_X" value="2080" />
+        <property name="DEST_Y" value="2656" />
+      </properties>
+    </object>
+    <object name="Warp to City" type="WARP" x="1376" y="-1888" width="32" height="32">
+      <properties>
+        <property name="DEST_MAP" value="ow-o0000-o0000-o0000" />
+        <property name="DEST_X" value="2272" />
+        <property name="DEST_Y" value="2656" />
+      </properties>
+    </object>
+    <object name="Warp to city" type="WARP" x="2528" y="-1888" width="32" height="32">
+      <properties>
+        <property name="DEST_MAP" value="ow-o0000-o0000-o0000" />
+        <property name="DEST_X" value="2848" />
+        <property name="DEST_Y" value="2656" />
+      </properties>
+    </object>
+    <object name="Warp to city" type="WARP" x="992" y="-928" width="32" height="32">
+      <properties>
+        <property name="DEST_MAP" value="ow-o0000-o0000-o0000" />
+        <property name="DEST_X" value="2080" />
+        <property name="DEST_Y" value="3072" />
+      </properties>
+    </object>
+    <object name="Warp to city" type="WARP" x="1760" y="-928" width="32" height="32">
+      <properties>
+        <property name="DEST_MAP" value="ow-o0000-o0000-o0000" />
+        <property name="DEST_X" value="2464" />
+        <property name="DEST_Y" value="3072" />
+      </properties>
+    </object>
+    <object name="Warp to city" type="WARP" x="2144" y="-928" width="32" height="32">
+      <properties>
+        <property name="DEST_MAP" value="ow-o0000-o0000-o0000" />
+        <property name="DEST_X" value="2656" />
+        <property name="DEST_Y" value="3072" />
+      </properties>
+    </object>
+    <object name="Warp to City" type="WARP" x="992" y="992" width="32" height="32">
+      <properties>
+        <property name="DEST_MAP" value="ow-o0000-o0000-o0000" />
+        <property name="DEST_X" value="2080" />
+        <property name="DEST_Y" value="3808" />
+      </properties>
+    </object>
+    <object name="External Map Events" type="SCRIPT" x="0" y="-2880">
+      <properties>
+        <property name="FILENAME" value="scripts/maps/iw-selphie_timlet_flat04-o00-o00-o00.lua" />
+      </properties>
+    </object>
+    <object name="Warp to flat04-n01" type="WARP" x="1920" y="896" width="64" height="64">
+      <properties>
+        <property name="DEST_MAP" value="iw-selphie_timlet_flat04-o00-o00-n01" />
+        <property name="DEST_X" value="1952" />
+        <property name="DEST_Y" value="960" />
+      </properties>
+    </object>
+  </objectgroup>
 </map>
