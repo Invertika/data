@@ -1,54 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <map version="1.0" orientation="orthogonal" width="200" height="200" tilewidth="32" tileheight="32">
-  <tileset name="collision" firstgid="1" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/xold_collision_32_32.png" />
-  </tileset>
-  <tileset name="ground1" firstgid="3" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/xold_ground1_32_32.png" />
-  </tileset>
-  <tileset name="Woodland_ground" firstgid="259" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/xold_woodland_ground1_32_32.png" />
-  </tileset>
-  <tileset name="Woodland_village" firstgid="515" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/xold_woodland_village_32_32.png" />
-  </tileset>
-  <tileset name="woodland_village_32_64" firstgid="771" tilewidth="32" tileheight="64">
-    <image source="../graphics/tiles/xold_woodland_village_32_64.png" />
-  </tileset>
-  <tileset name="woodland_32_64" firstgid="787" tilewidth="32" tileheight="64">
-    <image source="../graphics/tiles/xold_woodland_32_64.png" />
-  </tileset>
-  <tileset name="woodland_32_96" firstgid="803" tilewidth="32" tileheight="96">
-    <image source="../graphics/tiles/xold_woodland_32_96.png" />
-  </tileset>
-  <layer name="Ground" width="200" height="200">
-    <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3DAQ0AAAwCIJ/B/l2t8ACw0Uuqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqvo4YmiglgBxAgA=
+ <tileset firstgid="1" name="collision" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/xold_collision_32_32.png"/>
+ </tileset>
+ <tileset firstgid="3" name="ground1" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/xold_ground1_32_32.png"/>
+ </tileset>
+ <tileset firstgid="259" name="Woodland_ground" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/xold_woodland_ground1_32_32.png"/>
+ </tileset>
+ <tileset firstgid="515" name="Woodland_village" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/xold_woodland_village_32_32.png"/>
+ </tileset>
+ <tileset firstgid="771" name="woodland_village_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/xold_woodland_village_32_64.png"/>
+ </tileset>
+ <tileset firstgid="787" name="woodland_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/xold_woodland_32_64.png"/>
+ </tileset>
+ <tileset firstgid="819" name="woodland_32_96" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/xold_woodland_32_96.png"/>
+ </tileset>
+ <tileset firstgid="851" name="desert2_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/desert2_32_32.png"/>
+ </tileset>
+ <layer name="Ground" width="200" height="200">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3aQa7cOAxAwQxyhJwty7n/NYIsAgzmm0rbJk1JrkXtRQEPktr98/u3bz/hZf795zPd64QO+oCYPuCrT7v47Yc+eJkzbeiDNzl7duiDt7jShj7Y3dUu9MHu7rahD3Z2tw19sKuMs0Mf7CqjDX2wo6w29MFusu5V+mBHmW3og93oA2L6gJg+IKYPiOkDYvqAmD4g5vsgjOkDYvqAmD5gLKuR7jmggj4glvU7VvccUEUfMHa3ke71QyV9QEwfENMHxPQBMX3AV75/wLGsNvTBTs508Ukb+mAX2V3og11UtaEPdlDVhj7YgT4gpg+I6QPGvM8hpg+I+f4BY/qAmD4gpg+IVbxBumeCTPqAWPYZ0j0PZMtspHsWqKAPiGWdId1zQBV9QCzjDOmeASrpA2J3z5Du9UM1fUDszhnSvXZ4gj4gpg+I6QNi+oCYPuCY368g5vsHHPP/Evjq7v9K9MGOznTxtzb0wS6yu9AHO6jqQh+s6mwTV7rQB6u40sOdJvTBCjp60Acr6O5CH8xqljb0wWxmakMfzGKGt4Y+mNGMXeiDGczchj7oNnMb+qDT7GeHPug0exv6oMsKZ4c+6LBKG/rgaSu1oQ+etFob+uBJq7WhD56yYhv64Akr3qv0wVNWbUMfVFv57NAH1VZuQx9U0wfE9AHHVn976INKq7ehDyrpA2L6gLHVG+neP/a2+hu9e//Y38qNdO8d77BqI937xnus2Ej3nvEuqzXSvV+8z0qNdO8V76QPGFuhke494r1WuGd17xHvNnsj3fsDMzfSvTfwx4yNdO8J/DHjOdK9J/BfszXSvR/wfzM10r0XcGSWRrr3ASIzNNK9BzDS3Uj3/PA3nY10zw6f6Gqke274lD4g1nGGdM8Mn9IHjOkDxp5spHtWOOvJe1b3rHCFPmDsiUa6Z4Srnrhndc8Id+gDxiob6Z4N7qq8Z3XPBhn0AWMVjXTPBFkq7lndM0EmfUAs+wzpngey6QPGshrpngMqZN2zuueAKvqAsbuNdK8fKt29Z3WvH6rpA8auNtK9bniKPiB25QzpXjM8RR9wzPsDjt35jbd77VDJ9w+I+X4Ox+6eHfpgVxlt6INdZbShD3aU1YY+2E3WvUof7Ca7DX2wk+w29MEuKtrQBzuoakMfrK7izaEPdlHZhj5YWXUb+mBl+oAxfUDM+wPG/H4FscrfeLtngwxVjXTPBVkqGumeCTJlN9I9D2TLbKR7FqiQ1Uj3HFDhTB+jRrrngCoZjXTPAFXO9nHUSPcMUEkfENMHjN1ppHvtUE0fENMHjF1tpHvd8AR9QEwfMHalke41w1P0ATF9wJg+IKYPiJ29Y3WvF56mD4jpA2L6gDF9QOzTPn4BG18MowBxAgA=
   </data>
-  </layer>
-  <layer name="Fringe" width="200" height="200">
-    <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3BgQAAAADDoPlTX+EAVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfAYtCPEnAHECAA==
+ </layer>
+ <layer name="Fringe" width="200" height="200">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3BgQAAAADDoPlTX+EAVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfAYtCPEnAHECAA==
   </data>
-  </layer>
-  <layer name="Over" width="200" height="200">
-    <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3BgQAAAADDoPlTX+EAVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfAYtCPEnAHECAA==
+ </layer>
+ <layer name="Over" width="200" height="200">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3BgQAAAADDoPlTX+EAVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfAYtCPEnAHECAA==
   </data>
-  </layer>
-  <layer name="Collision" width="200" height="200">
-    <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3TAQkAMAzAsDH/oi9g9AoSqITuzKykDLj8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AFtJX17LBpJNQBxAgA=
+ </layer>
+ <layer name="Collision" width="200" height="200" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3TAQkAMAzAsDH/oi9g9AoSqITuzKykDLj8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AHNH9D8Ac0f0PwBzR/Q/AFtJX17LBpJNQBxAgA=
   </data>
-  </layer>
-  <objectgroup name="Object" width="0" height="0">
-
-    <object name="External Map Events" type="SCRIPT" x="0" y="0">
-      <properties>
-        <property name="FILENAME" value="scripts/maps/ow-p0006-n0003-o0000.lua">
-        </property>
-      </properties>
-    </object>
-  </objectgroup>
+ </layer>
+ <objectgroup name="Object" width="0" height="0">
+  <object name="External Map Events" type="SCRIPT" x="0" y="0">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/ow-p0006-n0003-o0000.lua"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>
