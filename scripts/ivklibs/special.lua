@@ -18,7 +18,7 @@ module("special", package.seeall)
 require "scripts/lua/npclib"
 
 --- Fahrstuhl für GM Haus 01
-function elevator_gm_house_01_talk(npc, ch) --- NPC für die Netheksäule
+function elevator_selphi_timlet_ipsum_house_talk(npc, ch) --- NPC für die Netheksäule
 	do_message(npc, ch, "Bitte Stockwerk auswählen.")
 	
 	DEFAULT_X_POS = 78 * TILESIZE
@@ -34,7 +34,7 @@ function elevator_gm_house_01_talk(npc, ch) --- NPC für die Netheksäule
 									 "Ich möchte nicht Fahrstuhl fahren.")
 								   
 		if v == 1 then
-		    mana.chr_warp(ch, 20001, 125 * TILESIZE, 25 * TILESIZE) 		
+		    mana.chr_warp(ch, 20148, 25 * TILESIZE, 25 * TILESIZE) 		
 			break;
 		elseif v == 2 then
 		    mana.chr_warp(ch, 20002, DEFAULT_X_POS, DEFAULT_Y_POS) 		
@@ -60,6 +60,6 @@ function elevator_gm_house_01_talk(npc, ch) --- NPC für die Netheksäule
 end
 
 --- Erzeugt einen NPC für die Netheksäule
-function create_elevator_gm_house_01_talk(xpos, ypos)
-	create_npc("Fahrstuhl", 1, xpos, ypos, elevator_gm_house_01_talk, nil) --- Fahrstuhl
+function create_elevator_selphi_timlet_ipsum_house_talk(xpos, ypos)
+	create_npc("Fahrstuhl", 1, xpos, ypos, elevator_selphi_timlet_ipsum_house_talk, nil) --- Fahrstuhl
 end

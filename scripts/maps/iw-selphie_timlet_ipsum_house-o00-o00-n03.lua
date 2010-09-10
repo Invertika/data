@@ -18,5 +18,5 @@ require "scripts/lua/npclib"
 require "scripts/ivklibs/special"
 
 atinit(function()
- special.create_elevator_gm_house_01_talk(78 * TILESIZE + 16, 22 * TILESIZE + 16) --- Fahrstuhl
+ special.create_elevator_selphi_timlet_ipsum_house_talk(78 * TILESIZE + 16, 22 * TILESIZE + 16) --- Fahrstuhl
 end)
