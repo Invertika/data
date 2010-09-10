@@ -5,74 +5,71 @@
     their name, icon, description, weight, etc. It also defines which sprite
     to use in the case of visible equipment and which sounds to play on certain
     events related to the item.
-
-    The 'weapon_type' attribute is kept for 0.0 client compatibility. Not to be
-    confused with 'weapon-type'.
 -->
 <items>
     <version revision="$Revision$" />
 
     <item id="-1" type="hairsprite" name="Flat ponytail">
-        <sprite>hairstyle1.xml</sprite>
+        <sprite>hairstyles/hairstyle1.xml</sprite>
     </item>
     <item id="-2" type="hairsprite" name="Bowl cut">
-        <sprite>hairstyle2.xml</sprite>
+        <sprite>hairstyles/hairstyle2.xml</sprite>
     </item>
     <item id="-3" type="hairsprite" name="Combed back">
-        <sprite>hairstyle3.xml</sprite>
+        <sprite>hairstyles/hairstyle3.xml</sprite>
     </item>
     <item id="-4" type="hairsprite" name="Emo">
-        <sprite>hairstyle4.xml</sprite>
+        <sprite>hairstyles/hairstyle4.xml</sprite>
     </item>
     <item id="-5" type="hairsprite" name="Mohawk">
-        <sprite>hairstyle5.xml</sprite>
+        <sprite>hairstyles/hairstyle5.xml</sprite>
     </item>
     <item id="-6" type="hairsprite" name="Pompadour">
-        <sprite>hairstyle6.xml</sprite>
+        <sprite>hairstyles/hairstyle6.xml</sprite>
     </item>
     <item id="-7" type="hairsprite" name="Center parting/Short and slick">
-        <sprite>hairstyle7.xml</sprite>
+        <sprite>hairstyles/hairstyle7.xml</sprite>
     </item>
     <item id="-8" type="hairsprite" name="Long and slick">
-        <sprite>hairstyle8.xml</sprite>
+        <sprite>hairstyles/hairstyle8.xml</sprite>
     </item>
     <item id="-9" type="hairsprite" name="Short and curly">
-        <sprite>hairstyle9.xml</sprite>
+        <sprite>hairstyles/hairstyle9.xml</sprite>
     </item>
     <item id="-10" type="hairsprite" name="Pigtails">
-        <sprite>hairstyle10.xml</sprite>
+        <sprite>hairstyles/hairstyle10.xml</sprite>
     </item>
     <item id="-11" type="hairsprite" name="Long and curly">
-        <sprite>hairstyle11.xml</sprite>
+        <sprite>hairstyles/hairstyle11.xml</sprite>
     </item>
     <item id="-12" type="hairsprite" name="Parted">
-        <sprite>hairstyle12.xml</sprite>
+        <sprite>hairstyles/hairstyle12.xml</sprite>
     </item>
     <item id="-13" type="hairsprite" name="Perky ponytail">
-        <sprite>hairstyle13.xml</sprite>
+        <sprite>hairstyles/hairstyle13.xml</sprite>
     </item>
     <item id="-14" type="hairsprite" name="Wave">
-        <sprite>hairstyle14.xml</sprite>
+        <sprite>hairstyles/hairstyle14.xml</sprite>
     </item>
     <item id="-15" type="hairsprite" name="Mane">
-        <sprite>hairstyle15.xml</sprite>
+        <sprite>hairstyles/hairstyle15.xml</sprite>
     </item>
     <item id="-16" type="hairsprite" name="Bun">
-        <sprite>hairstyle16.xml</sprite>
+        <sprite>hairstyles/hairstyle16.xml</sprite>
     </item>
 
     <!-- Treating the base sprite as equipment too will be useful when we
          implement other playable races -->
     <item id="-100" type="racesprite" name="Human">
-        <sprite gender="male">player_male_base.xml</sprite>
-        <sprite gender="female">player_female_base.xml</sprite>
+        <sprite gender="male">players/human/male_base.xml</sprite>
+        <sprite gender="female">players/human/female_base.xml</sprite>
     </item>
 	
 	<!-- Invertika Items -->
 	
 	<!-- Waffen 10001 - 20000 -->	
 	<item id="10001"
-        image="weapon-dagger-knive.png"
+        image="equipment/weapons/dagger-knive.png"
         name="Messer"
         description="Ein kleines Messer, die perfekte Waffe für Anfänger."
         effect="+5 Damage, 1 Range"
@@ -86,13 +83,13 @@
         attack-range="32"
         attack-angle="135"
         max-per-slot="1">
-        <sprite>weapon-dagger.xml</sprite>
+        <sprite>equipment/weapons/dagger.xml</sprite>
         <sound event="strike">short-sword-miss1.ogg</sound>
         <sound event="hit">short-sword-hit1.ogg</sound>
     </item>
 	
 	<item id="10002"
-        image="weapon-dagger-dagger.png"
+        image="equipment/weapons/dagger-dagger.png"
         name="Dolch"
         description="Ein einfacher Dolch."
         effect="+15 Damage, 1 Range"
@@ -106,13 +103,13 @@
         attack-range="32"
         attack-angle="135"
         max-per-slot="1">
-        <sprite>weapon-dagger.xml</sprite>
+        <sprite>equipment/weapons/dagger.xml</sprite>
         <sound event="strike">short-sword-miss1.ogg</sound>
         <sound event="hit">short-sword-hit1.ogg</sound>
     </item>
     
      <item id="10003"
-        image="weapon-bow-forestbow.png"
+        image="equipment/weapons/bow-forestbow.png"
         name="Robins Bogen"
         description="Ein Bogen für die Rächer unter uns."
         effect="+70 Damage, 5 Range"
@@ -124,10 +121,12 @@
         attack-delta="25"
         attack-range="300"
         missile-particle="graphics/particles/arrow.particle.xml"
-        view="1200"/>
+        view="1200">
+		<sprite>equipment/weapons/bow.xml</sprite>
+		</item>
         
       <item id="10004"
-        image="weapon-arrow-arrow.png"
+        image="equipment/weapons/arrow-arrow.png"
         name="Robins Pfeil"
         description="Ein Pfeil für die Rächer unter uns."
         effect="+25 Damage"
@@ -136,7 +135,7 @@
         max-per-slot="999"/>
         
 	<item id="10005"
-        image="weapon-dagger-knive.png"
+        image="equipment/weapons/dagger-knive.png"
         name="Niedermetzler 3000"
         description="Ein Schwert von einem ziemlich obskuren Typen."
         effect="+50 Damage , 1 Range"
@@ -150,14 +149,14 @@
         attack-range="32"
         attack-angle="135"
         max-per-slot="1">
-        <sprite>weapon-dagger.xml</sprite>
+        <sprite>equipment/weapons/dagger.xml</sprite>
         <sound event="strike">short-sword-miss1.ogg</sound>
         <sound event="hit">short-sword-hit1.ogg</sound>
     </item>
 	
 	<!-- Ruestungen und Kleidung 20001 - 30000 -->
 	<item id="20001"
-        image="armor-chest-cottonshirt.png"
+        image="equipment/chest/cottonshirt.png"
         name="Baumwollshirt"
         description="Ein Shirt aus Baumwolle."
         effect="+2% Defense"
@@ -165,12 +164,12 @@
         weight="15"
         defense="2"
         max-per-slot="1">
-        <sprite gender="male">chest-cotton-male.xml|#2b454d,72818c,b7c0c5,ffffff</sprite>
-        <sprite gender="female">chest-cotton-female.xml|#2b454d,72818c,b7c0c5,ffffff</sprite>
+        <sprite gender="male">equipment/chest/cotton-male.xml|#2b454d,72818c,b7c0c5,ffffff</sprite>
+        <sprite gender="female">equipment/chest/cotton-female.xml|#2b454d,72818c,b7c0c5,ffffff</sprite>
     </item>
 	
 	<item id="20002"
-        image="armor-legs-shorts.png|W:#6c858a,ffffff"
+        image="equipment/leg/shorts.png|W:#6c858a,ffffff"
         name="Baumwollhose"
         description="Eine Hose aus Baumwolle."
         effect="+2% Defense"
@@ -178,12 +177,12 @@
         weight="10"
         defense="2"
         max-per-slot="1">
-        <sprite gender="male">leg-shorts-male.xml|#6c858a,ffffff</sprite>
-        <sprite gender="female">leg-shorts-female.xml|#6c858a,ffffff</sprite>
+        <sprite gender="male">equipment/leg/shorts-male.xml|#6c858a,ffffff</sprite>
+        <sprite gender="female">equipment/leg/shorts-female.xml|#6c858a,ffffff</sprite>
     </item>
 	
 	<item id="20003"
-        image="armor-head-axehat.png"
+        image="equipment/head/axehat.png"
         name="Axt Hut"
         description="Ein einzigartiger Hut."
         effect="+5000% Defense"
@@ -191,11 +190,11 @@
         weight="20"
         defense="5000"
         max-per-slot="1">
-        <sprite>head-axehat.xml</sprite>
+        <sprite>equipment/head/axehat.xml</sprite>
     </item>
 	
 	<item id="20004"
-        image="armor-head-fancyhat.png"
+        image="equipment/head/fancyhat.png"
         name="Lustiger Hut"
         description="Ein lustiger Hut."
         effect="+5% Defense"
@@ -203,11 +202,11 @@
         weight="25"
         defense="5"
         max-per-slot="1">
-        <sprite>head-fancyhat.xml</sprite>
+        <sprite>equipment/head/fancyhat.xml</sprite>
     </item>
     
     <item id="20005"
-        image="armor-ring-strength-rough.png"
+        image="equipment/ring/strength-rough.png"
         name="Ring der Stärke"
         description="Dieser Ring strahlt große Stärke aus."
         effect="+5% Strenght"
@@ -218,7 +217,7 @@
     </item>
     
     <item id="20006"
-        image="armor-head-fairy_hat.png"
+        image="equipment/head/fairy_hat.png"
         name="Robins Hut"
         description="Der Hut für alle Rächer unter uns."
         effect="+500% Defense"
@@ -226,11 +225,11 @@
         weight="20"
         defense="500"
         max-per-slot="1">
-        <sprite>head-fairy_hat.xml</sprite>
+        <sprite>equipment/head/fairy_hat.xml</sprite>
     </item>
     
         <item id="20007"
-        image="armor-chest-desertshirt.png"
+        image="equipment/chest/desertshirt.png"
         name="Robins Shirt"
         description="Das Shirt für alle Rächer unter uns."
         effect="+6% Defense"
@@ -238,37 +237,37 @@
         weight="30"
         defense="500"
         max-per-slot="1">
-        <sprite gender="male">chest-leather-male.xml|#443c21,85794a,beb590,ffffff;#824035,d6a19a</sprite>
-        <sprite gender="female">chest-leather-female.xml|#251e06,443c21,71653b,a0945e;#b6574a</sprite>
+        <sprite gender="male">equipment/chest/leather-male.xml|#443c21,85794a,beb590,ffffff;#824035,d6a19a</sprite>
+        <sprite gender="female">equipment/chest/leather-female.xml|#251e06,443c21,71653b,a0945e;#b6574a</sprite>
     </item>
     
         <item id="20008"
-        image="armor-legs-chaps.png"
+        image="equipment/leg/chaps.png"
         name="Robins Hose"
         description="Die Hose für alle Rächer unter uns."
         effect="+6% Defense"
         type="equip-legs"
         defense="500"
         weight="40">
-        <sprite gender="male">leg-chaps-male.xml</sprite>
-        <sprite gender="female">leg-chaps-female.xml</sprite>
+        <sprite gender="male">equipment/leg/chaps-male.xml</sprite>
+        <sprite gender="female">equipment/leg/chaps-female.xml</sprite>
     </item>
 	 
         <item id="20009"
-        image="armor-feet-boots.png"
+        image="equipment/feet/boots.png"
         name="Stiefel"
         description="Ein paar Stiefel."
         effect="+2% Defense"
         type="equip-feet"
         defense="2"
         weight="40">
-        <sprite gender="male">feet-boots-male.xml</sprite>
-        <sprite gender="female">feet-boots-female.xml</sprite>
+        <sprite gender="male">equipment/feet/boots-male.xml</sprite>
+        <sprite gender="female">equipment/feet/boots-female.xml</sprite>
     </item>
 
 	<!-- Power Ups 30001 - 40000 -->
     <item id="30001"
-        image="use-potion-a.png|G:#22ff22"
+        image="generic/potion-a.png|G:#22ff22"
         name="Kaktussaft"
         description="Ein leckeres Getränk."
         effect="+15 HP"
@@ -278,7 +277,7 @@
         max-per-slot="999"/>
 		
 	<item id="30002"
-        image="use-potion-a.png|G:#7A67AB"
+        image="generic/potion-a.png|G:#7A67AB"
         name="Hemlock"
         description="Ein leichtes Gift."
         effect="Unbekannt."
@@ -289,7 +288,7 @@
         max-per-slot="999"/>
 	
 	<item id="30003"
-        image="use-potion-a.png|G:#33294B"
+        image="generic/potion-a.png|G:#33294B"
         name="Nogatch Hemlock"
         description="Ein tödliches Gift."
 		script="poison.lua"
@@ -300,7 +299,7 @@
         max-per-slot="999"/>
 		
 	<item id="30004"
-        image="use-potion-a.png|G:#AEDB11"
+        image="generic/potion-a.png|G:#AEDB11"
         name="Hop und Ex"
         description="Der Modedrink der Wüstenbewohner."
         effect="Unbekannt."
@@ -310,7 +309,7 @@
         max-per-slot="999"/>
 		
 	<item id="30005"
-        image="use-potion-a.png|G:#C38F03"
+        image="generic/potion-a.png|G:#C38F03"
         name="Wurzelhans"
         description="Ein seltsames Getränk..."
         effect="Unbekannt."
@@ -320,7 +319,7 @@
         max-per-slot="999"/>
 		
     <item id="30006"
-        image="use-food-beer.png"
+        image="generic/beer.png"
         name="Bier"
         description="Ein frisches Bier."
         effect="+20 HP"
@@ -330,7 +329,7 @@
         max-per-slot="999"/>
 		
     <item id="30007"
-        image="use-food-milk.png"
+        image="generic/milk.png"
         name="Milch"
         description="Eine frische Packung Milch."
         effect="+150 HP"
@@ -340,7 +339,7 @@
         max-per-slot="999"/>
 		
     <item id="30008"
-        image="use-food-pangalactic-gargle-blaster.png"
+        image="generic/pangalactic-gargle-blaster.png"
         name="Pangalaktischer Donnergurgler"
         description="Der Drink fuer alle die auf der Suche nach der Frage sind."
 		script="pangalactic-gargle-blaster.lua"
@@ -351,7 +350,7 @@
         max-per-slot="999"/>
 		
     <item id="30009"
-        image="use-food-chocolatebar.png"
+        image="generic/chocolatebar.png"
         name="Schokoladentafel"
         description="Feinste Schokolade aus Ceri Dra."
         effect="+20 HP"
@@ -361,7 +360,7 @@
         max-per-slot="999"/>
 		
 	<item id="30010"
-        image="use-food-cake.png"
+        image="generic/cake.png"
         name="Keks"
         description="Ein leckerer Keks."
         effect="+15 HP"
@@ -370,7 +369,7 @@
 		max-per-slot="999"/>
 		
     <item id="30011"
-        image="use-food-roastedmaggot.png"
+        image="generic/roastedmaggot.png"
         name="Geröstete Made"
         description="Eine geröstete Made. Lecker."
         effect="+150 HP"
@@ -380,7 +379,7 @@
         max-per-slot="999"/>
 	
     <item id="30012"
-        image="use-food-apple.png"
+        image="generic/apple.png"
         name="Apfel"
         description="Ein leckerer Apfel."
         effect="+50 HP"
@@ -391,7 +390,7 @@
         max-per-slot="999"/>
 		
 	<item id="30013"
-        image="use-potion-a.png|G:#7A67AB"
+        image="generic/potion-a.png|G:#7A67AB"
         name="Gatch Hemlock"
         description="Ein schweres Gift."
         effect="Unbekannt."
@@ -401,7 +400,7 @@
         max-per-slot="999"/>
 
 	<item id="30014"
-        image="use-food-chocolatebar.png"
+        image="generic/chocolatebar.png"
         name="Riesenschokolade"
         description="Eine riesige Tafel Schokolade"
         effect="+200 HP"
@@ -412,7 +411,7 @@
 		
 	<!-- Sonstige 40001 - 50000 -->
 	<item id="40001"
-        image="generic-emptybottle.png"
+        image="generic/emptybottle.png"
         name="Leere Flasche"
         description="Eine leere Flasche."
         effect=""
@@ -421,7 +420,7 @@
         max-per-slot="999"/>
 		
 	<item id="40002"
-        image="generic-iten.png"
+        image="generic/item.png"
         name="IP Paket"
         description="Ein IP Paket, welche Geheimnisse birgt es?"
         effect=""
@@ -430,7 +429,7 @@
         max-per-slot="999"/>
 		
 	<item id="40003"
-        image="generic-canister.png"
+        image="generic/canister.png"
         name="Benzinkanister"
         description="Ein Bezinkanister gefüllt mit Benzin."
         effect=""
@@ -439,7 +438,7 @@
         max-per-slot="999"/>	
 		
 	<item id="40004"
-        image="generic-scorpionstinger.png|W:#a08040,e0e0e0"
+        image="generic/scorpionstinger.png|W:#a08040,e0e0e0"
         name="Skorpion Stachel"
         description="Ein giftiger Skorpion Stachel."
         effect=""
@@ -448,7 +447,7 @@
         max-per-slot="999"/>
 		
     <item id="40005"
-        image="generic-maggotslime.png"
+        image="generic/maggotslime.png"
         name="Madenschleim"
         description="Schleimiger Madenschleim"
         effect=""
@@ -457,7 +456,7 @@
         max-per-slot="999"/>
 		
     <item id="40006"
-        image="generic-casinocoins.png"
+        image="generic/casinocoins.png"
         name="Casino Münzen"
         description="Ein paar Casino Münzen."
         effect=""
@@ -466,7 +465,7 @@
         max-per-slot="999"/>
 		
     <item id="40007"
-        image="generic-bugleg.png"
+        image="generic/bugleg.png"
         name="Insektenbein"
         description="Das Bein eines Insektes."
         effect=""
@@ -475,7 +474,7 @@
 		max-per-slot="999"/>
 		
     <item id="40008"
-        image="generic-towel.png"
+        image="generic/towel.png"
         name="Handtuch"
         description="Ein praktisches Handtuch für alle Gelegenheiten."
         type="generic"
@@ -483,7 +482,7 @@
 		max-per-slot="1"/>
 		
     <item id="40009"
-        image="generic-fabric.png"
+        image="generic/fabric.png"
         name="Königlicher Passierschein"
         description="Ein königlicher Passierschein der zum Betreten des Palastes berechtigt."
         type="generic"
@@ -491,7 +490,7 @@
 		max-per-slot="1"/>
 		
 	<item id="40010"
-        image="generic-treasurekey.png"
+        image="generic/treasurekey.png"
         name="Ipsumschlüssel"
         description="Ein Schlüssel für das Ipsum Haus."
         effect="Öffnet Türen"
@@ -500,7 +499,7 @@
         max-per-slot="1"/>
 	
 	<item id="40011"
-        image="generic-bluehint.png"
+        image="generic/bluehint.png"
         name="Brief von Averin"
         description="Ein Brief von Averin an die Botschaft in Roststock."
         type="generic"
@@ -508,7 +507,7 @@
         max-per-slot="1"/>
 	
 	<item id="40012"
-        image="generic-bluehint.png"
+        image="generic/bluehint.png"
         name="Brief an Averin"
         description="Ein Brief von der Botschaft in Roststock an Averin."
         type="generic"
@@ -516,7 +515,7 @@
         max-per-slot="1"/>
         
 	<item id="40013"
-        image="generic-greenpresentbox.png"
+        image="generic/greenpresentbox.png"
         name="Grünes Geschenk"
         description="Ein grünes Geschenk."
         type="generic"
@@ -524,7 +523,7 @@
         max-per-slot="999"/>
         
 	<item id="40014"
-        image="generic-bluepresentbox.png"
+        image="generic/bluepresentbox.png"
         name="Blaues Geschenk"
         description="Blaues Geschenk."
         type="generic"
@@ -532,7 +531,7 @@
         max-per-slot="999"/>
         
 	<item id="40015"
-        image="generic-purplepresentbox.png"
+        image="generic/purplepresentbox.png"
         name="Lila Geschenk"
         description="Ein lila Geschenk."
         type="generic"
@@ -540,7 +539,7 @@
         max-per-slot="999"/>
 
 	<item id="40016"
-        image="generic-scorpionstinger.png|W:#969696,e0e0e0"
+        image="generic/scorpionstinger.png|W:#969696,e0e0e0"
         name="Kellerskorpion Stachel"
         description="Ein giftiger Kellerskorpion Stachel."
         effect=""
@@ -549,7 +548,7 @@
         max-per-slot="999"/>
 
 	<item id="40017"
-        image="generic-check.png|W:#969696,e0e0e0"
+        image="generic/check.png|W:#969696,e0e0e0"
         name="Scheck (500 Aki)"
         description="Scheck im Wert von 500 Aki."
         effect=""
@@ -558,7 +557,7 @@
         max-per-slot="999"/>
 
 	<item id="40018"
-        image="generic-check.png|W:#969696,e0e0e0"
+        image="generic/check.png|W:#969696,e0e0e0"
         name="Scheck (1000 Aki)"
         description="Scheck im Wert von 1000 Aki."
         effect=""
@@ -567,7 +566,7 @@
         max-per-slot="999"/>
 
 	<item id="40019"
-        image="generic-check.png|W:#969696,e0e0e0"
+        image="generic/check.png|W:#969696,e0e0e0"
         name="Scheck (2000 Aki)"
         description="Scheck im Wert von 2000 Aki."
         effect=""
@@ -576,7 +575,7 @@
         max-per-slot="999"/>
 
 	<item id="40020"
-        image="generic-check.png|W:#969696,e0e0e0"
+        image="generic/check.png|W:#969696,e0e0e0"
         name="Scheck (5000 Aki)"
         description="Scheck im Wert von 5000 Aki."
         effect=""
@@ -585,7 +584,7 @@
         max-per-slot="999"/>
 
 	<item id="40021"
-        image="generic-check.png|W:#969696,e0e0e0"
+        image="generic/check.png|W:#969696,e0e0e0"
         name="Scheck (10000 Aki)"
         description="Scheck im Wert von 10000 Aki."
         effect=""
@@ -594,7 +593,7 @@
         max-per-slot="999"/>
 
 	<item id="40022"
-        image="generic-check.png|W:#969696,e0e0e0"
+        image="generic/check.png|W:#969696,e0e0e0"
         name="Scheck (25000 Aki)"
         description="Scheck im Wert von 25000 Aki."
         effect=""
@@ -603,7 +602,7 @@
         max-per-slot="999"/>
 
 	<item id="40023"
-        image="generic-check.png|W:#969696,e0e0e0"
+        image="generic/check.png|W:#969696,e0e0e0"
         name="Scheck (50000 Aki)"
         description="Scheck im Wert von 50000 Aki."
         effect=""
