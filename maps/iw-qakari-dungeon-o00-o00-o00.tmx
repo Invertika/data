@@ -1,75 +1,67 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="70" height="70" tilewidth="32" tileheight="32">
- <properties>
-  <property name="music" value="cavesong.ogg"/>
- </properties>
- <tileset firstgid="1" name="collision" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/collision1_32_32.png"/>
- </tileset>
- <tileset firstgid="1025" name="ivk_special1" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/misc1_32_32.png"/>
- </tileset>
- <tileset firstgid="2049" name="cave" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/xold_cave_32_32.png"/>
- </tileset>
- <tileset firstgid="2177" name="cave_x2" tilewidth="32" tileheight="64">
-  <image source="../graphics/tiles/cave1_32_64.png"/>
- </tileset>
- <tileset firstgid="2689" name="cave_bilevel" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/cave4_32_32.png"/>
- </tileset>
- <tileset firstgid="3713" name="cave_ani_wetwall" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/cave1_ani_32_32.png"/>
- </tileset>
- <tileset firstgid="4737" name="woodland_graveyard_32_96" tilewidth="32" tileheight="96">
-  <image source="../graphics/tiles/wood1_32_96.png"/>
- </tileset>
- <layer name="Ground" width="70" height="70">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3YwUoDMRDG8V6Enqv4APbgXRHxWhHxAfoUvoCHXtXXdi4LS0iGmazWzOy/8LuEBHa+Jpltj9vN5ggAAAAAAAAAgLgc4BlGcyv24sFo/rGuKd2I3QC1ax7FvXgx+hRf4tuxpnQnngaoXfMqnsVF4b0y9tFQzpucGuMH8TZA7Zprpd6/dDVA7efK5UQu7Jetfy+sKRf2S5vWk7z7LFMutZpbPbrW3+djEXNZcpdo2UTPxZuPZ89M8yPnomXgyag2J2suHtlyqZ0jS/3lfVxbFzkX737xrMmaS6tHWzPMlEtP38mWS/k+1pNP9Fws33VPT5rm1s7cmnPR1q0hl577KWou1vp6e3ykXHqzqa3TzlTmXKy/Kct5UffLkrPhmR89l9/+XzdyLtb7wtunM+Qyfy9bKkM/OpfRc1liqvG/nwMAAAAAAADAWH4A9WwexJBMAAA=
-  </data>
- </layer>
- <layer name="Fringe" width="70" height="70">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3Y0QqCMBQA0AUGvlv0RX1T9FpRf9J/2ZfkQz4Uhi4b5TwHhjCvcLlud7AQAAAAAAAA0jqUIRybcSrjvjsXafKZuqu6dFIX+myqX2fwubpZ37fH6NLOv3vfFd8XWw+I+UfrCf/nb9ou4+IXadLIzirz9XUpnp+v82NVmdePeWv77tA+EdunAVrOUyC1XeQd7lyN7cfuL/Kyt28AAAAAAADIxB2o+Hs8kEwAAA==
-  </data>
- </layer>
- <layer name="Over" width="70" height="70">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3PsQkAIBAEwQ/VBtT+G9UaHkSRGdjwgosAAAAAAAAAAAAAAAAAgPfUEjGSzV1Pblu5/fyc+vk/AAAAACBnAWMtaMCQTAAA
-  </data>
- </layer>
- <layer name="Collision" width="70" height="70">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3QwQnAQBADsWX7L/peKSAQzobIoAI8OzMLAAAAAADAZ24u/bWxybP0Z1100UUXXfoklv6siy666KJLn8TSn3XRRRdddOmTWPqzLrrooosufRJLf9ZFlxZ/+AgAAAAAvHcAq3Ij+ZBMAAA=
-  </data>
- </layer>
- <objectgroup name="Object" width="70" height="70" x="-1" y="-1">
-  <object name="External Map Events" type="SCRIPT" x="0" y="0">
-   <properties>
-    <property name="FILENAME" value="scripts/maps/iw-qakari-dungeon-o00-o00-o00.lua"/>
-   </properties>
-  </object>
-  <object name="Fledermaus" type="SPAWN" x="791" y="832" width="819" height="692">
-   <properties>
-    <property name="MAX_BEINGS" value="8"/>
-    <property name="MONSTER_ID" value="8"/>
-    <property name="SPAWN_RATE" value="0.1"/>
-   </properties>
-  </object>
-  <object name="Eidechse" type="SPAWN" x="1169" y="1501" width="333" height="121">
-   <properties>
-    <property name="MAX_BEINGS" value="1"/>
-    <property name="MONSTER_ID" value="9"/>
-    <property name="SPAWN_RATE" value="0.1"/>
-   </properties>
-  </object>
-  <object name="Warp to Quakari" type="WARP" x="1152" y="1664" width="64" height="32">
-   <properties>
-    <property name="DEST_MAP" value="ow-n0002-p0001-o0000"/>
-    <property name="DEST_X" value="3952"/>
-    <property name="DEST_Y" value="1824"/>
-   </properties>
-  </object>
- </objectgroup>
+  <properties>
+    <property name="music" value="cavesong.ogg" />
+  </properties>
+  <tileset firstgid="1" name="collision" tilewidth="32" tileheight="32">
+    <image source="../graphics/tiles/collision1_32_32.png" />
+  </tileset>
+  <tileset firstgid="2001" name="ivk_special1" tilewidth="32" tileheight="32">
+    <image source="../graphics/tiles/misc1_32_32.png" />
+  </tileset>
+  <tileset firstgid="4001" name="cave" tilewidth="32" tileheight="32">
+    <image source="../graphics/tiles/cave3_32_32.png" />
+  </tileset>
+  <tileset firstgid="6001" name="cave_x2" tilewidth="32" tileheight="64">
+    <image source="../graphics/tiles/cave1_32_64.png" />
+  </tileset>
+  <tileset firstgid="8001" name="cave_bilevel" tilewidth="32" tileheight="32">
+    <image source="../graphics/tiles/cave4_32_32.png" />
+  </tileset>
+  <tileset firstgid="10001" name="cave_ani_wetwall" tilewidth="32" tileheight="32">
+    <image source="../graphics/tiles/cave1_ani_32_32.png" />
+  </tileset>
+  <tileset firstgid="12001" name="woodland_graveyard_32_96" tilewidth="32" tileheight="96">
+    <image source="../graphics/tiles/wood1_32_96.png" />
+  </tileset>
+  <layer name="Ground" width="70" height="70">
+    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/Ip7+Zr/Gr/Gj///o/z/6/4/+/6P//+j/P/r/j/7/o///6P8/+v+P/v+j///o/z/6//+///+j8f3o/z/6/4/+/6P//+j/t/3/P/Kb3tzm59v//wuiyX9C//91frPb/d9/btM+9v//mPr7h/9fPhe/Hv3/16L//263/P/6t/01fo1L+v/Vb3tz26H//5r0/9/Aw+H/jf//hfT/j+j/f9lvGv7/pyOf/ZG/Wfz/3Xbm/3/swHe/K32+dQvcfi7//49vGO/P5v//0f+Xy9E3SZc/9obvf77S5X3+//8XurwPL9zm//9/ocs3/f//t9Ll69Blk00a+v8Qn/3/iS6xMQ/Z6Jh99z/7/yJdPkSXbKLN/9fp8r70eR+eMe3/v0yXTTR4HxrF2vz/lS7v8///v9ElJke3GX9XH8fe+/8yXd6XX97nnf+/0mXIRt+Whv9/osumcf58oYs/xvcZr0+f/6/T5TZz/b508WkTk7mfz3TZ9N7PB7p0ZXDo//9/oMttx3eb9t8EXW4zlm/y/z5d3mecN/FM93u/zf/X+OV96HLbmLLb7v+LcvS+tPHHedv3/v9Cl9vyxW3///9lutxWX9zm//9/o4sZ023Gflva+J/9f5kuP5v//387XT7k/2aMt2n7o///6P8/+v+P/v+j///o/z/6/w///z/q80f//9H/f/T/H/3/R///0f9/9P8f/f9H///R/3/0/5+r//8/soCGH5BMAAA=</data>
+  </layer>
+  <layer name="Fringe" width="70" height="70">
+    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6NHz0/en70/Oj50fOj50fPj54fPT96fvT86PnR86PnR8//758fDfBHz4+eHz0/en70/Oj50fNz/dS/7a/xazT0//a3vbFp8Pzkb3Bjk5+Xz+VvcGOTn5fPj+jyo+em5+rujU3+X/v8zb/Br/Fr/C36/9hjPh/6vvtsgmUe0+f/1571/4fn+UMf//3f+sfeD9qveWOLHz142v+f89d3f4PwZ/fzD32a/5/T70fPz+/H6N3b6on31dM/en70/Oj50WOeH9nTHz0/en70/Gw/f8RvdmOTHz2/xofr4w/JX9wI/EfPD/35o36zG5v86PnR86PnR8+Pnh89P3p+9Pzo+dHzo+dHz4+eHz3v9fyo8Y+eHz0/en70/Oj50fOj50fPj54fPT96fq6e/wdUQ03LkEwAAA==</data>
+  </layer>
+  <layer name="Over" width="70" height="70">
+    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6NHz0/en70/Oj50fOj50fPj54fPT96fvT86PnR86PnR8//758fDfBHz4+eHz0/en70/Oj50fOj50fPj54fPT96fvT86Pn///OjEf7o+dHzo+dHz4+eHz0/en70/Oj50fOj50fPj54fPf//f340wh89P3p+9Pzo+dHz8/H5q37TX+PX+Ce/5v//Kfr/P3GLdrH//9W/6Y2o/X/2+av+fz6+Hz0/en70/Oj50fOj5//rz4/w/9Hzo+dHz4+eHz0/en70/Oj50fOj50fPz9Xz/wDBPnm5kEwAAA==</data>
+  </layer>
+  <layer name="Collision" width="70" height="70">
+    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6tX+PX+DV+9P8f/f9H///R/3/0/x/9/0f//9H/f/T/H/3/R///0f9/9P8f/f9H////9/9/NL4f/f9H///R/3/0/x/9/0f//9H/f/T/H+7/f5jPbfD5f8P/fy6e2+D1c/3/n4vnNnj9XP//5+K5DV4/1///uXhug9fP9f9/Lp7b4PVz8f8f0eXm//9cPLfB6+f6/z8Xz23w+rn+/8/Fcxu8fq7//3Px3Aavn+v//1w8t8Hr5/r/PxfPbfD6uf7/z8VzG7x+rv//c/HcBq+f6///XDy3wevn+v8/F89t8Pq5/v/PxXMbvH6u//9z8dwGr5/r//9cPLfB6+f6/z8Xz23w8v//c/H7z8VzG7x+rv//c/HcBq+f6///XDy3wevn+v8/F89t8Pq5/v/PxXMbvH6u//9z8dwGr5/r//9cPLfB6/+r/zfPbdr+6P8/+v+P/v+j///o/z/6/4/+/8P//4/6/NH/f/T/H/3/R///0f9/9P8f/f9H///R/3/0/x/9/+fq//8Pq3Ij+ZBMAAA=</data>
+  </layer>
+  <objectgroup name="Object" width="70" height="70" x="-1" y="-1">
+    <object name="External Map Events" type="SCRIPT" x="0" y="0">
+      <properties>
+        <property name="FILENAME" value="scripts/maps/iw-qakari-dungeon-o00-o00-o00.lua" />
+      </properties>
+    </object>
+    <object name="Fledermaus" type="SPAWN" x="791" y="832" width="819" height="692">
+      <properties>
+        <property name="MAX_BEINGS" value="8" />
+        <property name="MONSTER_ID" value="8" />
+        <property name="SPAWN_RATE" value="0.1" />
+      </properties>
+    </object>
+    <object name="Eidechse" type="SPAWN" x="1169" y="1501" width="333" height="121">
+      <properties>
+        <property name="MAX_BEINGS" value="1" />
+        <property name="MONSTER_ID" value="9" />
+        <property name="SPAWN_RATE" value="0.1" />
+      </properties>
+    </object>
+    <object name="Warp to Quakari" type="WARP" x="1152" y="1664" width="64" height="32">
+      <properties>
+        <property name="DEST_MAP" value="ow-n0002-p0001-o0000" />
+        <property name="DEST_X" value="3952" />
+        <property name="DEST_Y" value="1824" />
+      </properties>
+    </object>
+  </objectgroup>
 </map>
