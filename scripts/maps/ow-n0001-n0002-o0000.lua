@@ -29,6 +29,7 @@ atinit(function()
  create_npc("bulldog98", 53, 87 * TILESIZE + 16, 122 * TILESIZE + 16, bulldog98_talk, nil) --- bulldog98
  create_npc("Saturn", 3, 89 * TILESIZE + 16, 114 * TILESIZE + 16, saturn_talk, nil) --- Saturn
  create_npc("subnet_zero", 15 , 77 * TILESIZE + 16, 118 * TILESIZE + 16, subnet_zero_talk, nil) --- subnet_zero
+ create_npc("DJh2o2", 24 , 81 * TILESIZE + 16, 115 * TILESIZE + 16, djh2o2_talk, nil) --- DJh2o2
 end)
 
 function jurkan_talk(npc, ch)
@@ -127,3 +128,9 @@ function subnet_zero_talk(npc, ch)
 	  "Verdammte AXT!"))
 	do_npc_close(npc, ch)
 end
+
+function djh2o2_talk(npc, ch)
+	do_message(npc, ch, invertika.get_random_element("Die Kunst der Komposition ist es, sich an eine Melodie zu erinnern, die es noch nicht gibt."))
+	do_npc_close(npc, ch)
+end
+ 
