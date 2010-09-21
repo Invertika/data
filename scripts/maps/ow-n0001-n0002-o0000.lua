@@ -40,7 +40,6 @@ function jurkan_talk(npc, ch)
 	  "Warum anderen das Leben schwermachen, wenn man es ihnen nehmen kann?",
 	  "Könnte mir vielleicht nochmal jemand was zu trinken bringen? Mit viel Eis?",
 	  "Ich steh hier nur so rum, das ist schöpferische Willkür.",
-	  "Nicht zu fassen. Überall diese Dingsbums.",
 	  "while true; do echo Blubb; done; Blubb blubb blubb blubb blubb...",
 	  "Seit ich hier in der Wüste bin, habe ich Schweissfüße!"))
 	  do_npc_close(npc, ch)
@@ -53,6 +52,7 @@ function holzbein_talk(npc, ch)
 	  "Um Pirat zu werden, musst du schon mehr machen als CDs brennen!",
 	  "Der Tisch ist neidisch auf mein Holzbein.",
 	  "Wo ist meine Brille?",
+          "Nicht zu fassen. Überall diese Dingsbums.",
 	  "Was hat das zu bedeuten?"))
 	  do_npc_close(npc, ch)
 end
