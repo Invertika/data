@@ -28,8 +28,8 @@ atinit(function()
  create_npc("Delegan", 87, 81 * TILESIZE + 16, 122 * TILESIZE + 16, delegan_talk, nil) --- Delegan
  create_npc("bulldog98", 53, 87 * TILESIZE + 16, 122 * TILESIZE + 16, bulldog98_talk, nil) --- bulldog98
  create_npc("Saturn", 3, 89 * TILESIZE + 16, 114 * TILESIZE + 16, saturn_talk, nil) --- Saturn
- create_npc("subnet_zero", 15 , 77 * TILESIZE + 16, 118 * TILESIZE + 16, subnet_zero_talk, nil) --- subnet_zero
- create_npc("DJh2o2", 50, 81 * TILESIZE + 16, 115 * TILESIZE + 16, djh2o2_talk, nil) --- DJh2o2
+ create_npc("subnet_zero", 19 , 77 * TILESIZE + 16, 118 * TILESIZE + 16, subnet_zero_talk, nil) --- subnet_zero
+ create_npc("DJh2o2", 54, 81 * TILESIZE + 16, 115 * TILESIZE + 16, djh2o2_talk, nil) --- DJh2o2
 end)
 
 function jurkan_talk(npc, ch)
