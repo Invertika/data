@@ -3,7 +3,7 @@
  <properties>
   <property name="music" value="faith.ogg"/>
  </properties>
- <tileset firstgid="1" name="inn1_32_32" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="inn" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/inn1_32_32.png"/>
  </tileset>
  <tileset firstgid="1025" name="woodland_indoor" tilewidth="32" tileheight="32">
@@ -12,7 +12,7 @@
  <tileset firstgid="2049" name="collision" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/collision1_32_32.png"/>
  </tileset>
- <tileset firstgid="3073" name="desert1" tilewidth="32" tileheight="32">
+ <tileset firstgid="3073" name="desert1_32_32" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/desert1_32_32.png"/>
  </tileset>
  <tileset firstgid="4097" name="inn_32_64" tilewidth="32" tileheight="64">
@@ -23,7 +23,7 @@
  </tileset>
  <layer name="Ground" width="133" height="110">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3aMVLCQABA0aQJM+oFLO1p1EZbRzuOoTcBCvUAHgA4iKMW6j2w8BDuDM5YYTYDZLPhFa8L7LL7WcJMlmVRLAEAAAAAAAAAAADojLKiban3vM5JRdtS73mdp8HuXFUr42DSc9Pq7/PWSb3nXWhiFsx7bqEJTWhCE5rQxBaaOA3rexacl5rQhHNCE5rQhCY0oQlNaGLXTbwErz33polGTaAJTWhCE5rQhCY0oQlNaCJVE20/35S6BU3Ur804jD9pybRM34Im8muirXVIveea0IQmNKEJTWhCE31uYhbGn0eo2++Y91hoIosmPov6a+rOk9j/mDFjaSJ9E99bbOI6uNlwLE30q4nb4E4Tmijjfzs00a8m/rsXXXfv+DxY0US+TbyHuXwE98FD8Bj5/V9HE/k3EeMgXH/466jhazWRRxNHG54FTcSMpYn0TQzL9p6dGGoiiyZGLTYx0kQWTXSNJjShCU1oQhOa6F4TaAJNoAk0gSbQhCY0oQlNaKIbNIEm0ASaQBNoAk1oQhOaSE0TaAJNoAk0gSbQhCY0oYnUNIEm0ASaQBPsexO5uSiK4ji4LNLPpamvDswBAAAAAAAAAABgH/0AlJQTXJjkAAA=
+   H4sIAAAAAAAAC+3aPVLCQBiA4aSBGfUClvY0aqOtox3H0JsAhXoADwAcxFEL9R5YeAi/GWwhywDZJDzFU/Gzy+6bJUUWZVEsAAAAAAAAAAAAAGiMskfdcu95lbMedcu951Ve+vt1E2swCuOOm/SWvzVF7j1vQhPTMOu4uSY0oQlNaEITO2jiPNb3IlyWmtCEc0ITmtCEJjShCU1oYt9NvIX3jvvQxEZNoAlNaEITmtCEJjShCU1oIlcTdT/flLsFTVQ3MYrxxzWZlOvnUuc65N5zTWhCE5rQhCY0oQlNaOKQmpjG+LMEVfud8h1zTbSiie9i/esp50nV9Z86liaa0cTvDpu4DXdbjKWJ7jVxHx40oYky/b9DE91qYt296Kp7x9f+kiba28RnzOUrPIan8Jx4/a+iifY3keIo3n/872TDz2qiHU2cbHkWbKJqLE00o4lBWd+zEwNNtKKJYY1NDDXRiiaaRBOa0IQmNNGcJtAEmkATaAJNoInca3UoNIEm0ASaQBNoAk1oQhOayE0TaAJNoAk0gSbQhCY0oYncNIEm0ASaQBNoAk1oQhOayK1NTbTNVVEUp+G6yD+XTf00YA4AAAAAAAAAAACH6A+K8rO1mOQAAA==
   </data>
  </layer>
  <layer name="Fringe" width="133" height="110">
@@ -36,9 +36,9 @@
    H4sIAAAAAAAAC+3aQQqDMBAFULvJ2EXtMYRepfc/QdfeoQEXFtwYHEup78HAD/yE7JOuAwAAAAAAAAAAAID/9SxLLjXHx7qv+VrWewAAgONEtPX7mKfF2NjfYso/kh92u+R0AAAAAAAAOK/Xjvekoc497SbANzwO+KsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOR5AwojIgSY5AAA
   </data>
  </layer>
- <layer name="Collision" width="133" height="110" visible="0">
+ <layer name="Collision" width="133" height="110">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3UyW7cMBQFUcOr/P8XZ5FN44JqPUYDSekUULAhSBzL/v3z8/NLkiRJkiRJkiRJkiRJkiRJklzGq9ma46759+Y6uo7Pb3OcvTln9WruuvcZqO519J1r4j6q5zr6zp/exOf4PXNdsS7/J+r7r5xLZZwZ3v/2nibq+6+cS2WcGd7XxHF6msif+UwTz27i82x6xmr1sjXf0fer6/g2/rfvZ/Vq7pjjSnrOSRP1/b8FTdT3/xY0Ud//W9BEff9vYfRdamI+Rt+lJtZl9J1rYj5G3/msTTx1vxVG3/noM1qhibvnHn3nKzTR+22OUflur4mr0UT7LPL5LPvVhCaqazwTTbTPIs/kbrbm1cTYJka0kIxYkybaZ1F5fiUj16KJ9lnkefSOc3T9W99pYp7/Ez3zt9b8P9/3rPFMNNE+i3x+ZhN742lirSb21rG11hxDE89pojpOdf2tdzShCU2s38SZa9PEM5qojlVZuybWbuKuNWhirSZG71cTmqiu8Uw00T6LfD7LfjWhieoaz0QT6+x/xN/G6L2OPgv8QxNINIFEE0g0cZze9a2wn8/fZxb3oAkkmkDyhiY01ccbmkAfmkCiCSSaQKIJJE9qQjfn8KQmcA6aQKIJJJpAogkkmkCiCSSaQKIJJJpAogkkmkCiCSSaQKIJJJpAslITq5nnvJIrrpkkSZIkSZIkSZIkSZIkn+Bfpw6C5JjkAAA=
+   H4sIAAAAAAAAC+3UO27DMBQFUSNV9r/iFGmCCwp8jCWRlM8A0xgUv5N8fb9eXyRJkiRJkiRJkiRJkiRJkiTJbbyaozXuWr+31rv7+PttztNbc1Wv5q53X4HqWWe/uSbuo3qvs9/86U38nX9krSv25f9E/fy9uxmZa4XxR2M0UT9/725G5lph/NE4TdTP37ubHNv6rTW+srYm9mriirl7DY6MP2M/R+NW9mruWONKRu5JE/XzfwqaqJ//U9BE/fyfgibq5/8UZr+lJvZl9ptrYj1mv7km1mP2m6/axFPPW2H2m8++ox2auHvt2W++QxOj3+Ycle96TVyNJtp3kb+vcl5NaKK6xzPRRPsu8k7u5mhdTcxtYkYLyYw9aaJ9F5Xfr2TmXjTRvou8j9F53t3/0XeaWOf/xMj6rT3/5/uRPZ6JJtp3kb+f2URvPk3s1URvH0d7zTk08ZwmqvNU998aowlNaGL/Js7cmyae0UR1rsreNbF3E3ftQRN7NTH7vJrQRHWPZ6KJ9l3k76ucVxOaqO7xTDSxz/ln/G3MPuvsu8AvmkCiCSSaQKIJJJpAogkkmkCiCSSaQKIJJJpAogkkmkCiCSSaQKIJJJpAogkkmkCiCSSaQKIJJJpAogkkmkCiCSSaQKIJJJpAogkkOzWxm3nPO7njnkmSJEmSJEmSJEmSJEnyCf4APPhhiJjkAAA=
   </data>
  </layer>
  <objectgroup name="Object" width="0" height="0">
