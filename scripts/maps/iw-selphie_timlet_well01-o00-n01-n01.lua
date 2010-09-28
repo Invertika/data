@@ -15,8 +15,13 @@
 ----------------------------------------------------------------------------------
 
 
-require "data/scripts/libs/npclib"
-
+require "scripts/lua/npclib"
+require "scripts/ivklibs/invertika"
 
 atinit(function()
+ create_npc("Ta No Test", 89, 35 * TILESIZE + 16, 44 * TILESIZE + 16, elmo_talk, nil) --- Elmo
 end)
+
+function elmo_talk(npc, ch)
+    
+end
