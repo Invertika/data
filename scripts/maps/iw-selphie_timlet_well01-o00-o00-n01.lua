@@ -15,7 +15,7 @@
 ----------------------------------------------------------------------------------
 
 
-require "data/scripts/libs/npclib"
+require "data/scripts/lua/npclib"
 
 
 atinit(function()
