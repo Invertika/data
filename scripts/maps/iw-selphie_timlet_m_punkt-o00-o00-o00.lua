@@ -5,7 +5,7 @@
 -- anderer Dinge.                                                               --
 --                                                                              --
 ----------------------------------------------------------------------------------
---  Copyright 2008, 2009 The Invertika Development Team                               --
+--  Copyright 2008 - 2010 The Invertika Development Team                        --
 --                                                                              --
 --  This file is part of Invertika.                                             --
 --                                                                              --
@@ -23,7 +23,7 @@ atinit(function()
 end)
 
 function manitu_talk(npc, ch)
-	do_message(npc, ch, "Hallo, ich bin der Manitu. Grosses M, kleines anitu. Was kann ich fuer dich tun?")
+	do_message(npc, ch, "Hallo, ich bin der Manitu. Grosses M, kleines anitu. Was kann ich für dich tun?")
 	
 	while true do 
 		local v = do_choice(npc, ch, "IP Pakete kaufen",
