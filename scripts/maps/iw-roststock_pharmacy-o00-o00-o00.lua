@@ -22,7 +22,7 @@ atinit(function()
 end)
 
 function nijeta_talk(npc, ch)
-	do_message(npc, ch, "Hallo, was kann ich für dich tun?")
+	do_message(npc, ch, "Hallo, was kann ich fÃ¼r dich tun?")
 	
 	while true do 
 		local v = do_choice(npc, ch, "Kaufen.",
@@ -30,10 +30,10 @@ function nijeta_talk(npc, ch)
 								     "Nichts. Danke.")
 								   
 		if v == 1 then
-			mana.npc_trade(npc, ch, false, { {30002, 70, 50}, {30015, 150, 50}, {30016, 450, 50}, {30018, 150, 50}, {30019, 500, 50} })
+			mana.npc_trade(npc, ch, false, { {30002, 50, 70}, {30015, 50, 150}, {30016, 50, 450}, {30018, 50, 150}, {30019, 50, 500} })
 			break
 		elseif v == 2 then
-			mana.npc_trade(npc, ch, true, { {30002, 50, 50}, {30015, 50, 50}, {30016, 250, 50}, {30018, 50, 50}, {30019, 300, 50} })
+			mana.npc_trade(npc, ch, true, { {30002, 50, 50}, {30015, 50, 50}, {30016, 50, 250}, {30018, 50, 50}, {30019, 50, 300} })
 			break
 		elseif v == 3 then
 			do_message(npc, ch, "Und immer an die Risiken und Nebenwirkungen denken!")
