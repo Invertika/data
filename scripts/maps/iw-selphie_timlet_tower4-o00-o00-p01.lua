@@ -22,7 +22,6 @@ atinit(function()
 end)
 
 function averin_talk(npc, ch)
-
 	if (get_quest_var(ch, "selphi_timlet_royal_pass")=="") then ---Keine Questvar gesetzt
 	  do_message(npc, ch, "Hallo, was ist dein Begehr?")
 	  while true do 
