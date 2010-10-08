@@ -1,11 +1,11 @@
 ----------------------------------------------------------------------------------
--- Map File                                                                     --
+-- Walking NPC Skript                                                           --
 --                                                                              --
--- In dieser Datei stehen die entsprechenden externen NPC's, Trigger und        --
--- anderer Dinge.                                                               --
+-- Dieses Modul stellt Funktionen für sich selbstständig bewegende NPCs         --
+-- zur Verfügung                                                                --
 --                                                                              --
 ----------------------------------------------------------------------------------
---  Copyright 2010 The Invertika Development Team                               --
+--  Copyright 2008, 2009 The Invertika Development Team                         --
 --                                                                              --
 --  This file is part of Invertika.                                             --
 --                                                                              --
@@ -14,16 +14,15 @@
 --  Software Foundation; either version 2 of the License, or any later version. --
 ----------------------------------------------------------------------------------
 
+module("walking", package.seeall)
 
 require "scripts/lua/npclib"
-require "scripts/ivklibs/invertika"
-require "scripts/ivklibs/walking"
 
-atinit(function()
- npc = create_npc("Ta No Test", 89, 35 * TILESIZE + 16, 44 * TILESIZE + 16, elmo_talk, nil) --- Elmo
- --walking.make_npc_walking(npc)
-end)
-
-function elmo_talk(npc, ch)
-    
+--- Erzeugt einen sich bewegenden NPC
+function make_npc_walking(walkingnpc)
+    schedule_every(2, function(walkingnpc)
+        xpos = mana.posX(walkingnpc) + math.random(-1,1)
+        ypos = mana.posY(walkingnpc) + math.random(-1,1)
+        mana.being_walk(walkingnpc, xpos, ypos, 1)
+    end, walkingnpc)
 end
