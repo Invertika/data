@@ -13,14 +13,14 @@
 ----------------------------------------------------------------------------------
 
 function tick(target, ticknumber)
-    if (ticknumber % 10 == 0) then
+    if (ticknumber % 50 == 0) then
         mana.being_say(target, "I have the plague! :( = " .. ticknumber)
     end
     local victims = mana.get_beings_in_circle(mana.posX(target), mana.posY(target), 64)
     local i = 1
     while (victims[i]) do
        if (mana.being_has_status(victims[i], 1) == false) then
-           mana.being_apply_status(victims[i], 1, 6000)
+           mana.being_apply_status(victims[i], 1, ticknumber)
            mana.being_say(victims[i], "I don't feel so good")
        end
        i = i + 1
