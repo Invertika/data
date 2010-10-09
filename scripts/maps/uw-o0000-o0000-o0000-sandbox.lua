@@ -95,6 +95,7 @@ end
 
 ---Testfunktionen
 count = 0
+emo_count = 0
 emo_state = EMOTE_SURPRISE
 
 function emote_talk(npc, ch)
