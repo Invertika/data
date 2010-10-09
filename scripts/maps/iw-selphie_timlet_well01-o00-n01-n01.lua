@@ -23,7 +23,8 @@ atinit(function()
  wache = create_npc("Schatzwächter", 89, 42 * TILESIZE + 16, 36 * TILESIZE + 16, tano2_talk, nil) --- Ta No 2 (Schatzkammer Wächter)
  create_npc("Karl", 89, 25 * TILESIZE + 16, 41 * TILESIZE + 16, tano3_talk, nil) --- Ta No 3
  
- mana.trigger_create(42, 36, 64, 64, "treasure_trap", 0, true)
+ mana.trigger_create(42 * TILESIZE, 36 * TILESIZE, 64, 64, "treasure_trap", 0, true)
+ mana.trigger_create(39 * TILESIZE, 36 * TILESIZE, 96, 96, "treasure_warning", 0, true)
 end)
 
 function tano1_talk(npc, ch)
@@ -44,7 +45,7 @@ function tano3_talk(npc, ch)
 end
 
 function treasure_trap(being)
-  if (mana.being_type(ch) == TYPE_CHARACTER) then --- Nur Spieler beachten
+  if (mana.being_type(being) == TYPE_CHARACTER) then --- Nur Spieler beachten
     mana.being_say(wache, invertika.get_random_element("Wer nicht hören will muss fühlen.",
       "Kein Durchgang!",
       "Du darfst hier nicht durch!",
@@ -52,6 +53,14 @@ function treasure_trap(being)
       "Zutritt verboten!",
       "Hier darf keiner durch!"))
     mana.chr_warp(being, mana.get_map_id(), 40 * TILESIZE + 16, 37 * TILESIZE + 16)
-    mana.being_damage(being, 500, 100, 100, 1, 0)
+    mana.being_damage(being, 50, 40, 100, 1, 0)
+  end
+end
+
+function treasure_warning(being)
+  if (mana.being_type(being) == TYPE_CHARACTER) then --- Nur Spieler beachten
+    mana.being_say(wache, invertika.get_random_element("Keinen Schritt weiter!",
+      "Stopp! Sonst wird es schmerzhaft.",
+      "Halt!")
   end
 end
