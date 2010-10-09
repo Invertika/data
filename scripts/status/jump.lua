@@ -13,13 +13,14 @@
 
 
 function tick(target, ticknumber)
-    if (ticknumber % 10 == 0) then
+    if (ticknumber % 50 == 0) then
         mana.being_say(target, "I have the jumping bug!")
     end
     
-    if (mana.being_get_status_time(target, 2) < 2000) then
-        mana.being_set_status_time(target, 2, 6000)
-    end
+--    Schliesslich wollen wir, dass der Status auch wieder weg geht
+--    if (mana.being_get_status_time(target, 2) < 2000) then
+--        mana.being_set_status_time(target, 2, 6000)
+--    end
     
     if (ticknumber % 50 ~= 0) then return end
     
@@ -48,6 +49,6 @@ function tick(target, ticknumber)
     
     mana.being_remove_status(target, 2)
 
-    mana.being_apply_status(victim, 2, 6000)
+    mana.being_apply_status(victim, 2, ticknumber)
     mana.being_say(victim, "Now I have the jumping bug")
 end
