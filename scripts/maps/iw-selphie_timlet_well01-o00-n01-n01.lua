@@ -17,11 +17,9 @@
 
 require "scripts/lua/npclib"
 require "scripts/ivklibs/invertika"
-require "scripts/ivklibs/walking"
 
 atinit(function()
- npc = create_npc("Ta No Test", 89, 35 * TILESIZE + 16, 44 * TILESIZE + 16, elmo_talk, nil) --- Elmo
- --walking.make_npc_walking(npc)
+ npc = create_npc("Ta No Test", 89, 35 * TILESIZE + 16, 44 * TILESIZE + 16, elmo_talk, npclib.walkaround_wide) --- Elmo
 end)
 
 function elmo_talk(npc, ch)
