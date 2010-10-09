@@ -16,7 +16,7 @@
 
 
 require "data/scripts/lua/npclib"
-
+require "scripts/ivklibs/invertika"
 
 atinit(function()
 end)

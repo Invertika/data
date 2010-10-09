@@ -19,9 +19,33 @@ require "scripts/lua/npclib"
 require "scripts/ivklibs/invertika"
 
 atinit(function()
- npc = create_npc("Ta No Test", 89, 35 * TILESIZE + 16, 44 * TILESIZE + 16, elmo_talk, npclib.walkaround_wide) --- Elmo
+ create_npc("Blubb", 89, 35 * TILESIZE + 16, 44 * TILESIZE + 16, tano1_talk, npclib.walkaround_wide) --- Ta No 1
+ wache = create_npc("Schatzwächter", 89, 42 * TILESIZE + 16, 36 * TILESIZE + 16, tano2_talk)
+ 
+ mana.trigger_create(42, 36, 64, 64, "treasure_trap", 0, true)
 end)
 
-function elmo_talk(npc, ch)
+function tano1_talk(npc, ch)
     
+end
+
+function tano2_talk(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Ich passe auf, dass niemand so ohne weiteres in die Schatzkammer geht.",
+      "Versuche gar nich erst, etwas zu stehlen!",
+      "Über der Schatzkammer hängt ein Schutzzauber.",
+      "NEIN, du darfst NICHT in die Schatzkammer."))
+    do_npc_close(npc, ch)
+end
+
+function treasure_trap(being)
+  if (mana.being_type(ch) == TYPE_CHARACTER) then --- Nur Spieler beachten
+    mana.being_say(wache, invertika.get_random_element("Wer nicht hören will muss fühlen.",
+      "Kein Durchgang!",
+      "Du darfst hier nicht durch!",
+      "Draußen bleiben!",
+      "Zutritt verboten!",
+      "Hier darf keiner durch!"))
+    mana.chr_warp(being, mana.get_map_id(), 40 * TILESIZE + 16, 37 * TILESIZE + 16)
+    mana.being_damage(being, 500, 100, 100, 1, 0)
+  end
 end
