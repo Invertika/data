@@ -130,7 +130,6 @@ function emote_update(npc)
   end
 end
 
-
 function int_test_talk(npc, ch)
     do_message(npc, ch, "Enter a number (50-100)")
     number = do_ask_integer(npc, ch, 50, 100, 75)
@@ -201,7 +200,7 @@ function npc1_talk(npc, ch)
   elseif v == 3 then
 
     -- "To buy."
-    local buycase = mana.npc_trade(npc, ch, false, { {533, 10, 20}, {535, 10, 30}, {537, 10, 50} })
+    local buycase = mana.npc_trade(npc, ch, false, { {10001, 10, 20}, {10002, 10, 30}, {10003, 10, 50} })
     if buycase == 0 then
       do_message(npc, ch, "What do you want to buy?")
     elseif buycase == 1 then
@@ -213,7 +212,7 @@ function npc1_talk(npc, ch)
   elseif v == 4 then
 
     -- "To sell only the items you want to buy."
-    local sellcase = mana.npc_trade(npc, ch, true, { {533, 10, 20}, {535, 10, 30}, {511, 10, 200}, {524, 10, 300}, {508, 10, 500}, {537, 10, 25} })
+    local sellcase = mana.npc_trade(npc, ch, true, { {10001, 10, 20}, {10002, 10, 30}, {10003, 10, 200}, {10004, 10, 300}, {10005, 10, 500}, {10006, 10, 25} })
     if sellcase == 0 then
       do_message(npc, ch, "Here we go:")
     elseif sellcase == 1 then
@@ -237,10 +236,10 @@ function npc1_talk(npc, ch)
   elseif v == 6 then
     if mana.chr_money_change(ch, -100) then
       do_message(npc, ch, string.format("Thank you for you patronage! You are left with %d gil.", mana.chr_money(ch)))
-      local g = tonumber(get_quest_var(ch, "001_donation"))
+      local g = tonumber(get_quest_var(ch, "test_donation"))
       if not g then g = 0 end
       g = g + 100
-      mana.chr_set_quest(ch, "001_donation", g)
+      mana.chr_set_quest(ch, "test_donation", g)
       do_message(npc, ch, string.format("As of today, you have donated %d gil.", g))
     else
       do_message(npc, ch, "I would feel bad taking money from someone that poor.")
@@ -316,7 +315,6 @@ function npc5_talk(npc, ch)
     on_death(m3, function() mana.being_say(npc, "Stop slaughtering my scorpions!") end)
     on_death(m4, function() mana.being_say(npc, "Leave my scorpions alone!") end)
     on_death(m4, function() mana.being_say(m4, "AAARGH!") end)
-
   end
   do_npc_close(npc, ch)
 end
@@ -442,7 +440,7 @@ function monster_spawn_talk(npc, ch)
   local x = mana.posX(npc)
   local y = mana.posY(npc)
   monster = mana.monster_create(5, x + TILESIZE, y + TILESIZE)
-  mana.monster_load_script(monster, "testmonster.lua")
+  --mana.monster_load_script(monster, "testmonster.lua")
 end
 
 function sitter_update(npc)
@@ -482,7 +480,6 @@ function spinner_update(npc)
     mana.being_set_direction(npc, direction)
   end
 end
-
 
 function healer_talk(npc, ch)
 	do_message(npc, ch, "Do you need healing?")
