@@ -20,7 +20,8 @@ require "scripts/ivklibs/invertika"
 
 atinit(function()
  create_npc("Blubb", 89, 35 * TILESIZE + 16, 44 * TILESIZE + 16, tano1_talk, npclib.walkaround_wide) --- Ta No 1
- wache = create_npc("Schatzwächter", 89, 42 * TILESIZE + 16, 36 * TILESIZE + 16, tano2_talk)
+ wache = create_npc("Schatzwächter", 89, 42 * TILESIZE + 16, 36 * TILESIZE + 16, tano2_talk, nil) --- Ta No 2 (Schatzkammer Wächter)
+ create_npc("Karl", 89, 25 * TILESIZE + 16, 41 * TILESIZE + 16, tano3_talk, nil) --- Ta No 3
  
  mana.trigger_create(42, 36, 64, 64, "treasure_trap", 0, true)
 end)
@@ -34,6 +35,11 @@ function tano2_talk(npc, ch)
       "Versuche gar nich erst, etwas zu stehlen!",
       "Über der Schatzkammer hängt ein Schutzzauber.",
       "NEIN, du darfst NICHT in die Schatzkammer."))
+    do_npc_close(npc, ch)
+end
+
+function tano3_talk(npc, ch)
+    do_message(npc, ch, "Ich werde irgendwann mal Waffen und Ausrüstung verkaufen und so.")
     do_npc_close(npc, ch)
 end
 
