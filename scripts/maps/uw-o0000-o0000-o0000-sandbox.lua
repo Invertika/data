@@ -47,9 +47,9 @@ atinit(function()
   mana.trigger_create(56 * TILESIZE, 32 * TILESIZE, 64, 64, "patrol_waypoint", 1, true)
   mana.trigger_create(63 * TILESIZE, 32 * TILESIZE, 64, 64, "patrol_waypoint", 2, true)
 
-  mana.item_drop(58 * TILESIZE, 26 * TILESIZE, 654, 1);
-  mana.item_drop(58 * TILESIZE, 27 * TILESIZE, 510, 10);
-  mana.item_drop(58 * TILESIZE, 27 * TILESIZE, 521, 1);
+  mana.item_drop(58 * TILESIZE, 26 * TILESIZE, 10001, 1);
+  mana.item_drop(58 * TILESIZE, 27 * TILESIZE, 10002, 10);
+  mana.item_drop(58 * TILESIZE, 27 * TILESIZE, 10003, 1);
 
   schedule_every(1 * HOURS + 30 * MINUTES, function()
     print("One and a half hour has passed on map 1-1")
@@ -94,7 +94,6 @@ function trap(ch, x, y, width, height, monsterid)
 end
 
 ---Testfunktionen
-count = 0
 emo_count = 0
 emo_state = EMOTE_SURPRISE
 
