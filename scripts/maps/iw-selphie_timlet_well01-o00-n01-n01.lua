@@ -71,21 +71,18 @@ function waypoints(being, num)
             schedule_in(5, function()
                     mana.being_walk(tano[5], 23 * TILESIZE + 16, 20 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 2
                 end)
-            mana.being_walk(being, mana.posX(being), mana.posY(being) + 1, 1) -- Gucke nach oben
             waypointstate[being] = 2
         elseif (num == 2)and(num == waypointstate[being]) then
             --- Wegpunkt 2 (Küchenanrichte, zweite von rechts)
             schedule_in(5, function()
                     mana.being_walk(tano[5], 24 * TILESIZE + 16, 20 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 3
                 end)
-            mana.being_walk(being, mana.posX(being), mana.posY(being) + 1, 1) -- Gucke nach oben
             waypointstate[being] = 3
         elseif (num == 3)and(num == waypointstate[being]) then
             --- Wegpunkt 3 (Küchenanrichte, ganz rechts)
             schedule_in(5, function()
                     mana.being_walk(tano[5], 20 * TILESIZE + 16, 20 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 2
                 end)
-            mana.being_walk(being, mana.posX(being), mana.posY(being) + 1, 1) -- Gucke nach oben
             waypointstate[being] = 1
         end
     end
