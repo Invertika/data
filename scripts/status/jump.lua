@@ -17,6 +17,11 @@ function tick(target, ticknumber)
         mana.being_say(target, "I have the jumping bug!")
     end
     
+    -- So, status direkt mal entfernen, dadurch wird er unbrauchbar
+    if (mana.being_get_status_time(target, 2) > 5) then
+        mana.being_set_status_time(target, 2, 1)
+    end
+    
 --    Schliesslich wollen wir, dass der Status auch wieder weg geht
 --    if (mana.being_get_status_time(target, 2) < 2000) then
 --        mana.being_set_status_time(target, 2, 6000)

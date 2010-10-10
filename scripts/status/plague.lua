@@ -16,6 +16,10 @@ function tick(target, ticknumber)
     if (ticknumber % 50 == 0) then
         mana.being_say(target, "I have the plague! :( = " .. ticknumber)
     end
+        -- So, status direkt mal entfernen, dadurch wird er unbrauchbar
+    if (mana.being_get_status_time(target, 1) > 5) then
+        mana.being_set_status_time(target, 1, 1)
+    end
     local victims = mana.get_beings_in_circle(mana.posX(target), mana.posY(target), 64)
     local i = 1
     while (victims[i]) do
