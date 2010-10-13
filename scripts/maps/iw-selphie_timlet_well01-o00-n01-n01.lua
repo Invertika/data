@@ -88,7 +88,7 @@ function waypoints(being, num)
         if (num == 1)and(num == waypointstate[being]) then
             --- Wegpunkt 1 (Küchenanrichte, ganz links)
             schedule_in(1, function()
-                    mana.being_set_direction(being, DIRECTION_UP)
+                    mana.being_set_direction(being, DIRECTION_UP) --- Nach oben schauen
                 end)
             schedule_in(5, function()
                     mana.being_walk(tano[5], 23 * TILESIZE + 16, 20 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 2
@@ -97,7 +97,7 @@ function waypoints(being, num)
         elseif (num == 2)and(num == waypointstate[being]) then
             --- Wegpunkt 2 (Küchenanrichte, zweite von rechts)
             schedule_in(1, function()
-                    mana.being_set_direction(being, DIRECTION_UP)
+                    mana.being_set_direction(being, DIRECTION_UP) --- Nach oben schauen
                 end)
             schedule_in(5, function()
                     mana.being_walk(tano[5], 24 * TILESIZE + 16, 20 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 3
@@ -106,16 +106,70 @@ function waypoints(being, num)
         elseif (num == 3)and(num == waypointstate[being]) then
             --- Wegpunkt 3 (Küchenanrichte, ganz rechts)
             schedule_in(1, function()
-                    mana.being_set_direction(being, DIRECTION_UP)
+                    mana.being_set_direction(being, DIRECTION_UP) --- Nach oben schauen
                 end)
             schedule_in(5, function()
-                    mana.being_walk(tano[5], 20 * TILESIZE + 16, 20 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 2
+                    mana.being_walk(tano[5], 20 * TILESIZE + 16, 20 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 1
                 end)
             waypointstate[being] = 1
         end
     end
     if being == tano[6] then --- Nur Ta No 6 (Küchenhilfe) beachten
-        
+        if (num == 1) then
+            --- Wegpunkt 1
+            if (waypointstate[being] == 1) then
+                schedule_in(1, function()
+                    mana.being_set_direction(being, DIRECTION_RIGHT) --- Nach rechts schauen
+                end)
+                schedule_in(5, function()
+                    mana.being_walk(being, 9 * TILESIZE + 16, 14 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 2
+                end)
+                waypointstate[being] = 2
+            elseif (waypointstate[being] == 3) then
+                schedule_in(1, function()
+                    mana.being_set_direction(being, DIRECTION_RIGHT) --- Nach rechts schauen
+                end)
+                schedule_in(5, function()
+                    mana.being_walk(being, 9 * TILESIZE + 16, 19 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 3
+                end)
+                waypointstate[being] = 4
+            elseif (waypointstate[being] == 5) then
+                schedule_in(1, function()
+                    mana.being_set_direction(being, DIRECTION_RIGHT) --- Nach rechts schauen
+                end)
+                schedule_in(5, function()
+                    mana.being_walk(being, 7 * TILESIZE + 16, 16 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 4
+                end)
+                waypointstate[being] = 6
+            end
+        elseif (num == 2)and(waypointstate[being] == 2) then
+            --- Wegpunkt 2
+            schedule_in(1, function()
+                mana.being_set_direction(being, DIRECTION_UP) --- Nach oben schauen
+            end)
+            schedule_in(5, function()
+                mana.being_walk(being, 19 * TILESIZE + 16, 19 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 1
+            end)
+            waypointstate[being] = 3
+        elseif (num == 3)and(waypointstate[being] == 4) then
+            --- Wegpunkt 3
+            schedule_in(1, function()
+                mana.being_set_direction(being, DIRECTION_UP) --- Nach oben schauen
+            end)
+            schedule_in(5, function()
+                mana.being_walk(being, 19 * TILESIZE + 16, 19 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 1
+            end)
+            waypointstate[being] = 5
+        elseif (num == 4)and(waypointstate[being] == 6) then
+            --- Wegpunkt 4
+            schedule_in(1, function()
+                mana.being_set_direction(being, DIRECTION_UP) --- Nach oben schauen
+            end)
+            schedule_in(5, function()
+                mana.being_walk(being, 19 * TILESIZE + 16, 19 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 1
+            end)
+            waypointstate[being] = 1
+        end
     end
 end
 
