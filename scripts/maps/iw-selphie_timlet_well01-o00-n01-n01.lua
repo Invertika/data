@@ -182,7 +182,8 @@ function treasure_trap(being)
       "Zutritt verboten!",
       "Hier darf keiner durch!"))
     mana.chr_warp(being, mana.get_map_id(), 40 * TILESIZE + 16, 37 * TILESIZE + 16)
-    mana.being_damage(being, 50, 40, 100, 1, 0)
+    --- Auskommentiert, weil es zum festhängen des Characters führt
+    ---mana.being_damage(being, 50, 40, 100, 1, 0)
   end
 end
 
