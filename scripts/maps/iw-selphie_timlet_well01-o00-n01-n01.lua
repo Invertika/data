@@ -28,7 +28,7 @@ atinit(function()
  tano[3] = create_npc("Karl", 92, 25 * TILESIZE + 16, 41 * TILESIZE + 16, tano3_talk, nil) --- Ta No 3 (Verkäufer)
  tano[4] = create_npc("Samos", 93, 67 * TILESIZE + 16, 14 * TILESIZE + 16, tano4_talk, nil) --- Ta No 4 (Sektenführer)
  tano[5] = create_npc("Ceria", 94, 20 * TILESIZE + 16, 20 * TILESIZE + 16, tano5_talk, nil) --- Ta No 5 (Köchin)
- tano[6] = create_npc("Enlelm", 94, 19 * TILESIZE + 16, 19 * TILESIZE + 16, tano6_talk, nil) --- Ta No 6 (Küchenhilfe)
+ tano[6] = create_npc("Enlelm", 95, 19 * TILESIZE + 16, 19 * TILESIZE + 16, tano6_talk, nil) --- Ta No 6 (Küchenhilfe)
  --- Waypoints
     --- Ta No 5 (Köchin)
      mana.trigger_create(20 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, "waypoints", 1, true) --- Wegpunkt 1 (Küchenanrichte, ganz links)
