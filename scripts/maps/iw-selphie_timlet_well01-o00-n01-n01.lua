@@ -30,15 +30,18 @@ atinit(function()
  tano[5] = create_npc("Ceria", 94, 20 * TILESIZE + 16, 20 * TILESIZE + 16, tano5_talk, nil) --- Ta No 5 (Köchin)
  tano[6] = create_npc("Enlelm", 95, 19 * TILESIZE + 16, 19 * TILESIZE + 16, tano6_talk, nil) --- Ta No 6 (Küchenhilfe)
  tano[7] = create_npc("Byler", 96, 17 * TILESIZE + 16, 24 * TILESIZE + 16, tano7_talk, nil) --- Ta No 7 (Normal m)
- mana.being_set_direction(tano[7], DIRECTION_RIGHT)
  tano[8] = create_npc("Lyril", 97, 21 * TILESIZE + 16, 24 * TILESIZE + 16, tano8_talk, nil) --- Ta No 8 (Normal f)
- mana.being_set_direction(tano[7], DIRECTION_LEFT)
  tano[9] = create_npc("Iawar", 98, 26 * TILESIZE + 16, 24 * TILESIZE + 16, tano9_talk, nil) --- Ta No 9 (Normal m)
- mana.being_set_direction(tano[7], DIRECTION_DOWN)
  tano[10] = create_npc("Isskel", 99, 18 * TILESIZE + 16, 29 * TILESIZE + 16, tano10_talk, nil) --- Ta No 10 (Normal m)
- mana.being_set_direction(tano[7], DIRECTION_RIGHT)
  tano[11] = create_npc("Kahlan", 100, 22 * TILESIZE + 16, 29 * TILESIZE + 16, tano11_talk, nil) --- Ta No 11 (Normal f)
- mana.being_set_direction(tano[7], DIRECTION_LEFT)
+ --- Blickrichtungen
+ schedule_in(1, function()
+    mana.being_set_direction(tano[7], DIRECTION_RIGHT)
+    mana.being_set_direction(tano[8], DIRECTION_LEFT)
+    mana.being_set_direction(tano[9], DIRECTION_DOWN)
+    mana.being_set_direction(tano[10], DIRECTION_RIGHT)
+    mana.being_set_direction(tano[11], DIRECTION_LEFT)
+ end)
  --- Waypoints
     --- Ta No 5 (Köchin)
      mana.trigger_create(20 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, "waypoints", 1, true) --- Wegpunkt 1 (Küchenanrichte, ganz links)
@@ -115,6 +118,7 @@ end
 
 function tano11_talk(npc, ch)
     do_message(npc, ch, "Hier könnte ihre Werbung stehen")
+    mana.being_set_direction(npc, DIRECTION_LEFT)
     do_npc_close(npc, ch)
 end
 
