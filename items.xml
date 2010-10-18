@@ -67,6 +67,8 @@
 	
 	<!-- Invertika Items -->
 	
+	<!-- nicht definiert 1 - 10000 -->	
+	
 	<!-- Waffen 10001 - 20000 -->	
 	<item id="10001"
         image="equipment/weapons/dagger-knive.png"
@@ -264,7 +266,19 @@
         <sprite gender="male">equipment/feet/boots-male.xml</sprite>
         <sprite gender="female">equipment/feet/boots-female.xml</sprite>
     </item>
-
+	
+	    <item id="20010"
+        image="equipment/head/santahat.png"
+        name="Weihnachtsmannhut"
+        description="Der Hut des Weihnachtsmannes"
+        effect="+2% Verteidigung"
+        type="equip-head"
+        weight="15"
+        defense="2"
+        max-per-slot="1">
+        <sprite>equipment/head/santahat.xml</sprite>
+    </item>
+	
 	<!-- Power Ups 30001 - 40000 -->
     <item id="30001"
         image="generic/potion-a.png|G:#22ff22"
@@ -472,6 +486,15 @@
         type="usable"
         weight="12"
         max-per-slot="999"/>
+		
+	<item id="30021"
+        image="generic/xmascandycane.png"
+        name="Weichnachtskuchen"
+        description="Ein leckerer Weihnachtskuchen."
+        effect="+10 HP"
+        type="usable"
+        hp="10"
+        weight="999"/>
 		
 	<!-- Sonstige 40001 - 50000 -->
 	<item id="40001"
