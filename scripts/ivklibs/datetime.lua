@@ -40,6 +40,11 @@ function get_current_date()
 	return string.format("%02d.%02d.%04d", currentTime.day, currentTime.month, get_current_year())
 end
 
+---Aktuelles Spieledatum als DateTime Objekt
+function get_current_datetime()	
+	return os.date('*t')
+end
+
 --- Aktuellen Spiele Wochentag zurückkgeben
 function get_current_weekday()	
 	local currentTime = os.date('*t')

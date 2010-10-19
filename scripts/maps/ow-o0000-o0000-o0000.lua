@@ -63,9 +63,31 @@ atinit(function()
  
  --- Trigger für die Überwachung des Torbereiches
  mana.trigger_create(145 * TILESIZE, 17 * TILESIZE, 5 * TILESIZE, 52 * TILESIZE, "wache_trigger", 1, true) --- Trigger Tor 1
- mana.trigger_create(183 * TILESIZE, 17 * TILESIZE, 5 * TILESIZE, 52 * TILESIZE, "wache_trigger", 2, true) --- Trigger Tor 2 
+ mana.trigger_create(183 * TILESIZE, 17 * TILESIZE, 5 * TILESIZE, 52 * TILESIZE, "wache_trigger", 2, true) --- Trigger Tor 2
+ 
+ --Zeitabhägige Events (Events nach Datum ordnen)
+  schedule_every(30 * MINUTES, function()
+    local date = datetime.get_current_datetime()
+    
+    --Weihnachtsevent 24. Dezember - 26. Dezember
+    if date.month==12 and date.day>=24 and date.day <= 26 then
+      --NPCs aktivieren
+      weihnachtsmann = create_npc("Weihnachtsmann", 27, 143 * TILESIZE + 16, 68 * TILESIZE + 16, weihnachtsmann_talk, nil) --- Weichnachtsmann
+    else
+      --NPCs deaktivieren
+    end
+    
+    --Andere Events
+  end)
 end)
 
+--Zeitabhägige Events
+function weihnachtsmann_talk(npc, ch)
+	do_message(npc, ch, "Ich bin der Weihnachtsmann.")
+	do_npc_close(npc, ch)
+end
+
+--
  function get_wache_say()
    	 return invertika.get_random_element("Ohne Passierschein geht es hier nicht durch!",
 	  "Durchgang nur mit Passierschein!",
