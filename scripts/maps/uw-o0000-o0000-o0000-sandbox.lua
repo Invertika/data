@@ -23,7 +23,6 @@ dofile("data/scripts/ivklibs/warp.lua")
 atinit(function()
  create_inter_map_warp_trigger(19003, 19003, 19003, 19003) --- Intermap warp
  create_npc("Zelan", 58, 132 * TILESIZE + 16, 21 * TILESIZE + 16, zelan_talk, nil) --- Zelan
- mana.trigger_create(40 * TILESIZE, 30 * TILESIZE, 20 * TILESIZE, 20 * TILESIZE, "direction_changer", 0, true)
  mana.trigger_create(20 * TILESIZE, 20 * TILESIZE, 22 * TILESIZE, 22 * TILESIZE, "trap_trigger_skorpions", 0, true) --- Trigger Trap
 
 --Test NPCs
@@ -61,12 +60,6 @@ end)
 function zelan_talk(npc, ch)
     do_message(npc, ch, "Wo du bist? Im Vacare. Jeder neue kommt hier her bevor es raus geht in die große Welt. Also pass auf dich auf.")
 	do_npc_close(npc, ch)
-end
-
-function direction_changer(ch, id)
-  schedule_in(1, function()
-    mana.being_set_direction(ch, DIRECTION_RIGHT)
-  end)
 end
 
 --- Falle auslösen
