@@ -77,6 +77,7 @@ atinit(function()
       end
     else
       --NPCs deaktivieren
+      weihnachtsmann = nil --Muss überprüft werden
     end
     
     --Andere Events
