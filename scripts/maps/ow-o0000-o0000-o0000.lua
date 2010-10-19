@@ -72,7 +72,9 @@ atinit(function()
     --Weihnachtsevent 24. Dezember - 26. Dezember
     if date.month==12 and date.day>=24 and date.day <= 26 then
       --NPCs aktivieren
-      weihnachtsmann = create_npc("Weihnachtsmann", 27, 143 * TILESIZE + 16, 68 * TILESIZE + 16, weihnachtsmann_talk, nil) --- Weichnachtsmann
+      if weihnachtsmann == nil then
+        weihnachtsmann = create_npc("Weihnachtsmann", 9, 178 * TILESIZE + 16, 154 * TILESIZE + 16, weihnachtsmann_talk, nil) --- Weichnachtsmann
+      end
     else
       --NPCs deaktivieren
     end
