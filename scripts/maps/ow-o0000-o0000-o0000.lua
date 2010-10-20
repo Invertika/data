@@ -66,11 +66,13 @@ atinit(function()
  mana.trigger_create(183 * TILESIZE, 17 * TILESIZE, 5 * TILESIZE, 52 * TILESIZE, "wache_trigger", 2, true) --- Trigger Tor 2
  
  --Zeitabhägige Events (Events nach Datum ordnen)
-  schedule_every(30 * MINUTES, function()
+  --schedule_every(30 * MINUTES, function()
+  schedule_every(1 * MINUTES, function()
     local date = datetime.get_current_datetime()
     
     --Weihnachtsevent 24. Dezember - 26. Dezember
-    if date.month==12 and date.day>=24 and date.day <= 26 then
+    --if date.month==12 and date.day>=24 and date.day <= 26 then
+	if date.month==10 and date.day>=20 and date.day <= 26 then
       --NPCs aktivieren
       if weihnachtsmann == nil then
         weihnachtsmann = create_npc("Weihnachtsmann", 9, 178 * TILESIZE + 16, 154 * TILESIZE + 16, weihnachtsmann_talk, nil) --- Weichnachtsmann
