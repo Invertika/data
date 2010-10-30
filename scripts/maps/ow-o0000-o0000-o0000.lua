@@ -166,6 +166,7 @@ function bruce_talk(npc, ch)
     do_message(npc, ch, "Fabelhaft, du hast 20 Madenschleim gesammelt!\nDanke für deine Hilfe.")
     mana.chr_inv_change(ch, 40005, -20)
     mana.chr_give_exp(ch, 100, 750)
+    mana.chatmessage(ch, "Du hast 750 Exp im unbewaffneten Kampf erhalten!")
     set_qstatus(4)
   elseif get_qstatus()==4 then
     do_message(npc, ch, "In der Spielothek findet Danielas Geburtstagsparty statt.\nBist du so nett, und bringst ihr mein Geschenk?\nIch habe dort Hausverbot, weil ich meine Spielschulden nicht bezahlt habe.")
