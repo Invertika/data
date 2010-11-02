@@ -30,7 +30,7 @@ atinit(function()
  create_npc("Saturn", 3, 89 * TILESIZE + 16, 114 * TILESIZE + 16, saturn_talk, nil) --- Saturn
  create_npc("subnet_zero", 19 , 77 * TILESIZE + 16, 118 * TILESIZE + 16, subnet_zero_talk, nil) --- subnet_zero
  create_npc("DJh2o2", 54, 86 * TILESIZE + 16, 114 * TILESIZE + 16, djh2o2_talk, nil) --- DJh2o2
- create_npc("Dark Mage", 90, 84 * TILESIZE + 16, 122 * TILESIZE + 16, darkmage_talk, nil) --- DJh2o2
+ create_npc("Dark Mage", 72, 84 * TILESIZE + 16, 122 * TILESIZE + 16, darkmage_talk, nil) --- DJh2o2
 end)
 
 function jurkan_talk(npc, ch)
