@@ -528,7 +528,7 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
             attack-distance="32"
             />
         <attributes
-            hp="5000"
+            hp="500"
             size="16"
             speed="4.0"
             attack-min="45"
@@ -567,7 +567,7 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
             attack-distance="96"
             />
         <attributes
-            hp="10000"
+            hp="1000"
             size="64"
             speed="2.0"
             attack-min="35"
@@ -598,7 +598,7 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
         <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
         <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
         <attributes
-            hp="20"
+            hp="32000"
             size="320"
             speed="3.0"
             attack-min="5"
@@ -610,7 +610,7 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
             magical-defence="0"
             mutation="50"
             />
-        <exp>3</exp>
+        <exp>300</exp>
         <!-- average stroll- and track range-->
         <behavior
             aggressive="false"
@@ -630,6 +630,45 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
             />
     </monster>
     
+    <monster id="16" name="Sandkriecher" targetCursor="large">
+        <sprite>monsters/dust.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <attributes
+            hp="2000"
+            size="320"
+            speed="15.0"
+            attack-min="5"
+            attack-delta="10"
+            attack-magic="0"
+            hit="10"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <exp>250</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="10"
+            stroll-range="5"
+            attack-distance="50"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="64"
+            animation="attack"
+            />
+    </monster>
+	
 	<!-- Invertika Testmonster ID's >= 10000-->
 	<monster id="10000" name="Ipsum">
         <sprite>monsters/ufo.xml</sprite>
