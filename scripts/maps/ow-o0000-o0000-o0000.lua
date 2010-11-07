@@ -367,7 +367,7 @@ function elmes_talk(npc, ch)
 	do_message(npc, ch, invertika.get_random_element("Manche Leute rennen im Kreis durch diese Bögen. Warum auch immer sie dies tun.",
 	  "Ich genieße die Sonne. Deshalb der Hut.",
 	  "Früher als ich noch jung war, da hatte ich mal einen Kater. Doch er ward eines Tages verschwunden. Er hieß Effendi. Wo er wohl sein wird?",
-	  "Man erzählt sich von einem Schatz in der Wüste, verborgen in einer Höhle welche tief unter die Erde führt. Oder war die Höhle in der grünen Ebene. Ich weiß es nicht mehr genau.",
+	  "Man erzählt sich von einem Schatz in der Wüste, verborgen in einer Höhle welche tief unter die Erde führt. Oder war die Höhle in der grünen Ebene? Ich weiß es nicht mehr genau.",
 	  "Das letze mal als es regnete versank ich im Sand. Ich konnte mich erst nach 4 Stunden befreien.",
 	  "Sei vorsichtig wenn du dich durch die große Wüste begibst."))
 	  do_npc_close(npc, ch)
@@ -398,7 +398,7 @@ function colloseumwache_talk(npc, ch)
 	  "In der Arena finden Kämpfe statt, manchmal zumindestens.",
 	  "Aergius war ein großer Kämpfer, bis er fort ging.",
 	  "Achte auf deine Deckung, sonst kann es dich ganz böse erwischen.",
-	  "Du siehst stark aus, vieleicht könntest du ein Kämpfer werden?"))
+	  "Du siehst stark aus, vielleicht könntest du ein Kämpfer werden?"))
 	  do_npc_close(npc, ch)
 end
 
@@ -414,7 +414,7 @@ end
 function stadtwache_talk(npc, ch)
 	do_message(npc, ch, invertika.get_random_element("Wir bewachen den Eingang zur Stadt.",
 	  "Wir sichern die Stadtgrenze vor feindlichen Mächten.",
-	  "Sei vorsichtig wenn du die Stadt verlässt."))
+	  "Sei vorsichtig, wenn du die Stadt verlässt."))
 	  do_npc_close(npc, ch)
 end
 
@@ -450,7 +450,7 @@ function bernie_talk(npc, ch)
 		elseif v == 2 then
 			do_message(npc, ch, invertika.get_random_element("Dann halt nicht. Aber vielleicht später?",
 	  "Wer nicht will der hat schon...",
-	  "Okay ein ander Mal vielleicht."))
+	  "Okay, ein ander Mal vielleicht."))
 			break
 		end
 	end
