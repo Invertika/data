@@ -154,7 +154,7 @@ function bruce_talk(npc, ch)
 		set_qstatus(1)
 		do_message(npc, ch, "Ahhh ich verstehe, du bist neu hier. Hier ein paar Münzen fuer den Anfang...")		
 	elseif get_qstatus()==1 then
-    do_message(npc, ch, "Siehst du die Maden auf den Straßen? Die reinste Plage!\nDieses gefräßige Ungeziefer vernichtet das letzte bisschen Vegetation in der Stadt!\nWillst du uns helfen, unsere schöne Stadt von diesen ekelhaften Würmern zu befreien?")
+    do_message(npc, ch, "Siehst du die Maden auf den Straßen? Die reinste Plage! Dieses gefräßige Ungeziefer vernichtet das letzte bisschen Vegetation in der Stadt! Willst du uns helfen, unsere schöne Stadt von diesen ekelhaften Würmern zu befreien?")
     set_qstatus(do_choice(npc, ch, "Nein.","Ja."))
   end
   if get_qstatus()==2 then
@@ -163,13 +163,13 @@ function bruce_talk(npc, ch)
   elseif get_qstatus()==3 and mana.chr_inv_count(ch, 40005) < 20 then
     do_message(npc, ch, "Bring mir 20 Madenschleim als Beleg für deine Arbeit, dann werde ich dich belohnen.")
   elseif get_qstatus()==3 and mana.chr_inv_count(ch, 40005) >= 20 then
-    do_message(npc, ch, "Fabelhaft, du hast 20 Madenschleim gesammelt!\nDanke für deine Hilfe.")
+    do_message(npc, ch, "Fabelhaft, du hast 20 Madenschleim gesammelt! Danke für deine Hilfe.")
     mana.chr_inv_change(ch, 40005, -20)
     mana.chr_give_exp(ch, 100, 750)
     mana.chatmessage(ch, "Du hast 750 Exp im unbewaffneten Kampf erhalten!")
     set_qstatus(4)
   elseif get_qstatus()==4 then
-    do_message(npc, ch, "In der Spielothek findet Danielas Geburtstagsparty statt.\nBist du so nett, und bringst ihr mein Geschenk?\nIch habe dort Hausverbot, weil ich meine Spielschulden nicht bezahlt habe.")
+    do_message(npc, ch, "In der Spielothek findet Danielas Geburtstagsparty statt. Bist du so nett, und bringst ihr mein Geschenk? Ich habe dort Hausverbot, weil ich meine Spielschulden nicht bezahlt habe.")
     set_qstatus(do_choice(npc, ch, "Nein.","Ja.")+3)
     if get_qstatus()==5 then
       mana.chr_inv_change(ch, 40015, 1)
@@ -186,7 +186,7 @@ function bruce_talk(npc, ch)
     mana.chr_inv_change(ch, 40002, 1)
     set_qstatus(do_choice(npc, ch, "Nein.","Ja.")+6)
     if get_qstatus()==8 then
-      do_message(npc, ch, "Ich brauche 50 Skorpionstachel, um ein Faß Wurzelhans zu brauen.\nLass dich nicht stechen.")
+      do_message(npc, ch, "Ich brauche 50 Skorpionstachel, um ein Faß Wurzelhans zu brauen. Lass dich nicht stechen.")
     end
   elseif get_qstatus()==8 then
     if mana.chr_inv_count(ch, 40004) >= 50 then
@@ -201,7 +201,7 @@ function bruce_talk(npc, ch)
     do_message(npc, ch, "Ich habe momentan keine Aufgabe für dich.")
   end
 
-	do_npc_close(npc, ch)
+  do_npc_close(npc, ch)
 end
 
 function felix_talk(npc, ch)
