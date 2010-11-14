@@ -1,53 +1,66 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="130" height="55" tilewidth="32" tileheight="32">
-  <properties>
-    <property name="music" value="inside2.ogg" />
-  </properties>
-  <tileset firstgid="1" name="collision" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/collision1_32_32.png" />
-  </tileset>
-  <tileset firstgid="2001" name="inn1_32_32" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/inn1_32_32.png" />
-  </tileset>
-  <tileset firstgid="4001" name="woodland_indoor" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/indoor8_32_32.png" />
-  </tileset>
-  <tileset firstgid="6001" name="woodland_indoor_32_64" tilewidth="32" tileheight="64">
-    <image source="../graphics/tiles/indoor1_32_64.png" />
-  </tileset>
-  <tileset firstgid="8001" name="woodland_indoor_32_96" tilewidth="32" tileheight="96">
-    <image source="../graphics/tiles/indoor1_32_96.png" />
-  </tileset>
-  <tileset firstgid="10001" name="inn_32_64" tilewidth="32" tileheight="64">
-    <image source="../graphics/tiles/inn1_32_64.png" />
-  </tileset>
-  <tileset firstgid="12001" name="inn_32_96" tilewidth="32" tileheight="96">
-    <image source="../graphics/tiles/inn1_32_96.png" />
-  </tileset>
-  <layer name="Ground" width="130" height="55">
-    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/Iv7OH/s1fo0f/f9H///R/3/0/x/9/0f//9H/f/T/H/3/R///0f9/9P8f/f9H///R/////f8fje9H///R/3/0/x/9/0f//9H/f/T/H/3/R///0f9/9P8f/f9H////0v//tV///xv/v81Yfpj///9bX//Lr///jf/fZiw/+v/X//9v8Rv87P7/3//1N/992//fZiw/+v/X//8u0XiP/n/vN/jZ+f3//PXDz/H3bd/1f7/NWH70/6//f9B6n37e/1n6P+Z90983/f/TH/sRH/ww/g8+eEM/v6L//7r0/1/P+/+vr593/3/bdvg/5n3T3zf9/yd/7Ed88MP4v88Hvzv9/xd6//9YP+/+/7bt8P//qzPv3b9/xAf/7/i/zwen9P9n3v8/18+7/79tu2/i/z/igx/O/30++H/j/3+2+OA2tPn59P8f8cGP/o///4gPfvR//P9HfPCj/+P/P+KDH/0f//8RH/zo//j/j/jgR//H/3/EBz/6P/7//1U+uM3YfvT/2///R3zwo//j/+CD9Y/9v/f/lz/2Iz74YfzfrPHj/4/o/4f6/8fe5z/X//8RH/zw//8bEM1/7Ed0/9H/f/T/H/3/R///0f9/9P8f/f/n4P8/6vNH///R/3/0/x/9/0f//9H/f/T/H/3/R///0f9/9P8f/f9H///R//////8fjfFH///R/3/0/x/9/0f//9H/f/T/H/3/R///0f9/9P8f/f9H///R///f+///B2pMPZu4bwAA</data>
-  </layer>
-  <layer name="Fringe" width="130" height="55">
-    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6NHz0/en70/Oj50fOj50fPj54fPT96fvT86PnR86PnR8//758fDfBHz4+eHz0/en70/Oj50fOj50fPj54fPT96fvT86Pn///OjEW5+vvoN5Odf/Zu7//9V3u9/pf6N57fWtkPPL/v1N3//o+fn9tn5LeX/sWf9G8Q//9Hz//7n89/l1/g1vv27DP80z+nvEv4fz388/jV+jf9kLD+/7mPgndD/n3qw8fwHpBP+wx/phR89P3r+f/HUv8Hmv3/0/L/r+W0/lp9mnszP314/77b7q34L9/9Yux89/998zPx2nyE+uKndj57/7z6zH+v//0Pa3fb57m+w+e+fjedHMH+4z5/8G/wav8afov//07zf8f8//Te4+Xv8/EW/QRfqj57/rz1/82/wa/waf8s38P8fPT+/n7+R/NC/SX3RHz0/f59/kXjgX/oRH/xQnj/ot72xyc/Z8z8SD/xPP+KDn/fPb0rrGL/ZwFrGj55v9vl/sz740fOjB8+Qn3jjiz96/n/1/MhP/OE9DdmFNmIbup+bteX/lH7+Z/r7fzLw029j3uv+vA2cH/mJP3rw/MhP/NHzo+dHz4+eHz0/en70/Oj5+fX8aLQ/en70/Oj50fOj50fPj54fPT96fvT86PnR86PnR8///58fjfBHz4+eHz0/en70/Oj50fOj50fPj54fPT96fvT86Pl/7/P/ABwEJNK4bwAA</data>
-  </layer>
-  <layer name="Over" width="130" height="55">
-    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6NHz0/en70/Oj50fOj50fPj54fPT96fvT86PnR86PnR8//758fDfBHz4+eHz0/en70/Oj50fOj50fPj54fPT96fvT86Pn///OjEf7o+dHzo+dHz4+eHz0/en70/Oj50fOj50fPj54fPf//f340wh89P3p+9Pzo+dHzo+dHz4+eHz0/en70/Oj50fOj5///z49G+KPnR8+Pnh89P3p+9Pzo+dHzo+dHz4+eHz0/en70/P//+dEIf/T86PnR86PnR8+Pnh89P3p+9Pzo+dHzo+dHz4+e//8/Pxrhj54fPT96fvT86PnR86PnR8+Pnh89P3p+9Pzo+dHz/97n/wF1xRMxuG8AAA==</data>
-  </layer>
-  <layer name="Collision" width="130" height="55" visible="0">
-    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6tX+PX+DV+9P8f/f9H///R/3/0/x/9/0f//9H/f/T/H/3/R///0f9/9P8f/f9H////9/9/NL4f/f9H///R/3/0/x/9/0f//9H/f/T/H/3/R///0f9/9P8f/f9H//////9/NMYf/f9H///R////+v9fI/JZrE2sXfez2NP9PNbuffr80f9/dv7/s/10+/i6fd5mLD/6/9f/v//c9P37tjNtN/192+c2Y/nR/7/+//3npu/ft51pu+nv2z63GcuP/v/1/+8/N33/vu2+yec2Y/nR/7/+//+/8txmLO/z/x+1Df//s/3cBocf/f/n/v8/289tcPjR/3/u////9uc2Y/jR/z/8//9vf24zhh/9/8P//2t4P//f+NxmDD/6/4f////tz23G8KP/f/j/fw3v5/+bn9uM5Uf///r//3/7M4T3jz7/Zv//a3R+95+hz3+Yz23G8KP/f/j/f43O7/7T/TzWftPPb7LNj/7/s/v//7c/txnDj/7/zf/fPLdp+6P//+j/P/r/j/7/o///6P8/+v+P/v9N/v9HsH70/x/9/0f//9H/f/T/H/3/R///0f9/9P8f/f9H///R/3/0/x/9///////RGH/0/x/9/0f//9H/f/T/H/3/R///0f9/9P8f/f9H///R/3/0/x/9//+9//9/AFfNFuO4bwAA</data>
-  </layer>
-  <objectgroup name="Object" width="0" height="0">
-    <object name="Warp to City" type="WARP" x="768" y="1120" width="64" height="32">
-      <properties>
-        <property name="DEST_MAP" value="ow-o0000-o0000-o0000" />
-        <property name="DEST_X" value="4288" />
-        <property name="DEST_Y" value="4768" />
-      </properties>
-    </object>
-    <object name="External Map Events" type="SCRIPT" x="0" y="0">
-      <properties>
-        <property name="FILENAME" value="scripts/maps/iw-selphie_timlet_m_punkt-o00-o00-o00.lua" />
-      </properties>
-    </object>
-  </objectgroup>
+ <properties>
+  <property name="music" value="inside2.ogg"/>
+ </properties>
+ <tileset firstgid="1" name="collision" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="1025" name="inn1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/inn1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="2049" name="woodland_indoor" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/indoor8_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3073" name="woodland_indoor_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/indoor1_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3585" name="woodland_indoor_32_96" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/indoor1_32_96.png" width="1024" height="960"/>
+ </tileset>
+ <tileset firstgid="3905" name="inn_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/inn1_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="4417" name="inn_32_96" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/inn1_32_96.png" width="1024" height="960"/>
+ </tileset>
+ <layer name="Ground" width="130" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3RMQ0AAAjAMA6U4l8EFviApE2mYBEAAAAAAAAAAHBP5Y/Y4wEAAAAAAAAAAAAAAAAAAAAAAABTDUXkgfi4bwAA
+  </data>
+ </layer>
+ <layer name="Ground" width="130" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3SPU7DMBiA4Q7OyCXYy8bfyh2AmfIzACtwAcpNytV6Db5IGaxKTSJE4jQ8wyPHlpXh87utFostAAAAAAAAAExESoeh9Jzm7jgdhtJzmrurNKyjjn1fpec0d3cx41W4T8N8L3fOl7/8T+k5zV0964dYHwdSv3vbvstTpYOxOviMdR1Ow1nmvDnf1ffeunn3tn2XLx2M3sF1uMnc7nmbvvdqJ6l9r4NpyDt4C++Zjz1v0/feX9DB+B1MkQ50oAMd6EAHOtCBDnSgAx3oQAc6KE8H6IC8g001Xd86GK2DVeM5vDRes/PSdDC+i5j5pbkDAAAAAAAAAADAv/IDq2Zoo7hvAAA=
+  </data>
+ </layer>
+ <layer name="Fringe" width="130" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3ZUU7CQBAA0CaUgGJaOIMH0CuAGuKX3kQvYfz1wwto4kE0ehA9iduUhqotEDWFwnvJZHbpZNNkp3QDUQQAAAAAAAAAsN1u4jzv7c+jXxr3ZvPMWbx4rcMl11mvu0EeVZ7sXWv1kvCMJvW50E2+RmY8iqLJKM+/VazXCRGX1s4koa9SvQVb4TFePGezTNM8F/tU5PO0uq4/mEdVHe00rdnHuj5YVkd73Xd/xl/qVnUbL57Tfs9hT19m8VoaZ/EWL7+e5Qd90XrvYQ8//iHYbWk4hw5rfrNidxyFHjjWB40YHqz7DupdhB641Ac77yr0wLU+aMQmfx9AxjmRjHNiczrhvRBXvBu+f178t3wS8ulsPKnJ5ZpxTV5lHedEMs6JAAAAAAAAAAAAAM34BFnCCMu4bwAA
+  </data>
+ </layer>
+ <layer name="Over" width="130" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPwadcUTMbhvAAA=
+  </data>
+ </layer>
+ <layer name="Collision" width="130" height="55" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3S0QrCMAwF0OD/f7Svo1RX0ZpsORcO3UpRdptHRDwAAAAAAAAAAAAKisUzs3Pj3izj/uzcJ//JvjnYmZU5WP0d/jMHq3PyyTyZg2s463r1Tl7FHFzDWderd7I72T3d3VWS3dPd7U7292EOqDMH3ya7ny6qJ7ufLuKwVkx2P11UT3Y/XcRhrZzsnu6uerL76SKG59kdZCa7ny5ieJ7dwfF93H+3/vIM++egcrL76Ur/AAAAAAAAAAAA0M8TV80W47hvAAA=
+  </data>
+ </layer>
+ <objectgroup name="Object" width="0" height="0">
+  <object name="Warp to City" type="WARP" x="768" y="1120" width="64" height="32">
+   <properties>
+    <property name="DEST_MAP" value="ow-o0000-o0000-o0000"/>
+    <property name="DEST_X" value="4288"/>
+    <property name="DEST_Y" value="4768"/>
+   </properties>
+  </object>
+  <object name="External Map Events" type="SCRIPT" x="0" y="0">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/iw-selphie_timlet_m_punkt-o00-o00-o00.lua"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>
