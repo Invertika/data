@@ -318,6 +318,8 @@ function inard_talk(npc, ch)
 	  "Ich mag den Innenhof, es ist so schön ruhig und man kann sich entspannen.",
 	  "Ich sollte mal wieder ein bisschen tranieren, schließlich gibt es da draußen eine Menge Monster.",
 	  "Überall Palmen und keine einzige Kokusnuss. Seltsam.",
+	  "Paradoxien und Kokusnüsse. Mmmmm darüber sollte ich nachdenken...",
+	  "Ich glaube ich habe eine Lösung für das Kokusnussproblem.",
 	  "Ich möchte wissen wo Worel hin wollte. Er ist nun schon eine Ewigkeit weg.",
 	  "Ich entspanne mich hier nur ein wenig."))
 	  do_npc_close(npc, ch)
