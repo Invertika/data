@@ -24,6 +24,7 @@ atinit(function()
  create_inter_map_warp_trigger(19003, 19003, 19003, 19003) --- Intermap warp
  create_npc("Zelan", 58, 132 * TILESIZE + 16, 21 * TILESIZE + 16, zelan_talk, nil) --- Zelan
  mana.trigger_create(20 * TILESIZE, 20 * TILESIZE, 22 * TILESIZE, 22 * TILESIZE, "trap_trigger_skorpions", 0, true) --- Trigger Trap
+ create_npc("Aliria", 2, 15 * TILESIZE + 16, 15 * TILESIZE + 16, alaria_talk, nil) --- Alaria Handels Test NPC
 
 --Test NPCs
   create_npc("Test NPC", 200, 50 * TILESIZE + 16, 19 * TILESIZE + 16, npc1_talk, npclib.walkaround_small)
@@ -60,6 +61,18 @@ end)
 function zelan_talk(npc, ch)
     do_message(npc, ch, "Wo du bist? Im Vacare. Jeder neue kommt hier her bevor es raus geht in die große Welt. Also pass auf dich auf.")
 	do_npc_close(npc, ch)
+end
+
+function alaria_talk(npc, ch)
+    -- "Example: Let the player sell every item with a 'value' parameter in the server's items.xml file
+    local sellcase = mana.npc_trade(npc, ch, true)
+    if sellcase == 0 then
+      do_message(npc, ch, "Ok, what do you want to sell:")
+    elseif sellcase == 1 then
+      do_message(npc, ch, "I'm not interested by any of your items.")
+    else
+      do_message(npc, ch, "Hmm, something went wrong... Ask a scripter to fix this!")
+    end
 end
 
 --- Falle auslösen
