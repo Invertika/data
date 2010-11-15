@@ -73,6 +73,8 @@ function alaria_talk(npc, ch)
     else
       do_message(npc, ch, "Hmm, something went wrong... Ask a scripter to fix this!")
     end
+    
+    do_npc_close(npc, ch)
 end
 
 --- Falle auslösen
