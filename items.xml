@@ -85,7 +85,7 @@
         attack-range="32"
         attack-angle="135"
         max-per-slot="1"
-	value="10">
+        value="10">
         <sprite>equipment/weapons/dagger.xml</sprite>
         <sound event="strike">short-sword-miss1.ogg</sound>
         <sound event="hit">short-sword-hit1.ogg</sound>
@@ -106,7 +106,7 @@
         attack-range="32"
         attack-angle="135"
         max-per-slot="1"
-	value="50">
+        value="50">
         <sprite>equipment/weapons/dagger.xml</sprite>
         <sound event="strike">short-sword-miss1.ogg</sound>
         <sound event="hit">short-sword-hit1.ogg</sound>
@@ -126,7 +126,7 @@
         attack-range="300"
         missile-particle="graphics/particles/arrow.particle.xml"
         view="1200"
-	value="1000">
+        value="5000">
 		<sprite>equipment/weapons/bow.xml</sprite>
 		</item>
         
@@ -137,7 +137,8 @@
         effect="+25 Damage"
         type="equip-ammo"
         weight="1"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="50"/>
         
 	<item id="10005"
         image="equipment/weapons/dagger-knive.png"
@@ -153,7 +154,8 @@
         attack-shape="cone"
         attack-range="32"
         attack-angle="135"
-        max-per-slot="1">
+        max-per-slot="1"
+		value="25000">
         <sprite>equipment/weapons/dagger.xml</sprite>
         <sound event="strike">short-sword-miss1.ogg</sound>
         <sound event="hit">short-sword-hit1.ogg</sound>
@@ -168,7 +170,8 @@
         missile-particle="graphics/particles/arrow.particle.xml"
         weapon-type="bow"
         attack-action="attack_bow"
-        max-per-slot="1">
+        max-per-slot="1"
+		value="2000">
         <sprite>equipment/weapons/bow.xml</sprite>
         <sound event="swing">weapons/bows/bow_shoot_1.ogg</sound>
     </item>
@@ -181,7 +184,7 @@
         type="equip-ammo"
         weight="1"
         max-per-slot="999"
-	value="1"/>
+        value="1"/>
 	
 	<!-- Ruestungen und Kleidung 20001 - 30000 -->
 	<item id="20001"
@@ -192,7 +195,8 @@
         type="equip-torso"
         weight="15"
         defense="2"
-        max-per-slot="1">
+        max-per-slot="1"
+		value="25">
         <sprite gender="male">equipment/chest/cotton-male.xml|#2b454d,72818c,b7c0c5,ffffff</sprite>
         <sprite gender="female">equipment/chest/cotton-female.xml|#2b454d,72818c,b7c0c5,ffffff</sprite>
     </item>
@@ -205,7 +209,8 @@
         type="equip-legs"
         weight="10"
         defense="2"
-        max-per-slot="1">
+        max-per-slot="1"
+		value="25">
         <sprite gender="male">equipment/leg/shorts-male.xml|#6c858a,ffffff</sprite>
         <sprite gender="female">equipment/leg/shorts-female.xml|#6c858a,ffffff</sprite>
     </item>
@@ -214,11 +219,12 @@
         image="equipment/head/axehat.png"
         name="Axt Hut"
         description="Ein einzigartiger Hut."
-        effect="+5000% Defense"
+        effect="Unbekannt."
         type="equip-head"
         weight="20"
-        defense="5000"
-        max-per-slot="1">
+        defense="7500"
+        max-per-slot="1"
+		value="5000">
         <sprite>equipment/head/axehat.xml</sprite>
     </item>
 	
@@ -230,7 +236,8 @@
         type="equip-head"
         weight="25"
         defense="5"
-        max-per-slot="1">
+        max-per-slot="1"
+		value="500">
         <sprite>equipment/head/fancyhat.xml</sprite>
     </item>
     
@@ -242,7 +249,8 @@
         type="equip-ring"
         weight="5"
         defense="1"
-        max-per-slot="1">
+        max-per-slot="1"
+		value="500">
     </item>
     
     <item id="20006"
@@ -253,7 +261,8 @@
         type="equip-head"
         weight="20"
         defense="500"
-        max-per-slot="1">
+        max-per-slot="1"
+		value="5000">
         <sprite>equipment/head/fairy_hat.xml</sprite>
     </item>
     
@@ -265,7 +274,8 @@
         type="equip-torso"
         weight="30"
         defense="500"
-        max-per-slot="1">
+        max-per-slot="1"
+		value="5000">
         <sprite gender="male">equipment/chest/leather-male.xml|#443c21,85794a,beb590,ffffff;#824035,d6a19a</sprite>
         <sprite gender="female">equipment/chest/leather-female.xml|#251e06,443c21,71653b,a0945e;#b6574a</sprite>
     </item>
@@ -277,7 +287,8 @@
         effect="+6% Defense"
         type="equip-legs"
         defense="500"
-        weight="40">
+        weight="40"
+		value="5000">
         <sprite gender="male">equipment/leg/chaps-male.xml</sprite>
         <sprite gender="female">equipment/leg/chaps-female.xml</sprite>
     </item>
@@ -289,7 +300,8 @@
         effect="+2% Defense"
         type="equip-feet"
         defense="2"
-        weight="40">
+        weight="40"
+		value="150">
         <sprite gender="male">equipment/feet/boots-male.xml</sprite>
         <sprite gender="female">equipment/feet/boots-female.xml</sprite>
     </item>
@@ -302,7 +314,8 @@
         type="equip-head"
         weight="15"
         defense="2"
-        max-per-slot="1">
+        max-per-slot="1"
+		value="150">
         <sprite>equipment/head/santahat.xml</sprite>
     </item>
 	
@@ -315,7 +328,8 @@
         type="usable"
         hp="15"
         weight="25"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="30"/>
 		
 	<item id="30002"
         image="generic/potion-a.png|G:#7A67AB"
@@ -324,9 +338,9 @@
         effect="Unbekannt."
         type="usable"
         hp="-100"
-
         weight="25"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="10"/>
 	
 	<item id="30003"
         image="generic/potion-a.png|G:#33294B"
@@ -337,7 +351,8 @@
         type="usable"
         hp="-9999"
         weight="25"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="50"/>
 		
 	<item id="30004"
         image="generic/potion-a.png|G:#AEDB11"
@@ -347,7 +362,8 @@
         type="usable"
         hp="-2500"
         weight="25"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="30"/>
 		
 	<item id="30005"
         image="generic/potion-a.png|G:#C38F03"
@@ -357,7 +373,8 @@
         type="usable"
         hp="-30"
         weight="25"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="20"/>
 		
     <item id="30006"
         image="generic/beer.png"
@@ -367,7 +384,8 @@
         type="usable"
         hp="20"
         weight="400"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="20"/>
 		
     <item id="30007"
         image="generic/milk.png"
@@ -377,7 +395,8 @@
         type="usable"
         hp="150"
         weight="300"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="20"/>
 		
     <item id="30008"
         image="generic/pangalactic-gargle-blaster.png"
@@ -388,7 +407,8 @@
         type="usable"
         hp="500"
         weight="300"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="20"/>
 		
     <item id="30009"
         image="generic/chocolatebar.png"
@@ -398,7 +418,8 @@
         type="usable"
         hp="20"
         weight="25"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="15"/>
 		
 	<item id="30010"
         image="generic/cake.png"
@@ -407,7 +428,8 @@
         effect="+15 HP"
         type="usable"
         weight="25"
-		max-per-slot="999"/>
+		max-per-slot="999"
+		value="15"/>
 		
     <item id="30011"
         image="generic/roastedmaggot.png"
@@ -417,7 +439,8 @@
         type="usable"
         hp="150"
         weight="290"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="15"/>
 	
     <item id="30012"
         image="generic/apple.png"
@@ -428,7 +451,8 @@
         type="usable"
         hp="50"
         weight="70"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="15"/>
 		
 	<item id="30013"
         image="generic/potion-a.png|G:#7A67AB"
@@ -438,7 +462,8 @@
         type="usable"
         hp="-2000"
         weight="25"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="35"/>
 
 	<item id="30014"
         image="generic/chocolatebar.png"
@@ -448,7 +473,8 @@
         type="usable"
         hp="200"
         weight="25"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="35"/>
 		
 	<item id="30015"
         image="generic/pill.png"
@@ -459,7 +485,8 @@
 		intelligence="15"
         type="usable"
         weight="12"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="25"/>
 		
 	<item id="30016"
         image="generic/pill.png"
@@ -470,7 +497,8 @@
 		intelligence="10"
         type="usable"
         weight="12"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="50"/>
 		
 	<item id="30017"
         image="generic/pill.png|W:#969696,e0e0e0"
@@ -482,7 +510,8 @@
 		hp="-500"
         type="usable"
         weight="12"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="75"/>
 		
 	<item id="30018"
         image="generic/pill.png|W:#969696,e0e0e0"
@@ -492,7 +521,8 @@
 		hp="500"
         type="usable"
         weight="12"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="25"/>
 		
 	<item id="30019"
         image="generic/pill.png|W:#969696,e0e0e0"
@@ -502,7 +532,8 @@
 		hp="1500"
         type="usable"
         weight="12"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="55"/>
 		
 	<item id="30020"
         image="generic/pill.png|W:#969696,e0e0e0"
@@ -512,7 +543,8 @@
 		hp="7500"
         type="usable"
         weight="12"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="75"/>
 		
 	<item id="30021"
         image="generic/xmascandycane.png"
@@ -522,7 +554,8 @@
         type="usable"
         hp="10"
         weight="1"
-	max-per-slot="999"/>
+	max-per-slot="999"
+	value="15"/>
 	
 	<item id="30022"
         image="generic/xmascake.png"
@@ -532,7 +565,8 @@
         type="usable"
         hp="10"
         weight="1"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="15"/>
 	
 	<item id="30023"
         image="generic/gingerbreadman.png"
@@ -542,7 +576,8 @@
         type="usable"
         hp="25"
         weight="1"
-	max-per-slot="999"/>
+        max-per-slot="999"
+        value="15"/>
 	
 	<!-- Sonstige 40001 - 50000 -->
 	<item id="40001"
@@ -552,7 +587,8 @@
         effect=""
         type="generic"
         weight="20"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="35"/>
 		
 	<item id="40002"
         image="generic/item.png"
@@ -561,7 +597,8 @@
         effect=""
         type="generic"
         weight="1"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="35"/>
 		
 	<item id="40003"
         image="generic/canister.png"
@@ -570,7 +607,8 @@
         effect=""
         type="generic"
         weight="20"
-        max-per-slot="999"/>	
+        max-per-slot="999"
+		value="35"/>	
 		
 	<item id="40004"
         image="generic/scorpionstinger.png|W:#a08040,e0e0e0"
@@ -579,7 +617,8 @@
         effect=""
         type="generic"
         weight="12"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="5"/>
 		
     <item id="40005"
         image="generic/maggotslime.png"
@@ -589,7 +628,7 @@
         type="generic"
         weight="10"
         max-per-slot="999"
-	value="10"/>
+        value="10"/>
 		
     <item id="40006"
         image="generic/casinocoins.png"
@@ -598,7 +637,8 @@
         effect=""
         type="generic"
         weight="10"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="10"/>
 		
     <item id="40007"
         image="generic/bugleg.png"
@@ -607,7 +647,8 @@
         effect=""
         type="generic"
         weight="15"
-		max-per-slot="999"/>
+		max-per-slot="999"
+		value="5"/>
 		
     <item id="40008"
         image="generic/towel.png"
@@ -615,7 +656,8 @@
         description="Ein praktisches Handtuch für alle Gelegenheiten."
         type="generic"
         weight="20"
-		max-per-slot="1"/>
+		max-per-slot="1"
+		value="500"/>
 		
     <item id="40009"
         image="generic/fabric.png"
@@ -656,7 +698,8 @@
         description="Ein grünes Geschenk."
         type="generic"
         weight="10"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="25"/>
         
 	<item id="40014"
         image="generic/bluepresentbox.png"
@@ -664,7 +707,8 @@
         description="Blaues Geschenk."
         type="generic"
         weight="10"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="25"/>
         
 	<item id="40015"
         image="generic/purplepresentbox.png"
@@ -672,7 +716,8 @@
         description="Ein lila Geschenk."
         type="generic"
         weight="10"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="25"/>
 
 	<item id="40016"
         image="generic/scorpionstinger.png|W:#969696,e0e0e0"
@@ -681,7 +726,8 @@
         effect=""
         type="generic"
         weight="12"
-        max-per-slot="999"/>
+        max-per-slot="999"
+		value="25"/>
 
 	<item id="40017"
         image="generic/check.png|W:#969696,e0e0e0"
