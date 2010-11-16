@@ -44,6 +44,7 @@ atinit(function()
  create_npc("Nero", 24, 162 * TILESIZE + 16, 175 * TILESIZE + 16, nero_talk, nil) --- Nero
  create_npc("Bernie", 40, 13 * TILESIZE + 16, 9 * TILESIZE + 16, bernie_talk, nil) --- Bernie
  create_npc("Valeria", 10, 26 * TILESIZE + 16, 49 * TILESIZE + 16, valeria_talk, nil) --- Valeria
+ create_npc("Alaria", 67, 170 * TILESIZE + 16, 182 * TILESIZE + 16, alaria_talk, nil) --- Alaria Handels NPC
  
  create_npc("Wache", 25, 39 * TILESIZE + 16, 51 * TILESIZE + 16, colloseumwache_talk, nil) --- Colloseumwache
  create_npc("Wache", 25, 44 * TILESIZE + 16, 51 * TILESIZE + 16, colloseumwache_talk, nil) --- Colloseumwache
@@ -98,6 +99,19 @@ end
   end
  end
 
+function alaria_talk(npc, ch)
+    local sellcase = mana.npc_trade(npc, ch, true)
+    if sellcase == 0 then
+      do_message(npc, ch, "Hi, was möchtest du verkaufen?")
+    elseif sellcase == 1 then
+      do_message(npc, ch, "Ich bin an deinen Sachen nicht interessiert.")
+    else
+      do_message(npc, ch, "Hmm irgendetwas stimmt nicht...")
+    end
+    
+    do_npc_close(npc, ch)
+end
+ 
 function elmo_talk(npc, ch)
 	do_message(npc, ch, "Willkommen in Selphi Timlet, der Stadt in der Wüste. Sei nett zu den anderen und habe viel Spaß!")
 	do_npc_close(npc, ch)
