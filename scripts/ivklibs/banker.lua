@@ -223,7 +223,7 @@ function banker_talk(npc, ch)
       if acc_bal >= 500 then
         mana.chr_set_quest(ch, "bank_account_balance", acc_bal-500)
         mana.chr_inv_change(ch, 40017, 1)
-        do_message(npc, ch, "Bittesehr, hier ist dein Scheck.")
+        do_message(npc, ch, "Bitte sehr, hier ist dein Scheck.")
       else
         do_message(npc, ch, "Dein Bankguthaben reicht dafür nicht aus!")
       end
@@ -239,7 +239,7 @@ function banker_talk(npc, ch)
 		  if acc_bal >= 2000 then --- 2000
         mana.chr_set_quest(ch, "bank_account_balance", acc_bal-2000)
         mana.chr_inv_change(ch, 40019, 1)
-        do_message(npc, ch, "Bittesehr, hier ist dein Scheck.")
+        do_message(npc, ch, "Bitte sehr, hier ist dein Scheck.")
       else
         do_message(npc, ch, "Dein Bankguthaben reicht dafür nicht aus!")
       end
@@ -247,7 +247,7 @@ function banker_talk(npc, ch)
 		  if acc_bal >= 5000 then --- 5000
         mana.chr_set_quest(ch, "bank_account_balance", acc_bal-5000)
         mana.chr_inv_change(ch, 40020, 1)
-        do_message(npc, ch, "Bittesehr, hier ist dein Scheck.")
+        do_message(npc, ch, "Bitte sehr, hier ist dein Scheck.")
       else
         do_message(npc, ch, "Dein Bankguthaben reicht dafür nicht aus!")
       end
@@ -263,7 +263,7 @@ function banker_talk(npc, ch)
 		  if acc_bal >= 25000 then --- 25000
         mana.chr_set_quest(ch, "bank_account_balance", acc_bal-25000)
         mana.chr_inv_change(ch, 40022, 1)
-        do_message(npc, ch, "Bittesehr, hier ist dein Scheck.")
+        do_message(npc, ch, "Bitte sehr, hier ist dein Scheck.")
       else
         do_message(npc, ch, "Dein Bankguthaben reicht dafür nicht aus!")
       end
@@ -271,7 +271,7 @@ function banker_talk(npc, ch)
 		  if acc_bal >= 50000 then --- 50000
         mana.chr_set_quest(ch, "bank_account_balance", acc_bal-50000)
         mana.chr_inv_change(ch, 40023, 1)
-        do_message(npc, ch, "Bittesehr, hier ist dein Scheck.")
+        do_message(npc, ch, "Bitte sehr, hier ist dein Scheck.")
       else
         do_message(npc, ch, "Dein Bankguthaben reicht dafür nicht aus!")
       end
