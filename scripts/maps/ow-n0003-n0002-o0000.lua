@@ -15,9 +15,11 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
+require "scripts/ivklibs/seller"
 
 dofile("data/scripts/ivklibs/warp.lua")
 
 atinit(function()
  create_inter_map_warp_trigger(23, 13, 25, 35) --- Intermap warp
+ create_npc("Klero", 107, 94 * TILESIZE + 16, 124 * TILESIZE + 16, seller.seller_talk, nil) --- Verkäufer
 end)
