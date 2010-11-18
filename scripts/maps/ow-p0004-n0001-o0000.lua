@@ -5,7 +5,7 @@
 -- anderer Dinge.                                                               --
 --                                                                              --
 ----------------------------------------------------------------------------------
---  Copyright 2008 The Invertika Development Team                               --
+--  Copyright 2008-2010 The Invertika Development Team                          --
 --                                                                              --
 --  This file is part of Invertika.                                             --
 --                                                                              --
@@ -17,6 +17,7 @@
 require "scripts/lua/npclib"
 require "scripts/ivklibs/invertika"
 require "scripts/ivklibs/nethek"
+require "scripts/ivklibs/seller"
 
 dofile("data/scripts/ivklibs/warp.lua")
 
@@ -81,10 +82,15 @@ local gravestone_npc_id = 1
 atinit(function()
  create_inter_map_warp_trigger(105, 111, 101, 89) --- Intermap warp
  nethek.create_netheksaeule(138 * TILESIZE, 125 * TILESIZE + 16) --- Netheksäule
+ 
+ --NPCs
+  create_npc("Donovan", 29, 75 * TILESIZE + 16, 76 * TILESIZE + 16, seller.seller_talk, nil) --- Verkäufer
+ 
  --- Wachen am Tor
  wache = create_npc("Stadtwache", 123, 84 * TILESIZE + 16, 187 * TILESIZE + 16, stadtwache_talk, nil) --- Stadtwache
  create_npc("Stadtwache", 123, 87 * TILESIZE + 16, 187 * TILESIZE + 16, stadtwache_talk, nil) --- Stadtwache
  mana.trigger_create(85 * TILESIZE, 186 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "wache_trigger", 1, true) --- Trigger Tor
+ 
  --- Grabsteine
  create_npc(gravestone_npc_name, gravestone_npc_id, gravestone_data[1][1]*32+16, gravestone_data[1][2]*32+16, gravestone_talk01, nil) --- Grabstein1
  create_npc(gravestone_npc_name, gravestone_npc_id, gravestone_data[2][1]*32+16, gravestone_data[2][2]*32+16, gravestone_talk02, nil) --- Grabstein2
