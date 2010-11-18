@@ -5,7 +5,7 @@
 -- anderer Dinge.                                                               --
 --                                                                              --
 ----------------------------------------------------------------------------------
---  Copyright 2008 The Invertika Development Team                               --
+--  Copyright 2008-2010 The Invertika Development Team                          --
 --                                                                              --
 --  This file is part of Invertika.                                             --
 --                                                                              --
@@ -16,10 +16,14 @@
 
 require "scripts/lua/npclib"
 require "scripts/ivklibs/nethek"
+require "scripts/ivklibs/seller"
 
 dofile("data/scripts/ivklibs/warp.lua")
 
 atinit(function()
  create_inter_map_warp_trigger(36, 26, 38, 48) --- Intermap warp
  nethek.create_netheksaeule(122 * TILESIZE, 114 * TILESIZE + 16) --- Netheksäule
+ 
+  --NPCs
+  create_npc("Deaqon", 35, 94 * TILESIZE + 16, 103 * TILESIZE + 16, seller.seller_talk, nil) --- Verkäufer
 end)
