@@ -22,31 +22,31 @@ dofile("data/scripts/ivklibs/warp.lua")
 atinit(function()
  create_inter_map_warp_trigger(19002, 19002, 19002, 19002) --- Intermap warp
  
- --- Zelan
+ -- Zelan
  create_npc("Zelan", 58, 132 * TILESIZE + 16, 21 * TILESIZE + 16, zelan_talk, nil) --- Zelan
  
-  --- Zeitungsjunge
+ -- Zeitungsjunge
  create_npc("Jack", 34, 159 * TILESIZE + 16, 31 * TILESIZE + 16, jack_talk, nil) --- Jack
  
- --- Zaun NPC 
+ -- Zaun NPC 
  create_npc("Ancoise", 25, 137 * TILESIZE + 16, 41 * TILESIZE + 16, ancoise_talk, nil) --- Ancoise
 
- --- Kampf NPC's
+ -- Kampf NPC
  create_npc("Kolbert", 30, 156 * TILESIZE + 16, 66 * TILESIZE + 16, kolbert_talk, nil) --- Kolbert
  
- --- Levelup NPC
+ -- Levelup NPC
  create_npc("Syntyche", 25, 142 * TILESIZE + 16, 110 * TILESIZE + 16, syntyche_talk, nil) --- Syntyche
  
- --- Handel Valaia 
+ -- Handel Valaia 
  create_npc("Valaia", 60, 102 * TILESIZE + 16, 83 * TILESIZE + 16, valaia_talk, nil) --- Valaia
  
- --- Regeln Asam 
+ -- Regeln Asam 
  create_npc("Asam", 72, 66 * TILESIZE + 16, 130 * TILESIZE + 16, asam_talk, nil) --- Asam
  
-  --- Leben und Sterben Corona  
+ -- Leben und Sterben Corona  
  create_npc("Corona ", 12, 89 * TILESIZE + 16, 135 * TILESIZE + 16, corona_talk, nil) --- Corona 
  
- --- Verlassen des Vacare
+ -- Verlassen des Vacare
  create_npc("Vacare", 1, 103 * TILESIZE, 139 * TILESIZE + 16, vacare_talk, nil) --- Vacare
 end)
 
@@ -77,8 +77,8 @@ function ancoise_talk(npc, ch)
       do_message(npc, ch, "Na soll ich dir über den Zaun helfen?")
 	
 	  while true do 
-		  local v = do_choice(npc, ch, "Ja.",
-								     "Nein.")
+		  local v = do_choice(npc, ch, "Ja.", 
+		                               "Nein.")
 								   
 		  if v == 1 then
 			  mana.chr_set_quest(ch, "vacare_fence", 1)
@@ -86,7 +86,9 @@ function ancoise_talk(npc, ch)
 			  do_message(npc, ch, "Bitteschön.")
 			  break;
 	      elseif v == 2 then
-			  do_message(npc, ch, "Dann ebend nicht.")
+			  do_message(npc, ch, invertika.get_random_element("Dann halt nicht.",
+	  "Wer nicht will der hat schon.",
+	  "Dann kommst du halt später wieder."))
 			  break;
 		  end
 	  end
