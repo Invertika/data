@@ -139,11 +139,6 @@ function jane_talk(npc, ch)
 end
 
 function bruce_talk(npc, ch)
-  --[[ Reset quest and give Madenschleim and Skorpion Stachel for debugging purposes
-  mana.chr_inv_change(ch, 40005, 20)
-  mana.chr_inv_change(ch, 40004, 50)
-  mana.chr_set_quest(ch, "selphi_timlet_bruce_quest", 0)
-  --]]
   -- quest init
   if tonumber(get_quest_var(ch, "selphi_timlet_bruce_quest")) == nil then
     mana.chr_set_quest(ch, "selphi_timlet_bruce_quest", 0)

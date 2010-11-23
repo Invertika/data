@@ -51,7 +51,7 @@ atinit(function()
 end)
 
 function zelan_talk(npc, ch)
-    do_message(npc, ch, "Wo du bist? Im Vacare. Jeder neue kommt hier her bevor es raus geht in die große Welt. Also pass auf dich auf.")
+    do_message(npc, ch, "Du möchtest wissen wo du bist? Das hier ist das Vacare. Jeder neue kommt hier her bevor es raus geht in die große Welt. Also pass auf dich auf.")
 	do_npc_close(npc, ch)
 end
 
@@ -100,31 +100,32 @@ end
 
 function kolbert_talk(npc, ch)
 	if (get_quest_var(ch, "vacare_first_weapon")=="") then
-      do_message(npc, ch, "Du willst kämpfen? Nun gut zum Kämpfen benötigtst du erst einmal eine Waffe.")
+      do_message(npc, ch, "Du willst kämpfen? Nun gut zum Kämpfen benötigst du erst einmal eine Waffe.")
       mana.chr_inv_change(ch, 10001, 1)
-      do_message(npc, ch, "So hier hast du einen kleinen Dolch. Nun gehe in das Inventory und rüste ihn mittels Equip aus.")
-	  do_message(npc, ch, "Nun begib dich in die Nähe eines Gegners und drücke a. Dadurch wird der Gegner anvisiert.")
+      do_message(npc, ch, "So hier hast du einen kleinen Dolch. Nun gehe in das Inventar und rüste ihn aus.")
+	  do_message(npc, ch, "Anschließend begib dich in die Nähe eines Gegners und drücke A. Dadurch wird der Gegner anvisiert.")
 	  do_message(npc, ch, "Nun musst du in seiner Nähe die Strg Taste drücken und schon greifst du ihn an.")
+	  do_message(npc, ch, "Du kannst ihn aber auch nur mittels der X Taste angreifen.")
 	  do_message(npc, ch, "Viel Erfolg.")
       mana.chr_set_quest(ch, "vacare_first_weapon", 1)
 	else
-	  do_message(npc, ch, "Du schon wieder. Du weist es doch. Zum Gegner, a drücken und  dann Strg um zum Angriff überzugehen. Einfach oder?")
-	  do_message(npc, ch, "Noch ein kleiner Tipp. Mit y kannst du Gegenstände aufheben die ein Gegner verliert.")
+	  do_message(npc, ch, "Du schon wieder. Du weist doch. Zum Gegner, A drücken und dann Strg um zum Angriff überzugehen. Oder einfach X drücken. Einfach oder?")
+	  do_message(npc, ch, "Noch ein kleiner Tipp. Mit Y kannst du Gegenstände aufheben die ein Gegner verliert.")
     end
 	do_npc_close(npc, ch)
 end
 
 function syntyche_talk(npc, ch)
-    do_message(npc, ch, "Ich sehe du bist fleißig am Kämpfen. Durch das Erlegen von Monstern bekommst du übringens Erfahrungspunkte. Wenn du genügend Erfahrungspunkte gesammelt hast, steigst du um ein Level auf. Mit jedem Level erhälst du dann sogenannte Charakter Points und Correction Points.")
+    do_message(npc, ch, "Ich sehe du bist fleißig am Kämpfen. Durch das Erlegen von Monstern bekommst du übrigens Erfahrungspunkte. Wenn du genügend Erfahrungspunkte gesammelt hast, steigst du um ein Level auf. Mit jedem Level erhälst du dann sogenannte Charakterpunkte und Korrekturpunkte.")
 
-    do_message(npc, ch, "Mit den Charakter Points kannst du deine Statuswerte verbessern. Dazu musst du auf Status klicken. Unten stehen deine vorhandene Anzahl an Charakter Points und Corrections Points. Nun kannst du diese Punkte auf die Statuswerte verteilen. Wenn du denkst das du bei der Verteilung der Punkte einen Fehler gemacht hast so kannst du die Änderung zurücknehmen, solange du genug Correction Points hast.")
+    do_message(npc, ch, "Mit den Charakterpunkten kannst du deine Statuswerte verbessern. Dazu musst du auf Status klicken. Unten stehen deine vorhandene Anzahl an Charakterpunkten und Korrekturpunkten. Nun kannst du diese Punkte auf die Statuswerte verteilen. Wenn du denkst das du bei der Verteilung der Punkte einen Fehler gemacht hast so kannst du die Änderung zurücknehmen, solange du genug Korrekturpunkte hast.")
 	
-    do_message(npc, ch, "Also achte darauf das du die du deine Character Points auf die richtigen Werte verteilst.")
+    do_message(npc, ch, "Also achte darauf das du die du deine Charakterpunkte auf die richtigen Werte verteilst.")
 	do_npc_close(npc, ch)
 end
 
 function valaia_talk(npc, ch)
-    do_message(npc, ch, "Du sieht aus wie jemand der Handeln möchte. Mmmh was gibt es denn da zu erzählen. Also es gibt zwei Arten zu handeln, einmal mit NPC's und einmal mit deinen Mitspielern.")
+    do_message(npc, ch, "Du sieht aus wie jemand der Handeln möchte. Mmmh was gibt es denn da zu erzählen. Also es gibt zwei Arten zu handeln, einmal mit NPCs und einmal mit deinen Mitspielern.")
 	
 	if (get_quest_var(ch, "vacare_first_trade")=="") then
       do_message(npc, ch, "Ich sehe du hast gar kein Geld bei dir. Nun ja ich will mal nicht so sein, nimm ein bischen von meinem.")
@@ -148,22 +149,22 @@ function valaia_talk(npc, ch)
 		end
 	end
 	
-    do_message(npc, ch, "Gut du hast genug gehandelt. Neben dem NPC Handel gibt es noch den Handel mit anderen Spielern. Um mit einem Spieler zu handeln klicke mit der rechten Maustaste auf ihn und wähle Trade.")
+    do_message(npc, ch, "Gut du hast genug gehandelt. Neben dem NPC Handel gibt es noch den Handel mit anderen Spielern. Um mit einem Spieler zu handeln klicke mit der rechten Maustaste auf ihn und wähle Handeln aus dem Menü aus.")
 	
-    do_message(npc, ch, "Daraufhin öffnet sich ein Fenster. Zusätzlich solltest du das Inventory Fenster öffnen. Wähle nun ein Item im Inventory Fenster aus und klicke im Trade Fenster auf Add. Dadurch wird das Item dem Handel hinzugefügt. Wenn du denn Handel beenden möchtest so klicke auf Propose und dann auf Confirm. Der Handel ist damit abgeschlossen.")
+    do_message(npc, ch, "Daraufhin öffnet sich ein Fenster. Zusätzlich solltest du das Inventarfenster öffnen. Wähle nun ein Item im aus und drücke im Handelsfenster auf Hinzufügen. Dadurch wird das Item dem Handel hinzugefügt. Wenn du denn Handel beenden möchtest so klicke auf Vorschlagen und dann auf Bestätigen. Der Handel ist damit abgeschlossen.")
 	
     do_message(npc, ch, "Ja das wars auch schon zum Thema Handel.")
 	do_npc_close(npc, ch)
 end
 
 function asam_talk(npc, ch)
-    do_message(npc, ch, "Die erste Devise von Invertika ist, das es so wenige Regeln wie möglich geben soll. Ganz einfach aus dem Grund das ich der Meinung bin das jede Regel doch eine gewisse Einschränkung darstellt. Doch gibt es einige Empfehlungen: ")
+    do_message(npc, ch, "Die erste Devise von Invertika ist, das es so wenige Regeln wie möglich geben soll. Ganz einfach aus dem Grund das wir der Meinung sind das jede Regel doch eine gewisse Einschränkung darstellt. Doch gibt es einige Empfehlungen: ")
 
 	do_message(npc, ch, "Nummero 1: Seit nett zueinander.")
 	
 	do_message(npc, ch, "Nummero 2: Kein SPAM!")
 	
-	do_message(npc, ch, "Nummero 3: Die Spielsprache ist Deutsch. Dies bezieht sich nur auf den offnen Chat (im Fenster General). In Gildenchats darf natürlich jede andere Sprache gesprochen werden.")
+	do_message(npc, ch, "Nummero 3: Die Spielsprache ist Deutsch. Dies bezieht sich nur auf den offnen Chat (im Fenster Allgemein). In Gildenchats darf natürlich jede andere Sprache gesprochen werden.")
 	
     do_message(npc, ch, "Wie gesagt sind dies Empfehlungen, aber wer weiß was die anderen Spieler machen wenn sie euch beim Spammen erwischen :) Ich wünsche dir viel Spaß.")
 	do_npc_close(npc, ch)
