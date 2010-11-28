@@ -22,6 +22,9 @@ dofile("data/scripts/ivklibs/warp.lua")
 atinit(function()
  create_inter_map_warp_trigger(19002, 19002, 19002, 19002) --- Intermap warp
  
+ --- Erster Start
+ mana.trigger_create(115 * TILESIZE, 15 * TILESIZE, 50 * TILESIZE, 23 * TILESIZE, "firststart_trigger", 0, true) --- Erste Meldung
+ 
  -- Zelan
  create_npc("Zelan", 58, 132 * TILESIZE + 16, 21 * TILESIZE + 16, zelan_talk, nil) --- Zelan
  
@@ -49,6 +52,21 @@ atinit(function()
  -- Verlassen des Vacare
  create_npc("Vacare", 1, 103 * TILESIZE, 139 * TILESIZE + 16, vacare_talk, nil) --- Vacare
 end)
+
+--- Erster Start
+ function firststart_trigger(ch, id)
+     ---local first = get_quest_var(ch, "vacare_first_start")
+        
+     ---if first=="" then
+     ---mana.chatmessage(ch, "ch id:."..tostring(ch))
+     mana.chatmessage(ch, "Willkommen bei Invertika.")
+     mana.chatmessage(ch, "Zum Bewegen benutze bitte die Cursortasten.")
+     mana.chatmessage(ch, "Um mit NPCs zu reden, klicke mit der rechten Maustaste auf sie.") 
+         mana.chatmessage(ch, "Das Spiel kann auch mit der Maus gesteuert werden.") 
+         mana.chatmessage(ch, "Folge dem Weg und du wirst das Vacare finden.") 
+         ---mana.chr_set_quest(ch, "vacare_first_start", 1)
+     ---end
+ end
 
 function zelan_talk(npc, ch)
     do_message(npc, ch, "Du möchtest wissen wo du bist? Das hier ist das Vacare. Jeder neue kommt hier her bevor es raus geht in die große Welt. Also pass auf dich auf.")
