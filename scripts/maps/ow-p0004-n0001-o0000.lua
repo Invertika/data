@@ -87,8 +87,8 @@ atinit(function()
   create_npc("Donovan", 29, 75 * TILESIZE + 16, 76 * TILESIZE + 16, seller.seller_talk, nil) --- Verkäufer
  
  --- Wachen am Tor
- wache = create_npc("Stadtwache", 123, 84 * TILESIZE + 16, 187 * TILESIZE + 16, stadtwache_talk, nil) --- Stadtwache
- create_npc("Stadtwache", 123, 87 * TILESIZE + 16, 187 * TILESIZE + 16, stadtwache_talk, nil) --- Stadtwache
+ wache = create_npc("Stadtwache", 26, 84 * TILESIZE + 16, 187 * TILESIZE + 16, stadtwache_talk, nil) --- Stadtwache
+ create_npc("Stadtwache", 26, 87 * TILESIZE + 16, 187 * TILESIZE + 16, stadtwache_talk, nil) --- Stadtwache
  mana.trigger_create(85 * TILESIZE, 186 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "wache_trigger", 1, true) --- Trigger Tor
  
  --- Grabsteine
