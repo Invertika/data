@@ -178,7 +178,7 @@ end
 function asam_talk(npc, ch)
     do_message(npc, ch, "Die erste Devise von Invertika ist, das es so wenige Regeln wie möglich geben soll. Ganz einfach aus dem Grund das wir der Meinung sind das jede Regel doch eine gewisse Einschränkung darstellt. Doch gibt es einige Empfehlungen: ")
 
-	do_message(npc, ch, "Nummero 1: Seit nett zueinander.")
+	do_message(npc, ch, "Nummero 1: Seid nett zueinander.")
 	
 	do_message(npc, ch, "Nummero 2: Kein SPAM!")
 	
