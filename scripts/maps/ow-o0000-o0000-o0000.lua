@@ -141,9 +141,10 @@ function weihnachtsmann_talk(npc, ch)
 end
 
 function rentier_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Mmmmmpppfh",
-	    "Bsssss",
-	    "Schnauf"))
+	do_message(npc, ch, invertika.get_random_element("Mmmmmpppfh.",
+	    "Bsssss.",
+	    "Brrrrrr.",
+	    "Schnauf."))
 	do_npc_close(npc, ch)
 end
 
