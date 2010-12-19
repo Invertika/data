@@ -67,11 +67,83 @@ atinit(function()
  --- Trigger für die Überwachung des Torbereiches
  mana.trigger_create(145 * TILESIZE, 17 * TILESIZE, 5 * TILESIZE, 52 * TILESIZE, "wache_trigger", 1, true) --- Trigger Tor 1
  mana.trigger_create(183 * TILESIZE, 17 * TILESIZE, 5 * TILESIZE, 52 * TILESIZE, "wache_trigger", 2, true) --- Trigger Tor 2
+ 
+ ---Weihnachten
+ create_npc("Rentier", 74, 177 * TILESIZE + 16, 185 * TILESIZE + 16, rentier_talk, nil) --- Rentier
+ create_npc("Weihnachtsmann", 9, 184 * TILESIZE + 16, 185 * TILESIZE + 16, weihnachtsmann_talk, nil) --- Weihnachtsman
 end)
 
 --Zeitabhägige Events
+-- Weihnachten
 function weihnachtsmann_talk(npc, ch)
-	do_message(npc, ch, "Ich bin der Weihnachtsmann.")
+	-- quest init
+	if tonumber(get_quest_var(ch, "selphi_timlet_santa_clause")) == nil then
+	  mana.chr_set_quest(ch, "selphi_timlet_santa_clause", 0)
+	end
+  
+	-- quest get/set functions
+	function get_qstatus() return tonumber(get_quest_var(ch, "selphi_timlet_santa_clause")) end
+	function set_qstatus(x) mana.chr_set_quest(ch, "selphi_timlet_santa_clause", tonumber(x)) end
+  
+	if get_qstatus()==0 then
+	  do_message(npc, ch, "Ho Ho Ho. Ich bin der Weihnachtsmann. Meine Geschenke sind schon wieder überall verteilt. Diese Weihnachtsschleime rauben mir den letzten Nerv. Magst du mir helfen sie wieder einzusammeln?")
+	
+	  while true do 
+	  	  local v = do_choice(npc, ch, "Ja.", "Nein.")
+								   
+		  if v == 1 then
+			do_message(npc, ch, "Das ist super ich denke so 25 Stück sollten mir reichen. Ich warte dann hier auf dich.")
+			set_qstatus(1)
+			break
+		  elseif v == 2 then
+			do_message(npc, ch, "Schade, dann halt nicht...")
+			break
+		  end
+	  end
+	elseif get_qstatus()==1 then
+	  local count13 = mana.chr_inv_count(ch, 40013)
+	  local count14 = mana.chr_inv_count(ch, 40014)
+	  local count15 = mana.chr_inv_count(ch, 40015)
+	  
+	  local countAll=count13+count14+count15;
+	  
+	  if countAll >= 25 then
+	    --Nachricht
+	    do_message(npc, ch, "Du hast es wirklich geschafft. Ich danke dir. Na das schreit ja geradezu nach einer Belohnung. Da habe ich doch einige Sachen für dich.")
+	    
+	    --Weihnachtsgeschenke entfernen
+	    mana.chr_inv_change(ch, 40013, -count13)
+	    mana.chr_inv_change(ch, 40014, -count14)
+	    mana.chr_inv_change(ch, 40015, -count15)
+	    
+	    --Belohnung
+	    mana.chr_inv_change(ch, 20010, 1) --Santa Clause Mütze
+	    mana.chr_inv_change(ch, 30021, 10) --Zuckerstange
+	    mana.chr_inv_change(ch, 30022, 10) --Weihnachtskuchen
+	    mana.chr_inv_change(ch, 30023, 10) --Lebkuchenmänchen
+	    mana.chr_inv_change(ch, 40020, 1) --5000 Aki Scheck
+	    set_qstatus(2)
+	  else
+	    do_message(npc, ch, invertika.get_random_element("Na ein paar Geschenke fehlen da noch.",
+	     "Ich brauche mindestens 25 Geschenke.",
+	     "Ein paar Weihnachtsschleime wirst du schon noch erledigen müssen."))
+	  end
+	elseif get_qstatus()==2 then
+	  do_message(npc, ch, invertika.get_random_element("Danke für deine Hilfe. Wir sehen uns dann nächstes Jahr wieder.",
+	  "So alle Geschenke wieder sicher verstaut.",
+	  "Schön das du es den Weihnachtsschleimen mal gezeigt hast.",
+	  "Nun habe ich für dieses Jahr wieder meine Ruhe.",
+	  "Jetzt muss ich die Geschenke nur noch verteilen.",
+	  "Danke für deine großartige Hilfe."))
+	end
+	
+	do_npc_close(npc, ch)
+end
+
+function rentier_talk(npc, ch)
+	do_message(npc, ch, invertika.get_random_element("Mmmmmpppfh",
+	    "Bsssss",
+	    "Schnauf"))
 	do_npc_close(npc, ch)
 end
 
