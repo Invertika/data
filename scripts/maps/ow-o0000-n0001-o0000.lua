@@ -15,9 +15,13 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
+require "scripts/ivklibs/sign"
 
 dofile("data/scripts/ivklibs/warp.lua")
 
 atinit(function()
- create_inter_map_warp_trigger(61, 67, 57, 1) --- Intermap warp
+  create_inter_map_warp_trigger(61, 67, 57, 1) --- Intermap warp
+  sign_entrance = "Selphie Timlet"
+  sign.create_sign(110, 11, sign_entrance) --- Schild Ortseingang
+  sign.create_sign(118, 11, sign_entrance) --- Schild Ortseingang
 end)
