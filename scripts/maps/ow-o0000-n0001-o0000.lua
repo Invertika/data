@@ -24,4 +24,9 @@ atinit(function()
   sign_entrance = "Selphie Timlet"
   sign.create_sign(110, 11, sign_entrance) --- Schild Ortseingang
   sign.create_sign(118, 11, sign_entrance) --- Schild Ortseingang
+  sign_west = "<-- Roststock 15 km"
+  sign.create_sign(119, 65, sign_west)
+  sign.create_sign(52, 67, sign_west)
+  sign.create_sign(45, 40, sign_west)
+  sign.create_sign(12, 67, sign_west)
 end)

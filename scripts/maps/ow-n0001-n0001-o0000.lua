@@ -15,9 +15,16 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
+require "scripts/ivklibs/sign"
 
 dofile("data/scripts/ivklibs/warp.lua")
 
 atinit(function()
- create_inter_map_warp_trigger(6, 56, 2, 12) --- Intermap warp
+  create_inter_map_warp_trigger(6, 56, 2, 12) --- Intermap warp
+  sign_horiz = "<-- Roststock 10 km\nSelphie Timlet 5km -->"
+  sign.create_sign(173, 68, sign_horiz)
+  sign.create_sign(126, 66, sign_horiz)
+  sign.create_sign(79, 64, sign_horiz)
+  sign.create_sign(48, 74, sign_horiz)
+  sign.create_sign(13, 76, sign_horiz)
 end)

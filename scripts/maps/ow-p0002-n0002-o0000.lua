@@ -15,9 +15,11 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
+require "scripts/ivklibs/sign"
 
 dofile("data/scripts/ivklibs/warp.lua")
 
 atinit(function()
- create_inter_map_warp_trigger(78, 90, 80, 68) --- Intermap warp
+  create_inter_map_warp_trigger(78, 90, 80, 68) --- Intermap warp
+  sign.create_sign(147, 79, "Denkmal des großen Fehlerbehebers")
 end)

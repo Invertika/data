@@ -16,10 +16,17 @@
 
 require "scripts/lua/npclib"
 require "scripts/ivklibs/nethek"
+require "scripts/ivklibs/sign"
 
 dofile("data/scripts/ivklibs/warp.lua")
 
 atinit(function()
- create_inter_map_warp_trigger(28, 12, 24, 34) --- Intermap warp
- nethek.create_netheksaeule(96 * TILESIZE, 102 * TILESIZE + 16) --- Netheksäule
+  create_inter_map_warp_trigger(28, 12, 24, 34) --- Intermap warp
+  nethek.create_netheksaeule(96 * TILESIZE, 102 * TILESIZE + 16) --- Netheksäule
+  sign_well = "Benutzung des Brunnens auf eigene Gefahr\n\nEs ist strengstens verboten, Handtücher in den Brunnen zu werfen! Ein solches Vergehen wird mit harter Strafe geahndet."
+  sign.create_sign(70, 103, sign_well)
+  
+  --- TODO: Geschichte der Stadt auf das Schild schreiben
+  sign_history = "Roststock"
+  sign.create_sign(97, 103, sign_history)
 end)
