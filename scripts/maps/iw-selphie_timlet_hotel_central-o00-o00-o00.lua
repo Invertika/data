@@ -76,8 +76,9 @@ function rezeptionist_talk(npc, ch)
   elseif get_qstatus() == 5 then
 		if mana.chr_inv_count(ch, 30006) >= 10 and mana.chr_inv_count(ch, 30007) >= 10 then
 			mana.chr_inv_change(ch, 30006, -10, 30007, -10) ---Bier, Milch
-			do_message(npc, ch, "Gut gemacht! Nimm dieses Baumwollshirt als Dank!")
+			do_message(npc, ch, "Gut gemacht! Nimm dieses Baumwollshirt und diesen Dolch als Dank!")
 			mana.chr_inv_change(ch, 20001, 1) ---Baumwollshirt
+			mana.chr_inv_change(ch, 10002, 1) ---Dolch
 			set_qstatus(6)
 		else
 			do_message(npc, ch, "Bring mir 10 Bier und 10 Milch!")
