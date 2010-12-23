@@ -21,9 +21,11 @@ dofile("data/scripts/ivklibs/warp.lua")
 
 atinit(function()
   create_inter_map_warp_trigger(61, 67, 57, 1) --- Intermap warp
-  sign_entrance = "Selphie Timlet"
+  
+  sign_entrance = "Selphi Timlet"
   sign.create_sign(110, 11, sign_entrance) --- Schild Ortseingang
   sign.create_sign(118, 11, sign_entrance) --- Schild Ortseingang
+  
   sign_west = "<-- Roststock 15 km"
   sign.create_sign(119, 65, sign_west)
   sign.create_sign(52, 67, sign_west)
