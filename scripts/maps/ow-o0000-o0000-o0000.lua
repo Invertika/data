@@ -71,9 +71,29 @@ atinit(function()
  ---Weihnachten
  --create_npc("Rentier", 74, 177 * TILESIZE + 16, 185 * TILESIZE + 16, rentier_talk, nil) --- Rentier
  --create_npc("Weihnachtsmann", 9, 184 * TILESIZE + 16, 185 * TILESIZE + 16, weihnachtsmann_talk, nil) --- Weihnachtsman
+ 
+ ---Neujahr
+ create_npc("Feuerwerker", 139, 177 * TILESIZE + 16, 185 * TILESIZE + 16, fireworker_talk, npclib.walkaround_small)
 end)
 
 --Zeitabhägige Events
+-- Silvester
+function fireworker_talk(npc, ch)
+  do_message(npc, ch, "Willst du ein wenig Feuerwerk sehen?")
+  local answer = do_choice(npc, ch, "Juhuu! Feuerwerk!", "Nee, danke.")
+  if answer == 1 then
+    local x = mana.posX(npc)
+    local y = mana.posY(npc)
+      -- Erzeuge die ersten 25 Partikeleffekte (id 0 - 25)
+      for c = 0, 25 do
+        schedule_in (c, function()
+          mana.effect_create(c, x + math.random(-200, 200), y + math.random(-200, 200))
+        end)
+      end
+  end
+  do_npc_close(npc, ch)
+end
+
 -- Weihnachten
 function weihnachtsmann_talk(npc, ch)
 	-- quest init
