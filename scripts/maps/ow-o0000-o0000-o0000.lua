@@ -84,10 +84,14 @@ function fireworker_talk(npc, ch)
   if answer == 1 then
     local x = mana.posX(npc)
     local y = mana.posY(npc)
-      -- Erzeuge die ersten 25 Partikeleffekte (id 0 - 25)
       for c = 0, 25 do
         schedule_in (c, function()
-          mana.effect_create(c, x + math.random(-200, 200), y + math.random(-200, 200))
+          mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+          mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+          mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+          mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+          mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+          mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
         end)
       end
   end
