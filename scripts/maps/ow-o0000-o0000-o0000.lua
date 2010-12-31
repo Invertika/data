@@ -217,7 +217,7 @@ function julia_talk(npc, ch)
 					     "Nichts. Danke.")
 								   
 		if v == 1 then
-			mana.npc_trade(npc, ch, false, { {10001, 10, 20}, {10002, 1495, 20}, {20001, 10, 30}, {20002, 10, 50} })
+			mana.npc_trade(npc, ch, false, { {10001, 10, 20}, {10002, 10, 1495}, {20001, 10, 30}, {20002, 10, 50} })
 			break
 		elseif v == 2 then
 			mana.npc_trade(npc, ch, true)
