@@ -5,7 +5,7 @@
 -- anderer Dinge.                                                               --
 --                                                                              --
 ----------------------------------------------------------------------------------
---  Copyright 2008 The Invertika Development Team                               --
+--  Copyright 2008 - 2010 The Invertika Development Team                        --
 --                                                                              --
 --  This file is part of Invertika.                                             --
 --                                                                              --
@@ -17,5 +17,27 @@
 require "scripts/lua/npclib"
 
 atinit(function()
- ---create_npc("Banker", 122, 180 * TILESIZE + 16, 160 * TILESIZE + 16, banker.banker_talk, nil) --- Banker (Debug)
+ create_npc("Vertox", 29, 28 * TILESIZE + 16, 24 * TILESIZE + 16, vertox_talk, nil) --- Vertox -> Verkauft Sprengstoff
 end)
+
+function vertox_talk(npc, ch)
+	do_message(npc, ch, "Du benötigst Sprengstoff? Da bist du hier genau richtig!")
+	
+	while true do 
+		local v = do_choice(npc, ch, "Kaufen.",
+					     "Verkaufen.",
+					     "Nichts. Danke.")
+								   
+		if v == 1 then
+			mana.npc_trade(npc, ch, false, { {40025, 650, 20}})
+			break
+		elseif v == 2 then
+			mana.npc_trade(npc, ch, true)
+			break
+		elseif v == 3 then
+			do_message(npc, ch, "Bis zum nächsten Mal!")
+			break
+		end
+	end
+	do_npc_close(npc, ch)
+end
