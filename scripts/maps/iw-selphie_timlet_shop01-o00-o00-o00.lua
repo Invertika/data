@@ -17,7 +17,7 @@
 require "scripts/lua/npclib"
 
 atinit(function()
- create_npc("Vertox", 29, 28 * TILESIZE + 16, 24 * TILESIZE + 16, vertox_talk, nil) --- Vertox -> Verkauft Sprengstoff
+ create_npc("Vertox", 29, 28 * TILESIZE + 16, 25 * TILESIZE + 16, vertox_talk, nil) --- Vertox -> Verkauft Sprengstoff
 end)
 
 function vertox_talk(npc, ch)
