@@ -34,7 +34,7 @@ function tresor_talk(npc, ch)
 	  do_message(npc, ch, "Hinter dem Bild befindet sich etwas. Mal schauen. Oh das ist ein Tresor. Mmm da schaue ich mal hinein. Bloß wie bekomme ich ihn auf?")
 	
 	  while true do 
-	  	  local v = do_choice(npc, ch, "Dynamit benutzen", "Nett anklopfen", "Zweimal links, einmal rechts, dreimal diagonal, koxiales Relais + Solantriebskala Stufe 10 x Pi, Kartoffel und Schnitt-Lauch im Sinn...", "42", "Die Zahlenkombination auf der Rückseite des Bildes benutzen")
+	  	  local v = do_choice(npc, ch, "Dynamit benutzen", "Nett anklopfen", "Zweimal links, einmal rechts, dreimal diagonal...", "42", "Die Zahlenkombination auf der Rückseite des Bildes benutzen")
 								   
 		  if v == 1 then
 			local countDynamite = mana.chr_inv_count(ch, 40025)
