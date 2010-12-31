@@ -37,9 +37,15 @@ function tresor_talk(npc, ch)
 	  	  local v = do_choice(npc, ch, "Dynamit benutzen", "Nett anklopfen", "Zweimal links, einmal rechts, dreimal diagonal, koxiales Relais + Solantriebskala Stufe 10 x Pi, Kartoffel und Schnitt-Lauch im Sinn...", "42", "Die Zahlenkombination auf der Rückseite des Bildes benutzen")
 								   
 		  if v == 1 then
-			do_message(npc, ch, "Ähm ich habe gar kein Dynamit.")
-			--TODO Dynamit als Item einbauen
-			--set_qstatus(2)
+			local countDynamite = mana.chr_inv_count(ch, 40025)
+			if countDynamite == 0 then
+			  do_message(npc, ch, "Ähm ich habe gar kein Dynamit.")
+			else
+			  mana.chr_inv_change(ch, 40025, -1)
+			  mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+			  set_qstatus(2)
+			end
+			
 			break
 		  elseif v == 2 then
 			do_message(npc, ch, "Nein, bin gerade beschäftigt. Inventur. Bitte kommen sie während unserer Servicezeiten nochmal.")
