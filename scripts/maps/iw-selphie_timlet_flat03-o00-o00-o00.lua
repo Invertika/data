@@ -43,6 +43,7 @@ function tresor_talk(npc, ch)
 			else
 			  mana.chr_inv_change(ch, 40025, -1)
 			  mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+			  mana.being_damage(ch, 200, 100, 100, 0, 0)
 			  set_qstatus(2)
 			end
 			
