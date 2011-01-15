@@ -23,8 +23,20 @@ atinit(function()
 end)
 
 function luor_talk(npc, ch)
-    do_message(npc, ch, "Sei gegrüßt, ich bin Luor, Herscher über Selphi Timlet, Bewahrer des Heiligen Kelches von Rixx. Wie lautet deine Bitte? - Obwohl lieber nicht, im Moment steht es mir nicht nach einer Audienz.")
-	do_npc_close(npc, ch)
+    if mana.chr_inv_count(ch, 40027) == 1 then
+        do_message(npc, ch, "Ein Brief? Gib her!")
+        mana.chr_inv_change(ch, 40027, -1)
+        do_message(npc, ch, "*Grübel* Das sind schlechte Neuigkeiten...")
+        do_message(npc, ch, "Danke, dass du mir den Brief gebracht hast. Nimm diese VIP-Eintrittskarte für die Arena als Dank!")
+        mana.chr_inv_change(ch, 40026, 1)
+        mana.chr_set_quest(ch, "selphi_timlet_chodar_quest", 4)
+    elseif tonumber(get_quest_var(ch, "selphi_timlet_chodar_quest")) >= 4 then
+        do_message(npc, ch, "Danke für den Brief aber jetzt muss ich arbeiten!")
+    else
+        do_message(npc, ch, "Sei gegrüßt, ich bin Luor, Herscher über Selphi Timlet, Bewahrer des Heiligen Kelches von Rixx. Wie lautet deine Bitte? - Obwohl lieber nicht, im Moment steht es mir nicht nach einer Audienz.")
+
+    end
+    do_npc_close(npc, ch)
 end
 
 function krenel_talk(npc, ch)
