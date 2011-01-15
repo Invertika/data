@@ -10,7 +10,7 @@
 -- create_npc("Barber 2", 100, 52 * TILESIZE + 16, 38 * TILESIZE + 16,          --
 -- npclib.talk(Barber, {14, 15, 16}, {}), nil)                                  --
 ----------------------------------------------------------------------------------
---  Copyright 2009 The Invertika Development Team                               --
+--  Copyright 2009-2011 The Invertika Development Team                          --
 --                                                                              --
 --  This file is part of Invertika.                                             --
 --                                                                              --
@@ -27,6 +27,8 @@
 --  Software Foundation; either version 2 of the License, or any later version. --
 ----------------------------------------------------------------------------------
 
+--Frisörfunktion -> Manasource
+
 local barber_styles = {"Flat ponytail", "Bowl cut","Combed back", "Emo", "Mohawk",
         "Pompadour", "Center parting/Short and slick", "Long and slick", "Short and curly",
         "Pigtails", "Long and curly", "Parted", "Perky ponytail", "Wave", "Mane", "Bun"}
@@ -34,7 +36,7 @@ local barber_styles = {"Flat ponytail", "Bowl cut","Combed back", "Emo", "Mohawk
 local barber_colors = {"Brunette", "Green", "Dark red", "Light purple", "Gray", "Blonde",
         "Teal", "Light red", "Blue", "Dark purple", "Black"}
 
-function Barber(npc, ch, data)
+function barber(npc, ch, data)
     local style_ids = nil
     local color_ids = nil
 
@@ -154,5 +156,110 @@ function Barber(npc, ch, data)
 
     -- Let's close up
     do_message(npc, ch, "Thank you. Come again!")
+    do_npc_close(npc, ch)
+end
+
+-- Frisörfunktion -> Invertika
+function barber_talk(npc, ch)
+    do_message(npc, ch, "Guten Tag da drüben! Was darfs sein? Neuen Haarschnitt? Oder nur die Farbe ändern?")
+    while true do
+        local v = do_choice(npc, ch, "Neuen Haarschnitt bitte!", "Einmal Färben!", "Nee, Danke mein Haarschnitt gefällt mir im Moment!")
+        if v == 1 then
+            do_message(npc, ch, "Was wünscht der Herr?")
+            while true do
+                local v2 = do_choice(npc, ch, "#1", "Pilzkopf", "#3", "Emo", "Irokese", "Schmalzlocke",
+                                              "#7", "lang und glatt", "kurze Locken", "Zöpfe",
+                                              "lange Locken", "#12", "#13", "Waves", "Mähne", "Dutt")
+                           
+                local costs = 0
+                if v2 == 1 then
+                    costs = 100
+                elseif v2 == 2 then
+                    costs = 101
+                elseif v2 == 3 then
+                    costs = 102
+                elseif v2 == 4 then
+                    costs = 103
+                elseif v2 == 5 then
+                    costs = 104
+                elseif v2 == 6 then
+                    costs = 105
+                elseif v2 == 7 then
+                    costs = 106
+                elseif v2 == 8 then
+                    costs = 107
+                elseif v2 == 9 then
+                    costs = 108
+                elseif v2 == 10 then
+                    costs = 109
+                elseif v2 == 11 then
+                    costs = 110
+                elseif v2 == 12 then
+                    costs = 111
+                elseif v2 == 13 then
+                    costs = 112
+                elseif v2 == 14 then
+                    costs = 113
+                elseif v2 == 15 then
+                    costs = 114
+                elseif v2 == 16 then
+                    costs = 115
+                end
+                
+                if costs ~= 0 then
+                    do_message(npc, ch, string.format("Das würde %s Aki kosten! Soll ich dir deine Haare nun schneiden?", costs))
+                    while true do
+                        local v3 = do_choice(npc, ch, "Ja", "Nein")
+                        if v3 == 1 then
+                            if mana.chr_money(ch) >= costs then
+                                mana.chr_money_change(ch, -costs)
+                                mana.chr_set_hair_style(ch, v2)
+                                do_message(npc, ch, "Der neue Schnitt steht dir gut!")
+                            else
+                                do_message(npc, ch, "Du hast nicht genug Geld bei dir!")
+                            end
+                            break
+                        elseif v3 == 2 then
+                            do_message(npc, ch, "Auf Wiedersehen")
+                            break
+                        end
+                    end
+                    break
+                end
+            end
+            break
+        elseif v == 2 then
+            do_message(npc, ch, "Welche Farbe willst du?")
+            while true do
+                local v2 = do_choice(npc, ch, "Blond", "Grün", "Rot", "Violett", "Grau", "Gelb", "Blau", "Braun",
+                                               "hell Blau", "dunkel Violett", "Schwarz")
+                
+                do_message(npc, ch, v2)
+                if v2 >= 1 or v2 <= 11 then
+                    do_message(npc, ch, "Das Färben kostet 100 Aki!")
+                    while true do
+                        local v3 = do_choice(npc, ch, "Ok. Fang an!", "Nee, dann doch nicht")
+                        if v3 == 1 then
+                            if mana.chr_money(ch) >= 100 then
+                                mana.chr_money_change(ch, -100)
+                                mana.chr_set_hair_color(ch, v3 - 1)
+                            else
+                                do_message(npc, ch, "Du hast nicht genug Geld dabei!")
+                            end
+                            break
+                        elseif v3 == 2 then
+                            do_message(npc, ch, "Auf Wiedersehn!")
+                            break
+                        end
+                    end
+                    break
+                end
+            end
+            break
+        elseif v == 3 then
+            do_message(npc, ch, "Auf Wiedersehn!")
+            break
+        end
+    end
     do_npc_close(npc, ch)
 end
