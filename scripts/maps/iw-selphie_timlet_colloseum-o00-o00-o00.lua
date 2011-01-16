@@ -20,6 +20,7 @@ atinit(function()
  ---create_npc("Banker", 11, 180 * TILESIZE + 16, 160 * TILESIZE + 16, banker.banker_talk, nil) --- Banker (Debug)
  wache_rechts = create_npc("Wache", 25, 83 * TILESIZE + 16, 44 * TILESIZE + 16, wache_talk, nil) --- Wache rechts
  wache_links = create_npc("Wache", 25, 46 * TILESIZE + 16, 44 * TILESIZE + 16, wache_talk, nil) --- Wache links
+ create_npc("Estech", 109, 64 * TILESIZE + 16, 53 * TILESIZE + 16, estech_talk, nil) --- Estech (Chef des Colloseums)
 
  mana.trigger_create(79 * TILESIZE, 40 * TILESIZE, 4 * TILESIZE, 4 * TILESIZE, "wache_trigger", 1, true)
  mana.trigger_create(47 * TILESIZE, 40 * TILESIZE, 4 * TILESIZE, 4 * TILESIZE, "wache_trigger", 2, true)
@@ -51,4 +52,45 @@ function wache_trigger(ch, id)
             mana.chr_warp(ch, mana.get_map_id(), warp_x * TILESIZE, y)
         end
     end
+end
+
+function estech_talk(npc, ch)
+    if tonumber(get_quest_var(ch, "selphi_timlet_inard_training")) == nil then
+        mana.chr_set_quest(ch, "selphi_timlet_inard_training", 0)
+    end
+    function get_qstatus() return tonumber(get_quest_var(ch, "selphi_timlet_inard_training")) end
+    function set_qstatus(x) mana.chr_set_quest(ch, "selphi_timlet_inard_training", tonumber(x)) end
+    function get_feierabend() return tonumber(get_quest_var(ch, "selphi_timlet_orkana_feierabend")) end
+    function set_feierabend(x) mana.chr_set_quest(ch, "selphi_timlet_orkana_feierabend", tonumber(x)) end
+
+    if get_qstatus() == 2 then
+        do_message(npc, ch, "Ortana schickt dich? Er hat wieder vergessen wann er frei hat?")
+        set_feierabend(math.random(1, 3))
+        do_message(npc, ch, "Debug 1")
+        local zeit = nil
+        if get_feierabend() == 1 then
+            zeit = "10"
+        elseif get_feierabend() == 2 then
+            zeit = "15"
+        else
+            zeit = "20"
+        end
+        do_message(npc, ch, string.format("Sag ihm er darf heute schon um %s Uhr abhauen.", zeit))
+        set_qstatus(3)
+    elseif get_qstatus() == 3 then
+       local zeit = nil
+        if get_feierabend() == 1 then
+            zeit = "10"
+        elseif get_feierabend() == 2 then
+            zeit = "15"
+        else
+            zeit = "20"
+        end
+        do_message(npc, ch, string.format("Ist dein Gehirn schon genauso löcherig wie Ortanas? Sag ihm er darf um %s Uhr abhauen!", zeit))
+    else
+        do_message(npc, ch, invertika.get_random_element("Ich bin der Chef hier.",
+                                                         "Tut mir leid. Zur Zeit finden hier keine Spektakel statt.",
+                                                         "Ich muss mich grade um andere Sachen kümmern."))
+    end
+    do_npc_close(npc, ch)
 end

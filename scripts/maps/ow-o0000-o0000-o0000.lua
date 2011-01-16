@@ -409,15 +409,64 @@ function alex_talk(npc, ch)
 end
 
 function inard_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Der Chef der Palastwache vergibt die königlichen Passierscheine. Zumindestens behauptet Worel das.",
-	  "Ich mag den Innenhof, es ist so schön ruhig und man kann sich entspannen.",
-	  "Ich sollte mal wieder ein bisschen tranieren, schließlich gibt es da draußen eine Menge Monster.",
-	  "Überall Palmen und keine einzige Kokusnuss. Seltsam.",
-	  "Paradoxien und Kokusnüsse. Mmmmm darüber sollte ich nachdenken...",
-	  "Ich glaube ich habe eine Lösung für das Kokusnussproblem.",
-	  "Ich möchte wissen wo Worel hin wollte. Er ist nun schon eine Ewigkeit weg.",
-	  "Ich entspanne mich hier nur ein wenig."))
-	  do_npc_close(npc, ch)
+    -- quest init
+    if tonumber(get_quest_var(ch, "selphi_timlet_inard_training")) == nil then
+        mana.chr_set_quest(ch, "selphi_timlet_inard_training", 0)
+    end
+ 
+    -- quest get/set functions
+    function get_qstatus() return tonumber(get_quest_var(ch, "selphi_timlet_inard_training")) end
+    function set_qstatus(x) mana.chr_set_quest(ch, "selphi_timlet_inard_training", tonumber(x)) end
+
+    if get_qstatus() == 0 then
+        do_message(npc, ch, "Ahhh. Was ein herrlicher Tag und ich hänge hier im Innenhof rum! Wie gerne würde ich mal wieder eine Stunde trainieren!")
+        while true do
+            local v = do_choice(npc, ch, "Ich könnte mit dir trainieren.", "Auf Wiedersehen")
+            if v == 1 then
+                do_message(npc, ch, "Du? Dich kenne ich doch kaum. Aber du könntest zu Ortana laufen und ihn fragen wann er mal Zeit hat.")
+                while true do
+                    v2 = do_choice(npc, ch, "Mach ich!", "Da habe ich grade keine Zeit für.")
+                    if v2 == 1 then
+                        do_message(npc, ch, "Danke. Du findest ihn bei der Arena.")
+                        set_qstatus(1)
+                        break
+                    elseif v2 == 2 then
+                        do_message(npc, ch, "Schade.")
+                        break
+                    end
+                end
+                break
+            elseif v == 2 then
+                do_message(npc, ch, "Schönen Tag noch.")
+                break
+            end
+        end
+    elseif get_qstatus() == 1 then
+        do_message(npc, ch, invertika.get_random_element("Wolltest du nicht zu Ortana und ihn fragen ob er Lust hat mit mir zu trainieren?",
+                                                         "Ortana findest du an der Arena beim Besuchereingang."))
+    elseif get_qstatus() == 2 then
+        do_message(npc, ch, "Ortana weiß nicht wann er frei hat? Dann frag seinen Chef, Estech. Du findest ihn vermutlich im VIP-Bereich der Arena.")
+    elseif get_qstatus() == 3 then
+        do_message(npc, ch, "Das du weißt wann er frei hat bringt mir nicht viel. Geh zu ihn und frag ihn ob es ihm passt.")
+    elseif get_qstatus() == 4 then
+        function get_feierabend() return tonumber(get_quest_var(ch, "selphi_timlet_orkana_feierabend")) end
+        do_message(npc, ch, "Und wann hat er Zeit?")
+        while true do
+            local v = do_choice(npc, ch, "Um 10 Uhr.", "Um 15 Uhr.", "Um 20 Uhr.")
+            if v == get_feierabend() then
+                do_message(npc, ch, "Ok. Danke. Hier nimm diesen Ring als Dank")
+                mana.chr_inv_change(ch, 20005, 1)
+                set_qstatus(5)
+                break
+            else
+                do_message(npc, ch, "Das glaube ich nicht! Ortana hat nie zu dieser Zeit frei. Frag am besten nochmal nach.")
+                break
+            end
+        end
+    else
+        do_message(npc, ch, "Ach ja... Ich mach erstmal ne Pause.") -- TODO: Mehr Variationen?
+    end
+    do_npc_close(npc, ch)
 end
 
 function belart_talk(npc, ch)
@@ -441,13 +490,54 @@ function imangi_talk(npc, ch)
 end
 
 function ortana_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Ich kämpfe ab und zu in der Arena.",
-	  "Nichts ist so bedeutsam wie der nächste Kampf.",
-	  "Früher wollte ich Magier werden, aber naja so ist das Leben.",
-	  "Mein Schwert ist ein Unikat. Es stammt aus der Schmiede von Bolux van Nar.",
-	  "Schwerthieb auf Schwerthieb, und dann sah ich wie er seine Deckung fallen ließ und nutzte meine Chance. Ein toller Kampf war das.",
-	  "Das erste Mal sah ich das Colloseum vor 6 Jahren. Das war kurz nachdem es mich nach Selphi Timlet zog."))
-	  do_npc_close(npc, ch)
+    if tonumber(get_quest_var(ch, "selphi_timlet_inard_training")) == nil then
+        mana.chr_set_quest(ch, "selphi_timlet_inard_training", 0)
+    end
+    function get_qstatus() return tonumber(get_quest_var(ch, "selphi_timlet_inard_training")) end
+    function set_qstatus(x) mana.chr_set_quest(ch, "selphi_timlet_inard_training", tonumber(x)) end
+    function get_feierabend() return tonumber(get_quest_var(ch, "selphi_timlet_orkana_feierabend")) end
+
+    if get_qstatus() == 1 then
+        do_message(npc, ch, "Inard möchte mit mir trainieren? Hm. Sicher hab ich Lust. Ich weiß nur nicht wann ich frei kriege. Frag doch bitte mal meinen Chef Estech. Du findest ihn in der Arena, vermutlich im VIP-Bereich.")
+        set_qstatus(2)
+    elseif get_qstatus() == 2 then
+        do_message(npc, ch, "Frag meinen Chef Estech. Der kann dir sagen wann ich frei habe. Du findest ihn in der Arena.")
+    elseif get_qstatus() == 3 then
+        do_message(npc, ch, "Und was meinte er wann ich gehen dürfte?")
+        while true do
+            local v = do_choice(npc, ch, "Um 10 Uhr.", "Um 15 Uhr.", "Um 20 Uhr.")
+            if v == get_feierabend() then
+                do_message(npc, ch, "Danke. Sag Inard das ich komme.")
+                set_qstatus(4)
+                break
+            else
+                do_message(npc, ch, "Das glaube ich nicht! Ich habe nie zu dieser Zeit frei. Frag am besten nochmal nach.")
+                break
+            end
+        end
+    elseif get_qstatus() == 4 then
+        local zeit = nil
+        if get_feierabend() == 1 then
+            zeit = "10"
+        elseif get_feierabend() == 2 then
+            zeit = "15"
+        else
+            zeit = "20"
+        end
+        do_message(npc, ch, string.format("Wann war das nochmal? Ach genau %s Uhr.", zeit))
+    elseif get_qstatus() == 5 then
+        do_message(npc, ch, "Inard freut sich? Ich hoffe dieses Rumgerenne hat dir nicht zu viel ausgemacht.")
+        set_qstatus(6)
+    else
+        do_message(npc, ch, invertika.get_random_element("Ich kämpfe ab und zu in der Arena.",
+           "Nichts ist so bedeutsam wie der nächste Kampf.",
+           "Früher wollte ich Magier werden, aber naja so ist das Leben.",
+           "Mein Schwert ist ein Unikat. Es stammt aus der Schmiede von Bolux van Nar.",
+           "Schwerthieb auf Schwerthieb, und dann sah ich wie er seine Deckung fallen ließ und nutzte meine Chance. Ein toller Kampf war das.",
+           "Das erste Mal sah ich das Colloseum vor 6 Jahren. Das war kurz nachdem es mich nach Selphi Timlet zog."))
+    end
+
+    do_npc_close(npc, ch)
 end
 
 function tonver_talk(npc, ch)
