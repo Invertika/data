@@ -21,8 +21,6 @@ atinit(function()
  create_npc("Rezeptionist", 20, 44 * TILESIZE + 16, 57 * TILESIZE + 16, rezeptionist_talk, nil) --- Rezeptionist
 end)
 
-
-
 function rezeptionist_talk(npc, ch)
   quest_name="selphi_timlet_rezeptionist_quest"
   -- quest init
