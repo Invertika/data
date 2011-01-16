@@ -173,35 +173,35 @@ function barber2_talk(npc, ch)
                            
                 local costs = 0
                 if v2 == 1 then
-                    costs = 100
+                    costs = 80
                 elseif v2 == 2 then
-                    costs = 101
+                    costs = 239
                 elseif v2 == 3 then
-                    costs = 102
+                    costs = 124
                 elseif v2 == 4 then
-                    costs = 103
+                    costs = 200
                 elseif v2 == 5 then
                     costs = 104
                 elseif v2 == 6 then
-                    costs = 105
+                    costs = 176
                 elseif v2 == 7 then
-                    costs = 106
+                    costs = 199
                 elseif v2 == 8 then
                     costs = 107
                 elseif v2 == 9 then
-                    costs = 108
+                    costs = 80
                 elseif v2 == 10 then
-                    costs = 109
+                    costs = 190
                 elseif v2 == 11 then
                     costs = 110
                 elseif v2 == 12 then
-                    costs = 111
+                    costs = 472
                 elseif v2 == 13 then
-                    costs = 112
+                    costs = 90
                 elseif v2 == 14 then
-                    costs = 113
+                    costs = 240
                 elseif v2 == 15 then
-                    costs = 114
+                    costs = 300
                 elseif v2 == 16 then
                     costs = 115
                 end
