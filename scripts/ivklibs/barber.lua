@@ -163,13 +163,13 @@ end
 function barber2_talk(npc, ch)
     do_message(npc, ch, "Guten Tag da drüben! Was darfs sein? Neuen Haarschnitt? Oder nur die Farbe ändern?")
     while true do
-        local v = do_choice(npc, ch, "Neuen Haarschnitt bitte!", "Einmal Färben!", "Nee, Danke mein Haarschnitt gefällt mir im Moment!")
+        local v = do_choice(npc, ch, "Neuen Haarschnitt bitte!", "Einmal Färben!", "Nein danke.")
         if v == 1 then
             do_message(npc, ch, "Welcher Schnitt darf es denn sein?")
             while true do
-                local v2 = do_choice(npc, ch, "#1", "Pilzkopf", "#3", "Emo", "Irokese", "Schmalzlocke",
-                                              "#7", "lang und glatt", "kurze Locken", "Zöpfe",
-                                              "lange Locken", "#12", "#13", "Waves", "Mähne", "Dutt")
+                local v2 = do_choice(npc, ch, "Kurzer Zopf", "Pilzkopf", "Kurzhaar", "Emo", "Irokese", "Schmalzlocke",
+                                              "Scheitel", "lang und glatt", "kurze Locken", "Zöpfe",
+                                              "lange Locken", "Schulterlang", "Zopf", "Wellen", "Mähne", "Dutt")
                            
                 local costs = 0
                 if v2 == 1 then
