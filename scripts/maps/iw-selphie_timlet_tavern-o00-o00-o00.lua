@@ -31,14 +31,15 @@ function brecht_talk(npc, ch)
 end
 
 function chodar_talk(npc, ch)
-    if tonumber(get_quest_var(ch, "selphi_timlet_chodar_quest")) == nil then
-        mana.chr_set_quest(ch, "selphi_timlet_chodar_quest", 0)
+    if tonumber(get_quest_var(ch, "selphi_timlet_vipcard")) == nil then
+        mana.chr_set_quest(ch, "selphi_timlet_vipcard", 0)
     end
-    function get_qstatus() return tonumber(get_quest_var(ch, "selphi_timlet_chodar_quest")) end
-    function set_qstatus(x) mana.chr_set_quest(ch, "selphi_timlet_chodar_quest", tonumber(x)) end
+    
+    function get_qstatus() return tonumber(get_quest_var(ch, "selphi_timlet_vipcard")) end
+    function set_qstatus(x) mana.chr_set_quest(ch, "selphi_timlet_vipcard", tonumber(x)) end
     
     if get_qstatus() == 0 then
-        do_message(npc, ch, "Hey! DU! Steht nicht so dumm rum! Bring mir mein Bier!")
+        do_message(npc, ch, "Hey! Du! Steht nicht so dumm rum! Bring mir mein Bier!")
         set_qstatus(1)
     elseif get_qstatus() == 1 then
         count = mana.chr_inv_count(ch, 30006)
@@ -79,10 +80,10 @@ function chodar_talk(npc, ch)
         while true do
             v = do_choice(npc, ch, "Hm. Nein. Immer noch nicht.", "Ich habe Zugang zum Palast!")
             if v == 1 then
-                do_message(npc, ch, "Ahw. Komm wieder wenn du einen kennst!")
+                do_message(npc, ch, "Ah okay. Komm wieder wenn du einen kennst!")
                 break
             elseif v == 2 then
-                do_message(npc, ch, "Du? Was solls. Hier ist ein Brief. Gib ihm den König. Und Wehe dir! Ich weiß ob du ihn abgeliefert hast!")
+                do_message(npc, ch, "Du? Naja, egal. Hier ist ein Brief. Gib ihm den König. Und wehe dir! Ich weiß ob du ihn abgeliefert hast!")
                 mana.chr_inv_change(ch, 40027, 1)
                 set_qstatus(3)
                 break
