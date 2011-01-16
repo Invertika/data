@@ -36,7 +36,7 @@ local barber_styles = {"Flat ponytail", "Bowl cut","Combed back", "Emo", "Mohawk
 local barber_colors = {"Brunette", "Green", "Dark red", "Light purple", "Gray", "Blonde",
         "Teal", "Light red", "Blue", "Dark purple", "Black"}
 
-function barber(npc, ch, data)
+function barber1_talk(npc, ch, data)
     local style_ids = nil
     local color_ids = nil
 
@@ -160,7 +160,7 @@ function barber(npc, ch, data)
 end
 
 -- Frisörfunktion -> Invertika
-function barber_talk(npc, ch)
+function barber2_talk(npc, ch)
     do_message(npc, ch, "Guten Tag da drüben! Was darfs sein? Neuen Haarschnitt? Oder nur die Farbe ändern?")
     while true do
         local v = do_choice(npc, ch, "Neuen Haarschnitt bitte!", "Einmal Färben!", "Nee, Danke mein Haarschnitt gefällt mir im Moment!")
