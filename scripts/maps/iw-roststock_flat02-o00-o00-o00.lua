@@ -15,7 +15,19 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
+require "scripts/libs/invertika"
 
 atinit(function()
  ---create_npc("Banker", 122, 180 * TILESIZE + 16, 160 * TILESIZE + 16, banker.banker_talk, nil) --- Banker (Debug)
+ create_npc("Icero", 80, 29 * TILESIZE + 16, 29 * TILESIZE + 16, icero_talk, nil) --- Icero
 end)
+
+function icero_talk(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Es hat doch alles keinen Sinn mehr.",
+                                                     "Ich habe keine Lust mehr.",
+                                                     "*Gääääähn*",
+                                                     "Hier ist nix los.",
+                                                     "zZzzzzz. zZzzzzz. Wa? Hast du was gesagt?",
+                                                     "Ich glaube ich geh schlafen..."))
+    do_npc_close(npc, ch)
+end
