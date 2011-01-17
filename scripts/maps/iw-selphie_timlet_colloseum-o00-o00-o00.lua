@@ -5,7 +5,7 @@
 -- anderer Dinge.                                                               --
 --                                                                              --
 ----------------------------------------------------------------------------------
---  Copyright 2008 The Invertika Development Team                               --
+--  Copyright 2008-2011 The Invertika Development Team                          --
 --                                                                              --
 --  This file is part of Invertika.                                             --
 --                                                                              --
@@ -18,7 +18,6 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
- ---create_npc("Banker", 11, 180 * TILESIZE + 16, 160 * TILESIZE + 16, banker.banker_talk, nil) --- Banker (Debug)
  wache_rechts = create_npc("Wache", 25, 83 * TILESIZE + 16, 44 * TILESIZE + 16, wache_talk, nil) --- Wache rechts
  wache_links = create_npc("Wache", 25, 46 * TILESIZE + 16, 44 * TILESIZE + 16, wache_talk, nil) --- Wache links
  create_npc("Estech", 109, 64 * TILESIZE + 16, 53 * TILESIZE + 16, estech_talk, nil) --- Estech (Chef des Colloseums)
@@ -59,8 +58,8 @@ function wache_trigger(ch, id)
 end
 
 function estech_talk(npc, ch)
-    invertika.init_quest_as_int("selphi_timlet_inard_training");
-	invertika.init_quest_as_int("selphi_timlet_orkana_feierabend");
+    invertika.init_quest_status("selphi_timlet_inard_training");
+	invertika.init_quest_status("selphi_timlet_orkana_feierabend");
 	
     function get_qstatus() return tonumber(get_quest_var(ch, "selphi_timlet_inard_training")) end
     function set_qstatus(x) mana.chr_set_quest(ch, "selphi_timlet_inard_training", tonumber(x)) end

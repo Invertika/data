@@ -409,8 +409,8 @@ function alex_talk(npc, ch)
 end
 
 function inard_talk(npc, ch)
-    invertika.init_quest_as_int("selphi_timlet_inard_training");
-	invertika.init_quest_as_int("selphi_timlet_orkana_feierabend");
+    invertika.init_quest_status("selphi_timlet_inard_training");
+	invertika.init_quest_status("selphi_timlet_orkana_feierabend");
  
     -- quest get/set functions
     function get_qstatus() return tonumber(get_quest_var(ch, "selphi_timlet_inard_training")) end

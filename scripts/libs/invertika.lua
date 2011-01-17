@@ -25,8 +25,16 @@ function get_random_element(...)
   return arg[r]
 end
 
-function init_quest_as_int(string questname)
+function init_quest_status(string questname)
     if tonumber(get_quest_var(ch, questname)) == nil then
         mana.chr_set_quest(ch, questname, 0)
     end
+end
+
+function set_quest_status(string questname, int value)
+    mana.chr_set_quest(ch, questname, tonumber(value))
+end
+
+function get_quest_status(string questname)
+  return tonumber(get_quest_var(ch, questname))
 end
