@@ -227,12 +227,12 @@ end
 
 function bruce_talk(npc, ch)
   -- quest init
-  if tonumber(get_quest_var(ch, "selphi_timlet_bruce_quest")) == nil then
-    mana.chr_set_quest(ch, "selphi_timlet_bruce_quest", 0)
+  if tonumber(invertika.get_quest_status(ch, "selphi_timlet_bruce_quest")) == nil then
+    set_quest_status(ch, "selphi_timlet_bruce_quest", 0)
   end
   -- quest get/set functions
-  function get_qstatus() return tonumber(get_quest_var(ch, "selphi_timlet_bruce_quest")) end
-  function set_qstatus(x) mana.chr_set_quest(ch, "selphi_timlet_bruce_quest", tonumber(x)) end
+  function get_qstatus() return tonumber(invertika.get_quest_status(ch, "selphi_timlet_bruce_quest")) end
+  function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_bruce_quest", tonumber(x)) end
   
 	if get_qstatus()==0 then
 		mana.chr_money_change(ch, 1000)
@@ -336,12 +336,12 @@ function nobur_talk(npc, ch)
 								     "Nein")
 								   
 		if v == 1 then
-			if (get_quest_var(ch, "selphi_timlet_norbur_scorpion_stingers")=="") then
-			  mana.chr_set_quest(ch, "selphi_timlet_norbur_scorpion_stingers", count)
+			if (invertika.get_quest_status(ch, "selphi_timlet_norbur_scorpion_stingers")=="") then
+			  invertika.set_quest_status(ch, "selphi_timlet_norbur_scorpion_stingers", count)
 			else
-			  local dbcount = get_quest_var(ch, "selphi_timlet_norbur_scorpion_stingers");
+			  local dbcount = invertika.get_quest_status(ch, "selphi_timlet_norbur_scorpion_stingers");
 			  dbcount = dbcount + count
-			  mana.chr_set_quest(ch, "selphi_timlet_norbur_scorpion_stingers", dbcount)
+			  invertika.set_quest_status(ch, "selphi_timlet_norbur_scorpion_stingers", dbcount)
 			  
 			  if dbcount > 200 then
 			    do_message(npc, ch, "Also wenn ich es mir recht überlege, habe ich schon genug Stachel. Trotzdem danke.")
@@ -403,10 +403,10 @@ function inard_talk(npc, ch)
 	invertika.init_quest_status(ch, "selphi_timlet_orkana_feierabend");
  
     -- quest get/set functions
-    function get_qstatus() return tonumber(get_quest_var(ch, "selphi_timlet_inard_training")) end
-    function set_qstatus(x) mana.chr_set_quest(ch, "selphi_timlet_inard_training", tonumber(x)) end
+    function get_qstatus() return tonumber(invertika.get_quest_status(ch, "selphi_timlet_inard_training")) end
+    function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_inard_training", tonumber(x)) end
 	
-	function get_feierabend() return tonumber(get_quest_var(ch, "selphi_timlet_orkana_feierabend")) end
+	function get_feierabend() return tonumber(invertika.get_quest_status(ch, "selphi_timlet_orkana_feierabend")) end
 
     if get_qstatus() == 0 then
         do_message(npc, ch, "Ahhh. Was ein herrlicher Tag und ich hänge hier im Innenhof rum! Wie gerne würde ich mal wieder eine Stunde trainieren!")
@@ -482,9 +482,9 @@ function ortana_talk(npc, ch)
 	invertika.init_quest_status(ch, "selphi_timlet_inard_training");
 	invertika.init_quest_status(ch, "selphi_timlet_orkana_feierabend");
 	
-    function get_qstatus() return tonumber(get_quest_var(ch, "selphi_timlet_inard_training")) end
-    function set_qstatus(x) mana.chr_set_quest(ch, "selphi_timlet_inard_training", tonumber(x)) end
-    function get_feierabend() return tonumber(get_quest_var(ch, "selphi_timlet_orkana_feierabend")) end
+    function get_qstatus() return tonumber(invertika.get_quest_status(ch, "selphi_timlet_inard_training")) end
+    function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_inard_training", tonumber(x)) end
+    function get_feierabend() return tonumber(invertika.get_quest_status(ch, "selphi_timlet_orkana_feierabend")) end
 
     if get_qstatus() == 1 then
         do_message(npc, ch, "Inard möchte mit mir trainieren? Hm. Sicher hab ich Lust. Ich weiß nur nicht wann ich frei bekomme. Frag doch bitte mal meinen Chef Estech. Du findest ihn in der Arena, vermutlich im VIP-Bereich.")
