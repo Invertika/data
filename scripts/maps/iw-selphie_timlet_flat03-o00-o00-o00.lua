@@ -22,13 +22,11 @@ end)
 
 function tresor_talk(npc, ch)
 	-- quest init
-	if tonumber(get_quest_var(ch, "selphi_timlet_flat03_safe")) == nil then
-	  mana.chr_set_quest(ch, "selphi_timlet_flat03_safe", 0)
-	end
-  
+        invertika.init_quest_status(ch, "selphi_timlet_flat03_safe")
+
 	-- quest get/set functions
-	function get_qstatus() return tonumber(get_quest_var(ch, "selphi_timlet_flat03_safe")) end
-	function set_qstatus(x) mana.chr_set_quest(ch, "selphi_timlet_flat03_safe", tonumber(x)) end
+	function get_qstatus() return invertika.get_quest_status(ch, "selphi_timlet_flat03_safe") end
+	function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_flat03_safe", x) end
   
 	if get_qstatus()==0 then
 	  do_message(npc, ch, "Hinter dem Bild befindet sich etwas. Mal schauen. Oh das ist ein Tresor. Mmm da schaue ich mal hinein. Bloß wie bekomme ich ihn auf?")

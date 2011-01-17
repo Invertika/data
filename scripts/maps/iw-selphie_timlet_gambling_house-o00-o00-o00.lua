@@ -30,12 +30,10 @@ end)
 
 function daniela_talk(npc, ch)
   -- quest init
-  if tonumber(get_quest_var(ch, "selphi_timlet_bruce_quest")) == nil then
-    mana.chr_set_quest(ch, "selphi_timlet_bruce_quest", 0)
-  end
+  invertika.init_quest_status(ch, "selphi_timlet_bruce_quest")
   -- quest get/set functions
-  function get_qstatus() return tonumber(get_quest_var(ch, "selphi_timlet_bruce_quest")) end
-  function set_qstatus(x) mana.chr_set_quest(ch, "selphi_timlet_bruce_quest", tonumber(x)) end
+  function get_qstatus() return invertika.get_quest_status(ch, "selphi_timlet_bruce_quest") end
+  function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_bruce_quest", x) end
   
   if get_qstatus() < 5 then
     do_message(npc, ch, invertika.get_random_element("Stehst du auf der Gästeliste?",

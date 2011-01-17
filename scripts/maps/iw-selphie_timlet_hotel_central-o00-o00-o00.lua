@@ -24,12 +24,10 @@ end)
 function rezeptionist_talk(npc, ch)
   quest_name="selphi_timlet_rezeptionist_quest"
   -- quest init
-  if tonumber(get_quest_var(ch, quest_name)) == nil then
-    mana.chr_set_quest(ch, quest_name, 0)
-  end
+  invertika.init_quest_status(ch, quest_name)
   -- quest get/set functions
-  function get_qstatus() return tonumber(get_quest_var(ch, quest_name)) end
-  function set_qstatus(x) mana.chr_set_quest(ch, quest_name, tonumber(x)) end
+  function get_qstatus() return invertika.get_quest_status(ch, quest_name) end
+  function set_qstatus(x) invertika.set_quest_status(ch, quest_name, x) end
   
   if get_qstatus() == 0 then
     do_message(npc, ch, "Willkommen im Hotel. Was kann ich für dich tun?")

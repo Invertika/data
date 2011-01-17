@@ -31,12 +31,10 @@ function brecht_talk(npc, ch)
 end
 
 function chodar_talk(npc, ch)
-    if tonumber(get_quest_var(ch, "selphi_timlet_vipcard")) == nil then
-        mana.chr_set_quest(ch, "selphi_timlet_vipcard", 0)
-    end
+    invertika.init_quest_status(ch, "selphi_timlet_vipcard")
     
-    function get_qstatus() return tonumber(get_quest_var(ch, "selphi_timlet_vipcard")) end
-    function set_qstatus(x) mana.chr_set_quest(ch, "selphi_timlet_vipcard", tonumber(x)) end
+    function get_qstatus() return invertika.get_quest_status(ch, "selphi_timlet_vipcard") end
+    function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_vipcard", x) end
     
     if get_qstatus() == 0 then
         do_message(npc, ch, "Hey! Du! Steht nicht so dumm rum! Bring mir mein Bier!")

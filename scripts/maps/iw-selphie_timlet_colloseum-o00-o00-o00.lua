@@ -61,10 +61,10 @@ function estech_talk(npc, ch)
     invertika.init_quest_status(ch, "selphi_timlet_inard_training");
 	invertika.init_quest_status(ch, "selphi_timlet_orkana_feierabend");
 	
-    function get_qstatus() return tonumber(get_quest_var(ch, "selphi_timlet_inard_training")) end
-    function set_qstatus(x) mana.chr_set_quest(ch, "selphi_timlet_inard_training", tonumber(x)) end
-    function get_feierabend() return tonumber(get_quest_var(ch, "selphi_timlet_orkana_feierabend")) end
-    function set_feierabend(x) mana.chr_set_quest(ch, "selphi_timlet_orkana_feierabend", tonumber(x)) end
+    function get_qstatus() return invertika.get_quest_status(ch, "selphi_timlet_inard_training") end
+    function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_inard_training", tonumber(x)) end
+    function get_feierabend() return invertika.get_quest_status(ch, "selphi_timlet_orkana_feierabend") end
+    function set_feierabend(x) invertika.set_quest_status(ch, "selphi_timlet_orkana_feierabend", tonumber(x)) end
 
     if get_qstatus() == 2 then
         do_message(npc, ch, "Ortana schickt dich? Er hat wieder vergessen wann er frei hat?")

@@ -22,12 +22,12 @@ atinit(function()
 end)
 
 function haitan_talk(npc, ch)
-	if (get_quest_var(ch, "selphi_timlet_haitan_scorpions")=="") then
+	if (invertika.get_quest_status(ch, "selphi_timlet_haitan_scorpions") == nil) then
 		do_message(npc, ch, "Die Skorpione im Keller nehmen inzwischen überhand. Könntest du die Plage für mich vielleicht ein wenig eindämmen?")
 		local v = do_choice(npc, ch, "Aber natürlich!", "Die sind doch bestimmt gefährlich, nein!", "Aber ich bin Sternbild Skorpion! Die zu töten bringt mir Unglück!")
 		if v == 1 then
 			--- Questvariable anpassen
-			mana.chr_set_quest(ch, "selphi_timlet_haitan_scorpions", "1")
+			invertika.set_quest_status(ch, "selphi_timlet_haitan_scorpions", "1")
 			do_message(npc, ch, "Sammle ihre Stachel als Beweis. Solche Skorpione habe ich noch nirgendwo sonst gesehen.")
 		else
 			do_message(npc, ch, invertika.get_random_element("Na dann halt nicht...",
@@ -37,7 +37,7 @@ function haitan_talk(npc, ch)
 				"...",
 				"Dann muss ich wohl jemand anderen fragen"))
 		end
-	elseif (get_quest_var(ch, "selphi_timlet_haitan_scorpions")=="1") then
+	elseif (invertika.get_quest_status(ch, "selphi_timlet_haitan_scorpions")=="1") then
 		local count = mana.chr_inv_count(ch, 40016)
 		if count < 30 then
 			--- Noch nicht genug umgebracht
@@ -52,7 +52,7 @@ function haitan_talk(npc, ch)
 			end
 			mana.chr_inv_change(ch, 30009, math.floor(count/2))
 			--- Questvariable anpassen
-			mana.chr_set_quest(ch, "selphi_timlet_haitan_scorpions", 2)
+			invertika.set_quest_status(ch, "selphi_timlet_haitan_scorpions", 2)
 		end
 	else
 		do_message(npc, ch, invertika.get_random_element("Vielen Dank für deine Hilfe",
