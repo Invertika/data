@@ -17,6 +17,8 @@
 --  Software Foundation; either version 2 of the License, or any later version. --
 ----------------------------------------------------------------------------------
 
+-- The most of these functions currently not work.
+
 require "scripts/libs/death"
 
 -- This function is called when the hit points of a character reach zero. 
