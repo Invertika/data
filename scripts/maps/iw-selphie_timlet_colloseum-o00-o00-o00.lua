@@ -15,6 +15,7 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
+require "scripts/libs/invertika"
 
 atinit(function()
  ---create_npc("Banker", 11, 180 * TILESIZE + 16, 160 * TILESIZE + 16, banker.banker_talk, nil) --- Banker (Debug)
@@ -32,8 +33,11 @@ function wache_talk(npc, ch)
 end
 
 function get_wache_say()
-    return "Halt! Du brauchst eine VIP-Karte um hier rein zu kommen"
-end
+   	 return invertika.get_random_element("Halt! Du brauchst eine VIP-Karte um hier rein zu kommen.",
+	  "Ohne VIP Karte geht es hier nicht weiter!",
+	  "Du hast keinen VIP Ausweis. Tut mir leid.",
+	  "Da könnte ja jeder kommen! Nur mit VIP Ausweis!")
+ end
 
 function wache_trigger(ch, id)
     if (mana.being_type(ch) ~= TYPE_MONSTER) then
@@ -55,9 +59,9 @@ function wache_trigger(ch, id)
 end
 
 function estech_talk(npc, ch)
-    if tonumber(get_quest_var(ch, "selphi_timlet_inard_training")) == nil then
-        mana.chr_set_quest(ch, "selphi_timlet_inard_training", 0)
-    end
+    invertika.init_quest_as_int("selphi_timlet_inard_training");
+	invertika.init_quest_as_int("selphi_timlet_orkana_feierabend");
+	
     function get_qstatus() return tonumber(get_quest_var(ch, "selphi_timlet_inard_training")) end
     function set_qstatus(x) mana.chr_set_quest(ch, "selphi_timlet_inard_training", tonumber(x)) end
     function get_feierabend() return tonumber(get_quest_var(ch, "selphi_timlet_orkana_feierabend")) end
@@ -75,7 +79,7 @@ function estech_talk(npc, ch)
         else
             zeit = "20"
         end
-        do_message(npc, ch, string.format("Sag ihm er darf heute schon um %s Uhr abhauen.", zeit))
+        do_message(npc, ch, string.format("Sag ihm, er darf heute schon um %s Uhr gehen.", zeit))
         set_qstatus(3)
     elseif get_qstatus() == 3 then
        local zeit = nil
@@ -86,11 +90,11 @@ function estech_talk(npc, ch)
         else
             zeit = "20"
         end
-        do_message(npc, ch, string.format("Ist dein Gehirn schon genauso löcherig wie Ortanas? Sag ihm er darf um %s Uhr abhauen!", zeit))
+        do_message(npc, ch, string.format("Ist dein Gehirn schon genauso löcherig wie Ortanas? Sag ihm er darf um %s Uhr Feierabend machen!", zeit))
     else
         do_message(npc, ch, invertika.get_random_element("Ich bin der Chef hier.",
                                                          "Tut mir leid. Zur Zeit finden hier keine Spektakel statt.",
-                                                         "Ich muss mich grade um andere Sachen kümmern."))
+                                                         "Ich muss mich gerade um andere Sachen kümmern."))
     end
     do_npc_close(npc, ch)
 end

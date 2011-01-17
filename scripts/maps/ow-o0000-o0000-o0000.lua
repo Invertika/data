@@ -409,14 +409,14 @@ function alex_talk(npc, ch)
 end
 
 function inard_talk(npc, ch)
-    -- quest init
-    if tonumber(get_quest_var(ch, "selphi_timlet_inard_training")) == nil then
-        mana.chr_set_quest(ch, "selphi_timlet_inard_training", 0)
-    end
+    invertika.init_quest_as_int("selphi_timlet_inard_training");
+	invertika.init_quest_as_int("selphi_timlet_orkana_feierabend");
  
     -- quest get/set functions
     function get_qstatus() return tonumber(get_quest_var(ch, "selphi_timlet_inard_training")) end
     function set_qstatus(x) mana.chr_set_quest(ch, "selphi_timlet_inard_training", tonumber(x)) end
+	
+	function get_feierabend() return tonumber(get_quest_var(ch, "selphi_timlet_orkana_feierabend")) end
 
     if get_qstatus() == 0 then
         do_message(npc, ch, "Ahhh. Was ein herrlicher Tag und ich hänge hier im Innenhof rum! Wie gerne würde ich mal wieder eine Stunde trainieren!")
@@ -449,12 +449,11 @@ function inard_talk(npc, ch)
     elseif get_qstatus() == 3 then
         do_message(npc, ch, "Das du weißt wann er frei hat bringt mir nicht viel. Geh zu ihn und frag ihn ob es ihm passt.")
     elseif get_qstatus() == 4 then
-        function get_feierabend() return tonumber(get_quest_var(ch, "selphi_timlet_orkana_feierabend")) end
         do_message(npc, ch, "Und wann hat er Zeit?")
         while true do
             local v = do_choice(npc, ch, "Um 10 Uhr.", "Um 15 Uhr.", "Um 20 Uhr.")
             if v == get_feierabend() then
-                do_message(npc, ch, "Ok. Danke. Hier nimm diesen Ring als Dank")
+                do_message(npc, ch, "Ok. Danke. Hier nimm diesen Ring als Dank.")
                 mana.chr_inv_change(ch, 20005, 1)
                 set_qstatus(5)
                 break

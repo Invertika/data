@@ -24,3 +24,9 @@ function get_random_element(...)
   local r = math.random(1, arrayCount)
   return arg[r]
 end
+
+function init_quest_as_int(string questname)
+    if tonumber(get_quest_var(ch, questname)) == nil then
+        mana.chr_set_quest(ch, questname, 0)
+    end
+end
