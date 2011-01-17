@@ -15,7 +15,7 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
-require "scripts/ivklibs/invertika"
+require "scripts/libs/invertika"
 
 module("trap", package.seeall)
 

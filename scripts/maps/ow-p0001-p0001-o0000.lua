@@ -15,10 +15,10 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
-require "scripts/ivklibs/invertika"
-require "scripts/ivklibs/nethek"
+require "scripts/libs/invertika"
+require "scripts/libs/nethek"
 
-dofile("data/scripts/ivklibs/warp.lua")
+dofile("data/scripts/libs/warp.lua")
 
 atinit(function()
  create_npc("Grabstein", 31, 70 * TILESIZE + 16, 39 * TILESIZE + 16, grabstein_talk, nil) --- Grabstein

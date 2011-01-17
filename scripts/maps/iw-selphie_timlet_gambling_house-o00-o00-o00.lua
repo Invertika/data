@@ -15,8 +15,8 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
-require "scripts/ivklibs/slotmachine"
-require "scripts/ivklibs/invertika"
+require "scripts/libs/slotmachine"
+require "scripts/libs/invertika"
 
 atinit(function() 
  create_npc("Slotmaschine", 1, 25 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)

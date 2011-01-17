@@ -15,11 +15,11 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
-require "scripts/ivklibs/invertika"
-require "scripts/ivklibs/nethek"
-require "scripts/ivklibs/seller"
+require "scripts/libs/invertika"
+require "scripts/libs/nethek"
+require "scripts/libs/seller"
 
-dofile("data/scripts/ivklibs/warp.lua")
+dofile("data/scripts/libs/warp.lua")
 
 -- Grabstein XY Position in Tiles, und Grabstein-Text
 local gravestone_data =

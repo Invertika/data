@@ -15,7 +15,7 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
-require "scripts/ivklibs/invertika"
+require "scripts/libs/invertika"
 
 atinit(function()
  create_npc("Manitu", 47, 55 * TILESIZE + 16, 23 * TILESIZE + 16, manitu_talk, nil) --- Der grosse Manitu

@@ -15,10 +15,10 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
-require "scripts/ivklibs/nethek"
-require "scripts/ivklibs/seller"
+require "scripts/libs/nethek"
+require "scripts/libs/seller"
 
-dofile("data/scripts/ivklibs/warp.lua")
+dofile("data/scripts/libs/warp.lua")
 
 atinit(function()
  create_inter_map_warp_trigger(36, 26, 38, 48) --- Intermap warp

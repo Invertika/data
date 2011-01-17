@@ -17,7 +17,7 @@
 --  Software Foundation; either version 2 of the License, or any later version. --
 ----------------------------------------------------------------------------------
 
-require "scripts/ivklibs/death"
+require "scripts/libs/death"
 
 -- This function is called when the hit points of a character reach zero. 
 function on_chr_death(ch)

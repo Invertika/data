@@ -1,4 +1,4 @@
-require "scripts/ivklibs/invertika"
+require "scripts/libs/invertika"
 
 function use(user)
 	mana.being_say(user, invertika.get_random_element("Schmeckt irgendwie nach Banane...",

@@ -15,7 +15,7 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
-require "scripts/ivklibs/invertika"
+require "scripts/libs/invertika"
 
 atinit(function()
  create_npc("Rezeptionist", 20, 44 * TILESIZE + 16, 57 * TILESIZE + 16, rezeptionist_talk, nil) --- Rezeptionist

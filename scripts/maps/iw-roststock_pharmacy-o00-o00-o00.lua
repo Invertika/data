@@ -15,7 +15,7 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
-require "scripts/ivklibs/invertika"
+require "scripts/libs/invertika"
 
 atinit(function()
     create_npc("Nijeta", 58, 50 * TILESIZE + 16, 33 * TILESIZE + 16, nijeta_talk, nil) --Nijeta

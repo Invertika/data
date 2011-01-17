@@ -15,10 +15,10 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
-require "scripts/ivklibs/death"
-require "scripts/ivklibs/invertika"
+require "scripts/libs/death"
+require "scripts/libs/invertika"
 
-dofile("data/scripts/ivklibs/warp.lua")
+dofile("data/scripts/libs/warp.lua")
 
 atinit(function()
  create_inter_map_warp_trigger(19001, 19001, 19001, 19001) --- Intermap warp

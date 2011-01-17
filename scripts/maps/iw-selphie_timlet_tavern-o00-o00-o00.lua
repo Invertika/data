@@ -15,8 +15,8 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
-require "scripts/ivklibs/banker"
-require "scripts/ivklibs/slotmachine"
+require "scripts/libs/banker"
+require "scripts/libs/slotmachine"
 
 atinit(function() 
  create_npc("Brecht", 21, 20 * TILESIZE + 16, 15 * TILESIZE + 16, brecht_talk, nil) --- Brecht

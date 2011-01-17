@@ -15,7 +15,7 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
-require "scripts/ivklibs/special"
+require "scripts/libs/special"
 
 atinit(function()
  special.create_elevator_selphi_timlet_ipsum_house_talk(78 * TILESIZE + 16, 22 * TILESIZE + 16) --- Fahrstuhl

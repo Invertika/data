@@ -16,7 +16,7 @@
 
 
 require "scripts/lua/npclib"
-require "scripts/ivklibs/invertika"
+require "scripts/libs/invertika"
 
 local tano = {}
 local waypointstate = {}
