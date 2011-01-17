@@ -489,15 +489,15 @@ function imangi_talk(npc, ch)
 end
 
 function ortana_talk(npc, ch)
-    if tonumber(get_quest_var(ch, "selphi_timlet_inard_training")) == nil then
-        mana.chr_set_quest(ch, "selphi_timlet_inard_training", 0)
-    end
+	invertika.init_quest_status("selphi_timlet_inard_training");
+	invertika.init_quest_status("selphi_timlet_orkana_feierabend");
+	
     function get_qstatus() return tonumber(get_quest_var(ch, "selphi_timlet_inard_training")) end
     function set_qstatus(x) mana.chr_set_quest(ch, "selphi_timlet_inard_training", tonumber(x)) end
     function get_feierabend() return tonumber(get_quest_var(ch, "selphi_timlet_orkana_feierabend")) end
 
     if get_qstatus() == 1 then
-        do_message(npc, ch, "Inard möchte mit mir trainieren? Hm. Sicher hab ich Lust. Ich weiß nur nicht wann ich frei kriege. Frag doch bitte mal meinen Chef Estech. Du findest ihn in der Arena, vermutlich im VIP-Bereich.")
+        do_message(npc, ch, "Inard möchte mit mir trainieren? Hm. Sicher hab ich Lust. Ich weiß nur nicht wann ich frei bekomme. Frag doch bitte mal meinen Chef Estech. Du findest ihn in der Arena, vermutlich im VIP-Bereich.")
         set_qstatus(2)
     elseif get_qstatus() == 2 then
         do_message(npc, ch, "Frag meinen Chef Estech. Der kann dir sagen wann ich frei habe. Du findest ihn in der Arena.")
@@ -525,7 +525,7 @@ function ortana_talk(npc, ch)
         end
         do_message(npc, ch, string.format("Wann war das nochmal? Ach genau %s Uhr.", zeit))
     elseif get_qstatus() == 5 then
-        do_message(npc, ch, "Inard freut sich? Ich hoffe dieses Rumgerenne hat dir nicht zu viel ausgemacht.")
+        do_message(npc, ch, "Inard freut sich? Ich hoffe die ganze Aufregung hat dir nicht zu viel ausgemacht.")
         set_qstatus(6)
     else
         do_message(npc, ch, invertika.get_random_element("Ich kämpfe ab und zu in der Arena.",
