@@ -1,18 +1,11 @@
-----------------------------------------------------------------------------------
--- Map File                                                                     --
---                                                                              --
--- In dieser Datei stehen die entsprechenden externen NPC's, Trigger und        --
--- anderer Dinge.                                                               --
---                                                                              --
-----------------------------------------------------------------------------------
---  Copyright 2008-2010 The Invertika Development Team                         --
---                                                                              --
---  This file is part of Invertika.                                             --
---                                                                              --
---  Invertika is free software; you can redistribute it and/or modify it        --
---  under the terms of the GNU General  Public License as published by the Free --
---  Software Foundation; either version 2 of the License, or any later version. --
-----------------------------------------------------------------------------------
+-- Externe Map Skripting Datei
+-- In dieser Datei stehen die entsprechenden externen NPC's, Trigger und anderer Dinge.
+--
+-- Copyright 2008-2011 The Invertika Development Team
+--
+-- This file is part of Invertika. Invertika is free software; you can redistribute 
+-- it and/or modify it under the terms of the GNU General  Public License as published 
+-- by the Free Software Foundation; either version 3 of the License, or any later version.
 
 require "scripts/lua/npclib"
 require "scripts/libs/datetime"
@@ -79,14 +72,11 @@ end)
 --Zeitabhägige Events
 -- Weihnachten
 function weihnachtsmann_talk(npc, ch)
-	-- quest init
-	if tonumber(get_quest_var(ch, "selphi_timlet_santa_clause")) == nil then
-	  mana.chr_set_quest(ch, "selphi_timlet_santa_clause", 0)
-	end
+	invertika.init_quest_status("selphi_timlet_santa_clause")
   
 	-- quest get/set functions
-	function get_qstatus() return tonumber(get_quest_var(ch, "selphi_timlet_santa_clause")) end
-	function set_qstatus(x) mana.chr_set_quest(ch, "selphi_timlet_santa_clause", tonumber(x)) end
+	function get_qstatus() return invertika.get_quest_status("selphi_timlet_santa_clause") end
+	function set_qstatus(x) invertika.set_quest_status("selphi_timlet_santa_clause", x) end
   
 	if get_qstatus()==0 then
 	  do_message(npc, ch, "Ho Ho Ho. Ich bin der Weihnachtsmann. Meine Geschenke sind schon wieder überall verteilt. Diese Weihnachtsschleime rauben mir den letzten Nerv. Magst du mir helfen sie wieder einzusammeln?")
