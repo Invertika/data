@@ -72,11 +72,11 @@ end)
 --Zeitabhägige Events
 -- Weihnachten
 function weihnachtsmann_talk(npc, ch)
-	invertika.init_quest_status("selphi_timlet_santa_clause")
+	invertika.init_quest_status(ch, "selphi_timlet_santa_clause")
   
 	-- quest get/set functions
-	function get_qstatus() return invertika.get_quest_status("selphi_timlet_santa_clause") end
-	function set_qstatus(x) invertika.set_quest_status("selphi_timlet_santa_clause", x) end
+	function get_qstatus() return invertika.get_quest_status(ch, "selphi_timlet_santa_clause") end
+	function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_santa_clause", x) end
   
 	if get_qstatus()==0 then
 	  do_message(npc, ch, "Ho Ho Ho. Ich bin der Weihnachtsmann. Meine Geschenke sind schon wieder überall verteilt. Diese Weihnachtsschleime rauben mir den letzten Nerv. Magst du mir helfen sie wieder einzusammeln?")
@@ -399,8 +399,8 @@ function alex_talk(npc, ch)
 end
 
 function inard_talk(npc, ch)
-    invertika.init_quest_status("selphi_timlet_inard_training");
-	invertika.init_quest_status("selphi_timlet_orkana_feierabend");
+    invertika.init_quest_status(ch, "selphi_timlet_inard_training");
+	invertika.init_quest_status(ch, "selphi_timlet_orkana_feierabend");
  
     -- quest get/set functions
     function get_qstatus() return tonumber(get_quest_var(ch, "selphi_timlet_inard_training")) end
@@ -479,8 +479,8 @@ function imangi_talk(npc, ch)
 end
 
 function ortana_talk(npc, ch)
-	invertika.init_quest_status("selphi_timlet_inard_training");
-	invertika.init_quest_status("selphi_timlet_orkana_feierabend");
+	invertika.init_quest_status(ch, "selphi_timlet_inard_training");
+	invertika.init_quest_status(ch, "selphi_timlet_orkana_feierabend");
 	
     function get_qstatus() return tonumber(get_quest_var(ch, "selphi_timlet_inard_training")) end
     function set_qstatus(x) mana.chr_set_quest(ch, "selphi_timlet_inard_training", tonumber(x)) end

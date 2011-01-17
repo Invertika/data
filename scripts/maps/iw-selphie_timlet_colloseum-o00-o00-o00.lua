@@ -58,8 +58,8 @@ function wache_trigger(ch, id)
 end
 
 function estech_talk(npc, ch)
-    invertika.init_quest_status("selphi_timlet_inard_training");
-	invertika.init_quest_status("selphi_timlet_orkana_feierabend");
+    invertika.init_quest_status(ch, "selphi_timlet_inard_training");
+	invertika.init_quest_status(ch, "selphi_timlet_orkana_feierabend");
 	
     function get_qstatus() return tonumber(get_quest_var(ch, "selphi_timlet_inard_training")) end
     function set_qstatus(x) mana.chr_set_quest(ch, "selphi_timlet_inard_training", tonumber(x)) end
