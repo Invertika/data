@@ -227,9 +227,7 @@ end
 
 function bruce_talk(npc, ch)
   -- quest init
-  if tonumber(invertika.get_quest_status(ch, "selphi_timlet_bruce_quest")) == nil then
-    set_quest_status(ch, "selphi_timlet_bruce_quest", 0)
-  end
+  invertika.init_quest_status(ch, "selphi_timlet_bruce_quest")
   -- quest get/set functions
   function get_qstatus() return tonumber(invertika.get_quest_status(ch, "selphi_timlet_bruce_quest")) end
   function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_bruce_quest", tonumber(x)) end

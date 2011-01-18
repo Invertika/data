@@ -22,7 +22,8 @@ atinit(function()
 end)
 
 function averin_talk(npc, ch)
-	if (invertika.get_quest_status(ch, "selphi_timlet_royal_pass")=="") then ---Keine Questvar gesetzt
+        invertika.init_quest_status(ch, "selphi_timlet_royal_pass")
+	if (invertika.get_quest_status(ch, "selphi_timlet_royal_pass") == 0) then ---Keine Questvar gesetzt
 	  do_message(npc, ch, "Hallo, was ist dein Begehr?")
 	  while true do 
 		  local v = do_choice(npc, ch, "Wer bist du?",
