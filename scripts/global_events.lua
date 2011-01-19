@@ -20,6 +20,7 @@
 -- The most of these functions currently not work.
 
 require "scripts/libs/death"
+require "scripts/libs/ghost"
 
 -- This function is called when the hit points of a character reach zero. 
 function on_chr_death(ch)
@@ -33,6 +34,7 @@ end
 -- bring HP above zero in some way) 
 function on_chr_death_accept(ch)
     mana.being_heal(ch)	-- restores to full hp
+    ghost.death_spawn_ghost(ch)
     mana.chr_warp(ch, 19001, 3200, 2800) --warp the character to the respawn location (Nex)
 end
 
