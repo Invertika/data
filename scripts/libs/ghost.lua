@@ -14,7 +14,7 @@
 --  Software Foundation; either version 2 of the License, or any later version. --
 ----------------------------------------------------------------------------------
 
-module("death", package.seeall)
+module("ghost", package.seeall)
 
 --- Chance fuer einen Geist beim Tod (1 = immer, 0 = nie)
 CHANCE_GHOST_SPAWNS=0.5
