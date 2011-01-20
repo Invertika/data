@@ -1,5 +1,5 @@
 -- Radius der Explosion
-DAMAGE_RADIUS = 100
+DAMAGE_RADIUS = 5 * TILESIZE
 -- Faktor mit dem der Schaden nach einer bestimmten Entfernung bestimmt:
 -- damage =  damaga * pow(FACTOR_DECREASE, distance)
 DAMAGE_FACTOR_DECREASE = 0.99
@@ -10,14 +10,18 @@ DAMAGE_DELTA = 30
 DAMAGE_ACCURACY = 0.90 -- ACCURACY Angabe richtig?
 
 function use(user)
-    -- Feuerwerk explodiert bis jetzt lediglich, spielt aber noch keinen Feuerwerkseffekt ab
+    mana.being_say(user, "Debug 1")
     local x = mana.posX(user)
     local y = mana.posY(user)
     affected_beings = mana.get_beings_in_circle(x, y, RADIUS)
-    for being in affected_beings do
+    mana.being_say(user, table.getn(affected_beings))
+    mana.being_say(user, "Debug 2")
+    for nr, being in pairs(affected_beings) do
+        mana.being_say(user, "Debug 3")
         local distance = get_distance(x, y, mana.posX(being), mana.posY(being))
         local damage = DAMAGE_DAMAGE * math.pow(DAMAGE_FACTOR_DECREASE, distance)
-        mana.being_damage(being, damage, DAMAGE_DELTA, DAMAGE_ACCURACY, 0, 1)
+        mana.being_say(being, string.format("Name: %s, Distanz: %s, Damage: %s", mana.being_get_name(being), distance, damage))
+        mana.being_damage(being, damage, DAMAGE_DELTA, DAMAGE_ACCURACY, DAMAGE_PHYSICAL, ELEMENT_FIRE)
     end
     mana.effect_create(151, x, y)
 end
