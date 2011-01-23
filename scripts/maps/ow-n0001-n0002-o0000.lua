@@ -31,6 +31,7 @@ atinit(function()
  create_npc("subnet_zero", 19 , 77 * TILESIZE + 16, 118 * TILESIZE + 16, subnet_zero_talk, nil) --- subnet_zero
  create_npc("DJh2o2", 54, 86 * TILESIZE + 16, 114 * TILESIZE + 16, djh2o2_talk, nil) --- DJh2o2
  create_npc("Dark Mage", 72, 84 * TILESIZE + 16, 122 * TILESIZE + 16, darkmage_talk, nil) --- DJh2o2
+ create_npc("Ablu", 82, 88 * TILESIZE + 16, 122 * TILESIZE + 16, ablu_talk, nil) --- Ablu
 end)
 
 function jurkan_talk(npc, ch)
@@ -139,4 +140,11 @@ function darkmage_talk(npc, ch)
 	do_message(npc, ch, invertika.get_random_element("Why not to use GPS for finding players. I think this scientist can make satellite for it.",
 	  "One day, one of the best painters met drunk man on the street. This painter didn't like to put on new clothes, so he put on old hat. Man asked: Erm, is this thing on your head is called hat? Painter answered: Is this thing under your hat called head?"))
 	do_npc_close(npc, ch)
+end
+
+function ablu_talk(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Das ist logisch.",
+                                                     "Trial and Error.",
+                                                     ""))
+    do_npc_close(npc, ch)
 end
