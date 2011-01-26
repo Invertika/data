@@ -69,7 +69,6 @@ function estech_talk(npc, ch)
     if get_qstatus() == 2 then
         do_message(npc, ch, "Ortana schickt dich? Er hat wieder vergessen wann er frei hat?")
         set_feierabend(math.random(1, 3))
-        do_message(npc, ch, "Debug 1")
         local zeit = nil
         if get_feierabend() == 1 then
             zeit = "10"
