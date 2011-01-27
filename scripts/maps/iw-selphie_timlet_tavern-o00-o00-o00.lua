@@ -17,6 +17,7 @@
 require "scripts/lua/npclib"
 require "scripts/libs/banker"
 require "scripts/libs/slotmachine"
+require "scripts/libs/invertika"
 
 atinit(function() 
  create_npc("Brecht", 21, 20 * TILESIZE + 16, 15 * TILESIZE + 16, brecht_talk, nil) --- Brecht
@@ -95,10 +96,9 @@ function chodar_talk(npc, ch)
         mana.chr_inv_change(ch, 30006, 1)
         set_qstatus(5)
     elseif get_qstatus() == 5 then
-        do_message(npc, ch, "Auf den König!")
-        --do_message(npc, ch, invertika.get_random_element("Auf den König!",
-       --                                                  "PROST!",
-       --                                                  "Auf bessere Zeiten!"))
+        do_message(npc, ch, invertika.get_random_element("Auf den König!",
+                                                         "PROST!",
+                                                         "Auf bessere Zeiten!"))
     end
     do_npc_close(npc, ch)
 end
