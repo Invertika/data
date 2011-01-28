@@ -322,6 +322,8 @@ function saria_talk(npc, ch)
 end
 
 function nobur_talk(npc, ch)
+        invertika.init_quest_status(ch, "selphi_timlet_norbur_scorpion_stingers")
+
 	do_message(npc, ch, "Ich brauche Skorpionstachel. Eine ganze Menge, so zwei Dutzend oder drei, vielleicht auch vier Dutzend. Das wird eine leckere Suppe.")
 	
 	local count = mana.chr_inv_count(ch, 40004) 
@@ -334,7 +336,7 @@ function nobur_talk(npc, ch)
 								     "Nein")
 								   
 		if v == 1 then
-			if (invertika.get_quest_status(ch, "selphi_timlet_norbur_scorpion_stingers")=="") then
+			if (invertika.get_quest_status(ch, "selphi_timlet_norbur_scorpion_stingers") == 0) then
 			  invertika.set_quest_status(ch, "selphi_timlet_norbur_scorpion_stingers", count)
 			else
 			  local dbcount = invertika.get_quest_status(ch, "selphi_timlet_norbur_scorpion_stingers");
