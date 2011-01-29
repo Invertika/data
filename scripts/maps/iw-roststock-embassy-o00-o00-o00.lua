@@ -22,6 +22,8 @@ atinit(function()
 end)
 
 function botschafter_talk(npc, ch)
+    local questname = "selphi_timlet_royal_pass"
+    invertika.init_quest_status(ch, questname)
 	--print(get_quest_var(ch, "selphi_timlet_royal_pass"), type(get_quest_var(ch, "selphi_timlet_royal_pass")))
 	if (invertika.get_quest_status(ch, "selphi_timlet_royal_pass") == nil) then ---Keine Questvar gesetzt
 	    do_message(npc, ch, invertika.get_random_element("Ich bin hier der Botschafter. Ich vertrete Selphi Timlet in Roststock.",
@@ -35,7 +37,7 @@ function botschafter_talk(npc, ch)
 	   
 	   if count > 0 then
 	      mana.chr_inv_change(ch, 40011, -1, 40012, 1) -- NOTE: 2 einzelne Funktionsaufrufe fuer die Items funktionieren nicht (bug?).
-	      invertika.set_quest_var(ch, "selphi_timlet_royal_pass", 2)
+	      invertika.set_quest_status(ch, "selphi_timlet_royal_pass", 2)
 	      do_message(npc, ch, "Oh ein Brief. Warte einen Moment... Hier nimm diese Antwort und bringe sie Averin.")
 	   else
 		  do_message(npc, ch, "Ihr seid nicht zufällig der Bote von Avarin? Ich erwarte einen wichtigen Brief von ihm!")
