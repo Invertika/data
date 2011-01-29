@@ -27,7 +27,7 @@ end
 
 -- Initialisisert einen Queststatus
 function init_quest_status(ch, questname)
-    if tonumber(get_quest_var(ch, questname)) == nil then
+    if get_quest_var(ch, questname) == nil then
         mana.chr_set_quest(ch, questname, 0)
     end
 end
