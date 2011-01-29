@@ -43,7 +43,7 @@ function luor_talk(npc, ch)
 	  "Es tut mir leid, im Moment habe ich keine Zeit!",
 	  "Du siehst aus als ob du einen Brief hättest? Nicht? Na gut, dann nicht."))
       end
-    elseif invertika.get_quest_status() >= 4 then
+    elseif get_qstatus() >= 4 then
         do_message(npc, ch, "Danke für den Brief aber jetzt muss ich arbeiten!")
     else
         do_message(npc, ch, "Sei gegrüßt, ich bin Luor, Herscher über Selphi Timlet, Bewahrer des Heiligen Kelches von Rixx. Wie lautet deine Bitte? - Obwohl lieber nicht, im Moment steht es mir nicht nach einer Audienz.")
