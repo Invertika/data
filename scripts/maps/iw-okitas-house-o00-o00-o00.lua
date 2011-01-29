@@ -16,6 +16,7 @@
 
 
 require "scripts/lua/npclib"
+require "scripts/libs/invertika"
 
 
 atinit(function()
@@ -38,7 +39,6 @@ function tetse_talk(npc, ch)
     function get_qstatus() return invertika.get_quest_status(ch, questname) end
     function set_qstatus(x) invertika.set_quest_status(ch, questname, x) end
 
-    do_message(npc, ch, get_qstatus())
     if get_qstatus() == 1 then
         if mana.chr_inv_count(ch, 10008) > 0 then
             do_message(npc, ch, "Du hast mein Schwert! Ich suche es seit Jahren! Ich habe es einst in einer großen Schlacht verloren. Gibst du es mir wieder?")
