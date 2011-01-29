@@ -51,7 +51,7 @@ function blyther_talk(npc, ch)
     elseif get_qstatus() == 1 then -- Quest beim ersten Zwilling angenommen.
         if mana.chr_inv_count(ch, 10008) >= 0 then
             do_message(npc, ch, invertika.get_random_element("Ich weiß nicht wo Tese wohnt. Tut mir Leid.",
-              "Wolltest du nicht zu Tetse ihm das Schwert bringen?")
+              "Wolltest du nicht zu Tetse ihm das Schwert bringen?"))
         else
             do_message(npc, ch, "Wo ist das Schwert? Tetse wird nicht erfreut sein, dass du es verloren hast.")
         end
