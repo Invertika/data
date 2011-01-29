@@ -40,7 +40,7 @@ function blyther_talk(npc, ch)
             local v = do_choice(npc, ch, "Mach ich!", "Nein.")
             if v == 1 then
                 invertika.add_items(ch, 10008, 1, "Tetses Schwert")
-                set_qstatus(2)
+                set_qstatus(1)
                 do_message(npc, ch, "Vielen Dank. Ich weiß allerdings nicht wo er wohnt. Das müsstest du selbst herausfinden.")
                 break
             elseif v == 2 then
