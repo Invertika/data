@@ -26,7 +26,7 @@ end)
 
 function rocer_talk(npc, ch)
     local questname = "twin_house_quest"
-    invertika.init_quest_status(questname)
+    invertika.init_quest_status(ch, questname)
     function get_qstatus() return invertika.get_quest_status(ch, questname) end
     function set_qstatus(x) invertika.set_quest_status(ch, questname, x) end
 
