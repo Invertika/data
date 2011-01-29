@@ -52,6 +52,7 @@ function tetse_talk(npc, ch)
                 elseif v == 2 then
                     do_message(npc, ch, "Verflucht sollst du sein! Ivertika wird dich für dein Vergehen bestrafen!")
                     break
+                end
             end
         else
             do_message(npc, ch, "Ich verlor einst ein Schwert. Wenn du es findest bekommst du von mir einen gute Belohnung.")
