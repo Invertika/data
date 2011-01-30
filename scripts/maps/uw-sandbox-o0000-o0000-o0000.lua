@@ -91,7 +91,7 @@ skorpion_move = function()
     if skorpion_rennen_status == 1 then
         for i,skorpion in ipairs(skorpione) do
             local desired_x = mana.posX(skorpion)
-            local desired_y = math.max(mana.posY(skorpion) + math.random(-1, 1), 70 * TILESIZE)
+            local desired_y = math.max(mana.posY(skorpion) + math.random(-TILESIZE * 2, TILESIZE * 2), 70 * TILESIZE)
             mana.being_walk(skorpion, desired_x, desired_y, 1)
             mana.being_say(skorpion, "Hopp.")
         end
