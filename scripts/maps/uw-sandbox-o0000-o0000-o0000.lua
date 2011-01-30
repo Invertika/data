@@ -46,9 +46,9 @@ atinit(function()
   create_npc("Spinner", 201, 51 * TILESIZE + 16, 30 * TILESIZE + 16, nil, spinner_update)
   create_npc("Healer", 19, 54 * TILESIZE + 16, 32 * TILESIZE + 16, healer_talk, nil)
   create_npc("Skorpion Rennen", 27, 142 * TILESIZE + 16, 72 * TILESIZE +16, skorpion_rennen_talk, nil)
-  mana.trigger_create(138 * TILESIZE, 62 * TILESIZE, 1 * TILESIZE, 1 * TILESIZE, "skorpion_trigger", 1, true)
-  mana.trigger_create(141 * TILESIZE, 62 * TILESIZE, 1 * TILESIZE, 1 * TILESIZE, "skorpion_trigger", 2, true)
-  mana.trigger_create(144 * TILESIZE, 62 * TILESIZE, 1 * TILESIZE, 1 * TILESIZE, "skorpion_trigger", 3, true)
+  mana.trigger_create(138 * TILESIZE, 62 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "skorpion_trigger", 1, true)
+  mana.trigger_create(141 * TILESIZE, 62 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "skorpion_trigger", 2, true)
+  mana.trigger_create(144 * TILESIZE, 62 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "skorpion_trigger", 3, true)
 
   mana.trigger_create(56 * TILESIZE, 32 * TILESIZE, 64, 64, "patrol_waypoint", 1, true)
   mana.trigger_create(63 * TILESIZE, 32 * TILESIZE, 64, 64, "patrol_waypoint", 2, true)
@@ -62,21 +62,36 @@ atinit(function()
   end)
 end)
 
+local status_skorpion_1 = 0
+local status_skorpion_2 = 0
+local status_skorpion_3 = 0
+local skorpion1 = nil
+local skorpion2 = nil
+local skorpion3 = nil
+local skorpion_rennen_gebote
+
 function skorpion_trigger(being, id)
     mana.being_say(being, "gewonnen")
+    mana.being_damage(skorpion1, 999999, 0, 999999, DAMAGE_PHYSICAL, ELEMENT_NEUTRAL)
+    mana.being_damage(skorpion2, 999999, 0, 999999, DAMAGE_PHYSICAL, ELEMENT_NEUTRAL)
+    mana.being_damage(skorpion3, 999999, 0, 999999, DAMAGE_PHYSICAL, ELEMENT_NEUTRAL)
 end
 
 function skorpion_rennen_talk(npc, ch)
     do_message(npc, ch, "Was soll ich machen?")
     while true do
-        local v = do_choice(npc, ch, "Skorpion spawnen", "Tschüss")
+        local v = do_choice(npc, ch, "Skorpion spawnen", "Tschüss", "Auf Skorpion bieten")
         if v == 1 then
-            mana.monster_create(3, 139 * TILESIZE, 70 * TILESIZE)
-            mana.monster_create(3, 142 * TILESIZE, 70 * TILESIZE)
-            mana.monster_create(3, 145 * TILESIZE, 70 * TILESIZE)
+            skorpion1 = mana.monster_create(3, 139 * TILESIZE, 70 * TILESIZE)
+            skorpion2 = mana.monster_create(3, 142 * TILESIZE, 70 * TILESIZE)
+            skorpion3 = mana.monster_create(3, 145 * TILESIZE, 70 * TILESIZE)
             break
         elseif v == 2 then
             break
+        elseif v == 3 then
+            do while true
+                v2 = do_choice
+            end
         end
     end
     do_npc_close(npc, ch)
