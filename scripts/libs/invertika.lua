@@ -85,7 +85,7 @@ function add_items(ch, id, number, name)
         if number > 0 then
             mana.chatmessage(ch, string.format(ITEM_ADD_TEXT, number, name))
         elseif number < 0 then
-            mana.chatmessage(ch, string.format(ITEM_REMOVE_TEXT, number, name))
+            mana.chatmessage(ch, string.format(ITEM_REMOVE_TEXT, -number, name))
         else
             -- 0 Items werden hinzugefügt/geändert
             -- Aber wer sollte so etwas tun?
