@@ -45,6 +45,10 @@ atinit(function()
   create_npc("Sitter", 201, 51 * TILESIZE + 16, 25 * TILESIZE + 16, nil, sitter_update)
   create_npc("Spinner", 201, 51 * TILESIZE + 16, 30 * TILESIZE + 16, nil, spinner_update)
   create_npc("Healer", 19, 54 * TILESIZE + 16, 32 * TILESIZE + 16, healer_talk, nil)
+  create_npc("Skorpion Rennen", 200, 142 * TILESIZE + 16, 72 * TILESIZE +16, skorpion_rennen_talk, nil)
+  mana.trigger_create(138 * TILESIZE, 62 * TILESIZE, 1 * TILESIZE, 1 * TILESIZE, "skorpion_trigger", 1, true)
+  mana.trigger_create(141 * TILESIZE, 62 * TILESIZE, 1 * TILESIZE, 1 * TILESIZE, "skorpion_trigger", 2, true)
+  mana.trigger_create(144 * TILESIZE, 62 * TILESIZE, 1 * TILESIZE, 1 * TILESIZE, "skorpion_trigger", 3, true)
 
   mana.trigger_create(56 * TILESIZE, 32 * TILESIZE, 64, 64, "patrol_waypoint", 1, true)
   mana.trigger_create(63 * TILESIZE, 32 * TILESIZE, 64, 64, "patrol_waypoint", 2, true)
@@ -57,6 +61,23 @@ atinit(function()
     print("One and a half hour has passed on map 1-1")
   end)
 end)
+
+function skorpion_trigger(being, id)
+    mana.being_say(being, "gewonnen")
+end
+
+function skorpion_rennen_talk(npc, ch)
+    do_message("Was soll ich machen?")
+    while true do
+        local v = do_choice(npc, ch, "Skorpion spawnen", "Tschüss")
+        if v == 1 then
+            mana.monster_create(3, 139 * TILESIZE, 70 * TILESIZE)
+            mana.monster_create(3, 142 * TILESIZE, 70 * TILESIZE)
+            mana.monster_create(3, 145 * TILESIZE, 70 * TILESIZE)
+        elseif v == 2 then
+        end
+    end
+end
 
 function zelan_talk(npc, ch)
     do_message(npc, ch, "Wo du bist? Im Vacare. Jeder neue kommt hier her bevor es raus geht in die große Welt. Also pass auf dich auf.")
