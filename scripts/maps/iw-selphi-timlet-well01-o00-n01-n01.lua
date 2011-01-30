@@ -213,23 +213,23 @@ function waypoints(being, num)
 end
 
 function treasure_trap(being)
-  if (mana.being_type(being) == TYPE_CHARACTER) then --- Nur Spieler beachten
-    mana.being_say(tano[2], invertika.get_random_element("Wer nicht hören will muss fühlen.",
-      "Kein Durchgang!",
-      "Du darfst hier nicht durch!",
-      "Draußen bleiben!",
-      "Zutritt verboten!",
-      "Hier darf keiner durch!"))
-    mana.chr_warp(being, mana.get_map_id(), 40 * TILESIZE + 16, 37 * TILESIZE + 16)
-    --- Auskommentiert, weil es zum festhängen des Characters führt
-    ---mana.being_damage(being, 50, 40, 100, 1, 0)
-  end
+--  if (mana.being_type(being) == TYPE_CHARACTER) then --- Nur Spieler beachten
+--    mana.being_say(tano[2], invertika.get_random_element("Wer nicht hören will muss fühlen.",
+--      "Kein Durchgang!",
+--      "Du darfst hier nicht durch!",
+--      "Draußen bleiben!",
+--      "Zutritt verboten!",
+--      "Hier darf keiner durch!"))
+--    mana.chr_warp(being, mana.get_map_id(), 40 * TILESIZE + 16, 37 * TILESIZE + 16)
+--    --- Auskommentiert, weil es zum festhängen des Characters führt
+--    ---mana.being_damage(being, 50, 40, 100, 1, 0)
+--  end
 end
 
 function treasure_warning(being)
-  if (mana.being_type(being) == TYPE_CHARACTER) then --- Nur Spieler beachten
-    mana.being_say(tano[2], invertika.get_random_element("Keinen Schritt weiter!",
-      "Stopp! Sonst wird es schmerzhaft.",
-      "Halt!"))
-  end
+--  if (mana.being_type(being) == TYPE_CHARACTER) then --- Nur Spieler beachten
+--    mana.being_say(tano[2], invertika.get_random_element("Keinen Schritt weiter!",
+--      "Stopp! Sonst wird es schmerzhaft.",
+--      "Halt!"))
+--  end
 end
