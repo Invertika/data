@@ -20,6 +20,8 @@ require "scripts/libs/invertika"
 
 dofile("data/scripts/libs/warp.lua")
 
+local skorpione = {}
+
 atinit(function()
  create_inter_map_warp_trigger(19003, 19003, 19003, 19003) --- Intermap warp
  create_npc("Zelan", 58, 132 * TILESIZE + 16, 21 * TILESIZE + 16, zelan_talk, nil) --- Zelan
@@ -46,9 +48,13 @@ atinit(function()
   create_npc("Spinner", 201, 51 * TILESIZE + 16, 30 * TILESIZE + 16, nil, spinner_update)
   create_npc("Healer", 19, 54 * TILESIZE + 16, 32 * TILESIZE + 16, healer_talk, nil)
   create_npc("Skorpion Rennen", 27, 142 * TILESIZE + 16, 72 * TILESIZE +16, skorpion_rennen_talk, nil)
-  mana.trigger_create(138 * TILESIZE, 62 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "skorpion_trigger", 1, true)
-  mana.trigger_create(141 * TILESIZE, 62 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "skorpion_trigger", 2, true)
-  mana.trigger_create(144 * TILESIZE, 62 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "skorpion_trigger", 3, true)
+  skorpione[1] = create_npc("Rennskorpion", 138, 62 * TILESIZE + 16, 70 * TILESIZE + 16, skorpion_talk, nil)
+  skorpione[2] = create_npc("Rennskorpion", 140, 62 * TILESIZE + 16, 70 * TILESIZE + 16, skorpion_talk, nil)
+  skorpione[3] = create_npc("Rennskorpion", 142, 62 * TILESIZE + 16, 70 * TILESIZE + 16, skorpion_talk, nil)
+
+  mana.trigger_create(138 * TILESIZE, 62 * TILESIZE, TILESIZE, TILESIZE, "skorpion_rennen_ende", 1, true)
+  mana.trigger_create(140 * TILESIZE, 62 * TILESIZE, TILESIZE, TILESIZE, "skorpion_rennen_ende", 2, true)
+  mana.trigger_create(142 * TILESIZE, 62 * TILESIZE, TILESIZE, TILESIZE, "skorpion_rennen_ende", 3, true)
 
   mana.trigger_create(56 * TILESIZE, 32 * TILESIZE, 64, 64, "patrol_waypoint", 1, true)
   mana.trigger_create(63 * TILESIZE, 32 * TILESIZE, 64, 64, "patrol_waypoint", 2, true)
@@ -60,31 +66,49 @@ atinit(function()
   schedule_every(1 * HOURS + 30 * MINUTES, function()
     print("One and a half hour has passed on map 1-1")
   end)
+
+  schedule_in(1, function()
+      mana.being_set_direction(skorpion[1], DIRECTION_UP)
+      mana.being_set_direction(skorpion[2], DIRECTION_UP)
+      mana.being_set_direction(skorpion[3], DIRECTION_UP)
+  end)
 end)
 
-local status_skorpion_1 = 0
-local status_skorpion_2 = 0
-local status_skorpion_3 = 0
-local skorpion1 = nil
-local skorpion2 = nil
-local skorpion3 = nil
-local skorpion_rennen_gebote
+local skorpion_rennen_gebote = {}
+local skorpion_rennen_status = 0
 
-function skorpion_trigger(being, id)
-    mana.being_say(being, "gewonnen")
-    mana.being_damage(skorpion1, 999999, 0, 999999, DAMAGE_PHYSICAL, ELEMENT_NEUTRAL)
-    mana.being_damage(skorpion2, 999999, 0, 999999, DAMAGE_PHYSICAL, ELEMENT_NEUTRAL)
-    mana.being_damage(skorpion3, 999999, 0, 999999, DAMAGE_PHYSICAL, ELEMENT_NEUTRAL)
+function skorpion_talk(npc, ch)
+    do_message(npc, ch, "Ich werde gewinnen.")
+    do_npc_close(npc, ch)
 end
+
+function skorpion_rennen_ende(being, id)
+    skorpion_rennen_status = 2
+end
+
+skorpion_move = function()
+    if skorpion_rennen_status == 1 then
+        for i,skorpion in ipairs(skorpions)
+            local desired_x = mana.posX(skorpion)
+            local desired_y = mana.posY(skorpion) + math.random(-1, 1)
+            mana.being_walk(skorpion, desired_x, desired_y, 1)
+            schedule_in(1, skorpion_move)
+        end
+    else
+        for i,skorpion in ipairs(skorpions)
+            mana.being_walk(skorpion, mana.posX(skorpion), 70 * TILESIZE, 1)
+        end
+        schedule_in(9, function() skorpion_rennen_status = 0 end)
+    end
+end)
 
 function skorpion_rennen_talk(npc, ch)
     do_message(npc, ch, "Was soll ich machen?")
     while true do
-        local v = do_choice(npc, ch, "Skorpion spawnen", "Tschüss", "Auf Skorpion bieten")
+        local v = do_choice(npc, ch, "anfangen", "Tschüss", "Auf Skorpion bieten")
         if v == 1 then
-            skorpion1 = mana.monster_create(3, 139 * TILESIZE, 70 * TILESIZE)
-            skorpion2 = mana.monster_create(3, 142 * TILESIZE, 70 * TILESIZE)
-            skorpion3 = mana.monster_create(3, 145 * TILESIZE, 70 * TILESIZE)
+            skorpion_rennen_status = 1
+            skorpion_move()
             break
         elseif v == 2 then
             break
