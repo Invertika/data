@@ -83,6 +83,7 @@ function skorpion_talk(npc, ch)
 end
 
 function skorpion_rennen_ende(being, id)
+    mana.being_say(being, "GEWONNEN!")
     skorpion_rennen_status = 2
 end
 
@@ -90,8 +91,9 @@ skorpion_move = function()
     if skorpion_rennen_status == 1 then
         for i,skorpion in ipairs(skorpions) do
             local desired_x = mana.posX(skorpion)
-            local desired_y = mana.posY(skorpion) + math.random(-1, 1)
+            local desired_y = math.max(mana.posY(skorpion) + math.random(-1, 1), 70 * TILESIZE)
             mana.being_walk(skorpion, desired_x, desired_y, 1)
+            mana.being_say(skorpion, "Hopp.")
         end
         schedule_in(1, skorpion_move)
     else
@@ -108,7 +110,7 @@ function skorpion_rennen_talk(npc, ch)
         local v = do_choice(npc, ch, "anfangen", "Tschüss", "Auf Skorpion bieten")
         if v == 1 then
             skorpion_rennen_status = 1
-            skorpion_move()
+            schedule_in(1, skorpion_move)
             break
         elseif v == 2 then
             break
