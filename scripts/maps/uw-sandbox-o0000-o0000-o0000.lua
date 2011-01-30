@@ -89,7 +89,7 @@ end
 
 skorpion_move = function()
     if skorpion_rennen_status == 1 then
-        for i,skorpion in ipairs(skorpions) do
+        for i,skorpion in ipairs(skorpione) do
             local desired_x = mana.posX(skorpion)
             local desired_y = math.max(mana.posY(skorpion) + math.random(-1, 1), 70 * TILESIZE)
             mana.being_walk(skorpion, desired_x, desired_y, 1)
@@ -97,7 +97,7 @@ skorpion_move = function()
         end
         schedule_in(1, skorpion_move)
     else
-        for i,skorpion in ipairs(skorpions) do
+        for i,skorpion in ipairs(skorpione) do
             mana.being_walk(skorpion, mana.posX(skorpion), 70 * TILESIZE, 1)
         end
         schedule_in(9, function() skorpion_rennen_status = 0 end)
