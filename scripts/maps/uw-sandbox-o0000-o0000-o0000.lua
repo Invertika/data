@@ -100,7 +100,7 @@ skorpion_move = function()
         end
         schedule_in(9, function() skorpion_rennen_status = 0 end)
     end
-end)
+end
 
 function skorpion_rennen_talk(npc, ch)
     do_message(npc, ch, "Was soll ich machen?")
