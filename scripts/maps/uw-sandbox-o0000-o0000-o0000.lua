@@ -67,16 +67,19 @@ function skorpion_trigger(being, id)
 end
 
 function skorpion_rennen_talk(npc, ch)
-    do_message("Was soll ich machen?")
+    do_message(npc, ch, "Was soll ich machen?")
     while true do
         local v = do_choice(npc, ch, "Skorpion spawnen", "Tschüss")
         if v == 1 then
             mana.monster_create(3, 139 * TILESIZE, 70 * TILESIZE)
             mana.monster_create(3, 142 * TILESIZE, 70 * TILESIZE)
             mana.monster_create(3, 145 * TILESIZE, 70 * TILESIZE)
+            break
         elseif v == 2 then
+            break
         end
     end
+    do_npc_close(npc, ch)
 end
 
 function zelan_talk(npc, ch)
