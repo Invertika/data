@@ -98,7 +98,7 @@ skorpion_move = function()
         schedule_in(1, skorpion_move)
     else
         for i,skorpion in ipairs(skorpione) do
-            mana.being_walk(skorpion, mana.posX(skorpion), 70 * TILESIZE, 1)
+            mana.being_walk(skorpion, mana.posX(skorpion), 70 * TILESIZE + 16, 1)
         end
         schedule_in(9, function() skorpion_rennen_status = 0 end)
     end
