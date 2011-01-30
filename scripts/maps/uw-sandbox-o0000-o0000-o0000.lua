@@ -52,9 +52,9 @@ atinit(function()
   skorpione[2] = create_npc("Rennskorpion", 140, 140 * TILESIZE + 16, 70 * TILESIZE + 16, skorpion_talk, nil)
   skorpione[3] = create_npc("Rennskorpion", 140, 142 * TILESIZE + 16, 70 * TILESIZE + 16, skorpion_talk, nil)
 
-  mana.trigger_create(138 * TILESIZE, 62 * TILESIZE, TILESIZE, TILESIZE, "skorpion_rennen_ende", 1, true)
-  mana.trigger_create(140 * TILESIZE, 62 * TILESIZE, TILESIZE, TILESIZE, "skorpion_rennen_ende", 2, true)
-  mana.trigger_create(142 * TILESIZE, 62 * TILESIZE, TILESIZE, TILESIZE, "skorpion_rennen_ende", 3, true)
+  mana.trigger_create(138 * TILESIZE, 62 * TILESIZE, TILESIZE, TILESIZE * 2, "skorpion_rennen_ende", 1, true)
+  mana.trigger_create(140 * TILESIZE, 62 * TILESIZE, TILESIZE, TILESIZE * 2, "skorpion_rennen_ende", 2, true)
+  mana.trigger_create(142 * TILESIZE, 62 * TILESIZE, TILESIZE, TILESIZE * 2, "skorpion_rennen_ende", 3, true)
 
   mana.trigger_create(56 * TILESIZE, 32 * TILESIZE, 64, 64, "patrol_waypoint", 1, true)
   mana.trigger_create(63 * TILESIZE, 32 * TILESIZE, 64, 64, "patrol_waypoint", 2, true)
