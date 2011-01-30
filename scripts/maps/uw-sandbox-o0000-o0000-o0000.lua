@@ -68,9 +68,9 @@ atinit(function()
   end)
 
   schedule_in(1, function()
-      mana.being_set_direction(skorpion[1], DIRECTION_UP)
-      mana.being_set_direction(skorpion[2], DIRECTION_UP)
-      mana.being_set_direction(skorpion[3], DIRECTION_UP)
+      mana.being_set_direction(skorpione[1], DIRECTION_UP)
+      mana.being_set_direction(skorpione[2], DIRECTION_UP)
+      mana.being_set_direction(skorpione[3], DIRECTION_UP)
   end)
 end)
 
@@ -92,8 +92,8 @@ skorpion_move = function()
             local desired_x = mana.posX(skorpion)
             local desired_y = mana.posY(skorpion) + math.random(-1, 1)
             mana.being_walk(skorpion, desired_x, desired_y, 1)
-            schedule_in(1, skorpion_move)
         end
+        schedule_in(1, skorpion_move)
     else
         for i,skorpion in ipairs(skorpions) do
             mana.being_walk(skorpion, mana.posX(skorpion), 70 * TILESIZE, 1)
@@ -116,6 +116,7 @@ function skorpion_rennen_talk(npc, ch)
             while true do
                 break --localv2 = do_choice
             end
+            break
         end
     end
     do_npc_close(npc, ch)
