@@ -47,7 +47,7 @@ atinit(function()
   create_npc("Sitter", 201, 51 * TILESIZE + 16, 25 * TILESIZE + 16, nil, sitter_update)
   create_npc("Spinner", 201, 51 * TILESIZE + 16, 30 * TILESIZE + 16, nil, spinner_update)
   create_npc("Healer", 19, 54 * TILESIZE + 16, 32 * TILESIZE + 16, healer_talk, nil)
-  create_npc("Skorpion Rennen", 27, 142 * TILESIZE + 16, 72 * TILESIZE +16, skorpion_rennen_talk, nil)
+  skorpion_rennen_npc = create_npc("Skorpion Rennen", 27, 142 * TILESIZE + 16, 72 * TILESIZE +16, skorpion_rennen_talk, nil)
   skorpione[1] = create_npc("Rennskorpion", 140, 138 * TILESIZE + 16, 70 * TILESIZE + 16, skorpion_talk, nil)
   skorpione[2] = create_npc("Rennskorpion", 140, 140 * TILESIZE + 16, 70 * TILESIZE + 16, skorpion_talk, nil)
   skorpione[3] = create_npc("Rennskorpion", 140, 142 * TILESIZE + 16, 70 * TILESIZE + 16, skorpion_talk, nil)
@@ -76,6 +76,7 @@ end)
 
 local skorpion_rennen_gebote = {}
 local skorpion_rennen_status = 0
+local skorpion_rennen_gewinner = nil
 
 function skorpion_talk(npc, ch)
     do_message(npc, ch, "Ich werde gewinnen.")
@@ -85,6 +86,8 @@ end
 function skorpion_rennen_ende(being, id)
     mana.being_say(being, "GEWONNEN!")
     skorpion_rennen_status = 2
+    skorpion_rennen_gewinner = id
+    mana.being_say(skorpion_rennen_npc, string.format("Skorpion Nummer %s hat Gewonnen. Holt eure Gewinne ab!", id))
 end
 
 skorpion_move = function()
@@ -100,14 +103,14 @@ skorpion_move = function()
         for i,skorpion in ipairs(skorpione) do
             mana.being_walk(skorpion, mana.posX(skorpion), 70 * TILESIZE + 16, 1)
         end
-        schedule_in(9, function() skorpion_rennen_status = 0 end)
+        schedule_in(120, function() skorpion_rennen_status = 0 end) -- Den Spielern Zeit geben ihre Gewinne abzuholen.
     end
 end
 
 function skorpion_rennen_talk(npc, ch)
     do_message(npc, ch, "Was soll ich machen?")
     while true do
-        local v = do_choice(npc, ch, "anfangen", "Tschüss", "Auf Skorpion bieten")
+        local v = do_choice(npc, ch, "anfangen", "Tschüss", "Auf Skorpion bieten", "Gewinn abholen")
         if v == 1 then
             skorpion_rennen_status = 1
             schedule_in(1, skorpion_move)
@@ -116,7 +119,61 @@ function skorpion_rennen_talk(npc, ch)
             break
         elseif v == 3 then
             while true do
-                break --localv2 = do_choice
+                local v2 = do_choice(npc, ch, "Auf welches Skorpion möchtest du bieten?", "Nummer 1", "Nummer 2", "Nummer 3", "Auf keines.")
+                if v2 <=3 and v2 >=1 then
+                    while true do
+                        local betrag
+                        local v3 = do_choice(npc, ch, "Welchen Betrag möchtest du bieten?", "Nichts",
+                          "1 Aki",
+                          "5 Aki",
+                          "10 Aki",
+                          "50 Aki",
+                          "100 Aki",
+                          "500 Aki",
+                          "1000 Aki")
+                        if v3 == 1 then
+                            betrag = 0
+                        elseif v3 == 2 then
+                            betrag = 1
+                        elseif v3 == 3 then
+                            betrag = 5
+                        elseif v3 == 4 then
+                            betrag = 10
+                        elseif v3 == 5 then
+                            betrag = 50
+                        elseif v3 == 6 then
+                            betrag = 100
+                        elseif v3 == 7 then
+                            betrag = 500
+                        elseif v3 == 8 then
+                            betrag = 1000
+                        end
+                        if mana.chr_money(ch) >= betrag then
+                            invertika.add_money(ch, -betrag)
+                            if skorpion_rennen_gebote[v2][mana.being_get_name(ch)] == nil then
+                                skorpion_rennen_gebote[v2][mana.being_get_name(ch)] = betrag
+                            else
+                                skorpion_rennen_gebote[v2][mana.being_get_name(ch)] = 
+                                  skorpion_rennen_gebote[v2][mana.being_get_name(ch)] + betrag
+                            end
+                        else
+                            do_message(npc, ch, "Du hast nicht genügen Geld!")
+                        end
+                        if v3 >=1 or v3 <=8 then 
+                            break
+                        end
+                    end
+                    break
+                elseif v2 == 4 then
+                    break
+                end
+            end
+            break
+        elseif v == 4 then
+            if skorpion_rennen_gebote[skorpion_rennen_gewinner][mana.being_get_name(ch)] > 0 then
+                invertika.add_money(ch, skorpion_rennen_gebote[skorpion_rennen_gewinner][mana.being_get_name(ch)])
+            else
+                do_message(npc, ch, "Du hast nichts gewonnen")
             end
             break
         end
