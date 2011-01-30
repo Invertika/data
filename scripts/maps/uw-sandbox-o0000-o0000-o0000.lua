@@ -90,7 +90,7 @@ function skorpion_rennen_talk(npc, ch)
             break
         elseif v == 3 then
             do while true
-                v2 = do_choice
+                break --localv2 = do_choice
             end
         end
     end
