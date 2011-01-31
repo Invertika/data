@@ -26,6 +26,7 @@ require "scripts/libs/ghost"
 function on_chr_death(ch)
     death.increase_death_counter(ch)
     death.pay_death_price(ch)
+    ghost.death_spawn_ghost(ch)
 end
 
 -- This function is called when the player clicks on the �OK� button after
@@ -34,7 +35,6 @@ end
 -- bring HP above zero in some way) 
 function on_chr_death_accept(ch)
     mana.being_heal(ch)	-- restores to full hp
-    ghost.death_spawn_ghost(ch)
     mana.chr_warp(ch, 19001, 3200, 2800) --warp the character to the respawn location (Nex)
 end
 
