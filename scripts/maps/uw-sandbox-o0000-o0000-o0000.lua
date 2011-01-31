@@ -168,7 +168,7 @@ function skorpion_rennen_talk(npc, ch)
 
                                     skorpion_rennen_gebote[v2][ch] = betrag
                                 else
-                                    skorpion_rennen_gebote[v2][ch] = skorpion_rennen_gebote[v2][mana.being_get_name(ch)] + betrag
+                                    skorpion_rennen_gebote[v2][ch] = skorpion_rennen_gebote[v2][ch] + betrag
                                 end
                                 mana.being_say(npc, string.format("%s hat %s Aki geboten!", mana.being_get_name(ch), betrag)
                             else
