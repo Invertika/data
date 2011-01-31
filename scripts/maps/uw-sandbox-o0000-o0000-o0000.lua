@@ -130,7 +130,7 @@ function skorpion_rennen_talk(npc, ch)
         elseif v == 3 then
             while true do
                 local v2 = do_choice(npc, ch, "Auf welches Skorpion möchtest du bieten?", "Nummer 1", "Nummer 2", "Nummer 3", "Auf keines.")
-                if v2 <=3 and v2 >=1 then
+                if (v2 <= 3) and (v2 >= 1) then
                     while true do
                         local betrag
                         local v3 = do_choice(npc, ch, "Welchen Betrag möchtest du bieten?", "Nichts",
@@ -141,6 +141,7 @@ function skorpion_rennen_talk(npc, ch)
                           "100 Aki",
                           "500 Aki",
                           "1000 Aki")
+
                         if v3 == 1 then
                             betrag = 0
                         elseif v3 == 2 then
@@ -165,12 +166,13 @@ function skorpion_rennen_talk(npc, ch)
                                 if skorpion_rennen_gebote[v2] == nil then skorpion_rennen_gebote[v2] = {} end -- ggf. initialisie
                                 if skorpion_rennen_gebote[v2][ch] == nil then
 
-                                    skorpion_rennen_gebote[v2][mana.being_get_name(ch)] = betrag
+                                    skorpion_rennen_gebote[v2][ch] = betrag
                                 else
-                                    skorpion_rennen_gebote[v2][mana.being_get_name(ch)] = skorpion_rennen_gebote[v2][mana.being_get_name(ch)] + betrag
+                                    skorpion_rennen_gebote[v2][ch] = skorpion_rennen_gebote[v2][mana.being_get_name(ch)] + betrag
                                 end
+                                mana.being_say(npc, string.format("%s hat %s Aki geboten!", mana.being_get_name(ch), betrag)
                             else
-                                do_message(npc, ch, "Du hast nicht genügend Geld!")
+                                do_message(npc, ch, "Du hast nicht genügen Geld!")
                             end
                         else
                             do_message(npc, ch, "Zur Zeit nehme ich keine Gebote an!")
@@ -187,14 +189,14 @@ function skorpion_rennen_talk(npc, ch)
             break
         elseif v == 4 then
             if skorpion_rennen_gebote[skorpion_rennen_gewinner] == nil then -- Keiner hat auf den Sieger gesetzt.
-                do_message(npc, ch, "Du hast nichts gewonnen")
+                do_message(npc, ch, "Du hast nichts gewonnen a")
             elseif skorpion_rennen_gebote[skorpion_rennen_gewinner][ch] == nil then -- Spieler hat nicht auf den Sieger gesetzt.
-                do_message(npc, ch, "Du hast nichts gewonnen")
+                do_message(npc, ch, "Du hast nichts gewonnen b")
             elseif skorpion_rennen_gebote[skorpion_rennen_gewinner][ch] > 0 then -- Gewonnen
                 do_message(npc, ch, string.format(
-                  "Herzlichen Glückwunsch! Hier hast du deine %s Aki.", skorpion_rennen_gebote[skorpion_rennen_gewinner][mana.being_get_name(ch)]))
-                invertika.add_money(ch, skorpion_rennen_gebote[skorpion_rennen_gewinner][mana.being_get_name(ch)])
-                skorpion_rennen_gebote[skorpion_rennen_gewinner][mana.being_get_name(ch)] = 0
+                  "Herzlichen Glückwunsch! Hier hast du deine %s Aki.", skorpion_rennen_gebote[skorpion_rennen_gewinner][ch]))
+                invertika.add_money(ch, skorpion_rennen_gebote[skorpion_rennen_gewinner][ch])
+                skorpion_rennen_gebote[skorpion_rennen_gewinner][ch] = 0
             end
             break
         end
