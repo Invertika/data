@@ -84,10 +84,12 @@ function skorpion_talk(npc, ch)
 end
 
 function skorpion_rennen_ende(being, id)
-    mana.being_say(being, "GEWONNEN!")
-    skorpion_rennen_status = 2
-    skorpion_rennen_gewinner = id
-    mana.being_say(skorpion_rennen_npc, string.format("Skorpion Nummer %s hat Gewonnen. Holt eure Gewinne ab!", id))
+    if skorpion_rennen_status == 1 then
+        mana.being_say(being, "GEWONNEN!")
+        skorpion_rennen_status = 2
+        skorpion_rennen_gewinner = id
+        mana.being_say(skorpion_rennen_npc, string.format("Skorpion Nummer %s hat Gewonnen. Holt eure Gewinne ab!", id))
+    end
 end
 
 skorpion_move = function()
@@ -153,8 +155,7 @@ function skorpion_rennen_talk(npc, ch)
                             if skorpion_rennen_gebote[v2][mana.being_get_name(ch)] == nil then
                                 skorpion_rennen_gebote[v2][mana.being_get_name(ch)] = betrag
                             else
-                                skorpion_rennen_gebote[v2][mana.being_get_name(ch)] = 
-                                  skorpion_rennen_gebote[v2][mana.being_get_name(ch)] + betrag
+                                skorpion_rennen_gebote[v2][mana.being_get_name(ch)] = skorpion_rennen_gebote[v2][mana.being_get_name(ch)] + betrag
                             end
                         else
                             do_message(npc, ch, "Du hast nicht genügen Geld!")
