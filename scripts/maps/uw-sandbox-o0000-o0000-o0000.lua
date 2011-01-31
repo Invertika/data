@@ -141,21 +141,21 @@ function skorpion_rennen_talk(npc, ch)
                           "100 Aki",
                           "500 Aki",
                           "1000 Aki")
-                        if v3 == 1 then
+                        if v3 == 0 then
                             betrag = 0
-                        elseif v3 == 2 then
+                        elseif v3 == 1 then
                             betrag = 1
-                        elseif v3 == 3 then
+                        elseif v3 == 2 then
                             betrag = 5
-                        elseif v3 == 4 then
+                        elseif v3 == 3 then
                             betrag = 10
-                        elseif v3 == 5 then
+                        elseif v3 == 4 then
                             betrag = 50
-                        elseif v3 == 6 then
+                        elseif v3 == 5 then
                             betrag = 100
-                        elseif v3 == 7 then
+                        elseif v3 == 6 then
                             betrag = 500
-                        elseif v3 == 8 then
+                        elseif v3 == 7 then
                             betrag = 1000
                         end
 
