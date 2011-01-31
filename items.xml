@@ -190,7 +190,7 @@
         image="equipment/weapons/dagger-razorknife.png"
         name="Tetses Schwert"
         description="Ein Schwert, dass Tetse einst in einer Schlacht benutze. Es hat für ihn einen hohen symbolischen Wert.."
-        effect="+50 Damage , 1 Range"
+        effect="50 - 100 Schaden, 1 Reichweite"
         type="equip-2hand"
         weight="100"
         weapon-type="102"
@@ -203,6 +203,28 @@
         max-per-slot="1"
 	value="12500">
         <sprite>equipment/weapons/dagger-erazorknife.xml</sprite>
+        <sound event="strike">short-sword-miss1.ogg</sound>
+        <sound event="hit">short-sword-hit1.ogg</sound>
+    </item>
+
+	<item id="10009"
+        image="equipment/weapons/staff.png"
+        name="Holzstab"
+        description="Ein hölzerner Kampfstab, solide genug, um nicht zu brechen."
+        effect="50 - 100 Schaden, 1.5 Reichweite"
+        type="equip-2hand"
+        weight="60"
+        weapon-type="104"
+        attack-min="50"
+        attack-delta="50"
+        attack-target="multi"
+        attack-shape="cone"
+        attack-range="48"
+        attack-angle="135"
+	defense="1"
+        max-per-slot="1"
+	value="15000">
+        <sprite>equipment/weapons/staff.xml</sprite>
         <sound event="strike">short-sword-miss1.ogg</sound>
         <sound event="hit">short-sword-hit1.ogg</sound>
     </item>
