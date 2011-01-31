@@ -141,21 +141,21 @@ function skorpion_rennen_talk(npc, ch)
                           "100 Aki",
                           "500 Aki",
                           "1000 Aki")
-                        if v3 == 0 then
+                        if v3 == 1 then
                             betrag = 0
-                        elseif v3 == 1 then
-                            betrag = 1
                         elseif v3 == 2 then
-                            betrag = 5
+                            betrag = 1
                         elseif v3 == 3 then
-                            betrag = 10
+                            betrag = 5
                         elseif v3 == 4 then
-                            betrag = 50
+                            betrag = 10
                         elseif v3 == 5 then
-                            betrag = 100
+                            betrag = 50
                         elseif v3 == 6 then
-                            betrag = 500
+                            betrag = 100
                         elseif v3 == 7 then
+                            betrag = 500
+                        elseif v3 == 8 then
                             betrag = 1000
                         end
 
@@ -170,7 +170,7 @@ function skorpion_rennen_talk(npc, ch)
                                     skorpion_rennen_gebote[v2][mana.being_get_name(ch)] = skorpion_rennen_gebote[v2][mana.being_get_name(ch)] + betrag
                                 end
                             else
-                                do_message(npc, ch, "Du hast nicht genügen Geld!")
+                                do_message(npc, ch, "Du hast nicht genügend Geld!")
                             end
                         else
                             do_message(npc, ch, "Zur Zeit nehme ich keine Gebote an!")
