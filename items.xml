@@ -74,7 +74,7 @@
         image="equipment/weapons/dagger-knive.png"
         name="Messer"
         description="Ein kleines Messer, die perfekte Waffe für Anfänger."
-        effect="+5 Damage, 1 Range"
+        effect="+5..10 Schaden, 1 Reichweite"
         type="equip-1hand"
         weight="20"
         weapon-type="100"
@@ -95,7 +95,7 @@
         image="equipment/weapons/dagger-dagger.png"
         name="Dolch"
         description="Ein einfacher Dolch."
-        effect="+15 Damage, 1 Range"
+        effect="+5..15 Schaden, 1 Reichweite"
         type="equip-1hand"
         weight="60"
         weapon-type="100"
@@ -144,7 +144,7 @@
         image="equipment/weapons/dagger-knive.png"
         name="Niedermetzler 3000"
         description="Ein Schwert von einem ziemlich obskuren Typen."
-        effect="+50 Damage , 1 Range"
+        effect="+100..150 Damage, 1 Reichweite"
         type="equip-1hand"
         weight="50"
         weapon-type="100"
@@ -190,7 +190,7 @@
         image="equipment/weapons/dagger-razorknife.png"
         name="Tetses Schwert"
         description="Ein Schwert, dass Tetse einst in einer Schlacht benutze. Es hat für ihn einen hohen symbolischen Wert.."
-        effect="50 - 100 Schaden, 1 Reichweite"
+        effect="+50..100 Schaden, 1 Reichweite"
         type="equip-2hand"
         weight="100"
         weapon-type="102"
@@ -208,10 +208,10 @@
     </item>
 
 	<item id="10009"
-        image="equipment/weapons/staff.png"
+        image="equipment/weapons/staff-wood.png"
         name="Holzstab"
         description="Ein hölzerner Kampfstab, solide genug, um nicht zu brechen."
-        effect="50 - 100 Schaden, 1.5 Reichweite"
+        effect="+50..100 Schaden, 1.5 Reichweite"
         type="equip-2hand"
         weight="60"
         weapon-type="104"
@@ -221,10 +221,32 @@
         attack-shape="cone"
         attack-range="48"
         attack-angle="135"
-	defense="1"
+	defense="4"
         max-per-slot="1"
 	value="15000">
         <sprite>equipment/weapons/staff.xml</sprite>
+        <sound event="strike">short-sword-miss1.ogg</sound>
+        <sound event="hit">short-sword-hit1.ogg</sound>
+    </item>
+
+	<item id="10010"
+        image="equipment/weapons/staff-blue.png"
+        name="Astralstab"
+        description="Ein Kampfstab aus purer Magie, sehr leicht und gleichzeitig extrem hart und schmerzhaft."
+        effect="+200..300 Schaden, 1.5 Reichweite"
+        type="equip-2hand"
+        weight="60"
+        weapon-type="104"
+        attack-min="200"
+        attack-delta="100"
+        attack-target="multi"
+        attack-shape="cone"
+        attack-range="48"
+        attack-angle="135"
+	defense="10"
+        max-per-slot="1"
+	value="50000">
+        <sprite>equipment/weapons/staff-blue.xml</sprite>
         <sound event="strike">short-sword-miss1.ogg</sound>
         <sound event="hit">short-sword-hit1.ogg</sound>
     </item>
