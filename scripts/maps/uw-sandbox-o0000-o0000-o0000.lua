@@ -130,59 +130,30 @@ function skorpion_rennen_talk(npc, ch)
         elseif v == 2 then
             break
         elseif v == 3 then
+            do_message(npc, ch, "Auf welches Skorpion möchtest du bieten?")
             while true do
-                local v2 = do_choice(npc, ch, "Auf welches Skorpion möchtest du bieten?", "Nummer 1", "Nummer 2", "Nummer 3", "Auf keines.")
+                local v2 = do_choice(npc, ch, "Nummer 1", "Nummer 2", "Nummer 3", "Auf keines.")
                 if (v2 <= 3) and (v2 >= 1) then
-                    while true do
-                        local betrag
-                        local v3 = do_choice(npc, ch, "Welchen Betrag möchtest du bieten?", "Nichts",
-                          "1 Aki",
-                          "5 Aki",
-                          "10 Aki",
-                          "50 Aki",
-                          "100 Aki",
-                          "500 Aki",
-                          "1000 Aki")
+                    local betrag = do_ask_integer(npc, ch, 0, 50000, 100)
+                        
+                    if skorpion_rennen_status == 0 then --Nur wenn Skorpionen beim Start sind Angebote annehmen.
+                        if mana.chr_money(ch) >= betrag then
+                            invertika.add_money(ch, -betrag)
+                            if skorpion_rennen_gebote[v2] == nil then skorpion_rennen_gebote[v2] = {} end -- ggf. initialisie
+                            if skorpion_rennen_gebote[v2][ch] == nil then
 
-                        if v3 == 1 then
-                            betrag = 0
-                        elseif v3 == 2 then
-                            betrag = 1
-                        elseif v3 == 3 then
-                            betrag = 5
-                        elseif v3 == 4 then
-                            betrag = 10
-                        elseif v3 == 5 then
-                            betrag = 50
-                        elseif v3 == 6 then
-                            betrag = 100
-                        elseif v3 == 7 then
-                            betrag = 500
-                        elseif v3 == 8 then
-                            betrag = 1000
-                        end
-
-                        if skorpion_rennen_status == 0 then --Nur wenn Skorpionen beim Start sind Angebote annehmen.
-                            if mana.chr_money(ch) >= betrag then
-                                invertika.add_money(ch, -betrag)
-                                if skorpion_rennen_gebote[v2] == nil then skorpion_rennen_gebote[v2] = {} end -- ggf. initialisie
-                                if skorpion_rennen_gebote[v2][ch] == nil then
-
-                                    skorpion_rennen_gebote[v2][ch] = betrag
-                                else
-                                    skorpion_rennen_gebote[v2][ch] = skorpion_rennen_gebote[v2][ch] + betrag
-                                end
-                                mana.being_say(npc, string.format("%s hat %s Aki geboten!", mana.being_get_name(ch), betrag))
+                                skorpion_rennen_gebote[v2][ch] = betrag
                             else
-                                do_message(npc, ch, "Du hast nicht genügen Geld!")
+                                skorpion_rennen_gebote[v2][ch] = skorpion_rennen_gebote[v2][ch] + betrag
                             end
+                            mana.being_say(npc, string.format("%s hat %s Aki auf Skorpion Nummer %s geboten!", mana.being_get_name(ch), betrag, v2))
                         else
-                            do_message(npc, ch, "Zur Zeit nehme ich keine Gebote an!")
+                            do_message(npc, ch, "Du hast nicht genügen Geld!")
                         end
-                        if v3 >=1 or v3 <=8 then 
-                            break
-                        end
+                    else
+                        do_message(npc, ch, "Zur Zeit nehme ich keine Gebote an!")
                     end
+
                     break
                 elseif v2 == 4 then
                     break
