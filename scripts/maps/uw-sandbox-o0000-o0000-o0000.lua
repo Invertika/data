@@ -77,6 +77,7 @@ end)
 local skorpion_rennen_gebote = {}
 local skorpion_rennen_status = 0
 local skorpion_rennen_gewinner = nil
+local skorpion_rennen_gewinne = {}
 
 function skorpion_talk(npc, ch)
     do_message(npc, ch, "Ich werde gewinnen.")
@@ -88,6 +89,7 @@ function skorpion_rennen_ende(being, id)
         mana.being_say(being, "GEWONNEN!")
         skorpion_rennen_status = 2
         skorpion_rennen_gewinner = id
+        skorpion_rennen_gewinne = skorpion_rennen_gebote[id]
         mana.being_say(skorpion_rennen_npc, string.format("Skorpion Nummer %s hat Gewonnen. Holt eure Gewinne ab!", id))
     end
 end
@@ -104,9 +106,9 @@ skorpion_move = function()
         for i,skorpion in ipairs(skorpione) do
             mana.being_walk(skorpion, mana.posX(skorpion), 70 * TILESIZE + 16, 1)
         end
-        schedule_in(120, function() 
+        schedule_in(20, function() 
             skorpion_rennen_status = 0 
-            mana.being_say(skorpion_rennen_npc, "So wer jetzt seine Gewinne nicht abgeholt hat hat Pech gehabt! Neue Runde neues Glück!")
+            mana.being_say(skorpion_rennen_npc, "Neue Runde neues Glück!")
             skorpion_rennen_gebote = {}
             skorpion_rennen_gewinner = 0
         end) -- Den Spielern Zeit geben ihre Gewinne abzuholen.
@@ -170,7 +172,7 @@ function skorpion_rennen_talk(npc, ch)
                                 else
                                     skorpion_rennen_gebote[v2][ch] = skorpion_rennen_gebote[v2][ch] + betrag
                                 end
-                                mana.being_say(npc, string.format("%s hat %s Aki geboten!", mana.being_get_name(ch), betrag)
+                                mana.being_say(npc, string.format("%s hat %s Aki geboten!", mana.being_get_name(ch), betrag))
                             else
                                 do_message(npc, ch, "Du hast nicht genügen Geld!")
                             end
@@ -188,13 +190,13 @@ function skorpion_rennen_talk(npc, ch)
             end
             break
         elseif v == 4 then
-            if skorpion_rennen_gebote[skorpion_rennen_gewinner] == nil then -- Keiner hat auf den Sieger gesetzt.
+            if skorpion_rennen_gewinne == nil then -- Keiner hat auf den Sieger gesetzt.
                 do_message(npc, ch, "Du hast nichts gewonnen a")
-            elseif skorpion_rennen_gebote[skorpion_rennen_gewinner][ch] == nil then -- Spieler hat nicht auf den Sieger gesetzt.
+            elseif skorpion_rennen_gewinne[ch] == nil then -- Spieler hat nicht auf den Sieger gesetzt.
                 do_message(npc, ch, "Du hast nichts gewonnen b")
-            elseif skorpion_rennen_gebote[skorpion_rennen_gewinner][ch] > 0 then -- Gewonnen
+            elseif skorpion_rennen_gewinne[ch] > 0 then -- Gewonnen
                 do_message(npc, ch, string.format(
-                  "Herzlichen Glückwunsch! Hier hast du deine %s Aki.", skorpion_rennen_gebote[skorpion_rennen_gewinner][ch]))
+                  "Herzlichen Glückwunsch! Hier hast du deine %s Aki.", skorpion_rennen_gewinne[ch]))
                 invertika.add_money(ch, skorpion_rennen_gebote[skorpion_rennen_gewinner][ch])
                 skorpion_rennen_gebote[skorpion_rennen_gewinner][ch] = 0
             end
