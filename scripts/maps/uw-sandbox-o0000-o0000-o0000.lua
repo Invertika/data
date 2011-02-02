@@ -76,7 +76,6 @@ end)
 
 local skorpion_rennen_gebote = {}
 local skorpion_rennen_status = 0
-local skorpion_rennen_gewinner = nil
 local skorpion_rennen_gewinne = {}
 
 function skorpion_talk(npc, ch)
@@ -88,8 +87,8 @@ function skorpion_rennen_ende(being, id)
     if skorpion_rennen_status == 1 then
         mana.being_say(being, "GEWONNEN!")
         skorpion_rennen_status = 2
-        skorpion_rennen_gewinner = id
         skorpion_rennen_gewinne = skorpion_rennen_gebote[id]
+        skorpion_rennen_gebote = {}
         mana.being_say(skorpion_rennen_npc, string.format("Skorpion Nummer %s hat Gewonnen. Holt eure Gewinne ab!", id))
     end
 end
@@ -109,8 +108,6 @@ skorpion_move = function()
         schedule_in(20, function() 
             skorpion_rennen_status = 0 
             mana.being_say(skorpion_rennen_npc, "Neue Runde neues Glück!")
-            skorpion_rennen_gebote = {}
-            skorpion_rennen_gewinner = 0
         end) -- Den Spielern Zeit geben ihre Gewinne abzuholen.
     end
 end
@@ -168,8 +165,8 @@ function skorpion_rennen_talk(npc, ch)
             elseif skorpion_rennen_gewinne[ch] > 0 then -- Gewonnen
                 do_message(npc, ch, string.format(
                   "Herzlichen Glückwunsch! Hier hast du deine %s Aki.", skorpion_rennen_gewinne[ch]))
-                invertika.add_money(ch, skorpion_rennen_gebote[skorpion_rennen_gewinner][ch] * 2)
-                skorpion_rennen_gebote[skorpion_rennen_gewinner][ch] = 0
+                invertika.add_money(ch, skorpion_rennen_gewinne[ch] * 2)
+                skorpion_rennen_gewinne[ch] = 0
             end
             break
         end
