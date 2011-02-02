@@ -51,7 +51,6 @@ local event_scorpions_ready_again = function()
 
 
 -- Initialisiert die Variablen.
-Parameter
 function initializeRace(p_scorpions, p_bet_npc, p_winning_factor)
     scoprions = p_scorpions
     bet_npc = p_bet_npc
