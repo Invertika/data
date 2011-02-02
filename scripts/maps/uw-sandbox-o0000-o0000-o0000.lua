@@ -163,9 +163,10 @@ function skorpion_rennen_talk(npc, ch)
             elseif skorpion_rennen_gewinne[ch] == nil then -- Spieler hat nicht auf den Sieger gesetzt.
                 do_message(npc, ch, "Du hast nichts gewonnen b")
             elseif skorpion_rennen_gewinne[ch] > 0 then -- Gewonnen
+                skorpion_rennen_gewinne[ch] = skorpion_rennen_gewinne[ch] * 2
                 do_message(npc, ch, string.format(
                   "Herzlichen Glückwunsch! Hier hast du deine %s Aki.", skorpion_rennen_gewinne[ch]))
-                invertika.add_money(ch, skorpion_rennen_gewinne[ch] * 2)
+                invertika.add_money(ch, skorpion_rennen_gewinne[ch])
                 skorpion_rennen_gewinne[ch] = 0
             end
             break
