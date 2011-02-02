@@ -45,7 +45,7 @@ local event_scorpion_won = function(id)
   end
 local event_scorpions_ready_again = function()
   mana.being_say(bet_npc, "Die Skorpione sind wieder bereit! Auf in die neue Runde! Wetten können hier abgeschlossen werden.")
-  end)
+  end
 
 
 

@@ -52,7 +52,7 @@ atinit(function()
 
 local scorpions = {}
 scorpions[1] = {}
-scorpions[1][scorpionrace.SCORPION_START_X] = 139 * TILESIZE + 16
+scorpions[1][scorpionrace.SCORPION_START_X] = 138 * TILESIZE + 16
 scorpions[1][scorpionrace.SCORPION_START_Y] = 70 * TILESIZE + 16
 scorpions[1][scorpionrace.SCORPION_STROLL_UP] = 5 * TILESIZE
 scorpions[1][scorpionrace.SCORPION_STROLL_RIGHT] = 0 * TILESIZE
@@ -66,7 +66,7 @@ scorpions[1][scorpionrace.SCORPION_NPC] = create_npc("Rennskorpion", 140, 138 * 
 scorpions[1][scorpionrace.SCORPION_NAME] = "Skorpion 1"
 
 scorpions[2] = {}
-scorpions[2][scorpionrace.SCORPION_START_X] = 139 * TILESIZE + 16
+scorpions[2][scorpionrace.SCORPION_START_X] = 140 * TILESIZE + 16
 scorpions[2][scorpionrace.SCORPION_START_Y] = 70 * TILESIZE + 16
 scorpions[2][scorpionrace.SCORPION_STROLL_UP] = 5 * TILESIZE
 scorpions[2][scorpionrace.SCORPION_STROLL_RIGHT] = 0 * TILESIZE
@@ -80,7 +80,7 @@ scorpions[2][scorpionrace.SCORPION_NPC] = create_npc("Rennskorpion", 140, 140 * 
 scorpions[2][scorpionrace.SCORPION_NAME] = "Skorpion 2"
 
 scorpions[3] = {}
-scorpions[3][scorpionrace.SCORPION_START_X] = 139 * TILESIZE + 16
+scorpions[3][scorpionrace.SCORPION_START_X] = 142 * TILESIZE + 16
 scorpions[3][scorpionrace.SCORPION_START_Y] = 70 * TILESIZE + 16
 scorpions[3][scorpionrace.SCORPION_STROLL_UP] = 5 * TILESIZE
 scorpions[3][scorpionrace.SCORPION_STROLL_RIGHT] = 0 * TILESIZE
