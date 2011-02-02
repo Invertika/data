@@ -14,7 +14,7 @@
 --  Software Foundation; either version 2 of the License, or any later version. --
 ----------------------------------------------------------------------------------
 
-module("skorpionrace", package.seeall)
+module("scorpionrace", package.seeall)
 
 require("scripts/libs/invertika")
 
