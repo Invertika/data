@@ -109,10 +109,10 @@ function move_scorpions()
             local desired_y = mana.posY(scorpion[SCOPRION_NPC])
 
             local desired_x = desired_x + math.random(
-              scorpion[SCOPRION_STROLL_LEFT], scorpion[SCOPRION_STROLL_RIGHT])
+              -scorpion[SCOPRION_STROLL_LEFT], scorpion[SCOPRION_STROLL_RIGHT])
 
             local desired_y = desired_y + math.random(
-              scorpion[SCOPRION_STROLL_UP], scorpion[SCOPRION_STROLL_DOWN])
+              -scorpion[SCOPRION_STROLL_UP], scorpion[SCOPRION_STROLL_DOWN])
 
             mana.being_walk(scorpion[SCORPION_NPC], desired_x, desired_y, 1)
         end

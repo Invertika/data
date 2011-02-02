@@ -16,11 +16,10 @@
 
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
+require "scripts/libs/scorpionrace"
 ---require "scripts/libs/trap"
 
 dofile("data/scripts/libs/warp.lua")
-
-local skorpione = {}
 
 atinit(function()
  create_inter_map_warp_trigger(19003, 19003, 19003, 19003) --- Intermap warp
@@ -48,13 +47,55 @@ atinit(function()
   create_npc("Spinner", 201, 51 * TILESIZE + 16, 30 * TILESIZE + 16, nil, spinner_update)
   create_npc("Healer", 19, 54 * TILESIZE + 16, 32 * TILESIZE + 16, healer_talk, nil)
   skorpion_rennen_npc = create_npc("Skorpion Rennen", 27, 142 * TILESIZE + 16, 72 * TILESIZE +16, skorpion_rennen_talk, nil)
-  skorpione[1] = create_npc("Rennskorpion", 140, 138 * TILESIZE + 16, 70 * TILESIZE + 16, skorpion_talk, nil)
-  skorpione[2] = create_npc("Rennskorpion", 140, 140 * TILESIZE + 16, 70 * TILESIZE + 16, skorpion_talk, nil)
-  skorpione[3] = create_npc("Rennskorpion", 140, 142 * TILESIZE + 16, 70 * TILESIZE + 16, skorpion_talk, nil)
 
-  mana.trigger_create(138 * TILESIZE, 62 * TILESIZE, TILESIZE, TILESIZE * 2, "skorpion_rennen_ende", 1, true)
-  mana.trigger_create(140 * TILESIZE, 62 * TILESIZE, TILESIZE, TILESIZE * 2, "skorpion_rennen_ende", 2, true)
-  mana.trigger_create(142 * TILESIZE, 62 * TILESIZE, TILESIZE, TILESIZE * 2, "skorpion_rennen_ende", 3, true)
+
+
+local scorpions = {}
+scorpions[1] = {}
+scorpions[1][scorpionrace.SCORPION_START_X] = 139 * TILESIZE + 16
+scorpions[1][scorpionrace.SCORPION_START_Y] = 70 * TILESIZE + 16
+scorpions[1][scorpionrace.SCORPION_STROLL_UP] = 5 * TILESIZE
+scorpions[1][scorpionrace.SCORPION_STROLL_RIGHT] = 0 * TILESIZE
+scorpions[1][scorpionrace.SCORPION_STROLL_DOWN] = 1
+scorpions[1][scorpionrace.SCORPION_STROLL_LEFT] = 0
+scorpions[1][scorpionrace.SCORPION_TARGET_X] = 138 * TILESIZE
+scorpions[1][scorpionrace.SCORPION_TARGET_Y] = 62 * TILESIZE
+scorpions[1][scorpionrace.SCORPION_TARGET_WIDTH] = TILESIZE
+scorpions[1][scorpionrace.SCORPION_TARGET_HEIGHT] = TILESIZE * 2
+scorpions[1][scorpionrace.SCORPION_NPC] = create_npc("Rennskorpion", 140, 138 * TILESIZE + 16, 70 * TILESIZE + 16, skorpion_talk, nil)
+scorpions[1][scorpionrace.SCORPION_NAME] = "Skorpion 1"
+
+scorpions[2] = {}
+scorpions[2][scorpionrace.SCORPION_START_X] = 139 * TILESIZE + 16
+scorpions[2][scorpionrace.SCORPION_START_Y] = 70 * TILESIZE + 16
+scorpions[2][scorpionrace.SCORPION_STROLL_UP] = 5 * TILESIZE
+scorpions[2][scorpionrace.SCORPION_STROLL_RIGHT] = 0 * TILESIZE
+scorpions[2][scorpionrace.SCORPION_STROLL_DOWN] = 1
+scorpions[2][scorpionrace.SCORPION_STROLL_LEFT] = 0
+scorpions[2][scorpionrace.SCORPION_TARGET_X] = 140 * TILESIZE
+scorpions[2][scorpionrace.SCORPION_TARGET_Y] = 62 * TILESIZE
+scorpions[2][scorpionrace.SCORPION_TARGET_WIDTH] = TILESIZE
+scorpions[2][scorpionrace.SCORPION_TARGET_HEIGHT] = TILESIZE * 2
+scorpions[2][scorpionrace.SCORPION_NPC] = create_npc("Rennskorpion", 140, 140 * TILESIZE + 16, 70 * TILESIZE + 16, skorpion_talk, nil)
+scorpions[2][scorpionrace.SCORPION_NAME] = "Skorpion 2"
+
+scorpions[3] = {}
+scorpions[3][scorpionrace.SCORPION_START_X] = 139 * TILESIZE + 16
+scorpions[3][scorpionrace.SCORPION_START_Y] = 70 * TILESIZE + 16
+scorpions[3][scorpionrace.SCORPION_STROLL_UP] = 5 * TILESIZE
+scorpions[3][scorpionrace.SCORPION_STROLL_RIGHT] = 0 * TILESIZE
+scorpions[3][scorpionrace.SCORPION_STROLL_DOWN] = 1 
+scorpions[3][scorpionrace.SCORPION_STROLL_LEFT] = 0 
+scorpions[3][scorpionrace.SCORPION_TARGET_X] = 142 * TILESIZE
+scorpions[3][scorpionrace.SCORPION_TARGET_Y] = 62 * TILESIZE
+scorpions[3][scorpionrace.SCORPION_TARGET_WIDTH] = TILESIZE
+scorpions[3][scorpionrace.SCORPION_TARGET_HEIGHT] = TILESIZE * 2 
+scorpions[3][scorpionrace.SCORPION_NPC] = create_npc("Rennskorpion", 140, 142 * TILESIZE + 16, 70 * TILESIZE + 16, skorpion_talk, nil)
+scorpions[3][scorpionrace.SCORPION_NAME] = "Skorpion 3"
+
+scorpionrace.initializeRace(scorpions, skorpion_rennen_npc, 2)
+
+
 
   mana.trigger_create(56 * TILESIZE, 32 * TILESIZE, 64, 64, "patrol_waypoint", 1, true)
   mana.trigger_create(63 * TILESIZE, 32 * TILESIZE, 64, 64, "patrol_waypoint", 2, true)
@@ -74,106 +115,6 @@ atinit(function()
   end)
 end)
 
-local skorpion_rennen_gebote = {}
-local skorpion_rennen_status = 0
-local skorpion_rennen_gewinne = {}
-
-function skorpion_talk(npc, ch)
-    do_message(npc, ch, "Ich werde gewinnen.")
-    do_npc_close(npc, ch)
-end
-
-function skorpion_rennen_ende(being, id)
-    if skorpion_rennen_status == 1 then
-        mana.being_say(being, "GEWONNEN!")
-        skorpion_rennen_status = 2
-        skorpion_rennen_gewinne = skorpion_rennen_gebote[id]
-        skorpion_rennen_gebote = {}
-        mana.being_say(skorpion_rennen_npc, string.format("Skorpion Nummer %s hat Gewonnen. Holt eure Gewinne ab!", id))
-    end
-end
-
-skorpion_move = function()
-    if skorpion_rennen_status == 1 then
-        for i,skorpion in ipairs(skorpione) do
-            local desired_x = mana.posX(skorpion)
-            local desired_y = math.min(mana.posY(skorpion) + math.random(-TILESIZE * 5, TILESIZE * 2), 70 * TILESIZE)
-            mana.being_walk(skorpion, desired_x, desired_y, 1)
-        end
-        schedule_in(1, skorpion_move)
-    else
-        for i,skorpion in ipairs(skorpione) do
-            mana.being_walk(skorpion, mana.posX(skorpion), 70 * TILESIZE + 16, 1)
-        end
-        schedule_in(20, function() 
-            skorpion_rennen_status = 0 
-            mana.being_say(skorpion_rennen_npc, "Neue Runde neues Glück!")
-        end) -- Den Spielern Zeit geben ihre Gewinne abzuholen.
-    end
-end
-
-function skorpion_rennen_talk(npc, ch)
-    do_message(npc, ch, "Was soll ich machen?")
-    while true do
-        local v = do_choice(npc, ch, "anfangen", "Tschüss", "Auf Skorpion bieten", "Gewinn abholen")
-        if v == 1 then
-            if skorpion_rennen_status == 0 then
-                skorpion_rennen_status = 1
-                schedule_in(1, skorpion_move)
-            else
-                do_message(npc, ch, "Geduld. Jetzt nicht!")
-            end
-            break
-        elseif v == 2 then
-            break
-        elseif v == 3 then
-            do_message(npc, ch, "Auf welches Skorpion möchtest du bieten?")
-            while true do
-                local v2 = do_choice(npc, ch, "Nummer 1", "Nummer 2", "Nummer 3", "Auf keines.")
-                if (v2 <= 3) and (v2 >= 1) then
-                    local betrag = do_ask_integer(npc, ch, 0, 50000, 100)
-                        
-                    if skorpion_rennen_status == 0 then --Nur wenn Skorpionen beim Start sind Angebote annehmen.
-                        if mana.chr_money(ch) >= betrag then
-                            invertika.add_money(ch, -betrag)
-                            if skorpion_rennen_gebote[v2] == nil then skorpion_rennen_gebote[v2] = {} end -- ggf. initialisie
-                            if skorpion_rennen_gebote[v2][ch] == nil then
-
-                                skorpion_rennen_gebote[v2][ch] = betrag
-                            else
-                                skorpion_rennen_gebote[v2][ch] = skorpion_rennen_gebote[v2][ch] + betrag
-                            end
-                            mana.being_say(npc, string.format("%s hat %s Aki auf Skorpion Nummer %s geboten!", mana.being_get_name(ch), betrag, v2))
-                        else
-                            do_message(npc, ch, "Du hast nicht genügen Geld!")
-                        end
-                    else
-                        do_message(npc, ch, "Zur Zeit nehme ich keine Gebote an!")
-                    end
-
-                    break
-                elseif v2 == 4 then
-                    break
-                end
-            end
-            break
-        elseif v == 4 then
-            if skorpion_rennen_gewinne == nil then -- Keiner hat auf den Sieger gesetzt.
-                do_message(npc, ch, "Du hast nichts gewonnen a")
-            elseif skorpion_rennen_gewinne[ch] == nil then -- Spieler hat nicht auf den Sieger gesetzt.
-                do_message(npc, ch, "Du hast nichts gewonnen b")
-            elseif skorpion_rennen_gewinne[ch] > 0 then -- Gewonnen
-                skorpion_rennen_gewinne[ch] = skorpion_rennen_gewinne[ch] * 2
-                do_message(npc, ch, string.format(
-                  "Herzlichen Glückwunsch! Hier hast du deine %s Aki.", skorpion_rennen_gewinne[ch]))
-                invertika.add_money(ch, skorpion_rennen_gewinne[ch])
-                skorpion_rennen_gewinne[ch] = 0
-            end
-            break
-        end
-    end
-    do_npc_close(npc, ch)
-end
 
 function zelan_talk(npc, ch)
     do_message(npc, ch, "Wo du bist? Im Vacare. Jeder neue kommt hier her bevor es raus geht in die große Welt. Also pass auf dich auf.")
