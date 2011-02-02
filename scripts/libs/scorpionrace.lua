@@ -65,7 +65,7 @@ function create_trigger()
           scorpion[SCORPION_TARGET_Y],
           scorpion[SCORPION_TARGET_WIDTH],
           scorpion[SCORPION_TARGET_HEIGHT],
-          trigger_race_end, i, true)
+          "trigger_race_end", i, true)
     end
 end
 

@@ -90,7 +90,7 @@ scorpions[3][scorpionrace.SCORPION_TARGET_X] = 142 * TILESIZE
 scorpions[3][scorpionrace.SCORPION_TARGET_Y] = 62 * TILESIZE
 scorpions[3][scorpionrace.SCORPION_TARGET_WIDTH] = TILESIZE
 scorpions[3][scorpionrace.SCORPION_TARGET_HEIGHT] = TILESIZE * 2 
-scorpions[3][scorpionrace.SCORPION_NPC] = create_npc("Rennskorpion", 140, 142 * TILESIZE + 16, 70 * TILESIZE + 16, skorpion_talk, nil)
+scorpions[3][scorpionrace.SCORPION_NPC] = create_npc("Rennskorpion", 140, 142 * TILESIZE + 16, 70 * TILESIZE + 16, scorpionrace.race_manager_talk, nil)
 scorpions[3][scorpionrace.SCORPION_NAME] = "Skorpion 3"
 
 scorpionrace.initializeRace(scorpions, skorpion_rennen_npc, 2)
@@ -108,11 +108,6 @@ scorpionrace.initializeRace(scorpions, skorpion_rennen_npc, 2)
     print("One and a half hour has passed on map 1-1")
   end)
 
-  schedule_in(1, function()
-      mana.being_set_direction(skorpione[1], DIRECTION_UP)
-      mana.being_set_direction(skorpione[2], DIRECTION_UP)
-      mana.being_set_direction(skorpione[3], DIRECTION_UP)
-  end)
 end)
 
 
