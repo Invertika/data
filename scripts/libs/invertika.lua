@@ -25,6 +25,15 @@ function get_random_element(...)
     return arg[r]
 end
 
+--- Gibt die Distanz zwischen den beiden übergebenen Punkten an.
+function get_distance(x1, y1, x2, y2)
+    -- dx: x2 - x1
+    -- dy: y2 - y1
+    -- Satz des Pythargoras:
+    -- dx² + dy² = d²
+    return math.sqrt(math.pow(x2 -x1, 2) + math.pow(y2 - y1, 2))
+end
+
 ---------------------------
 -- Queststati            --
 ---------------------------
