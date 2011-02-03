@@ -46,7 +46,7 @@ atinit(function()
   create_npc("Sitter", 201, 51 * TILESIZE + 16, 25 * TILESIZE + 16, nil, sitter_update)
   create_npc("Spinner", 201, 51 * TILESIZE + 16, 30 * TILESIZE + 16, nil, spinner_update)
   create_npc("Healer", 19, 54 * TILESIZE + 16, 32 * TILESIZE + 16, healer_talk, nil)
-  skorpion_rennen_npc = create_npc("Skorpion Rennen", 27, 142 * TILESIZE + 16, 72 * TILESIZE +16, scorpionrace.skorpion_rennen_talk, nil)
+  skorpion_rennen_npc = create_npc("Skorpion Rennen", 27, 142 * TILESIZE + 16, 72 * TILESIZE +16, scorpionrace.race_manager_talk, nil)
 
 
 
@@ -62,7 +62,7 @@ scorpions[1][scorpionrace.SCORPION_TARGET_X] = 138 * TILESIZE
 scorpions[1][scorpionrace.SCORPION_TARGET_Y] = 62 * TILESIZE
 scorpions[1][scorpionrace.SCORPION_TARGET_WIDTH] = TILESIZE
 scorpions[1][scorpionrace.SCORPION_TARGET_HEIGHT] = TILESIZE * 2
-scorpions[1][scorpionrace.SCORPION_NPC] = create_npc("Rennskorpion", 140, 138 * TILESIZE + 16, 70 * TILESIZE + 16, skorpion_talk, nil)
+scorpions[1][scorpionrace.SCORPION_NPC] = create_npc("Rennskorpion", 140, 138 * TILESIZE + 16, 70 * TILESIZE + 16, scorpion_talk, nil)
 scorpions[1][scorpionrace.SCORPION_NAME] = "Skorpion 1"
 
 scorpions[2] = {}
@@ -76,7 +76,7 @@ scorpions[2][scorpionrace.SCORPION_TARGET_X] = 140 * TILESIZE
 scorpions[2][scorpionrace.SCORPION_TARGET_Y] = 62 * TILESIZE
 scorpions[2][scorpionrace.SCORPION_TARGET_WIDTH] = TILESIZE
 scorpions[2][scorpionrace.SCORPION_TARGET_HEIGHT] = TILESIZE * 2
-scorpions[2][scorpionrace.SCORPION_NPC] = create_npc("Rennskorpion", 140, 140 * TILESIZE + 16, 70 * TILESIZE + 16, skorpion_talk, nil)
+scorpions[2][scorpionrace.SCORPION_NPC] = create_npc("Rennskorpion", 140, 140 * TILESIZE + 16, 70 * TILESIZE + 16, scorpion_talk, nil)
 scorpions[2][scorpionrace.SCORPION_NAME] = "Skorpion 2"
 
 scorpions[3] = {}
@@ -90,7 +90,7 @@ scorpions[3][scorpionrace.SCORPION_TARGET_X] = 142 * TILESIZE
 scorpions[3][scorpionrace.SCORPION_TARGET_Y] = 62 * TILESIZE
 scorpions[3][scorpionrace.SCORPION_TARGET_WIDTH] = TILESIZE
 scorpions[3][scorpionrace.SCORPION_TARGET_HEIGHT] = TILESIZE * 2 
-scorpions[3][scorpionrace.SCORPION_NPC] = create_npc("Rennskorpion", 140, 142 * TILESIZE + 16, 70 * TILESIZE + 16, scorpionrace.race_manager_talk, nil)
+scorpions[3][scorpionrace.SCORPION_NPC] = create_npc("Rennskorpion", 140, 142 * TILESIZE + 16, 70 * TILESIZE + 16, scorpion_talk, nil)
 scorpions[3][scorpionrace.SCORPION_NAME] = "Skorpion 3"
 
 scorpionrace.initializeRace(scorpions, skorpion_rennen_npc, 2)
@@ -110,6 +110,10 @@ scorpionrace.initializeRace(scorpions, skorpion_rennen_npc, 2)
 
 end)
 
+function scorpion_talk(npc, ch)
+    do_message(npc, ch, "Ich werde gewinnen!")
+    do_npc_close(npc, ch)
+end
 
 function zelan_talk(npc, ch)
     do_message(npc, ch, "Wo du bist? Im Vacare. Jeder neue kommt hier her bevor es raus geht in die große Welt. Also pass auf dich auf.")
