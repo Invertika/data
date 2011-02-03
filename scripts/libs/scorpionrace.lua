@@ -37,7 +37,7 @@ local bets = {}
 local status = 0
 local winnings = {}
 local bet_npc = nil
-local winnig_factor = nil
+local winning_factor = nil
 
 --- Events
 local event_scorpion_won = function(id)
@@ -121,6 +121,7 @@ function move_scorpions()
               -scorpion[SCORPION_STROLL_UP], scorpion[SCORPION_STROLL_DOWN])
 
             mana.being_walk(scorpion[SCORPION_NPC], desired_x, desired_y, 1)
+            -- mana.being_say(scorpion[SCORPION_NPC], "Hopp.")
         end
         schedule_in(1, move_scorpions())
     end
