@@ -51,6 +51,10 @@ local event_scorpion_bet_accepted = function(scorpionId, player, money)
   end
 
 
+function set_event_scorpion_bet_accepted(event_function)
+    event_scorpion_bet_accepted = event_function
+end
+
 
 
 -- Initialisiert die Variablen.
