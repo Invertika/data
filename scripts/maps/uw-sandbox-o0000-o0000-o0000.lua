@@ -110,8 +110,8 @@ scorpionrace.initializeRace(scorpions, skorpion_rennen_npc, 2)
 
   scorpions_bet_accepted = function(scorpionId, player, money)
     mana.being_say(skorpion_rennen_npc, string.format("%s hat %s Aki auf Skorpion Nummer %s geboten!", mana.being_get_name(player), money, scorpionId))
+    mana.being_say(skorpion_rennen_npc, "Das Rennen beginnt in einer Minute.")
     schedule_in(60, function()
-        mana.being_say(skorpion_rennen_npc, "Das Rennen beginnt in einer Minute.")
         scorpionrace.start_race()
         end)
   end
