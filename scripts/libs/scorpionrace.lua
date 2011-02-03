@@ -46,6 +46,9 @@ local event_scorpion_won = function(id)
 local event_scorpions_ready_again = function()
   mana.being_say(bet_npc, "Die Skorpione sind wieder bereit! Auf in die neue Runde! Wetten können hier abgeschlossen werden.")
   end
+local event_scorpions_bet_accepted = function(scorpionId, player, money)
+  mana.being_say(bet_npc, string.format("%s hat %s Aki auf Skorpion Nummer %s geboten!", mana.being_get_name(player), money, scorpionId))
+  end
 
 
 
@@ -143,24 +146,25 @@ function race_manager_talk(npc, ch)
             while true do
                 local v2 = do_choice(npc, ch, answer_choices2)
                 if scorpions[v2] ~= nil then
-                local betrag = do_ask_integer(npc, ch, 0, 50000, 100)
+                    local betrag = do_ask_integer(npc, ch, 0, 50000, 100)
                 if betrag <= 0 then break end -- Prüfen ob Ein Wert über Null angegeben wurde.
-                if status == 0 then --Nur wenn Skorpionen beim Start sind Angebote annehmen.
-                    if mana.chr_money(ch) >= betrag then
-                        invertika.add_money(ch, -betrag)
-                        if bets[v2] == nil then bets[v2] = {} end -- ggf. init    ialisie
-                        if bets[v2][ch] == nil then
-                            bets[v2][ch] = betrag
+                    if status == 0 then --Nur wenn Skorpionen beim Start sind Angebote annehmen.
+                        if mana.chr_money(ch) >= betrag then
+                            invertika.add_money(ch, -betrag)
+                            if bets[v2] == nil then bets[v2] = {} end -- ggf. init    ialisie
+                            if bets[v2][ch] == nil then
+                                bets[v2][ch] = betrag
+                            else
+                                bets[v2][ch] = bets[v2][ch] + betrag
+                            end
+                            event_scorpions_bet_accepted(v2, ch, betrag)
                         else
-                            bets[v2][ch] = bets[v2][ch] + betrag
+                            do_message(npc, ch, "Du hast nicht genügen Geld!")
                         end
-                        mana.being_say(npc, string.format("%s hat %s Aki auf Skorpion Nummer %s geboten!", mana.being_get_name(ch), betrag, v2))
                     else
-                        do_message(npc, ch, "Du hast nicht genügen Geld!")
+                        do_message(npc, ch, "Zur Zeit nehme ich keine Gebote an!")
                     end
-                else
-                    do_message(npc, ch, "Zur Zeit nehme ich keine Gebote an!")
-                end
+                    break
                 end
             end
             break
