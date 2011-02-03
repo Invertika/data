@@ -46,7 +46,7 @@ local event_scorpion_won = function(id)
 local event_scorpions_ready_again = function()
   mana.being_say(bet_npc, "Die Skorpione sind wieder bereit! Auf in die neue Runde! Wetten können hier abgeschlossen werden.")
   end
-local event_scorpions_bet_accepted = function(scorpionId, player, money)
+local event_scorpion_bet_accepted = function(scorpionId, player, money)
   mana.being_say(bet_npc, string.format("%s hat %s Aki auf Skorpion Nummer %s geboten!", mana.being_get_name(player), money, scorpionId))
   end
 
@@ -157,7 +157,7 @@ function race_manager_talk(npc, ch)
                             else
                                 bets[v2][ch] = bets[v2][ch] + betrag
                             end
-                            event_scorpions_bet_accepted(v2, ch, betrag)
+                            event_scorpion_bet_accepted(v2, ch, betrag)
                         else
                             do_message(npc, ch, "Du hast nicht genügen Geld!")
                         end
