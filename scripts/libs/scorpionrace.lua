@@ -111,14 +111,14 @@ end
 function move_scorpions()
     if status == 1 then -- Rennen läuft.
         for i, scorpion in ipairs(scorpions) do
-            local desired_x = mana.posX(scorpion[SCOPRION_NPC])
-            local desired_y = mana.posY(scorpion[SCOPRION_NPC])
+            local desired_x = mana.posX(scorpion[SCORPION_NPC])
+            local desired_y = mana.posY(scorpion[SCORPION_NPC])
 
-            local desired_x = desired_x + math.random(
-              -scorpion[SCOPRION_STROLL_LEFT], scorpion[SCOPRION_STROLL_RIGHT])
+            desired_x = desired_x + math.random(
+              -scorpion[SCORPION_STROLL_LEFT], scorpion[SCORPION_STROLL_RIGHT])
 
-            local desired_y = desired_y + math.random(
-              -scorpion[SCOPRION_STROLL_UP], scorpion[SCOPRION_STROLL_DOWN])
+            desired_y = desired_y + math.random(
+              -scorpion[SCORPION_STROLL_UP], scorpion[SCORPION_STROLL_DOWN])
 
             mana.being_walk(scorpion[SCORPION_NPC], desired_x, desired_y, 1)
         end

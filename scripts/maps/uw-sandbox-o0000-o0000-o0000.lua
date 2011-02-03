@@ -114,7 +114,7 @@ scorpionrace.initializeRace(scorpions, skorpion_rennen_npc, 2)
     schedule_in(60, function()
         mana.being_say(skorpion_rennen_npc, "GO!")
         scorpionrace.start_race()
-        end)
+    end)
   end
   
   scorpionrace.set_event_scorpion_bet_accepted(scorpions_bet_accepted)
