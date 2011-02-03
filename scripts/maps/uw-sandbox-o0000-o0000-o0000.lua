@@ -115,6 +115,8 @@ scorpionrace.initializeRace(scorpions, skorpion_rennen_npc, 2)
         scorpionrace.start_race()
         end)
   end
+  
+  scorpionrace.set_event_scorpion_bet_accepted(scorpions_bet_accepted)
 
 end)
 
