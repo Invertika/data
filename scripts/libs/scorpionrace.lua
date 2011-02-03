@@ -144,7 +144,7 @@ function race_manager_talk(npc, ch)
                 local v2 = do_choice(npc, ch, answer_choices2)
                 if scorpions[v2] ~= nil then
                 local betrag = do_ask_integer(npc, ch, 0, 50000, 100)
-
+                if betrag <= 0 then break end -- Prüfen ob Ein Wert über Null angegeben wurde.
                 if status == 0 then --Nur wenn Skorpionen beim Start sind Angebote annehmen.
                     if mana.chr_money(ch) >= betrag then
                         invertika.add_money(ch, -betrag)
