@@ -18,6 +18,9 @@
  <tileset firstgid="4097" name="cave1_32_64" tilewidth="32" tileheight="64">
   <image source="../graphics/tiles/cave1_32_64.png" width="1024" height="1024"/>
  </tileset>
+ <tileset firstgid="4609" name="misc1_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/misc1_32_64.png" width="1024" height="1024"/>
+ </tileset>
  <layer name="Ground" width="80" height="55">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA+1aW25TMRCNVOcTWEOD+gmsoW9+gDW0TVO2kTZNuw2gAj54rAE+ABUBu2gjRcAWsKs7zbnTse/cp29KKh1VTnLt8fHMnLGvz7qdztkCjaNnOp3tBMtG98wWe4b6eKx8voydNAbaUPfYIR7WLA4SrCrtGLBnqI/nFc7B2bYB68PHcDbcsbhrca/isbVwNuxanCTYUdoxZs9QH6cVzsHZ1of14WM4Gx5YPLR4VPHYWjgbDi0uLc4thko7VpJnLpNnqI915jMb0C5i2wjWx40xgTE2LZ5YPLV4lnzedAwjD4T7OflD7DGf6UM7L4c0Bq4PjrEvjB0jhjkXGv4cugJ/R8xnRtB2HPo0CjUMfSg0xrHweYwY5jrG59dj3xM2PT4o+cww4ZD0hms3apjkQ8TjFPrEP/psPbBGdWHA5r7qmdtrizcWb5M2jx/KoSFOSW+4dqOGnZrZmm0k/ijlixfW9pfdNH97Jl8dUQXGzK4dz9y+WHy1+Ja0efyQf0wCHCKPqN3oq+uwZv3EH0P8IY9HJl8dUQd/w8DcJCwZOU9pwOOcfIjWbGRmOY2P8cl+9tniVfIf/VBbR5TNe1QHaOcmcef6WhE+47lLiyPBHyU7iT8pjh20Olgm72Ed8N7ig8XHDK66OW2UYi8Px756hfPYNH9Un1Ie+2Hx0+KXx84y9iA/nLssHn31SlZM1A3uF8Tfd8EPJw2sZ9F45zm4KTs5f78t/li8Y37Y1Hr67NKgKc406008/mW20X62idpUivduRjs2fHFD+kf72SZrU8kvY/qaD863fHUM6R/tZ5usTduOHviWrz4g/aOaLKs2xXPP2POrC1smHZPOt7T1QVYM4bnnbeVwYNIxifV+1v4Vc6LkZ3jueVs5HAu8ES6S/7yel3Ii+RnyiOeeO8L3Tep4XVgR+LoE3vi5mi8nkp8hj6RD58Ahfr/G2vPIpa9GnSj5QwwZj6RDF57vd1lb8mE6/2szr1K9Fzr/1PLo0yH6/pC1JR+m8z9qx6g3y/DYJCYeHz2BdtvrTYlD6bxKgvZ3mt/7fDTGeyEtfHsPX43n23dKZ6hZ51Zaztu4Z8Maej8wxxi+z3NyG/nDGvo44jrzWkB6J9BG/qQaugo76X1yGc3cgpxyxWcL+St6d+MGDKA7u5tVRjMHkFNCe8XGYdKg3DOpkD+6m0WaWWS/NoacwveK0Tg0M80goO4usflum8Ce1aTvV0l9Sueu+LvlQFxibPC9YrR9n5lpBiGlu2Z2X6Nv0ndVJA7WWF/Y59TI5674uywefPVhaN9XN3+kGQSKEfQVmi/V/wceDnZZX7xP6dwVf8d5yMOhtO+rm0PUNAPAHMPva9BdDomDrLsJWeA8SO9VKI59Z5JDczOu6+IRNY3zx32lLPLuNSgurzTb8yzlmKy4rssXUdOKIHQ2E9q3cJ3BuSEX1+9VFHMPxbXPl8vmPhcLeFZKtQq3RXuGJXHG9V3SGYwzPnaR+on3kfLlivm7YSvCYw/lHs3emOu7pDMYZ/zcouj+B23Ocw++Km5FFOiL67uUUzHO+DvTovxVtpeKCNL3qTAXn2bwfFx2znnv1rUJqO+SVob0c1rRnNt+ZhMC6vt1blX4Sp78qkLJHBQLtPYXSv5qw5zzp/W/2vlrASel5xHbhnnGgr9inM1p/llggQUW+F/xDxjgOAzARAAA
@@ -30,7 +33,7 @@
  </layer>
  <layer name="Fringe" width="80" height="55">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3YsQ3AIBADwE9Il4b956NmBhgh1aOP7iT3lktHAAAAGe4e0XaefrrJd/M93eA/hi0BAAAg3VXohwEAAAAAAAAAAIDKFqsPGtjARAAA
+   H4sIAAAAAAAAA+3YsQ2AMAxFQRPS0UTsPx41M5AFIlLFAt1J7p9+6QgAAGCF0iL2frVll8y7j+yC/7hsCQAAAMttH/rDAAAAAADwrp7ZBQAAAACMPIfwjBrARAAA
   </data>
  </layer>
  <layer name="Over" width="80" height="55">
@@ -40,7 +43,7 @@
  </layer>
  <layer name="Collision" width="80" height="55">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+2SSw4EIQhEzdz/0LPtGPkJCJoiqU23QtXD3xjjB0EQdJFGEw9WH/OdEznmGd+qZmf1sarTO+7Az+NjTPdP77cLvy8LT7Y5S2Q2Tb3CLyMb1S9yRja/+cxOSXys/Dz7j2TH+dfw2CnrG+LOaXtk8+OyUWek92Mprh81W/M+s/lpeUqsuP7cPaq8e+jIz/PGLec0vqJ97mSi5nbwpSnqHXTgd9KPl1+VOnmZPXH77OSX2nu1p868buPXXRI/8LTzk5hCNnbgR3PTctX0rM51kpvEZYff6ww9/KQ7mp4vKILf6q7mf3X2Exy9tcP+VnGZtNk1ZZlZzSSK3+os10P65mHeVZU+wS+O3+p7NRut/2ofnXZq3XtHrx09cQyrvdzMr1vuDF+37Diq51zVrKr47c74cuvCcFWcb46Bpzx+rT0y3gblI6KsLLxvoPr9cbm057x+bmBIzdupbE+ne0TOyeS1mvULmHGKYYW4bJG5X2CorazML/CT8khMwc+W9ea80ezAAvwgCIIgCIJu0B/18j7uwEQAAA==
+   H4sIAAAAAAAAA+2SSw4EIQhEzdz/0LPtGPkJCJoiqU23QtXD3xjjB0EQdJFGEw9WH/OdEznmGd+qZmf1sarTO+7Az+NjTPdP77cLvy8LT7Y5S2Q2Tb3CLyMb1S9yRja/+cxOSXys/Dz7j2TH+dfw2CnrG+LOaXtk8+OyUWek92Mprh81W/M+s/lpeUqsuP7cPaq8e+jIz/PGLec0vqJ97mSi5nbwpSnqHXTgd9KPl1+VOnmZPXH77OSX2nu1p868buPXXRI/8LTzk5hCNnbgR3PTctX0rM51kpvEZYff6ww9/KQ7mp4vKILf6q7mf3X2Exy9tcP+VnGZtNk1ZZlZzSSK3+os10P65mHeVZU+wS+O3+p7NRut/2ofnXZq3XtHrx09cQyrvdzMr1vuDF+37Diq51zVrKr47c74cuvCcFWcb46Bpzx+rT0y3gblI6KsLLxvoPr9cbm057x+bmBIzdupbE8ndpDlNZPXatYvYMYJr1XiskXmfoGhtrIyv8BPyiMxBT9b1pvzRrMDC/CDIAiCIAi6QX+K8apowEQAAA==
   </data>
  </layer>
  <objectgroup name="Object" width="80" height="55">
@@ -49,6 +52,13 @@
     <property name="DEST_MAP" value="ow-p0001-o0000-o0000"/>
     <property name="DEST_X" value="4640"/>
     <property name="DEST_Y" value="3024"/>
+   </properties>
+  </object>
+  <object name="Fledermaus" type="SPAWN" x="256" y="64" width="1952" height="1472">
+   <properties>
+    <property name="MAX_BEINGS" value="15"/>
+    <property name="MONSTER_ID" value="8"/>
+    <property name="SPAWN_RATE" value="25"/>
    </properties>
   </object>
  </objectgroup>
