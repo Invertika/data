@@ -234,7 +234,6 @@ function barber2_talk(npc, ch)
                 local v2 = do_choice(npc, ch, "Blond", "Grün", "Rot", "Violett", "Grau", "Gelb", "Blau", "Braun",
                                                "hell Blau", "dunkel Violett", "Schwarz")
                 
-                do_message(npc, ch, v2)
                 if v2 >= 1 or v2 <= 11 then
                     do_message(npc, ch, "Das Färben kostet 100 Aki!")
                     while true do
@@ -242,7 +241,7 @@ function barber2_talk(npc, ch)
                         if v3 == 1 then
                             if mana.chr_money(ch) >= 100 then
                                 mana.chr_money_change(ch, -100)
-                                mana.chr_set_hair_color(ch, v3 - 1)
+                                mana.chr_set_hair_color(ch, v2 - 1)
                             else
                                 do_message(npc, ch, "Du hast nicht genug Geld dabei!")
                             end
