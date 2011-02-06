@@ -446,3 +446,38 @@ function cast(ch, arg)
 	end
 
 end
+
+-- schedules a function call to be executed at a given date
+function schedule_per_date(my_year, my_month, my_day, my_hour, my_minute, funct)
+  -- TODO: Add parameters checks.
+  local job = {}
+  job[0] = os.time{year = my_year, month = my_month, day = my_day, hour = my_hour, min = my_minute}
+  job[1] = funct
+  job[2] = nil
+  table.insert(scheduler_jobs, job)
+  table.sort(scheduler_jobs, job_cmp)
+end
+-- Functions below will be put in the functions/ folder:
+-- Returns a date in string format
+function get_date(my_year, my_month, my_day)
+    local s_days = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" }
+    local s_months = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }
+    local temp = os.date("*t", os.time{year = my_year, month = my_month, day = my_day, hour = 0})
+    -- A simple date: Sunday 04 September 2005
+    -- return s_days[temp.wday].." "..my_day.." "..s_months[my_month].." "..my_year
+    --E.g.: Sunday, September 04th 2005
+    local s_day_rank = "th" -- English specificity
+    if (my_day == 1 or my_day == 11 or my_day == 21 or my_day == 31) then
+        s_day_rank = "st"
+    elseif (my_day == 2 or my_day == 22) then
+        s_day_rank = "nd"
+    end
+    return s_days[temp.wday]..", "..s_months[my_month].." "..my_day..s_day_rank.." "..my_year
+end
+-- Returns the number of days within a given month
+function get_nbr_days(my_month, my_year)
+    if (my_month%2) ~= 0 or my_month == 8 then return 31 end
+    if my_month ~= 2 or mois > 8 then return 30 end
+    if (((my_year%4) == 0 and (my_year%100) ~= 0) or (my_year%400) == 0) then return 29 end
+    return 28
+end
