@@ -128,7 +128,7 @@ function kolbert_talk(npc, ch)
       mana.chr_set_quest(ch, "vacare_first_weapon", 1)
 	else
 	  do_message(npc, ch, "Du schon wieder. Du weist doch. Zum Gegner, A drücken und dann Strg um zum Angriff überzugehen. Oder einfach X drücken. Einfach oder?")
-	  do_message(npc, ch, "Noch ein kleiner Tipp. Mit Y kannst du Gegenstände aufheben die ein Gegner verliert.")
+	  do_message(npc, ch, "Noch ein kleiner Tipp. Mit Z kannst du Gegenstände aufheben die ein Gegner verliert.")
     end
 	do_npc_close(npc, ch)
 end
