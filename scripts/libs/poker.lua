@@ -5,7 +5,7 @@
 --                                                                              --
 --                                                                              --
 ----------------------------------------------------------------------------------
---  Copyright 2008 The Invertika Development Team                               --
+--  Copyright 2010 The Invertika Development Team                               --
 --                                                                              --
 --  This file is part of Invertika.                                             --
 --                                                                              --
@@ -18,8 +18,8 @@ module("invertika", package.seeall)
 
 require "scripts/lua/npclib"
 
-VALUE = 1
-COLOR = 2
+CARD_VALUE = 1
+CARD_COLOR = 2
 
 CARD_COLORS = {}
 CARD_COLORS[1] = "rot"
@@ -37,6 +37,16 @@ CARD_VALUES[6] = "er Zombie"
 CARD_VALUES[7] = "er Sandwurm"
 CARD_VALUES[8] = "e Eidechse"
 
+SPADE_HIGH_CARD = 1
+SPADE_ONE_PAIR = 2
+SPADE_THREE_OF_A_KIND = 3
+SPADE_STRAIGHT = 4
+SPADE_FLUSH = 5
+SPADE_FULL_HOUSE = 6
+SPADE_FOUR_OF_A_KIND = 7
+SPADE_STRAIGTH_FLUSH = 8
+SPADE_ROYAL_FLUSH = 9
+
 local CARDS_AVAILABLE = {}
 
 local cards_in_stack = {}
@@ -45,8 +55,24 @@ local player = {}
 -- player[ch][LAST_ACTION] = Zeitpunkt der letzten Aktion des Spielers
 
 -- Events
+
+-- Wird aufgerufen wenn die Karten gemischt werden
 local event_shuffle = function()
   -- Nix 
+end
+
+-- Wird auf gerufen wenn der nächste Spieler (ch) an der Reihe ist.
+local event_next_turn = function(ch)
+    -- Nix
+end
+
+INPUT_TYPE_CALL = 1
+INPUT_TYPE_RAISE = 2
+INPUT_TYPE_FOLD = 3
+
+-- Wird aufgerufen sobald ein Spieler einen Einsatz macht.
+local event_player_input = function(ch, amount, input_type)
+    -- Nix
 end
 
 function register_event_shuffle(funct)
@@ -68,8 +94,8 @@ function create_cards()
         k = 0
         while k <= table.getn(CARD_COLORS) do
             CARDS_AVAILABLE[i] = {}
-            CARDS_AVAILABLE[i][VALUE] = j
-            CARDS_AVAILABLE[i][VALUE] = k
+            CARDS_AVAILABLE[i][CARD_VALUE] = j
+            CARDS_AVAILABLE[i][CARD_COLOR] = k
             i = i + 1
             k = k +1
         end
@@ -85,12 +111,24 @@ function shuffle()
     end
 end
 
-function round1(ch)
+-- Bewertet die Blätter.
+function rate_spade(ch)
 
 end
 
-function round2(ch)
-
+function pop_card()
+    if table.getn(cards_in_stack) == 0 then
+        cards_in_stack = CARDS_AVAILABLE
+        shuffle()
+    end
+    return table.remove(cards_in_stack)
 end
 
-function get_min_input(ch)
+function deal_cards(ch, number)
+    local i = 1
+    while i <= number do
+       table.insert(player[ch][CARDS], pop_card())
+       i = i + 1
+    end 
+end
+
