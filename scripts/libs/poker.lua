@@ -39,13 +39,14 @@ CARD_VALUES[8] = "e Eidechse"
 
 SPADE_HIGH_CARD = 1
 SPADE_ONE_PAIR = 2
-SPADE_THREE_OF_A_KIND = 3
-SPADE_STRAIGHT = 4
-SPADE_FLUSH = 5
-SPADE_FULL_HOUSE = 6
-SPADE_FOUR_OF_A_KIND = 7
-SPADE_STRAIGTH_FLUSH = 8
-SPADE_ROYAL_FLUSH = 9
+SPADE_TWO_PAIR = 3
+SPADE_THREE_OF_A_KIND = 4
+SPADE_STRAIGHT = 5
+SPADE_FLUSH = 6
+SPADE_FULL_HOUSE = 7
+SPADE_FOUR_OF_A_KIND = 8
+SPADE_STRAIGHT_FLUSH = 9
+SPADE_ROYAL_FLUSH = 10
 
 local CARDS_AVAILABLE = {}
 
@@ -75,8 +76,16 @@ local event_player_input = function(ch, amount, input_type)
     -- Nix
 end
 
+function register_player(ch)
+
+end
+
 function register_event_shuffle(funct)
     event_shuffle = funct
+end
+
+function register_event_next_turn(funct)
+    event_next_turn = funct
 end
 
 function initialize()
@@ -112,8 +121,119 @@ function shuffle()
 end
 
 -- Bewertet die Blätter.
+-- Returns:
+-- SPADE_HIGH_CARD
+-- SPADE_ONE_PAIR
+-- SPADE_TWO_PAIR
+-- SPADE_THREE_OF_A_KIND
+-- SPADE_STRAIGHT
+-- SPADE_FLUSH
+-- SPADE_FULL_HOUSE
+-- SPADE_FOUR_OF_A_KIND
+-- SPADE_STRAIGHT_FLUSH
+-- SPADE_ROYAL_FLUSH
 function rate_spade(ch)
+    local value = nil
+    local same_of_value = {}
+    local same_of_color = {}
 
+    -- Gleiche Werte und Farben zählen
+    for i = 1, table.getn(player[ch][CARDS]) do -- Geht alle 5 Karten durch
+        if same_of_value[player[ch][CARDS][i][CARD_VALUE] == nil then
+            same_of_value[player[ch][CARDS][i][CARD_VALUE]] = 1
+        else
+            same_of_value[player[ch][CARDS][i][CARD_VALUE]] = same_of_value[player[ch][CARDS[i][CARD_VALUE]] + 1
+        end
+        
+        if same_of_color[player[ch][CARDS][i][CARD_COLOR]] == nil then
+            same_of_color[player[ch][CARDS][i][CARD_COLOR]] = 1
+        else
+            same_of_color[player[ch][CARDS][i][CARD_COLOR]] = same_of_color[player[ch][CARDS][i][CARD_COLOR]] + 1
+        end
+    end
+
+    -- Reihenfolge zählt (isStreet = true => ist eine Strasse von 5 Karten)
+    local average = 0
+    local isStreet
+    for i = 1, table.getn(player[ch][CARDS]) do -- Geht alle 5 Karten durch
+        average = average + player[ch][CARDS][i][CARD_VALUE]
+    end
+    average = average / 5
+    if (average >= 3) and (average <= 6) and (average % 1 == 0) then
+        if (same_of_value[average - 2] == 1) and (same_of_value[average - 1] == 1) and (same_of_value[average] == 1) and (same_of_value[average + 1] == 1) and (same_of_value[average + 2] == 1) then
+            -- Ist eine Straße
+            isStreet = true
+        end
+    end
+
+    -- Royal Flush und Straight Flush
+    for i,color in ipairs(same_of_color) do
+        if (color >= 5) and isStreet then
+            -- Auf höchste Karte testen
+            if same_of_value[8] == 1 then
+                return SPADE_ROYAL_FLUSH
+            else
+                return SPADE_STRAIGHT_FLUSH
+            end
+        end
+    end
+
+    -- Vierling
+    for i,value in ipairs(same_of_value) do
+        if value >= 4 then
+            return SPADE_FOUR_OF_A_KIND
+        end
+    end
+
+    -- Full House
+    local number_of_two_of_a_kind = 0
+    local number_of_three_of_a_kind = 0
+    
+    for i,value in ipairs(same_of_value) do
+        if value >= 3 then
+            number_of_three_of_a_kind = 1
+        elseif value >= 2 then
+            number_of_two_of_a_kind = 1
+        end
+    end
+    if (number_of_two_of_a_kind == 1) and (number_of_three_of_a_kind == 1) then
+        return SPADE_FULL_HOUSE
+    end
+
+    -- Flush
+    for i,color in ipairs(same_of_color) do
+        if color >= 5 then
+            return SPADE_FLUSH
+        end
+    end
+
+    -- Straße
+    if isStreet then
+        return SPADE_STRAIGHT
+    end
+
+    -- Drilling
+    for i,value in ipairs(same_of_value) do
+        if value >= 3 then
+            return SPADE_FOUR_OF_A_KIND
+        end
+    end
+
+    -- Zwei Paare oder ein Paar
+    local number_of_pairs = 0
+    for i,value in ipairs(same_of_value) do
+        if value >= 2 then
+            number_of_pairs = number_of_pairs + 1
+        end
+    end
+    if number_of_pairs >= 2 then
+        return SPADE_TWO_PAIRS
+    elseif number_of_pairs == 1 then
+        return SPADE_ONE_PAIR
+    end
+
+    -- High Card
+    return SPADE_HIGH_CARD
 end
 
 function pop_card()
@@ -124,6 +244,7 @@ function pop_card()
     return table.remove(cards_in_stack)
 end
 
+-- Gebe (number) Karten an Spieler (ch)
 function deal_cards(ch, number)
     local i = 1
     while i <= number do
