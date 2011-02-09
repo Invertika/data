@@ -1,68 +1,68 @@
 <?xml version="1.0"?>
 <sprite>
 
-	<imageset name="base" src="graphics/sprites/monsters/mammoth.png" width="320" height="320"/>
+	<imageset name="base" src="graphics/sprites/monsters/mammoth.png" width="250" height="250"/>
 
 	<action name="stand" imageset="base">
 		<animation direction="down">
-		  <frame index="0" offsetX="0" offsetY="120"/>
+		  <frame index="0" offsetX="0" offsetY="100"/>
 		</animation>
 		<animation direction="left">
-		  <frame index="15" offsetX="0" offsetY="110"/>
+		  <frame index="10" offsetX="0" offsetY="100"/>
 		</animation>
 		<animation direction="up">
-		  <frame index="30" offsetX="0" offsetY="110"/>
+		  <frame index="20" offsetX="0" offsetY="100"/>
 		</animation>
 		<animation direction="right">
-		  <frame index="45" offsetX="0" offsetY="110"/>
+		  <frame index="30" offsetX="0" offsetY="100"/>
 		</animation>
 	</action>
 
 	<action name="walk" imageset="base">
 		<animation direction="down">
-			<sequence start="1" end="8" delay="100" offsetX="0" offsetY="120"/>
+			<sequence start="1" end="4" delay="300" offsetX="0" offsetY="100"/>
 		</animation>
 		<animation direction="left">
-			<sequence start="16" end="23" delay="100" offsetX="0" offsetY="110"/>
+			<sequence start="11" end="14" delay="300" offsetX="0" offsetY="100"/>
 		</animation>
 		<animation direction="up">
-			<sequence start="31" end="38" delay="100" offsetX="0" offsetY="110"/>
+			<sequence start="21" end="24" delay="300" offsetX="0" offsetY="100"/>
 		</animation>
 		<animation direction="right">
-			<sequence start="46" end="53" delay="100" offsetX="0" offsetY="110"/>
+			<sequence start="31" end="34" delay="300" offsetX="0" offsetY="100"/>
 		</animation>
 	</action>
 
 	<action name="dead" imageset="base">
 		<animation direction="down">
-			<frame index="14" delay="100" offsetX="0" offsetY="120"/>
+			<frame index="9" delay="100" offsetX="0" offsetY="100"/>
 		</animation>
 		<animation direction="left">
-			<frame index="29" delay="100" offsetX="0" offsetY="110"/>
+			<frame index="19" delay="100" offsetX="0" offsetY="100"/>
 		</animation>
 		<animation direction="up">
-			<frame index="44" delay="100" offsetX="0" offsetY="110"/>
+			<frame index="29" delay="100" offsetX="0" offsetY="100"/>
 		</animation>
 		<animation direction="right">
-			<frame index="59" delay="100" offsetX="0" offsetY="110"/>
+			<frame index="39" delay="100" offsetX="0" offsetY="100"/>
 		</animation>
 	</action>
 
 	<action name="attack" imageset="base">
 		<animation direction="down">
-			<sequence start="9" end="13" delay="60" offsetX="0" offsetY="120"/>
+			<sequence start="5" end="8" delay="150" offsetX="0" offsetY="100"/>
 			<end />
 		</animation>
 		<animation direction="left">
-			<sequence start="24" end="28" delay="60" offsetX="0" offsetY="110"/>
+			<sequence start="15" end="18" delay="150" offsetX="0" offsetY="100"/>
 			<end />
 		</animation>
 		<animation direction="up">
-			<sequence start="39" end="43" delay="60" offsetX="0" offsetY="110"/>
+			<sequence start="25" end="28" delay="150" offsetX="0" offsetY="100"/>
 			<end />
 		</animation>
 		<animation direction="right">
-			<sequence start="54" end="58" delay="60" offsetX="0" offsetY="110"/>
+			<sequence start="35" end="38" delay="150" offsetX="0" offsetY="100"/>
 			<end />
 		</animation>
 	</action>
