@@ -1,11 +1,13 @@
--- Class PokercardValue
+require("pokerconstants")
 
-PokercardValue = {}
-PokercardValue.value = nil
+-- Class PokerCardValue
 
---- Erzeugt eine neue Instanz der Klasse Poker
+PokerCardValue = {}
+PokerCardValue.value = nil
+
+--- Erzeugt eine neue Instanz der Klasse PokerCardValue
 -- @param value Der Wert der Karte; Zahl von 1 - 8 (je höher, desto größer der Wert)
-function PokercardValue:new(value)
+function PokerCardValue:new(value)
     local res = {}
 	setmetatable(res, self)
 	self.__index = self
@@ -15,22 +17,12 @@ end
 
 --- Gibt den Text des Kartenwertes zurück
 -- @return Text des Kartenwertes
-function PokercardValue:getText()
-    CARD_VALUES = {}
-    CARD_VALUES[8] = "e Killermade"
-    CARD_VALUES[7] = "es Mammut"
-    CARD_VALUES[6] = "er Sandkriecher"
-    CARD_VALUES[5] = "e Terranite"
-    CARD_VALUES[4] = "er Geist"
-    CARD_VALUES[3] = "er Zombie"
-    CARD_VALUES[2] = "er Sandwurm"
-    CARD_VALUES[1] = "e Eidechse"
-    return CARD_VALUES[self.value]
+function PokerCardValue:getText()
+    return PokerConstants.CARD_VALUES[self.value]
 end
 
 --- Gibt den Kartenwert als Zahl zurück
 -- @return Kartenwert als Zahl von 1 - 8 (je höher, desto größer der Wert)
-function PokercardValue:getValue()
+function PokerCardValue:getValue()
     return self.value
 end
-
