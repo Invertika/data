@@ -103,11 +103,14 @@ function add_items(ch, id, number, name)
     return success
 end
 
+---------------------------
+-- Allgemein             --
+---------------------------
 
 --- Gibt eine Kopie der Table zurück.
 -- @param t Das Table Objekt.
 -- @return Kopie von t
-function table.copy(t)
+function tablecopy(t)
   local u = { } 
   for k, v in pairs(t) do u[k] = v end 
   return setmetatable(u, getmetatable(t))
