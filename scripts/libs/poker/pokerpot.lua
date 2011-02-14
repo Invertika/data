@@ -102,7 +102,7 @@ end
 --- Verschiebt den Einsatz eines Spielers in general_payment.
 -- wird aufgerufen wenn ein Spieler entfernt wird.
 -- @param player Spieler dessen Einsatz verschoben werden soll.
-function PokerPot:pushPaymentOfPlayerToGeneral(player)
+function PokerPot:pushPaymentOfPlayerToGeneralPot(player)
     self.general_payments = self.general_payments +
       self:getPaymentOf(player)
     self.payments[player] = 0
