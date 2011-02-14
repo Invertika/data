@@ -40,6 +40,7 @@ function PokerGame:removePlayer(ch)
     if my_player == nil then
         return false
     else
+        self.pot:pushPaymentOfPlayerToGeneralPot(my_player)
         table.remove(self.player, i)
         return true
     end
@@ -115,4 +116,19 @@ end
 -- @return Geld um das der Spieler erhöhen muss.
 function PokerGame:getMoneyPlayerHasToRaise(ch)
     return self.pot:getMoneyPlayerHasToRaise(self:getPlayerFromCh(ch))
+end
+
+--- Teilt dem Spiel mit, dass ch Fold spielt.
+function PokerGame:playerActionFold(ch)
+   self:removePlayer(ch)
+end
+
+-- Teilt dem Spiel mit, dass ch Call spielt.
+function PokerGame:playerActionCall(ch)
+    -- TODO
+end
+
+-- Teil dem Spiel mit, dass ch Raise spielt.
+function PokerGame:playerActionRaise(ch, amount)
+    -- TODO
 end
