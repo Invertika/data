@@ -132,10 +132,13 @@ end
 
 -- Teilt dem Spiel mit, dass ch Call spielt.
 function PokerGame:playerActionCall(ch)
-    -- TODO
+    local min = self.pot:getMoneyPlayerHasToRaise(ch)
+    local my_player = self:getPlayerFromCh(ch)
+    my_player:doPayment(pot, min)
 end
 
 -- Teil dem Spiel mit, dass ch Raise spielt.
 function PokerGame:playerActionRaise(ch, amount)
-    -- TODO
+    local my_player = self:getPlayerFromCh(ch)
+    my_player:doPayment(pot, amount)
 end

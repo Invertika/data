@@ -89,7 +89,7 @@ function PokerPot:getPossibilitiesOfPlayer(player)
     local max = getHighestPossiblePayment(player)
     local possibilities = {}
     table.insert(possibilities, PokerConstants.POSSIBILITY_FOLD)
-    if player:getMoney() > min then
+    if player:getMoney() >= min then
         
         table.insert(possibilities, PokerConstants.POSSIBILITY_CALL)
         if max > 0 then -- Hat das maximale Bugdet noch nicht erreicht
