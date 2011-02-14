@@ -5,6 +5,10 @@ PokerPot = {}
 -- payment[PokerPlayer] = Höhe der kumulierten
 -- Einzahlungen von gegebenem Spieler
 PokerPot.payments = {}
+
+-- Einzahlungen von Spielern die aus dem Spiel geflogen sind.
+PokerPot.general_payments = 0
+
 PokerPot.max_payment = nil
 
 --- Erstellt ein neues Objekt von Typ PokerPot
@@ -95,5 +99,11 @@ function PokerPot:getPossibilitiesOfPlayer(player)
     return possibilities
 end
 
-
-
+--- Verschiebt den Einsatz eines Spielers in general_payment.
+-- wird aufgerufen wenn ein Spieler entfernt wird.
+-- @param player Spieler dessen Einsatz verschoben werden soll.
+function PokerPot:pushPaymentOfPlayerToGeneral(player)
+    self.general_payments = self.general_payments +
+      self:getPaymentOf(player)
+    self.payments[player] = 0
+end
