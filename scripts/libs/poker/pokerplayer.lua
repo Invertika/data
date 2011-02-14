@@ -54,3 +54,9 @@ function PokerPlayer:getTimePlayerIsOnTurn()
         return self.time_round_start - os.time(t)
     end
 end
+
+--- Gibt das Blatt des Spielers zurück.
+-- @return Das Blatt des Spielers.
+function PokerPlayer:getSpade()
+    return self.spade
+end
