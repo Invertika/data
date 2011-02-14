@@ -118,6 +118,13 @@ function PokerGame:getMoneyPlayerHasToRaise(ch)
     return self.pot:getMoneyPlayerHasToRaise(self:getPlayerFromCh(ch))
 end
 
+--- Gibt zurück welchen Betrag der Spieler maximal setzen kann.
+-- @param ch Der Spieler.
+-- @return Betrag um den ch maximal erhöhen kann.
+function PokerGame:getMaxMoneyPlayerCanRaise(ch)
+    return self.pot_getHighestPossiblePayment(self:getPlayerFromCh(ch))
+end
+
 --- Teilt dem Spiel mit, dass ch Fold spielt.
 function PokerGame:playerActionFold(ch)
    self:removePlayer(ch)

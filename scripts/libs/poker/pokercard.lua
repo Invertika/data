@@ -10,8 +10,8 @@ PokerCard.value = nil
 PokerCard.color = nil
 
 --- Erzeugt eine neue Instanz der Klasse PokerCard
--- @param color Die Farbe der Karte vom Typ PokerCardColor
--- @param value Der Wert der Karte vom Typ PokerCardValue
+-- @param color Die Farbe der Karte
+-- @param value Der Wert der Karte
 function PokerCard:new(color, value)
     local res = {}
 	setmetatable(res, self)

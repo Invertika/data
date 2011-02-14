@@ -34,13 +34,10 @@ PokerConstants.SPADE_FOUR_OF_A_KIND = 8
 PokerConstants.SPADE_STRAIGHT_FLUSH = 9
 PokerConstants.SPADE_ROYAL_FLUSH = 10
 
--- Startkarten
-
-
 -- sonstige Konstanten
 PokerConstants.ID_OF_POKER_CHIPS = 40006
 
 -- Möglichkeiten des Spielers
 PokerConstants.POSSIBILITY_CALL = 1
 PokerConstants.POSSIBILITY_RAISE = 2
-PokerConstants.POSSIBILITY_LEAVE = 3
+PokerConstants.POSSIBILITY_FOLD = 3
