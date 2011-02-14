@@ -4,6 +4,9 @@
 
 PokerConstants = {}
 
+-- Timeout in Sekunden
+PokerConstants.TIMEOUT = 120
+
 -- Werte der Karten
 PokerConstants.CARD_VALUES = {}
 PokerConstants.CARD_VALUES[8] = "e Killermade"
