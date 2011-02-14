@@ -43,18 +43,3 @@ function PokerDealer:raiseEventNextPlayer(ch)
         func(ch)
     end
 end
-
-function PokerDealer:registerPlayer(ch)
-    self.game.addPlayer(ch)
-end
-
-function PokerDealer:unregisterPlayer(ch)
-    self.game.removePlayer(ch)
-end
-
-function PokerDealer:getPlayerMoney(ch)
-    self.game.getPlayerMoney(ch)
-end
-
-
-

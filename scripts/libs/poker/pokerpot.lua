@@ -77,13 +77,20 @@ function PokerPot:getAmountOfPayments()
     return content
 end
 
+--- Gibt die Möglichkeiten eines Spielers zurück.
+-- @param player Der Spieler
+-- @return Gibt die Möglichkeiten von player zurück.
 function PokerPot:getPossibilitiesOfPlayer(player)
     local min = self:getMoneyPlayerHasToRaise(player)
     local max = getHighestPossiblePayment(player)
     local possibilities = {}
-    table.insert(possibilities, PokerConstants.POSSIBILITY_CALL)
-    if max > 0 then -- Hat das maximale Bugdet noch nicht erreicht
-        table.insert(possibilities, PokerConstants.POSSIBILITY_RAISE)
+    table.insert(possibilities, PokerConstants.POSSIBILITY_FOLD)
+    if player:getMoney() > min then
+        
+        table.insert(possibilities, PokerConstants.POSSIBILITY_CALL)
+        if max > 0 then -- Hat das maximale Bugdet noch nicht erreicht
+            table.insert(possibilities, PokerConstants.POSSIBILITY_RAISE)
+        end
     end
     return possibilities
 end

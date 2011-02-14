@@ -4,7 +4,7 @@
 PokerGame = {}
 
 PokerGame.player={}
-PokerGame.playerOnTurn = nil
+PokerGame.player_on_turn = nil
 PokerGame.pot = nil
 
 --- Erstellt eine neue Instanz der Klasse PokerGame
@@ -16,7 +16,8 @@ function PokerGame:new(maxPayment)
 	return res
 end
 
---- PRIVATE
+--- PRIVATE: Gibt das Playerobjekt zurück, dass zum Char gehört.
+-- @return Das dazugehöre Playerobjekt zu ch.
 function PokerGame:getPlayerFromCh(ch)
     for i, v ind ipairs(self.player) do
         if v.ch == ch then
@@ -26,8 +27,10 @@ function PokerGame:getPlayerFromCh(ch)
     return nil
 end
 
+--- Fügt einen Spieler zum Spiel hinzu.
+-- @param ch Spieler der eingefügt wird.
 function PokerGame:addPlayer(ch)
-    table.insert(self.player, ch)
+    table.insert(self.player, PokerPlayer:new(ch))
 end
 
 --- Entfernt einen Spieler vom Spiel
@@ -42,6 +45,10 @@ function PokerGame:removePlayer(ch)
     end
 end
 
+--- Nimmt einen Einsatz vom Spieler entgegen.
+-- @param ch Spieler, der einen Einsatz leistet.
+-- @param amount Höhe des Einsatzes.
+-- @return true wenn erfolgreich, false wenn ungültiger Einsatz.
 function PokerGame:registerPlayerPayment(ch, amount)
     local my_player = self:getPlayerFromCh(ch)
     if my_player == nil then
@@ -52,18 +59,60 @@ function PokerGame:registerPlayerPayment(ch, amount)
     end
 end
 
+--- Gibt den Pot des Spieles zurück.
+-- @return Pot des Spieles.
 function PokerGame:getPot()
     return self.pot
 end
 
+--- Gibt eine Liste mit allen Spielern zurück.
+-- @return List aller Spieler.
 function PokerGame:getPlayer()
     return self.player
 end
 
+--- Gibt zurück wie viel Casino Münzen ein Spieler zu seiner Verfügung stehen hat.
+-- @param ch Der Spieler
+-- @return Menge der Casinomünzen des Spielers.
 function PokerGame:getPlayerMoney(ch)
     local my_player = self:getPlayerFromCh(ch)
     if my_player == nil then
         return nil
     else 
         return my_player:getMoney()
+end
+
+--- Prüft ob der Spieler spielt.
+-- @param ch Der Spieler.
+-- @return true wenn der Spieler im Spiel ist, false wenn nicht.
+function PokerGame:playerIsInGame(ch)
+    local my_player = self:getPlayerFromCh(ch)
+    if my_player ~= nil then
+        return true
+    else
+        return false
+    end
+end
+
+--- Prüft ob der Spieler an der Reihe ist.
+-- @param ch Der Spieler.
+-- @return true wenn Spieler an der Reihe, false wenn nicht.
+function PokerGame:playerIsOnTurn(ch)
+    return (self.player_on_turn.ch == ch)
+end
+
+--- Prüft welche Möglichkeiten ein Spieler hat.
+-- @param ch Der Spieler.
+-- @return Gibt eine Liste mit Möglichkeiten zurück.
+-- @see pokerconstants.lua
+function PokerGame:getPossibilities(ch)
+    local my_player = self:getPlayerFromCh(ch)
+    return self.pot:getPossibilitiesOfPlayer(my_player)
+end
+
+--- Gibt zurück um wie viel der Spieler erhöhen muss.
+-- @param ch Der Spieler.
+-- @return Geld um das der Spieler erhöhen muss.
+function PokerGame:getMoneyPlayerHasToRaise(ch)
+    return self.pot:getMoneyPlayerHasToRaise(self:getPlayerFromCh(ch))
 end
