@@ -12,34 +12,22 @@ function PokerDealer:new(maxPayment)
 	return res
 end
 
-PokerDealer.eventPlayerBet = {}
-PokerDealer.eventNextPlayer = {}
-
---- Registriert eine neue PlayerBet-Event-Funktion
--- @param funct Die Funktion(ch, amount), die den PlayerBet-Event abarbeitet
-function PokerDealer:registerEventPlayerBet(funct)
-    table.insert(self.eventPlayerBet, funct)
-end
-
---- Registriert eine neue NextPlayer-Event-Funktion
--- @param funct Die Funktion(ch), die den NextPlayer-Event abarbeitet
-function PokerDealer:registerEventPlayerBet(funct)
-    table.insert(self.eventNextPlayer, funct)
-end
-
---- Löst das Event PlayerBet aus.
--- @param ch Der Spieler der ein Gebot abgibt.
--- @param amount Die Menge des Geldes die der Spieler bietet.
-function PokerDealer:raiseEventPlayerBet(ch, amount)
-    for i, func in ipairs(self.eventPlayerBet) do
-        func(ch, amount)
+--- Prüft ob ein beliebiger Spieler inaktiv ist.
+-- @return true Wenn Spieler inaktiv, false wenn nicht.
+function PokerDealer:playerIsInactive()
+    if self.game.player_on_turn:getTimePlayerIsOnTurn() > PokerConstants.TIMEOUT then
+        return true
+    else
+        return false
     end
 end
 
---- Löst das Event NextPlayer aus.
--- @param ch Der Spieler der ein Gebot abgeben soll.
-function PokerDealer:raiseEventNextPlayer(ch)
-    for i, func in ipairs(self.eventNextPlayer) do
-        func(ch)
+--- Entfernt einen inaktiven Spieler.
+function PokerDealer:removeInactivePlayer()
+    for i=1, table.getn(self.game.player) do
+        if self.game.player[i]:getTimePlayerIsOnTurn() > PokerConstants.TIMEOUT then
+            table.remove(self.game.player, i)
+            break
+        end
     end
 end
