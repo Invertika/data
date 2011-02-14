@@ -9,8 +9,8 @@ function poker_npc_talk(npc, ch)
     if dealer == nil then
         dealer = PokerDealer:new(40)
     end
-    if dealer:playerIsInGame(ch) then
-        if self:playerIsOnTurn(ch) then
+    if dealer.game:playerIsInGame(ch) then
+        if dealer.game:playerIsOnTurn(ch) then
             local possibilities =  dealer.game:getPossibilities(ch)
             for i, possibility in ipairs(possibilities) do
                 local choices = {}
