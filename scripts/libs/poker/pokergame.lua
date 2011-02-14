@@ -1,11 +1,17 @@
 --- Class PokerGame
 -- Mit dieser Klasse kann man ein Pokerspiel durchführen
 -- mit allem drum und dran
+
+require("pokerplayer")
+require("pokercardstack")
+require("pokerpot")
+
 PokerGame = {}
 
 PokerGame.player={}
 PokerGame.player_on_turn = nil
 PokerGame.pot = nil
+PokerGame.card_stack = nil
 
 --- Erstellt eine neue Instanz der Klasse PokerGame
 function PokerGame:new(maxPayment)
@@ -13,6 +19,7 @@ function PokerGame:new(maxPayment)
 	setmetatable(res, self)
 	self.__index = self
 	self.pot = PokerPot:new(maxPayment)
+    self.card_stack = PokerCardStack:new()
 	return res
 end
 
@@ -128,17 +135,44 @@ end
 --- Teilt dem Spiel mit, dass ch Fold spielt.
 function PokerGame:playerActionFold(ch)
    self:removePlayer(ch)
+   self:nextPlayer()
 end
 
--- Teilt dem Spiel mit, dass ch Call spielt.
+--- Teilt dem Spiel mit, dass ch Call spielt.
 function PokerGame:playerActionCall(ch)
     local min = self.pot:getMoneyPlayerHasToRaise(ch)
     local my_player = self:getPlayerFromCh(ch)
     my_player:doPayment(pot, min)
+    self:nextPlayer()
 end
 
--- Teil dem Spiel mit, dass ch Raise spielt.
+--- Teil dem Spiel mit, dass ch Raise spielt.
 function PokerGame:playerActionRaise(ch, amount)
     local my_player = self:getPlayerFromCh(ch)
     my_player:doPayment(pot, amount)
+    self:nextPlayer()
+end
+
+--- Gibt einem Spieler n Karten
+-- @param my_player Spieler dem Karten gegeben werden.
+-- @param n Anzahl der Karten.
+function PokerGame:givePlayerCards(my_player, n)
+    for i=1, n do
+        my_player:getSpade():addCard(self.card_stack:popCard())
+    end
+end
+
+--- Gibt jedem Spieler n Karten
+-- @param n Anzahl der Karten
+function PokerGame:giveAllPlayerCards(n)
+    for i, my_player in ipairs(self.player) do
+        for j=1, n do
+            my_player:getSpade():addCard(self.card_stack:popCard())
+        end
+    end
+end
+
+--- PRIVATE: nächster Spieler
+function Pokergame:nextPlayer()
+    -- TODO
 end
