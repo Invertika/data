@@ -26,6 +26,11 @@ function get_random_element(...)
 end
 
 --- Gibt die Distanz zwischen den beiden übergebenen Punkten an.
+-- @param x1 Die X-Koordinate des ersten Punktes.
+-- @param y1 Die Y-Koordinate des ersten Punktes.
+-- @param x2 Die X-Koordinate des zweiten Punktes.
+-- @param y2 Die Y-Koordinate des zweiten Punktes.
+-- @return Die Distanz zwischen den Punkten.
 function get_distance(x1, y1, x2, y2)
     -- dx: x2 - x1
     -- dy: y2 - y1
@@ -38,7 +43,9 @@ end
 -- Queststati            --
 ---------------------------
 
--- Initialisisert einen Queststatus
+-- Initialisisert einen Queststatus.
+-- @param ch Der Charakter dessen Quest initialisiert werden soll.
+-- @param questname Der Name des Quests.
 function init_quest_status(ch, questname)
     if tonumber(get_quest_var(ch, questname)) == nil then
         mana.chr_set_quest(ch, questname, 0)
@@ -46,11 +53,17 @@ function init_quest_status(ch, questname)
 end
 
 -- Setzt einen Queststatus
+-- @param ch Der Charakter dessen Quest initialisiert werden soll.
+-- @param questname Der Name des Quests.
+-- @param value Der Wert auf den der Quest gesetzt werden soll.
 function set_quest_status(ch, questname, value)
     mana.chr_set_quest(ch, questname, tonumber(value))
 end
 
 -- Gibt einen Queststatus zurück
+-- @param ch Der Charakter dessen Quest initialisiert werden soll.
+-- @param questname Der Name des Quests.
+-- @return Aktuellen Status des Quests.
 function get_quest_status(ch, questname)
     return tonumber(get_quest_var(ch, questname))
 end
@@ -65,12 +78,19 @@ local ITEM_ADD_TEXT = "Du hast %sx %s erhalten!"
 local ITEM_REMOVE_TEXT = "Du hast %sx %s weniger!"
 
 -- Experimentell und unfertig
+--- Gibt einem Charakter Erfahrungspunkte
+-- @param character Der Charakter dem Erfahrungspunkte gegeben werden sollen.
+-- @param attribute Das Attribute, dass erhöht werden soll.
+-- @param amount Anzahl der Arfahrungspunkte die gegeben werden sollen.
+-- @param optimalLevel optimalLevel.
 function add_exp(character, attribute, amount, optimalLevel)
     mana.chr_give_exp(character, attribute, amount, optimalLevel)
     mana.chatmessage(character, "Du hast " + amount + "Erfahrungspunkte erhalten!")
 end
 
--- Fügt Character ch amount Aki hinzu (bei negativen Werten wird abgezogen)
+--- Fügt Character ch amount Aki hinzu (bei negativen Werten wird abgezogen)
+-- @param ch Der Spieler dem Geld gegeben werden soll.
+-- @param amount Menge des Geldes.
 function add_money(ch, amount)
     local current_money = mana.chr_money(ch)
     if current_money + amount < 0 then
@@ -85,9 +105,11 @@ function add_money(ch, amount)
     end
 end
 
--- Fügt Charakter ch numer Items der ID id hinzu
--- name sollte auf den Itemnamen gesetzt werden,
--- damit die Message vom Server richtig aussieht
+--- Fügt Charakter ch number Items der ID id hinzu
+-- @param ch Der Spieler dem das Item gegeben werden soll.
+-- @param id Id des Items.
+-- @param number Anzahl der Items.
+-- @param name Name des Items (sollte auf Itemnamen gesetzt werden)
 function add_items(ch, id, number, name)
     local success = mana.chr_inv_change(ch, id, number)
     if success then
