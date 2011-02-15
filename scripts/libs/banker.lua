@@ -1,17 +1,5 @@
-----------------------------------------------------------------------------------
--- Banker Skript                                                                --
---                                                                              --
--- Das Bankerskript stellt die Bankerfunktion zur Verfügung                     --
--- (Kontoverwaltung etc.)                                                       --
-----------------------------------------------------------------------------------
---  Copyright 2008 The Invertika Development Team                               --
---                                                                              --
---  This file is part of Invertika.                                             --
---                                                                              --
---  Invertika is free software; you can redistribute it and/or modify it        --
---  under the terms of the GNU General  Public License as published by the Free --
---  Software Foundation; either version 2 of the License, or any later version. --
-----------------------------------------------------------------------------------
+-- Modul banker
+-- http://wiki.invertika.org/Banker (Luamodul)
 
 module("banker", package.seeall)
 
@@ -21,6 +9,7 @@ require "scripts/lua/npclib"
 INTEREST_PER_SECOND = 0.00004 --- Zinsen pro Sekunde
 
 --- Kontostand abfragen
+
 function bank_get_account_balance(ch)	
 	local acc_bal = get_quest_var(ch, "bank_account_balance")
 	
@@ -61,7 +50,10 @@ function bank_get_account_balance_dlg(npc, ch)
 	do_npc_close(npc, ch)
 end
 
---- Geld auf Konto einzahlen / Dialog
+-- Geld auf Konto einzahlen / Dialog
+-- @param npc Id des Npcs
+-- @param ch Id des Charakters
+-- @param money Wert des Geldes
 function bank_pay_money_to_account_dlg(npc, ch, money)
 	bank_calc_interest(ch)
 	local PlayerMoney=mana.chr_money(ch)
