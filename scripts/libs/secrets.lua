@@ -31,37 +31,39 @@ local secrets = {}
 -- @param amount Menge der zu erzeugenden Items
 -- @param moneyamount Menge des zu erzeugenden Geldes
 function create_secret(xpos, ypos, secretid, itemid, amount, moneyamount)
-    mana.trigger_create(xpos*TILESIZE, ypos*TILESIZE, TILESIZE, TILESIZE, "secret_activate", secretid, true)
-    secrets[secretid] = {}
-    secrets[secretid][0] = itemid
-    secrets[secretid][1] = amount
-    secrets[secretid][2] = itemname
-    secrets[secretid][3] = moneyamount
+    local secretindex = #secrets
+    mana.trigger_create(xpos*TILESIZE, ypos*TILESIZE, TILESIZE, TILESIZE, "secret_activate", secretindex, true)
+    secrets[secretindex] = {}
+    secrets[secretindex][0] = itemid
+    secrets[secretindex][1] = amount
+    secrets[secretindex][2] = itemname
+    secrets[secretindex][3] = moneyamount
+    secrets[secretindex][4] = secretid
 end
 
-function secret_activate(being, secretid)
+function secret_activate(being, secretindex)
     -- Teste auf Spieler
     if mana.being_type(being) == TYPE_CHARACTER then
         -- Teste auf bereits gefunden
-        local quest_var_name = get_quest_var_name(secretid)
+        local quest_var_name = get_quest_var_name(secretindex)
         if mana.get_quest_var(being, quest_var_name) ~= nil then
             -- Geheimnis ausgeben
             mana.chr_set_quest(being, quest_var_name, 1)
-            distribute_reward(being, secretid)
+            distribute_reward(being, secretindex)
         end
     end
 end
 
-function get_quest_var_name(secretid)
-    return QUEST_VAR_PREFIX .. secretid
+function get_quest_var_name(secretindex)
+    return QUEST_VAR_PREFIX .. secrets[secretindex][4]
 end
 
-function distribute_reward(being, secretid)
+function distribute_reward(being, secretindex)
     mana.chatmessage(being, "Du hast ein Geheimnis gefunden!")
-    if (secrets[secretid][3] ~= nil) and (secrets[secretid][2] ~= 0) then
-        invertika.add_money(being, secrets[secretid][3])
+    if (secrets[secretindex][3] ~= nil) and (secrets[secretindex][2] ~= 0) then
+        invertika.add_money(being, secrets[secretindex][3])
     end
-    if (secrets[secretid][0] ~= nil) and (secrets[secretid][1] ~= nil) and (secrets[secretid][1] ~= 0) and (secrets[secretid][2] ~= nil) then
-        invertika.add_items(being, secrets[secretid][0], secrets[secretid][1], secrets[secretid][2])
+    if (secrets[secretindex][0] ~= nil) and (secrets[secretindex][1] ~= nil) and (secrets[secretindex][1] ~= 0) and (secrets[secretindex][2] ~= nil) then
+        invertika.add_items(being, secrets[secretindex][0], secrets[secretindex][1], secrets[secretindex][2])
     end
 end
