@@ -22,8 +22,14 @@ local QUEST_VAR_PREFIX = "secret"
 -- Hier werden alle Geheimnisse gespeichert, secrets[schild] = text
 local secrets = {}
 
--- Erzeugt ein Geheimnis (am besten hinter einem Geheimgang o.ä., da es unsichtbar ist)
--- Position in TILES, nicht in Pixel
+--- Erzeugt ein Geheimnis (am besten hinter einem Geheimgang o.ä., da es unsichtbar ist)
+-- Braucht noch Überarbeitung (Ubersetzung in OOP und Unterstützung für diverse Belohnungsarten)
+-- @param xpos X-Koordinate in Tiles
+-- @param ypos Y-Koordinate in Tiles
+-- @param secretid ID des Geheimnisses, am besten als String der Art "MAP12345_1", wobei 12345 für die Map-ID und 1 für die Nummer des Geheimnisses auf der Map steht. NIE zwei Geheimnisse der selben ID erzeugen!
+-- @param itemid ID der zu erzeugenden Items
+-- @param amount Menge der zu erzeugenden Items
+-- @param moneyamount Menge des zu erzeugenden Geldes
 function create_secret(xpos, ypos, secretid, itemid, amount, moneyamount)
     mana.trigger_create(xpos*TILESIZE, ypos*TILESIZE, TILESIZE, TILESIZE, "secret_activate", secretid, true)
     secrets[secretid] = {}
@@ -47,7 +53,7 @@ function secret_activate(being, secretid)
 end
 
 function get_quest_var_name(secretid)
-    return QUEST_VAR_PREFIX .. tonumber(secretid)
+    return QUEST_VAR_PREFIX .. secretid
 end
 
 function distribute_reward(being, secretid)
