@@ -6,7 +6,7 @@ module("banker", package.seeall)
 require "scripts/lua/npclib"
 
 -- Konstanten
-INTEREST_PER_SECOND = 0.00004 --- Zinsen pro Sekunde
+INTEREST_PER_SECOND = 0.00004 -- Zinsen pro Sekunde
 
 -- Die Funktion dient der Abfrage des Kontostandes. Dabei wird beachtet ob die entsprechende Variable existiert. Ist dies nicht der Fall so wird sie angelegt.
 -- @param ch Zeiger auf den Charakter
@@ -90,7 +90,9 @@ function bank_get_money_from_account_dlg(npc, ch, money)
 	do_npc_close(npc, ch)
 end
 
---- NPC Talk Funktion
+-- Diese Funktion liefert einen Dialog plus NPC namens Banker welcher die Bankgeschäfte mit dem Spieler abwickelt.
+-- @param npc Zeiger auf den NPC
+-- @param ch Zeiger auf den Charakter
 function banker_talk(npc, ch)
   do_message(npc, ch, "Willkommen bei der Zentralbank von Amoneus. Was kann ich für dich tun?")
   
