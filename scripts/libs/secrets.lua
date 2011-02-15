@@ -31,7 +31,7 @@ local secrets = {}
 -- @param amount Menge der zu erzeugenden Items
 -- @param moneyamount Menge des zu erzeugenden Geldes
 function create_secret(xpos, ypos, secretid, itemid, amount, moneyamount)
-    local secretindex = #secrets
+    local secretindex = #secrets + 1
     mana.trigger_create(xpos*TILESIZE, ypos*TILESIZE, TILESIZE, TILESIZE, "secret_activate", secretindex, true)
     secrets[secretindex] = {}
     secrets[secretindex][0] = itemid
