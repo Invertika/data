@@ -1,15 +1,15 @@
 -- Modul banker
--- http://wiki.invertika.org/Banker (Luamodul)
+-- http://wiki.invertika.org/Banker (Lua Modul)
 
 module("banker", package.seeall)
 
 require "scripts/lua/npclib"
 
---- Konstanten
+-- Konstanten
 INTEREST_PER_SECOND = 0.00004 --- Zinsen pro Sekunde
 
---- Kontostand abfragen
-
+-- Die Funktion dient der Abfrage des Kontostandes. Dabei wird beachtet ob die entsprechende Variable existiert. Ist dies nicht der Fall so wird sie angelegt.
+-- @param ch Zeiger auf den Charakter
 function bank_get_account_balance(ch)	
 	local acc_bal = get_quest_var(ch, "bank_account_balance")
 	
@@ -21,7 +21,8 @@ function bank_get_account_balance(ch)
 	end
 end
 
---- Zinsen in Abhängikeit der Zeit aufrechnen
+-- Die Funktion berechnet die Zinsen des Bankguthabens in Abhängikeit der verstrichenden Zeit.
+-- @param ch Zeiger auf den Charakter
 function bank_calc_interest(ch)
  local currentTime = os.time(t)
  local lastTime = get_quest_var(ch, "bank_last_visit")
@@ -42,7 +43,9 @@ function bank_calc_interest(ch)
  return newMoney
 end
 
---- Kontostand abfragen / Dialog
+-- Diese Funktion liefert einen Dialog mit dem momentanen Guthaben zurück.
+-- @param npc Zeiger auf den NPC
+-- @param ch Zeiger auf den Charakter
 function bank_get_account_balance_dlg(npc, ch)
 	local newMoney = bank_calc_interest(ch)
 	local acc_bal = bank_get_account_balance(ch)
@@ -50,10 +53,10 @@ function bank_get_account_balance_dlg(npc, ch)
 	do_npc_close(npc, ch)
 end
 
--- Geld auf Konto einzahlen / Dialog
--- @param npc Id des Npcs
--- @param ch Id des Charakters
--- @param money Wert des Geldes
+-- Diese Funktion liefert einen Dialog zum Einzahlen von Geld auf das Bankkonto.
+-- @param npc Zeiger auf den NPC
+-- @param ch Zeiger auf den Charakter
+-- @param money Geldsumme welche eingezahlt werden soll
 function bank_pay_money_to_account_dlg(npc, ch, money)
 	bank_calc_interest(ch)
 	local PlayerMoney=mana.chr_money(ch)
@@ -69,7 +72,10 @@ function bank_pay_money_to_account_dlg(npc, ch, money)
 	do_npc_close(npc, ch)
 end
 
---- Geld von Konto abheben
+-- Diese Funktion liefert einen Dialog zum Auszahlen von Geld vom Bankkonto.
+-- @param npc Zeiger auf den NPC
+-- @param ch Zeiger auf den Charakter
+-- @param money Geldsumme welche ausgezahlt werden soll
 function bank_get_money_from_account_dlg(npc, ch, money)
 	bank_calc_interest(ch)
 	local acc_bal = bank_get_account_balance(ch)
