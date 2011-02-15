@@ -61,7 +61,7 @@ function distribute_reward(being, secretid)
     if (secrets[secretid][3] ~= nil) and (secrets[secretid][2] ~= 0) then
         invertika.add_money(being, secrets[secretid][3])
     end
-    if if (secrets[secretid][0] ~= nil) and (secrets[secretid][1] ~= nil) and (secrets[secretid][1] ~= 0) and (secrets[secretid][2] ~= nil) then
+    if (secrets[secretid][0] ~= nil) and (secrets[secretid][1] ~= nil) and (secrets[secretid][1] ~= 0) and (secrets[secretid][2] ~= nil) then
         invertika.add_items(being, secrets[secretid][0], secrets[secretid][1], secrets[secretid][2])
     end
 end
