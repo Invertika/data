@@ -469,12 +469,33 @@ function belart_talk(npc, ch)
 end
 
 function imangi_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Ich verkaufe nichts.",
-	  "Hier gibt es nichts zu sehen.",
-	  "Ich kann dir nicht helfen.",
-	  "Geh weg.",
-	  "Ich kenne dich nicht, also will ich auch nix mit dir zu tun haben.",
-	  "Nein, nein, nein und nochmal nein."))
+    invertika.init_quest_status(ch, "twin_house_quest")
+    local q_status = invertika.get_quest_status(ch, "twin_house_quest")
+    if q_status == 3 then
+        if mana.chr_inv_count(ch, 20019) > 0 then
+            do_message(npc, ch, "Möchtest du mir etwas sagen?")
+            while true do
+                local v = do_choice(npc, ch, "Ich habe hier einen Ring für dich.", "Nein. nichts.")
+                if v == 1 then
+                    invertika.set_quest_status(ch, "twin_house_quest", 4)
+                    invertika.add_items(ch, 20019, -1, "Imangis's Verlobungsring")
+                    do_message(npc, ch, "<<<<zu überarbeiten>>>>>")
+                    break
+                elseif v == 2 then
+                    break
+                end
+            end
+        end
+    elseif (q_status == 4) or (q_status == 5) then
+        do_message(npc, ch, "Ich freue mich schon ihn zu treffen.")
+    else
+	    do_message(npc, ch, invertika.get_random_element("Ich verkaufe nichts.",
+	    "Hier gibt es nichts zu sehen.",
+	    "Ich kann dir nicht helfen.",
+	    "Geh weg.",
+	    "Ich kenne dich nicht, also will ich auch nix mit dir zu tun haben.",
+	    "Nein, nein, nein und nochmal nein."))
+    end
 	  do_npc_close(npc, ch)
 end
 
