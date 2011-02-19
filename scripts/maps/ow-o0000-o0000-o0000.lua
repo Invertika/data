@@ -480,6 +480,8 @@ function imangi_talk(npc, ch)
                     invertika.set_quest_status(ch, "twin_house_quest", 4)
                     invertika.add_items(ch, 20019, -1, "Imangis's Verlobungsring")
                     do_message(npc, ch, "<<<<zu überarbeiten>>>>>")
+                    do_message(npc, ch, "Nimm diese Äpfel als Dank.")
+                    invertika.add_items(ch, 30012, 10, "Äpfel")
                     break
                 elseif v == 2 then
                     break
