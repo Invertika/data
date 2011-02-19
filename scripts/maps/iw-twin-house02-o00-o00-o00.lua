@@ -53,7 +53,7 @@ function rocer_talk(npc, ch)
                         do_message(npc, ch, "Ich belästige dich hier nur mit meinen Problemen...")
                         break
                     elseif v2 == 2 then
-                        do_message(npc, ch, "*Schweigen")
+                        do_message(npc, ch, "*Schweigen*")
                         do_message(npc, ch, "Gut ich gebe dir den Ring. Aber wenn du ihn nicht ablieferst gehe ich dir an den Kragen! Verstanden?")
                         set_qstatus(3)
                         invertika.add_items(ch, 20019, 1, "Imangis's Verlobungsring")
