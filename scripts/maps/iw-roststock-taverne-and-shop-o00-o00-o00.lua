@@ -35,9 +35,42 @@ function bjoern_talk(npc, ch)
 end
 
 function rodhonu_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Ich wäre gerne mal ein Waffenschmied. Aber keiner will es mir zeigen wie es geht.",
-                                                     "Ich kann gut mit Metallen umgehen.",
-                                                     "Wenn du eine Waffe haben willst komm später mal vorbei. Dann bin ich Waffenschmied."))
+    if mana.chr_inv_count(ch, 40028) > 0 then
+        do_message(npc, ch, "Kann ich etwas für dich tun?")
+        while true do
+            local v = do_choice(npc, ch, "Ich habe hier ein zerbrochenes Kettenhemd. Kannst du das reparien?", "Nein. Danke.")
+            if v == 1 then
+                do_message(npc, ch, "Hm... Lass mal sehen.")
+                do_message(npc, ch, "Das sieht komplizierter aus als es ist.")
+                do_message(npc, ch, "Für 500 Aki kann ich dir das reparieren.")
+                while true do
+                    local v2 = do_choice(npc, ch, "Hier hast du 500 Aki.", "Hm. Vielleicht später.")
+                    if v2 == 1 then
+                        if mana.chr_money(ch) >= 500 then
+                            invertika.add_money(ch, -500)
+                            invertika.add_items(ch, 40028, -1, "zerstörtes Kettenhemd")
+                            invertika.add_items(ch, 20020, 1, "Kettenhemd")
+                            do_message(npc, ch, "Bitte sehr.")
+                        else
+                            do_message(npc, ch, "Du hast nicht genügend Geld.")
+                        end
+                        break
+                    elseif v2 == 2 then
+                        break
+                    end
+                end
+                break
+            elseif v == 2 then
+                do_message(npc, ch, "Auf Wiedersehen.")
+                break
+            end
+        end
+    else
+        do_message(npc, ch, invertika.get_random_element(
+          "Ich wäre gerne mal ein Waffenschmied. Aber keiner will es mir zeigen wie es geht.",
+          "Ich kann gut mit Metallen umgehen.",
+          "Wenn du eine Waffe haben willst komm später mal vorbei. Dann bin ich Waffenschmied."))
+    end
     do_npc_close(npc, ch)
 end
 
