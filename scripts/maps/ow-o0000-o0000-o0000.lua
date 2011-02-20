@@ -312,11 +312,11 @@ function felix_talk(npc, ch)
 end
 
 function saria_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Die Wueste ist riesig, drum bleib ich hier.",
-	  "Hüte dich vor der Wüste. Dort treiben rote Skropione ihr Unwesen.",
+	do_message(npc, ch, invertika.get_random_element("Die Wüste ist riesig, drum bleib ich hier.",
+	  "Hüte dich vor der Wüste. Dort treiben rote Skorpione ihr Unwesen.",
 	  "Ey da nicht anfassen, da habe ich einen Sonnenbrand.",
 	  "Alle meine Skorpione, sind in der Wüste.",
-	  "Ich liebe Staedte mit Mauern.",
+	  "Ich liebe Städte mit Mauern.",
 	  "Ich würde mal gerne zum Meer."))
 	  do_npc_close(npc, ch)
 end
