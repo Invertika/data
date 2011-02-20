@@ -529,15 +529,28 @@
         max-per-slot="1"
         value="500">
     </item>
-
 	
     <item id="20020"
         image="equipment/chest/chainmail.png"
-        name="Ein Kettenhemd"
+        name="Kettenhemd"
         description="Ein einfaches Kettenhemd aus Eisen."
         effect=""
         type="equip-torso"
         weight="35"
+        defense="15"
+        max-per-slot="1"
+        value="150">
+        <sprite gender="male">equipment/chest/chainmail-male.xml</sprite>
+        <sprite gender="female">equipment/chest/chainmail-female.xml</sprite>
+    </item>
+	
+	<item id="20021"
+        image="generic/brokenarmor.png"
+        name="Kettenhemd (beschädigt)"
+        description="Ein einfaches Kettenhemd aus Eisen. Allerdings ist es an einigen Stellen beschädigt."
+        effect=""
+        type="equip-torso"
+        weight="30"
         defense="5"
         max-per-slot="1"
         value="50">
@@ -1076,13 +1089,4 @@
         type="generic"
         weight="10"
         max-per-slot="1"/>
-
-        <item id="40028"
-        image="generic/brokenarmor.png"
-        name="Ein zerstörtes Kettenhemd"
-        description="Ein Kettenhemd, dass durch einen Axthieb zerstört wurde."
-        type="generic"
-        weight="30"
-        max-per-slot="1"
-        value="30"/>
 </items>
