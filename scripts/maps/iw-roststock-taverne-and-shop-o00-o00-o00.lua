@@ -35,7 +35,7 @@ function bjoern_talk(npc, ch)
 end
 
 function rodhonu_talk(npc, ch)
-    if mana.chr_inv_count(ch, 40028) > 0 then
+    if mana.chr_inv_count(ch, 20021) > 0 then
         do_message(npc, ch, "Kann ich etwas für dich tun?")
         while true do
             local v = do_choice(npc, ch, "Ich habe hier ein zerbrochenes Kettenhemd. Kannst du das reparien?", "Nein. Danke.")
@@ -48,7 +48,7 @@ function rodhonu_talk(npc, ch)
                     if v2 == 1 then
                         if mana.chr_money(ch) >= 500 then
                             invertika.add_money(ch, -500)
-                            invertika.add_items(ch, 40028, -1, "zerstörtes Kettenhemd")
+                            invertika.add_items(ch, 20021, -1, "zerstörtes Kettenhemd")
                             invertika.add_items(ch, 20020, 1, "Kettenhemd")
                             do_message(npc, ch, "Bitte sehr.")
                         else

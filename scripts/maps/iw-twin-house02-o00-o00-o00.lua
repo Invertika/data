@@ -84,7 +84,7 @@ function rocer_talk(npc, ch)
         do_message(npc, ch, "Vielen Dank, dass du ihr den Ring gebracht hast. Ich werde bald einmal in die Stadt gehen und sie besuchen.")
         do_message(npc, ch, "Mal sehen ob ich noch etwas für dich in dieser Kiste habe...")
         do_message(npc, ch, "Hier nimm dieses zerbrochene Kettenhemd. Ich habe es einst in der Wüste gefunden. Die Terraniten haben von dem Besitzer nicht viel übrig gelassen.")
-        invertika.add_items(ch, 40028, 1, "Zerstörtes Kettenhemd")
+        invertika.add_items(ch, 20021, 1, "Zerstörtes Kettenhemd")
         set_qstatus(5)
     elseif get_qstatus() == 5 then -- Allgemein
         do_message(npc, ch, invertika.get_random_element("Mein Bruder hat mich betrogen!",
