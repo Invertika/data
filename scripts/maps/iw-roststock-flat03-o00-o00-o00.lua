@@ -26,7 +26,7 @@ function marle_talk(npc, ch)
 	  "Die beste Freundin von Effendi ist Anne. Habe ich zumindestens gehört.",
 	  "Eigentlich heißt er garnicht Effendi sondern Effendi der Erste.",
 	  "Du hättest dir ruhig die Schuhe abputzen können. Jetzt ist hier alles voller Sand.",
-	  "In den westlichen Gegenend soll es manchmal sogar Schnee geben habe ich gehört.",
-	  "Frühler sammelte ich Porzellanfiguren.")) 
+	  "In den westlichen Gegenden soll es manchmal sogar Schnee geben habe ich gehört.",
+	  "Früher sammelte ich Porzellanfiguren.")) 
 	 do_npc_close(npc, ch)
 end
