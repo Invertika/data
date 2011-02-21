@@ -479,7 +479,12 @@ function imangi_talk(npc, ch)
                 if v == 1 then
                     invertika.set_quest_status(ch, "twin_house_quest", 4)
                     invertika.add_items(ch, 20019, -1, "Imangis's Verlobungsring")
-                    do_message(npc, ch, "<<<<zu überarbeiten>>>>>")
+                    do_message(npc, ch, "Wie... ein Ring...?")
+                    do_message(npc, ch, "Er möchte mich Heiraten?")
+                    do_message(npc, ch, "ich... ich...")
+                    do_message(npc, ch, "*nach Luft schnapp*")
+                    do_message(npc, ch, "muss nachdanken!")
+                    do_message(npc, ch, "Bitte sag ihm das...")
                     do_message(npc, ch, "Nimm diese Äpfel als Dank.")
                     invertika.add_items(ch, 30012, 10, "Äpfel")
                     break
