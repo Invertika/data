@@ -173,6 +173,6 @@ function PokerGame:giveAllPlayerCards(n)
 end
 
 --- PRIVATE: nächster Spieler
-function Pokergame:nextPlayer()
+function PokerGame:nextPlayer()
     -- TODO
 end
