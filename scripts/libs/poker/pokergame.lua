@@ -62,7 +62,7 @@ function PokerGame:registerPlayerPayment(ch, amount)
     if my_player == nil then
         return false
     else
-        my_playeR:doPayment(amount)
+        my_player:doPayment(self.pot, amount)
         return true
     end
 end
@@ -175,4 +175,12 @@ end
 --- PRIVATE: nächster Spieler
 function PokerGame:nextPlayer()
     -- TODO
+end
+
+--- Lässt alle Spieler einen Beitrag in den Pott leisten.
+-- param amount Höhe des Beitrags der geleistet werden muss.
+function PokerGame:letAllPlayerPay(amount)
+    for i, my_player in ipairs(self.player) do
+        my_player:doPayment(self.pot, amount)
+    end
 end

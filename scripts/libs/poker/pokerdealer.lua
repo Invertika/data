@@ -42,3 +42,12 @@ function PokerDealer:changeCard(ch, id)
     self.game:givePlayerCards(player, 1)
     return true
 end
+
+function PokerDealer:startGame()
+    self:giveInitialInput()
+end
+
+--- Gibt von jedem Spieler das Startgebot in den Pot.
+function PokerDealer:giveInitialInput()
+    self.game:letAllPlayerPay(PokerConstants.INITIAL_PAYMENT)
+end
