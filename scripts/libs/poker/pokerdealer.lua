@@ -31,3 +31,14 @@ function PokerDealer:removeInactivePlayer()
         end
     end
 end
+
+--- Lässt einen Spieler eine Karte abwerfen und gibt ihm eine neue.
+-- @param card_id Die ID der Karte.
+-- @return true Wenn erfolgreich, false wenn nicht.
+function PokerDealer:changeCard(ch, id)
+    local player = self.game:getPlayerFromCh(ch)
+    if player == nil then return false end
+    if player:getSpade:removeCard(id) == false then return false
+    self.game:givePlayerCards(player, 1)
+    return true
+end

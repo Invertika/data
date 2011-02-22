@@ -25,9 +25,14 @@ end
 
 --- Entfernt eine Karte aus der Hand.
 -- @param pos Die Position der Karte, die entfernt werden soll
+-- @return true Wenn erfolgreich, false wenn nicht.
 function PokerSpade:removeCard(pos)
-    table.remove(self.cards, pos)
     self.rating = nil -- Bewertung wird ungültig
+    if table.remove(self.cards, pos) == nil then
+        return false
+    else
+        return true
+    end
 end
 
 --- Gibt die Anzahl der Karten zurück.

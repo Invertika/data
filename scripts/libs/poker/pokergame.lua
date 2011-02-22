@@ -23,7 +23,7 @@ function PokerGame:new(maxPayment)
 	return res
 end
 
---- PRIVATE: Gibt das Playerobjekt zurück, dass zum Char gehört.
+--- Gibt das Playerobjekt zurück, dass zum Char gehört.
 -- @return Das dazugehöre Playerobjekt zu ch.
 function PokerGame:getPlayerFromCh(ch)
     for i, v ind ipairs(self.player) do
