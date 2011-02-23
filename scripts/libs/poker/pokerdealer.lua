@@ -45,6 +45,7 @@ end
 
 function PokerDealer:startGame()
     self:giveInitialInput()
+    self.game:nextPlayer()
 end
 
 --- Gibt von jedem Spieler das Startgebot in den Pot.

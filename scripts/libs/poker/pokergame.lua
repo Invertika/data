@@ -172,15 +172,47 @@ function PokerGame:giveAllPlayerCards(n)
     end
 end
 
---- PRIVATE: nächster Spieler
+--- nächster Spieler
 function PokerGame:nextPlayer()
-    -- TODO
+    if self.player_on_turn == nil then
+        self.player_on_turn = self.player[1]
+    else
+        -- Letzter Spieler war grade am Zug.
+        if self.player[#self.player] == self.player_on_turn then
+            if self.pot:arePaymentRequired() then
+                self.player_on_turn = self.player[1]
+            else
+                self:nextRound()
+            end
+        else
+            for i, my_player in ipairs(self.player) do
+                if my_player == self.player_on_turn then
+                    self.player_on_turn = self.player[i + 1]
+                    break
+                end
+            end
+        end
+    end
+    if self:playerCanComeToTurn(self.player_on_turn) then
+    else
+        self:nextPlayer()
+    end
 end
 
+--- Prüft ob der Spieler an den Zug kommt.
+-- @return true Wenn Spieler der Spieler noch an den Zug kommen darf, false wenn nicht.
+function PokerGame:playerCanComeToTurn(my_player)
+    return true -- TODO: variieren.
+end
 --- Lässt alle Spieler einen Beitrag in den Pott leisten.
 -- param amount Höhe des Beitrags der geleistet werden muss.
 function PokerGame:letAllPlayerPay(amount)
     for i, my_player in ipairs(self.player) do
         my_player:doPayment(self.pot, amount)
     end
+end
+
+--- Läutet die nächste Runde ein.
+function PokerGame:nextRound()
+    -- TODO
 end

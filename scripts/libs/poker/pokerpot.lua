@@ -107,3 +107,14 @@ function PokerPot:pushPaymentOfPlayerToGeneralPot(player)
       self:getPaymentOf(player)
     self.payments[player] = 0
 end
+
+--- Gibt zurück ob noch Einsatze gemacht werden müssen.
+-- @return true wenn keine Einsätze mehr gemacht werden müssen, false wenn nicht.
+function PokerPot:arePaymentsRequired()
+    for i, player in ipairs(self.playments) do
+        if self:getMoneyPlayerHasToRaise(player) >= 0 then
+            return true
+        end
+    end
+    return false
+end
