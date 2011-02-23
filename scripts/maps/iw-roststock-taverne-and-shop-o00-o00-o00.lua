@@ -47,7 +47,7 @@ function rodhonu_talk(npc, ch)
                     local v2 = do_choice(npc, ch, "Hier hast du 500 Aki.", "Hm. Vielleicht später.")
                     if v2 == 1 then
                         if mana.chr_money(ch) >= 500 then
-                            invertika.add_money(ch, -500)
+                            invertika.set_money(ch, -500)
                             invertika.add_items(ch, 20021, -1, "zerstörtes Kettenhemd")
                             invertika.add_items(ch, 20020, 1, "Kettenhemd")
                             do_message(npc, ch, "Bitte sehr.")

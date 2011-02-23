@@ -1,28 +1,26 @@
-----------------------------------------------------------------------------------
--- Invertika Modul - Grundfunktionen                                            --
---                                                                              --
--- Dieses Modul stellt Grundfunktionen zur Verfügung                            --
---                                                                              --
---                                                                              --
-----------------------------------------------------------------------------------
---  Copyright 2008 The Invertika Development Team                               --
---                                                                              --
---  This file is part of Invertika.                                             --
---                                                                              --
---  Invertika is free software; you can redistribute it and/or modify it        --
---  under the terms of the GNU General  Public License as published by the Free --
---  Software Foundation; either version 2 of the License, or any later version. --
-----------------------------------------------------------------------------------
+-- Modul invertika
+-- http://wiki.invertika.org/Invertika (Lua Modul)
 
 module("invertika", package.seeall)
 
 require "scripts/lua/npclib"
 
---- Gibt ein zufällig eines der übergebenen Argumente zurück
+-- Allgemeine Funktionen
+
+-- Gibt ein zufällig eines der übergebenen Argumente zurück
 function get_random_element(...)
     local arrayCount = table.getn( arg ) -- Anzahl der Elemente  ermitteln
     local r = math.random(1, arrayCount)
     return arg[r]
+end
+
+--- Gibt eine Kopie der Table zurück.
+-- @param t Das Table Objekt.
+-- @return Kopie von t
+function get_table_copy(t)
+  local u = { } 
+  for k, v in pairs(t) do u[k] = v end 
+  return setmetatable(u, getmetatable(t))
 end
 
 --- Gibt die Distanz zwischen den beiden übergebenen Punkten an.
@@ -39,9 +37,7 @@ function get_distance(x1, y1, x2, y2)
     return math.sqrt(math.pow(x2 -x1, 2) + math.pow(y2 - y1, 2))
 end
 
----------------------------
--- Queststati            --
----------------------------
+-- Queststati           
 
 -- Initialisisert einen Queststatus.
 -- @param ch Der Charakter dessen Quest initialisiert werden soll.
@@ -68,17 +64,14 @@ function get_quest_status(ch, questname)
     return tonumber(get_quest_var(ch, questname))
 end
 
----------------------------
--- EXP/Skill-Änderungen  --
----------------------------
+-- EXP/Skill-Änderungen
 
 local MONEY_ADD_TEXT = "Du hast %s Aki erhalten!"
 local MONEY_REMOVE_TEXT = "Du hast %s Aki weniger!"
 local ITEM_ADD_TEXT = "Du hast %sx %s erhalten!"
 local ITEM_REMOVE_TEXT = "Du hast %sx %s weniger!"
 
--- Experimentell und unfertig
---- Gibt einem Charakter Erfahrungspunkte
+--- Gibt einem Charakter Erfahrungspunkte (experimentell, nicht komplett implementiert)
 -- @param character Der Charakter dem Erfahrungspunkte gegeben werden sollen.
 -- @param attribute Das Attribute, dass erhöht werden soll.
 -- @param amount Anzahl der Arfahrungspunkte die gegeben werden sollen.
@@ -91,7 +84,7 @@ end
 --- Fügt Character ch amount Aki hinzu (bei negativen Werten wird abgezogen)
 -- @param ch Der Spieler dem Geld gegeben werden soll.
 -- @param amount Menge des Geldes.
-function add_money(ch, amount)
+function set_money(ch, amount)
     local current_money = mana.chr_money(ch)
     if current_money + amount < 0 then
         error("add_money failed: money would be less than 0")
@@ -123,18 +116,5 @@ function add_items(ch, id, number, name)
         end
     end
     return success
-end
-
----------------------------
--- Allgemein             --
----------------------------
-
---- Gibt eine Kopie der Table zurück.
--- @param t Das Table Objekt.
--- @return Kopie von t
-function tablecopy(t)
-  local u = { } 
-  for k, v in pairs(t) do u[k] = v end 
-  return setmetatable(u, getmetatable(t))
 end
 

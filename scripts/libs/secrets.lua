@@ -61,7 +61,7 @@ end
 function distribute_reward(being, secretindex)
     mana.chatmessage(being, "Du hast ein Geheimnis gefunden!")
     if (secrets[secretindex][3] ~= nil) and (secrets[secretindex][2] ~= 0) then
-        invertika.add_money(being, secrets[secretindex][3])
+        invertika.set_money(being, secrets[secretindex][3])
     end
     if (secrets[secretindex][0] ~= nil) and (secrets[secretindex][1] ~= nil) and (secrets[secretindex][1] ~= 0) and (secrets[secretindex][2] ~= nil) then
         invertika.add_items(being, secrets[secretindex][0], secrets[secretindex][1], secrets[secretindex][2])

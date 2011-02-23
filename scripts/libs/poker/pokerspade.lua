@@ -44,7 +44,7 @@ end
 --- Gibt eine Kopie der Karten zurück.
 -- @return Kopie der Karten des Blattes.
 function PokerSpade:getCards()
-    return invertika.tablecopy(self.cards)
+    return invertika.get_table_copy(self.cards)
 end
 
 --- PRIVATE: Sortiert die Karten in der Hand.
@@ -60,5 +60,5 @@ function PokerSpade:getSpadeType()
     if self.rating == nil then
         self.rating = PokerSpadeRater:getSpadeType(self)
     end
-    return invertika.tablecopy(self.rating)
+    return invertika.get_table_copy(self.rating)
 end

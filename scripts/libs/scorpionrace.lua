@@ -155,7 +155,7 @@ function race_manager_talk(npc, ch)
                 if betrag <= 0 then break end -- Prüfen ob Ein Wert über Null angegeben wurde.
                     if status == 0 then --Nur wenn Skorpionen beim Start sind Angebote annehmen.
                         if mana.chr_money(ch) >= betrag then
-                            invertika.add_money(ch, -betrag)
+                            invertika.set_money(ch, -betrag)
                             if bets[v2] == nil then bets[v2] = {} end -- ggf. init    ialisie
                             if bets[v2][ch] == nil then
                                 bets[v2][ch] = betrag
@@ -182,7 +182,7 @@ function race_manager_talk(npc, ch)
                 winnings[ch] = winnings[ch] * winning_factor
                 do_message(npc, ch, string.format(
                   "Herzlichen Glückwunsch! Hier hast du deine %s Aki.", winnings[ch]))
-                invertika.add_money(ch, winnings[ch])
+                invertika.set_money(ch, winnings[ch])
                 winnings[ch] = 0
             end
             break

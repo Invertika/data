@@ -47,7 +47,7 @@ function tetse_talk(npc, ch)
                 if v == 1 then
                     invertika.add_items(ch, 10008, -1, "Tetses Schwert")
                     do_message(npc, ch, "Nimm als Dank dieses Geld.")
-                    invertika.add_money(ch, 5000) -- Ändern?
+                    invertika.set_money(ch, 5000) -- Ändern?
                     set_qstatus(2)
                     break
                 elseif v == 2 then
