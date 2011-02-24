@@ -42,7 +42,13 @@ end
 --- Registriert eine Funktion die das Event PlayerExit behandeln soll.
 -- @param funct Die Funktion die beim Auftreten des Events ausgeführt werden soll.
 function PokerGame:registerEventPlayerExit(funct)
+    self.event_player_exit = funct
+end
 
+--- Löst das Event PlayerExit aus.
+-- @param my_player Der Spieler der entfernt wurde.
+function PokerGame:raiseEventPlayerExit(my_player)
+    self.event_player_exit(my_player)
 end
 
 
@@ -265,10 +271,10 @@ end
 -- @param card_id Die ID der Karte.
 -- @return true Wenn erfolgreich, false wenn nicht.
 function PokerGame:changeCard(ch, id)
-    local player = self:getPlayerFromCh(ch)
-    if player == nil then return false end
-    if player:getSpade:removeCard(id) == false then return false
-    self:givePlayerCards(player, 1)
+    local my_player = self:getPlayerFromCh(ch)
+    if my_player == nil then return false end
+    if my_player:getSpade:removeCard(id) == false then return false
+    self:givePlayerCards(my_player, 1)
     return true
 end
 
