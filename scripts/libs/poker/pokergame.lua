@@ -12,6 +12,10 @@ PokerGame.player={}
 PokerGame.player_on_turn = nil
 PokerGame.pot = nil
 PokerGame.card_stack = nil
+PokerGame.round = nil
+-- Events
+PokerGame.event_next_player = function(player) end 
+PokerGame.event_player_exit = function(player) end 
 
 --- Erstellt eine neue Instanz der Klasse PokerGame
 function PokerGame:new(maxPayment)
@@ -20,8 +24,27 @@ function PokerGame:new(maxPayment)
 	self.__index = self
 	self.pot = PokerPot:new(maxPayment)
     self.card_stack = PokerCardStack:new()
+    self.round = 1
 	return res
 end
+
+--- Registriert eine Funktion die das Event NextPlayer behandeln soll.
+-- @param funct Die Funktion die beim Auftreten des Events ausgeführt werden soll.
+function PokerGame:registerEventNextPlayer(funct)
+    self.event_next_player = funct
+end
+
+--- Löst das Event NextPlayer aus.
+function PokerGame:raiseEventNextPlayer()
+    self.event_next_player(self.player_on_turn)
+end
+
+--- Registriert eine Funktion die das Event PlayerExit behandeln soll.
+-- @param funct Die Funktion die beim Auftreten des Events ausgeführt werden soll.
+function PokerGame:registerEventPlayerExit(funct)
+
+end
+
 
 --- Gibt das Playerobjekt zurück, dass zum Char gehört.
 -- @return Das dazugehöre Playerobjekt zu ch.
@@ -203,6 +226,7 @@ end
 -- @return true Wenn Spieler der Spieler noch an den Zug kommen darf, false wenn nicht.
 function PokerGame:playerCanComeToTurn(my_player)
     return true -- TODO: variieren.
+
 end
 --- Lässt alle Spieler einen Beitrag in den Pott leisten.
 -- param amount Höhe des Beitrags der geleistet werden muss.
@@ -214,5 +238,47 @@ end
 
 --- Läutet die nächste Runde ein.
 function PokerGame:nextRound()
-    -- TODO
+    self.round = self.round + 1
 end
+
+--- Prüft ob ein beliebiger Spieler inaktiv ist.
+-- @return true Wenn Spieler inaktiv, false wenn nicht.
+function PokerGame:playerIsInactive()
+    if self.player_on_turn:getTimePlayerIsOnTurn() > PokerConstants.TIMEOUT then
+        return true
+    else
+        return false
+    end 
+end
+
+--- Entfernt einen inaktiven Spieler.
+function PokerGame:removeInactivePlayer()
+    for i=1, table.getn(self.player) do
+        if self.player[i]:getTimePlayerIsOnTurn() > PokerConstants.TIMEOUT then
+            table.remove(self.player, i)
+            break
+        end
+    end
+end
+
+--- Lässt einen Spieler eine Karte abwerfen und gibt ihm eine neue.
+-- @param card_id Die ID der Karte.
+-- @return true Wenn erfolgreich, false wenn nicht.
+function PokerGame:changeCard(ch, id)
+    local player = self:getPlayerFromCh(ch)
+    if player == nil then return false end
+    if player:getSpade:removeCard(id) == false then return false
+    self:givePlayerCards(player, 1)
+    return true
+end
+
+function PokerGame:startGame()
+    self:giveInitialInput()
+    self:nextPlayer()
+end
+
+--- Gibt von jedem Spieler das Startgebot in den Pot.
+function PokerGame:giveInitialInput()
+    self:letAllPlayerPay(PokerConstants.INITIAL_PAYMENT)
+end
+
