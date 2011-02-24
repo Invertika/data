@@ -1030,7 +1030,7 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
         <exp>5000</exp>
         <!-- average stroll- and track range-->
         <behavior
-            aggressive="false"
+            aggressive="true"
             cowardly="false"
             track-range="5"
             stroll-range="2"
@@ -1074,7 +1074,7 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
         <exp>1000</exp>
         <!-- average stroll- and track range-->
         <behavior
-            aggressive="false"
+            aggressive="true"
             cowardly="false"
             track-range="5"
             stroll-range="2"
@@ -1115,6 +1115,132 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
             />
         <vulnerability element="fire" factor="2.0"/>
         <vulnerability element="ice" factor="0.5"/>
+        <exp>1000</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="true"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="32"
+            animation="attack"
+            />
+    </monster>
+    
+    <monster id="28" name="Spinne" targetCursor="small">
+        <sprite>monsters/spider.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <attributes
+            hp="500"
+            size="4"
+            speed="2.0"
+            attack-min="200"
+            attack-delta="10"
+            attack-magic="0"
+            hit="100"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <vulnerability element="fire" factor="2.0"/>
+        <vulnerability element="ice" factor="2.0"/>
+	<vulnerability element="earth" factor="2.0"/>
+        <exp>1000</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="32"
+            animation="attack"
+            />
+    </monster>
+    
+    <monster id="29" name="Hemlockspinne" targetCursor="small">
+        <sprite>monsters/spider.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <attributes
+            hp="2500"
+            size="4"
+            speed="2.0"
+            attack-min="900"
+            attack-delta="10"
+            attack-magic="0"
+            hit="100"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <vulnerability element="fire" factor="3.0"/>
+        <vulnerability element="ice" factor="3.0"/>
+	<vulnerability element="earth" factor="3.0"/>
+        <exp>1000</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="32"
+            animation="attack"
+            />
+    </monster>
+    
+    <monster id="30" name="Nogatchspinne" targetCursor="small">
+        <sprite>monsters/spider.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <attributes
+            hp="8500"
+            size="4"
+            speed="2.0"
+            attack-min="2200"
+            attack-delta="10"
+            attack-magic="0"
+            hit="100"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <vulnerability element="fire" factor="4.0"/>
+        <vulnerability element="ice" factor="4.0"/>
+	<vulnerability element="earth" factor="4.0"/>
         <exp>1000</exp>
         <!-- average stroll- and track range-->
         <behavior
