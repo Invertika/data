@@ -66,33 +66,38 @@ function estech_talk(npc, ch)
     function get_feierabend() return invertika.get_quest_status(ch, "selphi_timlet_orkana_feierabend") end
     function set_feierabend(x) invertika.set_quest_status(ch, "selphi_timlet_orkana_feierabend", tonumber(x)) end
 
-    if get_qstatus() == 2 then
-        do_message(npc, ch, "Ortana schickt dich? Er hat wieder vergessen wann er frei hat?")
-        set_feierabend(math.random(1, 3))
-        local zeit = nil
-        if get_feierabend() == 1 then
-            zeit = "10"
-        elseif get_feierabend() == 2 then
-            zeit = "15"
+    local count = mana.chr_inv_count(ch, 40026)
+    if count > 0 then
+        if get_qstatus() == 2 then
+            do_message(npc, ch, "Ortana schickt dich? Er hat wieder vergessen wann er frei hat?")
+            set_feierabend(math.random(1, 3))
+            local zeit = nil
+            if get_feierabend() == 1 then
+                zeit = "10"
+            elseif get_feierabend() == 2 then
+                zeit = "15"
+            else
+                zeit = "20"
+            end
+            do_message(npc, ch, string.format("Sag ihm, er darf heute schon um %s Uhr gehen.", zeit))
+            set_qstatus(3)
+        elseif get_qstatus() == 3 then
+            local zeit = nil
+            if get_feierabend() == 1 then
+                zeit = "10"
+            elseif get_feierabend() == 2 then
+                zeit = "15"
+            else
+                zeit = "20"
+            end
+            do_message(npc, ch, string.format("Ist dein Gehirn schon genauso löcherig wie Ortanas? Sag ihm er darf um %s Uhr Feierabend machen!", zeit))
         else
-            zeit = "20"
+            do_message(npc, ch, invertika.get_random_element("Ich bin der Chef hier.",
+                                                            "Tut mir leid. Zur Zeit finden hier keine Spektakel statt.",
+                                                            "Ich muss mich gerade um andere Sachen kümmern."))
         end
-        do_message(npc, ch, string.format("Sag ihm, er darf heute schon um %s Uhr gehen.", zeit))
-        set_qstatus(3)
-    elseif get_qstatus() == 3 then
-       local zeit = nil
-        if get_feierabend() == 1 then
-            zeit = "10"
-        elseif get_feierabend() == 2 then
-            zeit = "15"
-        else
-            zeit = "20"
-        end
-        do_message(npc, ch, string.format("Ist dein Gehirn schon genauso löcherig wie Ortanas? Sag ihm er darf um %s Uhr Feierabend machen!", zeit))
     else
-        do_message(npc, ch, invertika.get_random_element("Ich bin der Chef hier.",
-                                                         "Tut mir leid. Zur Zeit finden hier keine Spektakel statt.",
-                                                         "Ich muss mich gerade um andere Sachen kümmern."))
+        do_message(npc, ch, "Komm zu mir rauf wenn du mit mir sprechen willst!")
     end
     do_npc_close(npc, ch)
 end
