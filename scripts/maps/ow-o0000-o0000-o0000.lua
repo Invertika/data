@@ -60,6 +60,18 @@ atinit(function()
  --- Trigger für die Überwachung des Torbereiches
  mana.trigger_create(145 * TILESIZE, 17 * TILESIZE, 5 * TILESIZE, 52 * TILESIZE, "wache_trigger", 1, true) --- Trigger Tor 1
  mana.trigger_create(183 * TILESIZE, 17 * TILESIZE, 5 * TILESIZE, 52 * TILESIZE, "wache_trigger", 2, true) --- Trigger Tor 2
+
+ --- Trigger für den Amulet-quest.
+ mana.trigger_create(54 * TILESIZE, 10 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 1, true)
+ mana.trigger_create(104 * TILESIZE, 82 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 2, true)
+ mana.trigger_create(43 * TILESIZE, 116 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 3, true)
+ mana.trigger_create(9 * TILESIZE, 79 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 4, true)
+ mana.trigger_create(7 * TILESIZE, 60 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 5, true)
+ mana.trigger_create(61 * TILESIZE, 152 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 6, true)
+ mana.trigger_create(49 * TILESIZE, 182 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 7, true)
+ mana.trigger_create(191 * TILESIZE, 119 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 8, true)
+ mana.trigger_create(102 * TILESIZE, 141 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 9, true)
+ mana.trigger_create(87 * TILESIZE, 151 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 10, true)
  
  ---Weihnachten
  --create_npc("Rentier", 74, 177 * TILESIZE + 16, 185 * TILESIZE + 16, rentier_talk, nil) --- Rentier
@@ -690,4 +702,17 @@ function valeria_talk(npc, ch)
 		end
 	end
 	do_npc_close(npc, ch)
+end
+
+function amulet_trigger(ch, args)
+    local quest_string = string.format("selphie_timlet_amulet_quest_%s", args)
+    invertika.init_quest_status(ch, quest_string)
+
+    function get_qstatus() return tonumber(invertika.get_quest_status(ch, quest_string) end
+    function set_qstatus(x) invertika.set_quest_status(ch, quest_string, tonumber(x)) end
+
+    if get_qstatus() == 0 then
+        set_qstatus(1)
+        invertika.add_items(ch, 40029, 1, "ein Stück eines zerbrochen Amuletts")
+    end
 end
