@@ -708,7 +708,7 @@ function amulet_trigger(ch, args)
     local quest_string = string.format("selphie_timlet_amulet_quest_%s", args)
     invertika.init_quest_status(ch, quest_string)
 
-    function get_qstatus() return tonumber(invertika.get_quest_status(ch, quest_string) end
+    function get_qstatus() return tonumber(invertika.get_quest_status(ch, quest_string)) end
     function set_qstatus(x) invertika.set_quest_status(ch, quest_string, tonumber(x)) end
 
     if get_qstatus() == 0 then
