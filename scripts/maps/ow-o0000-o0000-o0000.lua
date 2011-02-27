@@ -25,7 +25,8 @@ atinit(function()
 Schneiden, Färben, Waschen, Perücken und mehr") -- Schild vor dem Friseur
  sign.create_sign(131, 82, "Feinste Waffen zu günstigen Preise\
 wir müssen darauf hinweisen, dass bei Diebstahl ein Ladenverbot verhängt wird sowie die Hand als Entschädigung dabehalten wird") -- Schild vor dem Waffenladen
-
+ sign.create_sign(43, 107, "Kein Trinkwasser!") -- Schild vor dem Brunnen
+ sign.create_sign(146, 160, "Baden und Angeln verboten!") -- Schild vor dem Wasserloch
  -- NPCs
  create_npc("Elmo", 7, 176 * TILESIZE + 16, 154 * TILESIZE + 16, elmo_talk, nil) --- Elmo
  create_npc("Sam", 7, 183 * TILESIZE + 16, 154 * TILESIZE + 16, sam_talk, nil) --- Sam
