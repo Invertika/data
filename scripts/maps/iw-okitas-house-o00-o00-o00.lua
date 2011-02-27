@@ -51,7 +51,7 @@ function tetse_talk(npc, ch)
                     set_qstatus(2)
                     break
                 elseif v == 2 then
-                    do_message(npc, ch, "Verflucht sollst du sein! Ivertika wird dich für dein Vergehen bestrafen!")
+                    do_message(npc, ch, "Verflucht sollst du sein! Invertika wird dich für dein Vergehen bestrafen!")
                     break
                 end
             end
