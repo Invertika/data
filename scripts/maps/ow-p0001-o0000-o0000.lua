@@ -15,9 +15,11 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
+require "scripts/libs/sign"
 
 dofile("data/scripts/libs/warp.lua")
 
 atinit(function()
  create_inter_map_warp_trigger(73, 83, 67, 61) --- Intermap warp
+ sign.create_sign(143, 94, "Betreten auf eigene Gefahr!") -- Schild vor der Höhle
 end)
