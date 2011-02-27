@@ -12,13 +12,21 @@ require "scripts/libs/datetime"
 require "scripts/libs/invertika"
 require "scripts/libs/nethek"
 require "scripts/libs/seller"
+require "scripts/libs/sign"
 
 dofile("data/scripts/libs/warp.lua")
 
 atinit(function()
  create_inter_map_warp_trigger(62, 72, 56, 6) --- Intermap warp
  nethek.create_netheksaeule(181 * TILESIZE, 125 * TILESIZE + 16) --- Netheksäule
+ 
+ --Schilder
+ sign.create_sign(113, 84, "Frisörsalon Umet\
+Schneiden, Färben, Waschen, Perücken und mehr") -- Schild vor dem Friseur
+ sign.create_sign(131, 82, "Feinste Waffen zu günstigen Preise\
+wir müssen darauf hinweisen, dass bei Diebstahl ein Ladenverbot verhängt wird sowie die Hand als Entschädigung dabehalten wird") -- Schild vor dem Waffenladen
 
+ -- NPCs
  create_npc("Elmo", 7, 176 * TILESIZE + 16, 154 * TILESIZE + 16, elmo_talk, nil) --- Elmo
  create_npc("Sam", 7, 183 * TILESIZE + 16, 154 * TILESIZE + 16, sam_talk, nil) --- Sam
  create_npc("Julia", 10, 170 * TILESIZE + 16, 152 * TILESIZE + 16, julia_talk, nil) --- Julia
