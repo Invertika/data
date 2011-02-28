@@ -102,6 +102,7 @@ function PokerGame:removePlayer(ch)
     if my_player == nil then
         return false
     else
+        self.event_player_exit
         self.pot:pushPaymentOfPlayerToGeneralPot(my_player)
         table.remove(self.player, i)
         return true
@@ -232,6 +233,7 @@ function PokerGame:nextPlayer()
     if self.player_on_turn == nil then
         self.player_on_turn = self.player[1]
     else
+        self.event_player_ended_turn(self.player_on_turn)
         -- Letzter Spieler war grade am Zug.
         if self.player[#self.player] == self.player_on_turn then
             if self.pot:arePaymentRequired() then
@@ -249,6 +251,7 @@ function PokerGame:nextPlayer()
         end
     end
     if self:playerCanComeToTurn(self.player_on_turn) then
+        self.event_next_player()
     else
         self:nextPlayer()
     end
@@ -301,6 +304,7 @@ end
 function PokerGame:removeInactivePlayer()
     for i=1, table.getn(self.player) do
         if self.player[i]:getTimePlayerIsOnTurn() > PokerConstants.TIMEOUT then
+            self:remove(self.player[i])
             table.remove(self.player, i)
             break
         end
