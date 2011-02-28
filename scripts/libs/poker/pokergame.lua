@@ -73,7 +73,7 @@ end
 
 --- Löst das Event PlayerWon aus.
 -- @param player_list Eine Liste der Spieler die etwas gewonnen haben.
-function PokgerGame:reaiseEventPlayerWon(player_list)
+function PokgerGame:raiseEventPlayerWon(player_list)
     self.event_player_won(player_list)
 end
 
