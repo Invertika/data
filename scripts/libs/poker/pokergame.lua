@@ -17,6 +17,7 @@ PokerGame.round = nil
 PokerGame.event_next_player = function(my_player) end 
 PokerGame.event_player_exit = function(my_player) end 
 PokerGame.event_player_ended_turn = function(my_player) end
+PokerGame.event_player_won = function(my_player_list) end
 
 --- Erstellt eine neue Instanz der Klasse PokerGame
 function PokerGame:new(maxPayment)
@@ -63,6 +64,19 @@ end
 function PokerGame:raiseEventPlayerEndedTurn(my_player)
     self.event_player_ended_turn(my_player)
 end
+
+--- Registriert eine Funktion die das Even PlayerWon behandeln soll.
+-- @param funct Die Funktion die beim Auftreten des Events ausgeführt werden soll.
+function PokerGame:registerEventPlayerWon(funct)
+    self.event_player_won = funct
+end
+
+--- Löst das Event PlayerWon aus.
+-- @param player_list Eine Liste der Spieler die etwas gewonnen haben.
+function PokgerGame:reaiseEventPlayerWon(player_list)
+    self.event_player_won(player_list)
+end
+
 
 --- Gibt das Playerobjekt zurück, dass zum Char gehört.
 -- @return Das dazugehöre Playerobjekt zu ch.
