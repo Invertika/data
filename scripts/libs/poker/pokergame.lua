@@ -61,7 +61,7 @@ end
 -- Löst das Event PlayerEndedTurn aus.
 -- @param my_player Der Spieler der den Zug beendet hat.
 function PokerGame:raiseEventPlayerEndedTurn(my_player)
-    self.event_player_ended_turn(my_plyer)
+    self.event_player_ended_turn(my_player)
 end
 
 --- Gibt das Playerobjekt zurück, dass zum Char gehört.
