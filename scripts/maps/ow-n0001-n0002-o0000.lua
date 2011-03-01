@@ -31,7 +31,7 @@ atinit(function()
  create_npc("subnet_zero", 19 , 77 * TILESIZE + 16, 118 * TILESIZE + 16, subnet_zero_talk, nil) --- subnet_zero
  create_npc("DJh2o2", 54, 86 * TILESIZE + 16, 114 * TILESIZE + 16, djh2o2_talk, nil) --- DJh2o2
  create_npc("Dark Mage", 72, 84 * TILESIZE + 16, 122 * TILESIZE + 16, darkmage_talk, nil) --- DJh2o2
- create_npc("Ablu", 82, 88 * TILESIZE + 16, 122 * TILESIZE + 16, ablu_talk, nil) --- Ablu
+ create_npc("Ablu", 82, 90 * TILESIZE + 16, 122 * TILESIZE + 16, ablu_talk, nil) --- Ablu
 end)
 
 function jurkan_talk(npc, ch)
@@ -143,8 +143,10 @@ function darkmage_talk(npc, ch)
 end
 
 function ablu_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Das ist logisch.",
-                                                     "Trial and Error.",
-                                                     ""))
+    do_message(npc, ch, invertika.get_random_element("Pffff.",
+      "Du kannst hier ruhigen Gewissens einen Scheck liegen lassen. Ich passe schon darauf auf.",
+      "Hüte dich vor dem Schneemann!",
+      "Nein. Ich spawne keine Killermaden. Dafür ist der Typ da oben rechts verantwortlich.",
+      "Ruhe bitte!"))
     do_npc_close(npc, ch)
 end
