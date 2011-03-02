@@ -10,6 +10,19 @@ PokerConstants.TIMEOUT = 120
 -- Grundeinstatz
 PokerConstants.INITIAL_PAYMENT = 1
 
+-- Die verschiedenen Runden
+
+-- Startgebote werden eingezogen.
+PokerConstants.INITIAL_ROUND = 1
+-- Runde nachdem drei Karten gegeben wurden.
+PokerConstants.THREE_CARD_ROUND = 2
+-- Runde nachdem die restlichen Karten gegeben wurden.
+PokerConstants.FIVE_CARD_ROUND = 3
+-- Runde in der Karten ausgetauscht werden können.
+PokerConstants.SWAP_ROUND = 4
+-- Schlussrunde.
+PokerConstants.END_ROUND = 5
+
 -- Werte der Karten
 PokerConstants.CARD_VALUES = {}
 PokerConstants.CARD_VALUES[8] = "e Killermade"
@@ -47,3 +60,5 @@ PokerConstants.ID_OF_POKER_CHIPS = 40006
 PokerConstants.POSSIBILITY_CALL = 1
 PokerConstants.POSSIBILITY_RAISE = 2
 PokerConstants.POSSIBILITY_FOLD = 3
+PokerConstants.POSSIBILITY_CHANGE_CARD = 4
+
