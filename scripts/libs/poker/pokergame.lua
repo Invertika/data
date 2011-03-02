@@ -236,6 +236,19 @@ function PokerGame:giveAllPlayerCards(n)
     end
 end
 
+--- PRIVATE: Gibt zurück ob ein Spieler noch an den Zug kommen kann.
+-- @param my_player Der Spieler bei dem getestet werden soll ob er noch einmal an den Zug kommen kann.
+-- @return true Wenn der Spieler noch an den Zug kommen kann. false Wenn nicht.
+function PokerGame:playerCanComeToTurn(my_player)
+    return true -- TODO
+    -- Ideen:
+    -- Spieler kommt an den Zug wenn...
+    -- ... er noch Zahlungen leisten muss.
+    -- ... 
+    -- Spieler kommt nicht an den Zug wenn ...
+    -- ... der Pot ausgeglichen ist (alle Raises ausgeglichen)
+end
+
 --- nächster Spieler
 function PokerGame:nextPlayer()
     if self.player_on_turn == nil then
@@ -290,11 +303,6 @@ end
 
 --- Läutet die nächste Runde ein.
 function PokerGame:nextRound()
-    -- 1: Grundeinsätze machen. Karten geben.
-    -- 2: Andere Karten geben. 
-    -- 3: Karten austauschen
-    -- 4: Ende.
-
     self.round = self.round + 1
 end
 
