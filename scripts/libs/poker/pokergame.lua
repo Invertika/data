@@ -188,10 +188,15 @@ function PokerGame:getMaxMoneyPlayerCanRaise(ch)
     return self.pot_getHighestPossiblePayment(self:getPlayerFromCh(ch))
 end
 
+--- PRIVATE: Führt generelle Funktion bei einer Spieleraktion aus.
+function PokerGame:playerAction()
+   self:nextPlayer()
+end
+
 --- Teilt dem Spiel mit, dass ch Fold spielt.
 function PokerGame:playerActionFold(ch)
-   self:removePlayer(ch)
-   self:nextPlayer()
+    self:removePlayer(ch)
+    self:playerAction()
 end
 
 --- Teilt dem Spiel mit, dass ch Call spielt.
@@ -199,14 +204,14 @@ function PokerGame:playerActionCall(ch)
     local min = self.pot:getMoneyPlayerHasToRaise(ch)
     local my_player = self:getPlayerFromCh(ch)
     my_player:doPayment(pot, min)
-    self:nextPlayer()
+    self:playerAction()
 end
 
 --- Teil dem Spiel mit, dass ch Raise spielt.
 function PokerGame:playerActionRaise(ch, amount)
     local my_player = self:getPlayerFromCh(ch)
     my_player:doPayment(pot, amount)
-    self:nextPlayer()
+    self:playerAction()
 end
 
 --- Gibt einem Spieler n Karten
