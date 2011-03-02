@@ -171,6 +171,9 @@ end
 -- @see pokerconstants.lua
 function PokerGame:getPossibilities(ch)
     local my_player = self:getPlayerFromCh(ch)
+    if self.round == PokerConstants.SWAP_ROUND then
+        return {PokerConstants.POSSIBILITY_CHANGE_CARD}
+    end
     return self.pot:getPossibilitiesOfPlayer(my_player)
 end
 
