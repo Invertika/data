@@ -13,6 +13,7 @@ PokerGame.player_on_turn = nil
 PokerGame.pot = nil
 PokerGame.card_stack = nil
 PokerGame.round = nil
+PokerGame.player_was_on_turn = nil
 -- Events
 PokerGame.event_next_player = function(my_player) end 
 PokerGame.event_player_exit = function(my_player) end 
@@ -27,6 +28,7 @@ function PokerGame:new(maxPayment)
 	self.pot = PokerPot:new(maxPayment)
     self.card_stack = PokerCardStack:new()
     self.round = 1
+    self.player_was_on_turn = {}
 	return res
 end
 
@@ -241,12 +243,11 @@ end
 -- @return true Wenn der Spieler noch an den Zug kommen kann. false Wenn nicht.
 function PokerGame:playerCanComeToTurn(my_player)
     return true -- TODO
-    -- Ideen:
-    -- Spieler kommt an den Zug wenn...
-    -- ... er noch Zahlungen leisten muss.
-    -- ... 
-    -- Spieler kommt nicht an den Zug wenn ...
-    -- ... der Pot ausgeglichen ist (alle Raises ausgeglichen)
+
+    if self:roundNotAtEnd() == false then return false end
+    if self.pot:getMoneyPlayerHasToRaise(my_player) > 0 then
+        return true
+    end
 end
 
 --- nächster Spieler
@@ -283,6 +284,7 @@ end
 function PokerGame:roundNotAtEnd()
     if pot::arePaymentsRequired() then
         -- Noch Einzahlungen nötig => Bietrunde läuft noch
+        -- TODO: Geht so nicht. Bei Start der Runde ist der Pot balanciert.
         return true
     elseif  then
         -- Noch nicht alle Spieler dran gewesen => Runde noch nicht zu Ende
@@ -303,6 +305,7 @@ end
 
 --- Läutet die nächste Runde ein.
 function PokerGame:nextRound()
+    self.player_was_on_turn = {}
     self.round = self.round + 1
 end
 
