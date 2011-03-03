@@ -279,10 +279,12 @@ end
 -- @param my_player Der Spieler bei dem getestet werden soll ob er noch einmal an den Zug kommen kann.
 -- @return true Wenn der Spieler noch an den Zug kommen kann. false Wenn nicht.
 function PokerGame:playerCanComeToTurn(my_player)
-    return true -- TODO
-    if self.player_was_on_turn[my_player] == false then return true end
-    if self:roundNotAtEnd() == false then return false end
-    if self.pot:getMoneyPlayerHasToRaise(my_player) > 0 then
+    -- TODO: Weitere Bedingungen?
+    if self:roundNotAtEnd() == false then
+        return false
+    elseif self.pot:getMoneyPlayerHasToRaise(my_player) > 0 then
+        return true
+    elseif self.player_was_on_turn[my_player] == false then
         return true
     end
 end
@@ -330,8 +332,7 @@ end
 function PokerGame:roundNotAtEnd()
     if self:allPlayerWereOnTurn() == false then
         return true
-    end
-    if pot:arePaymentsRequired() then
+    elseif pot:arePaymentsRequired() then
         -- Noch Einzahlungen nötig => Bietrunde läuft noch
         return true
     elseif  then
