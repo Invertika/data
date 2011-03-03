@@ -212,7 +212,6 @@ end
 --- PRIVATE: Führt generelle Funktion bei einer Spieleraktion aus.
 -- @param ch Der Charakter, der eine Aktion ausführt.
 function PokerGame:playerAction(ch)
-    
     self:nextPlayer()
 end
 
@@ -291,30 +290,34 @@ end
 
 --- nächster Spieler
 function PokerGame:nextPlayer()
-    if self.player_on_turn == nil then
-        self.player_on_turn = self.player[1]
-    else
-        self.event_player_ended_turn(self.player_on_turn)
-        -- Letzter Spieler war grade am Zug.
-        if self.player[#self.player] == self.player_on_turn then
-            if self.pot:arePaymentRequired() then
-                self.player_on_turn = self.player[1]
-            else
-                self:nextRound()
-            end
+    if self:roundNotAtEnd() then
+        if self.player_on_turn == nil then
+            self.player_on_turn = self.player[1]
         else
-            for i, my_player in ipairs(self.player) do
-                if my_player == self.player_on_turn then
-                    self.player_on_turn = self.player[i + 1]
-                    break
+            self.event_player_ended_turn(self.player_on_turn)
+            -- Letzter Spieler war grade am Zug.
+            if self.player[#self.player] == self.player_on_turn then
+                if self.pot:arePaymentRequired() then
+                    self.player_on_turn = self.player[1]
+                else
+                    self:nextRound()
+                end
+            else
+                for i, my_player in ipairs(self.player) do
+                    if my_player == self.player_on_turn then
+                        self.player_on_turn = self.player[i + 1]
+                        break
+                    end
                 end
             end
         end
-    end
-    if self:playerCanComeToTurn(self.player_on_turn) then
-        self.event_next_player()
+        if self:playerCanComeToTurn(self.player_on_turn) then
+            self.event_next_player()
+        else
+            self:nextPlayer()
+        end
     else
-        self:nextPlayer()
+        self:nextRound()
     end
 end
 
@@ -359,6 +362,7 @@ function PokerGame:nextRound()
     if self.round == PokerConstants.SWAP_ROUND then
         self.cards_player_swapped = {}
     end
+    self.player_on_turn = self.player[1] -- erster Spieler am Zug.
 end
 
 --- Prüft ob ein beliebiger Spieler inaktiv ist.
