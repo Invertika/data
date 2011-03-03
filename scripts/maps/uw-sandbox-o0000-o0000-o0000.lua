@@ -17,6 +17,7 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 require "scripts/libs/scorpionrace"
+require "scripts/libs/poker/pokergame"
 ---require "scripts/libs/trap"
 
 dofile("data/scripts/libs/warp.lua")
@@ -47,6 +48,7 @@ atinit(function()
   create_npc("Spinner", 201, 51 * TILESIZE + 16, 30 * TILESIZE + 16, nil, spinner_update)
   create_npc("Healer", 19, 54 * TILESIZE + 16, 32 * TILESIZE + 16, healer_talk, nil)
   skorpion_rennen_npc = create_npc("Skorpion Rennen", 27, 142 * TILESIZE + 16, 72 * TILESIZE +16, scorpionrace.race_manager_talk, nil)
+  poker_dealer_npc = create_npc("Dealer", 27, x * TILESIZE + 16, y * TILESIZE + 16, poker_dealer_talk, nil)
 
 
 
@@ -107,6 +109,47 @@ scorpionrace.initializeRace(scorpions, skorpion_rennen_npc, 2)
   schedule_every(1 * HOURS + 30 * MINUTES, function()
     print("One and a half hour has passed on map 1-1")
   end)
+
+game = nil
+function poker_dealer_talk(npc, ch)
+    if game == nil then
+        game = PokerGame:new(200)
+    end
+
+    if game:playerIsInGame(ch) then
+        if game:playerIsOnTurn(ch) then
+            local possibilities =  game:getPossibilities(ch)
+            for i, possibility in ipairs(possibilities) do
+                local choices = {}
+                if possibility == PokerConstants.POSSIBILITY_FOLD then
+                    table.insert(choices, "Karten abgeben - FOLD")
+                elseif possibility == PokerConstants.POSSIBILITY_CALL then
+                    table.insert(choices, "Mitgehen - CALL")
+                elseif possibility == PokerConstants.POSSIBILITY_RAISE then
+                    table.insert(choices, "Erhöhen - RAISE")
+                end
+            end
+            while true do
+                local v = do_choice(choices)
+                if (v >= 1) or (v <= table.getn(choices)) then
+                    if possibilities[v] == PokerConstants.POSSIBILITY_FOLD then
+                        game:playerActionFold(ch)
+                    elseif possibilities[v] == PokerConstants.POSSIBILITY_CALL then
+                        game:playerActionCall(ch)
+                    elseif possibilities[v] == PokerConstants.POSSIBILITY_RAISE then
+                        local min = game:getMoneyPlayerHasToRaise(ch)
+                        local max = game:getMaxMoneyPlayerCanRaise(ch)
+                        local amount = do_ask_integer(npc, ch, min, max, min)
+                        game:playerActionRaise(ch, amount)
+                    end
+                    break
+                end
+            end
+        end
+    end
+
+end
+
 
   scorpions_bet_accepted = function(scorpionId, player, money)
     mana.being_say(skorpion_rennen_npc, string.format("%s hat %s Aki auf Skorpion Nummer %s geboten!", mana.being_get_name(player), money, scorpionId))
