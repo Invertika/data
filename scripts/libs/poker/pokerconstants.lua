@@ -7,10 +7,13 @@ PokerConstants = {}
 -- Timeout in Sekunden
 PokerConstants.TIMEOUT = 120
 
+-- Karten die getauscht werden können.
+PokerConstants.MAX_NUMBER_OF_SWAPABLE_CARDS = 3
+
 -- Grundeinstatz
 PokerConstants.INITIAL_PAYMENT = 1
 
--- Die verschiedenen Runden
+--- Die verschiedenen Runden
 
 -- Startgebote werden eingezogen.
 PokerConstants.INITIAL_ROUND = 1
