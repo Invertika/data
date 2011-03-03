@@ -1,5 +1,5 @@
 --- Class PokerGame
--- Mit dieser Klasse kann man ein Pokerspiel durchfÃ¼hren
+-- Mit dieser Klasse kann man ein Pokerspiel durchführen
 -- mit allem drum und dran
 
 require("pokerplayer")
@@ -15,7 +15,7 @@ PokerGame.card_stack = nil
 PokerGame.round = nil
 PokerGame.player_was_on_turn = nil
 PokerGame.cards_player_swapped = nil
---- LÃ¤sst einen Spieler eine Karte abwerfen und gibt ihm eine neue.
+--- Lässt einen Spieler eine Karte abwerfen und gibt ihm eine neue.
 -- @param card_id Die ID der Karte.
 -- @return true Wenn erfolgreich, false wenn nicht.
 function PokerGame:changeCard(ch, id)
@@ -44,55 +44,55 @@ function PokerGame:new(maxPayment)
 end
 
 --- Registriert eine Funktion die das Event NextPlayer behandeln soll.
--- @param funct Die Funktion die beim Auftreten des Events ausgefÃ¼hrt werden soll.
+-- @param funct Die Funktion die beim Auftreten des Events ausgeführt werden soll.
 function PokerGame:registerEventNextPlayer(funct)
     self.event_next_player = funct
 end
 
---- LÃ¶st das Event NextPlayer aus.
+--- Löst das Event NextPlayer aus.
 function PokerGame:raiseEventNextPlayer()
     self.event_next_player(self.player_on_turn)
 end
 
 --- Registriert eine Funktion die das Event PlayerExit behandeln soll.
--- @param funct Die Funktion die beim Auftreten des Events ausgefÃ¼hrt werden soll.
+-- @param funct Die Funktion die beim Auftreten des Events ausgeführt werden soll.
 function PokerGame:registerEventPlayerExit(funct)
     self.event_player_exit = funct
 end
 
---- LÃ¶st das Event PlayerExit aus.
+--- Löst das Event PlayerExit aus.
 -- @param my_player Der Spieler der entfernt wurde.
 function PokerGame:raiseEventPlayerExit(my_player)
     self.event_player_exit(my_player)
 end
 
 --- Registriert eine Funktion die das Event PlayerEndedTurn behandeln soll.
--- @param funct Die Funktion die beim Auftreten des Events ausgefÃ¼hrt werden soll.
+-- @param funct Die Funktion die beim Auftreten des Events ausgeführt werden soll.
 function PokerGame:registerEventPlayerEndedTurn(funct)
     self.event_player_ended_turn = funct
 end
 
--- LÃ¶st das Event PlayerEndedTurn aus.
+-- Löst das Event PlayerEndedTurn aus.
 -- @param my_player Der Spieler der den Zug beendet hat.
 function PokerGame:raiseEventPlayerEndedTurn(my_player)
     self.event_player_ended_turn(my_player)
 end
 
 --- Registriert eine Funktion die das Even PlayerWon behandeln soll.
--- @param funct Die Funktion die beim Auftreten des Events ausgefÃ¼hrt werden soll.
+-- @param funct Die Funktion die beim Auftreten des Events ausgeführt werden soll.
 function PokerGame:registerEventPlayerWon(funct)
     self.event_player_won = funct
 end
 
---- LÃ¶st das Event PlayerWon aus.
+--- Löst das Event PlayerWon aus.
 -- @param player_list Eine Liste der Spieler die etwas gewonnen haben.
 function PokgerGame:raiseEventPlayerWon(player_list)
     self.event_player_won(player_list)
 end
 
 
---- Gibt das Playerobjekt zurÃ¼ck, dass zum Char gehÃ¶rt.
--- @return Das dazugehÃ¶re Playerobjekt zu ch.
+--- Gibt das Playerobjekt zurück, dass zum Char gehört.
+-- @return Das dazugehöre Playerobjekt zu ch.
 function PokerGame:getPlayerFromCh(ch)
     for i, v ind ipairs(self.player) do
         if v.ch == ch then
@@ -102,8 +102,8 @@ function PokerGame:getPlayerFromCh(ch)
     return nil
 end
 
---- FÃ¼gt einen Spieler zum Spiel hinzu.
--- @param ch Spieler der eingefÃ¼gt wird.
+--- Fügt einen Spieler zum Spiel hinzu.
+-- @param ch Spieler der eingefügt wird.
 function PokerGame:addPlayer(ch)
     table.insert(self.player, PokerPlayer:new(ch))
 end
@@ -129,8 +129,8 @@ end
 
 --- Nimmt einen Einsatz vom Spieler entgegen.
 -- @param ch Spieler, der einen Einsatz leistet.
--- @param amount HÃ¶he des Einsatzes.
--- @return true wenn erfolgreich, false wenn ungÃ¼ltiger Einsatz.
+-- @param amount Höhe des Einsatzes.
+-- @return true wenn erfolgreich, false wenn ungültiger Einsatz.
 function PokerGame:registerPlayerPayment(ch, amount)
     local my_player = self:getPlayerFromCh(ch)
     if my_player == nil then
@@ -141,21 +141,21 @@ function PokerGame:registerPlayerPayment(ch, amount)
     end
 end
 
---- Gibt den Pot des Spieles zurÃ¼ck.
+--- Gibt den Pot des Spieles zurück.
 -- @return Pot des Spieles.
 function PokerGame:getPot()
     return self.pot
 end
 
---- Gibt eine Liste mit allen Spielern zurÃ¼ck.
+--- Gibt eine Liste mit allen Spielern zurück.
 -- @return List aller Spieler.
 function PokerGame:getPlayer()
     return self.player
 end
 
---- Gibt zurÃ¼ck wie viel Casino MÃ¼nzen ein Spieler zu seiner VerfÃ¼gung stehen hat.
+--- Gibt zurück wie viel Casino Münzen ein Spieler zu seiner Verfügung stehen hat.
 -- @param ch Der Spieler
--- @return Menge der CasinomÃ¼nzen des Spielers.
+-- @return Menge der Casinomünzen des Spielers.
 function PokerGame:getPlayerMoney(ch)
     local my_player = self:getPlayerFromCh(ch)
     if my_player == nil then
@@ -164,7 +164,7 @@ function PokerGame:getPlayerMoney(ch)
         return my_player:getMoney()
 end
 
---- PrÃ¼ft ob der Spieler spielt.
+--- Prüft ob der Spieler spielt.
 -- @param ch Der Spieler.
 -- @return true wenn der Spieler im Spiel ist, false wenn nicht.
 function PokerGame:playerIsInGame(ch)
@@ -176,16 +176,16 @@ function PokerGame:playerIsInGame(ch)
     end
 end
 
---- PrÃ¼ft ob der Spieler an der Reihe ist.
+--- Prüft ob der Spieler an der Reihe ist.
 -- @param ch Der Spieler.
 -- @return true wenn Spieler an der Reihe, false wenn nicht.
 function PokerGame:playerIsOnTurn(ch)
     return (self.player_on_turn.ch == ch)
 end
 
---- PrÃ¼ft welche MÃ¶glichkeiten ein Spieler hat.
+--- Prüft welche Möglichkeiten ein Spieler hat.
 -- @param ch Der Spieler.
--- @return Gibt eine Liste mit MÃ¶glichkeiten zurÃ¼ck.
+-- @return Gibt eine Liste mit Möglichkeiten zurück.
 -- @see pokerconstants.lua
 function PokerGame:getPossibilities(ch)
     local my_player = self:getPlayerFromCh(ch)
@@ -195,16 +195,16 @@ function PokerGame:getPossibilities(ch)
     return self.pot:getPossibilitiesOfPlayer(my_player)
 end
 
---- Gibt zurÃ¼ck um wie viel der Spieler erhÃ¶hen muss.
+--- Gibt zurück um wie viel der Spieler erhöhen muss.
 -- @param ch Der Spieler.
--- @return Geld um das der Spieler erhÃ¶hen muss.
+-- @return Geld um das der Spieler erhöhen muss.
 function PokerGame:getMoneyPlayerHasToRaise(ch)
     return self.pot:getMoneyPlayerHasToRaise(self:getPlayerFromCh(ch))
 end
 
---- Gibt zurÃ¼ck welchen Betrag der Spieler maximal setzen kann.
+--- Gibt zurück welchen Betrag der Spieler maximal setzen kann.
 -- @param ch Der Spieler.
--- @return Betrag um den ch maximal erhÃ¶hen kann.
+-- @return Betrag um den ch maximal erhöhen kann.
 function PokerGame:getMaxMoneyPlayerCanRaise(ch)
     return self.pot_getHighestPossiblePayment(self:getPlayerFromCh(ch))
 end
@@ -240,7 +240,7 @@ function PokerGame:playerActionRaise(ch, amount)
     self:playerAction(ch)
 end
 --
---- LÃ¤sst einen Spieler eine Karte abwerfen und gibt ihm eine neue.
+--- Lässt einen Spieler eine Karte abwerfen und gibt ihm eine neue.
 -- @param card_id Die ID der Karte.
 -- @return true Wenn erfolgreich, false wenn nicht.
 function PokerGame:playerActionSwapCard(ch, id)
@@ -275,7 +275,7 @@ function PokerGame:giveAllPlayerCards(n)
     end
 end
 
---- PRIVATE: Gibt zurÃ¼ck ob ein Spieler noch an den Zug kommen kann.
+--- PRIVATE: Gibt zurück ob ein Spieler noch an den Zug kommen kann.
 -- @param my_player Der Spieler bei dem getestet werden soll ob er noch einmal an den Zug kommen kann.
 -- @return true Wenn der Spieler noch an den Zug kommen kann. false Wenn nicht.
 function PokerGame:playerCanComeToTurn(my_player)
@@ -287,7 +287,7 @@ function PokerGame:playerCanComeToTurn(my_player)
     end
 end
 
---- nÃ¤chster Spieler
+--- nächster Spieler
 function PokerGame:nextPlayer()
     if self.player_on_turn == nil then
         self.player_on_turn = self.player[1]
@@ -316,12 +316,23 @@ function PokerGame:nextPlayer()
     end
 end
 
---- PrÃ¼ft ob die aktuelle Bietrunde noch nicht zu Ende ist.
+--- Prüft ob bereits alle Spieler mindestens einmal am Zug waren.
+-- @return true wenn alle Spieler mindestens einmal am Zug waren, false wenn nicht.
+function PokerGame:allPlayerWereOnTurn()
+    for i, v in ipairs(self.player_was_on_turn) do
+        if v == false then return false end
+    end
+    return true
+end
+
+--- Prüft ob die aktuelle Bietrunde noch nicht zu Ende ist.
 -- @return true Wenn die Runde nicht zu Ende ist, false wenn doch.
 function PokerGame:roundNotAtEnd()
-    if pot::arePaymentsRequired() then
-        -- Noch Einzahlungen nÃ¶tig => Bietrunde lÃ¤uft noch
-        -- TODO: Geht so nicht. Bei Start der Runde ist der Pot balanciert.
+    if self:allPlayerWereOnTurn() == false then
+        return true
+    end
+    if pot:arePaymentsRequired() then
+        -- Noch Einzahlungen nötig => Bietrunde läuft noch
         return true
     elseif  then
         -- Noch nicht alle Spieler dran gewesen => Runde noch nicht zu Ende
@@ -332,15 +343,15 @@ function PokerGame:roundNotAtEnd()
     end
 end
 
---- LÃ¤sst alle Spieler einen Beitrag in den Pott leisten.
--- param amount HÃ¶he des Beitrags der geleistet werden muss.
+--- Lässt alle Spieler einen Beitrag in den Pott leisten.
+-- param amount Höhe des Beitrags der geleistet werden muss.
 function PokerGame:letAllPlayerPay(amount)
     for i, my_player in ipairs(self.player) do
         my_player:doPayment(self.pot, amount)
     end
 end
 
---- LÃ¤utet die nÃ¤chste Runde ein.
+--- Läutet die nächste Runde ein.
 function PokerGame:nextRound()
     self.player_was_on_turn = {}
     self.round = self.round + 1
@@ -349,7 +360,7 @@ function PokerGame:nextRound()
     end
 end
 
---- PrÃ¼ft ob ein beliebiger Spieler inaktiv ist.
+--- Prüft ob ein beliebiger Spieler inaktiv ist.
 -- @return true Wenn Spieler inaktiv, false wenn nicht.
 function PokerGame:playerIsInactive()
     if self.player_on_turn:getTimePlayerIsOnTurn() > PokerConstants.TIMEOUT then
