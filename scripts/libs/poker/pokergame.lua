@@ -15,16 +15,6 @@ PokerGame.card_stack = nil
 PokerGame.round = nil
 PokerGame.player_was_on_turn = nil
 PokerGame.cards_player_swapped = nil
---- Lässt einen Spieler eine Karte abwerfen und gibt ihm eine neue.
--- @param card_id Die ID der Karte.
--- @return true Wenn erfolgreich, false wenn nicht.
-function PokerGame:changeCard(ch, id)
-    local my_player = self:getPlayerFromCh(ch)
-    if my_player == nil then return false end
-    if my_player:getSpade:removeCard(id) == false then return false
-    self:givePlayerCards(my_player, 1)
-    return true
-end
 -- Events
 PokerGame.event_next_player = function(my_player) end 
 PokerGame.event_player_exit = function(my_player) end 
