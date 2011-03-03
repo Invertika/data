@@ -117,7 +117,12 @@ function PokerGame:removePlayer(ch)
     else
         self.event_player_exit
         self.pot:pushPaymentOfPlayerToGeneralPot(my_player)
-        table.remove(self.player, i) -- TODO: woher kommt i?
+        for i, v in ipairs(self.player) do
+            if v == my_player then
+                table.remove(self.player, i)
+                break
+            end
+        end
         return true
     end
 end
