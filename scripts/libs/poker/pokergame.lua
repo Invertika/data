@@ -228,7 +228,7 @@ function PokerGame:playerActionRaise(ch, amount)
     my_player:doPayment(pot, amount)
     self:playerAction(ch)
 end
---
+
 --- Lässt einen Spieler eine Karte abwerfen und gibt ihm eine neue.
 -- @param card_id Die ID der Karte.
 -- @return true Wenn erfolgreich, false wenn nicht.
