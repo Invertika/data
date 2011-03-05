@@ -127,6 +127,8 @@ function poker_dealer_talk(npc, ch)
                     table.insert(choices, "Mitgehen - CALL")
                 elseif possibility == PokerConstants.POSSIBILITY_RAISE then
                     table.insert(choices, "Erhöhen - RAISE")
+                elseif possibility == PokerConstants.POSSIBILITY_CHANGE_CARD then
+                    table.insert(choices, "Karte tauschen.")
                 end
             end
             while true do
@@ -141,6 +143,26 @@ function poker_dealer_talk(npc, ch)
                         local max = game:getMaxMoneyPlayerCanRaise(ch)
                         local amount = do_ask_integer(npc, ch, min, max, min)
                         game:playerActionRaise(ch, amount)
+                    elseif possibilites[v] == PokerConstants.POSSIBILITY_CHANGE_CARD then
+                        local player = game:getPlayerFromCh(ch)
+                        local cards = player:getSpade():getCards()
+                        local text = {}
+                        local numbers = {}
+                        for i, value in ipairs(cards) do
+                            table.insert(text, string.format("%s: %s", i, value:getText()))
+                            talbe.insert(numbers, i)
+                        end
+                        text = table.concat(text, ", ")
+                        do_message(npc, ch, "Wähle eine Karte aus, die du tauschen möchtest.")
+                        do_message(npc, ch, text)
+                        while true do
+                            local v1 = do_choice(npc, ch, numbers)
+                            if cards[i] ~= nil then
+                                game:playerActionSwapCard(ch, i)
+                                -- TODO: Testen ob Karte getauscht werden kann.
+                                -- TODO: Funktionen in chAction... umbennen (Wrapper zu player...)
+                            end
+                        end
                     end
                     break
                 end
