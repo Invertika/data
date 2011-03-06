@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="80" height="55" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="music" value="inside2.ogg"/>
+ </properties>
+ <tileset firstgid="1" name="collision" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="1025" name="cave3_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave3_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="2049" name="cave2_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave2_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3073" name="cave4_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave4_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="4097" name="cave1_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/cave1_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="4609" name="misc1_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/misc1_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <layer name="Ground" width="80" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+2YTVLbQBCFXRV5meQMQHmZcAbACDYkZyA4hmsYjOAg3I1r0KqSiq6ubs1vz4wHLd7Omnn96XXPyG/LxeJtVla1zWJxhXTd5Pd0SNoCr++gH6CfoIeZn5M64PUL9Bt0CnotiN97w0v6jfSMhrdjWHcNugTdgP6A/oJOPPdrI/qMWbcGv57dOWgD+k/e1YXnDNwKz+Bc2NQTOzMx1xvPip7dP9Ae9Ez43XnOwK6x9yz1pVa/xVqzz8j9wO5R8P5EZuDY50eCBzwHuMxx+ZuaYa6SMv7O+AlVn5GXCXajxhnYoj4/QwxHZmsyByR+vlxi5C50vRbVemnpfeS3RX1+OzDEzDYTc8Dk3fYsjcUwpGfHWulZgfWN2aNDWd0NDDGzPcmyi29TD8eqP/T5DtVKM9IzW5LM9b15NYjmdWdgFouf6bcp+a0m8oZZHTWf95r7QVJeXXxzs1DKW4n8WuRxTYRZnTWf95qXQTSvrtxs55/EUlozJb8t2ndDhFndNvK9xtWvDU+J3ZQk7lrsenVo/z0RZrVj2IX0jGs+bFlx3qayGspPmn+m9xwqm7VCfKWogeOH7ylLxX1t88hlx4evhm/Mb7yr4P9XVsp72zCVetXE3fb9aGqlvK/PHHR9Nhe71LKp07UXvwo7Wi/Xn9ws4/h8NWa2XLXPgRqV8hytTTMvN04xc1Z7XjV7slZmKXKRI3Pa3z0p538J7A45D6m/f6f28tkz132D+s7Bz3bvXP9zmOrg6uH8pshfiYxCfEtsNT3kZmTyzOVvKpf4eS1+Jj+lcfPJo7a/kvLn4qcE/6Wwy80h1PvMLU4NKes5dG45aqshbzkYlnpelc7Q9psmxvso9W7r44veY30YmzyE+M+dS5cMxFovtu/c/DTfSS375GJY0z4186uRYcq6auSXsq6a+aU6R3LXeqi11Tr/uBo17oS1s4vBt+TvulmzqD4AohNWUcBEAAA=
+  </data>
+ </layer>
+ <layer name="Fringe" width="80" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3OQQ0AMAgEsHvjc/iXgAyy0CpoAgAAAAD/e5V0bS8AAAAAAAAAAAAAAADuGRYL5B3ARAAA
+  </data>
+ </layer>
+ <layer name="Over" width="80" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3WMQqAMAwF0AwdqgdRL6Le/0YiOtRFpChFeA+yh5CQHwEAALQwpIjxrC617uYf9plNZlVlOPcs27lbubjL0Y1WWdNR1Jn7iKVv3QVcc4rf+5ysUqfMJ9nffVWZbQAAAAAAAAAAAAAAvrQBabsNA8BEAAA=
+  </data>
+ </layer>
+ <layer name="Collision" width="80" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3BMQEAAADCoPVPbQdvoAAAAAAAAAAAAAAAAAAAAAAAPgOgSzqvwEQAAA==
+  </data>
+ </layer>
+ <objectgroup name="Object" width="80" height="55">
+  <object name="External Map Events" type="SCRIPT" x="0" y="0">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/iw-desert-cave01-o00-n01-n01.lua"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
