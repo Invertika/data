@@ -188,7 +188,7 @@ end
 --- Gibt zurück um wie viel der Spieler erhöhen muss.
 -- @param ch Der Spieler.
 -- @return Geld um das der Spieler erhöhen muss.
-function PokerGame:getMoneyPlayerHasToRaise(ch)
+function PokerGame:getMoneyChHasToRaise(ch)
     return self.pot:getMoneyPlayerHasToRaise(self:getPlayerFromCh(ch))
 end
 
@@ -205,44 +205,69 @@ function PokerGame:playerAction(ch)
     self:nextPlayer()
 end
 
---- Teilt dem Spiel mit, dass ch Fold spielt.
--- @param ch Der Charakter, der eine Aktion ausführt.
-function PokerGame:playerActionFold(ch)
-    self:removePlayer(ch)
-    self:playerAction(ch)
+--- Teilt dem Spiel mit, dass my_player Fold spielt.
+-- @param my_player Der Charakter, der eine Aktion ausführt.
+function PokerGame:playerActionFold(my_player)
+    self:removePlayer(my_player.ch)
+    self:playerAction(my_player)
 end
 
---- Teilt dem Spiel mit, dass ch Call spielt.
--- @param ch Der Charakter, der eine Aktion ausführt.
-function PokerGame:playerActionCall(ch)
-    local min = self.pot:getMoneyPlayerHasToRaise(ch)
-    local my_player = self:getPlayerFromCh(ch)
+--- Teilt dem Spiel mit, dass my_player Call spielt.
+-- @param my_player Der Charakter, der eine Aktion ausführt.
+function PokerGame:playerActionCall(my_player)
+    local min = self.pot:getMoneyChHasToRaise(my_player.ch)
     my_player:doPayment(pot, min)
-    self:playerAction(ch)
+    self:playerAction(my_player)
 end
 
---- Teil dem Spiel mit, dass ch Raise spielt.
--- @param ch Der Charakter, der eine Aktion ausführt.
-function PokerGame:playerActionRaise(ch, amount)
-    local my_player = self:getPlayerFromCh(ch)
+--- Teil dem Spiel mit, dass my_player Raise spielt.
+-- @param my_player Der Charakter, der eine Aktion ausführt.
+function PokerGame:playerActionRaise(my_player, amount)
     my_player:doPayment(pot, amount)
-    self:playerAction(ch)
+    self:playerAction(my_player)
 end
 
 --- Lässt einen Spieler eine Karte abwerfen und gibt ihm eine neue.
 -- @param card_id Die ID der Karte.
--- @return true Wenn erfolgreich, false wenn nicht.
-function PokerGame:playerActionSwapCard(ch, id)
-    local my_player = self:getPlayerFromCh(ch)
-    if my_player == nil then return false end
+-- @return true Wenn erfolgreimy_player, false wenn nicht.
+function PokerGame:playerActionSwapCard(my_player, id)
     if self.cards_player_swapped[my_player] == PokerConstans.MAX_NUMBER_OF_SWAPABLE_CARDS then
         return false
     end
     if my_player:getSpade:removeCard(id) == false then return false
     self.cards_player_swapped[my_player] = self.cards_player_swapped[my_player] + 1
     self:givePlayerCards(my_player, 1)
-    self:playerAction(ch)
+    self:playerAction(my_player)
     return true
+end
+
+--- Teilt dem Spiel mit, dass ch Fold spielt.
+-- @param ch Der Charakter, der eine Aktion ausführt.
+function PokerGame:chActionFold(ch)
+    local my_player = self:getPlayerFromCh(ch)
+    return self:playerActionFold(my_player)
+end
+
+--- Teilt dem Spiel mit, dass ch Call spielt.
+-- @param ch Der Charakter, der eine Aktion ausführt.
+function PokerGame:chActionCall(ch)
+    local my_player = self:getPlayerFromCh(ch)
+    return self:playerActionCall(my_player)
+end
+
+--- Teil dem Spiel mit, dass ch Raise spielt.
+-- @param ch Der Charakter, der eine Aktion ausführt.
+function PokerGame:chActionRaise(ch, amount)
+    local my_player = self:getPlayerFromCh(ch)
+    self:playerActionRaise(my_player, amount)
+end
+
+--- Lässt einen Spieler eine Karte abwerfen und gibt ihm eine neue.
+-- @param card_id Die ID der Karte.
+-- @return true Wenn erfolgreich, false wenn nicht.
+function PokerGame:chActionSwapCard(ch, id)
+    local my_player = self:getPlayerFromCh(ch)
+    return self:playerActionSwapCard(my_player, id)
 end
 
 --- Gibt einem Spieler n Karten
