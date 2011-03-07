@@ -114,6 +114,7 @@ game = nil
 function poker_dealer_talk(npc, ch)
     if game == nil then
         game = PokerGame:new(200)
+        game:startGame()
     end
 
     if game:playerIsInGame(ch) then
@@ -158,9 +159,8 @@ function poker_dealer_talk(npc, ch)
                         while true do
                             local v1 = do_choice(npc, ch, numbers)
                             if cards[i] ~= nil then
-                                game:playerActionSwapCard(ch, i)
+                                game:playerActionSwapCard(player, i)
                                 -- TODO: Testen ob Karte getauscht werden kann.
-                                -- TODO: Funktionen in chAction... umbennen (Wrapper zu player...)
                             end
                         end
                     end
