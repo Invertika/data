@@ -48,7 +48,7 @@ atinit(function()
   create_npc("Spinner", 201, 51 * TILESIZE + 16, 30 * TILESIZE + 16, nil, spinner_update)
   create_npc("Healer", 19, 54 * TILESIZE + 16, 32 * TILESIZE + 16, healer_talk, nil)
   skorpion_rennen_npc = create_npc("Skorpion Rennen", 27, 142 * TILESIZE + 16, 72 * TILESIZE +16, scorpionrace.race_manager_talk, nil)
-  poker_dealer_npc = create_npc("Dealer", 27, x * TILESIZE + 16, y * TILESIZE + 16, poker_dealer_talk, nil)
+  poker_dealer_npc = create_npc("Dealer", 27, 82 * TILESIZE + 16, 142 * TILESIZE + 16, poker_dealer_talk, nil)
 
 
 
