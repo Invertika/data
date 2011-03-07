@@ -15,7 +15,7 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
-require "scropts/lib/invertika"
+require "scripts/lib/invertika"
 
 atinit(function()
  create_npc("...", 1, 68 * TILESIZE + 16, 18 * TILESIZE + 16, tresor_talk, nil) --- Tresor
