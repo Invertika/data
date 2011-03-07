@@ -17,7 +17,7 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 require "scripts/libs/scorpionrace"
-require "scripts/libs/poker/pokergame"
+require "scripts/libs/poker/pokergame.lua"
 ---require "scripts/libs/trap"
 
 dofile("data/scripts/libs/warp.lua")
