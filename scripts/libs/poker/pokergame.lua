@@ -403,6 +403,7 @@ end
 
 function PokerGame:startGame()
     self:giveInitialInput()
+    self.round = 0
     self:nextPlayer()
 end
 
