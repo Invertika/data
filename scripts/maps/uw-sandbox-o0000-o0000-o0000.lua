@@ -122,24 +122,24 @@ function poker_dealer_talk(npc, ch)
             local possibilities =  game:getPossibilities(ch)
             for i, possibility in ipairs(possibilities) do
                 local choices = {}
-                if possibility == PokerConstants.POSSIBILITY_FOLD then
+                if possibility == poker.PokerConstants.POSSIBILITY_FOLD then
                     table.insert(choices, "Karten abgeben - FOLD")
-                elseif possibility == PokerConstants.POSSIBILITY_CALL then
+                elseif possibility == poker.PokerConstants.POSSIBILITY_CALL then
                     table.insert(choices, "Mitgehen - CALL")
-                elseif possibility == PokerConstants.POSSIBILITY_RAISE then
+                elseif possibility == poker.PokerConstants.POSSIBILITY_RAISE then
                     table.insert(choices, "Erhöhen - RAISE")
-                elseif possibility == PokerConstants.POSSIBILITY_CHANGE_CARD then
+                elseif possibility == poker.PokerConstants.POSSIBILITY_CHANGE_CARD then
                     table.insert(choices, "Karte tauschen.")
                 end
             end
             while true do
                 local v = do_choice(choices)
                 if (v >= 1) or (v <= table.getn(choices)) then
-                    if possibilities[v] == PokerConstants.POSSIBILITY_FOLD then
+                    if possibilities[v] == poker.PokerConstants.POSSIBILITY_FOLD then
                         game:playerActionFold(ch)
-                    elseif possibilities[v] == PokerConstants.POSSIBILITY_CALL then
+                    elseif possibilities[v] == poker.PokerConstants.POSSIBILITY_CALL then
                         game:playerActionCall(ch)
-                    elseif possibilities[v] == PokerConstants.POSSIBILITY_RAISE then
+                    elseif possibilities[v] == poker.PokerConstants.POSSIBILITY_RAISE then
                         local min = game:getMoneyPlayerHasToRaise(ch)
                         local max = game:getMaxMoneyPlayerCanRaise(ch)
                         local amount = do_ask_integer(npc, ch, min, max, min)
