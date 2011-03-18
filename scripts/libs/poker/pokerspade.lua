@@ -1,4 +1,4 @@
-require("../invertika") -- TODO: Pfad anpassen
+require("data/scripts/libs/invertika")
 
 --- Class PokerSpade
 PokerSpade = {}
