@@ -31,7 +31,7 @@ end
 
 --- Gibt den Text des Wertes der Karte zurück.
 -- @return Text des Wertes der Karte.
-function Pokercard:getText()
+function PokerCard:getText()
     return self.color:getText() .. self.value:getText()
 end
 
