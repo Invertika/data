@@ -91,7 +91,7 @@ end
 function PokerSpadeRater:isStraight(spade)
     local average = 0
     local cards = spade:getCards()
-    for i = 1, spade:getCardCount()) do -- Geht alle 5 Karten durch
+    for i = 1, spade:getCardCount() do -- Geht alle 5 Karten durch
         average = average + cards[i]:getValue():getValue()
     end
     average = average / 5
