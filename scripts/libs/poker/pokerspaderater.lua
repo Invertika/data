@@ -190,10 +190,10 @@ function PokerSpade:compareSpades(spade1, spade2)
             local rest_cards1 = {}
             local rest_cards2 = {}
             for i=1, 5 do
-                if self:getNumberOfCardsOfSameValue(cards1, cards1[i]:getValue()) ~= 2
+                if self:getNumberOfCardsOfSameValue(cards1, cards1[i]:getValue()) ~= 2 then
                     table.insert(rest_cards1, cards1[i])
                 end
-                if self:getNumberOfCardsOfSameValue(cards2, cards2[i]:getValue()) ~= 2
+                if self:getNumberOfCardsOfSameValue(cards2, cards2[i]:getValue()) ~= 2 then
                     table.insert(rest_cards2, cards2[i])
                 end
             end
