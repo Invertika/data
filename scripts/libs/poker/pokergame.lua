@@ -2,10 +2,6 @@
 -- Mit dieser Klasse kann man ein Pokerspiel durchführen
 -- mit allem drum und dran
 
-require("pokerplayer")
-require("pokercardstack")
-require("pokerpot")
-
 PokerGame = {}
 
 PokerGame.player={}

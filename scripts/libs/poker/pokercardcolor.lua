@@ -1,5 +1,3 @@
-require("pokerconstants")
-
 -- PokerCardColor
 
 PokerCardColor = {}

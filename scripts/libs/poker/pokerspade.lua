@@ -1,6 +1,4 @@
 require("../invertika") -- TODO: Pfad anpassen
-require("pokercard")
-require("pokerspaderater")
 
 --- Class PokerSpade
 PokerSpade = {}

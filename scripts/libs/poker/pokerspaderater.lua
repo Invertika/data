@@ -1,6 +1,3 @@
-require("pokerspade")
-require("pokerconstants")
-
 --- Class PokerSpadeRater
 -- Eine statische Klasse (kein Konstruktor!) zum
 -- Bewerten und Vergleichen von PokerSpade-Objekten

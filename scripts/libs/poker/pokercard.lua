@@ -1,7 +1,3 @@
-require("pokercardvalue")
-require("pokercardcolor")
-
-
 --- Class PokerCard
 -- Die Werte einer Pokerkarte können bei der Initialisierung festgelegt werden,
 -- danach bleiben diese konstant

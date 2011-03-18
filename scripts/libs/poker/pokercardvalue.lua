@@ -1,5 +1,3 @@
-require("pokerconstants")
-
 -- Class PokerCardValue
 
 PokerCardValue = {}
