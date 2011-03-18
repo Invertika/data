@@ -230,7 +230,7 @@ function PokerGame:playerActionSwapCard(my_player, id)
     if self.cards_player_swapped[my_player] == PokerConstans.MAX_NUMBER_OF_SWAPABLE_CARDS then
         return false
     end
-    if my_player:getSpade:removeCard(id) == false then return false
+    if my_player:getSpade():removeCard(id) == false then return false
     self.cards_player_swapped[my_player] = self.cards_player_swapped[my_player] + 1
     self:givePlayerCards(my_player, 1)
     self:playerAction(my_player)
