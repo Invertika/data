@@ -317,4 +317,5 @@ function PokerSpade:compareSpades(spade1, spade2)
             -- Royal Flush => immer Split Pot, alle 4 Möglichen gleich gut
             return 0
         end
+    end
 end
