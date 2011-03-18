@@ -80,7 +80,7 @@ end
 --- Gibt das Playerobjekt zurück, dass zum Char gehört.
 -- @return Das dazugehöre Playerobjekt zu ch.
 function PokerGame:getPlayerFromCh(ch)
-    for i, v ind ipairs(self.player) do
+    for i, v in ipairs(self.player) do
         if v.ch == ch then
             return v
         end
