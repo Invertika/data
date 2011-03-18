@@ -101,7 +101,7 @@ function PokerGame:removePlayer(ch)
     if my_player == nil then
         return false
     else
-        self.event_player_exit
+        self:raiseEventPlayerExit(my_player)
         self.pot:pushPaymentOfPlayerToGeneralPot(my_player)
         for i, v in ipairs(self.player) do
             if v == my_player then
