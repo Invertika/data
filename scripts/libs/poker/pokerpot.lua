@@ -97,8 +97,9 @@ function PokerPot:getPossibilitiesOfPlayer(player)
         if max > 0 then -- Hat das maximale Bugdet noch nicht erreicht
             -- TODO: Testen ob der Spieler bereits eine andere Aktion als Raise
             --       Gespielt hat --> Er dürfte dann nicht mehr erhöhen.
-            if self:playerDidOnlyRaise(player
-            table.insert(possibilities, PokerConstants.POSSIBILITY_RAISE)
+            if self:playerDidOnlyRaise(player) then
+                table.insert(possibilities, PokerConstants.POSSIBILITY_RAISE)
+            end
         end
     end
     return possibilities
