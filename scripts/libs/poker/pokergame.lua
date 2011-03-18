@@ -148,6 +148,7 @@ function PokerGame:getPlayerMoney(ch)
         return nil
     else 
         return my_player:getMoney()
+    end
 end
 
 --- Prüft ob der Spieler spielt.
@@ -407,3 +408,4 @@ end
 function PokerGame:giveInitialInput()
     self:letAllPlayerPay(PokerConstants.INITIAL_PAYMENT)
 end
+
