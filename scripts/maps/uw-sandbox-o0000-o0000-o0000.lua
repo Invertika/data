@@ -17,7 +17,7 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 require "scripts/libs/scorpionrace"
-require "scripts/libs/poker/pokergame.lua"
+require "scripts/libs/poker"
 ---require "scripts/libs/trap"
 
 dofile("data/scripts/libs/warp.lua")
@@ -113,7 +113,7 @@ scorpionrace.initializeRace(scorpions, skorpion_rennen_npc, 2)
 game = nil
 function poker_dealer_talk(npc, ch)
     if game == nil then
-        game = PokerGame:new(200)
+        game = poker.PokerGame:new(200)
         game:startGame()
     end
 
