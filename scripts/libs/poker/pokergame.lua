@@ -409,3 +409,8 @@ function PokerGame:giveInitialInput()
     self:letAllPlayerPay(PokerConstants.INITIAL_PAYMENT)
 end
 
+--- Prüft ob das Spiel bereits läuft.
+-- @return true wenn das Spiel läuft, false wenn nicht.
+function PokerGame:isGameRunning()
+    return self.round ~= nil
+end
