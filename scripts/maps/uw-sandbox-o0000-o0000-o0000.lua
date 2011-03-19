@@ -114,58 +114,85 @@ game = nil
 function poker_dealer_talk(npc, ch)
     if game == nil then
         game = poker.PokerGame:new(200)
-        game:startGame()
+        --game:startGame()
     end
 
     if game:playerIsInGame(ch) then
-        if game:playerIsOnTurn(ch) then
-            local possibilities =  game:getPossibilities(ch)
-            for i, possibility in ipairs(possibilities) do
-                local choices = {}
-                if possibility == poker.PokerConstants.POSSIBILITY_FOLD then
-                    table.insert(choices, "Karten abgeben - FOLD")
-                elseif possibility == poker.PokerConstants.POSSIBILITY_CALL then
-                    table.insert(choices, "Mitgehen - CALL")
-                elseif possibility == poker.PokerConstants.POSSIBILITY_RAISE then
-                    table.insert(choices, "Erhöhen - RAISE")
-                elseif possibility == poker.PokerConstants.POSSIBILITY_CHANGE_CARD then
-                    table.insert(choices, "Karte tauschen.")
+        if game:isRunning() then
+            if game:playerIsOnTurn(ch) then
+                local possibilities =  game:getPossibilities(ch)
+                for i, possibility in ipairs(possibilities) do
+                    local choices = {}
+                    if possibility == poker.PokerConstants.POSSIBILITY_FOLD then
+                        table.insert(choices, "Karten abgeben - FOLD")
+                    elseif possibility == poker.PokerConstants.POSSIBILITY_CALL then
+                        table.insert(choices, "Mitgehen - CALL")
+                    elseif possibility == poker.PokerConstants.POSSIBILITY_RAISE then
+                        table.insert(choices, "Erhöhen - RAISE")
+                    elseif possibility == poker.PokerConstants.POSSIBILITY_CHANGE_CARD then
+                        table.insert(choices, "Karte tauschen.")
+                    end
                 end
-            end
-            while true do
-                local v = do_choice(choices)
-                if (v >= 1) or (v <= table.getn(choices)) then
-                    if possibilities[v] == poker.PokerConstants.POSSIBILITY_FOLD then
-                        game:playerActionFold(ch)
-                    elseif possibilities[v] == poker.PokerConstants.POSSIBILITY_CALL then
-                        game:playerActionCall(ch)
-                    elseif possibilities[v] == poker.PokerConstants.POSSIBILITY_RAISE then
-                        local min = game:getMoneyPlayerHasToRaise(ch)
-                        local max = game:getMaxMoneyPlayerCanRaise(ch)
-                        local amount = do_ask_integer(npc, ch, min, max, min)
-                        game:playerActionRaise(ch, amount)
-                    elseif possibilites[v] == PokerConstants.POSSIBILITY_CHANGE_CARD then
-                        local player = game:getPlayerFromCh(ch)
-                        local cards = player:getSpade():getCards()
-                        local text = {}
-                        local numbers = {}
-                        for i, value in ipairs(cards) do
-                            table.insert(text, string.format("%s: %s", i, value:getText()))
-                            talbe.insert(numbers, i)
-                        end
-                        text = table.concat(text, ", ")
-                        do_message(npc, ch, "Wähle eine Karte aus, die du tauschen möchtest.")
-                        do_message(npc, ch, text)
-                        while true do
-                            local v1 = do_choice(npc, ch, numbers)
-                            if cards[i] ~= nil then
-                                game:playerActionSwapCard(player, i)
-                                -- TODO: Testen ob Karte getauscht werden kann.
+                while true do
+                    local v = do_choice(choices)
+                    if (v >= 1) or (v <= table.getn(choices)) then
+                        if possibilities[v] == poker.PokerConstants.POSSIBILITY_FOLD then
+                            game:playerActionFold(ch)
+                        elseif possibilities[v] == poker.PokerConstants.POSSIBILITY_CALL then
+                            game:playerActionCall(ch)
+                        elseif possibilities[v] == poker.PokerConstants.POSSIBILITY_RAISE then
+                            local min = game:getMoneyPlayerHasToRaise(ch)
+                            local max = game:getMaxMoneyPlayerCanRaise(ch)
+                            local amount = do_ask_integer(npc, ch, min, max, min)
+                            game:playerActionRaise(ch, amount)
+                        elseif possibilites[v] == poker.PokerConstants.POSSIBILITY_CHANGE_CARD then
+                            local player = game:getPlayerFromCh(ch)
+                            local cards = player:getSpade():getCards()
+                            local text = {}
+                            local numbers = {}
+                            for i, value in ipairs(cards) do
+                                table.insert(text, string.format("%s: %s", i, value:getText()))
+                                talbe.insert(numbers, i)
+                            end
+                            text = table.concat(text, ", ")
+                            do_message(npc, ch, "Wähle eine Karte aus, die du tauschen möchtest.")
+                            do_message(npc, ch, text)
+                            while true do
+                                local v1 = do_choice(npc, ch, numbers)
+                                if cards[i] ~= nil then
+                                    game:playerActionSwapCard(player, i)
+                                    -- TODO: Testen ob Karte getauscht werden kann.
+                                end
                             end
                         end
+                        break
                     end
+                end
+            end
+        else
+            do_message(npc, ch, "Spiel starten?")
+            while true do
+                local v = do_choice(npc, ch, "Ja.", "Nein.")
+                if v == 1 then
+                    game:startGame()
+                    mana.being_say(npc, "Das Spiel wurde gestartet.")
+                    break
+                elseif v == 2 then
                     break
                 end
+            end
+        end
+    else
+        -- Dem Spieler die Möglichkeit geben ins Spiel einzusteigen.
+        do_message(npc, ch, "Möchtest du mitspielen?")
+        while true do
+            local v = do_choice(npc, ch, "Ja.", "Nein.")
+            if v == 1 then
+                game:addPlayer(ch)
+                do_message(npc, ch, "Viel Glück!")
+                break
+            elseif v == 2 then
+                break
             end
         end
     end
