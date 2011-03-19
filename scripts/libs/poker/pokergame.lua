@@ -24,7 +24,7 @@ function PokerGame:new(maxPayment)
 	self.__index = self
 	self.pot = PokerPot:new(maxPayment)
     self.card_stack = PokerCardStack:new()
-    self.round = 1
+    self.round = nil
     self.player_was_on_turn = {}
 	return res
 end
