@@ -300,7 +300,7 @@ function PokerGame:playerCanComeToTurn(my_player)
     end
 end
 
---- nächster Spieler
+--- Lässt den nächsten Spieler an den Zug kommen.
 function PokerGame:nextPlayer()
     if self:roundNotAtEnd() then
         if self.player_on_turn == nil then
@@ -397,7 +397,7 @@ function PokerGame:removeInactivePlayer()
     end
 end
 
-
+--- Startet das Spiel
 function PokerGame:startGame()
     self:giveInitialInput()
     self.round = 0
