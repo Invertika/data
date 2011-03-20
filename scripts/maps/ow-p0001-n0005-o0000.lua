@@ -65,6 +65,8 @@ function wache_trigger(ch, id)
 	   mana.being_say(wache, invertika.get_random_element("Keinen Schritt weiter!",
 	  "Verlassen sie sofort dieses Gelände!",
 	  "Kein Zutritt!")
+	   
+	   mana.being_damage(ch, 500, 250, 75, 0, 0)
 	 else
 	   mana.being_say(wache, invertika.get_random_element("Willkommen Sir.",
 	  "Sir.",
