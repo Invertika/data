@@ -51,6 +51,7 @@ atinit(function()
   poker_dealer_npc = create_npc("Dealer", 27, 82 * TILESIZE + 16, 142 * TILESIZE + 16, poker_dealer_talk, nil)
 
 
+game = nil
 
 local scorpions = {}
 scorpions[1] = {}
@@ -110,8 +111,8 @@ scorpionrace.initializeRace(scorpions, skorpion_rennen_npc, 2)
     print("One and a half hour has passed on map 1-1")
   end)
 
-game = nil
 function poker_dealer_talk(npc, ch)
+    do_message(npc, ch, "Hallo.")
     if game == nil then
         do_message(npc, ch, "Spiel wird erstellt...")
         game = poker.PokerGame:new(200)
