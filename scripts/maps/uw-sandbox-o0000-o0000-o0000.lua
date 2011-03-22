@@ -113,12 +113,16 @@ scorpionrace.initializeRace(scorpions, skorpion_rennen_npc, 2)
 game = nil
 function poker_dealer_talk(npc, ch)
     if game == nil then
+        do_message(npc, ch, "Spiel wird erstellt...")
         game = poker.PokerGame:new(200)
+        do_message(npc, ch, "Spiel erstellt.")
         --game:startGame()
     end
 
     if game:playerIsInGame(ch) then
+        do_message(npc, ch, "Spieler ist im Spiel")
         if game:isRunning() then
+            do_message(npc, ch, "Spiel läuft.")
             if game:playerIsOnTurn(ch) then
                 local possibilities =  game:getPossibilities(ch)
                 for i, possibility in ipairs(possibilities) do
@@ -170,6 +174,7 @@ function poker_dealer_talk(npc, ch)
                 end
             end
         else
+            do_message(npc, ch, "Spiel läuft nicht.")
             do_message(npc, ch, "Spiel starten?")
             while true do
                 local v = do_choice(npc, ch, "Ja.", "Nein.")
@@ -183,6 +188,7 @@ function poker_dealer_talk(npc, ch)
             end
         end
     else
+        do_message(npc, ch, "Du bist nicht im Spiel")
         -- Dem Spieler die Möglichkeit geben ins Spiel einzusteigen.
         do_message(npc, ch, "Möchtest du mitspielen?")
         while true do
