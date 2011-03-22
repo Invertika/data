@@ -70,7 +70,7 @@ function wache_trigger(ch, id)
 	 else
 	   mana.being_say(wache, invertika.get_random_element("Willkommen Sir.",
 	  "Sir.",
-	  "Keine besonderen Vorkommnise, Sir.")
+	  "Keine besonderen Vorkommnise, Sir."))
 	 end
   end
  end
