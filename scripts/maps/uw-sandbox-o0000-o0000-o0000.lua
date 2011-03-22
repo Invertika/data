@@ -202,7 +202,7 @@ function poker_dealer_talk(npc, ch)
             end
         end
     end
-
+    do_npc_close(npc, ch)
 end
 
 
