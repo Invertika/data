@@ -66,37 +66,37 @@ function ShowNextMessageForTherapy()
     mana.being_say(ben, "Hallo Miriam.")
   elseif therapyState==9 then
     mana.being_say(miriam, "Ich bin mittlerweile wieder seit 4 Monaten clean, habe allerdings ab und an mit Rückfällen zu kämpfen.")
-  elseif therapyState==10 then
-    mana.being_say(annabell, "Rückfälle sind bei PvP Killern nicht selten, man muss einfach lernen damit umzugehen und aus den Rückfällen neue Kraft schöpfen.")
   elseif therapyState==11 then
-    mana.being_say(miriam, "Ich hoffe meine Sucht eines Tages überwinden zu können.")
-  elseif therapyState==12 then
-    mana.being_say(annabell, "Danke Miriam. Neu in unserer heutigen Runde ist Ben.")
+    mana.being_say(annabell, "Rückfälle sind bei PvP Killern nicht selten, man muss einfach lernen damit umzugehen und aus den Rückfällen neue Kraft schöpfen.")
   elseif therapyState==13 then
-    mana.being_say(ben, "Ja ich bin der Ben und wie gesagt neu hier.")
+    mana.being_say(miriam, "Ich hoffe meine Sucht eines Tages überwinden zu können.")
   elseif therapyState==14 then
+    mana.being_say(annabell, "Danke Miriam. Neu in unserer heutigen Runde ist Ben.")
+  elseif therapyState==15 then
+    mana.being_say(ben, "Ja ich bin der Ben und wie gesagt neu hier.")
+  elseif therapyState==16 then
     mana.being_say(annabell, "Hallo Ben.")
     mana.being_say(herbert, "Hallo Ben.")
     mana.being_say(miriam, "Hallo Ben.")
-  elseif therapyState==15 then
-    mana.being_say(ben, "Ich wollte es erst gar nicht wahrhaben das ich PvP Killig süchtig bin. Selbst hier habe ich meinen Bogen mit dabei.")
-  elseif therapyState==16 then
-    mana.being_say(annabell, "Ja besonders am Anfang braucht man eine Menge Unterstützung und deshalb freue ich mich auch das du den Weg zu uns gefunden hast.")
   elseif therapyState==17 then
-    mana.being_say(ben, "Ja ich hatte die Anzeige an diesem Pinboard gesehen und dachte mir, das ich es ja mal probieren könnte.")
-  elseif therapyState==18 then
-    mana.being_say(miriam, "Wie lange bist du schon clean?")
+    mana.being_say(ben, "Ich wollte es erst gar nicht wahrhaben das ich PvP Killig süchtig bin. Selbst hier habe ich meinen Bogen mit dabei.")
   elseif therapyState==19 then
-    mana.being_say(ben, "Den heutigen Tag mitgerechnet fünf Tage.")
-  elseif therapyState==20 then
-    mana.being_say(annabell, "Das ist ein sehr guter Anfang. Auch die längste Reise beginnt mit dem ersten Schritt, Ben.")
+    mana.being_say(annabell, "Ja besonders am Anfang braucht man eine Menge Unterstützung und deshalb freue ich mich auch das du den Weg zu uns gefunden hast.")
   elseif therapyState==21 then
-    mana.being_say(ben, "Früher habe ich auch immer versucht nur stärkere Spieler ins Nex zu bringen doch irgendwann fing ich auch mit schwächeren Spielern an.")
-  elseif therapyState==22 then
-    mana.being_say(annabell, "Und da hast du gemerkt das du etwas falsches tust?")
+    mana.being_say(ben, "Ja ich hatte die Anzeige an diesem Pinboard gesehen und dachte mir, das ich es ja mal probieren könnte.")
   elseif therapyState==23 then
+    mana.being_say(miriam, "Wie lange bist du schon clean?")
+  elseif therapyState==24 then
+    mana.being_say(ben, "Den heutigen Tag mitgerechnet fünf Tage.")
+  elseif therapyState==25 then
+    mana.being_say(annabell, "Das ist ein sehr guter Anfang. Auch die längste Reise beginnt mit dem ersten Schritt, Ben.")
+  elseif therapyState==27 then
+    mana.being_say(ben, "Früher habe ich auch immer versucht nur stärkere Spieler ins Nex zu bringen doch irgendwann fing ich auch mit schwächeren Spielern an.")
+  elseif therapyState==29 then
+    mana.being_say(annabell, "Und da hast du gemerkt das du etwas falsches tust?")
+  elseif therapyState==30 then
     mana.being_say(ben, "Ja, da fing es an.")
-  elseif therapyState > 25 then
+  elseif therapyState > 30 then
     therapyState=-1
   end
   
