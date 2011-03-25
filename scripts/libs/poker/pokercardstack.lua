@@ -5,6 +5,7 @@ PokerCardStack.cards = {}
 
 --- Erstellt eine neue Instanz der Klasse PokerCardStack
 function PokerCardStack:new()
+    local res = {}
     setmetatable(res, self)
     self.__index = self
     self:createCards()
