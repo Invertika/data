@@ -27,7 +27,7 @@ atinit(function()
  
  -- Scheudle
    schedule_every(4 * SECONDS, function()
-    print("One and a half hour has passed on map 1-1")
+    ShowNextMessageForTherapy()
   end)
  
   -- NPCs
@@ -39,11 +39,11 @@ end)
 therapyState=0;
 
 function ShowNextMessageForTherapy()
-  if(therapyState==0)
+  if therapyState==0 then
     mana.being_say(annabell, "Hallo, ich bin Annabell und leite diese Sitzung der anonymen PvP Killer. Am besten wir stellen uns erstmal vor. Fängst du bitte an Herbert?")
-  elseif(therapyState==1)
+  elseif therapyState==1 then
     mana.being_say(herbert, "Ja ich bin der Herbert und PvP Killing süchtig.")
-  elseif(therapyState==3)
+  elseif therapyState==3 then
     mana.being_say(annabell, "Hallo Herbert.")
     mana.being_say(miriam, "Hallo Herbert.")
   else
