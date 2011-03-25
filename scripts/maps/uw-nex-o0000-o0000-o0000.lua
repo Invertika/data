@@ -26,7 +26,7 @@ atinit(function()
  create_npc("Monty", 49, 107 * TILESIZE + 16, 92 * TILESIZE + 16, monty_talk, nil) --- Monty
  
  -- Scheudle
-   schedule_every(4 * SECONDS, function()
+   schedule_every(4, function()
     ShowNextMessageForTherapy()
   end)
  
@@ -34,6 +34,7 @@ atinit(function()
  annabell=create_npc("Annabell", 23, 140 * TILESIZE + 16, 39 * TILESIZE + 16, annabell_talk, nil) --- Annabell
  herbert=create_npc("Herbert", 61, 143 * TILESIZE + 16, 41 * TILESIZE + 16, herbert_talk, nil) --- Herbert
  miriam=create_npc("Miriam", 79, 137 * TILESIZE + 16, 42 * TILESIZE + 16, miriam_talk, nil) --- Miriam
+ ben=create_npc("Ben", 86, 136 * TILESIZE + 16, 46 * TILESIZE + 16, ben_talk, nil) --- Ben
 end)
 
 therapyState=0;
@@ -46,11 +47,27 @@ function ShowNextMessageForTherapy()
   elseif therapyState==3 then
     mana.being_say(annabell, "Hallo Herbert.")
     mana.being_say(miriam, "Hallo Herbert.")
+    mana.being_say(ben, "Hallo Herbert.")
   elseif therapyState==4 then
     mana.being_say(herbert, "Ich bin jetzt schon seit 4 Tagen clean.")
   elseif therapyState==5 then
     mana.being_say(annabell, "Super.")
     mana.being_say(miriam, "Großartig.")
+    mana.being_say(ben, "Toll.")
+  elseif therapyState==6 then
+    mana.being_say(herbert, "Ja das war es so zu mir.")
+  elseif therapyState==7 then
+    mana.being_say(annabell, "Toll Herbert. Kommen wir nun zu dir Miriam.")
+  elseif therapyState==8 then
+    mana.being_say(miriam, "Ich bin Miriam und schon seit meiner Kindheit PvP Killer.")
+  elseif therapyState==9 then
+    mana.being_say(annabell, "Hallo Miriam.")
+    mana.being_say(herbert, "Hallo Miriam.")
+    mana.being_say(ben, "Hallo Miriam.")
+  elseif therapyState==10 then
+    mana.being_say(miriam, "Ich bin mittlerweile wieder seit 4 Monaten clean, habe allerdings ab und an mit Rückfällen zu kämpfen.")
+  elseif therapyState==11 then
+    mana.being_say(annabell, "Rückfälle sind bei PvP Killern nicht selten, man muss einfach lernen damit umzugehen und aus den Rückfällen neue Kraft schöpfen.")
   else
     therapyState=0
   end
@@ -166,5 +183,11 @@ end
 function miriam_talk(npc, ch)
 	do_message(npc, ch, invertika.get_random_element("Früher musste jeder dran glauben der mir über den Weg lief.",
 	  "Dank der anonymen PvP Killer Gruppe geht es mir schon viel besser."))
+	  do_npc_close(npc, ch)
+end
+
+function ben_talk(npc, ch)
+	do_message(npc, ch, invertika.get_random_element("Nicht mal hier kann ich meinen Bogen weglegen.",
+	  "Ich muss noch hart an mir arbeiten."))
 	  do_npc_close(npc, ch)
 end
