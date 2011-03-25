@@ -15,7 +15,76 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
+require "scripts/libs/invertika"
 
 atinit(function()
  ---create_npc("Banker", 11, 180 * TILESIZE + 16, 160 * TILESIZE + 16, banker.banker_talk, nil) --- Banker (Debug)
+ create_npc("Goron", 11, 77 * TILESIZE + 16, 24 * TILESIZE + 16, goron_talk, nil) -- Goron (Schneider)
 end)
+
+
+function goron_talk(npc, ch)
+    -- TODO: Roben sollten erst nach einer bestimmten Zeit fertig werden.
+    local count_green_twine = mana.chr_inv_count(ch, 40030)
+    local count_yellow_twine = mana.chr_inv_count(ch, 40031)
+    local count_red_twine = mana.chr_inv_count(ch, 40032)
+    local count_blue_twine = mana.chr_inv_count(ch, 40033)
+    if count_green_twine > 0 or count_yellow_twine > 0 or count_red_twine > 0 or count_blue_twine > 0 then
+        do_message(npc, ch, "Willkommen. Willkommen. Treten Sie ein. Was kann ich für Sie tun?")
+        while true do
+            local v = do_choice(npc, ch, "Ich hätte gerne eine Robe.", "Nein. Danke.")
+            if v == 1 then
+                do_choice(npc, ch, "Hmm. Eine Robe. Welche Farbe wird denn gewünscht?")
+                while true do
+                    local v1 = do_choice(npc, ch, "Grün.", "Gelb.", "Rot.", "Blau.")
+                    if v1 >= 1 and v1 <= 4 then -- Grün
+                        if (v1 == 1 and count_green_twine > 0) or
+                          (v1 == 2 and count_yellow_twine > 0) or
+                          (v1 == 3 and count_red_twine > 0) or
+                          (v1 == 4 and count_blue_twine > 0) then
+                            do_message(npc, ch, "Das macht dann 1200 Aki.")
+                            while true do
+                                local v2 = do_choice(npc, ch, "Bezahlen.", "Nein. Dann doch nicht.")
+                                if v2 == 1 then
+                                    if mana.chr_money(ch) >= 1200 then
+                                        invertika.set_money(ch, -1200)
+                                        if v1 == 1 then
+                                            invertika.add_items(ch, 40030, -1, "grüner Garn")
+                                            invertika.add_items(ch, 20024, 1, "modische grüne Robe")
+                                        elseif v1 == 2 then
+                                            invertika.add_items(ch, 40031, -1, "gelber Garn")
+                                            invertika.add_items(ch, 20025, 1, "modische gelbe Robe")
+                                        elseif v1 == 3 then
+                                            invertika.add_items(ch, 40032, -1, "roter Garn")
+                                            invertika.add_items(ch, 20026, 1, "modische rote Robe")
+                                        elseif v1 == 4 then
+                                            invertika.add_items(ch, 40033, -1, "blaue Robe")
+                                            invertika.add_items(ch, 20027, 1, "modische blaue Robe")
+                                        end
+                                    else
+                                        do_message(npc, ch, "Tut mir Leid. Du hast leider nicht genug Geld dabei.")
+                                    end
+                                    break
+                                elseif v2 == 2 then
+                                    break
+                                end
+                            end
+                        else
+                            do_message(npc, ch, "Tut mir Leid. Du hast nicht die passenden Farben dabei.")
+                        end
+                        break
+                    end
+                end
+                break
+            elseif v == 2 then
+                do_message(npc, ch, "Beehren Sie mich bald wieder!")
+                break
+            end
+        end
+    else
+        do_message(npc, ch, invertika.get_random_element("Ich bin der Schneider hier.",
+          "Bringe mir etwas Garn und ich werde dir für eine Kleinigkeit wunderschöne Gewänder schneidern.",
+          "Falls du Garn brauchst, frag Lidi. Die spinnt ihn selbst."))
+    end
+    do_npc_close(npc, ch)
+end
