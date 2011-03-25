@@ -96,7 +96,7 @@ function ShowNextMessageForTherapy()
     mana.being_say(annabell, "Und da hast du gemerkt das du etwas falsches tust?")
   elseif therapyState==23 then
     mana.being_say(ben, "Ja, da fing es an.")
-  else
+  elseif therapyState > 25 then
     therapyState=-1
   end
   
