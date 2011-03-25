@@ -24,7 +24,34 @@ atinit(function()
  create_inter_map_warp_trigger(19001, 19001, 19001, 19001) --- Intermap warp
  create_npc("Nethek", 1, 36 * TILESIZE, 154 * TILESIZE + 16, nethek_talk, nil) --- Nethek
  create_npc("Monty", 49, 107 * TILESIZE + 16, 92 * TILESIZE + 16, monty_talk, nil) --- Monty
+ 
+ -- Scheudle
+   schedule_every(4 * SECONDS, function()
+    print("One and a half hour has passed on map 1-1")
+  end)
+ 
+  -- NPCs
+ annabell=create_npc("Annabell", 23, 140 * TILESIZE + 16, 39 * TILESIZE + 16, annabell_talk, nil) --- Annabell
+ herbert=create_npc("Herbert", 61, 143 * TILESIZE + 16, 41 * TILESIZE + 16, herbert_talk, nil) --- Herbert
+ miriam=create_npc("Miriam", 79, 137 * TILESIZE + 16, 42 * TILESIZE + 16, miriam_talk, nil) --- Miriam
 end)
+
+therapyState=0;
+
+function ShowNextMessageForTherapy()
+  if(therapyState==0)
+    mana.being_say(annabell, "Hallo, ich bin Annabell und leite diese Sitzung der anonymen PvP Killer. Am besten wir stellen uns erstmal vor. Fängst du bitte an Herbert?")
+  elseif(therapyState==1)
+    mana.being_say(herbert, "Ja ich bin der Herbert und PvP Killing süchtig.")
+  elseif(therapyState==3)
+    mana.being_say(annabell, "Hallo Herbert.")
+    mana.being_say(miriam, "Hallo Herbert.")
+  else
+    therapyState=0
+  end
+  
+  therapyState=therapyState+1
+end
 
 function nethek_talk(npc, ch)
     do_message(npc, ch, "Du moechtest den Nex verlassen?")
@@ -59,7 +86,7 @@ function monty_talk(npc, ch)
 	   do_npc_close(npc, ch)
 	   return
 	elseif deathCount == 2500 then
-	   do_message(npc, ch, "Du bist nun schon ziemlich oft tot gewesen. Vielleicht hilft dir ein bischen Geld darüber hinweg.")
+	   do_message(npc, ch, "Du bist nun schon ziemlich oft tot gewesen. Vielleicht hilft dir ein bisschen Geld darüber hinweg.")
 	   mana.chr_money_change(ch, 50000)
 	   do_npc_close(npc, ch)
 	   return
@@ -113,4 +140,25 @@ function monty_talk(npc, ch)
 	   do_npc_close(npc, ch)
 	   return
 	end
+end
+
+function annabell_talk(npc, ch)
+	do_message(npc, ch, invertika.get_random_element("PvP Killing ist ein ernstes Krankheitsbild.",
+	  "Eine Therapie kann helfen, andere Spieler in Ruhe zu lassen.",
+	  "Ich bin ausgebildete Therapeutin für PvP Killing.",
+	  "PvP Killing ist glücklicherweise therapierbar.",
+	  "Wir bekommen das hin, die anerkannte MA-NA Methode hilft bei der PvP Killing Therapie."))
+	  do_npc_close(npc, ch)
+end
+
+function herbert_talk(npc, ch)
+	do_message(npc, ch, invertika.get_random_element("Ich bin PvP Killing süchtig.",
+	  "Ich hoffe diese Therapie kann mir helfen."))
+	  do_npc_close(npc, ch)
+end
+
+function miriam_talk(npc, ch)
+	do_message(npc, ch, invertika.get_random_element("Früher musste jeder dran glauben der mir über den Weg lief.",
+	  "Dank der anonymen PvP Killer Gruppe geht es mir schon viel besser."))
+	  do_npc_close(npc, ch)
 end
