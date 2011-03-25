@@ -49,7 +49,7 @@ function ShowNextMessageForTherapy()
     mana.being_say(miriam, "Hallo Herbert.")
     mana.being_say(ben, "Hallo Herbert.")
   elseif therapyState==3 then
-    mana.being_say(herbert, "Ich bin jetzt schon seit 4 Tagen clean.")
+    mana.being_say(herbert, "Ich bin jetzt schon seit 40 Tagen clean.")
   elseif therapyState==4 then
     mana.being_say(annabell, "Super.")
     mana.being_say(miriam, "Großartig.")
@@ -82,6 +82,14 @@ function ShowNextMessageForTherapy()
     mana.being_say(ben, "Ich wollte es erst gar nicht wahrhaben das ich PvP Killig süchtig bin. Selbst hier habe ich meinen Bogen mit dabei.")
   elseif therapyState==16 then
     mana.being_say(annabell, "Ja besonders am Anfang braucht man eine Menge Unterstützung und deshalb freue ich mich auch das du den Weg zu uns gefunden hast.")
+  elseif therapyState==17 then
+    mana.being_say(ben, "Ja ich hatte die Anzeige an diesem Pinboard gesehen und dachte mir, das ich es ja mal probieren könnte.")
+  elseif therapyState==18 then
+    mana.being_say(miriam, "Wie lange bist du schon clean?")
+  elseif therapyState==19 then
+    mana.being_say(ben, "Den heutigen Tag mitgerechnet fünf Tage.")
+  elseif therapyState==20 then
+    mana.being_say(annabell, "Das ist ein sehr guter Anfang. Auch die längste Reise beginnt mit dem ersten Schritt, Ben.")
   else
     therapyState=-1
   end
