@@ -57,8 +57,7 @@ function nethek_talk(npc, ch)
     do_message(npc, ch, "Du moechtest den Nex verlassen?")
 	
 	while true do 
-		local v = do_choice(npc, ch, "Ja.",
-								     "Nein.")
+		local v = do_choice(npc, ch, "Ja.", "Nein.")
 								   
 		if v == 1 then
 			local mapID = nethek.get_nethek_warp_map(ch)
@@ -126,6 +125,7 @@ function monty_talk(npc, ch)
 	   "Sterben ist dein Hobby, oder?",
 	   "Du bist ja schon wieder da...",
 	   "3, 2, 1, Tod.",
+	   "Man du must aufpassen wenn du da draußen bist...",
 	   "Nichts ist so grün wie der Tod, nicht wahr Frischling?",
 	   "Dem Godmode Spieler konnte nur noch ein Avatarspieler etwas entgegensetzen. Zum Glück passiert es nur sehr selten. Gibt immer so viele Tote...",
 	   "Dich hab ich aber jetzt nicht erwartet. Ich dachte der Postbote ist schneller.",
@@ -135,6 +135,7 @@ function monty_talk(npc, ch)
 	   "Du erinnerst mich an Joe aus dem Film das Milchtütenmasaker.",
 	   "Messer, Gabel, Licht sind für kleine Kinder nicht.",
 	   "Lange nicht gesehen.",
+	   "Du versuchst dem Sinn des Lebens auf den Grund zu gehen oder wie soll ich das verstehen?",
 	   "Ja ja der süße Tod.",
 	   "Der letze Godmode Spieler löste eine Katastrophe aus..."))
 	   do_npc_close(npc, ch)
