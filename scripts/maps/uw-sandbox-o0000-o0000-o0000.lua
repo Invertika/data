@@ -135,9 +135,11 @@ function poker_dealer_talk(npc, ch)
     end
 
     if game:playerIsInGame(ch) then
+        print("Poker: Spieler ist im Spiel")
         do_message(npc, ch, "Spieler ist im Spiel")
         if game:isRunning() then
             do_message(npc, ch, "Spiel läuft.")
+            print("Poker: Spiel läuft.")
             if game:playerIsOnTurn(ch) then
                 local possibilities =  game:getPossibilities(ch)
                 for i, possibility in ipairs(possibilities) do
@@ -190,12 +192,14 @@ function poker_dealer_talk(npc, ch)
             end
         else
             do_message(npc, ch, "Spiel läuft nicht.")
+            print("Poker: Spiel läuft nicht.")
             do_message(npc, ch, "Spiel starten?")
             while true do
                 local v = do_choice(npc, ch, "Ja.", "Nein.")
                 if v == 1 then
                     game:startGame()
                     mana.being_say(npc, "Das Spiel wurde gestartet.")
+                    print("Poker: Spiel wurde gestartet.")
                     break
                 elseif v == 2 then
                     break
@@ -204,6 +208,7 @@ function poker_dealer_talk(npc, ch)
         end
     else
         do_message(npc, ch, "Du bist nicht im Spiel")
+        print("Poker: Spieler bist nicht im Spiel")
         -- Dem Spieler die Möglichkeit geben ins Spiel einzusteigen.
         do_message(npc, ch, "Möchtest du mitspielen?")
         while true do
