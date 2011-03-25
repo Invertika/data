@@ -46,6 +46,11 @@ function ShowNextMessageForTherapy()
   elseif therapyState==3 then
     mana.being_say(annabell, "Hallo Herbert.")
     mana.being_say(miriam, "Hallo Herbert.")
+  elseif therapyState==4 then
+    mana.being_say(herbert, "Ich bin jetzt schon seit 4 Tagen clean.")
+  elseif therapyState==5 then
+    mana.being_say(annabell, "Super.")
+    mana.being_say(miriam, "Großartig.")
   else
     therapyState=0
   end
