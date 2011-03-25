@@ -90,6 +90,12 @@ function ShowNextMessageForTherapy()
     mana.being_say(ben, "Den heutigen Tag mitgerechnet fünf Tage.")
   elseif therapyState==20 then
     mana.being_say(annabell, "Das ist ein sehr guter Anfang. Auch die längste Reise beginnt mit dem ersten Schritt, Ben.")
+  elseif therapyState==21 then
+    mana.being_say(ben, "Früher habe ich auch immer versucht nur stärkere Spieler ins Nex zu bringen doch irgendwann fing ich auch mit schwächeren Spielern an.")
+  elseif therapyState==22 then
+    mana.being_say(annabell, "Und da hast du gemerkt das du etwas falsches tust?")
+  elseif therapyState==23 then
+    mana.being_say(ben, "Ja, da fing es an.")
   else
     therapyState=-1
   end
