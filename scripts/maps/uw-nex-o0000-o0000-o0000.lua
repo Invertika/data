@@ -26,7 +26,7 @@ atinit(function()
  create_npc("Monty", 49, 107 * TILESIZE + 16, 92 * TILESIZE + 16, monty_talk, nil) --- Monty
  
  -- Scheudle
-   schedule_every(4, function()
+   schedule_every(1, function()
     ShowNextMessageForTherapy()
   end)
  
@@ -44,32 +44,46 @@ function ShowNextMessageForTherapy()
     mana.being_say(annabell, "Hallo, ich bin Annabell und leite diese Sitzung der anonymen PvP Killer. Am besten wir stellen uns erstmal vor. Fängst du bitte an Herbert?")
   elseif therapyState==1 then
     mana.being_say(herbert, "Ja ich bin der Herbert und PvP Killing süchtig.")
-  elseif therapyState==3 then
+  elseif therapyState==2 then
     mana.being_say(annabell, "Hallo Herbert.")
     mana.being_say(miriam, "Hallo Herbert.")
     mana.being_say(ben, "Hallo Herbert.")
-  elseif therapyState==4 then
+  elseif therapyState==3 then
     mana.being_say(herbert, "Ich bin jetzt schon seit 4 Tagen clean.")
-  elseif therapyState==5 then
+  elseif therapyState==4 then
     mana.being_say(annabell, "Super.")
     mana.being_say(miriam, "Großartig.")
     mana.being_say(ben, "Toll.")
-  elseif therapyState==6 then
+  elseif therapyState==5 then
     mana.being_say(herbert, "Ja das war es so zu mir.")
-  elseif therapyState==7 then
+  elseif therapyState==6 then
     mana.being_say(annabell, "Toll Herbert. Kommen wir nun zu dir Miriam.")
-  elseif therapyState==8 then
+  elseif therapyState==7 then
     mana.being_say(miriam, "Ich bin Miriam und schon seit meiner Kindheit PvP Killer.")
-  elseif therapyState==9 then
+  elseif therapyState==8 then
     mana.being_say(annabell, "Hallo Miriam.")
     mana.being_say(herbert, "Hallo Miriam.")
     mana.being_say(ben, "Hallo Miriam.")
-  elseif therapyState==10 then
+  elseif therapyState==9 then
     mana.being_say(miriam, "Ich bin mittlerweile wieder seit 4 Monaten clean, habe allerdings ab und an mit Rückfällen zu kämpfen.")
-  elseif therapyState==11 then
+  elseif therapyState==10 then
     mana.being_say(annabell, "Rückfälle sind bei PvP Killern nicht selten, man muss einfach lernen damit umzugehen und aus den Rückfällen neue Kraft schöpfen.")
+  elseif therapyState==11 then
+    mana.being_say(miriam, "Ich hoffe meine Sucht eines Tages überwinden zu können.")
+  elseif therapyState==12 then
+    mana.being_say(annabell, "Danke Miriam. Neu in unserer heutigen Runde ist Ben.")
+  elseif therapyState==13 then
+    mana.being_say(ben, "Ja ich bin der Ben und wie gesagt neu hier.")
+  elseif therapyState==14 then
+    mana.being_say(annabell, "Hallo Ben.")
+    mana.being_say(herbert, "Hallo Ben.")
+    mana.being_say(miriam, "Hallo Ben.")
+  elseif therapyState==15 then
+    mana.being_say(ben, "Ich wollte es erst gar nicht wahrhaben das ich PvP Killig süchtig bin. Selbst hier habe ich meinen Bogen mit dabei.")
+  elseif therapyState==16 then
+    mana.being_say(annabell, "Ja besonders am Anfang braucht man eine Menge Unterstützung und deshalb freue ich mich auch das du den Weg zu uns gefunden hast.")
   else
-    therapyState=0
+    therapyState=-1
   end
   
   therapyState=therapyState+1
