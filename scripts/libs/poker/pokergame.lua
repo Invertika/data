@@ -22,8 +22,12 @@ function PokerGame:new(maxPayment)
     local res = {}
 	setmetatable(res, self)
 	self.__index = self
+    print("Poker: Erstelle Pot")
 	self.pot = PokerPot:new(maxPayment)
+    print("Done.")
+    print("Poker: Erstelle CardStack")
     self.card_stack = PokerCardStack:new()
+    print("Done.")
     self.round = nil
     self.player_was_on_turn = {}
 	return res
@@ -411,6 +415,6 @@ end
 
 --- Prüft ob das Spiel bereits läuft.
 -- @return true wenn das Spiel läuft, false wenn nicht.
-function PokerGame:isGameRunning()
+function PokerGame:isRunning()
     return self.round ~= nil
 end
