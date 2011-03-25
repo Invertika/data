@@ -192,7 +192,7 @@ end
  end
 
  function wache_trigger(ch, id)
-   if (mana.being_type(ch) ~= TYPE_MONSTER) then --- Nur Player durchlassen
+   if (mana.being_type(ch) == TYPE_CHARACTER) then --- Nur Player durchlassen
 	 local count = mana.chr_inv_count(ch, 40009)
 	 
 	 if count == 0 then
@@ -714,6 +714,7 @@ function valeria_talk(npc, ch)
 end
 
 function amulet_trigger(ch, args)
+  if (mana.being_type(ch) == TYPE_CHARACTER) then --- Nur Player durchlassen
     local quest_string = string.format("selphie_timlet_amulet_quest_%s", args)
     invertika.init_quest_status(ch, quest_string)
 
@@ -724,4 +725,5 @@ function amulet_trigger(ch, args)
         set_qstatus(1)
         invertika.add_items(ch, 40029, 1, "ein Stück eines zerbrochen Amuletts")
     end
+  end
 end
