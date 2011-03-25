@@ -26,7 +26,7 @@ atinit(function()
  create_npc("Monty", 49, 107 * TILESIZE + 16, 92 * TILESIZE + 16, monty_talk, nil) --- Monty
  
  -- Scheudle
-   schedule_every(2, function()
+   schedule_every(3, function()
     ShowNextMessageForTherapy()
   end)
  
