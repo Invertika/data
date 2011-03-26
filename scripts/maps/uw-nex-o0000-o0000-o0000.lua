@@ -26,7 +26,7 @@ atinit(function()
  create_npc("Monty", 49, 107 * TILESIZE + 16, 92 * TILESIZE + 16, monty_talk, nil) --- Monty
  
  -- Scheudle
-   schedule_every(3, function()
+   schedule_every(2, function()
     ShowNextMessageForTherapy()
   end)
  
@@ -96,7 +96,14 @@ function ShowNextMessageForTherapy()
     mana.being_say(annabell, "Und da hast du gemerkt das du etwas falsches tust?")
   elseif therapyState==30 then
     mana.being_say(ben, "Ja, da fing es an.")
-  elseif therapyState > 30 then
+  elseif therapyState==31 then
+    mana.being_say(annabell, "Und wie ich sehe hast du begriffen das es so nicht weitergehen kann.")
+    mana.being_say(miriam, "*hust*")
+  elseif therapyState==32 then
+    mana.being_say(ben, "Ja und ich hoffe das mir diese Runden hier helfen werden.")
+  elseif therapyState==33 then
+    mana.being_say(annabell, "Das hoffe ich auch. Nun gut lasst uns eine kleine Pause machen.")
+  elseif therapyState > 35 then
     therapyState=-1
   end
   
