@@ -232,7 +232,7 @@ end
 -- @param card_id Die ID der Karte.
 -- @return true Wenn erfolgreimy_player, false wenn nicht.
 function PokerGame:playerActionSwapCard(my_player, id)
-    if self.cards_player_swapped[my_player] == PokerConstans.MAX_NUMBER_OF_SWAPABLE_CARDS then
+    if self.cards_player_swapped[my_player] == PokerConstants.MAX_NUMBER_OF_SWAPABLE_CARDS then
         return false
     end
     if my_player:getSpade():removeCard(id) == false then return false end
