@@ -752,22 +752,22 @@ function lidi_talk(npc, ch)
     
     if get_qstatus() == 0 then
         if mana.chr_inv_count(ch, 20023) > 0 then
-            do_message(npc, ch, "")
+            do_message(npc, ch, "Oh Gott du hast SIE. Ich brauche diese Brille, gibst du sie mir?")
             while true do
                 local v = do_choice(npc, ch, "Ja.", "Nein.")
                 if v == 1 then
                     invertika.add_items(ch, 20023, -1, "Sonnenbrille")
                     invertika.add_items(ch, invertika.get_random_element(40030, 40031, 40032, 40033), 1, "Garn")
-                    do_message(npc, ch, "")
+                    do_message(npc, ch, "Danke, danke, danke. Hier nimm das als Dankeschön.")
                 elseif v == 2 then 
-                    do_message(npc, ch, "")
+                    do_message(npc, ch, "Pffffff, dann nicht...")
                 end
             end
         else
-            do_message(npc, ch, "")
+            do_message(npc, ch, "Boah diese Sonnenbrille ist der reinste Wahnsinn. Ich brauche diese, genau diese Brille.")
         end
     elseif get_qstatus() == 1 then
-        do_message(npc, ch, "")
+        do_message(npc, ch, "Sehe ich nicht total fesch mit dieser Brille aus?")
     end
     do_npc_close(npc, ch)
 end
