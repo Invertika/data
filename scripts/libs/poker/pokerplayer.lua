@@ -60,3 +60,10 @@ end
 function PokerPlayer:getSpade()
     return self.spade
 end
+
+
+--- Gibt den Charakter zurück.
+-- @return Den Charakter
+function PokerPlayer:getCh()
+    return self.ch
+end
