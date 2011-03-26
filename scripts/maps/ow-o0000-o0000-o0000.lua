@@ -49,6 +49,7 @@ wir müssen darauf hinweisen, dass bei Diebstahl ein Ladenverbot verhängt wird 
  create_npc("Valeria", 10, 26 * TILESIZE + 16, 49 * TILESIZE + 16, valeria_talk, nil) --- Valeria
  
  create_npc("Alaria", 79, 170 * TILESIZE + 16, 182 * TILESIZE + 16, seller.seller_talk, nil) --- Verkäufer
+ create_npc("Lidi", 40, 186 * TILESIZE + 16, 95 * TILESIZE + 16, lidi_talk, nil) -- Lidi
  
  create_npc("Wache", 25, 39 * TILESIZE + 16, 51 * TILESIZE + 16, colloseumwache_talk, nil) --- Colloseumwache
  create_npc("Wache", 25, 44 * TILESIZE + 16, 51 * TILESIZE + 16, colloseumwache_talk, nil) --- Colloseumwache
@@ -726,4 +727,35 @@ function amulet_trigger(ch, args)
         invertika.add_items(ch, 40029, 1, "ein Stück eines zerbrochen Amuletts")
     end
   end
+end
+
+function lidi_talk(npc, ch)
+    local queststring = "selphie_timlet_lidi_sunglasses"
+    local get_qstatus = function()
+        return invertika.get_quest_status(ch, queststring)
+    end
+    local set_qstatus = function(x)
+        invertika.set_quest_Status(ch, queststring, x)
+    end
+    
+    if get_qstatus() == 0 then
+        if mana.chr_inv_count(ch, 20023) > 0 then
+            do_message(npc, ch, "")
+            while true do
+                local v = do_choice(npc, ch, "Ja.", "Nein.")
+                if v == 1 then
+                    invertika.add_items(ch, 20023, -1, "Sonnenbrille")
+                    invertika.add_items(ch, invertika.get_random_element(40030, 40031, 40032, 40033), 1, "Garn")
+                    do_message(npc, ch, "")
+                elseif v == 2 then 
+                    do_message(npc, ch, "")
+                end
+            end
+        else
+            do_message(npc, ch, "")
+        end
+    elseif get_qstatus() == 1 then
+        do_message(npc, ch, "")
+    end
+    do_npc_close(npc, ch)
 end
