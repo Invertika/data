@@ -351,7 +351,7 @@ end
 function PokerGame:roundNotAtEnd()
     if self:allPlayerWereOnTurn() == false then
         return true
-    elseif pot:arePaymentsRequired() then
+    elseif self.pot:arePaymentsRequired() then
         -- Noch Einzahlungen nötig => Bietrunde läuft noch
         return true
     elseif self:allPlayerWereOnTurn() == false then
