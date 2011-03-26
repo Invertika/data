@@ -143,16 +143,20 @@ function poker_dealer_talk(npc, ch)
             if game:playerIsOnTurn(ch) then
                 print("Poker: Spieler ist im Spiel.")
                 local possibilities =  game:getPossibilities(ch)
+                local choices = {}
                 for i, possibility in ipairs(possibilities) do
-                    local choices = {}
                     if possibility == poker.PokerConstants.POSSIBILITY_FOLD then
                         table.insert(choices, "Karten abgeben - FOLD")
+                        print("Spieler kann Fold spielen")
                     elseif possibility == poker.PokerConstants.POSSIBILITY_CALL then
                         table.insert(choices, "Mitgehen - CALL")
+                        print("Spieler kann Call spielen")
                     elseif possibility == poker.PokerConstants.POSSIBILITY_RAISE then
                         table.insert(choices, "Erhöhen - RAISE")
+                        print("Spieler kann Raise spielen")
                     elseif possibility == poker.PokerConstants.POSSIBILITY_CHANGE_CARD then
                         table.insert(choices, "Karte tauschen.")
+                        print("Spieler kann Karte tauschen")
                     end
                 end
                 while true do
