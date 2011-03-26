@@ -53,6 +53,9 @@ end
 -- @param player Spieler, der die Einzahlung tätigt (PokerPlayer-Objekt)
 -- @param amount Höhe der Einzahlung, keine Werte <0
 function PokerPot:doPayment(player, amount)
+    if self.payments[player] == nil then
+        self.payments[player] = 0
+    end
     self.payments[player] = self:getPaymentOf(player) + amount
 end
 
