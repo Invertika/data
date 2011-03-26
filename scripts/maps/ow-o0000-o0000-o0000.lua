@@ -652,17 +652,18 @@ function palastwache_talk(npc, ch)
 end
 
 function bernie_talk(npc, ch)
-	do_message(npc, ch, "Hey du, du brauchst ihn doch bestimmt, den Niedermetzler 3000. Das ist genau das richtige für dich, da kannst du garnicht widerstehen. Komm schon für nur 99999 Aki gehört er dir?")
+	do_message(npc, ch, "Hey du, du brauchst ihn doch bestimmt, den Niedermetzler 3000. Das ist genau das richtige für dich, da kannst du garnicht widerstehen. Komm schon für nur 99999 Aki gehört er dir? Oder eine Sonnenbrille? Neuste Mode? 12500 Aki! Ein besonderes Modell!")
 	
 	while true do 
-		local v = do_choice(npc, ch, "Her damit!",
+		local v = do_choice(npc, ch, "Her mit dem Niedermetzler!",
+                                     "Ich will die Sonnenbrille!",
 								     "Lieber nicht...")
 								   
 		if v == 1 then
 		    local PlayerMoney=mana.chr_money(ch)
 		    if PlayerMoney >= 99999 then
-			mana.chr_money_change(ch, -99999)
-			mana.chr_inv_change(ch, 10005, 1)
+			invertika.set_money(ch, -99999)
+			invertika.add_items(ch, 10005, 1, "Niedermetzler 3000")
 			do_message(npc, ch, invertika.get_random_element("Viel Spaß mit deinem Niedermetzler 3000.",
 	  "Nun hast du ihn, den Niedermetzler 3000.",
 	  "Bitteschön, der Niedermetzler 3000, die ultimative Waffe."))
@@ -673,7 +674,18 @@ function bernie_talk(npc, ch)
 	  "Ne ne ne. Kram erstmal das Geld zusammen!"))
 		      break;
 		    end
-		elseif v == 2 then
+        elseif v == 2 then
+            if mana.chr_money(ch) >= 12500 then
+                invertika.set_money(ch, -12500)
+                invertika.add_items(ch, 20023, 1, "Sonnenbrille")
+                do_message(npc, ch, "Da. Nimm Sie. Willst du auch einen Niedermetzler 3000?")
+            else
+
+		      do_message(npc, ch, invertika.get_random_element("Du hast nicht genug Geld, komm später wieder.",
+	  "So nicht, das Geld benötigst du schon.",
+	  "Ne ne ne. Kram erstmal das Geld zusammen!"))
+            end
+		elseif v == 3 then
 			do_message(npc, ch, invertika.get_random_element("Dann halt nicht. Aber vielleicht später?",
 	  "Wer nicht will der hat schon...",
 	  "Okay, ein ander Mal vielleicht."))
