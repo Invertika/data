@@ -216,7 +216,7 @@ end
 --- Teilt dem Spiel mit, dass my_player Call spielt.
 -- @param my_player Der Charakter, der eine Aktion ausführt.
 function PokerGame:playerActionCall(my_player)
-    local min = self.pot:getMoneyChHasToRaise(my_player.getCh())
+    local min = self.pot:getMoneyChHasToRaise(my_player:getCh())
     my_player:doPayment(pot, min)
     self:playerAction(my_player)
 end
