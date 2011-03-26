@@ -32,6 +32,9 @@ function goron_talk(npc, ch)
     local queststring_orders = "selphie_timlet_goron_orders"
     local queststring_timestamp_order_ready = "selphie_timlet_goron_order_ready"
 
+    invertika.init_quest_status(ch, queststring_orders)
+    invertika.init_quest_status(ch, queststring_timestamp_order_ready)
+
     local get_order = function()
       return invertika.get_quest_status(ch, queststring_orders)
     end
