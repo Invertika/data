@@ -743,6 +743,7 @@ end
 
 function lidi_talk(npc, ch)
     local queststring = "selphie_timlet_lidi_sunglasses"
+    invertika.init_quest_status(ch, queststring)
     local get_qstatus = function()
         return invertika.get_quest_status(ch, queststring)
     end
