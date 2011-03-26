@@ -141,6 +141,7 @@ function poker_dealer_talk(npc, ch)
             do_message(npc, ch, "Spiel läuft.")
             print("Poker: Spiel läuft.")
             if game:playerIsOnTurn(ch) then
+                print("Poker: Spieler ist im Spiel.")
                 local possibilities =  game:getPossibilities(ch)
                 for i, possibility in ipairs(possibilities) do
                     local choices = {}
@@ -155,7 +156,7 @@ function poker_dealer_talk(npc, ch)
                     end
                 end
                 while true do
-                    local v = do_choice(choices)
+                    local v = do_choice(npc, ch, choices)
                     if (v >= 1) or (v <= table.getn(choices)) then
                         if possibilities[v] == poker.PokerConstants.POSSIBILITY_FOLD then
                             game:playerActionFold(ch)
@@ -189,6 +190,8 @@ function poker_dealer_talk(npc, ch)
                         break
                     end
                 end
+            else
+                do_message(npc, ch, "Du bist nicht dran.")
             end
         else
             do_message(npc, ch, "Spiel läuft nicht.")
