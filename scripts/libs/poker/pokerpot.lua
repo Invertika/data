@@ -120,7 +120,7 @@ end
 --- Gibt zurück ob noch Einsatze gemacht werden müssen.
 -- @return true wenn noch Einsätze gemacht werden müssen, false wenn nicht.
 function PokerPot:arePaymentsRequired()
-    for i, player in ipairs(self.playments) do
+    for i, player in ipairs(self.payments) do
         if self:getMoneyPlayerHasToRaise(player) >= 0 then
             return true
         end
