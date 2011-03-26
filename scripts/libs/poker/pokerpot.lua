@@ -91,7 +91,7 @@ end
 -- @return Gibt die Möglichkeiten von player zurück.
 function PokerPot:getPossibilitiesOfPlayer(player)
     local min = self:getMoneyPlayerHasToRaise(player)
-    local max = getHighestPossiblePayment(player)
+    local max = self:getHighestPossiblePayment(player)
     local possibilities = {}
     table.insert(possibilities, PokerConstants.POSSIBILITY_FOLD)
     if player:getMoney() >= min then
