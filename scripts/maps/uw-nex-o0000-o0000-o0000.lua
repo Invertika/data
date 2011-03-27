@@ -131,7 +131,14 @@ end
 
 function monty_talk(npc, ch)
     local deathCount = death.get_death_counter(ch)
-
+    local quest_string = "nex_monty_spieler_geld"
+    invertika.init_quest_status(ch, quest_string)
+    local get_qstatus = function()
+      return invertika.get_quest_status(ch, quest_string)
+    end
+    local set_qstatus = function(x)
+      invertika.set_quest_status(ch, quest_string, x)
+    end
 	---Spezielle Abfragen auf bestimmte Werte
 	if deathCount == 100 then
 	   do_message(npc, ch, "Gratulation du bist zum 100ten Mal gestorben. Das gibt eine Party.")
@@ -141,18 +148,22 @@ function monty_talk(npc, ch)
 	   do_message(npc, ch, "Du bist 1000 mal gestorben. Man man ich bin begeistert.")
 	   do_npc_close(npc, ch)
 	   return
-	elseif deathCount == 2500 then
+	elseif get_qstatus() == 0 and deathCount == 2500 then
 	   do_message(npc, ch, "Du bist nun schon ziemlich oft tot gewesen. Vielleicht hilft dir ein bisschen Geld darüber hinweg.")
 	   mana.chr_money_change(ch, 50000)
+       set_qstatus(1)
 	   do_npc_close(npc, ch)
 	   return
-	elseif deathCount == 5000 then
+	elseif get_qstatus() == 0 and deathCount == 5000 then
 	   do_message(npc, ch, "Du stirbst wohl extra wegen dem Geld oder? Naja ich gebs dir, ich brauch kein Geld mehr.")
 	   mana.chr_money_change(ch, 150000)
+       set_qstatus(1)
 	   do_npc_close(npc, ch)
 	   return
 	end
 	
+    set_qstatus(0)
+
 	---Normale Abfragen
 	if deathCount < 5 then
 	   do_message(npc, ch, "Willkommen im Nex, dem Reich des Toten. Wenn du es verlassen möchtest musst du mit Nethek reden. Und rede ab und an mit mir wenn du hier bist...")
