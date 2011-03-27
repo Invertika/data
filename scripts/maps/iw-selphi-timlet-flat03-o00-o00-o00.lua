@@ -19,6 +19,7 @@ require "scripts/libs/invertika"
 
 atinit(function()
  create_npc("...", 1, 68 * TILESIZE + 16, 18 * TILESIZE + 16, tresor_talk, nil) --- Tresor
+ create_npc("Ceech", 54, 38 * TILESIZE + 16, 22 * TILESIZE + 16, ceech_talk, nil) --- Ceech
 end)
 
 function tresor_talk(npc, ch)
@@ -69,4 +70,12 @@ function tresor_talk(npc, ch)
 	end
 	
 	do_npc_close(npc, ch)
+end
+
+function ceech_talk(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Lass mich arbeiten!",
+      "Ich habe zu tun.",
+      "Jetzt nicht.",
+      "Schhhhh."))
+    do_npc_close(npc, ch)
 end
