@@ -5,7 +5,7 @@
 -- anderer Dinge.                                                               --
 --                                                                              --
 ----------------------------------------------------------------------------------
---  Copyright 2008 The Invertika Development Team                               --
+--  Copyright 2008 - 2011 The Invertika Development Team                        --
 --                                                                              --
 --  This file is part of Invertika.                                             --
 --                                                                              --
@@ -19,8 +19,7 @@ require "scripts/libs/barber"
 require "scripts/libs/invertika"
 
 atinit(function()
-    ---create_npc("Banker", 122, 180 * TILESIZE + 16, 160 * TILESIZE + 16, banker.banker_talk, nil) --- Banker (Debug)
-    create_npc("Rocer", 60, 42 * TILESIZE + 16, 31 * TILESIZE + 16, rocer_talk, nil) -- Rocer (2. Zwilling)
+    create_npc("Rocer", 60, 16 * TILESIZE + 16, 16 * TILESIZE + 16, rocer_talk, nil) -- Rocer (2. Zwilling)
 end)
 
 
