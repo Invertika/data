@@ -49,7 +49,7 @@ wir müssen darauf hinweisen, dass bei Diebstahl ein Ladenverbot verhängt wird 
  create_npc("Valeria", 10, 26 * TILESIZE + 16, 49 * TILESIZE + 16, valeria_talk, nil) --- Valeria
  
  create_npc("Alaria", 79, 170 * TILESIZE + 16, 182 * TILESIZE + 16, seller.seller_talk, nil) --- Verkäufer
- create_npc("Lidi", 40, 186 * TILESIZE + 16, 95 * TILESIZE + 16, lidi_talk, nil) -- Lidi
+ create_npc("Lidi", 71, 171 * TILESIZE + 16, 79 * TILESIZE + 16, lidi_talk, nil) -- Lidi
  
  create_npc("Wache", 25, 39 * TILESIZE + 16, 51 * TILESIZE + 16, colloseumwache_talk, nil) --- Colloseumwache
  create_npc("Wache", 25, 44 * TILESIZE + 16, 51 * TILESIZE + 16, colloseumwache_talk, nil) --- Colloseumwache
