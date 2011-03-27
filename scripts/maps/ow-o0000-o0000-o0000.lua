@@ -760,8 +760,11 @@ function lidi_talk(npc, ch)
                     invertika.add_items(ch, 20023, -1, "Sonnenbrille")
                     invertika.add_items(ch, invertika.get_random_element(40030, 40031, 40032, 40033), 1, "Garn")
                     do_message(npc, ch, "Danke, danke, danke. Hier nimm das als Dankeschön.")
+                    set_qstatus(1)
+                    break
                 elseif v == 2 then 
                     do_message(npc, ch, "Pffffff, dann nicht...")
+                    break
                 end
             end
         else
