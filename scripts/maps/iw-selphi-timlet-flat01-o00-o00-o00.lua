@@ -83,7 +83,7 @@ function goron_talk(npc, ch)
                                                 invertika.add_items(ch, 40033, -1, "blauer Garn")
                                             end
                                             set_order(v1)
-                                            set_order_timestamp(math.random(os.time(t) + 2 * 60 * 60, os.time(t) + 3 * 60 * 60))
+                                            set_order_timestamp(math.random(os.time(t) + 10))--2 * 60 * 60, os.time(t) + 3 * 60 * 60))
                                             do_message(npc, ch, "Die Bestellung wurde aufgegeben. Sie können sie in 2 - 3 Stunden abholen.")
                                         else
                                             do_message(npc, ch, "Tut mir Leid. Du hast leider nicht genug Geld dabei.")
