@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="200" height="200" tilewidth="32" tileheight="32">
-  <properties>
-    <property name="music" value="desert1.ogg" />
-    <property name="overlay0image" value="graphics/images/ambient/sandstorm.png" />
-    <property name="overlay0parallax" value="1.0" />
-    <property name="overlay0scrollX" value="4" />
-    <property name="overlay0scrollY" value="-1" />
-    <property name="overlay1image" value="graphics/images/ambient/sandstorm.png" />
-    <property name="overlay1parallax" value="1.5" />
-    <property name="overlay1scrollX" value="8" />
-    <property name="overlay1scrollY" value="-2" />
-    <property name="overlay2image" value="graphics/images/ambient/sandstorm.png" />
-    <property name="overlay2parallax" value="2.0" />
-    <property name="overlay2scrollX" value="12" />
-    <property name="overlay2scrollY" value="-3" />
-  </properties>
+ <properties>
+  <property name="music" value="desert1.ogg"/>
+  <property name="overlay0image" value="graphics/images/ambient/sandstorm.png"/>
+  <property name="overlay0parallax" value="1.0"/>
+  <property name="overlay0scrollX" value="4"/>
+  <property name="overlay0scrollY" value="-1"/>
+  <property name="overlay1image" value="graphics/images/ambient/sandstorm.png"/>
+  <property name="overlay1parallax" value="1.5"/>
+  <property name="overlay1scrollX" value="8"/>
+  <property name="overlay1scrollY" value="-2"/>
+  <property name="overlay2image" value="graphics/images/ambient/sandstorm.png"/>
+  <property name="overlay2parallax" value="2.0"/>
+  <property name="overlay2scrollX" value="12"/>
+  <property name="overlay2scrollY" value="-3"/>
+ </properties>
  <tileset firstgid="1" name="collision" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/collision1_32_32.png" width="1024" height="1024"/>
  </tileset>
@@ -35,7 +35,12 @@
  </tileset>
  <layer name="Ground" width="200" height="200">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3dyU4cMRAAUFBgWH4tIsl/IPj/Y8gBBZLp2XC3a3mHdwHBlMBu2+Wy+/rm6uoaACZ7DRADAAAAAAAA67kLEAMA0MNu5d9vXgMAwLl+BojhX2vPm9+pEwcy8KwCAAAAAACIY439bLWfAEAV5jVjvEz+/JH1Sj8C/D0BAAAAAACA/La6iwZ3XHQX8S4qoCbjDSNpTwAAUIczLVxCXhMAoLfH+/kxQCf6HJ3cvrX3nTZPA9r6YepSgI4+Pvsego8RxjEgi9l3jGYmH0V39/oArOqbPsZAs3KJ1eZL5s4AQHb2LpY565XLiLYstzWPO/tiGTU2+L8SkfEdxnBWHuaJXiMJwH6X5p3kqyAH5/noavY+o7otgGWnPqNnP8uhCn0JLmM9DQD1Ge8BADhki3NH0c42RTjT8hQgBgAAAIhKjTrQkftDgIzUJQEAAADEYY8NAGpzDgUAAADIJHJ9fNb6V3tBAESUdVytaMR7OrzrA6jqLkAMFRj3Af6KcK9xdNYXbCXyfsRI3fuUGtoYOq8J7NOxlu7P94/0M6Ky/gMgs5s3twHioA5rGLrS9gGoztqhDrWSx2nvME/nmgP2i7DejhADAHEYF+hM+6ejjO1ebms78hgAAKxtFyCGTpxdZEmktmHdD+PI7ZCVu3UAPutyt9w7awIAAMhFHhKowF2rAAAAbE1eDQAAtmceDgAAQHbexQQAAAAAfTkPDQA12PNjH3M9AAAAuuv2Xh7oyFn/eo7luw99X66czjwPAdjS94WvPwSIDc6x1JZPsQsQP8BM1qHAOfblbr8yF4OOLhl7l35G/yOq5wAxAMAf6g4BAP53So2ueRTwFc4C5DZz7+HYZxufyO7U/vUrQKwAs2Wua7RfDsCWHgPEALOMnHc5XwgAAABQ02/5BO5jAHECAA==
+   H4sIAAAAAAAAA+3ZIQ7AIAAEQUgaPoeg/38NCkmCqLi2I8avOHf1KqUCAAAAAAAAAAAAAAAAv9ACGgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAvRHQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsIyABgAAAAAAAABI0QMaAAAAAAAAnuD34OtON34HtAIAAAAAAAAAvN0Egod+cQBxAgA=
+  </data>
+ </layer>
+ <layer name="Kopie von Ground" width="200" height="200">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3dy04rMQwA0CKgPH4N8fgPBP+/hA0CRKctbSax47M4K3TFiOuME8fJXGw2mwsAGOz9avwzAAAAAAAAsJ4b+0EAQCfblecd5jUAAPzXc8A55Nrz5i/6xIEMvKsAAAAAAADiWGM/W+8nADAL85o23gb/HVv2Kz2JCQAAAAAAAKCBXnfR4I6L6iLeRQXMSb6hJfEEAADzcKaFU6hrAgDUdn87/hmgEmOOSq4/430r5ilArO+nLwWo6Oe77y54jpDHgCxG3zGamXoU1d0aA7CqS2OMhkbVEmebL5k7AwDZ2btY5qxXLi1iWW1rHHf2xdIqN/h/JSL5HdpwVh7Gid4jCcBup9ad1KsgB+f5qGr0PqO+LYBlx76jR7/LYRbGEpzGehoA5iffAwCwT49zR9HONkU40/IY4BkAAAAgKj3qQEXuDwEy0pcEAAAAEIc9NgCYm3MoAAAAQCaR++Oz9r/aCwIgoqx5dUYtvtPhWx/ArG7kqybkfYBvEe41js76gl4i70e0VH1M6aGNofKawD4da6n+fv/JOCMq6z8AMrv6zGPXchkNWcNQldgHYHbWDvPQK3mYeIdxKvccsFuE9XaEZwAgDnmBysQ/FWWMe7WtftQxAABY29acsytnF1kSKTas+6EdtR2ycrcOwG9V7pb7Yk0AAAC5qEMCM3DXKgAAAL2pqwEAQH/m4QAAAGTnW0wAAAAAUJfz0AAwB3t+7GKuBwAAQHXVvssDFTnrP59D9e59P1crpzLvQwB6eljIO3fyEcksxfIxtuIdKM46FPiPXbXbc+ZiUNEpuXfp3xh/RPUqNgEIQt8hAMBfx/TomkcB53AWILeRew+Hfrf8RHbHjq8XsQ6Quq/RfjkAPd3LOxTWct7lfCEAAADAnD4AwXj0GwBxAgA=
   </data>
  </layer>
  <layer name="Fringe" width="200" height="200">
