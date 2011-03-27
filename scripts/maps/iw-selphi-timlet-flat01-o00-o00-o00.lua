@@ -59,7 +59,7 @@ function goron_talk(npc, ch)
             while true do
                 local v = do_choice(npc, ch, "Ich hätte gerne eine Robe.", "Nein. Danke.")
                 if v == 1 then
-                    do_choice(npc, ch, "Hmm. Eine Robe. Welche Farbe wird denn gewünscht?")
+                    do_message(npc, ch, "Hmm. Eine Robe. Welche Farbe wird denn gewünscht?")
                     while true do
                         local v1 = do_choice(npc, ch, "Grün.", "Gelb.", "Rot.", "Blau.")
                         if v1 >= 1 and v1 <= 4 then -- Grün
@@ -83,7 +83,7 @@ function goron_talk(npc, ch)
                                                 invertika.add_items(ch, 40033, -1, "blauer Garn")
                                             end
                                             set_order(v1)
-                                            set_order_timestamp(math.random(os.time(t) + 10))--2 * 60 * 60, os.time(t) + 3 * 60 * 60))
+                                            set_order_timestamp(math.random(os.time(t) + 2 * 60 * 60, os.time(t) + 3 * 60 * 60))
                                             do_message(npc, ch, "Die Bestellung wurde aufgegeben. Sie können sie in 2 - 3 Stunden abholen.")
                                         else
                                             do_message(npc, ch, "Tut mir Leid. Du hast leider nicht genug Geld dabei.")
@@ -117,13 +117,13 @@ function goron_talk(npc, ch)
             -- Bestellung fertig.
             do_message(npc, ch, "Ihre Bestellung ist fertig. Es wird Ihnen ausgezeichnet stehen.")
             if get_order() == 1 then
-                invertika.add_items(ch, 40024, 1, "modische grüne Robe")
+                invertika.add_items(ch, 20024, 1, "modische grüne Robe")
             elseif get_order() == 2 then
-                invertika.add_items(ch, 40025, 1, "modische gelbe Robe")
+                invertika.add_items(ch, 20025, 1, "modische gelbe Robe")
             elseif get_order() == 3 then
-                invertika.add_items(ch, 40026, 1, "modische rote Robe")
+                invertika.add_items(ch, 20026, 1, "modische rote Robe")
             elseif get_order() == 4 then
-                invertika.add_items(ch, 40027, 1, "modische blaue Robe")
+                invertika.add_items(ch, 20027, 1, "modische blaue Robe")
             end
             set_order(0) -- Bestellung löschen.
         else
