@@ -89,7 +89,7 @@ function set_money(ch, amount)
     if current_money + amount < 0 then
         error("add_money failed: money would be less than 0")
     else
-        mana.chr_money_change(ch, current_money + amount)
+        mana.chr_money_change(ch, amount)
         if amount > 0 then
             mana.chatmessage(ch, string.format(MONEY_ADD_TEXT, amount))
         else
