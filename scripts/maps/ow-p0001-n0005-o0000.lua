@@ -45,11 +45,11 @@ atinit(function()
  sign.create_sign(135, 99, signText) -- Warnschild
 
  -- Wachen
- wache = create_npc("Wache", 7, 96 * TILESIZE + 16, 96 * TILESIZE + 16, wache_talk, nil) --- Wache
- create_npc("Wache", 7, 106 * TILESIZE + 16, 96 * TILESIZE + 16, wache_talk, nil) --- Wache
+ wache = create_npc("Wache", 29, 96 * TILESIZE + 16, 96 * TILESIZE + 16, wache_talk, nil) --- Wache
+ create_npc("Wache", 29, 106 * TILESIZE + 16, 96 * TILESIZE + 16, wache_talk, nil) --- Wache
  
  -- Trigger für die Überwachung des Torbereiches
- mana.trigger_create(145 * TILESIZE, 17 * TILESIZE, 5 * TILESIZE, 52 * TILESIZE, "wache_trigger", 1, true) --- Trigger Tor
+ mana.trigger_create(98 * TILESIZE, 93 * TILESIZE, 6 * TILESIZE, 6 * TILESIZE, "wache_trigger", 1, true) --- Trigger Tor
  
 end)
 
@@ -76,7 +76,7 @@ function wache_trigger(ch, id)
  end
  
 function wache_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Verschwinden sie!",
+	do_message(npc, ch, invertika.get_random_element("Verschwinden Sie!",
 	    "Kein Zutritt!"))
 	  do_npc_close(npc, ch)
 end
