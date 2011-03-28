@@ -27,7 +27,7 @@ atinit(function()
  nethek.create_netheksaeule(96 * TILESIZE, 113 * TILESIZE + 16) --- Netheksäule
  
  -- Schilder
- local signText="Sperrgebiet! Betreten sowie Fotographie verboten! Wachen sind zur Anwendung tötlicher Gewalt befugt!"
+ local signText="Sperrgebiet! Betreten sowie Fotographie verboten! Wachen sind zur Anwendung tödlicher Gewalt befugt!"
  sign.create_sign(78, 100, signText) -- Warnschild
  sign.create_sign(78, 93, signText) -- Warnschild
  sign.create_sign(78, 86, signText) -- Warnschild
