@@ -163,14 +163,14 @@ function poker_dealer_talk(npc, ch)
                     local v = do_choice(npc, ch, choices)
                     if (v >= 1) or (v <= table.getn(choices)) then
                         if possibilities[v] == poker.PokerConstants.POSSIBILITY_FOLD then
-                            game:playerActionFold(ch)
+                            game:chActionFold(ch)
                         elseif possibilities[v] == poker.PokerConstants.POSSIBILITY_CALL then
-                            game:playerActionCall(ch)
+                            game:chActionCall(ch)
                         elseif possibilities[v] == poker.PokerConstants.POSSIBILITY_RAISE then
                             local min = game:getMoneyPlayerHasToRaise(ch)
                             local max = game:getMaxMoneyPlayerCanRaise(ch)
                             local amount = do_ask_integer(npc, ch, min, max, min)
-                            game:playerActionRaise(ch, amount)
+                            game:chActionRaise(ch, amount)
                         elseif possibilites[v] == poker.PokerConstants.POSSIBILITY_CHANGE_CARD then
                             local player = game:getPlayerFromCh(ch)
                             local cards = player:getSpade():getCards()
@@ -186,7 +186,7 @@ function poker_dealer_talk(npc, ch)
                             while true do
                                 local v1 = do_choice(npc, ch, numbers)
                                 if cards[i] ~= nil then
-                                    game:playerActionSwapCard(player, i)
+                                    game:chActionSwapCard(player, i)
                                     -- TODO: Testen ob Karte getauscht werden kann.
                                 end
                             end
