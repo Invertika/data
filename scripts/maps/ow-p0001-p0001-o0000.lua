@@ -24,7 +24,7 @@ atinit(function()
  create_npc("Grabstein", 31, 70 * TILESIZE + 16, 39 * TILESIZE + 16, grabstein_talk, nil) --- Grabstein
 
  create_inter_map_warp_trigger(74, 84, 72, 62) --- Intermap warp
- nethek.create_netheksaeule(139 * TILESIZE, 43 * TILESIZE + 16) --- Netheksäule
+ nethek.create_netheksaeule(140 * TILESIZE, 43 * TILESIZE + 16) --- Netheksäule
 end)
 
 function grabstein_talk(npc, ch)
