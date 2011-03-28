@@ -24,7 +24,7 @@ dofile("data/scripts/libs/warp.lua")
 
 atinit(function()
  create_inter_map_warp_trigger(70, 82, 19001, 60) --- Intermap warp
- nethek.create_netheksaeule(95 * TILESIZE, 113 * TILESIZE + 16) --- Netheksäule
+ nethek.create_netheksaeule(96 * TILESIZE, 113 * TILESIZE + 16) --- Netheksäule
  
  -- Schilder
  local signText="Sperrgebiet! Betreten sowie Fotographie verboten! Wachen sind zur Anwendung tötlicher Gewalt befugt!"
