@@ -217,14 +217,14 @@ end
 -- @param my_player Der Charakter, der eine Aktion ausführt.
 function PokerGame:playerActionCall(my_player)
     local min = self.pot:getMoneyPlayerHasToRaise(my_player)
-    my_player:doPayment(pot, min)
+    my_player:doPayment(self.pot, min)
     self:playerAction(my_player)
 end
 
 --- Teil dem Spiel mit, dass my_player Raise spielt.
 -- @param my_player Der Charakter, der eine Aktion ausführt.
 function PokerGame:playerActionRaise(my_player, amount)
-    my_player:doPayment(pot, amount)
+    my_player:doPayment(self.pot, amount)
     self:playerAction(my_player)
 end
 
