@@ -51,7 +51,14 @@ atinit(function()
   poker_dealer_npc = create_npc("Dealer", 27, 82 * TILESIZE + 16, 142 * TILESIZE + 16, poker_dealer_talk, nil)
 
 
-game = nil
+game = poker.PokerGame:new(200)
+game:registerEventNextPlayer(function(my_player)
+  mana.being_say(poker_dealer_npc, string.format("%s ist an der Reihe.", mana.being_get_name(my_player:getCh())))
+end)
+game:registerEventPlayerExit(function(my_player)
+  mana.being_say(poker_dealer_npc, string.format("%s verlässt das Spiel.", mana.being_get_name(my_player:getCh())))
+end)
+
 
 local scorpions = {}
 scorpions[1] = {}
