@@ -53,6 +53,8 @@ atinit(function()
  
 end)
 
+illegalCount=0;
+
 function wache_trigger(ch, id)
    if (mana.being_type(ch) ~= TYPE_MONSTER) then --- Nur Player durchlassen
 	 local count = mana.chr_inv_count(ch, 40010)
@@ -66,11 +68,18 @@ function wache_trigger(ch, id)
 	  "Verlassen sie sofort dieses Gelände!",
 	  "Kein Zutritt!"))
 	   
+	   illegalCount=illegalCount+1
+	   
 	   mana.being_damage(ch, 500, 250, 10075, 0, 0)
 	 else
-	   mana.being_say(wache, invertika.get_random_element("Willkommen Sir.",
-	  "Sir.",
-	  "Keine besonderen Vorkommnise, Sir."))
+	   if illegalCount==0 then
+	     mana.being_say(wache, invertika.get_random_element("Willkommen Sir.",
+	    "Sir.",
+	    "Keine besonderen Vorkommnise, Sir."))
+	   else
+	     mana.being_say(wache, "Sir, es wurden " + illegalCount + " illegale Übertritte registriert.")
+	     illegalCount=0
+	   end
 	 end
   end
  end
