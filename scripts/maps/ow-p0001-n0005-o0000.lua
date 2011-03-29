@@ -49,7 +49,7 @@ atinit(function()
  create_npc("Wache", 29, 106 * TILESIZE + 16, 96 * TILESIZE + 16, wache_talk, nil) --- Wache
  
  -- Trigger für die Überwachung des Torbereiches
- mana.trigger_create(98 * TILESIZE, 93 * TILESIZE, 6 * TILESIZE, 6 * TILESIZE, "wache_trigger", 1, true) --- Trigger Tor
+ mana.trigger_create(98 * TILESIZE, 93 * TILESIZE, 7 * TILESIZE, 6 * TILESIZE, "wache_trigger", 1, true) --- Trigger Tor
  
 end)
 
@@ -77,7 +77,7 @@ function wache_trigger(ch, id)
 	    "Sir.",
 	    "Keine besonderen Vorkommnise, Sir."))
 	   else
-	     mana.being_say(wache, "Sir, es wurden " + illegalCount + " illegale Übertritte registriert.")
+	     mana.being_say(wache, "Sir, es wurden " + tostring(illegalCount) + " illegale Übertritte registriert.")
 	     illegalCount=0
 	   end
 	 end
