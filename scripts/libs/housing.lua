@@ -1,7 +1,7 @@
 ----------------------------------------------------------------------------------
 --  Housing Skript                                                              --
 --                                                                              --
---  Das Housing Skript stellt die Wohnungsverwaltung zur Verf�gung              --
+--  Das Housing Skript stellt die Wohnungsverwaltung zur Verfügung              --
 --                                                                              --
 --                                                                              --
 ----------------------------------------------------------------------------------
@@ -18,9 +18,9 @@
 -- Diese Trigger Zone kontroliert ob der Charakter der Besitzer ist
 -- Wenn dies der Fall ist warpt der Trigger den Charakter hinein
 
--- Wenn dem Spieler das Haus nicht geh�rt erschein ein Dialog in welchem
--- angezeigt wird wem das Haus geh�rt und ob er es betretten m�chte
--- Daf�r ben�tigt der Spieler dann ein passwort
+-- Wenn dem Spieler das Haus nicht gehört erschein ein Dialog in welchem
+-- angezeigt wird wem das Haus gehört und ob er es betretten möchte
+-- Dafür benötigt der Spieler dann ein Passwort
 
 -- Im Inneren des Hauses gibt es Terminal an dem der Spieler 
 -- das Passwort �ndern kann sowie alle Leute aus dem Haus werfen kann
@@ -29,6 +29,6 @@
 
 -- Wenn das Haus keinen Besitzer hat darf es jeder betreten
 
--- Probleme: zur zeit keine globalen Variablen m�glich
+-- Probleme: zur Zeit keine globalen Variablen möglich
 
 require "scripts/lua/npclib"
