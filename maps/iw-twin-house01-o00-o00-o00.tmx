@@ -1,59 +1,71 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="30" height="25" tilewidth="32" tileheight="32">
-  <properties>
-    <property name="music" value="inside2.ogg" />
-  </properties>
-  <tileset firstgid="1" name="collision1_32_32" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/collision1_32_32.png" width="1024" height="1024" />
-  </tileset>
-  <tileset firstgid="1025" name="indoor3_32_32" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/indoor3_32_32.png" width="1024" height="1024" />
-  </tileset>
-  <tileset firstgid="2049" name="indoor2_32_32" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/indoor2_32_32.png" width="1024" height="1024" />
-  </tileset>
-  <tileset firstgid="3073" name="indoor1_32_64" tilewidth="32" tileheight="64">
-    <image source="../graphics/tiles/indoor1_32_64.png" width="1024" height="1024" />
-  </tileset>
-  <tileset firstgid="3585" name="indoor1_32_96" tilewidth="32" tileheight="96">
-    <image source="../graphics/tiles/indoor1_32_96.png" width="1024" height="960" />
-  </tileset>
-  <tileset firstgid="3905" name="indoor2_32_64" tilewidth="32" tileheight="64">
-    <image source="../graphics/tiles/indoor2_32_64.png" width="1024" height="1024" />
-  </tileset>
-  <tileset firstgid="4417" name="indoor2_32_96" tilewidth="32" tileheight="96">
-    <image source="../graphics/tiles/indoor2_32_96.png" width="1024" height="960" />
-  </tileset>
-  <layer name="Ground" width="30" height="25">
-    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6NHz0/en70/Oj5/9lz/9f9NX6NT2/4/4Nf90Yw7/189evK/39yw8/v/qjfD35+vvW7JpiXN/z/6meh3x89P3p+9Py/7/l/ABNrZs64CwAA</data>
-  </layer>
-  <layer name="Ground" width="30" height="25">
-    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6NHz0/en70/Oj5/9lz/9f9NX6NT2/4/4Nf90Yw7/189evK/39yw8/v/qjfD35+vvW7JpiXN/z/6meh3x89P3p+9Py/7/l/ABNrZs64CwAA</data>
-  </layer>
-  <layer name="Ground" width="30" height="25">
-    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6NHz0/en70/Oj5/9lz/9f9NX6NT2/4/4Nf90Yw7/189evK/39yw8/v/qjfD35+vvW7JpiXN/z/6meh3x89P3p+9Py/7/l/ABNrZs64CwAA</data>
-  </layer>
-  <layer name="Fringe" width="30" height="25">
-    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6NHz0/en70/Oj5WXz+7N/g1/g1/pzfoP/5n0uf/XmRz7+p5+/+DX6NX+Pv+Q36n/+99NnfF/n8/w/Pn/Tr3NjkR8+Pnh89P3p+9Px/+Pl/AEPpezC4CwAA</data>
-  </layer>
-  <layer name="Over" width="30" height="25">
-    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6NHz0/en70/Oj50fOj50fPj54fPT96fvT8v/75fwANW4bauAsAAA==</data>
-  </layer>
-  <layer name="Collision" width="30" height="25" visible="0">
-    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6tX+PX+DV+9P8f/f9H///R/3/0/w//v3n83/3nNjC+zv992LHnNjC+zv992LHnNjC+zv9v+9wG1vv8/7bPbWC9z/9v+9wG1of8/4fVz4/+/6P//+j/w///fwBJnhrSuAsAAA==</data>
-  </layer>
-  <objectgroup name="Object" width="30" height="25">
-    <object name="Warp to Outside XCF" type="WARP" x="448" y="544" width="64" height="32">
-      <properties>
-        <property name="DEST_MAP" value="ow-n0001-p0002-o0000" />
-        <property name="DEST_X" value="3780" />
-        <property name="DEST_Y" value="5120" />
-      </properties>
-    </object>
-    <object name="External Map Events" type="SCRIPT" x="-2592" y="-608">
-      <properties>
-        <property name="FILENAME" value="scripts/maps/iw-twin-house01-o00-o00-o00.lua" />
-      </properties>
-    </object>
-  </objectgroup>
+ <properties>
+  <property name="music" value="inside2.ogg"/>
+ </properties>
+ <tileset firstgid="1" name="collision" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="1025" name="inn" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/indoor3_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="2049" name="woodland_indoor" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/indoor2_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3073" name="woodland_indoor_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/indoor1_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3585" name="indoor1_32_96" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/indoor1_32_96.png" width="1024" height="960"/>
+ </tileset>
+ <tileset firstgid="3905" name="inn_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/indoor2_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="4417" name="inn_32_96" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/indoor2_32_96.png" width="1024" height="960"/>
+ </tileset>
+ <layer name="Ground" width="30" height="25">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgGAWjYBSMguEFTFkZGMwIYHNW6tsbygrBYXjo8FF7R+0lEZQCzSwjgMtpYO8oGAWjYPABABNrZs64CwAA
+  </data>
+ </layer>
+ <layer name="Ground" width="30" height="25">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC3vOysDwfBSP4lE8iocRJhaM2jtq76i9xGMLFgYGSxbsckYcuDGt3TWKR/FIwgBSRwdHuAsAAA==
+  </data>
+ </layer>
+ <layer name="Ground" width="30" height="25">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgGAWjYBQMd8DMwsDAAsX42NQGikAzlaAYH5vawBFophMU42PTCrTjMLsLKN5NI3tvcDIw3OTELrcKaOdqGtn7A2jnTxz2ngLaeZqG4TwKRsEoGAUjDQAA6UwbsLgLAAA=
+  </data>
+ </layer>
+ <layer name="Fringe" width="30" height="25">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3OKRYAIAhFUYLB5VsdNuKwOOkS5VDejS98EAEAPzWLtPz2rm0Y/Zep28vY39qO491IJUV/AADwdAFD6XswuAsAAA==
+  </data>
+ </layer>
+ <layer name="Over" width="30" height="25">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3BMQEAAADCoPVPbQ0PoAAAgHcDDVuG2rgLAAA=
+  </data>
+ </layer>
+ <layer name="Collision" width="30" height="25" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NiYGBgGsWjeBSP4lFMMYYBZDYDmjit7EV3w3C3lxgwai9t3EFre0bxKB7FuDEASZ4a0rgLAAA=
+  </data>
+ </layer>
+ <objectgroup name="Object" width="30" height="25">
+  <object name="Warp to Outside XCF" type="WARP" x="448" y="544" width="64" height="32">
+   <properties>
+    <property name="DEST_MAP" value="ow-n0001-p0002-o0000"/>
+    <property name="DEST_X" value="3780"/>
+    <property name="DEST_Y" value="5120"/>
+   </properties>
+  </object>
+  <object name="External Map Events" type="SCRIPT" x="-2592" y="-608">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/iw-twin-house01-o00-o00-o00.lua"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>
