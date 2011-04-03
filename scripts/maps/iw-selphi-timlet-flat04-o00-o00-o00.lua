@@ -44,13 +44,13 @@ function haitan_talk(npc, ch)
 			do_message(npc, ch, invertika.get_random_element("Worauf wartest du? Los, bring die Skorpione um!"))
 		else
 			--- Genug umgebracht
-			mana.chr_inv_change(ch, 40016, -count)
+			invertika.add_items(ch, 40016, -count, "Kellerskorpionstachel")
 			do_message(npc, ch, "Ich glaube nicht, dass du sie alle umgebracht kriegst. Aber das ist schon mal eine große Hilfe. Hier hast du etwas Schokolade als Belohnung.")
 			--- Belohnung ausgeben
 			if count > 100 then
-				mana.chr_inv_change(ch, 30014, math.floor(count/50))
+				invertika.add_items(ch, 30014, math.floor(count/50), "riesen Schokolade")
 			end
-			mana.chr_inv_change(ch, 30009, math.floor(count/2))
+			invertika.add_items(ch, 30009, math.floor(count/2), "Schokolade")
 			--- Questvariable anpassen
 			invertika.set_quest_status(ch, "selphi_timlet_haitan_scorpions", 2)
 		end

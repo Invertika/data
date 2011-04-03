@@ -42,7 +42,7 @@ function daniela_talk(npc, ch)
                                                     "Kennen wir uns?"))
   elseif get_qstatus() == 5 and mana.chr_inv_count(ch, 40015) >= 1 then
     do_message(npc, ch, "Ein Geschenk von Bruce? Herzlichen Dank!")
-    mana.chr_inv_change(ch, 40015, -1)
+    invertika.add_items(ch, 40015, -1, "Geschenk")
     set_qstatus(6)
   elseif get_qstatus() > 5 then
     do_message(npc, ch, invertika.get_random_element("Lust auf Poker?",

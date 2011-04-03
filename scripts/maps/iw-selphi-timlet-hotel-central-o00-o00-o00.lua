@@ -34,14 +34,14 @@ function rezeptionist_talk(npc, ch)
 	  local v = do_choice(npc, ch, "Hast du Arbeit für mich?","Nichts, danke")
 		if v == 1 then
       do_message(npc, ch, "In der Tat, es gibt da ein paar Dinge, die du für mich erledigen kannst. Mein WLAN Kabel ist undicht, deshalb brauche ich neue IP Pakete. Für die Unkosten gebe ich dir einen Scheck.")
-      mana.chr_inv_change(ch, 40017, 1) --- 500 Aki Scheck 
+      invertika.add_items(ch, 40017, 1, "500 Aki Scheck")
 			set_qstatus(1) --- Erste Quest aktiviert
 		elseif v == 2 then
       do_message(npc, ch, "Wiedersehen")
 		end
   elseif get_qstatus() == 1 then
     if mana.chr_inv_count(ch, 40002) >= 10 then
-			mana.chr_inv_change(ch, 40002, -10) --- IP Pakete
+			invertika.add_items(ch, 40002, -10, "IP-Pakete")
 			do_message(npc, ch, "Danke für die IP Pakete! Hier, eine kleine Belohnung.")
 			invertika.set_money(ch, 200)
 			set_qstatus(2)
@@ -59,9 +59,10 @@ function rezeptionist_talk(npc, ch)
 		end
   elseif get_qstatus() == 3 then
 		if mana.chr_inv_count(ch, 40004) >= 10 and mana.chr_inv_count(ch, 40005) >= 10 then
-			mana.chr_inv_change(ch, 40004, -10, 40005, -10) ---Skorpionstachel, Madenschleim
+			invertika.add_items(ch, 40004, -10, "Skorpionstachel")
+            invertika.add_items(ch, 40005, -10, "Madenschleim")
 			do_message(npc, ch, "Gut gemacht! Nimm diese Schuhe als Dank!")
-			mana.chr_inv_change(ch, 20009, 1) ---boots
+			invertika.add_items(ch, 20009, 1, "Stiefel")
 			set_qstatus(4)
 		else
 			do_message(npc, ch, "Bring mir 10 Skorpionstachel und 10 Madenschleim. Vorher gibts keine Belohnung!")
@@ -71,10 +72,11 @@ function rezeptionist_talk(npc, ch)
 			set_qstatus(5)
   elseif get_qstatus() == 5 then
 		if mana.chr_inv_count(ch, 30006) >= 10 and mana.chr_inv_count(ch, 30007) >= 10 then
-			mana.chr_inv_change(ch, 30006, -10, 30007, -10) ---Bier, Milch
+			invertika.add_items(ch, 30006, -10, "Bier")
+            invertika.add_items(ch, 30007, -10, "Milch")
 			do_message(npc, ch, "Gut gemacht! Nimm dieses Baumwollshirt und diesen Dolch als Dank!")
-			mana.chr_inv_change(ch, 20001, 1) ---Baumwollshirt
-			mana.chr_inv_change(ch, 10002, 1) ---Dolch
+			invertika.add_items(ch, 20001, 1, "Baumwollshirt")
+			invertika.add_items(ch, 10002, 1, "Dolch")
 			set_qstatus(6)
 		else
 			do_message(npc, ch, "Bring mir 10 Bier und 10 Milch!")

@@ -40,7 +40,7 @@ function averin_talk(npc, ch)
 			  break
 		  elseif v == 2 then
 			  do_message(npc, ch, "Du möchtest also einen königlichen Passierschein? Nun gut, aber vorher musst du mir einen Gefallen tun. Bringe diesen Brief bitte in die Botschaft in Roststock.")
-			  mana.chr_inv_change(ch, 40011, 1)
+			  invertika.add_items(ch, 40011, 1, "Brief an die Botschaft in Roststock")
 			  invertika.set_quest_status(ch, "selphi_timlet_royal_pass", 1)
 			  break
 		  elseif v == 3 then
@@ -56,7 +56,8 @@ function averin_talk(npc, ch)
 	  local count = mana.chr_inv_count(ch, 40012) 
 	
 	  if count > 0 then
-	      mana.chr_inv_change(ch, 40012, -1, 40009, 1)
+	      invertika.add_items(ch, 40012, -1, "Brief von der Botschaft in Roststock an Averin")
+          invertika.add_items(ch, 40009, 1, "königlicher Passierschein")
 	      invertika.set_quest_status(ch, "selphi_timlet_royal_pass", 3)
 	      do_message(npc, ch, "Danke für deine Hilfe. Hier ist dein königlicher Passierschein.")
 	  else

@@ -38,7 +38,8 @@ function botschafter_talk(npc, ch)
 	   local count = mana.chr_inv_count(ch, 40011) 
 	   
 	   if count > 0 then
-	      mana.chr_inv_change(ch, 40011, -1, 40012, 1) -- NOTE: 2 einzelne Funktionsaufrufe fuer die Items funktionieren nicht (bug?).
+          invertika.add_items(ch, 40011, -1, "Brief an die Botschaft in Roststock")
+          invertika.add_items(ch, 40012, 1, "Brief von der Botschaft in Roststock an Averin")
 	      invertika.set_quest_status(ch, "selphi_timlet_royal_pass", 2)
 	      do_message(npc, ch, "Oh ein Brief. Warte einen Moment... Hier nimm diese Antwort und bringe sie Averin.")
 	   else

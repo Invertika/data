@@ -31,10 +31,10 @@ function luor_talk(npc, ch)
     if get_qstatus() == 3 then
         if mana.chr_inv_count(ch, 40027) == 1 then
             do_message(npc, ch, "Ein Brief? Gib her!")
-            mana.chr_inv_change(ch, 40027, -1)
+            invertika.add_items(ch, 40027, -1, "Brief an den König")
             do_message(npc, ch, "*Grübel* Das sind schlechte Neuigkeiten...")
             do_message(npc, ch, "Danke, dass du mir den Brief gebracht hast. Nimm diesen VIP Ausweis für die Arena als Dank!")
-            mana.chr_inv_change(ch, 40026, 1)
+            invertika.add_items(ch, 40026, 1, "VIP-Ausweis")
             set_qstatus(4)
         else
             do_message(npc, ch, invertika.get_random_element("Ob der Brief wohl bald kommt?",

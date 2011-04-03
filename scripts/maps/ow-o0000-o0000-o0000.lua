@@ -127,16 +127,16 @@ function weihnachtsmann_talk(npc, ch)
 	    do_message(npc, ch, "Du hast es wirklich geschafft. Ich danke dir. Na das schreit ja geradezu nach einer Belohnung. Da habe ich doch einige Sachen für dich.")
 	    
 	    --Weihnachtsgeschenke entfernen
-	    mana.chr_inv_change(ch, 40013, -count13)
-	    mana.chr_inv_change(ch, 40014, -count14)
-	    mana.chr_inv_change(ch, 40015, -count15)
+	    invertika.add_items(ch, 40013, -count13, "grünes Geschenk")
+	    invertika.add_items(ch, 40014, -count14, "blaues Geschenk")
+	    invertika.add_items(ch, 40015, -count15, "lila Geschank")
 	    
 	    --Belohnung
-	    mana.chr_inv_change(ch, 20010, 1) --Santa Clause Mütze
-	    mana.chr_inv_change(ch, 30021, 10) --Zuckerstange
-	    mana.chr_inv_change(ch, 30022, 10) --Weihnachtskuchen
-	    mana.chr_inv_change(ch, 30023, 10) --Lebkuchenmänchen
-	    mana.chr_inv_change(ch, 40020, 1) --5000 Aki Scheck
+	    invertika.add_items(ch, 20010, 1, "Santa Clause Mütze")
+	    invertika.add_items(ch, 30021, 10, "Zuckerstange")
+	    invertika.add_items(ch, 30022, 10, "Weihnachtskuchen")
+	    invertika.add_items(ch, 30023, 10, "Lebkuchenmänchen")
+	    invertika.add_items(ch, 40020, 1, "5000 Aki Scheck")
 	    set_qstatus(2)
 	  else
 	    do_message(npc, ch, invertika.get_random_element("Na ein paar Geschenke fehlen da noch.",
@@ -269,7 +269,7 @@ function bruce_talk(npc, ch)
     do_message(npc, ch, "Bring mir 20 Madenschleim als Beleg für deine Arbeit, dann werde ich dich belohnen.")
   elseif get_qstatus()==3 and mana.chr_inv_count(ch, 40005) >= 20 then
     do_message(npc, ch, "Fabelhaft, du hast 20 Madenschleim gesammelt! Danke für deine Hilfe.")
-    mana.chr_inv_change(ch, 40005, -20)
+    invertika.add_items(ch, 40005, -20, "Madenschleim")
     mana.chr_give_exp(ch, 100, 750)
     mana.chatmessage(ch, "Du hast 750 Exp im unbewaffneten Kampf erhalten!")
     set_qstatus(4)
@@ -277,25 +277,25 @@ function bruce_talk(npc, ch)
     do_message(npc, ch, "In der Spielothek findet Danielas Geburtstagsparty statt. Bist du so nett, und bringst ihr mein Geschenk? Ich habe dort Hausverbot, weil ich meine Spielschulden nicht bezahlt habe.")
     set_qstatus(do_choice(npc, ch, "Nein.","Ja.")+3)
     if get_qstatus()==5 then
-      mana.chr_inv_change(ch, 40015, 1)
+      invertika.add_items(ch, 40015, 1, "Geschenk")
       do_message(npc, ch, "Sehr nett von dir. Die Spielothek ist im süd-westlichen Teil der Stadt. Gib Daniela das Geschenk.")
     end
   elseif get_qstatus()==5 then
     do_message(npc, ch, "Die Spielothek ist im süd-westlichen Teil der Stadt. Gib Daniela das Geschenk.")
   elseif get_qstatus()==6 then
     do_message(npc, ch, "Sie hat sich über ihr Geschenk gefreut? Danke, du hast mir sehr geholfen! Nimm diese Flasche Pangalaktischen Donnergurgler als Dank.")
-    mana.chr_inv_change(ch, 30008, 1)
+    invertika.add_items(ch, 30008, 1, "Flasche Pangalaktischen Donnergurgler")
     set_qstatus(7)
   elseif get_qstatus()==7 then
     do_message(npc, ch, "Lust auf eine neue Herausforderung?")
-    mana.chr_inv_change(ch, 40002, 1)
+    invertika.add_items(ch, 40002, 1, "IP-Paket")
     set_qstatus(8)
     do_message(npc, ch, "Ich brauche 50 Skorpionstachel, um ein Faß Wurzelhans zu brauen. Lass dich nicht stechen.")
   elseif get_qstatus()==8 then
     if mana.chr_inv_count(ch, 40004) >= 50 then
       do_message(npc, ch, "Das hast du gut gemacht! Nimm diesen Hut als Dank!")
-      mana.chr_inv_change(ch, 40004, -50)
-      mana.chr_inv_change(ch, 20004, 1)
+      invertika.add_items(ch, 40004, -50, "Skorpionstachel")
+      invertika.add_items(ch, 20004, 1, "Hut")
       set_qstatus(9)
     else
       do_message(npc, ch, "Ich brauche 50 Skorpionstachel. Nicht mehr, und nicht weniger!")
@@ -369,7 +369,7 @@ function nobur_talk(npc, ch)
 			  end
 			end
 			
-			mana.chr_inv_change(ch, 40004, -count)
+			invertika.add_items(ch, 40004, -count, "Skorpionstachel")
 		
 			if count < 10 then
 			  do_message(npc, ch, "Nimm diese Münzen als Dank.")
@@ -389,7 +389,7 @@ function nobur_talk(npc, ch)
 			  break;
 			elseif count < 150 then
 			  do_message(npc, ch, "Nimm diesen lustigen Hut als Dankeschön.")
-			  mana.chr_inv_change(ch, 20004, 1)
+			  invertika.add_items(ch, 20004, 1, "lustiger Hut")
 			  break;
 			elseif count >= 150 then
 			  do_message(npc, ch, "Nimm diese Münzen als Dank.")
@@ -464,7 +464,7 @@ function inard_talk(npc, ch)
             local v = do_choice(npc, ch, "Um 10 Uhr.", "Um 15 Uhr.", "Um 20 Uhr.")
             if v == get_feierabend() then
                 do_message(npc, ch, "Ok. Danke. Hier nimm diesen Ring als Dank.")
-                mana.chr_inv_change(ch, 20005, 1)
+                invertika.add_items(ch, 20005, 1, "Ring der Stärke")
                 set_qstatus(5)
                 break
             else

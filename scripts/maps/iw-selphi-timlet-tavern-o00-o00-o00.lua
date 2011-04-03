@@ -47,7 +47,7 @@ function chodar_talk(npc, ch)
             while true do
                 v = do_choice(npc, ch, "Das Bier auf den Tisch stellen.", "Das Bier behalten.")
                 if v == 1 then
-                    mana.chr_inv_change(ch, 30006, -1)
+                    invertika.add_items(ch, 30006, -1, "Bier")
                     do_message(npc, ch, "Ah. Endlich! Hier hast du deine 25 Aki.")
                     invertika.set_money(ch, 25)
                     set_qstatus(2)
@@ -59,7 +59,7 @@ function chodar_talk(npc, ch)
                             break
                         elseif v2 == 2 then
                             do_message(npc, ch, "Du? Was solls. Hier ist ein Brief. Gib ihm den König. Und Wehe dir! Ich weiß ob du ihn abgeliefert hast!")
-                            mana.chr_inv_change(ch, 40027, 1)
+                            invertika.add_items(ch, 40027, 1, "Brief an den König")
                             set_qstatus(3)
                             break
                         end
@@ -83,7 +83,7 @@ function chodar_talk(npc, ch)
                 break
             elseif v == 2 then
                 do_message(npc, ch, "Du? Naja, egal. Hier ist ein Brief. Gib ihm den König. Und wehe dir! Ich weiß ob du ihn abgeliefert hast!")
-                mana.chr_inv_change(ch, 40027, 1)
+                invertika.add_items(ch, 40027, 1, "Brief an den König")
                 set_qstatus(3)
                 break
             end
@@ -93,7 +93,7 @@ function chodar_talk(npc, ch)
     elseif get_qstatus() == 4 then
         do_message(npc, ch, "Du warst da? Ja natürlich war er erschüttert!")
         do_message(npc, ch, "Komm ich schmeiß ne Runde! PROST!")
-        mana.chr_inv_change(ch, 30006, 1)
+        invertika.add_items(ch, 30006, 1, "Bier")
         set_qstatus(5)
     elseif get_qstatus() == 5 then
         do_message(npc, ch, invertika.get_random_element("Auf den König!",

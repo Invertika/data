@@ -398,7 +398,7 @@ function npc1_talk(npc, ch)
       do_message(npc, ch, "I can't help you with the party. But I see you have a fancy hat. I could change it into Santa's hat. Not much of a party, but it would get you going.")
       v = do_choice(npc, ch, "Please do.", "No way! Fancy hats are classier.")
       if v == 1 then
-        mana.chr_inv_change(ch, 524, -1, 511, 1)
+        -- invertika.add_items(ch, 524, -1, 511, 1) Nicht vorhanden.
       end
     end
   elseif v == 3 then

@@ -119,7 +119,7 @@ end
 function kolbert_talk(npc, ch)
 	if (get_quest_var(ch, "vacare_first_weapon")=="") then
       do_message(npc, ch, "Du willst kämpfen? Nun gut zum Kämpfen benötigst du erst einmal eine Waffe.")
-      mana.chr_inv_change(ch, 10001, 1)
+      invertika.add_items(ch, 10001, 1, "Dolch")
       do_message(npc, ch, "So hier hast du einen kleinen Dolch. Nun gehe in das Inventar und rüste ihn aus.")
 	  do_message(npc, ch, "Anschließend begib dich in die Nähe eines Gegners und drücke A. Dadurch wird der Gegner anvisiert.")
 	  do_message(npc, ch, "Nun musst du in seiner Nähe die Strg Taste drücken und schon greifst du ihn an.")
