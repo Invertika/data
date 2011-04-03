@@ -26,7 +26,6 @@ end)
 function botschafter_talk(npc, ch)
     local questname = "selphi_timlet_royal_pass"
     invertika.init_quest_status(ch, questname)
-	--print(get_quest_var(ch, "selphi_timlet_royal_pass"), type(get_quest_var(ch, "selphi_timlet_royal_pass")))
 	if (invertika.get_quest_status(ch, "selphi_timlet_royal_pass") == nil) then ---Keine Questvar gesetzt
 	    do_message(npc, ch, invertika.get_random_element("Ich bin hier der Botschafter. Ich vertrete Selphi Timlet in Roststock.",
 	      "Ich bin schon viele Jahre hier.",

@@ -91,7 +91,9 @@ function jack_talk(npc, ch)
 end
  
 function ancoise_talk(npc, ch)
-	if (get_quest_var(ch, "vacare_fence")=="") then
+    local quest_string = "vacre_fence"
+    invertika.init_quest_status(ch, quest_string)
+	if invertika.get_quest_status(ch, quest_string) == 0 then
       do_message(npc, ch, "Na soll ich dir über den Zaun helfen?")
 	
 	  while true do 
@@ -99,7 +101,7 @@ function ancoise_talk(npc, ch)
 		                               "Nein.")
 								   
 		  if v == 1 then
-			  mana.chr_set_quest(ch, "vacare_fence", 1)
+			  invertika.set_quest_status(ch, "vacare_fence", 1)
 			  mana.chr_warp(ch,  19002, 141 * TILESIZE, 42 * TILESIZE) 
 			  do_message(npc, ch, "Bitteschön.")
 			  break;
@@ -117,7 +119,9 @@ function ancoise_talk(npc, ch)
 end
 
 function kolbert_talk(npc, ch)
-	if (get_quest_var(ch, "vacare_first_weapon")=="") then
+    local quest_string = "vacre_first_weapon"
+    invertika.init_quest_status(ch, quest_string)
+	if (invertika.get_quest_status(ch, invertika.get_quest_status(ch, quest_string) == 0) then
       do_message(npc, ch, "Du willst kämpfen? Nun gut zum Kämpfen benötigst du erst einmal eine Waffe.")
       invertika.add_items(ch, 10001, 1, "Dolch")
       do_message(npc, ch, "So hier hast du einen kleinen Dolch. Nun gehe in das Inventar und rüste ihn aus.")
@@ -125,7 +129,7 @@ function kolbert_talk(npc, ch)
 	  do_message(npc, ch, "Nun musst du in seiner Nähe die Strg Taste drücken und schon greifst du ihn an.")
 	  do_message(npc, ch, "Du kannst ihn aber auch nur mittels der X Taste angreifen.")
 	  do_message(npc, ch, "Viel Erfolg.")
-      mana.chr_set_quest(ch, "vacare_first_weapon", 1)
+      invertika.set_quest_status(ch, "vacare_first_weapon", 1)
 	else
 	  do_message(npc, ch, "Du schon wieder. Du weist doch. Zum Gegner, A drücken und dann Strg um zum Angriff überzugehen. Oder einfach X drücken. Einfach oder?")
 	  do_message(npc, ch, "Noch ein kleiner Tipp. Mit Z kannst du Gegenstände aufheben die ein Gegner verliert.")
@@ -145,10 +149,12 @@ end
 function valaia_talk(npc, ch)
     do_message(npc, ch, "Du sieht aus wie jemand der Handeln möchte. Mmmh was gibt es denn da zu erzählen. Also es gibt zwei Arten zu handeln, einmal mit NPCs und einmal mit deinen Mitspielern.")
 	
-	if (get_quest_var(ch, "vacare_first_trade")=="") then
+    local quest_string = "vacre_first_trade"
+    invertika.init_quest_status(ch, quest_string)
+	if invertika.get_quest_status(ch, quest_string) == 0 then
       do_message(npc, ch, "Ich sehe du hast gar kein Geld bei dir. Nun ja ich will mal nicht so sein, nimm ein bischen von meinem.")
       invertika.set_money(ch, 500)
-      mana.chr_set_quest(ch, "vacare_first_trade", 1)
+      invertika.set_quest_status(ch, quest_string, 1)
     end
 	
     do_message(npc, ch, "Also fangen wir am besten mit dem Handel zwischen dir und einem NPC. Du kannst bei einem NPC Dinge kaufen und auch verkaufen. Was du kaufen kannst und was nicht legt der NPC fest. Was möchtest du tun?")
