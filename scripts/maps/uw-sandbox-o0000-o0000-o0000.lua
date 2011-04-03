@@ -438,7 +438,7 @@ function npc1_talk(npc, ch)
     end
 
   elseif v == 6 then
-    if mana.chr_money_change(ch, -100) then
+    if invertika.set_money(ch, -100) then
       do_message(npc, ch, string.format("Thank you for you patronage! You are left with %d gil.", mana.chr_money(ch)))
       local g = tonumber(get_quest_var(ch, "test_donation"))
       if not g then g = 0 end

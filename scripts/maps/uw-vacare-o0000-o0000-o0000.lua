@@ -147,7 +147,7 @@ function valaia_talk(npc, ch)
 	
 	if (get_quest_var(ch, "vacare_first_trade")=="") then
       do_message(npc, ch, "Ich sehe du hast gar kein Geld bei dir. Nun ja ich will mal nicht so sein, nimm ein bischen von meinem.")
-      mana.chr_money_change(ch, 500)
+      invertika.set_money(ch, 500)
       mana.chr_set_quest(ch, "vacare_first_trade", 1)
     end
 	

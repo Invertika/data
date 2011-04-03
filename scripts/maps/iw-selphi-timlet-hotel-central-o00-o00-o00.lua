@@ -43,7 +43,7 @@ function rezeptionist_talk(npc, ch)
     if mana.chr_inv_count(ch, 40002) >= 10 then
 			mana.chr_inv_change(ch, 40002, -10) --- IP Pakete
 			do_message(npc, ch, "Danke für die IP Pakete! Hier, eine kleine Belohnung.")
-			mana.chr_money_change(ch, 200)
+			invertika.set_money(ch, 200)
 			set_qstatus(2)
 		else
 			do_message(npc, ch, "Was stehst du noch hier rum? Bring mir 10 IP Pakete! Du kannst sie beim Manitu kaufen.")

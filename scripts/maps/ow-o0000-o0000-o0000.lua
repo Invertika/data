@@ -255,7 +255,7 @@ function bruce_talk(npc, ch)
   function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_bruce_quest", tonumber(x)) end
   
 	if get_qstatus()==0 then
-		mana.chr_money_change(ch, 1000)
+		invertika.set_money(ch, 1000)
 		set_qstatus(1)
 		do_message(npc, ch, "Ahhh ich verstehe, du bist neu hier. Hier ein paar Münzen fuer den Anfang...")		
 	elseif get_qstatus()==1 then
@@ -375,19 +375,19 @@ function nobur_talk(npc, ch)
 		
 			if count < 10 then
 			  do_message(npc, ch, "Nimm diese Münzen als Dank.")
-			  mana.chr_money_change(ch, 50) 
+			  invertika.set_money(ch, 50) 
 			  break;
 			elseif count < 20 then
 			  do_message(npc, ch, "Nimm diese Münzen als Dank.")
-			  mana.chr_money_change(ch, 150) 
+			  invertika.set_money(ch, 150) 
 			  break;
 			elseif count < 30 then
 			  do_message(npc, ch, "Nimm diese Münzen als Dank.")
-			  mana.chr_money_change(ch, 350) 
+			  invertika.set_money(ch, 350) 
 			  break;
 			elseif count < 40 then
 			  do_message(npc, ch, "Nimm diese Münzen als Dank.")
-			  mana.chr_money_change(ch, 500) 
+			  invertika.set_money(ch, 500) 
 			  break;
 			elseif count < 150 then
 			  do_message(npc, ch, "Nimm diesen lustigen Hut als Dankeschön.")
@@ -395,7 +395,7 @@ function nobur_talk(npc, ch)
 			  break;
 			elseif count >= 150 then
 			  do_message(npc, ch, "Nimm diese Münzen als Dank.")
-			  mana.chr_money_change(ch, 2500) 
+			  invertika.set_money(ch, 2500) 
 			  break;
 			end
 			
@@ -704,7 +704,7 @@ function valeria_talk(npc, ch)
 		if v == 1 then
 		    local PlayerMoney=mana.chr_money(ch)
 		    if PlayerMoney >= 1000 then
-			mana.chr_money_change(ch, -1000)
+			invertika.set_money(ch, -1000)
 			mana.being_heal(ch);
 			do_message(npc, ch, invertika.get_random_element("Du  bist vollständig geheilt.",
 	  "Fertig. Du kannst wieder deines Weges gehen."))
