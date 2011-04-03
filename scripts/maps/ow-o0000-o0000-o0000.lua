@@ -289,10 +289,8 @@ function bruce_talk(npc, ch)
   elseif get_qstatus()==7 then
     do_message(npc, ch, "Lust auf eine neue Herausforderung?")
     mana.chr_inv_change(ch, 40002, 1)
-    set_qstatus(do_choice(npc, ch, "Nein.","Ja.")+6)
-    if get_qstatus()==8 then
-      do_message(npc, ch, "Ich brauche 50 Skorpionstachel, um ein Faß Wurzelhans zu brauen. Lass dich nicht stechen.")
-    end
+    set_qstatus(8)
+    do_message(npc, ch, "Ich brauche 50 Skorpionstachel, um ein Faß Wurzelhans zu brauen. Lass dich nicht stechen.")
   elseif get_qstatus()==8 then
     if mana.chr_inv_count(ch, 40004) >= 50 then
       do_message(npc, ch, "Das hast du gut gemacht! Nimm diesen Hut als Dank!")
