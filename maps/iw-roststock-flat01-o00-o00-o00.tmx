@@ -1,24 +1,24 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <map version="1.0" orientation="orthogonal" width="60" height="60" tilewidth="32" tileheight="32">
   <properties>
     <property name="music" value="faith.ogg" />
   </properties>
-  <tileset firstgid="1" name="inn" tilewidth="32" tileheight="32">
+  <tileset firstgid="1" name="indoor3_32_32" tilewidth="32" tileheight="32">
     <image source="../graphics/tiles/indoor3_32_32.png" />
   </tileset>
-  <tileset firstgid="1025" name="woodland_indoor" tilewidth="32" tileheight="32">
+  <tileset firstgid="1025" name="indoor2_32_32" tilewidth="32" tileheight="32">
     <image source="../graphics/tiles/indoor2_32_32.png" />
   </tileset>
-  <tileset firstgid="2049" name="collision" tilewidth="32" tileheight="32">
+  <tileset firstgid="2049" name="collision1_32_32" tilewidth="32" tileheight="32">
     <image source="../graphics/tiles/collision1_32_32.png" />
   </tileset>
   <tileset firstgid="3073" name="desert1_32_32" tilewidth="32" tileheight="32">
     <image source="../graphics/tiles/desert1_32_32.png" />
   </tileset>
-  <tileset firstgid="4097" name="inn_32_64" tilewidth="32" tileheight="64">
+  <tileset firstgid="4097" name="indoor2_32_64" tilewidth="32" tileheight="64">
     <image source="../graphics/tiles/indoor2_32_64.png" />
   </tileset>
-  <tileset firstgid="4609" name="inn_32_96" tilewidth="32" tileheight="96">
+  <tileset firstgid="4609" name="indoor2_32_96" tilewidth="32" tileheight="96">
     <image source="../graphics/tiles/indoor2_32_96.png" />
   </tileset>
   <layer name="Ground" width="60" height="60">
@@ -33,8 +33,8 @@
   <layer name="Collision" width="60" height="60">
     <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6t3+DX+DV+9P8f/f9H///R/3/0/x/9/0f//9H/f/T/H/3/R///0f9/9P8f/f9H////9/9/NL4f/f9H///R/38+/b/7DH2/qW337/+3/h9P9++hz27z3KbPn8v/Dz23aRN7btPnz+X/v+nnNn3+XP7/m35u0+fP5f+/6ec2ff5c/v+bfm7T58/l/7/p5zZ9/lz+/5t+btPnz+X/v+nnNn3+XP7/m35u0+fP5f+/6ec2fX6T/39fWN/0c5s+fy7//00/t+nz5/L/eGK/m7/f97lNnz+X/8cT+938vemJtb1Nnz+X/8fj//4+TxdO97P/N/7/m35u0+fP5f+/6ec2ff6//f94btPuR///0f9/9P8f/f9H///R/3/0/x/9/+fD/380xh/9/0f//9H/f/T/H/3/R///0f/f9///D33Sg2hAOAAA</data>
   </layer>
-  <objectgroup name="Object" width="60" height="60">
-    <object name="External Map Events" type="SCRIPT" x="0" y="0">
+  <objectgroup name="Object" width="60" height="60" x="0" y="0">
+    <object name="External Map Events" type="SCRIPT" x="0" y="0" width="0" height="0">
       <properties>
         <property name="FILENAME" value="scripts/maps/iw-roststock-flat01-o00-o00-o00.lua" />
       </properties>

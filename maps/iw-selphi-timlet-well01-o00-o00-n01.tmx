@@ -1,19 +1,19 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <map version="1.0" orientation="orthogonal" width="60" height="40" tilewidth="32" tileheight="32">
   <properties>
     <property name="music" value="inside2.ogg" />
   </properties>
-  <tileset firstgid="1" name="collision" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/collision1_32_32.png" width="1024" height="1024" />
+  <tileset firstgid="1" name="collision1_32_32" tilewidth="32" tileheight="32">
+    <image source="../graphics/tiles/collision1_32_32.png" />
   </tileset>
-  <tileset firstgid="1025" name="cave_32_32" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/cave3_32_32.png" width="1024" height="1024" />
+  <tileset firstgid="1025" name="cave3_32_32" tilewidth="32" tileheight="32">
+    <image source="../graphics/tiles/cave3_32_32.png" />
   </tileset>
-  <tileset firstgid="2049" name="cave_32_64" tilewidth="32" tileheight="64">
-    <image source="../graphics/tiles/cave1_32_64.png" width="1024" height="1024" />
+  <tileset firstgid="2049" name="cave1_32_64" tilewidth="32" tileheight="64">
+    <image source="../graphics/tiles/cave1_32_64.png" />
   </tileset>
-  <tileset firstgid="2561" name="cave_bilevel1_32_32" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/cave4_32_32.png" width="1024" height="1024" />
+  <tileset firstgid="2561" name="cave4_32_32" tilewidth="32" tileheight="32">
+    <image source="../graphics/tiles/cave4_32_32.png" />
   </tileset>
   <layer name="Ground" width="60" height="40">
     <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/Iv6yX+fX+DV+9P8f/f9H///R/3/0/+H/P6P/f07//13174/0b/N/87n/3bdvAff/rf8/p/9f0P+P6f9P6f9P6P+/Mf3/N6H//6b6uRk7vkPb+S3g/mz+38xR9/+Ym03zhf//EfT/P5L+n9H/Z/T/Cf1/m/4/pv/f1c8v9P/4Dm3/qA6MH/b/zRwt6P9L+n+lf2NuzJyY/+Oz3/U3JDr8hjKfp/T/X4f+/wfT//8w+v8fQv//gv7/gv7/pX7+R+r/8R3a/vgAHj+s/5s5+uPp/38C/f9P1L8xN2ZOzP/x2TGN9clvKPOZ/zoyhk3//+vp/38D/f9v1L//3zDe/+LX6eOJuTFz4n9mfv/D6P9/eOS97v//efr/v0D//xf17/83jPfXGfj/f9X5+7/d0Bb//8cT+flP6k/8/7+n//8P9P//Uf/+f/N43/f/f5n+rLzxdv//cz1e8/9f99e5eTx/xG94cxv8/0/8/8B4f/df5+ZxmP//F4n7/9/gja3L//7/DY//v2W8sMPGvsT+/497c/vr/Yby//+axvDfeGPH//9ppcHfSP//5+j/f73+/f+28cIO+/ala0eG/p/QuP8K+vlX0v//ql/H0eC/pf//d/T/f57+/y/8LI/3NuPr/h96y7cvXTuy6f//BP3/n6T//1P6N2jwG3r88D/8v2i84GPjOz7V/4Ovu3bkpv//lxu++xP+XzRe8LHxHWf6f/D1P/Pr3DzGm/6PcRo5/i//XzJe8LHxHf8w/f9t/Cb//4CDcf1Nnr7C5xinkeNfX/n753q8sEMx3/F9/g84/yKN6V9K+vrKl2P8//8N4/11bvh/zL/2/w84/6POKf7f1Vf+//+/MN6h/xsYvn296f//fxgv/t8d71Bs8XM9Xv//t/GhY//HuzGf+de+RZ8/l///unP9nyd9vxH//3/TXMb+/3XH++v+hn2/Ef//f/t48X+fpzfFO7H/w2/8Ez29/P/m8cKvfPrrbI6Rbvr/30Bj/Ru98Z4ozP835pzhV85+ndvl4Ib+/y/QWP9Fb7xThflznXOO/R9+5R/267yfL3kTv/+hCvPnOucc+/+QrjI25evaKvz//41yjPHGYiKD69fV3YD5wx7vbccbw/dDx+vD+P/T/31+/3+7X/VN/N+f//8/zueP/v+j//9s/f//AZGQEtiAJQAA</data>
@@ -27,11 +27,10 @@
   <layer name="Collision" width="60" height="40">
     <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6tX+PX+DV+9P8f/f9H///R/3/0/x/9/0f//9H//7/w/18j8tn/H/8fe2Lf3QbW/xf+/z7PbeHcpt+fq/93n9hn5vPYezE4t+n35/r/Q89N38ee2/T3c/3/2z63bdttdxscftj/3/S8b/vuc5v+f9j/N89t2t4WRvfvb/r/Xxee/wx9PtTmNnBv0/b/Df9/n2fT+7fp6+fq/7d93gfObfr9ufr/0NP9blNb89ymv5+L/3+dx3+vC+s2ff5c/P/rPLH3bwP/Nvj8bP//6zz+e+b328C+DT4/2/+PPUOf+99337/pHTy3weeH+f/bPrF3up/dpr+f6/+/7xN7x3x2m/5+rv//vk/sXfP7bfr7f8P/Nz3d72Pvmd9v09f/G/7/dR7/PfP7bfr6f8P/v87jv2d+v01f/2/4/9d5/PfM77fp6+fy/7Hnpu9v89ym75+L/8eem76/zXObvr/J/98WVuz5//N4P/T/5rlN2/8//N88t2n7o///6P8/+r/8//8BDnogfYAlAAA=</data>
   </layer>
-  <objectgroup name="Object" width="60" height="40">
-    <object name="External Map Events" type="SCRIPT" x="0" y="0">
+  <objectgroup name="Object" width="60" height="40" x="0" y="0">
+    <object name="External Map Events" type="SCRIPT" x="0" y="0" width="0" height="0">
       <properties>
-        <property name="FILENAME" value="scripts/maps/iw-selphi-timlet-well01-o00-o00-n01.lua">
-        </property>
+        <property name="FILENAME" value="scripts/maps/iw-selphi-timlet-well01-o00-o00-n01.lua" />
       </properties>
     </object>
     <object name="Warp to ow-o0000-o0000-o0000.tmx" type="WARP" x="1088" y="1152" width="64" height="32">
