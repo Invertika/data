@@ -43,7 +43,12 @@ function jurkan_talk(npc, ch)
 	  "Könnte mir vielleicht nochmal jemand was zu trinken bringen? Mit viel Eis?",
 	  "Ich steh hier nur so rum, das ist schöpferische Willkür.",
 	  "while true; do echo Blubb; done; Blubb blubb blubb blubb blubb...",
-	  "Seit ich hier in der Wüste bin, habe ich Schweissfüße!"))
+	  "Seit ich hier in der Wüste bin, habe ich Schweissfüße!",
+	  "Wer kam eigentlich auf die bescheuerte Idee, so viele Blumen in diese Welt zu pflanzen? Und dann auch noch im falschen Layer!",
+	  "Wenn du einen Bug findest, der dir unendlich Geld bringt, melde ihn bitte zuerst mir. Wahrscheinlich war eh ich das, der den eingebaut hat.",
+	  "Wusstest du, dass ich damals der erste war, der entdeckt hat, wie man von den Toten wiederauferstehen kann, ohne in den Nex zu kommen? Deshalb tötet seeseekey mich auch immer. Oder setzt mich als Schneemann in eine Wüste. Aber das interessiert dich ja sowieso nicht...",
+	  "Ich bin depressiv? Was heißt depressiv? Bestimmt was gaaanz schlimmes...",
+	  "Du willst auch hier stehen? Geht ganz einfach, melde dich im #invertika-Channel im Freenode-IRC-Netzwerk für ein Jahr Zwangsarbeit und die Sache ist gebongt!"))
 	  do_npc_close(npc, ch)
 end
 
