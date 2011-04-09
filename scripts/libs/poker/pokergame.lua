@@ -294,10 +294,7 @@ end
 -- @param my_player Der Spieler bei dem getestet werden soll ob er noch einmal an den Zug kommen kann.
 -- @return true Wenn der Spieler noch an den Zug kommen kann. false Wenn nicht.
 function PokerGame:playerCanComeToTurn(my_player)
-    -- TODO: Weitere Bedingungen?
-    if self:roundNotAtEnd() == false then
-        return false
-    elseif self.pot:getMoneyPlayerHasToRaise(my_player) > 0 then
+    if self.pot:getMoneyPlayerHasToRaise(my_player) > 0 then
         return true
     elseif self.player_was_on_turn[my_player] == false then
         return true
@@ -307,30 +304,16 @@ end
 --- Lässt den nächsten Spieler an den Zug kommen.
 function PokerGame:nextPlayer()
     if self:roundNotAtEnd() then
-        if self.player_on_turn == nil then
+        if self.player_on_turn == self.player[#self.player] then
             self.player_on_turn = self.player[1]
         else
-            self.event_player_ended_turn(self.player_on_turn)
-            -- Letzter Spieler war grade am Zug.
-            if self.player[#self.player] == self.player_on_turn then
-                if self.pot:arePaymentRequired() then
-                    self.player_on_turn = self.player[1]
-                else
-                    self:nextRound()
-                end
-            else
-                for i, my_player in ipairs(self.player) do
-                    if my_player == self.player_on_turn then
-                        self.player_on_turn = self.player[i + 1]
-                        break
-                    end
+            for i, v in ipairs(self.player) do
+                if v == self.player_on_turn then
+                    -- TODO: Fehler wenn nur ein Spieler.
+                    self.player_on_turn = self.player[i + 1]
+                    break
                 end
             end
-        end
-        if self:playerCanComeToTurn(self.player_on_turn) then
-            self.event_next_player()
-        else
-            self:nextPlayer()
         end
     else
         self:nextRound()
