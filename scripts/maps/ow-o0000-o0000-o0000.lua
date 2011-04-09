@@ -473,7 +473,7 @@ function inard_talk(npc, ch)
             end
         end
     else
-        do_message(npc, ch, "Ach ja... Ich mach erstmal ne Pause.") -- TODO: Mehr Variationen?
+        do_message(npc, ch, invertika.get_random_element("Ach ja... Ich mach erstmal ne Pause.", "Danke für die Hilfe.", "Genug trainiert."))
     end
     do_npc_close(npc, ch)
 end
