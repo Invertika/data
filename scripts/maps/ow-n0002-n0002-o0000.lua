@@ -47,6 +47,6 @@ function siegfried_talk(npc, ch)
 	do_message(npc, ch, invertika.get_random_element("Wir sorgen für Ordnung und Ordnung und ganz wichtig Ordnung.",
 	  "Verdammt, was macht diese Blume hier?",
 	  "Diese Blume zerstört die Perfektion.",
-	  "Neeeeeeeeeeeeeeiiiiiiiiiiiiinnnnnnnn, diese Blume darf nicht sein.")
+	  "Neeeeeeeeeeeeeeiiiiiiiiiiiiinnnnnnnn, diese Blume darf nicht sein."))
 	do_npc_close(npc, ch)
 end
