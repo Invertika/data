@@ -121,7 +121,7 @@ end
 function kolbert_talk(npc, ch)
     local quest_string = "vacre_first_weapon"
     invertika.init_quest_status(ch, quest_string)
-	if (invertika.get_quest_status(ch, invertika.get_quest_status(ch, quest_string) == 0) then
+	if invertika.get_quest_status(ch, invertika.get_quest_status(ch, quest_string) == 0) then
       do_message(npc, ch, "Du willst kämpfen? Nun gut zum Kämpfen benötigst du erst einmal eine Waffe.")
       invertika.add_items(ch, 10001, 1, "Dolch")
       do_message(npc, ch, "So hier hast du einen kleinen Dolch. Nun gehe in das Inventar und rüste ihn aus.")
