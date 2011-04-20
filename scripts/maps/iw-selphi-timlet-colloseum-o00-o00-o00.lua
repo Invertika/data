@@ -16,14 +16,19 @@
 
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
+require "scripts/libs/arenafightpvm"
 
 atinit(function()
  wache_rechts = create_npc("Wache", 25, 83 * TILESIZE + 16, 44 * TILESIZE + 16, wache_talk, nil) --- Wache rechts
  wache_links = create_npc("Wache", 25, 46 * TILESIZE + 16, 44 * TILESIZE + 16, wache_talk, nil) --- Wache links
  create_npc("Estech", 109, 64 * TILESIZE + 16, 53 * TILESIZE + 16, estech_talk, nil) --- Estech (Chef des Colloseums)
+ wache_entrance = create_npc("Wache", 25, 66 * TILESIZE + 16, 83 * TILESIZE + 16, entrance_control_talk, nil) --- Wache am Eingang
 
  mana.trigger_create(79 * TILESIZE, 40 * TILESIZE, 4 * TILESIZE, 4 * TILESIZE, "wache_trigger", 1, true)
  mana.trigger_create(47 * TILESIZE, 40 * TILESIZE, 4 * TILESIZE, 4 * TILESIZE, "wache_trigger", 2, true)
+
+ mana.trigger_create(57 * TILESIZE, 75 * TILESIZE, 17 * TILESIZE, 8 * TILESIZE, "entrance_trigger", 1, true)
+ mana.trigger_create(57 * TILESIZE, 82 * TILESIZE, 17 * TILESIZE, 9 * TILESIZE, "entrance_trigger", 2, true)
 end)
 
 function wache_talk(npc, ch)
@@ -100,4 +105,22 @@ function estech_talk(npc, ch)
         do_message(npc, ch, "Komm zu mir rauf wenn du mit mir sprechen willst!")
     end
     do_npc_close(npc, ch)
+end
+
+pvm_fight = nil
+function entrance_control_talk(npc, ch)
+    if pvm_fight == nil then -- Kein Kampf
+        
+    else
+        
+    end
+    do_npc_close(npc, ch)
+end
+
+function entrance_trigger(being, id)
+    if id == 1 then -- Eintritt in Arena
+
+    elseif id == 2 then -- Austritt aus Arena
+
+    end
 end
