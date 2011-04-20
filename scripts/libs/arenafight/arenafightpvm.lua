@@ -79,7 +79,7 @@ end
 function ArenaFightPvM:killMonster(monster)
     for i,v in ipairs(self.monsters) do
         if v == monster then
-            -- TODO: Monster töten
+            mana.being_damage(monster, 999999, 0, 99999, DAMAGE_PHYSICAL, ELEMET_NEUTRAL)
             break
         end
     end
