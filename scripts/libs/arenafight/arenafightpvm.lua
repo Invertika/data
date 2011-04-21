@@ -66,7 +66,7 @@ end
 
 --- Gibt die Anzahl verbliebender Monster zurück.
 -- @return Zahl der verbliebenden Monster
-function ArenaFightPvM:getNumberOfMonsters()
+function ArenaFightPvM:getNumberOfRemainingMonsters()
     return #self.monsters
 end
 
@@ -74,6 +74,27 @@ end
 -- @return True, wenn der Kampf läuft, false wenn nicht
 function ArenaFightPvM:isStarted()
     return self.fight_running
+end
+
+function ArenaFightPvM:getNextMonsterPosX()
+    return math.random(mana.posX(self.ch) - MONSTER_SPAWN_SCATTER, mana.posX(self.ch) + MONSTER_SPAWN_SCATTER)
+end
+
+function ArenaFightPvM:getNextMonsterPosY()
+    return math.random(mana.posY(self.ch) - MONSTER_SPAWN_SCATTER, mana.posY(self.ch) + MONSTER_SPAWN_SCATTER)
+end
+
+function ArenaFightPvM:addMonster(monster)
+    on_death(monster, self:getFunctionForMonsterDeath(i))
+    table.insert(self.monsters, monster)
+end
+
+function ArenaFightPvM:getMonsterId()
+    return self.monster_id
+end
+
+function ArenaFightPvM:getMonsterNumber()
+    return self.monster_number
 end
 
 function ArenaFightPvM:startFight()
@@ -86,7 +107,6 @@ function ArenaFightPvM:startFight()
             mana.posX(self.ch) + MONSTER_SPAWN_SCATTER),
           math.random(mana.posY(self.ch) - MONSTER_SPAWN_SCATTER,
             mana.posY(self.ch) + MONSTER_SPAWN_SCATTER))
-        on_death(monster, self:getFunctionForMonsterDeath(i))
         table.insert(self.monsters, monster)
     end
 end
@@ -96,7 +116,7 @@ end
 function ArenaFightPvM:killMonster(monster)
     for i,v in ipairs(self.monsters) do
         if v == monster then
-            mana.being_damage(monster, 999999, 0, 99999, DAMAGE_PHYSICAL, ELEMET_NEUTRAL)
+            invertika.kill_being(monster)
             break
         end
     end
