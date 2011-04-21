@@ -726,7 +726,7 @@ end
 
 function amulet_trigger(ch, args)
   if (mana.being_type(ch) == TYPE_CHARACTER) then --- Nur Player durchlassen
-    local quest_string = string.format("selphie_timlet_amulet_quest_%s", args)
+    local quest_string = string.format("selphi_timlet_amulet_quest_%s", args)
     invertika.init_quest_status(ch, quest_string)
 
     function get_qstatus() return tonumber(invertika.get_quest_status(ch, quest_string)) end
@@ -740,7 +740,7 @@ function amulet_trigger(ch, args)
 end
 
 function lidi_talk(npc, ch)
-    local queststring = "selphie_timlet_lidi_sunglasses"
+    local queststring = "selphi_timlet_lidi_sunglasses"
     invertika.init_quest_status(ch, queststring)
     local get_qstatus = function()
         return invertika.get_quest_status(ch, queststring)

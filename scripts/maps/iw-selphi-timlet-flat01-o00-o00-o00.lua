@@ -29,8 +29,8 @@ function goron_talk(npc, ch)
     -- 2 = gelbe Robe.
     -- 3 = rote Robe.
     -- 4 = blaue Robe.
-    local queststring_orders = "selphie_timlet_goron_orders"
-    local queststring_timestamp_order_ready = "selphie_timlet_goron_order_ready"
+    local queststring_orders = "selphi_timlet_goron_orders"
+    local queststring_timestamp_order_ready = "selphi_timlet_goron_order_ready"
 
     invertika.init_quest_status(ch, queststring_orders)
     invertika.init_quest_status(ch, queststring_timestamp_order_ready)
