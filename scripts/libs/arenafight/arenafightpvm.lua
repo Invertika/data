@@ -7,8 +7,9 @@ MONSTER_SPAWN_SCATTER = 1000
 ArenaFightPvM = {}
 
 -- Events
-ArenaFightPvM.event_player_died = nil
-ArenaFightPvM.event_monster_died = nil
+ArenaFightPvM.event_player_died = function() end
+ArenaFightPvM.event_monster_died = function() end
+ArenaFightPvM.event_last_monster_died = function() end
 self.monsters = nil
 
 --- Erstellt ene neue Instanz der Klasse ArenaFightPvM
@@ -21,6 +22,7 @@ function ArenaFightPvM:new(ch, monster_id, monster_number)
     self.monster_id = monster_id
     self.monster_number = monster_number
     self.monsters = {}
+    self.fight_running = false
 	return res
 end
 
@@ -36,6 +38,11 @@ function ArenaFightPvM:registerEventMonsterDied(funct)
     self.event_monster_died = funct
 end
 
+--- Registriert eine Funktion, die das Event last Monster died behandeln soll.
+-- @param funct Eine Funktion, die das Event last Monster died behandeln soll
+function ArenaFightPvM:registerEventLastMonsterDied(funct)
+    self.event_last_monster_died = funct
+end
 --- Ruft das Event Player died auf.
 function ArenaFightPvM:raiseEventPlayerDied()
     self.event_player_died(self.ch)
@@ -60,7 +67,14 @@ function ArenaFightPvM:getNumberOfMonsters()
     return #self.monsters
 end
 
+--- Gibt zurück ob der Kampf läuft.
+-- @return True, wenn der Kampf läuft, false wenn nicht
+function ArenaFightPvM:osStarted()
+    return self.fight_running
+end
+
 function ArenaFightPvM:startFight()
+    self.fight_started = true
     on_death(self.ch, self:playerDied)
     -- Monster spawnen.
     for i=1,self.monster_number do
@@ -100,4 +114,14 @@ end
 function ArenaFightPvM:monsterDied(monster_number)
     table.remove(self.monsters, monster_number)
     self:raiseEventMonsterDied()
+end
+
+--- Gibt das Objekt frei.
+function ArenaFightPvM:delete()
+    self.event_player_died = function() end
+    self.event_monster_died = function() end
+    -- Tötet alle Monster.
+    while self.monsters[1] ~= nil do
+        self:killMonster(self.monster[1])
+    end
 end
