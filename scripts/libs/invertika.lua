@@ -118,3 +118,9 @@ function add_items(ch, id, number, name)
     return success
 end
 
+--- Tötet ein Lebwesen
+-- @param being Das zu tötende Lebewesen
+function kill_being(being)
+    mana.being_damage(being, 999999, 0, 99999, DAMAGE_PHYSICAL, ELEMET_NEUTRAL)
+
+end
