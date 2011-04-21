@@ -13,13 +13,13 @@ ArenaFightPvM.event_last_monster_died = function() end
 
 --- Erstellt ene neue Instanz der Klasse ArenaFightPvM
 -- @param ch Der Charakter, der kämpfen soll.
-function ArenaFightPvM:new(ch, monster_id, monster_number)
+function ArenaFightPvM:new(ch, my_monster_id, my_monster_number)
     local res = {}
 	setmetatable(res, self)
 	self.__index = self
     self.ch = ch
-    self.monster_id = monster_id
-    self.monster_number = monster_number
+    self.monster_id = my_monster_id
+    self.monster_number = my_monster_number
     self.monsters = {}
     self.fight_running = false
 	return res
