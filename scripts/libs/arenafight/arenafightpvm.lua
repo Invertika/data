@@ -50,7 +50,11 @@ end
 
 --- Ruft das Event Monster killed auf.
 function ArenaFightPvM:raiseEventMonsterKilled(monster)
-    self.event_monster_killed(monster)
+    if #self.monsters == 0 then
+        self.event_last_monster_died(monster)
+    else
+        self.event_monster_died(monster)
+    end
 end
 
 -- Getter
@@ -69,7 +73,7 @@ end
 
 --- Gibt zurück ob der Kampf läuft.
 -- @return True, wenn der Kampf läuft, false wenn nicht
-function ArenaFightPvM:osStarted()
+function ArenaFightPvM:isStarted()
     return self.fight_running
 end
 
@@ -112,8 +116,7 @@ end
 --- PRIVATE: Behandelt die Ereignisse wenn ein Monster stirbt.
 -- @param monster_number Die Position des Monsters im Table
 function ArenaFightPvM:monsterDied(monster_number)
-    table.remove(self.monsters, monster_number)
-    self:raiseEventMonsterDied()
+    self:raiseEventMonsterDied(table.remove(self.monsters, monster_number))
 end
 
 --- Gibt das Objekt frei.
