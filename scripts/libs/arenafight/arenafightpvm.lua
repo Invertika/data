@@ -10,7 +10,6 @@ ArenaFightPvM = {}
 ArenaFightPvM.event_player_died = function() end
 ArenaFightPvM.event_monster_died = function() end
 ArenaFightPvM.event_last_monster_died = function() end
-self.monsters = nil
 
 --- Erstellt ene neue Instanz der Klasse ArenaFightPvM
 -- @param ch Der Charakter, der kämpfen soll.
