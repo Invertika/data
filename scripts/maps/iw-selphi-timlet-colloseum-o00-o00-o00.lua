@@ -134,17 +134,17 @@ end
 function monster_died(monster)
     -- TODO: er/sie, Texte varieren.
     commentator_say("Und ZACK. An der Deckung vorbei trifft er einen tödlichen Schlag")
-    arenafight.increase_arena_rank(pvm_fight:getCh(), "selphie_timlet", RANK_SURPLUS_AT_KILL)
+    arenafight.increase_arena_rank(pvm_fight:getCh(), "selphi_timlet", RANK_SURPLUS_AT_KILL)
 end
 
 function last_monster_died(monster)
     commentator_say("Da geht der letzte Gegner zu Boden!")
-    arenafight.increase_arena_rank(pvm_fight:getCh(), "selphie_timlet", RANK_SURPLUS_AT_KILL)
+    arenafight.increase_arena_rank(pvm_fight:getCh(), "selphi_timlet", RANK_SURPLUS_AT_KILL)
 end
 
 function player_died()
     commentator_say("Uhhh. Das muss wegetan haben. DER SPIELER GEHT ZU BODEN.... AUS. Ein weiteres Skellett, dass auf dem Boden unserer grandiosen Arena verrottet.")
-    arenafight.decrease_arena_rank(pvm_fight:getCh(), "selphie_timlet", RANK_LOSS_AT_DEATH)
+    arenafight.decrease_arena_rank(pvm_fight:getCh(), "selphi_timlet", RANK_LOSS_AT_DEATH)
     schedule_in(2, reset_game)
 end
 
@@ -185,6 +185,7 @@ function entrance_trigger(being, id)
         -- TODO
     elseif id == 2 then -- Austritt aus Arena
         -- TODO
+    end
     if mana.being_type(being) == TYPE_MONSTER then
         pvm_fight:killMonster(being)
     end
