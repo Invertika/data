@@ -187,7 +187,7 @@ function entrance_trigger(being, id)
         if pvm_fight ~= nil and pvm_fight:getCh() == being then
             -- Darf passieren
         else
-            mana.chr_warp(ch, nil, 65 * TILESIZE + 16, 86 * TILESIZE + 16)
+            mana.chr_warp(being, nil, 65 * TILESIZE + 16, 86 * TILESIZE + 16)
             mana.being_say(wache_entrance, "HALT. Du bist nicht für ein Spiel angemeldet!")
         end
     elseif id == 2 then -- Austritt aus Arena
@@ -205,7 +205,7 @@ end
 
 function fight_start_trigger(being, id)
     if mana.being_type(being) == TYPE_CHARACTER then
-        if pvm_fight:getCh() == being then
+        if pvm_fight ~= nil and pvm_fight:getCh() == being then
             if not pvm_fight:isStarted() then
                 pvm_fight:startFight()
                 fight_started()
