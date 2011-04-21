@@ -36,3 +36,18 @@ end
 function increase_arena_rank(ch, arena_string, value)
     set_arena_rank(ch, arena_string, get_arena_rank(ch, arena_string) + value)
 end
+
+
+--- Gibt die MonsterId zurück, die dem Rang des Spielers entspricht.
+-- @param ch Der Spieler
+-- @return ID des Monster das dem Rang des Spielers entspricht
+function get_monster_id(ch)
+    return 3 -- TODO
+end
+
+--- Git die Anzahl der Monster zurück, die dem Rand des Spielers entsprechen.
+-- @param ch Der Spieler
+-- @return Anzahl der Monster die dem Rang des Spielers entsprechen
+function get_monster_number(ch)
+    return 5 -- TODO
+end
