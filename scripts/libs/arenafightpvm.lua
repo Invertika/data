@@ -33,6 +33,6 @@ end
 -- @param ch Der Spieler
 -- @param arena_string Die Bezeichnung der Arena
 -- @param value Der Wert und dem der Rang erhöht werden soll
-function decrease_arena_rank(ch, arena_string, value)
+function increase_arena_rank(ch, arena_string, value)
     set_arena_rank(ch, arena_string, get_arena_rank(ch, arena_string) + value)
 end
