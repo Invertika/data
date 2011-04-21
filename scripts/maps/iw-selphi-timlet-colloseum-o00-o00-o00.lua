@@ -165,7 +165,7 @@ function entrance_control_talk(npc, ch)
                     do_message(npc, ch, "DEBUG: Registriere Events...")
                     pvm_fight:registerEventPlayerDied(player_died)
                     pvm_fight:registerEventMonsterDied(monster_died)
-                    pvm_fight:registerventLastMonsterDied(last_monster_died)
+                    pvm_fight:registerEventLastMonsterDied(last_monster_died)
                     -- Warp des Spielers in die Arena.
                     mana.chr_warp(ch, nil, 65 * TILESIZE + 16, 80 * TILESIZE + 16)
                 else
