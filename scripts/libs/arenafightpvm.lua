@@ -49,5 +49,5 @@ end
 -- @param ch Der Spieler
 -- @return Anzahl der Monster die dem Rang des Spielers entsprechen
 function get_monster_number(ch)
-    return 5 -- TODO
+    return 1 -- TODO
 end
