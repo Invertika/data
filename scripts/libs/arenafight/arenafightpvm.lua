@@ -79,7 +79,7 @@ end
 
 function ArenaFightPvM:startFight()
     self.fight_started = true
-    on_death(self.ch, self:playerDied)
+    on_death(self.ch, self:playerDied())
     -- Monster spawnen.
     for i=1,self.monster_number do
         local monster = mana.monster_create(self.monster_id,
