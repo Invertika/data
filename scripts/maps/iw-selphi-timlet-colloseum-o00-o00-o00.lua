@@ -211,7 +211,7 @@ function fight_start_trigger(being, id)
             if not pvm_fight:isStarted() then
                 pvm_fight:startFight()
                 for i=1,pvm_fight:getMonsterNumber() do
-                    pvm_fight:addMonster(mana.monster_create(pvm_fight:getMonsterId(), pvm_fight:getNextMonsterPosX(), pvm_fight:getNextMonsterPosY()))
+                    pvm_fight:addMonster(mana.monster_create(pvm_fight:getMonsterId(), 61 * TILESIZE, 69 * TILESIZE))
                 end
                 fight_started()
             end
