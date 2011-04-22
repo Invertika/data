@@ -22,18 +22,18 @@ atinit(function()
  wache_rechts = create_npc("Wache", 25, 83 * TILESIZE + 16, 44 * TILESIZE + 16, wache_talk, nil) --- Wache rechts
  wache_links = create_npc("Wache", 25, 46 * TILESIZE + 16, 44 * TILESIZE + 16, wache_talk, nil) --- Wache links
  create_npc("Estech", 109, 64 * TILESIZE + 16, 53 * TILESIZE + 16, estech_talk, nil) --- Estech (Chef des Colloseums)
- wache_entrance = create_npc("Wache", 25, 66 * TILESIZE + 16, 83 * TILESIZE + 16, entrance_control_talk, nil) --- Wache am Eingang
- commentator = {}
- commentator[1] = create_npc("Kommentator", 25, 63 * TILESIZE + 16, 53 * TILESIZE + 16, commentator_talk, nil) --- Kommentator VIP-Loge
- commentator[2] = create_npc("Kommentator", 25, 91 * TILESIZE + 16, 35 * TILESIZE + 16, commentator_talk, nil) --- Kommentator bei den billigen Plätzen
- commentator[3] = create_npc("Kommentator", 25, 59 * TILESIZE + 16, 83 * TILESIZE + 16, commentator_talk, nil) --- Kommentator unten
+ -- wache_entrance = create_npc("Wache", 25, 66 * TILESIZE + 16, 83 * TILESIZE + 16, entrance_control_talk, nil) --- Wache am Eingang
+ -- commentator = {}
+ -- commentator[1] = create_npc("Kommentator", 25, 63 * TILESIZE + 16, 53 * TILESIZE + 16, commentator_talk, nil) --- Kommentator VIP-Loge
+ -- commentator[2] = create_npc("Kommentator", 25, 91 * TILESIZE + 16, 35 * TILESIZE + 16, commentator_talk, nil) --- Kommentator bei den billigen Plätzen
+ -- commentator[3] = create_npc("Kommentator", 25, 59 * TILESIZE + 16, 83 * TILESIZE + 16, commentator_talk, nil) --- Kommentator unten
 
  mana.trigger_create(79 * TILESIZE, 40 * TILESIZE, 4 * TILESIZE, 4 * TILESIZE, "wache_trigger", 1, true)
  mana.trigger_create(47 * TILESIZE, 40 * TILESIZE, 4 * TILESIZE, 4 * TILESIZE, "wache_trigger", 2, true)
 
- mana.trigger_create(57 * TILESIZE, 75 * TILESIZE, 17 * TILESIZE, 8 * TILESIZE, "entrance_trigger", 1, true)
- mana.trigger_create(57 * TILESIZE, 82 * TILESIZE, 17 * TILESIZE, 9 * TILESIZE, "entrance_trigger", 2, true)
- mana.trigger_create(64 * TILESIZE, 68 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "fight_start_trigger", 1, true)
+ -- mana.trigger_create(57 * TILESIZE, 75 * TILESIZE, 17 * TILESIZE, 8 * TILESIZE, "entrance_trigger", 1, true)
+ -- mana.trigger_create(57 * TILESIZE, 82 * TILESIZE, 17 * TILESIZE, 9 * TILESIZE, "entrance_trigger", 2, true)
+ -- mana.trigger_create(64 * TILESIZE, 68 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "fight_start_trigger", 1, true)
 end)
 
 function wache_talk(npc, ch)
@@ -112,111 +112,111 @@ function estech_talk(npc, ch)
     do_npc_close(npc, ch)
 end
 
-RANK_SURPLUS_AT_KILL = 5
-RANK_LOSS_AT_DEATH = 40
-
-pvm_fight = nil
-
-function commentator_talk(npc, ch)
-    do_npc_close(npc, ch)
-end
-
-function commentator_say(text)
-    for i,v in commentator do
-        mana.being_say(v, text)
-    end
-end
-
-function fight_started()
-    commentator_say("Und es geht los!")
-end
-
-function monster_died(monster)
-    -- TODO: er/sie, Texte varieren.
-    commentator_say("Und ZACK. An der Deckung vorbei trifft er einen tödlichen Schlag")
-    arenafight.increase_arena_rank(pvm_fight:getCh(), "selphi_timlet", RANK_SURPLUS_AT_KILL)
-end
-
-function last_monster_died(monster)
-    commentator_say("Da geht der letzte Gegner zu Boden!")
-    arenafight.increase_arena_rank(pvm_fight:getCh(), "selphi_timlet", RANK_SURPLUS_AT_KILL)
-end
-
-function player_died()
-    commentator_say("Uhhh. Das muss wegetan haben. DER SPIELER GEHT ZU BODEN.... AUS. Ein weiteres Skellett, dass auf dem Boden unserer grandiosen Arena verrottet.")
-    arenafight.decrease_arena_rank(pvm_fight:getCh(), "selphi_timlet", RANK_LOSS_AT_DEATH)
-    schedule_in(2, reset_game)
-end
-
-function reset_game()
-    pvm_fight:delete()
-    pvm_fight = nil
-end
-
-function entrance_control_talk(npc, ch)
-    if pvm_fight == nil then -- Kein Kampf
-        do_message(npc, ch, "Willst du in der Arena kämpfen?")
-        while true do
-            local v = do_choice(npc, ch, "Ja.", "Nein.")
-            if v == 1 then
-                if pvm_fight == nil then
-                    do_message(npc, ch, "DEBUG: Erstelle Kampf...")
-                    pvm_fight = arenafight.ArenaFightPvM:new(ch, 3, 3)
-                    do_message(npc, ch, "DEBUG: Registriere Events...")
-                    pvm_fight:registerEventPlayerDied(player_died)
-                    pvm_fight:registerEventMonsterDied(monster_died)
-                    pvm_fight:registerEventLastMonsterDied(last_monster_died)
-                    -- Warp des Spielers in die Arena.
-                    mana.chr_warp(ch, mana.get_map_id(), 65 * TILESIZE + 16, 80 * TILESIZE + 16)
-                else
-                    do_message(npc, ch, "Zu langsam. Es findet bereits ein Kampf statt.")
-                end
-                break
-            elseif v == 2 then
-                break
-            end
-        end
-    else
-        
-    end
-    do_npc_close(npc, ch)
-end
-
-function entrance_trigger(being, id)
-    if id == 1 then -- Eintritt in Arena
-        if mana.being_type(being) == TYPE_CHARACTER then
-            if pvm_fight ~= nil and pvm_fight:getCh() == being then
-                -- Darf passieren
-            else
-                mana.chr_warp(being, mana.get_map_id(), 65 * TILESIZE + 16, 86 * TILESIZE + 16)
-                mana.being_say(wache_entrance, "HALT. Du bist nicht für ein Spiel angemeldet!")
-            end
-        end
-    elseif id == 2 then -- Austritt aus Arena
-        if mana.being_type(being) == TYPE_MONSTER then
-            pvm_fight:killMonster(being)
-        elseif mana.being_type(being) == TYPE_CHARACTER and
-          pvm_fight ~= nil and
-          pvm_fight:isStarted() and
-          pvm_fight:getCh() == being then
-            invertika.kill_being(being)
-            commentator_say("Was eine Schande! Der Spieler versucht zu fliehen!")
-        end
-    end
-end
-
-function fight_start_trigger(being, id)
-    if mana.being_type(being) == TYPE_CHARACTER then
-        if pvm_fight ~= nil and pvm_fight:getCh() == being then
-            if not pvm_fight:isStarted() then
-                mana.being_say(being, "Debug 1")
-                pvm_fight:startFight()
-                mana.being_say(being, "Debug 2")
-                for i=1,pvm_fight:getMonsterNumber() do
-                    --pvm_fight:addMonster(mana.monster_create(pvm_fight:getMonsterId(), 61 * TILESIZE, 69 * TILESIZE))
-                end
-                fight_started()
-            end
-        end
-    end
-end
+-- RANK_SURPLUS_AT_KILL = 5
+-- RANK_LOSS_AT_DEATH = 40
+-- 
+-- pvm_fight = nil
+-- 
+-- function commentator_talk(npc, ch)
+    -- do_npc_close(npc, ch)
+-- end
+-- 
+-- function commentator_say(text)
+    -- for i,v in commentator do
+        -- mana.being_say(v, text)
+    -- end
+-- end
+-- 
+-- function fight_started()
+    -- commentator_say("Und es geht los!")
+-- end
+-- 
+-- function monster_died(monster)
+    -- -- TODO: er/sie, Texte varieren.
+    -- commentator_say("Und ZACK. An der Deckung vorbei trifft er einen tödlichen Schlag")
+    -- arenafight.increase_arena_rank(pvm_fight:getCh(), "selphi_timlet", RANK_SURPLUS_AT_KILL)
+-- end
+-- 
+-- function last_monster_died(monster)
+    -- commentator_say("Da geht der letzte Gegner zu Boden!")
+    -- arenafight.increase_arena_rank(pvm_fight:getCh(), "selphi_timlet", RANK_SURPLUS_AT_KILL)
+-- end
+-- 
+-- function player_died()
+    -- commentator_say("Uhhh. Das muss wegetan haben. DER SPIELER GEHT ZU BODEN.... AUS. Ein weiteres Skellett, dass auf dem Boden unserer grandiosen Arena verrottet.")
+    -- arenafight.decrease_arena_rank(pvm_fight:getCh(), "selphi_timlet", RANK_LOSS_AT_DEATH)
+    -- schedule_in(2, reset_game)
+-- end
+-- 
+-- function reset_game()
+    -- pvm_fight:delete()
+    -- pvm_fight = nil
+-- end
+-- 
+-- function entrance_control_talk(npc, ch)
+    -- if pvm_fight == nil then -- Kein Kampf
+        -- do_message(npc, ch, "Willst du in der Arena kämpfen?")
+        -- while true do
+            -- local v = do_choice(npc, ch, "Ja.", "Nein.")
+            -- if v == 1 then
+                -- if pvm_fight == nil then
+                    -- do_message(npc, ch, "DEBUG: Erstelle Kampf...")
+                    -- pvm_fight = arenafight.ArenaFightPvM:new(ch, 3, 3)
+                    -- do_message(npc, ch, "DEBUG: Registriere Events...")
+                    -- pvm_fight:registerEventPlayerDied(player_died)
+                    -- pvm_fight:registerEventMonsterDied(monster_died)
+                    -- pvm_fight:registerEventLastMonsterDied(last_monster_died)
+                    -- -- Warp des Spielers in die Arena.
+                    -- mana.chr_warp(ch, mana.get_map_id(), 65 * TILESIZE + 16, 80 * TILESIZE + 16)
+                -- else
+                    -- do_message(npc, ch, "Zu langsam. Es findet bereits ein Kampf statt.")
+                -- end
+                -- break
+            -- elseif v == 2 then
+                -- break
+            -- end
+        -- end
+    -- else
+        -- 
+    -- end
+    -- do_npc_close(npc, ch)
+-- end
+-- 
+-- function entrance_trigger(being, id)
+    -- if id == 1 then -- Eintritt in Arena
+        -- if mana.being_type(being) == TYPE_CHARACTER then
+            -- if pvm_fight ~= nil and pvm_fight:getCh() == being then
+                -- -- Darf passieren
+            -- else
+                -- mana.chr_warp(being, mana.get_map_id(), 65 * TILESIZE + 16, 86 * TILESIZE + 16)
+                -- mana.being_say(wache_entrance, "HALT. Du bist nicht für ein Spiel angemeldet!")
+            -- end
+        -- end
+    -- elseif id == 2 then -- Austritt aus Arena
+        -- if mana.being_type(being) == TYPE_MONSTER then
+            -- pvm_fight:killMonster(being)
+        -- elseif mana.being_type(being) == TYPE_CHARACTER and
+          -- pvm_fight ~= nil and
+          -- pvm_fight:isStarted() and
+          -- pvm_fight:getCh() == being then
+            -- invertika.kill_being(being)
+            -- commentator_say("Was eine Schande! Der Spieler versucht zu fliehen!")
+        -- end
+    -- end
+-- end
+-- 
+-- function fight_start_trigger(being, id)
+    -- if mana.being_type(being) == TYPE_CHARACTER then
+        -- if pvm_fight ~= nil and pvm_fight:getCh() == being then
+            -- if not pvm_fight:isStarted() then
+                -- mana.being_say(being, "Debug 1")
+                -- pvm_fight:startFight()
+                -- mana.being_say(being, "Debug 2")
+                -- for i=1,pvm_fight:getMonsterNumber() do
+                    -- --pvm_fight:addMonster(mana.monster_create(pvm_fight:getMonsterId(), 61 * TILESIZE, 69 * TILESIZE))
+                -- end
+                -- fight_started()
+            -- end
+        -- end
+    -- end
+-- end
