@@ -77,11 +77,13 @@ function ArenaFightPvM:isStarted()
 end
 
 function ArenaFightPvM:getNextMonsterPosX()
-    return math.random(mana.posX(self.ch) - MONSTER_SPAWN_SCATTER, mana.posX(self.ch) + MONSTER_SPAWN_SCATTER)
+    return mana.posX(self.ch)
+    --return math.random(mana.posX(self.ch) - MONSTER_SPAWN_SCATTER, mana.posX(self.ch) + MONSTER_SPAWN_SCATTER)
 end
 
 function ArenaFightPvM:getNextMonsterPosY()
-    return math.random(mana.posY(self.ch) - MONSTER_SPAWN_SCATTER, mana.posY(self.ch) + MONSTER_SPAWN_SCATTER)
+    return mana.posX(self.ch)
+    --return math.random(mana.posY(self.ch) - MONSTER_SPAWN_SCATTER, mana.posY(self.ch) + MONSTER_SPAWN_SCATTER)
 end
 
 function ArenaFightPvM:addMonster(monster)
