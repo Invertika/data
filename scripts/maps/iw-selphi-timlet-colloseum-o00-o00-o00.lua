@@ -167,7 +167,7 @@ function entrance_control_talk(npc, ch)
                     pvm_fight:registerEventMonsterDied(monster_died)
                     pvm_fight:registerEventLastMonsterDied(last_monster_died)
                     -- Warp des Spielers in die Arena.
-                    mana.chr_warp(ch, nil, 65 * TILESIZE + 16, 80 * TILESIZE + 16)
+                    mana.chr_warp(ch, mana.get_map_id(), 65 * TILESIZE + 16, 80 * TILESIZE + 16)
                 else
                     do_message(npc, ch, "Zu langsam. Es findet bereits ein Kampf statt.")
                 end
@@ -188,7 +188,7 @@ function entrance_trigger(being, id)
             if pvm_fight ~= nil and pvm_fight:getCh() == being then
                 -- Darf passieren
             else
-                mana.chr_warp(being, nil, 65 * TILESIZE + 16, 86 * TILESIZE + 16)
+                mana.chr_warp(being, mana.get_map_id(), 65 * TILESIZE + 16, 86 * TILESIZE + 16)
                 mana.being_say(wache_entrance, "HALT. Du bist nicht für ein Spiel angemeldet!")
             end
         end
@@ -209,10 +209,11 @@ function fight_start_trigger(being, id)
     if mana.being_type(being) == TYPE_CHARACTER then
         if pvm_fight ~= nil and pvm_fight:getCh() == being then
             if not pvm_fight:isStarted() then
+                mana.being_say(being, "Debug 1")
                 pvm_fight:startFight()
+                mana.being_say(being, "Debug 2")
                 for i=1,pvm_fight:getMonsterNumber() do
-                    mana.being_say(being, "Debug 1")
-                    --schedule_in(1, function() pvm_fight:addMonster(mana.monster_create(pvm_fight:getMonsterId(), 61 * TILESIZE, 69 * TILESIZE)) end)
+                    --pvm_fight:addMonster(mana.monster_create(pvm_fight:getMonsterId(), 61 * TILESIZE, 69 * TILESIZE))
                 end
                 fight_started()
             end
