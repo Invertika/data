@@ -161,7 +161,7 @@ function entrance_control_talk(npc, ch)
             if v == 1 then
                 if pvm_fight == nil then
                     do_message(npc, ch, "DEBUG: Erstelle Kampf...")
-                    pvm_fight = arenafight.ArenaFightPvM:new(ch, arenafight.get_monster_id(ch), arenafight.get_monster_number(ch))
+                    pvm_fight = arenafight.ArenaFightPvM:new(ch, 3, 0)
                     do_message(npc, ch, "DEBUG: Registriere Events...")
                     pvm_fight:registerEventPlayerDied(player_died)
                     pvm_fight:registerEventMonsterDied(monster_died)
