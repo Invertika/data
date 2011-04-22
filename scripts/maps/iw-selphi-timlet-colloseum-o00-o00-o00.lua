@@ -122,7 +122,7 @@ function commentator_talk(npc, ch)
 end
 
 function commentator_say(text)
-    for i,v in commentators do
+    for i,v in commentator do
         mana.being_say(v, text)
     end
 end
