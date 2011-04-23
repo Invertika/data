@@ -3,7 +3,7 @@ module("arenafight", package.seeall)
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-dofile("data/scripts/libs/arenafight/arenafightpvm.lua")
+dofile("data/scripts/libs/arena/arenafightpvm.lua")
 
 --- Gibt den Arena Rang zurück.
 -- @param ch Der Spieler
