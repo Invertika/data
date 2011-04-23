@@ -29,7 +29,7 @@ function rezeptionist_talk(npc, ch)
   function get_qstatus() return invertika.get_quest_status(ch, quest_name) end
   function set_qstatus(x) invertika.set_quest_status(ch, quest_name, x) end
 
-  if mana.chr_inv_count(ch, 30035) > 0 then
+  if mana.chr_inv_count(ch, 40035) > 0 then
         do_message(npc, ch, "Schon wieder ein Brief von Ceech?")
         do_message(npc, ch, "Er verklagt alles und jeden. Mich hat er wegen den Kokussnüssen dran gekriegt.")
         do_message(npc, ch, "Es wäre unverantwortlich die Kokusnüsse einfach fallen zu lassen.")
