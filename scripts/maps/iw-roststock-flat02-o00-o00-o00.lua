@@ -63,7 +63,7 @@ function icero_talk(npc, ch)
                 if v == 1 then
                     invertika.add_items(ch, 30006, -1, "Bier")
                     do_message(npc, ch, "Danke. Hier. Ich hab noch ein paar alte Tabletten. Ich teste die.")
-                    invertika.add_items(ch, 30012, 1, "Inspirin Megaplus")
+                    invertika.add_items(ch, 30017, 1, "Inspirin Megaplus")
                     set_qstatus(3)
                     break
                 elseif v == 2 then
