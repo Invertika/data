@@ -88,6 +88,7 @@ function ceech_talk(npc, ch)
                 break
             end
         end
+        do_npc_close(npc, ch)
         return
     end
 
