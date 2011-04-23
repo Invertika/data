@@ -24,7 +24,7 @@ end)
 
 function icero_talk(npc, ch)
     local quest_string = "roststock_icero_quest"
-    invertika.init_quest_status(ch, quest_String)
+    invertika.init_quest_status(ch, quest_string)
     local get_qstatus = function() return invertika.get_quest_status(ch, quest_string) end
     local set_qstatus = function(x) invertika.set_quest_status(ch, quest_string, x) end
 
