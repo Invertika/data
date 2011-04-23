@@ -73,6 +73,24 @@ function tresor_talk(npc, ch)
 end
 
 function ceech_talk(npc, ch)
+    if invertika.get_quest_status(ch, "roststock_icero_quest") == 4 then
+        do_message(npc, ch, "Du siehst du aus als wolltest du etwas fragen?")
+        while true do
+            local v = do_choice(npc, ch, "Icero braucht einen Psychiater.", "Nein. Nix.")
+            if v == 1 then
+                do_message(npc, ch, "Icero? Dieser interessante Fall in Roststock?")
+                do_message(npc, ch, "Ich arbeite gerne mit Leuten die einen an der Klatsche haben.")
+                do_message(npc, ch, "Ich werde in nächster Zeit mal bei ihm vorbei kommen.")
+                invertika.set_quest_status(ch, "roststock_icero_quest", 5)
+                break
+            elseif v == 2 then
+                do_message(npc, ch, "Dann lass mich arbeiten!")
+                break
+            end
+        end
+        return
+    end
+
     local quest_string = "selphi_timlet_ceech_quest"
     invertika.init_quest_status(ch)
     local get_qstatus = function() return invertika.get_quest_status(ch, quest_string) end
@@ -85,7 +103,7 @@ function ceech_talk(npc, ch)
             local v = do_choice(npc, ch, "Ja.", "Nein.")
             if v == 1 then
                 set_qstatus(1)
-                invertika.add_items(ch, 40035, "Brief an die Rezeption", 1)
+                invertika.add_items(ch, 40035, 1, "Brief an die Rezeption")
                 do_message(npc, ch, "Sag mir Bescheid wenn du ihn vorbei gebracht hast.")
                 break
             elseif v == 2 then
