@@ -142,7 +142,7 @@ function ceech_talk(npc, ch)
         "Ich habe zu tun.",
         "Jetzt nicht.",
         "Schhhhh.", 
-        "Hör auch zu stören!"))
+        "Hör auf zu stören!"))
     end
     do_npc_close(npc, ch)
 end
