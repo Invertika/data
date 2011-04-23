@@ -28,6 +28,20 @@ function rezeptionist_talk(npc, ch)
   -- quest get/set functions
   function get_qstatus() return invertika.get_quest_status(ch, quest_name) end
   function set_qstatus(x) invertika.set_quest_status(ch, quest_name, x) end
+
+  if mana.chr_inv_count(ch, 30035) > 0 then
+        do_message(npc, ch, "Schon wieder ein Brief von Ceech?")
+        do_message(npc, ch, "Er verklagt alles und jeden. Mich hat er wegen den Kokussnüssen dran gekriegt.")
+        do_message(npc, ch, "Es wäre unverantwortlich die Kokusnüsse einfach fallen zu lassen.")
+        do_message(npc, ch, "Gewinnt er diese Klage so erhält er Anspruch auf die Kokusnuss Ernte.")
+        do_message(npc, ch, "Er hat sich schon viele Feinde hier in der Stadt gemacht.")
+        do_message(npc, ch, "Hör mir mal zu: Du verlierst den Brief einfach. Lass Ceech einfach links liegen.")
+        do_message(npc, ch, "Der Kerl ist geizig und kein guter Freund.")
+        invertika.add_items(ch, 40018, "Scheck über 1000 Aki", 1)
+        do_message(npc, ch, "Hier nimm diesen Scheck. Dafür lass den Brief irgendwo verschwinden.")
+	    do_npc_close(npc, ch)
+        return
+  end
   
   if get_qstatus() == 0 then
     do_message(npc, ch, "Willkommen im Hotel. Was kann ich für dich tun?")
@@ -83,6 +97,9 @@ function rezeptionist_talk(npc, ch)
 		end
   elseif get_qstatus() == 6 then
 		do_message(npc, ch, "Momentan habe ich keine Arbeit für dich.")
+  elseif get_qstatus() == -1 then
+        do_message(npc, ch, "RAUS! Du hast Hausverbot!")
+        mana.chr_warp(ch, 61, 76 * TILESIZE, 167 * TILESIZE)
   end
 
 	do_npc_close(npc, ch)
