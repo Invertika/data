@@ -73,9 +73,55 @@ function tresor_talk(npc, ch)
 end
 
 function ceech_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Lass mich arbeiten!",
-      "Ich habe zu tun.",
-      "Jetzt nicht.",
-      "Schhhhh."))
+    local quest_string = "selphi_timlet_ceech_quest"
+    invertika.init_quest_status(ch)
+    local get_qstatus = function() return invertika.get_quest_status(ch, quest_string) end
+    local set_qstatus = function(x) invertika.set_quest_status(ch, quest_string, x) end
+
+    if get_qstatus() == 0 then
+        do_message(npc, ch, "Hu. Ich war so in meine Arbeiten vertieft, dass ich dich nicht kommen sehen habe.")
+        do_message(npc, ch, "Hättest du Lust diesen Brief hier zur Rezeption im Hotel zu bringen?")
+        while true do
+            local v = do_choice(npc, ch, "Ja.", "Nein.")
+            if v == 1 then
+                set_qstatus(1)
+                invertika.add_items(ch, 40035, "Brief an die Rezeption", 1)
+                do_message(npc, ch, "Sag mir Bescheid wenn du ihn vorbei gebracht hast.")
+                break
+            elseif v == 2 then
+                do_message(npc, ch, "Dann halt nicht.")
+                set_qstatus(-1)
+                break
+            end
+        end
+    elseif get_qstatus() == 1 then
+        if mana.chr_inv_count(ch, 40035) == 0 then
+            do_message(npc, ch, "Hast du den Brief abgegeben?")
+            while true do
+                local v = do_choice(npc, ch, "Ja.", "Nein. Ich habe ihn verloren.")
+                if v == 1 then
+                    do_message(npc, ch, "Du hast ihn verloren? Unzuverlässiger Bengel!")
+                    set_qstatus(-1)
+                    break
+                elseif v == 2 then
+                    do_message(npc, ch, "Hier. nimm diese Kokussnuss als Belohnung. Bald habe ich Anrecht auf die Kokussnuss Ernte!")
+                    -- TODO: Eine Kokussnuss als Belohnung geben.
+                    set_qstatus(2)
+                    invertika.set_quest_status(ch, "selphi_timlet_rezeptionist_quest", -1)
+                    break
+                end
+            end
+        else
+            do_message(npc, ch, "Was machst du noch hier? Du solltest doch den Brief wegbringen!")
+        end
+    elseif get_qstatus() == 2 then
+        do_message(npc, ch, "Jetzt muss ich arbeiten.")
+    elseif get_qstatus() == -1 then
+        do_message(npc, ch, invertika.get_random_element("Lass mich arbeiten!",
+        "Ich habe zu tun.",
+        "Jetzt nicht.",
+        "Schhhhh.", 
+        "Hör auch zu stören!"))
+    end
     do_npc_close(npc, ch)
 end
