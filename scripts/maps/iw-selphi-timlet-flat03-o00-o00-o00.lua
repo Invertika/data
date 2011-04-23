@@ -114,7 +114,7 @@ function ceech_talk(npc, ch)
             end
         end
     elseif get_qstatus() == 1 then
-        do_message(npc, ch, "Du sollst die Klageschrift in dass Hotel bringen!")
+        do_message(npc, ch, "Du sollst die Klageschrift in das Hotel bringen!")
     elseif get_qstatus() == 2 then
         if mana.chr_inv_count(ch, 40035) == 0 then
             do_message(npc, ch, "Hast du den Brief abgegeben?")
