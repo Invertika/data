@@ -117,11 +117,11 @@ function ceech_talk(npc, ch)
             do_message(npc, ch, "Hast du den Brief abgegeben?")
             while true do
                 local v = do_choice(npc, ch, "Ja.", "Nein. Ich habe ihn verloren.")
-                if v == 1 then
+                if v == 2 then
                     do_message(npc, ch, "Du hast ihn verloren? Unzuverlässiger Bengel!")
                     set_qstatus(-1)
                     break
-                elseif v == 2 then
+                elseif v == 1 then
                     do_message(npc, ch, "Hier. nimm diese Kokussnuss als Belohnung. Bald habe ich Anrecht auf die Kokussnuss Ernte!")
                     invertika.add_items(ch, 30026, 3, "Kokusnuss")
                     set_qstatus(2)
