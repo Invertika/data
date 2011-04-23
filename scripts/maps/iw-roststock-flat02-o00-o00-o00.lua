@@ -91,7 +91,7 @@ function icero_talk(npc, ch)
         do_message(npc, ch, "Danke für deine Hilfe!")
         do_message(npc, ch, "Nimm diese Tabletten. Ich brauche sie jetzt nicht mehr.")
         invertika.add_items(ch, 30017, 15, "Inspirin Megaplus")
-        invertika.add_items(ch, 30003, 15 "Nogatch Hemlock")
+        invertika.add_items(ch, 30003, 15, "Nogatch Hemlock")
         set_qstatus(6)
     elseif get_qstatus() == 6 then
         do_message(npc, ch, invertika.get_random_element("Es ist hart sich wieder an das Leben zu gewöhnen.",
