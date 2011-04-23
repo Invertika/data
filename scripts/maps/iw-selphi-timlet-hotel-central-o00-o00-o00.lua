@@ -37,7 +37,7 @@ function rezeptionist_talk(npc, ch)
         do_message(npc, ch, "Er hat sich schon viele Feinde hier in der Stadt gemacht.")
         do_message(npc, ch, "Hör mir mal zu: Du verlierst den Brief einfach. Lass Ceech einfach links liegen.")
         do_message(npc, ch, "Der Kerl ist geizig und kein guter Freund.")
-        invertika.add_items(ch, 40018, "Scheck über 1000 Aki", 1)
+        invertika.add_items(ch, 40018, 1, "Scheck über 1000 Aki")
         do_message(npc, ch, "Hier nimm diesen Scheck. Dafür lass den Brief irgendwo verschwinden.")
 	    do_npc_close(npc, ch)
         return
