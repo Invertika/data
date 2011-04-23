@@ -1,64 +1,72 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="104" height="50" tilewidth="32" tileheight="32">
-  <properties>
-    <property name="music" value="inside.ogg" />
-  </properties>
-  <tileset firstgid="1" name="collision1_32_32" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/collision1_32_32.png" />
-  </tileset>
-  <tileset firstgid="1025" name="indoor3_32_32" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/indoor3_32_32.png" />
-  </tileset>
-  <tileset firstgid="2049" name="indoor2_32_32" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/indoor2_32_32.png" />
-  </tileset>
-  <tileset firstgid="3073" name="indoor2_32_64" tilewidth="32" tileheight="64">
-    <image source="../graphics/tiles/indoor2_32_64.png" />
-  </tileset>
-  <tileset firstgid="3585" name="indoor2_32_96" tilewidth="32" tileheight="96">
-    <image source="../graphics/tiles/indoor2_32_96.png" />
-  </tileset>
-  <tileset firstgid="3905" name="castle1_32_32" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/castle1_32_32.png" />
-  </tileset>
-  <layer name="Ground" width="104" height="50">
-    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/Iv7LX/fX+DV+9P8f/f9H///R/3/0/x/9/0f//9H/f/T/H/3/R///0f9/9P8f/f9H////9/9/NL4f/f9H///R/3/0/x/9/0f//9H/f/T/H/3/R///0f9/9P8f/f9H//////9/NMYf/f+H+f9/5Lf40f9vQ6efq//fBv//v///NnT6ufr/X/+b/+j/t6HTz9X/b4P//9//fxs6/Vz9/zb4///9/7eh08/V/2+D///f/38bOv1c/f82+P///f+3odPP1f9vg///3/9/Gzr9XP3/Nvj/MP//c9HXbej0c/X/2+D///f/34ZOP/p//P8Hv86v8Ws8/HVubvej///o/z/6/4/+/6P//+j/P/r/j/7/o///6P8/+v+P/v/D/v+P+vvR/3/0/x/9/0f//9H/f/T/H/3/R///0f9/9P8f/f9H///R/3/0//////9HY/yw//8/NKHbQUBRAAA=</data>
-  </layer>
-  <layer name="Fringe" width="104" height="50">
-    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6NHz0/en70/Oj50fOj50fPj54fPT96fvT86PnR86PnR8//758fDfBHz4+eHz0/en70/Oj50fOj50fPj54fPT96fvT86Pn///P/txF+/Fv86P8/en74zy9MiPbJjc1+9Pzo+aDnx37DX+PXSH5D9/d/+uuG3+Nv/H+X/r9H/7+nf9/mSX6jX+PX+A1/oxub9Z6/OOn/3zy/3m8y/N6m5zf5dX6NX+M3/XXczxjs/zc+d2huvvUbunno/h8Pfv4E/f8V/f+1Nzd+m6Hnm5ijn63nZxv+N/Gc0dx8R+fHPN252TQHm767zdwMvb+JdnjnNrC7T6yv/7fPj//E5Mb/ieevjoxx0xwO0bHb1/s8BuZNc3Sbefz/0vz4T0zPDT0fwstDsG/6/jZzs2l+8N3/F/Tb/1uf2/DFpudD3//RE3++yU+7cxTTzT96fvT86PnR86PnR8+Pnh89P3p+9Pzo+dHzo+dHz4+eH/7zox5/9Pzo+dHzo+dHz4+eHz0/en70/Oj50fOj50fPj57//z8/GuGHPf8Pw4GUs0BRAAA=</data>
-  </layer>
-  <layer name="Over" width="104" height="50">
-    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6NHz0/en70/Oj50fOj50fPj54fPT96fvT86PnR86PnR8//758fDfBHz4+eHz0/en70/Oj50fOj50fPj54fPT96fvT86Pn///OjEf7o+X/z8xskNzaxz2/4Hm1//fdoe5vnFxK8j79hmP9/ez75EX1+9Pzo+dHzo+dHz4+eHz0/en70/Oj5OX1+1PmPnh89P3p+9Pzo+dHzo+dHz4+eHz0/en70/Oj50fP//+dHI/zR86PnR8+Pnh89P3p+9Pzo+dHzo+dHz4+eHz0/ev7///xohB/2/D9EDFwkQFEAAA==</data>
-  </layer>
-  <layer name="Collision" width="104" height="50">
-    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6tX+PX+DV+9P8f/f9H///R/3/0/x/9/0f//9H/f/T/H/3/R///0f9/9P8f/f9H////9/9/NL4f/f9H///R/3/0/x/9/0f//9H/f/T/H/3/R///0f9/9P8f/f9H//////9/NMYf/f9H///R/3/0//9v/L/7dD+77Xux533a+s+m/r4OPDy3ocX/G/9vnk3f++38pwvj67aJPTEcv+nnNvT5uf6/ebq/m7+77brPTd9t+t60Gfr8pu9ugt19Yu1vQ6Ofy//7T/fz7s+hJwbrpu+GcLjNs2kMQ+1u0+b/jf8fem7bzm/7Po9pP/Tebb7/EPxvQ5v/N/z//63Ph+L3Pu/fhk4/V///f9vzTeJz2zHehk4/V///0XMzjX70/+H/m+c2bX/0/x/9/0f//9H/f/T/H/3/R///0f9/9P8f/f9H///R/3+Y//9RXz/6/4/+/6P//+j/P/r/j/7/o///6P8/+v+P/v+j///o/z/6/4/+//////9ojB/2//8HGZuzLUBRAAA=</data>
-  </layer>
-  <objectgroup name="Object" width="104" height="50" x="0" y="0">
-    <object name="External Map Events" type="SCRIPT" x="0" y="-2880" width="0" height="0">
-      <properties>
-        <property name="FILENAME" value="scripts/maps/iw-selphi-timlet-flat04-o00-o00-n01.lua" />
-      </properties>
-    </object>
-    <object name="Warp to flat4-o0 XCF" type="WARP" x="1920" y="992" width="64" height="32">
-      <properties>
-        <property name="DEST_MAP" value="iw-selphi-timlet-flat04-o00-o00-o00" />
-        <property name="DEST_X" value="1952" />
-        <property name="DEST_Y" value="960" />
-      </properties>
-    </object>
-    <object name="Kellerskorpion" type="SPAWN" x="896" y="736" width="1824" height="256">
-      <properties>
-        <property name="MAX_BEINGS" value="15" />
-        <property name="MONSTER_ID" value="10" />
-        <property name="SPAWN_RATE" value="10" />
-      </properties>
-    </object>
-    <object name="Red Scorpion" type="SPAWN" x="640" y="832" width="256" height="160">
-      <properties>
-        <property name="MAX_BEINGS" value="1" />
-        <property name="MONSTER_ID" value="6" />
-        <property name="SPAWN_RATE" value="10" />
-      </properties>
-    </object>
-  </objectgroup>
+ <properties>
+  <property name="music" value="inside.ogg"/>
+ </properties>
+ <tileset firstgid="1" name="collision1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="1025" name="indoor3_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/indoor3_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="2049" name="indoor2_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/indoor2_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3073" name="indoor2_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/indoor2_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3585" name="indoor2_32_96" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/indoor2_32_96.png" width="1024" height="960"/>
+ </tileset>
+ <tileset firstgid="3905" name="castle1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/castle1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <layer name="Ground" width="104" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3RMQ2AQBBFwS0OAaAGRJ8JzJwNLED12WSK6V/y1la1AAAAAAAAAADgpfsg/cCfvn/mTvqBP/50ln7gjz+dpR/4409n6Qf+9P3zd+eouka+AwAAAAAAAIBvHjSh20FAUQAA
+  </data>
+ </layer>
+ <layer name="Fringe" width="104" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3U3Q6CIByHYQ60LXC2dRG1Oquuos6qK+yw6/JGgoOmIuBHWtjeZ/uPOQSUnyIEAAAAAAAAAAAAAABAXLZrCt+3kXrv5a+fAv9uqYSQqrwu0nq/uTZ10HXUdUqb9/jITAiV9X+mh2zW2yLvP5+RJ0KskrJ1zR2jnc5mr8oc7DJMe9V103WvZFN0yGqMjKYyh3zOOpuLqu+znU0og1Bfl2x840N7Z8YMyd21Vuz5VLn+m2prPB3vGMrQt4/2Wn2852zLqEuOc8qnynXO+XzyLfvmbuvvkk0oH9M3h/MtVkP/rbHGY3p2Rq6zGQAAAAAAAAAAAAAAIDYvw4GUs0BRAAA=
+  </data>
+ </layer>
+ <layer name="Over" width="104" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3QsQ0AEABEUR1hDwr778cIJEQi79U/V1wIAAAAAAAAAABwT8rrbdlo40a7os69dnjzN90/AAAAAAAAAAAAAMBDA0QMXCRAUQAA
+  </data>
+ </layer>
+ <layer name="Collision" width="104" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3T0QqEIBAFUOn/P3pfFzEdtRikM3BoKd3GuXSVUi4AAAAAAAAAAABeV1d9L7qvVTNrR++862/nP08w6r83k8j8n8jorcqe/Ww+dd/177szjs7fq5XsV7Nrrc+efzSf1rlH30+9b+bZzvfRO8PsO7LnP5PPygxKcE1rz/915flO/9lz380nu3b7m9mfncGJ+TxR0TNmZ/DVfKKVncHJzBAAAAAAAADgTD8Zm7MtQFEAAA==
+  </data>
+ </layer>
+ <objectgroup name="Object" width="104" height="50">
+  <object name="External Map Events" type="SCRIPT" x="0" y="-2880">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/iw-selphi-timlet-flat04-o00-o00-n01.lua"/>
+   </properties>
+  </object>
+  <object name="Warp to flat4-o0 XCF" type="WARP" x="1920" y="992" width="64" height="32">
+   <properties>
+    <property name="DEST_MAP" value="iw-selphi-timlet-flat04-o00-o00-o00"/>
+    <property name="DEST_X" value="1952"/>
+    <property name="DEST_Y" value="960"/>
+   </properties>
+  </object>
+  <object name="Kellerskorpion" type="SPAWN" x="896" y="736" width="1824" height="256">
+   <properties>
+    <property name="MAX_BEINGS" value="15"/>
+    <property name="MONSTER_ID" value="10"/>
+    <property name="SPAWN_RATE" value="10"/>
+   </properties>
+  </object>
+  <object name="Red Scorpion" type="SPAWN" x="642" y="819" width="256" height="160">
+   <properties>
+    <property name="MAX_BEINGS" value="1"/>
+    <property name="MONSTER_ID" value="6"/>
+    <property name="SPAWN_RATE" value="10"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>
