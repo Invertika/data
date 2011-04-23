@@ -92,7 +92,7 @@ function ceech_talk(npc, ch)
     end
 
     local quest_string = "selphi_timlet_ceech_quest"
-    invertika.init_quest_status(ch)
+    invertika.init_quest_status(ch, quest_string)
     local get_qstatus = function() return invertika.get_quest_status(ch, quest_string) end
     local set_qstatus = function(x) invertika.set_quest_status(ch, quest_string, x) end
 
