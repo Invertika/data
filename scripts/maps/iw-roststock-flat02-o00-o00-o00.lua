@@ -43,7 +43,7 @@ function icero_talk(npc, ch)
             while true do
                 local v = do_choice(npc, ch, "Hier. Nimm.", "Ich hab keine.")
                 if v == 1 then
-                    invertika.add_items(ch, 30015, "Inspirin", -1)
+                    invertika.add_items(ch, 30015, -1, "Inspirin")
                     set_qstatus(2)
                     do_message(npc, ch, "*schluckt die Tablette hastig*")
                     do_message(npc, ch, "*atmet tief durch*")
