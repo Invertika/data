@@ -29,7 +29,7 @@ function rezeptionist_talk(npc, ch)
   function get_qstatus() return invertika.get_quest_status(ch, quest_name) end
   function set_qstatus(x) invertika.set_quest_status(ch, quest_name, x) end
 
-  if mana.chr_inv_count(ch, 40035) > 0 then
+  if mana.chr_inv_count(ch, 40035) > 0 and invertika.get_quest_status(ch, "selphi_timlet_ceech_quest") == 1 then
         do_message(npc, ch, "Schon wieder eine Klageschrift von Ceech?")
         do_message(npc, ch, "Er verklagt alles und jeden. Mich hat er wegen den Kokussnüssen dran gekriegt.")
         do_message(npc, ch, "Es wäre unverantwortlich die Kokusnüsse einfach fallen zu lassen.")
@@ -37,6 +37,7 @@ function rezeptionist_talk(npc, ch)
         do_message(npc, ch, "Er hat sich schon viele Feinde hier in der Stadt gemacht.")
         do_message(npc, ch, "Hör mir mal zu: Du verlierst den Brief einfach. Lass Ceech einfach links liegen.")
         do_message(npc, ch, "Der Kerl ist geizig und kein guter Freund.")
+        invertika.set_quest_status(ch, "selphi_timlet_ceech_quest", 2)
         invertika.add_items(ch, 40018, 1, "Scheck über 1000 Aki")
         do_message(npc, ch, "Hier nimm diesen Scheck. Dafür lass den Brief irgendwo verschwinden.")
 	    do_npc_close(npc, ch)

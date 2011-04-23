@@ -114,6 +114,8 @@ function ceech_talk(npc, ch)
             end
         end
     elseif get_qstatus() == 1 then
+        do_message(npc, ch, "Du sollst die Klageschrift in dass Hotel bringen!")
+    elseif get_qstatus() == 2 then
         if mana.chr_inv_count(ch, 40035) == 0 then
             do_message(npc, ch, "Hast du den Brief abgegeben?")
             while true do
@@ -125,7 +127,7 @@ function ceech_talk(npc, ch)
                 elseif v == 1 then
                     do_message(npc, ch, "Hier. nimm diese Kokussnuss als Belohnung. Bald habe ich Anrecht auf die Kokussnuss Ernte!")
                     invertika.add_items(ch, 30026, 3, "Kokusnuss")
-                    set_qstatus(2)
+                    set_qstatus(3)
                     invertika.set_quest_status(ch, "selphi_timlet_rezeptionist_quest", -1)
                     break
                 end
@@ -133,7 +135,7 @@ function ceech_talk(npc, ch)
         else
             do_message(npc, ch, "Was machst du noch hier? Du solltest doch den Brief wegbringen!")
         end
-    elseif get_qstatus() == 2 then
+    elseif get_qstatus() == 3 then
         do_message(npc, ch, "Jetzt muss ich arbeiten.")
     elseif get_qstatus() == -1 then
         do_message(npc, ch, invertika.get_random_element("Lass mich arbeiten!",
