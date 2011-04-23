@@ -123,7 +123,7 @@ function ceech_talk(npc, ch)
                     break
                 elseif v == 2 then
                     do_message(npc, ch, "Hier. nimm diese Kokussnuss als Belohnung. Bald habe ich Anrecht auf die Kokussnuss Ernte!")
-                    -- TODO: Eine Kokussnuss als Belohnung geben.
+                    invertika.add_items(ch, 30026, 3, "Kokusnuss")
                     set_qstatus(2)
                     invertika.set_quest_status(ch, "selphi_timlet_rezeptionist_quest", -1)
                     break
