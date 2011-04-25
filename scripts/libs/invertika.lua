@@ -61,8 +61,9 @@ end
 -- @param questname Der Name des Quests.
 -- @return Aktuellen Status des Quests.
 function get_quest_status(ch, questname)
-    mana.chatmessage(ch, "Debug: Char" .. tostring(ch))
-    mana.chatmessage(ch, "Debug: Questname" .. tostring(questname))
+    mana.chatmessage(ch, "------------")
+    mana.chatmessage(ch, "Debug: Char: " .. tostring(ch))
+    mana.chatmessage(ch, "Debug: Questname: " .. tostring(questname))
     mana.chatmessage(ch, "Debug: " .. tostring(get_quest_var(ch, questname)))
     return tonumber(get_quest_var(ch, questname))
 end
