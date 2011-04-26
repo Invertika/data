@@ -50,7 +50,26 @@ atinit(function()
  create_npc("Corona ", 12, 89 * TILESIZE + 16, 135 * TILESIZE + 16, corona_talk, nil) --- Corona 
  
  -- Verlassen des Vacare
- create_npc("Vacare", 1, 103 * TILESIZE, 139 * TILESIZE + 16, vacare_talk, nil) --- Vacare
+ create_npc("Vacare", 1, 103 * TILESIZE, 139 * TILESIZE + 16, vacare_talk, nil) --- Vapublic static void UpdateInBackground()
+{
+    OAuthTokens tokens = Configuration.GetTokens();
+ 
+    IAsyncResult asyncResult = TwitterStatusAsync.Update(
+        tokens,                     // The OAuth tokens
+        "This is my tweet text",    // The text of the tweet
+        null,                       // Optional parameters (none given here)
+        new TimeSpan(0, 3, 0),      // The maximum time to let the process run
+        updateResponse =>           // The callback method
+        {
+            if (updateResponse.Result == RequestResult.Success)
+            {
+                UpdateScreenToShowNewTweet(updateResponse.ResponseObject);
+            }
+            else
+            {
+                DisplayError(updateResponse.ErrorMessage);
+            }
+       care
 end)
 
 --- Erster Start
@@ -121,20 +140,31 @@ end
 function kolbert_talk(npc, ch)
     local quest_string = "vacre_first_weapon"
     invertika.init_quest_status(ch, quest_string)
-	if invertika.get_quest_status(ch, invertika.get_quest_status(ch, quest_string) == 0) then
+    mana.chatmessage(ch, "Debug: invertika.init_quest_status ... OK")
+    
+    if invertika.get_quest_status(ch, invertika.get_quest_status(ch, quest_string) == 0) then
+      mana.chatmessage(ch, "Debug: invertika.get_quest_status ... OK")
+      
       do_message(npc, ch, "Du willst kämpfen? Nun gut zum Kämpfen benötigst du erst einmal eine Waffe.")
+      
       invertika.add_items(ch, 10001, 1, "Dolch")
+      
+      mana.chatmessage(ch, "Debug: invertika.add_items ... OK")
+      
       do_message(npc, ch, "So hier hast du einen kleinen Dolch. Nun gehe in das Inventar und rüste ihn aus.")
 	  do_message(npc, ch, "Anschließend begib dich in die Nähe eines Gegners und drücke A. Dadurch wird der Gegner anvisiert.")
 	  do_message(npc, ch, "Nun musst du in seiner Nähe die Strg Taste drücken und schon greifst du ihn an.")
 	  do_message(npc, ch, "Du kannst ihn aber auch nur mittels der X Taste angreifen.")
 	  do_message(npc, ch, "Viel Erfolg.")
+	  
       invertika.set_quest_status(ch, "vacare_first_weapon", 1)
-	else
+      mana.chatmessage(ch, "Debug: vacare_first_weapon ... OK")
+    else
 	  do_message(npc, ch, "Du schon wieder. Du weist doch. Zum Gegner, A drücken und dann Strg um zum Angriff überzugehen. Oder einfach X drücken. Einfach oder?")
 	  do_message(npc, ch, "Noch ein kleiner Tipp. Mit Z kannst du Gegenstände aufheben die ein Gegner verliert.")
     end
-	do_npc_close(npc, ch)
+    
+    do_npc_close(npc, ch)
 end
 
 function syntyche_talk(npc, ch)
