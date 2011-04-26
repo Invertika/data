@@ -50,27 +50,8 @@ atinit(function()
  create_npc("Corona ", 12, 89 * TILESIZE + 16, 135 * TILESIZE + 16, corona_talk, nil) --- Corona 
  
  -- Verlassen des Vacare
- create_npc("Vacare", 1, 103 * TILESIZE, 139 * TILESIZE + 16, vacare_talk, nil) --- Vapublic static void UpdateInBackground()
-{
-    OAuthTokens tokens = Configuration.GetTokens();
- 
-    IAsyncResult asyncResult = TwitterStatusAsync.Update(
-        tokens,                     // The OAuth tokens
-        "This is my tweet text",    // The text of the tweet
-        null,                       // Optional parameters (none given here)
-        new TimeSpan(0, 3, 0),      // The maximum time to let the process run
-        updateResponse =>           // The callback method
-        {
-            if (updateResponse.Result == RequestResult.Success)
-            {
-                UpdateScreenToShowNewTweet(updateResponse.ResponseObject);
-            }
-            else
-            {
-                DisplayError(updateResponse.ErrorMessage);
-            }
-       care
-end)
+ create_npc("Vacare", 1, 103 * TILESIZE, 139 * TILESIZE + 16, vacare_talk, nil) --- Vacare
+)
 
 --- Erster Start
  function firststart_trigger(ch, id)
