@@ -122,8 +122,8 @@ function kolbert_talk(npc, ch)
     local quest_string = "vacre_first_weapon"
     invertika.init_quest_status(ch, quest_string)
     mana.chatmessage(ch, "Debug: invertika.init_quest_status ... OK")
-    return
-    if invertika.get_quest_status(ch, invertika.get_quest_status(ch, quest_string) == 0) then
+       
+    if invertika.get_quest_status(ch, quest_string) == 0) then
       mana.chatmessage(ch, "Debug: vacare_first_weapon ... OK")
       
       do_message(npc, ch, "Du willst kämpfen? Nun gut zum Kämpfen benötigst du erst einmal eine Waffe.")
