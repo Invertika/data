@@ -51,7 +51,7 @@ atinit(function()
  
  -- Verlassen des Vacare
  create_npc("Vacare", 1, 103 * TILESIZE, 139 * TILESIZE + 16, vacare_talk, nil) --- Vacare
-)
+end)
 
 --- Erster Start
  function firststart_trigger(ch, id)
