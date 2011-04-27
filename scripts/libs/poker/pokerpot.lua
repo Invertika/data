@@ -6,8 +6,6 @@ PokerPot = {}
 -- Einzahlungen von gegebenem Spieler
 PokerPot.payments = {}
 
--- didOnlyRaise[PokerPlayer] = true, wenn der Spieler bisher nur Raise gespielt hat.
-
 -- Einzahlungen von Spielern die aus dem Spiel geflogen sind.
 PokerPot.general_payments = 0
 
