@@ -307,13 +307,7 @@ function PokerGame:nextPlayer()
         if self.player_on_turn == self.player[#self.player] then
             self.player_on_turn = self.player[1]
         else
-            for i, v in ipairs(self.player) do
-                if v == self.player_on_turn then
-                    -- TODO: Fehler wenn nur ein Spieler.
-                    self.player_on_turn = self.player[i + 1]
-                    break
-                end
-            end
+            self.player_on_turn = self.player[i + 1]
         end
     else
         self:nextRound()
