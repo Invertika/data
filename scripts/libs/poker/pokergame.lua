@@ -326,6 +326,8 @@ end
 --- Prüft ob die aktuelle Bietrunde noch nicht zu Ende ist.
 -- @return true Wenn die Runde nicht zu Ende ist, false wenn doch.
 function PokerGame:roundNotAtEnd()
+    if #self.player == 1 then
+        return false
     if self:allPlayerWereOnTurn() == false then
         return true
     elseif self.pot:arePaymentsRequired() then
