@@ -38,11 +38,10 @@ function samos_talk(npc, ch)
     local get_qstatus = function() return invertika.get_quest_status(ch, quest_string) end
     local set_qstatus = function(x) invertika.set_quest_status(ch, quest_string, x) end
 
-    do_message(npc, ch, invertika.get_random_element("Hol mich hier raus!",
-      "Mein Vater hat mich hier eingeschlossen.",
-      "Ich hab doch nichts getan!"))
-
     if get_qstatus() == 0 then
+        do_message(npc, ch, invertika.get_random_element("Hol mich hier raus!",
+          "Mein Vater hat mich hier eingeschlossen.",
+          "Ich hab doch nichts getan!"))
         do_message(npc, ch, "Vielleicht kannst du mir ein wenig Schokolode bringen? Mein Vater hat mich hier eingesperrt, aber mit Schokolade könnte ich es hier drin aushalten.")
         while true do
             local v = do_choice(npc, ch, "Na gut", "Nein, nix da. Schokolade ist schlecht für die Zähne und macht dick.")
@@ -55,8 +54,7 @@ function samos_talk(npc, ch)
                 break
             end
         end
-    end
-    if get_qstatus() == 1 then
+    elseif get_qstatus() == 1 then
         if mana.chr_inv_count(ch, 30009) > 4 then
             invertika.add_items(ch, 30009, -5, "Schokoladentafel")
             do_message(npc, ch, "Super! Danke! *mampf*")
