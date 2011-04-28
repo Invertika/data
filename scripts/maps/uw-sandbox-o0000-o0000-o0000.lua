@@ -135,20 +135,16 @@ end)
 function poker_dealer_talk(npc, ch)
     do_message(npc, ch, "Hallo.")
     if game == nil then
-        do_message(npc, ch, "Spiel wird erstellt...")
         game = poker.PokerGame:new(200)
-        do_message(npc, ch, "Spiel erstellt.")
         --game:startGame()
     end
 
     if game:playerIsInGame(ch) then
-        print("Poker: Spieler ist im Spiel")
         do_message(npc, ch, "Spieler ist im Spiel")
         if game:isRunning() then
             do_message(npc, ch, "Spiel läuft.")
-            print("Poker: Spiel läuft.")
             if game:playerIsOnTurn(ch) then
-                print("Poker: Spieler ist im Spiel.")
+                do_message(npc, ch, "Poker: Spieler ist an der Reihe.")
                 local possibilities =  game:getPossibilities(ch)
                 local choices = {}
                 for i, possibility in ipairs(possibilities) do
