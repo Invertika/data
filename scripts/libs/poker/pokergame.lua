@@ -337,7 +337,18 @@ function PokerGame:roundNotAtEnd()
         -- Noch nicht alle Spieler dran gewesen => Runde noch nicht zu Ende
         return true
     else
-        -- Runde zu Ende
+        local someone_did_only_raise = false
+        for i, v in ipairs(self.player) do
+            if self.pot:playerDidOnlyRaise(v) then
+                someone_did_only_raise = true
+                break
+            end
+        end
+        if someone_did_only_raise == true then
+            return true
+        end
+
+        -- Sonst zuende.
         return false
     end
 end
