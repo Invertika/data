@@ -99,7 +99,7 @@ function ceech_talk(npc, ch)
 
     if get_qstatus() == 0 then
         do_message(npc, ch, "Hu. Ich war so in meine Arbeiten vertieft, dass ich dich nicht kommen sehen habe.")
-        do_message(npc, ch, "Hättest du Lust diese Klageschrift zur Rezeption im Hotel zu bringen? Ich kann es nicht zulassen, dass die einfach die Kokusnüsse auf den Boden fallen lassen!")
+        do_message(npc, ch, "Hättest du Lust diese Klageschrift zur Rezeption im Hotel zu bringen? Ich kann es nicht zulassen, dass die einfach die Kokusnüsse ungesichert von den Bäumen fallen lassen! Es könnte sich jemand ernsthaft verletzen.")
         while true do
             local v = do_choice(npc, ch, "Ja.", "Nein.")
             if v == 1 then

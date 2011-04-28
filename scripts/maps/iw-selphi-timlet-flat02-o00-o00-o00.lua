@@ -33,8 +33,56 @@ function asam_talk(npc, ch)
 end
 
 function samos_talk(npc, ch)
+    local quest_string = "selphi_timlet_samos_quest"
+    invertika.init_quest_status(ch, quest_string)
+    local get_qstatus = function() return invertika.get_quest_status(ch, quest_string) end
+    local set_qstatus = function(x) invertika.set_quest_status(ch, quest_string, x) end
+
     do_message(npc, ch, invertika.get_random_element("Hol mich hier raus!",
       "Mein Vater hat mich hier eingeschlossen.",
       "Ich hab doch nichts getan!"))
+
+    if get_qstatus() == 0 then
+        do_message(npc, ch, "Vielleicht kannst du mir ein wenig Schokolode bringen? Mein Vater hat mich hier eingesperrt, aber mit Schokolade könnte ich es hier drin aushalten.")
+        local v = do_choice(npc, ch, "Na gut", "Nein, nix da. Schokolade ist schlecht für die Zähne und macht dick.")
+        if v == 1 then
+            do_message(npc, ch, "Bring mir aber mindestens 5 Tafeln! Schliesslich weiß ich nicht, wann ich wieder was kriege.")
+            invertika.set_quest_status(ch, quest_string, 1)
+            break
+        elseif v == 2 then
+            do_message(npc, ch, "Och komm schon... Du bist blöd.")
+            break
+        end
+    end
+    if get_qstatus() == 1 then
+        if mana.chr_inv_count(ch, 40035) > 4 then
+            invertika.add_items(ch, 30009, -5, "Schokoladentafel")
+            do_message(npc, ch, "Super! Danke! *mampf*")
+            invertika.set_quest_status(ch, quest_string, 2)
+        else
+            do_message(npc, ch, "Mindestens 5 Tafeln Schokolade! Sonst habe ich hinterher nur noch mehr Hunger.")
+        end
+    elseif get_qstatus() == 2 then
+        do_message(npc, ch, "Wie, du willst noch eine Belohnung für die Schokolade? Nix da!")
+        invertika.set_quest_status(ch, quest_string, 3)
+    elseif get_qstatus() == 3 then
+        do_message(npc, ch, "Nein, das gebe ich nicht her! Verzieh dich!")
+        invertika.set_quest_status(ch, quest_string, 4)
+    elseif get_qstatus() == 4 then
+        do_message(npc, ch, "Denk nicht mal dran, mir das Ding wegzunehmen! Ich mag meine Sonnenbrille. Die hat mir Papa zum Geburtstag geschenkt.")
+        local v = do_choice(npc, ch, "Na gut", "Ich hab dir die Schokolade besorgt, also gehört das mir *grabsch*")
+        if v == 2 then
+            do_message(npc, ch, "HEY! PAAAPAAAA! WÄÄÄÄH!")
+            invertika.add_items(ch, 20023, 1, "Sonnebrille")
+            invertika.set_quest_status(ch, quest_string, 5)
+        end
+    elseif get_qstatus() == 5 then
+        do_message(npc, ch, invertika.get_random_element("Geh weg!",
+          "Arschloch!",
+          "Hau ab!",
+          "*schnief*... *schluchz*...",
+          "Mit dir rede ich nicht mehr!"))
+    end
+    
     do_npc_close(npc, ch)
 end
