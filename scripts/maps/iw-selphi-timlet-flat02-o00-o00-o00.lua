@@ -44,14 +44,16 @@ function samos_talk(npc, ch)
 
     if get_qstatus() == 0 then
         do_message(npc, ch, "Vielleicht kannst du mir ein wenig Schokolode bringen? Mein Vater hat mich hier eingesperrt, aber mit Schokolade könnte ich es hier drin aushalten.")
-        local v = do_choice(npc, ch, "Na gut", "Nein, nix da. Schokolade ist schlecht für die Zähne und macht dick.")
-        if v == 1 then
-            do_message(npc, ch, "Bring mir aber mindestens 5 Tafeln! Schliesslich weiß ich nicht, wann ich wieder was kriege.")
-            invertika.set_quest_status(ch, quest_string, 1)
-            break
-        elseif v == 2 then
-            do_message(npc, ch, "Och komm schon... Du bist blöd.")
-            break
+        while true do
+            local v = do_choice(npc, ch, "Na gut", "Nein, nix da. Schokolade ist schlecht für die Zähne und macht dick.")
+            if v == 1 then
+                do_message(npc, ch, "Bring mir aber mindestens 5 Tafeln! Schliesslich weiß ich nicht, wann ich wieder was kriege.")
+                invertika.set_quest_status(ch, quest_string, 1)
+                break
+            elseif v == 2 then
+                do_message(npc, ch, "Och komm schon... Du bist blöd.")
+                break
+            end
         end
     end
     if get_qstatus() == 1 then
@@ -70,11 +72,16 @@ function samos_talk(npc, ch)
         invertika.set_quest_status(ch, quest_string, 4)
     elseif get_qstatus() == 4 then
         do_message(npc, ch, "Denk nicht mal dran, mir das Ding wegzunehmen! Ich mag meine Sonnenbrille. Die hat mir Papa zum Geburtstag geschenkt.")
-        local v = do_choice(npc, ch, "Na gut", "Ich hab dir die Schokolade besorgt, also gehört das mir *grabsch*")
-        if v == 2 then
-            do_message(npc, ch, "HEY! PAAAPAAAA! WÄÄÄÄH!")
-            invertika.add_items(ch, 20023, 1, "Sonnebrille")
-            invertika.set_quest_status(ch, quest_string, 5)
+        while true do
+            local v = do_choice(npc, ch, "Na gut", "Ich hab dir die Schokolade besorgt, also gehört das mir *grabsch*")
+            if v == 2 then
+                do_message(npc, ch, "HEY! PAAAPAAAA! WÄÄÄÄH!")
+                invertika.add_items(ch, 20023, 1, "Sonnebrille")
+                invertika.set_quest_status(ch, quest_string, 5)
+                break
+            elseif v == 1 then
+                break
+            end
         end
     elseif get_qstatus() == 5 then
         do_message(npc, ch, invertika.get_random_element("Geh weg!",
