@@ -16,6 +16,7 @@ PokerGame.event_next_player = function(my_player) end
 PokerGame.event_player_exit = function(my_player) end 
 PokerGame.event_player_ended_turn = function(my_player) end
 PokerGame.event_player_won = function(my_player_list) end
+PokerGame.event_next_round = function(my_round) end
 
 --- Erstellt eine neue Instanz der Klasse PokerGame
 function PokerGame:new(maxPayment)
@@ -78,6 +79,18 @@ end
 -- @param player_list Eine Liste der Spieler die etwas gewonnen haben.
 function PokerGame:raiseEventPlayerWon(player_list)
     self.event_player_won(player_list)
+end
+
+--- Registriert eine Funktion, die das Event NextRound bearbeiten soll.
+-- @param funct Die Funktion, die beim Auftreten des Events ausgeführt werden soll.
+function PokerGame:registerEventNextRound(funct)
+    self.event_next_round = funct
+end
+
+--- Löst das Event NextRound aus.
+-- @param round Die neue Runde.
+function PokerGame:raiseEventNextRound(round)
+    self.event_next_round(round)
 end
 
 
@@ -369,6 +382,7 @@ function PokerGame:nextRound()
         self.cards_player_swapped = {}
     end
     self.player_on_turn = self.player[1] -- erster Spieler am Zug.
+    self:raiseEventNextRound(self.round)
 end
 
 --- Prüft ob ein beliebiger Spieler inaktiv ist.
