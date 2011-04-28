@@ -11,6 +11,9 @@ PokerPot.general_payments = 0
 
 PokerPot.max_payment = nil
 
+-- Speichert ob ein Spieler nur Raise gespielt hat
+PokerPot.player_did_only_raise = {}
+
 --- Erstellt ein neues Objekt von Typ PokerPot
 -- @param max Maximale Gesamtsumme an Geld, die ein Spieler einzahlen darf
 function PokerPot:new(max)
@@ -51,6 +54,10 @@ end
 -- @param player Spieler, der die Einzahlung tätigt (PokerPlayer-Objekt)
 -- @param amount Höhe der Einzahlung, keine Werte <0
 function PokerPot:doPayment(player, amount)
+    if self.player_did_only_raise[player] == nil then
+        self.player_did_only_raise[player] = true
+    end
+
     if self.payments[player] == nil then
         self.payments[player] = 0
     end
@@ -126,6 +133,16 @@ end
 
 --- Gibt zurück ob ein Spieler bereits am Zug war und keine andere Aktion als erhöhen durchgeführt hat.
 -- @return true, wenn der Spieler noch keine anderen Aktionen als Raise durchgeführt hat.
-function PokerPot:playerDidOnlyRaise(player)
-    
+function PokerPot:playerDidOnlyRaise(my_player)
+    return self.player_did_only_raise[my_player]
+end
+
+--- Setzt rundenspezifische Variablen zurück
+function PokerPot:nextRound()
+    self.player_did_only_raise = {}
+end
+
+--- Sagt dem Pot, dass nicht Raise gespielt wurde.
+function PokerPot:playerDidNotRaise(my_player)
+    self.player_did_only_raise[my_player] = false
 end
