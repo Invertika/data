@@ -704,7 +704,7 @@ function valeria_talk(npc, ch)
 		    if PlayerMoney >= 1000 then
 			invertika.set_money(ch, -1000)
 			mana.being_heal(ch);
-			do_message(npc, ch, invertika.get_random_element("Du  bist vollständig geheilt.",
+			do_message(npc, ch, invertika.get_random_element("Du bist vollständig geheilt.",
 	  "Fertig. Du kannst wieder deines Weges gehen."))
 		    else
 		      do_message(npc, ch, invertika.get_random_element("Du benötigst mehr Aki.",
