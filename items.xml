@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="items.xsl"?>
-<!--
-    Here are listed all the known items in Invertika. This file defines
-    their name, icon, description, weight, etc. It also defines which sprite
-    to use in the case of visible equipment and which sounds to play on certain
-    events related to the item.
--->
 <items>
     <version revision="$Revision$" />
 
@@ -172,7 +166,7 @@
         weapon-type="bow"
         attack-action="attack_bow"
         max-per-slot="1"
-		value="2000">
+		value="30000">
         <sprite>equipment/weapons/bow.xml</sprite>
         <sound event="swing">weapons/bows/bow_shoot_1.ogg</sound>
     </item>
@@ -521,7 +515,7 @@
     <item id="20019"
         image="equipment/ring/gem-generic.png"
         name="Imangis Verlobungsring"
-        description="Ein Ring, den Rocer aus den Goldzähnen seines Großvaters schmiedete, um Imangi zu der seinen zu machen"
+        description="Ein Ring, den Rocer aus den Goldzähnen seines Großvaters schmiedete, um Imangi zu der seinen zu machen."
         effect=""
         type="equip-ring"
         weight="5"
@@ -657,7 +651,7 @@
         description="Ein leichtes Gift."
         effect="Unbekannt."
         type="usable"
-        hp="-100"
+        hp="-1000"
         weight="25"
         max-per-slot="999"
 		value="10"/>
@@ -669,7 +663,7 @@
 		script="poison.lua"
         effect="Der Tod."
         type="usable"
-        hp="-9999"
+        hp="-999999"
         weight="25"
         max-per-slot="999"
 		value="50"/>
@@ -780,7 +774,7 @@
         description="Ein schweres Gift."
         effect="Unbekannt."
         type="usable"
-        hp="-2000"
+        hp="-5000"
         weight="25"
         max-per-slot="999"
 		value="35"/>
