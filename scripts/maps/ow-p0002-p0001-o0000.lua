@@ -15,9 +15,19 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
+require "scripts/libs/sign"
+require "scripts/libs/datetime"
 
 dofile("data/scripts/libs/warp.lua")
 
 atinit(function()
- create_inter_map_warp_trigger(85, 95, 83, 73) --- Intermap warp
+  create_inter_map_warp_trigger(85, 95, 83, 73) --- Intermap warp
+ 
+  if(datetime.is_current_day(1,4)) then -- Prüft, ob der 1. April ist
+    sign.create_sign(99, 65, "SW: Selphi Timlet 11 km")
+    sign.create_sign(98, 65, "NO: Narva 7 km")
+  else
+    sign.create_sign(98, 65, "SW: Selphi Timlet 11 km")
+    sign.create_sign(99, 65, "NO: Narva 7 km")
+  end
 end)
