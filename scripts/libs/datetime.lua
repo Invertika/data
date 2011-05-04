@@ -66,3 +66,12 @@ function get_current_weekday()
 	end
 end
 
+--- Prüfen, ob der day-te Tag des Monats month ist
+function is_current_day(day, month)
+	local currentTime = os.date('*t')
+	if((currentTime.day==day) and (currentTime.month==month)) then
+	  return true
+	else
+	  return false
+	end
+end
