@@ -5,7 +5,7 @@
 -- anderer Dinge.                                                               --
 --                                                                              --
 ----------------------------------------------------------------------------------
---  Copyright 2008 The Invertika Development Team                               --
+--  Copyright 2008 - 2011 The Invertika Development Team                        --
 --                                                                              --
 --  This file is part of Invertika.                                             --
 --                                                                              --
@@ -26,7 +26,7 @@ atinit(function()
   sign.create_sign(110, 11, sign_entrance) --- Schild Ortseingang
   sign.create_sign(118, 11, sign_entrance) --- Schild Ortseingang
   
-  sign_west = "<-- Roststock 15 km"
+  sign_west = "<-- Roststock 400 Amoti"
   sign.create_sign(119, 65, sign_west)
   sign.create_sign(52, 67, sign_west)
   sign.create_sign(45, 40, sign_west)
