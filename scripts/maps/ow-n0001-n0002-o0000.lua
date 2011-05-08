@@ -32,7 +32,7 @@ atinit(function()
  create_npc("DJh2o2", 54, 86 * TILESIZE + 16, 114 * TILESIZE + 16, djh2o2_talk, nil) --- DJh2o2
  create_npc("Dark Mage", 72, 84 * TILESIZE + 16, 122 * TILESIZE + 16, darkmage_talk, nil) --- DJh2o2
  create_npc("Ablu", 82, 90 * TILESIZE + 16, 122 * TILESIZE + 16, ablu_talk, nil) --- Ablu
- create_npc("cmur2", 59, 90 * TILESIZE + 16, 122 * TILESIZE + 16, cmur2_talk, nil) --- cmur2
+ create_npc("cmur2", 59, 78 * TILESIZE + 16, 122 * TILESIZE + 16, cmur2_talk, nil) --- cmur2
 end)
 
 function jurkan_talk(npc, ch)
