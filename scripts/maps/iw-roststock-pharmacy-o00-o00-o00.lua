@@ -88,11 +88,11 @@ function nijeta_talk(npc, ch)
 				while true do
 					local v2 = do_choice(npc, ch, "OK. Was soll ich denn besorgen?",
 								      "Nein danke, besser nicht.")
-					if v == 1 then
+					if v2 == 1 then
 						do_message(npc, ch, "Super! Als erstes benötige ich 4 Schlangeneier.")
 						set_qstatus(1)
 						break
-					elseif v == 2 then
+					elseif v2 == 2 then
 						do_message(npc, ch, "Schade, dann muss ich wohl jemand anderen finden.")
 						break
 					end
