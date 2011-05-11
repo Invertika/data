@@ -29,9 +29,9 @@ function nijeta_talk(npc, ch)
 	function set_qstatus(x) invertika.set_quest_status(ch, "roststock_pharmacy_quest", tonumber(x)) end
 
 	if get_qstatus() == 1 then
-		if mana.chr_inv_count(ch, 40005) >= 4 then
+		if mana.chr_inv_count(ch, 30025) >= 4 then
 			do_message(npc, ch, "Hey, super, du hast die Schlangeneier gekriegt!")
-    			invertika.add_items(ch, 40005, -4, "Schlangenei")
+    			invertika.add_items(ch, 30025, -4, "Schlangenei")
 			set_qstatus(2)
 			do_message(npc, ch, "Als nächstes brauche ich 10 Kokosnüsse")
 			do_message(npc, ch, "Kann ich noch etwas für dich tun?")
@@ -40,9 +40,9 @@ function nijeta_talk(npc, ch)
 			do_message(npc, ch, "Kann ich noch etwas für dich tun?")
 		end
 	elseif get_qstatus() == 2 then
-		if mana.chr_inv_count(ch, 40005) >= 10 then		
+		if mana.chr_inv_count(ch, 30026) >= 10 then		
 			do_message(npc, ch, "Danke für die Kokosnüsse!")
-			invertika.add_items(ch, 40005, -10, "Kokosnuss")
+			invertika.add_items(ch, 30026, -10, "Kokosnuss")
 			set_qstatus(3)
 			do_message(npc, ch, "Zu guter letzt brauche ich noch das gewisse Etwas, was meinen Arzneimitteln ihre gute Wirksamkeit verleiht.")
 			do_message(npc, ch, "Bring mir 2 Phiolen Nogatch Hemlock. In sehr geringen Dosen eingesetzt wirkt es nicht schädlich sondern äußerst heilkräftig!")
@@ -52,9 +52,9 @@ function nijeta_talk(npc, ch)
 			do_message(npc, ch, "Kann ich noch etwas für dich tun?")
 		end
 	elseif get_qstatus() == 3 then
-		if mana.chr_inv_count(ch, 40005) >= 2 then
+		if mana.chr_inv_count(ch, 30003) >= 2 then
 			do_message(npc, ch, "Perfekt! Danke für das Nogatch Hemlock.")
-    			invertika.add_items(ch, 40005, -2, "Nogatch Hemlock")
+    			invertika.add_items(ch, 30003, -2, "Nogatch Hemlock")
 			set_qstatus(4)
 			do_message(npc, ch, "Als Belohnung für deine Mühen bekommst du einen kleinen Vorrat an Arzneimitteln von mir. Du bekommst sogar ein paar der experimentellen und neueren Exemplare!")
 			invertika.add_items(ch, 30018, 20, "Energetia")
