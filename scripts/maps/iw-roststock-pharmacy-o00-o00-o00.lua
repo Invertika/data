@@ -91,8 +91,10 @@ function nijeta_talk(npc, ch)
 					if v == 1 then
 						do_message(npc, ch, "Super! Als erstes benötige ich 4 Schlangeneier.")
 						set_qstatus(1)
+						break
 					elseif v == 2 then
 						do_message(npc, ch, "Schade, dann muss ich wohl jemand anderen finden.")
+						break
 					end
 				end
 			else
