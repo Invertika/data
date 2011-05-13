@@ -78,6 +78,8 @@ function seeseekey_talk(npc, ch)
 	  "Soll ich dir ein Geheimnis verraten? Ich sage nur Selphi Timlet...",
 	  "Eckig Eckig sind alle meine Karten *sing*.",
 	  "Wie Freitag und schon 19 Uhr? Oh Gott, ich muss zum Bloggerstammtisch.",
+	  "Wie das gibt es nix für? Dann muss ich mir halt was schreiben.",
+	  "So die PIN an diese Stelle, den Arduino mit Strom versorgen und schon ... ha, es LEBT!!!",
 	  "Dwight Schulz ist Republikaner. Murdok vom A-Team ist Republikaner. Reginald Barclay ist Republikaner. Oh Gott die Weit ist so böse..."))
 	do_npc_close(npc, ch)
 end
