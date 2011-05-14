@@ -29,7 +29,7 @@ atinit(function()
  wache = create_npc("Wache", 29, 30 * TILESIZE + 16, 86 * TILESIZE + 16, wache_talk, nil) --- Wache
  create_npc("Wache", 29, 36 * TILESIZE + 16, 86 * TILESIZE + 16, wache_talk, nil) --- Wache
  
- create_npc("Mertox", 2, 23 * TILESIZE + 16, 23 * TILESIZE + 16, mertox_talk, nil) --- Mertox
+ create_npc("Mertox", 2, 24 * TILESIZE + 16, 24 * TILESIZE + 16, mertox_talk, nil) --- Mertox
  
   -- Trigger für die Überwachung des Bereiches
  mana.trigger_create(30 * TILESIZE, 85 * TILESIZE, 7 * TILESIZE, 3 * TILESIZE, "wache_trigger", 1, true) --- Trigger
