@@ -24,8 +24,9 @@ atinit(function()
  create_npc("Banker", 11, 60 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
  create_npc("Banker", 11, 67 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
  create_npc("Banker", 11, 75 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
+ create_npc("Banker", 11, 83 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
  
- --npcs
+ --NPCs
  wache = create_npc("Wache", 29, 30 * TILESIZE + 16, 87 * TILESIZE + 16, wache_talk, nil) --- Wache
  create_npc("Wache", 29, 36 * TILESIZE + 16, 87 * TILESIZE + 16, wache_talk, nil) --- Wache
  
