@@ -29,6 +29,8 @@ atinit(function()
  wache = create_npc("Wache", 29, 30 * TILESIZE + 16, 86 * TILESIZE + 16, wache_talk, nil) --- Wache
  create_npc("Wache", 29, 36 * TILESIZE + 16, 86 * TILESIZE + 16, wache_talk, nil) --- Wache
  
+ create_npc("Mertox", 2, 23 * TILESIZE + 16, 23 * TILESIZE + 16, mertox_talk, nil) --- Mertox
+ 
   -- Trigger für die Überwachung des Bereiches
  mana.trigger_create(30 * TILESIZE, 86 * TILESIZE, 6 * TILESIZE, 3 * TILESIZE, "wache_trigger", 1, true) --- Trigger
 end)
@@ -55,5 +57,11 @@ function wache_trigger(ch, id)
 function wache_talk(npc, ch)
 	do_message(npc, ch, invertika.get_random_element("Zutritt nur für Mitarbeiter.",
 	    "Sie sind kein Mitarbeiter der Zentralbank."))
+	  do_npc_close(npc, ch)
+end
+
+function mertox_talk(npc, ch)
+	do_message(npc, ch, invertika.get_random_element("Zur Zeit gibt es keine Wirtschaftskenngrößen.",
+	    "Kommen sie später wieder."))
 	  do_npc_close(npc, ch)
 end
