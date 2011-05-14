@@ -17,13 +17,17 @@
 require "scripts/lua/npclib"
 require "scripts/libs/nethek"
 require "scripts/libs/seller"
+require "scripts/libs/sign"
 
 dofile("data/scripts/libs/warp.lua")
 
 atinit(function()
- create_inter_map_warp_trigger(36, 26, 38, 48) --- Intermap warp
- nethek.create_netheksaeule(122 * TILESIZE, 114 * TILESIZE + 16) --- Netheksäule
- 
-  --NPCs
-  create_npc("Deaqon", 35, 94 * TILESIZE + 16, 103 * TILESIZE + 16, seller.seller_talk, nil) --- Verkäufer
+    create_inter_map_warp_trigger(36, 26, 38, 48) --- Intermap warp
+    nethek.create_netheksaeule(122 * TILESIZE, 114 * TILESIZE + 16) --- Netheksäule
+
+    sign_entrance = "Liori"
+    sign.create_sign(156, 107, sign_entrance) --- Schild Ortseingang
+
+    --NPCs
+    create_npc("Deaqon", 35, 94 * TILESIZE + 16, 103 * TILESIZE + 16, seller.seller_talk, nil) --- Verkäufer
 end)
