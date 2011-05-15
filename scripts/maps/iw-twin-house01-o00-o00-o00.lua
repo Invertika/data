@@ -33,7 +33,7 @@ function blyther_talk(npc, ch)
         do_message(npc, ch, "Hallo Reisender aus der Wüste.")
         do_message(npc, ch, "Es ist selten das ich Besuch bekomme.")
         do_message(npc, ch, "Willst du für mich eine Aufgabe erledigen?")
-        do_message(npc, ch, "Dieses Schwert gehört Tetse. Er benutze es in einer großen Schlacht. Dann verlor er es.")
+        do_message(npc, ch, "Dieses Schwert gehört Tetse. Er benutzte es in einer großen Schlacht. Dann verlor er es.")
         do_message(npc, ch, "Ich habe es gefunden und für ihn aufbewahrt. Würdest du es zu ihm bringen?")
         while true do
             local v = do_choice(npc, ch, "Mach ich!", "Nein.")
