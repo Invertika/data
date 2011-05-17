@@ -308,26 +308,62 @@ function bruce_talk(npc, ch)
 end
 
 function felix_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Ja so ist das wohl.",
-	  "Ich weiß nicht, so schönes Wetter.",
-	  "Ein Königreich für einen Keks.",
-	  "Mmm was mache ich jetzt bloß ohne Regenschirm.",
-	  "Ich muss es tun, jetzt sofort.",
-	  "Die da du di da?",
-	  "Wie bitte?",
-	  "Nicht zu fassen. Überall diese Dingsbums.",
-	  "Kommt der Sommer schnell und heiß, ähm dann weiß ich auch nicht.",
-	  "Invertika, ja da war was.",
-	  "Kann schon sein, muss aber nicht.",
-	  "Es könnte sein das es stimmt, dann müsste der Fakt das es nicht stimmt aber eine große Rolle spielen da es ja stimmt und gleichzeitig nicht stimmt. Mhn... aber was wäre wenn...",
-	  "Ich bin Felix und wer bist du?",
-	  "Mus mus mus. Jaaaaa. Biene fliegt rückwärts.",
-	  "Mein Kontrabass ist kaputt, aber es lag nicht am Backofen.",
-	  "Durch die Sonne scheint es immer hell.",
-	  "Es ist groß und grün.",
-	  "Je gelber das Telefon desto Hallo. Doch was ist ein Telefon?",
-	  "Der Frosch wurde rot, denn er war tot.",
-	  "Fische füttern fördert den Verstand."))
+    local quest_string = "selphi_timlet_felix_quest"
+    invertika.init_quest_status(ch, quest_string)
+    local get_qstatus = function() return invertika.get_quest_status(ch, quest_string) end
+    local set_qstatus = function(x) invertika.set_quest_status(ch, quest_string, x) end
+    
+    if get_qstatus() == 0 then
+        do_message(npc, ch, invertika.get_random_element("Hallo Reisender.", "Guten Tag.", "Hallo.", "Schönes Wetter nicht?"))
+        do_message(npc, ch, "Hättest du Lust für mich etwas zu erledigen?")
+        while true do
+            local v = do_choice(npc, ch, "Ja.", "Nein.")
+            if v == 1 then
+                do_message(npc, ch, "Ich habe einen alten Freund. Er ist Statiker in Alexia und berechnet Häuser. Sein Name ist Vektor.")
+                do_message(npc, ch, "Er ist zwer nicht der beste aber andere kann ich nicht bezahlen. Er soll das Haus meines Bruders berechnen.")
+                do_message(npc, ch, "Falls du mal nach Alexia kommst kannst du ihm mal Bescheid sagen.")
+                do_message(npc, ch, "Wobei ich die Statik total überbewertet finde.")
+                do_message(npc, ch, "Alles muss genau passen...")
+                do_message(npc, ch, "Dabei interressiert mich reichlich wenig ob ich weiß, dass mein Haus bei 1kg Schnee pro m² zusammenbricht oder nicht. Wann gibt es hier in der Wüste mal Schnee?")
+                do_message(npc, ch, "Völlig überbezahlt der Beruf!")
+                do_message(npc, ch, "Ja, so ist das wohl.")
+                do_message(npc, ch, "Was stehst du hier noch? Du wolltest doch nach Alexia, oder?")
+                set_qstatus(1)
+                break
+            elseif v == 2 then
+                break
+            end
+        end
+    elseif get_qstatus() == 1 then
+        do_message(npc, ch, "Wolltest du nicht nach Alexia?")
+    elseif get_qstatus() == 2 then
+        do_message(npc, ch, "Danke, dass du Vektor Bescheid gesagt hast.")
+        do_message(npc, ch, "Ich habe hier ein wenig Porzellan Geschirr von Übersee.")
+        do_message(npc, ch, "Nix Wert das Zeug. Nimm du es.")
+        invertika.add_items(ch, 40039, 27, "Teller aus Porzellan")
+        set_qstatus(3)
+    else
+	    do_message(npc, ch, invertika.get_random_element("Ja so ist das wohl.",
+	      "Ich weiß nicht, so schönes Wetter.",
+	      "Ein Königreich für einen Keks.",
+	      "Mmm was mache ich jetzt bloß ohne Regenschirm.",
+	      "Ich muss es tun, jetzt sofort.",
+	      "Die da du di da?",
+	      "Wie bitte?",
+	      "Nicht zu fassen. Überall diese Dingsbums.",
+	      "Kommt der Sommer schnell und heiß, ähm dann weiß ich auch nicht.",
+	      "Invertika, ja da war was.",
+	      "Kann schon sein, muss aber nicht.",
+	      "Es könnte sein das es stimmt, dann müsste der Fakt das es nicht stimmt aber eine große Rolle spielen da es ja stimmt und gleichzeitig nicht stimmt. Mhn... aber was wäre wenn...",
+	      "Ich bin Felix und wer bist du?",
+	      "Mus mus mus. Jaaaaa. Biene fliegt rückwärts.",
+	      "Mein Kontrabass ist kaputt, aber es lag nicht am Backofen.",
+	      "Durch die Sonne scheint es immer hell.",
+	      "Es ist groß und grün.",
+	      "Je gelber das Telefon desto Hallo. Doch was ist ein Telefon?",
+	      "Der Frosch wurde rot, denn er war tot.",
+	      "Fische füttern fördert den Verstand."))
+    end
 	  do_npc_close(npc, ch)
 end
 
