@@ -49,9 +49,32 @@ function holbert_talk(npc, ch)
 end
 
 function vektor_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Ich war früher mal ein Superschurke.",
-      "Ich bin Statiker, aber damit habe ich nichts, aber auch wirklich garnichts zu tun.",
-      "Eigentlich müsste dieses Haus in sich zusammenfallen. Oder das Universum. Blöderweise passiert nichts von beidem.",
-      "Wir könnten auch einfach so tun, als ob da gar kein Haus steht."))
-    do_npc_close(npc, ch)
+    if invertika.get_quest_status(ch, "selphi_timlet_felix_quest") == 1 then
+        do_message(npc, ch, "Ein Felix aus Selphi Timlet fragt ob ich für ihn Statiken berechnen kann?")
+        do_message(npc, ch, "Den kenne den nicht...")
+        do_message(npc, ch, "Aber Selphi Timlet hat keine vernünftigen Statiker!")
+        do_message(npc, ch, "Schau dir mal den Palast an! Ein FLACHDACH!")
+        do_message(npc, ch, "Statik ist kompliziert. Da kann man nicht einfach irgendeinen dranlassen!")
+        do_message(npc, ch, "Wer schonmal Kartenhäuser gebaut hat weiß dies. Wenn man sich in der dritten Etage auch nur leicht bei einer einzigen Karte verrechnet! Es könnte gravierende Schwierigkeiten die 63. Etage zu bauen!")
+        do_message(npc, ch, "Ich rege mich schon wieder zu sehr auf")
+        do_message(npc, ch, "*Beruhigungstabletten schluck*")
+        while true do
+            local v = do_choice(npc, ch, "Wirst du Felix nun helfen?", "Tschüß!")
+            if v == 1 then
+                do_message(npc, ch, "Ja. Natürlich! Ich mache mich gleich auf den Weg.")
+                invertika.set_quest_status(ch, "selphi_timlet_felix_quest", 2)
+                break
+            elseif v == 2 then
+                do_message(npc, ch, "Was? Du gehtst schon?")
+                invertika.set_quest_status(ch, "selphi_timlet_felix_quest", -1)
+                break
+            end
+        end
+    else
+	    do_message(npc, ch, invertika.get_random_element("Ich war früher mal ein Superschurke.",
+	        "Ich bin Statiker, aber damit habe ich nichts, aber auch wirklich garnichts zu tun.",
+	        "Eigentlich müsste dieses Haus in sich zusammenfallen. Oder das Universum. Blöderweise passiert nichts von beidem.",
+	        "Wir könnten auch einfach so tun, als ob da gar kein Haus steht."))
+    end
+	do_npc_close(npc, ch)
 end
