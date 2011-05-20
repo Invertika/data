@@ -76,5 +76,5 @@ function vektor_talk(npc, ch)
 	        "Eigentlich müsste dieses Haus in sich zusammenfallen. Oder das Universum. Blöderweise passiert nichts von beidem.",
 	        "Wir könnten auch einfach so tun, als ob da gar kein Haus steht."))
     end
-	do_npc_close(npc, ch)
+    do_npc_close(npc, ch)
 end
