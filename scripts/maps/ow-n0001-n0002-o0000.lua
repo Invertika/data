@@ -166,7 +166,7 @@ function cmur2_talk(npc, ch)
 	do_npc_close(npc, ch)
 end
 
-function kizu_talk(npc, ch
+function kizu_talk(npc, ch)
     do_message(npc, ch, invertika.get_random_element("Moin",
 	"Wird alles Überbewertet",
 	"Einstein sagte: 'Fantasie ist wichtiger als Wissen, denn Wissen ist begrenzt'. Dem kann ich nur zustimmen, denn sonst gäbe es diese Welt hier nicht.",
