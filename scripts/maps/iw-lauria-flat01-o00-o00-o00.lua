@@ -5,7 +5,7 @@
 -- anderer Dinge.                                                               --
 --                                                                              --
 ----------------------------------------------------------------------------------
---  Copyright 2010 The Invertika Development Team                               --
+--  Copyright 2008 The Invertika Development Team                               --
 --                                                                              --
 --  This file is part of Invertika.                                             --
 --                                                                              --
@@ -14,12 +14,10 @@
 --  Software Foundation; either version 2 of the License, or any later version. --
 ----------------------------------------------------------------------------------
 
-
 require "scripts/lua/npclib"
-
 
 dofile("data/scripts/libs/warp.lua")
 
 atinit(function()
- create_inter_map_warp_trigger(794, 744, 796, 846) --- Intermap warp
+    
 end)
