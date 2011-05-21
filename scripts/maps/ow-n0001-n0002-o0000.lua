@@ -33,6 +33,7 @@ atinit(function()
  create_npc("Dark Mage", 72, 84 * TILESIZE + 16, 122 * TILESIZE + 16, darkmage_talk, nil) --- DJh2o2
  create_npc("Ablu", 82, 90 * TILESIZE + 16, 122 * TILESIZE + 16, ablu_talk, nil) --- Ablu
  create_npc("cmur2", 59, 78 * TILESIZE + 16, 122 * TILESIZE + 16, cmur2_talk, nil) --- cmur2
+ create_npc("Kizu", 120, 77 * TILESIZE + 16, 120 * TILESIZE + 16, kizu_talk, nil) --- kizu
 end)
 
 function jurkan_talk(npc, ch)
@@ -163,4 +164,14 @@ function cmur2_talk(npc, ch)
 	do_message(npc, ch, invertika.get_random_element("*meepmeep*",
 	  "Nicht mal vernünftige Klamotten gibt's hier!"))
 	do_npc_close(npc, ch)
+end
+
+function kizu_talk(npc, ch
+    do_message(npc, ch, invertika.get_random_element("Moin",
+	"Wird alles Überbewertet",
+	"Einstein sagte: 'Fantasie ist wichtiger als Wissen, denn Wissen ist begrenzt'. Dem kann ich nur zustimmen, denn sonst gäbe es diese Welt hier nicht.",
+	"Ordnung ist das halbe Leben. Ich lebe aber nunmal auf der anderen Seite",
+	"Wsutsset du, dsas du dsas heir lseen knast? Das kmnmot dhear, dsas du ein Wrot als gnezas lesit und nhict jdeen Bcubehsatn eninilzet. Nur der etrse und der lzzete Bacushtbe msüesn simetmn.",
+	"Welcher Religion gehörst du an? Linux, Windows oder Mac?"))
+    do_npc_close(npc, ch)
 end
