@@ -19,14 +19,14 @@ require "scripts/libs/invertika"
 
 atinit(function()
  ---create_npc("Banker", 122, 180 * TILESIZE + 16, 160 * TILESIZE + 16, banker.banker_talk, nil) --- Banker (Debug)
- create_npc("Asam", 66, 76 * TILESIZE + 16, 27 * TILESIZE + 16, asam_talk, nil) -- Asam
+ create_npc("Mercol", 66, 76 * TILESIZE + 16, 27 * TILESIZE + 16, mercol_talk, nil) -- Mercol
  create_npc("Samos", 64, 59 * TILESIZE + 16, 25 * TILESIZE + 16, samos_talk, nil) -- Samos
 
 end)
 
-function asam_talk(npc, ch)
+function mercol_talk(npc, ch)
     do_message(npc, ch, invertika.get_random_element("Ich wohne hier.",
-      "Serlphie Timlet ist eine schöne Stadt.",
+      "Selphi Timlet ist eine schöne Stadt.",
       "Ich bin hier aufgewachsen.",
       "Es gab auch schon schwerere Zeiten."))
     do_npc_close(npc, ch)
