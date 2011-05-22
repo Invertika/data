@@ -1359,6 +1359,40 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
 
    	
+    <monster id="31" name="Baum" targetCursor="small">
+        <!-- BEGIN global drops -->
+        <drop item="40028" percent="0.01"/>
+        <!-- END global drops -->
+        <drop item="40040" percent="100" />
+        <sprite>monsters/spider.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <attributes
+            hp="2500"
+            size="4"
+            speed="2.0"
+            attack-min="0"
+            attack-delta="10"
+            attack-magic="0"
+            hit="100"
+            evade="5000"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+	    <vulnerability element="metal" factor="5.0"/>
+        <exp>0</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="0"
+            stroll-range="0"
+            attack-distance="0"
+            />
+    </monster>
     <!-- Invertika Testmonster ID's >= 10000-->
     <monster id="10000" name="Ipsum">
         <sprite>monsters/ufo.xml</sprite>
