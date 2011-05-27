@@ -27,7 +27,7 @@ function marle_talk(npc, ch)
     local get_qstatus = function() return invertika.get_quest_status(ch, quest_string) end
     local set_qstatus = function(x) invertika.set_quest_status(ch, quest_string, x) end
     if get_qstatus() == 0 then
-        local count = mana.chr_inv_count(ch, 40037)
+        local count = mana.chr_inv_count(ch, 40039)
         if count > 0 then
             do_message(npc, ch, "Porzellan! Ich sehe du hast Teller aus Porzellan.")
             do_message(npc, ch, "Diese Kanne hat unschätzbaren Wert!")
