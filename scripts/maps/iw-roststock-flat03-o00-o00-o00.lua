@@ -30,8 +30,8 @@ function marle_talk(npc, ch)
         local count = mana.chr_inv_count(ch, 40039)
         if count > 0 then
             do_message(npc, ch, "Porzellan! Ich sehe du hast Teller aus Porzellan.")
-            do_message(npc, ch, "Diese Kanne hat unschätzbaren Wert!")
-            do_message(npc, ch, "Gibst du mir diese Koststück?")
+            do_message(npc, ch, "Diese Teller haben unschätzbaren Wert!")
+            do_message(npc, ch, "Gibst du mir diese Koststücke?")
             while true do
                 local v = do_choice(npc, ch, "Ja.", "Nein.")
                 if v == 1 then
@@ -41,7 +41,7 @@ function marle_talk(npc, ch)
                     break
                 else
                     do_message(npc, ch, "Schade.")
-                    do_message(npc, ch, "Bedenke, dass niemand außer mir den Wert dieser Kanne erkennt.")
+                    do_message(npc, ch, "Bedenke, dass niemand außer mir den Wert dieser Teller erkennt.")
                     break
                 end
             end
