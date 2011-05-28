@@ -36,8 +36,9 @@ function marle_talk(npc, ch)
                 local v = do_choice(npc, ch, "Ja.", "Nein.")
                 if v == 1 then
                     invertika.add_items(ch, 40039, -count, "Teller aus Porzellan")
-                    invertika.add_items(ch, 40028, count, "antike Münze")
+                    invertika.add_items(ch, 40028, count / 2, "antike Münze")
                     do_message(npc, ch, "Vielen Dank! Nimm dies als Dank.")
+                    set_qstatus(1)
                     break
                 else
                     do_message(npc, ch, "Schade.")
