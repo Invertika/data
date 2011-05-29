@@ -56,6 +56,6 @@ end
 function maximilian_talk(npc, ch)
     do_message(npc, ch, "Ich frage mich schon lange, wie man untod wird. Die Untoten selber wollen oder können es nicht verraten und in meinen Zauberbüchern steht es nicht drin.")
     do_message(npc, ch, "Hmm...")
-    do_message(npc, ch, "Villeicht liegt es daran, dass ich die Bücher von einem eigenartigem Mann abgekauft habe, der hier mal vorbeikam. Bisher hat noch kein Zauber daraus geklappt. Aber ich habe auch noch nie einen Beweis gesehen, dass je ein Zauber auf Amoneus funktioniert hat. erzählen können sich die Leute viel.")
+    do_message(npc, ch, "Vielleicht liegt es daran, dass ich die Bücher von einem eigenartigem Mann abgekauft habe, der hier mal vorbeikam. Bisher hat noch kein Zauber daraus geklappt. Aber ich habe auch noch nie einen Beweis gesehen, dass je ein Zauber auf Amoneus funktioniert hat. Erzählen können sich die Leute viel.")
     do_npc_close(npc, ch)
 end
