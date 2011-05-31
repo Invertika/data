@@ -320,7 +320,7 @@ function felix_talk(npc, ch)
             local v = do_choice(npc, ch, "Ja.", "Nein.")
             if v == 1 then
                 do_message(npc, ch, "Ich habe einen alten Freund. Er ist Statiker in Alexia und berechnet Häuser. Sein Name ist Vektor.")
-                do_message(npc, ch, "Er ist zwer nicht der beste aber andere kann ich nicht bezahlen. Er soll das Haus meines Bruders berechnen.")
+                do_message(npc, ch, "Er ist zwar nicht der beste aber andere kann ich nicht bezahlen. Er soll das Haus meines Bruders berechnen.")
                 do_message(npc, ch, "Falls du mal nach Alexia kommst kannst du ihm mal Bescheid sagen.")
                 do_message(npc, ch, "Wobei ich die Statik total überbewertet finde.")
                 do_message(npc, ch, "Alles muss genau passen...")
