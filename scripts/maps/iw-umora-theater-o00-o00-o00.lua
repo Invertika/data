@@ -19,10 +19,22 @@ require "scripts/lua/npclib"
 
 
 atinit(function()
-     create_npc("Ingrid", 44, 38 * TILESIZE, 16 * TILESIZE + 16, ingrid_talk, nil) --- Veritas 
+     create_npc("Ingrid", 44, 38 * TILESIZE, 16 * TILESIZE + 16, ingrid_talk, nil) --- Ingrid 
+     create_npc("Anne", 68, 19 * TILESIZE, 6 * TILESIZE + 16, anne_talk, nil) --- Anne 
+     create_npc("Paul", 113, 24 * TILESIZE, 5 * TILESIZE + 16, paul_talk, nil) --- Paul 
 end)
 
 function ingrid_talk(npc, ch)
 	do_message(npc, ch, "Das Theater hat leider noch nicht geöffnet wir arbeiten noch an der Bühne.")
+	do_npc_close(npc, ch)
+end
+
+function anne_talk(npc, ch)
+	do_message(npc, ch, "Ja, hier können sie ihre Gadrobe abgeben wenn wir geöffnet haben.")
+	do_npc_close(npc, ch)
+end
+
+function paul_talk(npc, ch)
+	do_message(npc, ch, "Ihre Gardobe können sie erst bei Eröffnung abgeben.")
 	do_npc_close(npc, ch)
 end
