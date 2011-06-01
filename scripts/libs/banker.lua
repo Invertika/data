@@ -28,7 +28,11 @@ function bank_calc_interest(ch)
  local currentTime = os.time(t)
  local lastTime = get_quest_var(ch, "bank_last_visit")
  
+ mana.chatmessage(ch, "currentTime" ..tostring(currentTime))
+ mana.chatmessage(ch, "lastTime" ..tostring(lastTime))
+ 
  local acc_bal = bank_get_account_balance(ch)
+ mana.chatmessage(ch, "acc_bal" ..tostring(acc_bal))
  
  if acc_bal ~= 0 then
 	 if lastTime ~= "" then
@@ -37,7 +41,14 @@ function bank_calc_interest(ch)
 	   if timeDifference ~=  0 then	  
 	      local percents=(INTEREST_PER_YEAR/100)+1
 		  local yearLength=(timeDifference/365/24/60/60); -- Sekunden in Jahre umrechnen
+		  
+		  mana.chatmessage(ch, "percents" ..tostring(percents))
+		  mana.chatmessage(ch, "yearLength" ..tostring(yearLength))
+		  
 	      acc_bal = acc_bal * (percents^yearLength); -- Betrag mit Zinseszins berechnen
+		  
+		  mana.chatmessage(ch, "acc_bal" ..tostring(acc_bal))
+		  
 		  mana.chr_set_quest(ch, "bank_account_balance", acc_bal)		  
 	   end
 	 end
