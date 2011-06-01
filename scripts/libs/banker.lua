@@ -6,7 +6,6 @@ module("banker", package.seeall)
 require "scripts/lua/npclib"
 
 -- Konstanten
-INTEREST_PER_SECOND = 0.00004 -- Zinsen pro Sekunde
 INTEREST_PER_YEAR = 4 -- Zinsen pro Jahr (in Prozent)
 
 -- Die Funktion dient der Abfrage des Kontostandes. Dabei wird beachtet ob die entsprechende Variable existiert. Ist dies nicht der Fall so wird sie angelegt.
