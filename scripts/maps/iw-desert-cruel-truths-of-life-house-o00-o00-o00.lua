@@ -18,20 +18,20 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
-     create_npc("Veritas", 143, 41 * TILESIZE + 16, 20 * TILESIZE + 16, veritas_talk, nil) --- Nepuret 
+     create_npc("Veritas", 143, 41 * TILESIZE, 20 * TILESIZE + 16, veritas_talk, nil) --- Nepuret 
 end)
 
 function veritas_talk(npc, ch)
 	do_message(npc, ch, "Sei gegrüßt Reisender. Bist du gekommen um eine grausame Wahrheit des Lebens zu erfahren?")
 	
-        --while true do
+        while true do
             local v = do_choice(npc, ch, "Ja.", "Nein.")
             if v == 1 then
                 do_message(npc, ch, "Wie du wünscht. Doch eine solche Wahrheit ist nicht umsonst. Bist du bereit 15000 Aki dafür zu zahlen?")
-				--while true do
+				while true do
 				    local vMoney = do_choice(npc, ch, "Ja.", "Nein.")
 					
-					if v == 1 then
+					if vMoney == 1 then
 					    mana.chr_money(ch -15000)
 						
 					    do_message(npc, ch, "Ausgezeichnet. Ich hoffe du bist vorbereitet. Ich lese nun eine grausame Wahrheit des Lebens aus diesem Buch.")
@@ -54,19 +54,19 @@ function veritas_talk(npc, ch)
 						
 						mana.monster_create(31, 39 * TILESIZE, 29 * TILESIZE);
 						mana.monster_create(31, 42 * TILESIZE, 29 * TILESIZE);
-						--break;
-					elseif v == 2 then
+						break;
+					elseif vMoney == 2 then
 					    do_message(npc, ch, invertika.get_random_element("Gut dann gehe deinen Weg...", "Vielleicht ist es besser so...", "So sei es..."))
-					    --break;
+					    break;
 					end
-				--end
+				end
 				
-                --break
+                break
             elseif v == 2 then
 			    do_message(npc, ch, invertika.get_random_element("Gut dann gehe deinen Weg...", "Vielleicht ist es besser so...", "So sei es..."))
-                --break
+                break
             end
-        --end
+        end
 		
 	do_npc_close(npc, ch)
 end
