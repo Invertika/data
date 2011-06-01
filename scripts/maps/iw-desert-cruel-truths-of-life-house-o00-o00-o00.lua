@@ -34,10 +34,14 @@ function veritas_talk(npc, ch)
 					if vMoney == 1 then
 					    local PlayerMoney=mana.chr_money(ch)
 		                if PlayerMoney >= 15000 then
+						
+						    mana.chatmessage(ch, "invertika.set_money")
 					        invertika.set_money(ch -15000)
 						
+						    mana.chatmessage(ch, "do_message")
 					        do_message(npc, ch, "Ausgezeichnet. Ich hoffe du bist vorbereitet. Ich lese nun eine grausame Wahrheit des Lebens aus diesem Buch.")
 						
+						    mana.chatmessage(ch, "effect_create")
 						    mana.effect_create(5, 37 * TILESIZE, 19 * TILESIZE);
 						    mana.effect_create(5, 44 * TILESIZE, 19 * TILESIZE);
 						
