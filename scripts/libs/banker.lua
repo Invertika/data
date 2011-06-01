@@ -31,7 +31,7 @@ function bank_calc_interest(ch)
  mana.chatmessage(ch, "currentTime" ..tostring(currentTime))
  mana.chatmessage(ch, "lastTime" ..tostring(lastTime))
  
- local acc_bal = bank_get_account_balance(ch)
+ local acc_bal = get_quest_var(ch, "bank_account_balance")
  mana.chatmessage(ch, "acc_bal" ..tostring(acc_bal))
  
  if acc_bal ~= 0 then
