@@ -1357,12 +1357,49 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
             animation="attack"
             />
     </monster>
+	
+    <monster id="31" name="Seraphim Nex" targetCursor="small">
+        <drop item="10012" percent="25" />
+        <sprite>monsters/reaper.xml</sprite>
+        <sound event="hit">monsters/maggot/reaper-hurt.ogg</sound>
+        <sound event="hit">monsters/maggot/reaper-hurt.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <attributes
+            hp="15000"
+            size="4"
+            speed="2.0"
+            attack-min="15000"
+            attack-delta="5000"
+            attack-magic="0"
+            hit="100"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <exp>15000</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="true"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="32"
+            animation="attack"
+            />
+    </monster>
 
-    <!-- Unechte Monster IDs >= 9001 - 10000 -->
-    <monster id="9001" name="Baum" targetCursor="small">
-        <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
+    <!-- Pflanzen IDs >= 10001 - 20000 -->
+    <monster id="10001" name="Baum" targetCursor="small">
         <drop item="40040" percent="100" />
         <sprite>monsters/tree.xml</sprite>
         <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
@@ -1395,9 +1432,9 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
     
     <!-- Invertika Testmonster IDs 10001 - 20000-->
-    <monster id="10001" name="Ipsum">
+    <monster id="50001" name="Ipsum">
         <sprite>monsters/ufo.xml</sprite>
-	<exp>99999999</exp>
+        <exp>99999999</exp>
         <attributes
             hp="50"
             size="550"

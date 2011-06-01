@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="80" height="55" tilewidth="32" tileheight="32">
  <properties>
-  <property name="music" value="inside2.ogg"/>
+  <property name="music" value="darkness.ogg"/>
  </properties>
  <tileset firstgid="1" name="collision1_32_32" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/collision1_32_32.png" width="1024" height="1024"/>
@@ -36,7 +36,7 @@
  </layer>
  <layer name="Fringe" width="80" height="55">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3WWwrDIBAAQE8gpK9D9d37X6b+LIW0wQRKte0MLIKY1cgmbEoAAAAAAHyb45DSqcS5xGVofZp+bHNKu/w8hmu5q9uL+xrP1/Lw34ZSC6v8GGv2pbYOM77TueuW7t+j1mdvvT8AnzXu9aZ6QninqLOp+lOHLDGumxijr12X2OTpdbU88Xzkq+X5JfHuveT5Bf5/9ED/BwAAAAAA0MYdv0WM0cBEAAA=
+   H4sIAAAAAAAAC+3WWQrDIBQFUFcgpNOiOnf/m6k/j4JtSAKl2vYcEEGMGrkJLyUAAAAAAL7NcUjpVNq5tMvQ+jT92OaUdvm5D9dyV7cX91WPT63DfxtKFlb50U/Zl2wdZnync+ct3b9Hrc/een8APquu9cZqQninyNlY/uSQJercRB917bq0TZ6fr3pePB/rje33i+Lde1nnF/j/0QP1HwAAAAAAQBt3W7K41MBEAAA=
   </data>
  </layer>
  <layer name="Over" width="80" height="55">
@@ -49,10 +49,17 @@
    H4sIAAAAAAAAC+3SQQ6EIAwFUOL9Dz17MxBhqi3ja/IWJlLtp0dr7QAAAAAAoIS7K3u+7Fx7Offee5u7K3u+p/brnOXVfEdn/2k/Z2adyWr03uhOsvNY3bers/5Ss9/dQdTcUWez85Cf/HayMuN51t7zTI9v/7KDapWdxxP59Xrc0bu6apWdx0p+UXdQ4V+q7V/Uns5+bxcrdXX/InpXV62y83gyv97+RfR8kzfPDgAAAAAArPkA715b8sBEAAA=
   </data>
  </layer>
- <objectgroup name="Object" width="70" height="70" x="70" y="70">
+ <objectgroup name="Object" width="80" height="55">
   <object name="External Map Events" type="SCRIPT" x="0" y="0">
    <properties>
-    <property name="FILENAME" value="scripts/maps/iw-desert-cruel-truths-of-life-house.lua"/>
+    <property name="FILENAME" value="scripts/maps/iw-desert-cruel-truths-of-life-house-o00-o00-o00.lua"/>
+   </properties>
+  </object>
+  <object name="Warp to Desert" type="WARP" x="1277" y="1115" width="69" height="40">
+   <properties>
+    <property name="DEST_MAP" value="ow-n0001-n0004-o0000"/>
+    <property name="DEST_X" value="3712"/>
+    <property name="DEST_Y" value="2112"/>
    </properties>
   </object>
  </objectgroup>
