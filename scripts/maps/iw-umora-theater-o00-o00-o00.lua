@@ -21,7 +21,7 @@ require "scripts/lua/npclib"
 atinit(function()
      create_npc("Ingrid", 44, 38 * TILESIZE, 16 * TILESIZE + 16, ingrid_talk, nil) --- Ingrid 
      create_npc("Anne", 68, 19 * TILESIZE, 6 * TILESIZE + 16, anne_talk, nil) --- Anne 
-     create_npc("Paul", 113, 24 * TILESIZE, 5 * TILESIZE + 16, paul_talk, nil) --- Paul 
+     create_npc("Paul", 113, 24 * TILESIZE, 6 * TILESIZE + 16, paul_talk, nil) --- Paul 
 end)
 
 function ingrid_talk(npc, ch)

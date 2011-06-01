@@ -19,4 +19,10 @@ require "scripts/lua/npclib"
 
 
 atinit(function()
+     create_npc("Tom", 138, 25 * TILESIZE, 10 * TILESIZE + 16, tom_talk, nil) --- Tom 
 end)
+
+function tom_talk(npc, ch)
+	do_message(npc, ch, "Die Bar hat noch nicht geöffnet.")
+	do_npc_close(npc, ch)
+end
