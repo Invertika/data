@@ -42,32 +42,32 @@ function veritas_talk(npc, ch)
 					        do_message(npc, ch, "Ausgezeichnet. Ich hoffe du bist vorbereitet. Ich lese nun eine grausame Wahrheit des Lebens aus diesem Buch.")
 						
 						    mana.chatmessage(ch, "effect_create")
-						    mana.effect_create(5, 37 * TILESIZE, 19 * TILESIZE);
-						    mana.effect_create(5, 44 * TILESIZE, 19 * TILESIZE);
+						    mana.effect_create(5, 37 * TILESIZE, 19 * TILESIZE)
+						    mana.effect_create(5, 44 * TILESIZE, 19 * TILESIZE)
 						
 					        do_message(npc, ch, invertika.get_random_element("Es gibt keinen Gott!", "Genieße dein Leben, denn nach dem Tod ist es vorbei!", "Nach dem Tod kommt nur noch Dunkelheit!", "Alles ist vergänglich!",
 						                                                     "Jeder vergangene Moment könnte der letzte sein!", "Der Tod ist nur einen Fingerzeig entfernt!", "Moral ist nichts weiter als das klammern an ein universelles Prinzip!",
 									    									 "Nichts wird so sein wie es war!"))
 																		 
-						    mana.effect_create(6, 37 * TILESIZE, 19 * TILESIZE);
-						    mana.effect_create(6, 44 * TILESIZE, 19 * TILESIZE);
+						    mana.effect_create(6, 37 * TILESIZE, 19 * TILESIZE)
+						    mana.effect_create(6, 44 * TILESIZE, 19 * TILESIZE)
 						
-						    mana.monster_create(31, 36 * TILESIZE, 22 * TILESIZE);
-						    mana.monster_create(31, 45 * TILESIZE, 22 * TILESIZE);
+						    mana.monster_create(31, 36 * TILESIZE, 22 * TILESIZE)
+						    mana.monster_create(31, 45 * TILESIZE, 22 * TILESIZE)
 						
-						    mana.monster_create(31, 39 * TILESIZE, 18 * TILESIZE);
-						    mana.monster_create(31, 42 * TILESIZE, 18 * TILESIZE);
+						    mana.monster_create(31, 39 * TILESIZE, 18 * TILESIZE)
+						    mana.monster_create(31, 42 * TILESIZE, 18 * TILESIZE)
 						
-						    mana.monster_create(31, 39 * TILESIZE, 29 * TILESIZE);
-						    mana.monster_create(31, 42 * TILESIZE, 29 * TILESIZE);
+						    mana.monster_create(31, 39 * TILESIZE, 29 * TILESIZE)
+						    mana.monster_create(31, 42 * TILESIZE, 29 * TILESIZE)
 						else
 						    do_message(npc, ch, "Du solltest im Besitz der entsprechenden Geldmenge sein. So wirst du die Wahrheit nicht erfahren.")
 						end
 						
-						break;
+						break
 					elseif vMoney == 2 then
 					    do_message(npc, ch, invertika.get_random_element("Gut dann gehe deinen Weg...", "Vielleicht ist es besser so...", "So sei es..."))
-					    break;
+					    break
 					end
 				end
 				
