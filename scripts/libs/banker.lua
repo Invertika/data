@@ -28,11 +28,7 @@ function bank_calc_interest(ch)
  local currentTime = os.time(t)
  local lastTime = get_quest_var(ch, "bank_last_visit")
  
- --mana.chatmessage(ch, "currentTime" ..tostring(currentTime))
- --mana.chatmessage(ch, "lastTime" ..tostring(lastTime))
- 
  local acc_bal = get_quest_var(ch, "bank_account_balance")
- --mana.chatmessage(ch, "acc_bal" ..tostring(acc_bal))
  
  if acc_bal ~= 0 then
 	 if lastTime ~= "" then
@@ -40,16 +36,11 @@ function bank_calc_interest(ch)
 	    
 	   if timeDifference ~=  0 then	  
 	      local percents=(INTEREST_PER_YEAR/100)+1
-		  local yearLength=(timeDifference/365/24/60/60); -- Sekunden in Jahre umrechnen
-		  
-		  --mana.chatmessage(ch, "percents" ..tostring(percents))
-		  --mana.chatmessage(ch, "yearLength" ..tostring(yearLength))
+	      local yearLength=(timeDifference/365/24/60/60); -- Sekunden in Jahre umrechnen
 		  
 	      acc_bal = acc_bal * (percents^yearLength); -- Betrag mit Zinseszins berechnen
 		  
-		  --mana.chatmessage(ch, "acc_bal" ..tostring(acc_bal))
-		  
-		  mana.chr_set_quest(ch, "bank_account_balance", acc_bal)		  
+	      mana.chr_set_quest(ch, "bank_account_balance", acc_bal)		  
 	   end
 	 end
  end
@@ -61,15 +52,17 @@ end
 -- @param npc Zeiger auf den NPC
 -- @param ch Zeiger auf den Charakter
 function bank_get_account_balance_dlg(npc, ch)
-    local acc_bal_old = bank_get_account_balance(ch)
-	acc_bal_old=math.floor( acc_bal_old * 100) / 100  -- Runden auf zwei Nachkommastellen
-	
+        local acc_bal_old = bank_get_account_balance(ch)
+    
 	bank_calc_interest(ch)
 	
 	local acc_bal = bank_get_account_balance(ch)
+	local acc_diff=acc_bal-acc_bal_old;
+	
+	acc_diff=math.floor( acc_diff * 100) / 100  -- Runden auf zwei Nachkommastellen
 	acc_bal=math.floor( acc_bal * 100) / 100  -- Runden auf zwei Nachkommastellen
 	
-	do_message(npc, ch, "Dein Guthaben beläuft sich auf "..tostring(acc_bal).." Aki. Seit dem letzten Mal hast du "..tostring(acc_bal-acc_bal_old).." Aki an Zinsen erhalten.")
+	do_message(npc, ch, "Dein Guthaben beläuft sich auf "..tostring(acc_bal).." Aki. Seit dem letzten Mal hast du "..tostring(acc_diff).." Aki an Zinsen erhalten.")
 	do_npc_close(npc, ch)
 end
 
