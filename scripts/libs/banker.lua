@@ -7,6 +7,7 @@ require "scripts/lua/npclib"
 
 -- Konstanten
 INTEREST_PER_SECOND = 0.00004 -- Zinsen pro Sekunde
+INTEREST_PER_YEAR = 4 -- Zinsen pro Jahr (in Prozent)
 
 -- Die Funktion dient der Abfrage des Kontostandes. Dabei wird beachtet ob die entsprechende Variable existiert. Ist dies nicht der Fall so wird sie angelegt.
 -- @param ch Zeiger auf den Charakter
@@ -26,15 +27,18 @@ end
 function bank_calc_interest(ch)
  local currentTime = os.time(t)
  local lastTime = get_quest_var(ch, "bank_last_visit")
+ 
  local acc_bal = get_quest_var(ch, "bank_account_balance")
- local newMoney=0
+ 
  if acc_bal ~= 0 then
 	 if lastTime ~= "" then
 	   local timeDifference=currentTime-lastTime
-	   
+	    
 	   if timeDifference ~=  0 then	  
-		  newMoney = math.floor(INTEREST_PER_SECOND * timeDifference)
-		  mana.chr_set_quest(ch, "bank_account_balance", acc_bal+newMoney)		  
+	      local percents=(INTEREST_PER_YEAR/100)+1
+		  local yearLength=(timeDifference*3.16887646E10-8); -- Sekunden in Jahre umrechnen
+	      acc_bal = acc_bal * (z-percents^yearLength); -- Betrag mit Zinseszins berechnen
+		  mana.chr_set_quest(ch, "bank_account_balance", acc_bal)		  
 	   end
 	 end
  end

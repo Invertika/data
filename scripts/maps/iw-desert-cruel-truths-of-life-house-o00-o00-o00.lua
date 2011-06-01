@@ -36,7 +36,7 @@ function veritas_talk(npc, ch)
 		                if PlayerMoney >= 15000 then
 						
 						    mana.chatmessage(ch, "invertika.set_money")
-					        invertika.set_money(ch -15000)
+					        --invertika.set_money(ch -15000)
 						
 						    mana.chatmessage(ch, "do_message")
 					        do_message(npc, ch, "Ausgezeichnet. Ich hoffe du bist vorbereitet. Ich lese nun eine grausame Wahrheit des Lebens aus diesem Buch.")
