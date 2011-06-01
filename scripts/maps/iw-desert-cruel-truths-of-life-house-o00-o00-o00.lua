@@ -22,7 +22,7 @@ atinit(function()
 end)
 
 function veritas_talk(npc, ch)
-	do_message(npc, ch, "Sei gegrisender. Bist du gekommen um eine grausame Wahrheit des Lebens zu erfahren?")
+	do_message(npc, ch, "Sei gegrüßt Reisender. Bist du gekommen um eine grausame Wahrheit des Lebens zu erfahren?")
 	
         while true do
             local v = do_choice(npc, ch, "Ja.", "Nein.")
