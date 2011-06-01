@@ -18,17 +18,17 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
-     create_npc("Veritas", 143, 40 * TILESIZE + 16, 20 * TILESIZE + 16, veritas_talk, nil) --- Nepuret 
+     create_npc("Veritas", 143, 41 * TILESIZE + 16, 20 * TILESIZE + 16, veritas_talk, nil) --- Nepuret 
 end)
 
 function veritas_talk(npc, ch)
-	do_message(npc, ch, "Sei gegrüßt Reisender. Bist du gekommen um eine grausame Wahrheit des Lebens zu erfahren?")
+	do_message(npc, ch, "Sei gegrÃ¼ÃŸt Reisender. Bist du gekommen um eine grausame Wahrheit des Lebens zu erfahren?")
 	
-        while true do
+        --while true do
             local v = do_choice(npc, ch, "Ja.", "Nein.")
             if v == 1 then
-                do_message(npc, ch, "Wie du wünscht. Doch eine solche Wahrheit ist nicht umsonst. Bist du bereit 15000 Aki dafür zu zahlen?")
-				while true do
+                do_message(npc, ch, "Wie du wÃ¼nscht. Doch eine solche Wahrheit ist nicht umsonst. Bist du bereit 15000 Aki dafÃ¼r zu zahlen?")
+				--while true do
 				    local vMoney = do_choice(npc, ch, "Ja.", "Nein.")
 					
 					if v == 1 then
@@ -39,8 +39,8 @@ function veritas_talk(npc, ch)
 						mana.effect_create(5, 37 * TILESIZE, 19 * TILESIZE);
 						mana.effect_create(5, 44 * TILESIZE, 19 * TILESIZE);
 						
-					    do_message(npc, ch, invertika.get_random_element("Es gibt keinen Gott!", "Genieße dein Leben, denn nach dem Tod ist es vorbeit!", "Nach dem Tod kommt nur noch Dunkelheit!", "Alles ist vergänglich!",
-						                                                 "Jeder vergangene Moment könnte der letzte sein!", "Der Tod ist nur einen Fingerzeig entfernt!", "Moral ist nichts weiter als das klammern an ein universelles Prinzip!",
+					    do_message(npc, ch, invertika.get_random_element("Es gibt keinen Gott!", "GenieÃŸe dein Leben, denn nach dem Tod ist es vorbeit!", "Nach dem Tod kommt nur noch Dunkelheit!", "Alles ist vergÃ¤nglich!",
+						                                                 "Jeder vergangene Moment kÃ¶nnte der letzte sein!", "Der Tod ist nur einen Fingerzeig entfernt!", "Moral ist nichts weiter als das klammern an ein universelles Prinzip!",
 																		 "Nichts wird so sein wie es war!"))
 																		 
 						mana.effect_create(6, 37 * TILESIZE, 19 * TILESIZE);
@@ -54,18 +54,19 @@ function veritas_talk(npc, ch)
 						
 						mana.monster_create(31, 39 * TILESIZE, 29 * TILESIZE);
 						mana.monster_create(31, 42 * TILESIZE, 29 * TILESIZE);
-						break;
+						--break;
 					elseif v == 2 then
 					    do_message(npc, ch, invertika.get_random_element("Gut dann gehe deinen Weg...", "Vielleicht ist es besser so...", "So sei es..."))
-					    break;
+					    --break;
 					end
-				end
-                break
+				--end
+				
+                --break
             elseif v == 2 then
 			    do_message(npc, ch, invertika.get_random_element("Gut dann gehe deinen Weg...", "Vielleicht ist es besser so...", "So sei es..."))
-                break
+                --break
             end
-        end
+        --end
 		
 	do_npc_close(npc, ch)
 end
