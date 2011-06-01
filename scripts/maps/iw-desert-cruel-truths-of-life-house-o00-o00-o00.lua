@@ -22,32 +22,31 @@ atinit(function()
 end)
 
 function veritas_talk(npc, ch)
-	do_message(npc, ch, "Sei gegrüßt Reisender. Bist du gekommen um eine grausame Wahrheit des Lebens zu erfahren?")
+	do_message(npc, ch, "Sei gegrisender. Bist du gekommen um eine grausame Wahrheit des Lebens zu erfahren?")
 	
         while true do
             local v = do_choice(npc, ch, "Ja.", "Nein.")
             if v == 1 then
-                do_message(npc, ch, "Wie du wünscht. Doch eine solche Wahrheit ist nicht umsonst. Bist du bereit 15000 Aki dafür zu zahlen?")
+                do_message(npc, ch, "Wie du w. Doch eine solche Wahrheit ist nicht umsonst. Bist du bereit 15000 Aki dafzahlen?")
 				while true do
 				    local vMoney = do_choice(npc, ch, "Ja.", "Nein.")
 					
 					if vMoney == 1 then
 					    local PlayerMoney=mana.chr_money(ch)
 		                if PlayerMoney >= 15000 then
+					        invertika.set_money(ch, -15000)
 						
-						    mana.chatmessage(ch, "invertika.set_money")
-					        --invertika.set_money(ch -15000)
-						
-						    mana.chatmessage(ch, "do_message")
 					        do_message(npc, ch, "Ausgezeichnet. Ich hoffe du bist vorbereitet. Ich lese nun eine grausame Wahrheit des Lebens aus diesem Buch.")
 						
 						    mana.chatmessage(ch, "effect_create")
 						    mana.effect_create(5, 37 * TILESIZE, 19 * TILESIZE)
 						    mana.effect_create(5, 44 * TILESIZE, 19 * TILESIZE)
 						
-					        do_message(npc, ch, invertika.get_random_element("Es gibt keinen Gott!", "Genieße dein Leben, denn nach dem Tod ist es vorbei!", "Nach dem Tod kommt nur noch Dunkelheit!", "Alles ist vergänglich!",
-						                                                     "Jeder vergangene Moment könnte der letzte sein!", "Der Tod ist nur einen Fingerzeig entfernt!", "Moral ist nichts weiter als das klammern an ein universelles Prinzip!",
+					        do_message(npc, ch, invertika.get_random_element("Es gibt keinen Gott!", "Genie dein Leben, denn nach dem Tod ist es vorbei!", "Nach dem Tod kommt nur noch Dunkelheit!", "Alles ist verglich!",
+						                                                     "Jeder vergangene Moment ke der letzte sein!", "Der Tod ist nur einen Fingerzeig entfernt!", "Moral ist nichts weiter als das klammern an ein universelles Prinzip!",
 									    									 "Nichts wird so sein wie es war!"))
+																			 
+							do_message(npc, ch, "Ich hoffe diese Wahrheit konnte dich inspirieren.")
 																		 
 						    mana.effect_create(6, 37 * TILESIZE, 19 * TILESIZE)
 						    mana.effect_create(6, 44 * TILESIZE, 19 * TILESIZE)
