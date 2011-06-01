@@ -51,11 +51,11 @@ end
 function vektor_talk(npc, ch)
     if invertika.get_quest_status(ch, "selphi_timlet_felix_quest") == 1 then
         do_message(npc, ch, "Ein Felix aus Selphi Timlet fragt ob ich für ihn Statiken berechnen kann?")
-        do_message(npc, ch, "Den kenne den nicht...")
+        do_message(npc, ch, "Den kenne ich nicht...")
         do_message(npc, ch, "Aber Selphi Timlet hat keine vernünftigen Statiker!")
         do_message(npc, ch, "Schau dir mal den Palast an! Ein FLACHDACH!")
         do_message(npc, ch, "Statik ist kompliziert. Da kann man nicht einfach irgendeinen dranlassen!")
-        do_message(npc, ch, "Wer schonmal Kartenhäuser gebaut hat weiß dies. Wenn man sich in der dritten Etage auch nur leicht bei einer einzigen Karte verrechnet! Es könnte gravierende Schwierigkeiten die 63. Etage zu bauen!")
+        do_message(npc, ch, "Wer schonmal Kartenhäuser gebaut hat weiß dies. Wenn man sich in der dritten Etage auch nur leicht bei einer einzigen Karte verrechnet! Es könnte gravierende Schwierigkeiten bedeuten die 63. Etage zu bauen!")
         do_message(npc, ch, "Ich rege mich schon wieder zu sehr auf")
         do_message(npc, ch, "*Beruhigungstabletten schluck*")
         while true do
