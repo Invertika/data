@@ -28,7 +28,7 @@ function bank_calc_interest(ch)
  local currentTime = os.time(t)
  local lastTime = get_quest_var(ch, "bank_last_visit")
  
- local acc_bal = get_quest_var(ch, "bank_account_balance")
+ local acc_bal = bank_get_account_balance(ch)
  
  if acc_bal ~= 0 then
 	 if lastTime ~= "" then
@@ -37,23 +37,23 @@ function bank_calc_interest(ch)
 	   if timeDifference ~=  0 then	  
 	      local percents=(INTEREST_PER_YEAR/100)+1
 		  local yearLength=(timeDifference*3.16887646E10-8); -- Sekunden in Jahre umrechnen
-	      acc_bal = acc_bal * (z-percents^yearLength); -- Betrag mit Zinseszins berechnen
+	      acc_bal = acc_bal * (percents^yearLength); -- Betrag mit Zinseszins berechnen
 		  mana.chr_set_quest(ch, "bank_account_balance", acc_bal)		  
 	   end
 	 end
  end
  
  mana.chr_set_quest(ch, "bank_last_visit",  currentTime)
- return newMoney
 end
 
 -- Diese Funktion liefert einen Dialog mit dem momentanen Guthaben zurück.
 -- @param npc Zeiger auf den NPC
 -- @param ch Zeiger auf den Charakter
 function bank_get_account_balance_dlg(npc, ch)
-	local newMoney = bank_calc_interest(ch)
+    local acc_bal_old = bank_get_account_balance(ch)
+	bank_calc_interest(ch)
 	local acc_bal = bank_get_account_balance(ch)
-	do_message(npc, ch, "Dein Guthaben beläuft sich auf "..tostring(acc_bal).." Aki. Seit dem letzten Mal hast du "..tostring(newMoney).." Aki an Zinsen erhalten.")
+	do_message(npc, ch, "Dein Guthaben beläuft sich auf "..tostring(acc_bal).." Aki. Seit dem letzten Mal hast du "..tostring(acc_bal-acc_bal_old).." Aki an Zinsen erhalten.")
 	do_npc_close(npc, ch)
 end
 
