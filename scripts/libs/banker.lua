@@ -36,7 +36,7 @@ function bank_calc_interest(ch)
 	    
 	   if timeDifference ~=  0 then	  
 	      local percents=(INTEREST_PER_YEAR/100)+1
-		  local yearLength=(timeDifference*3.16887646E10-8); -- Sekunden in Jahre umrechnen
+		  local yearLength=(timeDifference*0.0000000316887646); -- Sekunden in Jahre umrechnen
 	      acc_bal = acc_bal * (percents^yearLength); -- Betrag mit Zinseszins berechnen
 		  mana.chr_set_quest(ch, "bank_account_balance", acc_bal)		  
 	   end
