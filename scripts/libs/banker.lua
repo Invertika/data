@@ -57,7 +57,7 @@ function bank_get_account_balance_dlg(npc, ch)
 	bank_calc_interest(ch)
 	
 	local acc_bal = bank_get_account_balance(ch)
-	local acc_diff=acc_bal-acc_bal_old;
+	local acc_diff=acc_bal-acc_bal_old
 	
 	acc_diff=math.floor( acc_diff * 100) / 100  -- Runden auf zwei Nachkommastellen
 	acc_bal=math.floor( acc_bal * 100) / 100  -- Runden auf zwei Nachkommastellen
