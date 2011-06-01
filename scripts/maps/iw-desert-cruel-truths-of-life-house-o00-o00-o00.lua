@@ -18,7 +18,7 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
-     create_npc("Veritas", 143, 41 * TILESIZE, 20 * TILESIZE + 16, veritas_talk, nil) --- Nepuret 
+     create_npc("Veritas", 143, 41 * TILESIZE, 20 * TILESIZE + 16, veritas_talk, nil) --- Veritas 
 end)
 
 function veritas_talk(npc, ch)

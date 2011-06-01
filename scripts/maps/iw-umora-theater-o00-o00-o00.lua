@@ -19,4 +19,10 @@ require "scripts/lua/npclib"
 
 
 atinit(function()
+     create_npc("Ingrid", 44, 38 * TILESIZE, 16 * TILESIZE + 16, ingrid_talk, nil) --- Veritas 
 end)
+
+function ingrid_talk(npc, ch)
+	do_message(npc, ch, "Das Theater hat leider noch nicht geöffnet wir arbeiten noch an der Bühne.")
+	do_npc_close(npc, ch)
+end
