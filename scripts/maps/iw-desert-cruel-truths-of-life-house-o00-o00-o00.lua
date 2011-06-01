@@ -38,7 +38,6 @@ function veritas_talk(npc, ch)
 						
 					        do_message(npc, ch, "Ausgezeichnet. Ich hoffe du bist vorbereitet. Ich lese nun eine grausame Wahrheit des Lebens aus diesem Buch.")
 						
-						    mana.chatmessage(ch, "effect_create")
 						    mana.effect_create(5, 37 * TILESIZE, 19 * TILESIZE)
 						    mana.effect_create(5, 44 * TILESIZE, 19 * TILESIZE)
 						
