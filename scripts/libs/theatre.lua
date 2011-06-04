@@ -33,10 +33,10 @@ function Theatre:Init(x, y, width, height)
     --Scheudler aktivieren
     schedule_every(2, function()
     self.NextStep()
-    
-    --Testnpc
-    Theatre.Monologa=create_npc("Monologa", 44, 41 * TILESIZE + 16, 17 * TILESIZE + 16, Theatre.monologa_talk, nil) --- Monologa
   end)
+  
+      --Testnpc
+    Theatre.Monologa=create_npc("Monologa", 44, 41 * TILESIZE + 16, 17 * TILESIZE + 16, Theatre.monologa_talk, nil) --- Monologa
 end
 
 function Theatre.monologa_talk(npc, ch)
