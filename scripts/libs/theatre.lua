@@ -44,7 +44,7 @@ function Theatre:Init(x, y, width, height)
     Theatre.Monologa=create_npc("Monologa", 44, 41 * TILESIZE + 16, 17 * TILESIZE + 16, Theatre.monologa_talk, nil) --- Monologa
 end
 
-function Theatre.monologa_talk(npc, ch)
+function Theatre:monologa_talk(npc, ch)
   mana.chatmessage(ch, "Theatre.monologa_talk")
 end
 
