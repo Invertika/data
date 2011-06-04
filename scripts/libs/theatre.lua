@@ -24,7 +24,7 @@ Theatre.Monologa=0
 --Stücke
 dofile("data/scripts/libs/theatre/osterspaziergang.lua")
 
-plotOsterspaziergangInst = theatre.Theatre:new()
+plotOsterspaziergangInst = plotOsterspaziergang:new()
 
 -- Konstuktor
 function Theatre:new()
