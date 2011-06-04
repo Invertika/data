@@ -32,7 +32,7 @@ end
 function Theatre:Init(x, y, width, height)
     --Scheudler aktivieren
     schedule_every(2, function()
-    self.NextStep()
+    Theatre.NextStep()
   end)
   
       --Testnpc
