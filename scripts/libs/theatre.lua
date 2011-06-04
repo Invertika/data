@@ -34,7 +34,7 @@ end
 
 function Theatre:Init()
     
-    -Scheudler aktivieren
+    --Scheudler aktivieren
     schedule_every(2, function()
     self.NextStep()
   end)
