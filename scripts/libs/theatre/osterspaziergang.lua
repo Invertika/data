@@ -21,7 +21,7 @@ end
 
 function plotOsterspaziergang:nextPlotStep()
   if self.step == 0 then
-    --self.Julia=create_npc("Julia", 45, 46 * TILESIZE + 16, 17 * TILESIZE + 16, self.npc_talk, nil) --- Julia
+    self.Julia=create_npc("Julia", 45, 46 * TILESIZE + 16, 17 * TILESIZE + 16, self.npc_talk, nil) --- Julia
     --mana.being_say(self.Julia, "Vom Eise befreit sind Strom und Bäche")
   elseif self.step == 1 then
     --mana.being_say(self.Julia, "Durch des Frühlings holden, belebenden Blick,")
