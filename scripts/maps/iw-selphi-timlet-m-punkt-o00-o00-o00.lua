@@ -32,7 +32,7 @@ function manitu_talk(npc, ch)
 									 "Nichts, danke.")
 									 
 		if v == 1 then
-			mana.npc_trade(npc, ch, false, { {40002, 10, 50} })
+			mana.npc_trade(npc, ch, false, { {40002, 10, 50}, {40041, 10, 100} })
 		elseif v == 2 then
 			do_message(npc, ch, "Nein warum sollte ich mir merken was ihr macht? Ich fuehre keine Protokolle. Schliesslich haben wir doch alle etwas zu verbergen :)")
 		elseif v == 3 then	
