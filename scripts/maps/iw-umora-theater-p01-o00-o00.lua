@@ -16,7 +16,9 @@
 
 
 require "scripts/lua/npclib"
+require "scripts/libs/theatre"
 
 
 atinit(function()
+    InstTheatre = Theatre.Theatre:new()
 end)
