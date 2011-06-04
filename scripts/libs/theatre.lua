@@ -21,6 +21,11 @@ require "scripts/lua/npclib"
 Theatre = {}
 Theatre.Monologa=0
 
+--Stücke
+dofile("data/scripts/libs/theatre/osterspaziergang.lua")
+
+plotOsterspaziergangInst = theatre.Theatre:new()
+
 -- Konstuktor
 function Theatre:new()
 	local res = {}
@@ -44,6 +49,9 @@ function Theatre.monologa_talk(npc, ch)
 end
 
 function Theatre:NextStep()
+    --Schaue in Spielplan (welches Stück wird zu Zeit gespielt
+  
+    --Führe nextPlotStep aus
     mana.being_say(Theatre.Monologa, "Lorem Ipsum sit dolor amet...")
 end
 
