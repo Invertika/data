@@ -20,5 +20,5 @@ require "scripts/libs/theatre"
 
 
 atinit(function()
-    InstTheatre = Theatre.Theatre:new()
+    InstTheatre = theatre.Theatre:new()
 end)
