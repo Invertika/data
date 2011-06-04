@@ -19,7 +19,7 @@ module("theatre", package.seeall)
 require "scripts/lua/npclib"
 
 Theatre = {}
-Theatre.Monologa
+Theatre.Monologa=0
 
 -- Konstuktor
 function Theatre:new()
