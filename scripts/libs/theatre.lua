@@ -21,6 +21,11 @@ require "scripts/lua/npclib"
 Theatre = {}
 Theatre.Monologa=0
 
+-- talk
+Theatre.monologa_talk = function()
+  mana.chatmessage(ch, "Theatre.monologa_talk")
+end
+
 --Stücke
 dofile("data/scripts/libs/theatre/osterspaziergang.lua")
 
@@ -44,16 +49,12 @@ function Theatre:Init(x, y, width, height)
     self.Monologa=create_npc("Monologa", 44, 41 * TILESIZE + 16, 17 * TILESIZE + 16, self.monologa_talk, nil) --- Monologa
 end
 
-function Theatre:monologa_talk(npc, ch)
-  mana.chatmessage(ch, "Theatre.monologa_talk")
-end
-
 function Theatre:NextStep()
     --Schaue in Spielplan (welches Stück wird zu Zeit gespielt
   
     plotOsterspaziergangInst:nextPlotStep()
   
     --Führe nextPlotStep aus
-    mana.being_say(Theatre.Monologa, "Lorem Ipsum sit dolor amet...")
+    mana.being_say(self.Monologa, "Lorem Ipsum sit dolor amet...")
 end
 
