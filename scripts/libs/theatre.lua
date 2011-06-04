@@ -32,7 +32,7 @@ dofile("data/scripts/libs/theatre/osterspaziergang.lua")
 plotOsterspaziergangInst = plotOsterspaziergang:new()
 
 -- Konstuktor
-function Theatre:new(x, y, widht, height)
+function Theatre:new(x, y, width, height)
 	local res = {}
 	setmetatable(res, self)
 	self.__index = self
