@@ -19,6 +19,7 @@ module("theatre", package.seeall)
 require "scripts/lua/npclib"
 
 Theatre = {}
+Theatre.Monologa
 
 -- Konstuktor
 function Theatre:new()
@@ -28,14 +29,21 @@ function Theatre:new()
 	return res
 end
 
-function Theatre:NextStep()
-    mana.chatmessage(character, "NextStep")
-end
-
-function Theatre:Init()
-    
+function Theatre:Init(x, y, width, height)
     --Scheudler aktivieren
     schedule_every(2, function()
     self.NextStep()
+    
+    --Testnpc
+    Theatre.Monologa=create_npc("Monologa", 44, 41 * TILESIZE + 16, 17 * TILESIZE + 16, Theatre.monologa_talk, nil) --- Monologa
   end)
 end
+
+function Theatre.monologa_talk(npc, ch)
+  mana.chatmessage(ch, "Theatre.monologa_talk")
+end
+
+function Theatre:NextStep()
+    mana.being_say(Theatre.Monologa, "Lorem Ipsum sit dolor amet...")
+end
+
