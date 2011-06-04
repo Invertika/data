@@ -21,5 +21,5 @@ require "scripts/libs/theatre"
 
 atinit(function()
     InstTheatre = plotOsterspaziergang:new()
-    InstTheatre.Init(21, 4, 37, 13)
+    InstTheatre:Init(21, 4, 37, 13)
 end)
