@@ -27,7 +27,7 @@ Theatre.monologa_talk = function()
 end
 
 --Stücke
-dofile("data/scripts/libs/theatre/osterspaziergang.lua")
+require("scripts/libs/theatre/osterspaziergang")
 
 plotOsterspaziergangInst = plotOsterspaziergang:new()
 
