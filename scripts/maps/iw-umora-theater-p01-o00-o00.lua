@@ -20,6 +20,5 @@ require "scripts/libs/theatre"
 
 
 atinit(function()
-    InstTheatre = theatre.Theatre:new()
-    InstTheatre.Init(21, 4, 37, 13)
+    InstTheatre = theatre.Theatre:new(21, 4, 37, 13)
 end)

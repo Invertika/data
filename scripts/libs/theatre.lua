@@ -32,22 +32,20 @@ dofile("data/scripts/libs/theatre/osterspaziergang.lua")
 plotOsterspaziergangInst = plotOsterspaziergang:new()
 
 -- Konstuktor
-function Theatre:new()
+function Theatre:new(x, y, widht, height)
 	local res = {}
 	setmetatable(res, self)
 	self.__index = self
+
+    --Scheudler aktivieren
+    schedule_every(2, function()
+      Theatre:NextStep()
+    end)
+    self.Monologa = create_npc("Monologa", 44, 41 * TILESIZE + 16, 17 * TILESIZE + 16,
+      self.monologa_talk, nil) --- Monologa
 	return res
 end
 
-function Theatre:Init(x, y, width, height)
-    --Scheudler aktivieren
-    schedule_every(2, function()
-    Theatre:NextStep()
-  end)
-  
-      --Testnpc
-    self.Monologa=create_npc("Monologa", 44, 41 * TILESIZE + 16, 17 * TILESIZE + 16, self.monologa_talk, nil) --- Monologa
-end
 
 function Theatre:NextStep()
     --Schaue in Spielplan (welches Stück wird zu Zeit gespielt
