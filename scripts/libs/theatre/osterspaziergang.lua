@@ -1,7 +1,7 @@
 plotOsterspaziergang = {}
 
 --Variablen
-plotOsterspaziergang.step=5
+plotOsterspaziergang.step=0
 
 --NPCs
 plotOsterspaziergang.Julia=0
