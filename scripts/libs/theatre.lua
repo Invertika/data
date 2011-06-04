@@ -37,11 +37,11 @@ end
 function Theatre:Init(x, y, width, height)
     --Scheudler aktivieren
     schedule_every(2, function()
-    Theatre.NextStep()
+    Theatre:NextStep()
   end)
   
       --Testnpc
-    Theatre.Monologa=create_npc("Monologa", 44, 41 * TILESIZE + 16, 17 * TILESIZE + 16, Theatre.monologa_talk, nil) --- Monologa
+    self.Monologa=create_npc("Monologa", 44, 41 * TILESIZE + 16, 17 * TILESIZE + 16, self.monologa_talk, nil) --- Monologa
 end
 
 function Theatre:monologa_talk(npc, ch)
@@ -51,7 +51,7 @@ end
 function Theatre:NextStep()
     --Schaue in Spielplan (welches Stück wird zu Zeit gespielt
   
-    --plotOsterspaziergangInst.nextPlotStep()
+    plotOsterspaziergangInst:nextPlotStep()
   
     --Führe nextPlotStep aus
     mana.being_say(Theatre.Monologa, "Lorem Ipsum sit dolor amet...")
