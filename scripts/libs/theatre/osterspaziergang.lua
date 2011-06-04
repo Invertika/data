@@ -1,6 +1,7 @@
 plotOsterspaziergang = {}
 
-plotOsterspaziergang:step=0
+--Variablen
+plotOsterspaziergang.step=0
 
 --NPCs
 plotOsterspaziergang.Julia=0
@@ -10,7 +11,6 @@ function plotOsterspaziergang:new()
 	local res = {}
 	setmetatable(res, self)
 	self.__index = self
-	
 	return res
 end
 
