@@ -51,6 +51,8 @@ end
 function Theatre:NextStep()
     --Schaue in Spielplan (welches Stück wird zu Zeit gespielt
   
+    plotOsterspaziergangInst.nextPlotStep()
+  
     --Führe nextPlotStep aus
     mana.being_say(Theatre.Monologa, "Lorem Ipsum sit dolor amet...")
 end
