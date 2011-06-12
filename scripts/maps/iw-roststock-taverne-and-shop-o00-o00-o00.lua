@@ -38,7 +38,7 @@ function rodhonu_talk(npc, ch)
     if mana.chr_inv_count(ch, 20021) > 0 then
         do_message(npc, ch, "Kann ich etwas für dich tun?")
         while true do
-            local v = do_choice(npc, ch, "Ich habe hier ein zerbrochenes Kettenhemd. Kannst du das reparien?", "Nein. Danke.")
+            local v = do_choice(npc, ch, "Ich habe hier ein zerbrochenes Kettenhemd. Kannst du das reparieren?", "Nein. Danke.")
             if v == 1 then
                 do_message(npc, ch, "Hm... Lass mal sehen.")
                 do_message(npc, ch, "Das sieht komplizierter aus als es ist.")
