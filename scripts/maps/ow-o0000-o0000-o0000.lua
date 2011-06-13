@@ -752,7 +752,7 @@ function valeria_talk(npc, ch)
 	  "Du siehst wieder frisch aus."))
 			break
 		elseif v == 3 then
-			do_message(npc, ch, invertika.get_random_element("Wie du wünscht.",
+			do_message(npc, ch, invertika.get_random_element("Wie du wünschst.",
 	  "Entschuldigung, ich wollte mich dir nicht aufdrängen."))
 			break
 		end
