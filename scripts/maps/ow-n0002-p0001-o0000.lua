@@ -37,7 +37,7 @@ end)
 
 
 function gabriel_talk(npc, ch)
-    do_message(npc, ch, "Ich bin Totengräber und habe schon lange keine neuen Aufträge mehr bekommen. Warum mussten auch die Untoten über die Stadt kommen. Mir tun sie komischerweise nichts. Villeicht, weil ich Ihre Gräber schon seit langem Pflege. Manchmal habe ich das gefühl, sie wollen mit mir sprechen, aber wenn ich zu ihnen geheund versuche ihnen zuzuhören, stammeln sie nur unverständliches Gemurmel.")
+    do_message(npc, ch, "Ich bin Totengräber und habe schon lange keine neuen Aufträge mehr bekommen. Warum mussten auch die Untoten über die Stadt kommen. Mir tun sie komischerweise nichts. Vielleicht, weil ich Ihre Gräber schon seit langem pflege. Manchmal habe ich das Gefühl, sie wollen mit mir sprechen, aber wenn ich zu ihnen gehe und versuche ihnen zuzuhören, stammeln sie nur unverständliches Gemurmel.")
     do_npc_close(npc, ch)
 end
 
