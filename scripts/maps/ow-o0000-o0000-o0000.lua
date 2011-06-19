@@ -730,6 +730,10 @@ function bernie_talk(npc, ch)
 end
 
 function valeria_talk(npc, ch)
+	
+	invertika.init_quest_status(ch, "selphi_timlet_valeria_letzteHeilung")
+	local letzteHeilung = invertika.get_quest_status(ch, "selphi_timlet_valeria_letzteHeilung")
+
 	do_message(npc, ch, "Soll ich dich heilen?")
 
 	while true do 
@@ -747,10 +751,16 @@ function valeria_talk(npc, ch)
 	  "Du hast keine 1000 Aki."))
 		    end
 		elseif v == 2 then
-			mana.being_heal(ch, 1000)
-			do_message(npc, ch, invertika.get_random_element("Ich habe dir 1000 HP geschenkt.",
-	  "Du siehst wieder frisch aus."))
-			break
+			if letzteHeilung + (60 * 60 * 2) > os.time(t) then 
+				do_message(npc, ch, "Nein. Ich heile dich nicht alle paar Minuten. komm doch später villeicht nochmal vorbei")
+			else
+				mana.being_heal(ch, 1000)
+				do_message(npc, ch, invertika.get_random_element("Ich habe dir 1000 HP geschenkt.",
+		  "Du siehst wieder frisch aus."))
+				i = os.time(t)
+				invertika.set_quest_status(ch, "selphi_timlet_valeria_letzteHeilung", i)
+				break
+			end
 		elseif v == 3 then
 			do_message(npc, ch, invertika.get_random_element("Wie du wünschst.",
 	  "Entschuldigung, ich wollte mich dir nicht aufdrängen."))
