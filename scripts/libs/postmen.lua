@@ -6,8 +6,9 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 postman = {}
+GIFTS = {{id=40005, name="Madenschleim"}, {id=40004, name="Skorpionstachel"}, {id=40006, name="Casino Münzen"}}
 
-function create_postemen_npc(id, name, sprite, x, y, possible_designations, itemid)
+function create_posteman_npc(id, name, sprite, x, y, possible_designations, itemid)
     new_postman = create_npc("Postmann", sprite, x, y, postman_talk, nil)
     postman[new_postman] = {id=id, name=name, designations=possible_designations, item=itemid}
 end
