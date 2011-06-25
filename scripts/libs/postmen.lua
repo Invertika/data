@@ -67,7 +67,6 @@ function get_name_by_id(id)
             return v.name
         end
     end
-    error("postmen-lib: get_name_by_id called with not used id")
 end
 
 
