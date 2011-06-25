@@ -18,6 +18,7 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 require "scripts/libs/scorpionrace"
 require "scripts/libs/poker"
+require "scripts/libs/postmen"
 ---require "scripts/libs/trap"
 
 dofile("data/scripts/libs/warp.lua")
@@ -50,6 +51,10 @@ atinit(function()
   skorpion_rennen_npc = create_npc("Skorpion Rennen", 27, 142 * TILESIZE + 16, 72 * TILESIZE +16, scorpionrace.race_manager_talk, nil)
   poker_dealer_npc = create_npc("Dealer", 27, 82 * TILESIZE + 16, 142 * TILESIZE + 16, poker_dealer_talk, nil)
 
+  postmen.create_postman_npc("sandbox1", "A1", 27, 75 * TILESIZE + 16, 150 * TILESIZE + 16, {{id="sandbox2", distance=1}, {id="sandbox3", distance=1}, {id="sandbox4", distance=1}}, 40001)
+  postmen.create_postman_npc("sandbox2", "A2", 27, 76 * TILESIZE + 16, 150 * TILESIZE + 16, {{id="sandbox1", distance=1}, {id="sandbox3", distance=1}, {id="sandbox4", distance=1}}, 40002)
+  postmen.create_postman_npc("sandbox3", "A3", 27, 75 * TILESIZE + 16, 151 * TILESIZE + 16, {{id="sandbox1", distance=1}, {id="sandbox2", distance=1}, {id="sandbox4", distance=1}}, 40003)
+  postmen.create_postman_npc("sandbox4", "A4", 27, 76 * TILESIZE + 16, 151 * TILESIZE + 16, {{id="sandbox1", distance=1}, {id="sandbox2", distance=1}, {id="sandbox3", distance=1}}, 40007)
 
 game = poker.PokerGame:new(200)
 game:registerEventNextPlayer(function(my_player)
