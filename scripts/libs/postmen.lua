@@ -98,6 +98,7 @@ end
 
 --- Talk Funktion
 function postman_talk(npc, ch)
+    do_message(npc, ch, "Hallo.")
     -- Quest-Stati initialisieren
     invertika.init_quest_status_string(ch, string.format("%s_order_designation", postman[npc].id))
     invertika.init_quest_status(ch, string.format("%s_order_done", postman[npc].id))
