@@ -90,7 +90,7 @@ end
 -- @return ItemId die vom Ziel erwartet wird
 function get_desired_itemid(designation)
     for i, v in ipairs(postman) do
-        if v.id = designation then
+        if v.id == designation then
             return v.item
         end
     end
