@@ -64,6 +64,28 @@ function get_quest_status(ch, questname)
     return tonumber(get_quest_var(ch, questname))
 end
 
+function init_quest_status_string(ch, questname)
+    if tonumber(get_quest_var(ch, questname)) == nil then
+        mana.chr_set_quest(ch, questname, "")
+    end
+end
+
+-- Setzt einen Queststatus
+-- @param ch Der Charakter dessen Quest initialisiert werden soll.
+-- @param questname Der Name des Quests.
+-- @param value Der Wert auf den der Quest gesetzt werden soll.
+function set_quest_status_string(ch, questname, value)
+    mana.chr_set_quest(ch, questname, value)
+end
+
+-- Gibt einen Queststatus zurück
+-- @param ch Der Charakter dessen Quest initialisiert werden soll.
+-- @param questname Der Name des Quests.
+-- @return Aktuellen Status des Quests.
+function get_quest_status_string(ch, questname)
+    return get_quest_var(ch, questname)
+end
+
 -- EXP/Skill-Änderungen
 
 local MONEY_ADD_TEXT = "Du hast %s Aki erhalten!"
