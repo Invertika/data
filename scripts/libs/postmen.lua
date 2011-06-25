@@ -117,6 +117,7 @@ function postman_talk(npc, ch)
             while true do
                 local v = do_choice(npc, ch, "Ja.", "Nein.")
                 if v == 1 then
+                    do_message(string.format("%s_order_done", postman[start_npc].id))
                     invertika.add_items(ch, postman[npc].item, -1, string.format("Paket für Poststelle %s", postman[npc].name))
                     invertika.set_quest_status(ch, string.format("%s_order_done", postman[start_npc].id), 1)
                     do_message(npc, ch, "Danke.")
