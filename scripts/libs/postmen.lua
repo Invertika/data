@@ -55,7 +55,15 @@ end
 -- @param ch Der Spieler
 -- @return Id des neuen Postbotens
 function get_new_designation(npc)
-    return invertika.get_random_element(postman[npc].designations).id
+    local r = math.random(1, #postman[npc].designations)
+    local c = 1
+    for i, v in ipairs(postman[npc].designations) do
+        if c == r then
+            return v.id
+        end
+        c = c + 1
+    end
+    error("something wrong")
 end
 
 --- Gibt den Namen für die Id zurück.
@@ -141,6 +149,7 @@ function postman_talk(npc, ch)
     else
         do_message(npc, ch, "4")
         local order_designation = get_new_designation(npc)
+        do_message(npc, ch, "5")
         do_message(npc, ch, string.format("Würdest du für mich ein Paket zur Poststelle %s bringen?", get_name_by_id(order_designation)))
         while true do
             local v = do_choice(npc, ch, "Ja.", "Nein.")
