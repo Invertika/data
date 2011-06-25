@@ -141,6 +141,7 @@ function postman_talk(npc, ch)
     else
         do_message(npc, ch, "4")
         local order_designation = get_new_designation(npc)
+        do_message(npc, ch, "5")
         do_message(npc, ch, string.format("Würdest du für mich ein Paket zur Poststelle %s bringen?", get_name_by_id(order_designation)))
         while true do
             local v = do_choice(npc, ch, "Ja.", "Nein.")
