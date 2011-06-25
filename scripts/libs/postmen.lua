@@ -105,9 +105,12 @@ function postman_talk(npc, ch)
     
     local designation = get_order_designation(npc, ch)
     
+    do_message(npc, ch, "###")
     if has_package_for_npc(npc, ch) then
+        do_message(npc, ch, "1")
         local has_order, start_npc = can_do_order(npc, ch)
         if has_order then
+            do_message(npc, ch, "2")
             do_message(npc, ch, invertika.get_random_element("Schon wieder ein Paket für mich? Gib mal her!",
               string.format("Ein Paket von der Poststelle %s... Das kommt auf diesen Stapel.", postman[start_npc].name)))
             do_message(npc, ch, "Paket abgeben?")
@@ -124,6 +127,7 @@ function postman_talk(npc, ch)
             end
         end
     elseif designation ~= "" then
+        do_message(npc, ch, "3")
         if invertika.get_quest_status(ch, string.format("%s_order_done")) == 0 then
             do_message(npc, ch, string.format("Du musst noch das Paket bei der Poststelle %s abgeben", get_name_by_id(designation)))
         else
@@ -135,6 +139,7 @@ function postman_talk(npc, ch)
             invertika.add_items(ch, gift.id, number, gift.name)
         end
     else
+        do_message(npc, ch, "4")
         local order_designation = get_new_designation(npc)
         do_message(npc, ch, string.format("Würdest du für mich ein Paket zur Poststelle %s bringen?", get_name_by_id(order_designation)))
         while true do
