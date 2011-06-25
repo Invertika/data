@@ -34,7 +34,7 @@ end
 -- @param ch Der Spieler
 -- @return (true, npc) wenn ein Auftrag erfüllt werden kann, false wenn nicht.
 function can_do_order(npc, ch)
-    for i, v in ipairs(postman) do
+    for i, v in pairs(postman) do
         if get_order_designation(npc, ch) == postman[npc].id then
             return true, i
         end
@@ -55,22 +55,14 @@ end
 -- @param ch Der Spieler
 -- @return Id des neuen Postbotens
 function get_new_designation(npc)
-    local r = math.random(1, #postman[npc].designations)
-    local c = 1
-    for i, v in ipairs(postman[npc].designations) do
-        if c == r then
-            return v.id
-        end
-        c = c + 1
-    end
-    error("something wrong")
+    return invertika.get_random_element(postman[npc].designations).id
 end
 
 --- Gibt den Namen für die Id zurück.
 -- @param id Die Id.
 -- @return den lesbaren Namen für die Id
 function get_name_by_id(id)
-    for i, v in ipairs(postman) do
+    for i, v in pairs(postman) do
         if v.id == id then
             return v.name
         end
@@ -85,7 +77,7 @@ end
 -- @return Distanz vom Start des Spielers zum Ziel
 function get_distance(ch, npc_start)
     local designation = get_order_designation(npc, ch)
-    for i, v in ipairs(postman[npc_start].designations) do
+    for i, v in pairs(postman[npc_start].designations) do
         if v.id == designation then
             return v.distance
         end
@@ -97,7 +89,7 @@ end
 -- @param designation Die Id des Ziels
 -- @return ItemId die vom Ziel erwartet wird
 function get_desired_itemid(designation)
-    for i, v in ipairs(postman) do
+    for i, v in pairs(postman) do
         if v.id == designation then
             return v.item
         end
@@ -113,7 +105,7 @@ function postman_talk(npc, ch)
     
     local designation = get_order_designation(npc, ch)
     
-    do_message(npc, ch, "###")
+    do_message(npc, ch, "##")
     if has_package_for_npc(npc, ch) then
         do_message(npc, ch, "1")
         local has_order, start_npc = can_do_order(npc, ch)
@@ -149,7 +141,6 @@ function postman_talk(npc, ch)
     else
         do_message(npc, ch, "4")
         local order_designation = get_new_designation(npc)
-        do_message(npc, ch, "5")
         do_message(npc, ch, string.format("Würdest du für mich ein Paket zur Poststelle %s bringen?", get_name_by_id(order_designation)))
         while true do
             local v = do_choice(npc, ch, "Ja.", "Nein.")
