@@ -150,13 +150,13 @@ function monty_talk(npc, ch)
 	   return
 	elseif get_qstatus() == 0 and deathCount == 2500 then
 	   do_message(npc, ch, "Du bist nun schon ziemlich oft tot gewesen. Vielleicht hilft dir ein bisschen Geld darüber hinweg.")
-	   --invertika.set_money(ch, 50000)
+	   invertika.set_money(ch, 50000)
        set_qstatus(1)
 	   do_npc_close(npc, ch)
 	   return
 	elseif get_qstatus() == 0 and deathCount == 5000 then
 	   do_message(npc, ch, "Du stirbst wohl extra wegen dem Geld oder? Naja ich gebs dir, ich brauch kein Geld mehr.")
-	   --invertika.set_money(ch, 150000)
+	   invertika.set_money(ch, 150000)
        set_qstatus(1)
 	   do_npc_close(npc, ch)
 	   return
