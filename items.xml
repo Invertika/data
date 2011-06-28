@@ -2,7 +2,6 @@
 <?xml-stylesheet type="text/xsl" href="items.xsl"?>
 <items>
     <version revision="$Revision$" />
-
     <item id="-1" type="hairsprite" name="Flat ponytail">
         <sprite>hairstyles/hairstyle1.xml</sprite>
     </item>
@@ -51,20 +50,19 @@
     <item id="-16" type="hairsprite" name="Bun">
         <sprite>hairstyles/hairstyle16.xml</sprite>
     </item>
-
     <!-- Treating the base sprite as equipment too will be useful when we
          implement other playable races -->
     <item id="-100" type="racesprite" name="Human">
         <sprite gender="male">players/human/male_base.xml</sprite>
         <sprite gender="female">players/human/female_base.xml</sprite>
     </item>
-	
-	<!-- Invertika Items -->
-	
-	<!-- nicht definiert (reserviert für Rohstoffe bzw. Generics, für Crafting 1 - 10000 -->	
-	
-	<!-- Waffen 10001 - 20000 -->	
-	<item id="10001"
+        
+        <!-- Invertika Items -->
+        
+        <!-- nicht definiert (reserviert für Rohstoffe bzw. Generics, für Crafting 1 - 10000 -->        
+        
+        <!-- Waffen 10001 - 20000 -->        
+        <item id="10001"
         image="equipment/weapons/dagger-knive.png"
         name="Messer"
         description="Ein kleines Messer, die perfekte Waffe für Anfänger."
@@ -79,17 +77,17 @@
         attack-range="32"
         attack-angle="135"
         max-per-slot="1"
-        value="10">
+        value="5">
         <sprite>equipment/weapons/dagger.xml</sprite>
         <sound event="strike">short-sword-miss1.ogg</sound>
         <sound event="hit">short-sword-hit1.ogg</sound>
     </item>
-	
-	<item id="10002"
+        
+        <item id="10002"
         image="equipment/weapons/dagger-dagger.png"
         name="Dolch"
         description="Ein einfacher Dolch."
-        effect="+13..17 Schaden, 1 Reichweite"
+        effect="+18..22 Schaden, 1 Reichweite"
         type="equip-1hand"
         weight="60"
         weapon-type="100"
@@ -100,7 +98,7 @@
         attack-range="32"
         attack-angle="135"
         max-per-slot="1"
-        value="1000">
+        value="100">
         <sprite>equipment/weapons/dagger.xml</sprite>
         <sound event="strike">short-sword-miss1.ogg</sound>
         <sound event="hit">short-sword-hit1.ogg</sound>
@@ -121,8 +119,8 @@
         missile-particle="graphics/particles/arrow.particle.xml"
         view="1200"
         value="5000">
-		<sprite>equipment/weapons/bow.xml</sprite>
-		</item>
+                <sprite>equipment/weapons/bow.xml</sprite>
+                </item>
         
       <item id="10004"
         image="equipment/weapons/arrow-arrow.png"
@@ -132,9 +130,9 @@
         type="equip-ammo"
         weight="1"
         max-per-slot="999"
-		value="50"/>
+                value="50"/>
         
-	<item id="10005"
+        <item id="10005"
         image="equipment/weapons/dagger-knive.png"
         name="Niedermetzler 3000"
         description="Ein Schwert von einem ziemlich obskuren Typen."
@@ -149,7 +147,7 @@
         attack-range="32"
         attack-angle="135"
         max-per-slot="1"
-		value="25000">
+        value="2500">
         <sprite>equipment/weapons/dagger.xml</sprite>
         <sound event="strike">short-sword-miss1.ogg</sound>
         <sound event="hit">short-sword-hit1.ogg</sound>
@@ -166,7 +164,7 @@
         weapon-type="bow"
         attack-action="attack_bow"
         max-per-slot="1"
-		value="30000">
+                value="30000">
         <sprite>equipment/weapons/bow.xml</sprite>
         <sound event="swing">weapons/bows/bow_shoot_1.ogg</sound>
     </item>
@@ -180,8 +178,7 @@
         weight="1"
         max-per-slot="999"
         value="1"/>
-
-	<item id="10008"
+        <item id="10008"
         image="equipment/weapons/dagger-razorknife.png"
         name="Tetses Schwert"
         description="Ein Schwert, dass Tetse einst in einer Schlacht benutzte. Es hat für ihn einen hohen symbolischen Wert.."
@@ -196,35 +193,33 @@
         attack-range="32"
         attack-angle="135"
         max-per-slot="1"
-	value="12500">
+        value="200">
         <sprite>equipment/weapons/dagger-erazorknife.xml</sprite>
         <sound event="strike">short-sword-miss1.ogg</sound>
         <sound event="hit">short-sword-hit1.ogg</sound>
     </item>
-
-	<item id="10009"
+        <item id="10009"
         image="equipment/weapons/staff-wood.png"
         name="Holzstab"
         description="Ein hölzerner Kampfstab, solide genug, um nicht zu brechen."
-        effect="+25..75 Schaden, 1.5 Reichweite"
+        effect="+20..52 Schaden, 1.5 Reichweite"
         type="equip-2hand"
         weight="60"
         weapon-type="104"
-        attack-min="25"
-        attack-delta="50"
+        attack-min="20"
+        attack-delta="32"
         attack-target="multi"
         attack-shape="cone"
         attack-range="48"
         attack-angle="135"
-	defense="4"
+        defense="4"
         max-per-slot="1"
-	value="1500">
+        value="50">
         <sprite>equipment/weapons/staff.xml</sprite>
         <sound event="strike">short-sword-miss1.ogg</sound>
         <sound event="hit">short-sword-hit1.ogg</sound>
     </item>
-
-	<item id="10010"
+        <item id="10010"
         image="equipment/weapons/staff-blue.png"
         name="Astralstab"
         description="Ein Kampfstab aus purer Magie, sehr leicht und gleichzeitig extrem hart und schmerzhaft."
@@ -238,15 +233,14 @@
         attack-shape="cone"
         attack-range="48"
         attack-angle="135"
-	defense="10"
+        defense="10"
         max-per-slot="1"
-	value="50000">
+        value="3000">
         <sprite>equipment/weapons/staff-blue.xml</sprite>
         <sound event="strike">short-sword-miss1.ogg</sound>
         <sound event="hit">short-sword-hit1.ogg</sound>
     </item>
-
-	<item id="10011"
+        <item id="10011"
         image="equipment/weapons/sword-sword.png"
         name="Eisenschwert"
         description="Ein einfaches aber solides Schwert."
@@ -261,13 +255,13 @@
         attack-range="32"
         attack-angle="135"
         max-per-slot="1"
-	value="1000">
+        value="220">
         <sprite>equipment/weapons/dagger-erazorknife-dark.xml</sprite>
         <sound event="strike">short-sword-miss1.ogg</sound>
         <sound event="hit">short-sword-hit1.ogg</sound>
     </item>
-	
-	<item id="10012"
+        
+        <item id="10012"
         image="equipment/weapons/staff-black.png"
         name="Seraphim Nex"
         description="Der legendäre Kampfstab eines Seraphim Nex. Sagenumwoben und sehr selten."
@@ -281,16 +275,38 @@
         attack-shape="cone"
         attack-range="48"
         attack-angle="135"
-	defense="10"
+        defense="10"
         max-per-slot="1"
-	value="150000">
+        value="150000">
         <sprite>equipment/weapons/staff-black.xml</sprite>
         <sound event="strike">short-sword-miss1.ogg</sound>
         <sound event="hit">short-sword-hit1.ogg</sound>
     </item>
-	
-	<!-- Ruestungen und Kleidung 20001 - 30000 -->
-	<item id="20001"
+    
+    
+        <item id="10013"
+        image="equipment/weapons/dagger-knive.png"
+        name="scharfes Messer"
+        description="Ein kleines scharfes Messer."
+        effect="+9..14 Schaden, 1 Reichweite"
+        type="equip-1hand"
+        weight="20"
+        weapon-type="100"
+        attack-min="9"
+        attack-delta="5"
+        attack-target="multi"
+        attack-shape="cone"
+        attack-range="32"
+        attack-angle="135"
+        max-per-slot="1"
+        value="14">
+        <sprite>equipment/weapons/dagger.xml</sprite>
+        <sound event="strike">short-sword-miss1.ogg</sound>
+        <sound event="hit">short-sword-hit1.ogg</sound>
+    </item>
+        
+        <!-- Ruestungen und Kleidung 20001 - 30000 -->
+        <item id="20001"
         image="equipment/chest/cottonshirt.png|W:#2b454d,72818c,b7c0c5,ffffff"
         name="Baumwollshirt (weiß)"
         description="Ein Shirt aus Baumwolle."
@@ -299,12 +315,12 @@
         weight="15"
         defense="2"
         max-per-slot="1"
-		value="25">
+                value="25">
         <sprite gender="male">equipment/chest/cotton-male.xml|#2b454d,72818c,b7c0c5,ffffff</sprite>
         <sprite gender="female">equipment/chest/cotton-female.xml|#2b454d,72818c,b7c0c5,ffffff</sprite>
     </item>
-	
-	<item id="20002"
+        
+        <item id="20002"
         image="equipment/leg/shorts.png|W:#cccccc,ffffff"
         name="Baumwollhose (weiß)"
         description="Eine Hose aus Baumwolle."
@@ -313,12 +329,12 @@
         weight="10"
         defense="2"
         max-per-slot="1"
-		value="25">
+                value="25">
         <sprite gender="male">equipment/leg/shorts-male.xml|#cccccc,ffffff</sprite>
         <sprite gender="female">equipment/leg/shorts-female.xml|#cccccc,ffffff</sprite>
     </item>
-	
-	<item id="20003"
+        
+        <item id="20003"
         image="equipment/head/axehat.png"
         name="Axt Hut"
         description="Ein einzigartiger Hut."
@@ -327,11 +343,11 @@
         weight="20"
         defense="7500"
         max-per-slot="1"
-		value="5000">
+                value="5000">
         <sprite>equipment/head/axehat.xml</sprite>
     </item>
-	
-	<item id="20004"
+        
+        <item id="20004"
         image="equipment/head/fancyhat.png"
         name="Lustiger Hut"
         description="Ein lustiger Hut."
@@ -340,7 +356,7 @@
         weight="25"
         defense="5"
         max-per-slot="1"
-		value="500">
+                value="50">
         <sprite>equipment/head/fancyhat.xml</sprite>
     </item>
     
@@ -351,9 +367,9 @@
         effect=""
         type="equip-ring"
         weight="5"
-        defense="1"
+        defense="2"
         max-per-slot="1"
-		value="500">
+                value="100">
     </item>
     
     <item id="20006"
@@ -365,7 +381,7 @@
         weight="20"
         defense="500"
         max-per-slot="1"
-		value="5000">
+                value="5000">
         <sprite>equipment/head/fairy_hat.xml</sprite>
     </item>
     
@@ -378,7 +394,7 @@
         weight="30"
         defense="500"
         max-per-slot="1"
-		value="5000">
+                value="5000">
         <sprite gender="male">equipment/chest/leather-male.xml|#443c21,85794a,beb590,ffffff;#824035,d6a19a</sprite>
         <sprite gender="female">equipment/chest/leather-female.xml|#251e06,443c21,71653b,a0945e;#b6574a</sprite>
     </item>
@@ -391,11 +407,11 @@
         type="equip-legs"
         defense="500"
         weight="40"
-		value="5000">
+                value="5000">
         <sprite gender="male">equipment/leg/chaps-male.xml</sprite>
         <sprite gender="female">equipment/leg/chaps-female.xml</sprite>
     </item>
-	 
+         
         <item id="20009"
         image="equipment/feet/boots.png|W:#8B4513,8B5A2B,CD853F"
         name="Stiefel"
@@ -404,12 +420,12 @@
         type="equip-feet"
         defense="2"
         weight="40"
-		value="150">
+                value="50">
         <sprite gender="male">equipment/feet/boots-male.xml|#8B4513,8B5A2B,CD853F</sprite>
         <sprite gender="female">equipment/feet/boots-female.xml|#8B4513,8B5A2B,CD853F</sprite>
     </item>
-	
-	    <item id="20010"
+        
+            <item id="20010"
         image="equipment/head/santahat.png"
         name="Weihnachtsmannhut"
         description="Der Hut des Weihnachtsmannes"
@@ -418,11 +434,11 @@
         weight="15"
         defense="2"
         max-per-slot="1"
-		value="150">
+                value="150">
         <sprite>equipment/head/santahat.xml</sprite>
     </item>
     
-    	<item id="20011"
+            <item id="20011"
         image="equipment/chest/cottonshirt.png|W:#f058c5,ee7fcf,eba9d8,ffffff"
         name="Baumwollshirt (pink)"
         description="Ein Shirt aus Baumwolle."
@@ -431,12 +447,12 @@
         weight="15"
         defense="2"
         max-per-slot="1"
-		value="25">
+                value="25">
         <sprite gender="male">equipment/chest/cotton-male.xml|#f058c5,ee7fcf,eba9d8,ffffff</sprite>
         <sprite gender="female">equipment/chest/cotton-female.xml|#f058c5,ee7fcf,eba9d8,ffffff</sprite>
     </item>
-	
-	<item id="20012"
+        
+        <item id="20012"
         image="equipment/chest/cottonshirt.png|W:#412ce3,6f60e1,9288df,ffffff"
         name="Baumwollshirt (lila)"
         description="Ein Shirt aus Baumwolle."
@@ -445,12 +461,12 @@
         weight="15"
         defense="2"
         max-per-slot="1"
-		value="25">
+                value="25">
         <sprite gender="male">equipment/chest/cotton-male.xml|#412ce3,6f60e1,9288df,ffffff</sprite>
         <sprite gender="female">equipment/chest/cotton-female.xml|#412ce3,6f60e1,9288df,ffffff</sprite>
     </item>
-	
-	<item id="20013"
+        
+        <item id="20013"
         image="equipment/chest/cottonshirt.png|W:#e60000,e23a3a,df7373,ffffff"
         name="Baumwollshirt (rot)"
         description="Ein Shirt aus Baumwolle."
@@ -459,12 +475,12 @@
         weight="15"
         defense="2"
         max-per-slot="1"
-		value="25">
+                value="25">
         <sprite gender="male">equipment/chest/cotton-male.xml|#e60000,e23a3a,df7373,ffffff</sprite>
         <sprite gender="female">equipment/chest/cotton-female.xml|#e60000,e23a3a,df7373,ffffff</sprite>
     </item>
-	
-	<item id="20014"
+        
+        <item id="20014"
         image="equipment/chest/cottonshirt.png|W:#10aa00,50a946,80a879,ffffff"
         name="Baumwollshirt (grün)"
         description="Ein Shirt aus Baumwolle."
@@ -473,12 +489,12 @@
         weight="15"
         defense="2"
         max-per-slot="1"
-		value="25">
+                value="25">
         <sprite gender="male">equipment/chest/cotton-male.xml|#10aa00,50a946,80a879,ffffff</sprite>
         <sprite gender="female">equipment/chest/cotton-female.xml|#10aa00,50a946,80a879,ffffff</sprite>
     </item>
     
-    	<item id="20015"
+            <item id="20015"
         image="equipment/leg/shorts.png|W:#EE1289,ffffff"
         name="Baumwollhose (pink)"
         description="Eine Hose aus Baumwolle."
@@ -487,7 +503,7 @@
         weight="10"
         defense="2"
         max-per-slot="1"
-		value="25">
+                value="25">
         <sprite gender="male">equipment/leg/shorts-male.xml|#EE1289,ffffff</sprite>
         <sprite gender="female">equipment/leg/shorts-female.xml|#EE1289,ffffff</sprite>
     </item>
@@ -501,7 +517,7 @@
         weight="10"
         defense="2"
         max-per-slot="1"
-		value="25">
+                value="25">
         <sprite gender="male">equipment/leg/shorts-male.xml|#A020F0,ffffff</sprite>
         <sprite gender="female">equipment/leg/shorts-female.xml|#A020F0,ffffff</sprite>
     </item>
@@ -515,7 +531,7 @@
         weight="10"
         defense="2"
         max-per-slot="1"
-		value="25">
+                value="25">
         <sprite gender="male">equipment/leg/shorts-male.xml|#e60000,ffffff</sprite>
         <sprite gender="female">equipment/leg/shorts-female.xml|#e60000,ffffff</sprite>
     </item>
@@ -529,11 +545,10 @@
         weight="10"
         defense="2"
         max-per-slot="1"
-		value="25">
+                value="25">
         <sprite gender="male">equipment/leg/shorts-male.xml|#10aa00,ffffff</sprite>
         <sprite gender="female">equipment/leg/shorts-female.xml|#10aa00,ffffff</sprite>
     </item>
-
     <item id="20019"
         image="equipment/ring/gem-generic.png"
         name="Imangis Verlobungsring"
@@ -545,7 +560,7 @@
         max-per-slot="1"
         value="500">
     </item>
-	
+        
     <item id="20020"
         image="equipment/chest/chainmail.png"
         name="Kettenhemd"
@@ -555,12 +570,12 @@
         weight="35"
         defense="15"
         max-per-slot="1"
-        value="700">
+        value="500">
         <sprite gender="male">equipment/chest/chainmail-male.xml</sprite>
         <sprite gender="female">equipment/chest/chainmail-female.xml</sprite>
     </item>
-	
-	<item id="20021"
+        
+        <item id="20021"
         image="generic/brokenarmor.png"
         name="Kettenhemd (beschädigt)"
         description="Ein einfaches Kettenhemd aus Eisen. Allerdings ist es an einigen Stellen beschädigt."
@@ -569,11 +584,10 @@
         weight="30"
         defense="5"
         max-per-slot="1"
-        value="450">
+        value="250">
         <sprite gender="male">equipment/chest/chainmail-male.xml</sprite>
         <sprite gender="female">equipment/chest/chainmail-female.xml</sprite>
     </item>
-
     <item id="20022"
         image="equipment/amulet/pet-fairy-blue.png"
         name="Amulett der Verteidigung"
@@ -585,7 +599,6 @@
         max-per-slot="1"
         value="500">
     </item>
-
     <item id="20023"
         image="equipment/head/heart-glasses.png"
         name="Sonnenbrille"
@@ -608,7 +621,7 @@
         weight="20"
         defense="10"
         max-per-slot="1"
-        value="1500">
+        value="500">
         <sprite gender="male">equipment/chest/robe-male.xml|#10aa00,ffffff</sprite>
         <sprite gender="female">equipment/chest/robe-female.xml|#10aa00,ffffff</sprite>
     </item>
@@ -622,7 +635,7 @@
         weight="20"
         defense="10"
         max-per-slot="1"
-        value="1500">
+        value="500">
         <sprite gender="male">equipment/chest/robe-male.xml|#e1ff53,ffffff</sprite>
         <sprite gender="female">equipment/chest/robe-female.xml|#e1ff53,ffffff</sprite>
     </item>
@@ -636,7 +649,7 @@
         weight="20"
         defense="10"
         max-per-slot="1"
-        value="1500">
+        value="500">
         <sprite gender="male">equipment/chest/robe-male.xml|#e60000,ffffff</sprite>
         <sprite gender="female">equipment/chest/robe-female.xml|#e60000,ffffff</sprite>
     </item>
@@ -654,7 +667,6 @@
         <sprite gender="male">equipment/chest/robe-male.xml|#0000e6,ffffff</sprite>
         <sprite gender="female">equipment/chest/robe-female.xml|#0000e6,ffffff</sprite>
     </item>
-
     <!-- Power Ups 30001 - 40000 -->
     <item id="30001"
         image="generic/potion-a.png|G:#22ff22"
@@ -665,9 +677,9 @@
         hp="15"
         weight="25"
         max-per-slot="999"
-		value="30"/>
-		
-	<item id="30002"
+        value="30"/>
+                
+        <item id="30002"
         image="generic/potion-a.png|G:#7A67AB"
         name="Hemlock"
         description="Ein leichtes Gift."
@@ -676,21 +688,21 @@
         hp="-1000"
         weight="25"
         max-per-slot="999"
-		value="10"/>
-	
-	<item id="30003"
+        value="10"/>
+        
+        <item id="30003"
         image="generic/potion-a.png|G:#33294B"
         name="Nogatch Hemlock"
         description="Ein tödliches Gift."
-		script="poison.lua"
+        script="poison.lua"
         effect="Der Tod."
         type="usable"
         hp="-999999"
         weight="25"
         max-per-slot="999"
-		value="50"/>
-		
-	<item id="30004"
+        value="50"/>
+                
+        <item id="30004"
         image="generic/potion-a.png|G:#AEDB11"
         name="Hop und Ex"
         description="Der Modedrink der Wüstenbewohner."
@@ -699,9 +711,9 @@
         hp="-2500"
         weight="25"
         max-per-slot="999"
-		value="30"/>
-		
-	<item id="30005"
+        value="30"/>
+                
+        <item id="30005"
         image="generic/potion-a.png|G:#C38F03"
         name="Wurzelhans"
         description="Ein seltsames Getränk..."
@@ -710,8 +722,8 @@
         hp="-30"
         weight="25"
         max-per-slot="999"
-		value="20"/>
-		
+                value="20"/>
+                
     <item id="30006"
         image="generic/beer.png"
         name="Bier"
@@ -721,8 +733,8 @@
         hp="20"
         weight="400"
         max-per-slot="999"
-		value="20"/>
-		
+                value="20"/>
+                
     <item id="30007"
         image="generic/milk.png"
         name="Milch"
@@ -732,20 +744,20 @@
         hp="150"
         weight="300"
         max-per-slot="999"
-		value="20"/>
-		
+                value="20"/>
+                
     <item id="30008"
         image="generic/pangalactic-gargle-blaster.png"
         name="Pangalaktischer Donnergurgler"
         description="Der Drink fuer alle die auf der Suche nach der Frage sind."
-		script="pangalactic-gargle-blaster.lua"
+                script="pangalactic-gargle-blaster.lua"
         effect="+500 HP"
         type="usable"
         hp="500"
         weight="300"
         max-per-slot="999"
-		value="20"/>
-		
+                value="20"/>
+                
     <item id="30009"
         image="generic/chocolatebar.png"
         name="Schokoladentafel"
@@ -755,18 +767,18 @@
         hp="20"
         weight="25"
         max-per-slot="999"
-		value="15"/>
-		
-	<item id="30010"
+                value="15"/>
+                
+        <item id="30010"
         image="generic/cake.png"
         name="Keks"
         description="Ein leckerer Keks."
         effect="+15 HP"
         type="usable"
         weight="25"
-		max-per-slot="999"
-		value="15"/>
-		
+                max-per-slot="999"
+                value="15"/>
+                
     <item id="30011"
         image="generic/roastedmaggot.png"
         name="Geröstete Made"
@@ -776,21 +788,21 @@
         hp="150"
         weight="290"
         max-per-slot="999"
-		value="15"/>
-	
+                value="15"/>
+        
     <item id="30012"
         image="generic/apple.png"
         name="Apfel"
         description="Ein leckerer Apfel."
         effect="+50 HP"
-		script="apple.lua"
+                script="apple.lua"
         type="usable"
         hp="50"
         weight="70"
         max-per-slot="999"
-		value="15"/>
-		
-	<item id="30013"
+                value="15"/>
+                
+        <item id="30013"
         image="generic/potion-a.png|G:#7A67AB"
         name="Gatch Hemlock"
         description="Ein schweres Gift."
@@ -799,9 +811,8 @@
         hp="-5000"
         weight="25"
         max-per-slot="999"
-		value="35"/>
-
-	<item id="30014"
+                value="35"/>
+        <item id="30014"
         image="generic/chocolatebar.png"
         name="Riesenschokolade"
         description="Eine riesige Tafel Schokolade"
@@ -810,79 +821,79 @@
         hp="200"
         weight="25"
         max-per-slot="999"
-		value="100"/>
-		
-	<item id="30015"
+                value="100"/>
+                
+        <item id="30015"
         image="generic/pill.png"
         name="Inspirin"
         description="Mit Inspirin wird die Intelligenz kurzzeitig gesteigert."
         effect=""
-		lifetime="600"
-		intelligence="15"
+                lifetime="600"
+                intelligence="15"
         type="usable"
         weight="12"
         max-per-slot="999"
-		value="25"/>
-		
-	<item id="30016"
+                value="25"/>
+                
+        <item id="30016"
         image="generic/pill.png"
         name="Inspirin Plus"
         description="Mit Inspirin Plus wird die Intelligenz einige Zeit gesteigert."
         effect=""
-		lifetime="1800"
-		intelligence="10"
+                lifetime="1800"
+                intelligence="10"
         type="usable"
         weight="12"
         max-per-slot="999"
-		value="50"/>
-		
-	<item id="30017"
+                value="50"/>
+                
+        <item id="30017"
         image="generic/pill.png|W:#969696,e0e0e0"
         name="Inspirin Megaplus"
         description="Ein experimentelle Form von Inspirin. Mit Nebenwirkungen behaftet."
         effect=""
-		lifetime="300"
-		intelligence="47"
-		hp="-500"
+                lifetime="300"
+                intelligence="47"
+                hp="-500"
         type="usable"
         weight="12"
         max-per-slot="999"
-		value="75"/>
-		
-	<item id="30018"
+                value="75"/>
+                
+        <item id="30018"
         image="generic/pill.png|W:#969696,e0e0e0"
         name="Energetia"
         description="Füllt einige HP auf."
         effect=""
-		hp="500"
+                hp="500"
         type="usable"
         weight="12"
         max-per-slot="999"
-		value="25"/>
-		
-	<item id="30019"
+                value="25"/>
+                
+        <item id="30019"
         image="generic/pill.png|W:#969696,e0e0e0"
         name="Energetia Medium"
         description="Füllt einige HP auf."
         effect=""
-		hp="1500"
+                hp="1500"
         type="usable"
         weight="12"
         max-per-slot="999"
-		value="55"/>
-		
-	<item id="30020"
+                value="55"/>
+                
+        <item id="30020"
         image="generic/pill.png|W:#969696,e0e0e0"
         name="Energetia Maxima"
         description="Füllt eine Menge HP auf."
         effect=""
-		hp="7500"
+                hp="7500"
         type="usable"
         weight="12"
         max-per-slot="999"
-		value="75"/>
-		
-	<item id="30021"
+                value="75"/>
+                
+        <item id="30021"
         image="generic/xmascandycane.png"
         name="Zuckerstange"
         description="Ein leckere Zuckerstange."
@@ -890,10 +901,10 @@
         type="usable"
         hp="10"
         weight="1"
-	max-per-slot="999"
-	value="15"/>
-	
-	<item id="30022"
+        max-per-slot="999"
+        value="15"/>
+        
+        <item id="30022"
         image="generic/xmascake.png"
         name="Weihnachtskuchen"
         description="Ein süßer Weihnachtskuchen."
@@ -902,9 +913,9 @@
         hp="10"
         weight="1"
         max-per-slot="999"
-		value="15"/>
-	
-	<item id="30023"
+                value="15"/>
+        
+        <item id="30023"
         image="generic/gingerbreadman.png"
         name="Lebkuchenmänchen"
         description="Ein leckeres Lebkuchenmänchen."
@@ -924,7 +935,6 @@
         weight="200"
         max-per-slot="999"
         value="20"/>
-
     <item id="30025"
         image="generic/snake-egg.png"
         name="Schlangenei"
@@ -935,7 +945,6 @@
         weight="10"
         max-per-slot="999"
         value="100"/>
-
     <item id="30026"
         image="generic/coconut.png"
         name="Kokosnuss"
@@ -946,9 +955,9 @@
         weight="10"
         max-per-slot="999"
         value="20"/>
-	
-	<!-- Sonstige 40001 - 50000 -->
-	<item id="40001"
+        
+        <!-- Sonstige 40001 - 50000 -->
+        <item id="40001"
         image="generic/emptybottle.png"
         name="Leere Flasche"
         description="Eine leere Flasche."
@@ -956,9 +965,9 @@
         type="generic"
         weight="20"
         max-per-slot="999"
-		value="35"/>
-		
-	<item id="40002"
+                value="35"/>
+                
+        <item id="40002"
         image="generic/item.png"
         name="IPv4 Paket"
         description="Ein IPv4 Paket, welche Geheimnisse birgt es?"
@@ -966,9 +975,9 @@
         type="generic"
         weight="1"
         max-per-slot="999"
-		value="35"/>
-		
-	<item id="40003"
+                value="35"/>
+                
+        <item id="40003"
         image="generic/canister.png"
         name="Benzinkanister"
         description="Ein Benzinkanister gefüllt mit Benzin."
@@ -976,9 +985,9 @@
         type="generic"
         weight="20"
         max-per-slot="999"
-		value="35"/>	
-		
-	<item id="40004"
+                value="35"/>        
+                
+        <item id="40004"
         image="generic/scorpionstinger.png|W:#a08040,e0e0e0"
         name="Skorpion Stachel"
         description="Ein giftiger Skorpion Stachel."
@@ -986,8 +995,8 @@
         type="generic"
         weight="12"
         max-per-slot="999"
-		value="5"/>
-		
+                value="5"/>
+                
     <item id="40005"
         image="generic/maggotslime.png"
         name="Madenschleim"
@@ -997,7 +1006,7 @@
         weight="10"
         max-per-slot="999"
         value="10"/>
-		
+                
     <item id="40006"
         image="generic/casinocoins.png"
         name="Casino Münzen"
@@ -1006,8 +1015,8 @@
         type="generic"
         weight="10"
         max-per-slot="999"
-		value="10"/>
-		
+                value="10"/>
+                
     <item id="40007"
         image="generic/bugleg.png"
         name="Insektenbein"
@@ -1015,27 +1024,27 @@
         effect=""
         type="generic"
         weight="15"
-		max-per-slot="999"
-		value="5"/>
-		
+                max-per-slot="999"
+                value="5"/>
+                
     <item id="40008"
         image="generic/towel.png"
         name="Handtuch"
         description="Ein praktisches Handtuch für alle Gelegenheiten."
         type="generic"
         weight="20"
-		max-per-slot="1"
-		value="500"/>
-		
+                max-per-slot="1"
+                value="500"/>
+                
     <item id="40009"
         image="generic/fabric.png"
         name="Königlicher Passierschein"
         description="Ein königlicher Passierschein der zum Betreten des Palastes berechtigt."
         type="generic"
         weight="10"
-		max-per-slot="1"/>
-		
-	<item id="40010"
+                max-per-slot="1"/>
+                
+        <item id="40010"
         image="generic/treasurekey.png"
         name="Ipsumschlüssel"
         description="Ein Schlüssel für das Ipsum Haus."
@@ -1043,16 +1052,16 @@
         type="generic"
         weight="15"
         max-per-slot="1"/>
-	
-	<item id="40011"
+        
+        <item id="40011"
         image="generic/bluehint.png"
         name="Brief von Averin"
         description="Ein Brief von Averin an die Botschaft in Roststock."
         type="generic"
         weight="10"
         max-per-slot="1"/>
-	
-	<item id="40012"
+        
+        <item id="40012"
         image="generic/bluehint.png"
         name="Brief an Averin"
         description="Ein Brief von der Botschaft in Roststock an Averin."
@@ -1060,34 +1069,33 @@
         weight="10"
         max-per-slot="1"/>
         
-	<item id="40013"
+        <item id="40013"
         image="generic/greenpresentbox.png"
         name="Geschenk (grün)"
         description="Ein grünes Geschenk."
         type="generic"
         weight="10"
         max-per-slot="999"
-		value="25"/>
+                value="25"/>
         
-	<item id="40014"
+        <item id="40014"
         image="generic/bluepresentbox.png"
         name="Geschenk (blau)"
         description="Blaues Geschenk."
         type="generic"
         weight="10"
         max-per-slot="999"
-		value="25"/>
+                value="25"/>
         
-	<item id="40015"
+        <item id="40015"
         image="generic/purplepresentbox.png"
         name="Geschenk (lila)"
         description="Ein lila Geschenk."
         type="generic"
         weight="10"
         max-per-slot="999"
-		value="25"/>
-
-	<item id="40016"
+                value="25"/>
+        <item id="40016"
         image="generic/scorpionstinger.png|W:#969696,e0e0e0"
         name="Kellerskorpion Stachel"
         description="Ein giftiger Kellerskorpion Stachel."
@@ -1095,9 +1103,8 @@
         type="generic"
         weight="12"
         max-per-slot="999"
-		value="5"/>
-
-	<item id="40017"
+                value="5"/>
+        <item id="40017"
         image="generic/check.png|W:#969696,e0e0e0"
         name="Scheck (500 Aki)"
         description="Scheck im Wert von 500 Aki."
@@ -1105,8 +1112,7 @@
         type="generic"
         weight="12"
         max-per-slot="999"/>
-
-	<item id="40018"
+        <item id="40018"
         image="generic/check.png|W:#969696,e0e0e0"
         name="Scheck (1000 Aki)"
         description="Scheck im Wert von 1000 Aki."
@@ -1114,8 +1120,7 @@
         type="generic"
         weight="12"
         max-per-slot="999"/>
-
-	<item id="40019"
+        <item id="40019"
         image="generic/check.png|W:#969696,e0e0e0"
         name="Scheck (2000 Aki)"
         description="Scheck im Wert von 2000 Aki."
@@ -1123,8 +1128,7 @@
         type="generic"
         weight="12"
         max-per-slot="999"/>
-
-	<item id="40020"
+        <item id="40020"
         image="generic/check.png|W:#969696,e0e0e0"
         name="Scheck (5000 Aki)"
         description="Scheck im Wert von 5000 Aki."
@@ -1132,8 +1136,7 @@
         type="generic"
         weight="12"
         max-per-slot="999"/>
-
-	<item id="40021"
+        <item id="40021"
         image="generic/check.png|W:#969696,e0e0e0"
         name="Scheck (10000 Aki)"
         description="Scheck im Wert von 10000 Aki."
@@ -1141,8 +1144,7 @@
         type="generic"
         weight="12"
         max-per-slot="999"/>
-
-	<item id="40022"
+        <item id="40022"
         image="generic/check.png|W:#969696,e0e0e0"
         name="Scheck (25000 Aki)"
         description="Scheck im Wert von 25000 Aki."
@@ -1150,8 +1152,7 @@
         type="generic"
         weight="12"
         max-per-slot="999"/>
-
-	<item id="40023"
+        <item id="40023"
         image="generic/check.png|W:#969696,e0e0e0"
         name="Scheck (50000 Aki)"
         description="Scheck im Wert von 50000 Aki."
@@ -1159,19 +1160,18 @@
         type="generic"
         weight="12"
         max-per-slot="999"/>
-
-	<item id="40024"
+        <item id="40024"
         image="generic/partypopper.png"
         name="Feuerwerk"
         description="Ein Feuerwerkskörper. Abgabe nicht an Kinder unter 18 Jahren! Nur auf feuerfester Unterlage am äußersten Ende der Zündschnur anzünden und rasch Abstand nehmen."
-	script="firework.lua"
+        script="firework.lua"
         effect=""
         type="usable"
         weight="50"
         max-per-slot="999"
-	value="10"/>
-	
-	<item id="40025"
+        value="10"/>
+        
+        <item id="40025"
         image="generic/dynamite.png"
         name="Dynamit"
         description="Dynamit, zum Sprengen von Dingen."
@@ -1180,8 +1180,7 @@
         type="usable"
         weight="50"
         max-per-slot="999"
-	value="10"/>
-
+        value="10"/>
         <item id="40026"
         image="generic/fabric.png"
         name="VIP Ausweis (Arena, Selphi Timlet)"
@@ -1189,15 +1188,13 @@
         type="generic"
         weight="10"
         max-per-slot="1"/>
-
-	<item id="40027"
+        <item id="40027"
         image="generic/bluehint.png"
         name="Brief an den König"
         description="Ein wichtiger Brief von Chodar an den König."
         type="generic"
         weight="10"
         max-per-slot="1"/>
-
     <item id="40028"
         image="generic/strange-coin.png"
         name="Antike Münze"
@@ -1206,7 +1203,6 @@
         weight="10"
         value="50"
         max-per-slot="999"/>
-
     <item id="40029"
         image="generic/darkcrystal.png"
         name="Bruchstück eines Amuletts"
@@ -1215,7 +1211,7 @@
         weight="10"
         value="50"
         max-per-slot="999"/>
-	
+        
     <item id="40030"
         image="generic/twine.png|#10aa00,ffffff"
         name="Grünes Garn"
@@ -1224,7 +1220,7 @@
         weight="10"
         value="50"
         max-per-slot="999"/>
-	
+        
     <item id="40031"
         image="generic/twine.png|#e1ff53,ffffff"
         name="Gelbes Garn"
@@ -1233,7 +1229,7 @@
         weight="10"
         value="50"
         max-per-slot="999"/>
-	
+        
     <item id="40032"
         image="generic/twine.png|#e60000,ffffff"
         name="Rotes Garn"
@@ -1242,7 +1238,7 @@
         weight="10"
         value="50"
         max-per-slot="999"/>
-	
+        
     <item id="40033"
         image="generic/twine.png|#0000e6,ffffff"
         name="Blaues Garn"
@@ -1251,7 +1247,7 @@
         weight="10"
         value="50"
         max-per-slot="999"/>
-	
+        
     <item id="40034"
         image="generic/ticket.png"
         name="Theaterkarte"
@@ -1260,15 +1256,14 @@
         weight="10"
         value="50"
         max-per-slot="999"/>
-
-	<item id="40035"
+        <item id="40035"
         image="generic/bluehint.png"
         name="Brief an das Zentralhotel (Selphi Timlet)"
         description="Ein Brief mit der Klageschrift von Ceech an die Rezeption des Zentralhotels in Selphi Timlet."
         type="generic"
         weight="10"
         max-per-slot="1"/>
-	
+        
     <item id="40036"
         image="generic/idcard.png"
         name="ID Karte (Zentralbank)"
@@ -1277,7 +1272,6 @@
         weight="10"
         value="50000"
         max-per-slot="1"/>
-
     <item id="40037"
         image="generic/teapot.png"
         name="Teekanne"
@@ -1286,7 +1280,6 @@
         weight="100"
         value="500"
         max-per-slot="1"/>
-
     <item id="40038"
         image="generic/teacup.png"
         name="Tasse"
@@ -1295,7 +1288,6 @@
         weight="70"
         value="100"
         max-per-slot="5"/>
-
     <item id="40039"
         image="generic/dish.png"
         name="Teller"
@@ -1304,7 +1296,6 @@
         weight="10"
         value="10"
         max-per-slot="100"/>
-
     <item id="40040"
         image="generic/wood.png"
         name="Holz"
@@ -1313,8 +1304,8 @@
         weight="300"
         value="10"
         max-per-slot="999"/>
-	
-	<item id="40041"
+        
+        <item id="40041"
         image="generic/item.png"
         name="IPv6 Paket"
         description="Ein IPv6 Paket, welche Geheimnisse birgt es?"
@@ -1322,6 +1313,6 @@
         type="generic"
         weight="1"
         max-per-slot="999"
-		value="65"/>
+                value="65"/>
 </items>
 
