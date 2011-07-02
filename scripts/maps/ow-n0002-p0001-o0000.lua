@@ -23,7 +23,7 @@ dofile("data/scripts/libs/warp.lua")
 atinit(
 function()
     create_inter_map_warp_trigger(19, 7, 17, 29) --- Intermap warp
-    nethek.create_netheksaeule(161 * TILESIZE, 25 * TILESIZE + 16) --- Netheksäule
+    nethek.create_netheksaeule(162 * TILESIZE, 25 * TILESIZE + 16) --- Netheksäule
 
     sign_entrance = "Qakari"
     sign.create_sign(83, 188, sign_entrance) --- Schild Ortseingang
