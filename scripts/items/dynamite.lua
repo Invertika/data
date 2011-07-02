@@ -24,18 +24,18 @@ function kaboom(my_user, my_x, my_y)
         mana.being_say(my_user, "Debug 3")
         local distance = get_distance(my_x, my_y, mana.posX(being), mana.posY(being))
         local damage = DAMAGE_DAMAGE * math.pow(DAMAGE_FACTOR_DECREASE, distance)
-        mana.being_say(being, string.format("Name: %s, Distanz: %s, Damage: %s",
-                       mana.being_get_name(being), distance, damage))
+        -- mana.being_say(being, string.format("Name: %s, Distanz: %s, Damage: %s",
+        --                mana.being_get_name(being), distance, damage))
         mana.being_damage(being, damage, DAMAGE_DELTA, DAMAGE_ACCURACY, DAMAGE_PHYSICAL, ELEMENT_FIRE)
     end
     mana.effect_create(151, my_x, my_y)
 end
 
 function use(user)
-    mana.being_say(user, "Debug 1")
+    -- mana.being_say(user, "Debug 1")
     x = mana.posX(user)
     y = mana.posY(user)
-    mana.chr_set_quest(user, "debug", 1)
-    mana.being_say(user, get_quest_var(user, "debug"))
+    -- mana.chr_set_quest(user, "debug", 1)
+    -- mana.being_say(user, get_quest_var(user, "debug"))
     schedule_in(5, kaboom(user, x, y))
 end
