@@ -1,5 +1,5 @@
 -- Radius der Explosion
-DAMAGE_RADIUS = 5 * TILESIZE
+DAMAGE_RADIUS = 7 * TILESIZE
 -- Faktor mit dem der Schaden nach einer bestimmten Entfernung bestimmt:
 -- damage =  damaga * pow(FACTOR_DECREASE, distance)
 DAMAGE_FACTOR_DECREASE = 0.99
