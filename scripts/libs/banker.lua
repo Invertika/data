@@ -158,7 +158,7 @@ function banker_talk(npc, ch)
 		elseif v2 == 8 then --- 50000
 			bank_get_money_from_account_dlg(npc, ch, 50000)
 		elseif v2 == 9 then --- Alles
-			bank_get_money_from_account_dlg(npc, ch, bank_get_account_balance(ch))
+			bank_get_money_from_account_dlg(npc, ch, math.floor(bank_get_account_balance(ch)))
 		end
 	elseif v == 4 then --- Kredit aufnehmen
 		do_message(npc, ch, "Kredite werden noch nicht vergeben!")
