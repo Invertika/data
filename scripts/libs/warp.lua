@@ -24,7 +24,7 @@ end
 function warp_up(obj, id)
     if(mana.being_type(obj)==TYPE_CHARACTER) then
 	  local x = mana.posX(obj)
-	  mana.chr_warp(obj, id, x, 197 * TILESIZE) 
+	  mana.chr_warp(obj, id, x, 198 * TILESIZE) 
 	end
 end
 
@@ -45,6 +45,6 @@ end
 function warp_left(obj, id)
     if(mana.being_type(obj)==TYPE_CHARACTER) then
 	  local y = mana.posY(obj)
-	  mana.chr_warp(obj, id, 197 * TILESIZE, y) 
+	  mana.chr_warp(obj, id, 198 * TILESIZE, y) 
 	end
 end
