@@ -91,7 +91,7 @@ function jack_talk(npc, ch)
 end
  
 function ancoise_talk(npc, ch)
-    local quest_string = "vacre_fence"
+    local quest_string = "vacare_fence"
     invertika.init_quest_status(ch, quest_string)
 	if invertika.get_quest_status(ch, quest_string) == 0 then
       do_message(npc, ch, "Na soll ich dir über den Zaun helfen?")
@@ -101,7 +101,7 @@ function ancoise_talk(npc, ch)
 		                               "Nein.")
 								   
 		  if v == 1 then
-			  invertika.set_quest_status(ch, "vacare_fence", 1)
+			  invertika.set_quest_status(ch, quest_string, 1)
 			  mana.chr_warp(ch,  19002, 141 * TILESIZE, 42 * TILESIZE) 
 			  do_message(npc, ch, "Bitteschön.")
 			  break;
@@ -119,7 +119,7 @@ function ancoise_talk(npc, ch)
 end
 
 function kolbert_talk(npc, ch)
-    local quest_string = "vacre_first_weapon"
+    local quest_string = "vacare_first_weapon"
     invertika.init_quest_status(ch, quest_string)
        
     if invertika.get_quest_status(ch, quest_string) == 0 then
@@ -134,7 +134,7 @@ function kolbert_talk(npc, ch)
 	  do_message(npc, ch, "Du kannst ihn aber auch nur mittels der X Taste angreifen.")
 	  do_message(npc, ch, "Viel Erfolg.")
 	  
-      invertika.set_quest_status(ch, "vacare_first_weapon", 1)
+      invertika.set_quest_status(ch, quest_string, 1)
     else
 	  do_message(npc, ch, "Du schon wieder. Du weist doch. Zum Gegner, A drücken und dann Strg um zum Angriff überzugehen. Oder einfach X drücken. Einfach oder?")
 	  do_message(npc, ch, "Noch ein kleiner Tipp. Mit Z kannst du Gegenstände aufheben die ein Gegner verliert.")
@@ -155,7 +155,7 @@ end
 function valaia_talk(npc, ch)
     do_message(npc, ch, "Du sieht aus wie jemand der Handeln möchte. Mmmh was gibt es denn da zu erzählen. Also es gibt zwei Arten zu handeln, einmal mit NPCs und einmal mit deinen Mitspielern.")
 	
-    local quest_string = "vacre_first_trade"
+    local quest_string = "vacare_first_trade"
     invertika.init_quest_status(ch, quest_string)
 	if invertika.get_quest_status(ch, quest_string) == 0 then
       do_message(npc, ch, "Ich sehe du hast gar kein Geld bei dir. Nun ja ich will mal nicht so sein, nimm ein bischen von meinem.")
