@@ -29,7 +29,7 @@ end)
 
 function peter_talk(npc, ch)
 	do_message(npc, ch, invertika.get_random_element("Gerade Kanten und symmetrisch muss es sein.",
-	  "Wir sorgen dafür das in der Welt von Invertika eine gewisse Gradlinigkeit herscht.",
+	  "Wir sorgen dafür das in der Welt von Invertika eine gewisse Gradlinigkeit herrscht.",
 	  "Ich bin hier der mit dem 90 Grad Winkelmaß.",
 	  "Akkurat muss es geschnitten sein, Akkurat!",
 	  "Bei uns wird das sehr sehr gewissenhaft gemacht."))
