@@ -752,7 +752,7 @@ function valeria_talk(npc, ch)
 		    end
 		elseif v == 2 then
 			if letzteHeilung + (60 * 60 * 2) > os.time(t) then 
-				do_message(npc, ch, "Nein. Ich heile dich nicht alle paar Minuten kostenlos. Komm doch später villeicht nochmal vorbei")
+				do_message(npc, ch, "Nein. Ich heile dich nicht alle paar Minuten kostenlos. Komm doch später vielleicht nochmal vorbei")
 				break
 			else
 				mana.being_heal(ch, 1000)
