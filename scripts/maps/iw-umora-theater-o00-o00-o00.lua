@@ -35,6 +35,6 @@ function anne_talk(npc, ch)
 end
 
 function paul_talk(npc, ch)
-	do_message(npc, ch, "Ihre Gardobe können sie erst bei Eröffnung abgeben.")
+	do_message(npc, ch, "Ihre Garderobe können sie erst bei Eröffnung abgeben.")
 	do_npc_close(npc, ch)
 end
