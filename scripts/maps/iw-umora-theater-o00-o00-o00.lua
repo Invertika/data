@@ -30,7 +30,7 @@ function ingrid_talk(npc, ch)
 end
 
 function anne_talk(npc, ch)
-	do_message(npc, ch, "Ja, hier können sie ihre Gadrobe abgeben wenn wir geöffnet haben.")
+	do_message(npc, ch, "Ja, hier können sie ihre Garderobe abgeben wenn wir geöffnet haben.")
 	do_npc_close(npc, ch)
 end
 
