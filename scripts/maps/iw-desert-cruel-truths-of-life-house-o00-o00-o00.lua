@@ -27,7 +27,7 @@ function veritas_talk(npc, ch)
         while true do
             local v = do_choice(npc, ch, "Ja.", "Nein.")
             if v == 1 then
-                do_message(npc, ch, "Wie du w. Doch eine solche Wahrheit ist nicht umsonst. Bist du bereit 15000 Aki dafzahlen?")
+                do_message(npc, ch, "Wie du willst. Doch eine solche Wahrheit ist nicht umsonst. Bist du bereit 15000 Aki dafür zu zahlen?")
 				while true do
 				    local vMoney = do_choice(npc, ch, "Ja.", "Nein.")
 					
