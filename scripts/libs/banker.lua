@@ -123,7 +123,7 @@ function banker_talk(npc, ch)
 	if v == 1 then --- Kontostand abfragen
 		bank_get_account_balance_dlg(npc, ch)
 	elseif v == 2 then --- Geld auf Konto einzahlen  
-		local v2 = do_choice(npc, ch, "Nichts", "500", "1000", "2000", "5000", "10000", "25000", "50000", "Alles")
+		local v2 = do_choice(npc, ch, "Nichts", "500", "1000", "2000", "5000", "10000", "25000", "50000", "Anderen Wert", "Alles")
 		if v2 == 2 then --- 500
 			bank_pay_money_to_account_dlg(npc, ch, 500)
 		elseif v2 == 3 then --- 1000
@@ -138,11 +138,13 @@ function banker_talk(npc, ch)
 			bank_pay_money_to_account_dlg(npc, ch, 25000)
 		elseif v2 == 8 then --- 50000
 			bank_pay_money_to_account_dlg(npc, ch, 50000)
-		elseif v2 == 9 then --- 50000
+        elseif v2 == 9 then --- Auswahl
+            bank_pay_money_to_account_dlg(npc, ch, do_ask_integer(npc, ch, 0, mana.chr_money(ch), 1))
+		elseif v2 == 10 then --- alles
 			bank_pay_money_to_account_dlg(npc, ch, mana.chr_money(ch))
 		end
 	elseif v == 3 then --- Geld von Konto abheben
-		local v2 = do_choice(npc, ch, "Nichts", "500", "1000", "2000", "5000", "10000", "25000", "50000", "Alles")
+		local v2 = do_choice(npc, ch, "Nichts", "500", "1000", "2000", "5000", "10000", "25000", "50000", "Anderen Wert.", "Alles")
 		if v2 == 2 then --- 500
 			bank_get_money_from_account_dlg(npc, ch, 500)
 		elseif v2 == 3 then --- 1000
@@ -157,7 +159,9 @@ function banker_talk(npc, ch)
 			bank_get_money_from_account_dlg(npc, ch, 25000)
 		elseif v2 == 8 then --- 50000
 			bank_get_money_from_account_dlg(npc, ch, 50000)
-		elseif v2 == 9 then --- Alles
+        elseif v2 == 9 then --- Auswahl
+            bank_pay_money_to_account_dlg(npc, ch, do_ask_integer(npc, ch, 0, math.floor(bank_get_account_balance(ch)), 1))
+		elseif v2 == 10 then --- Alles
 			bank_get_money_from_account_dlg(npc, ch, math.floor(bank_get_account_balance(ch)))
 		end
 	elseif v == 4 then --- Kredit aufnehmen
