@@ -24,27 +24,27 @@ end
 function warp_up(obj, id)
     if(mana.being_type(obj)==TYPE_CHARACTER) then
 	  local x = mana.posX(obj)
-	  mana.chr_warp(obj, id, x, 197 * TILESIZE + 16) 
+	  mana.chr_warp(obj, id, x, 197 * TILESIZE) 
 	end
 end
 
 function warp_right(obj, id)
     if(mana.being_type(obj)==TYPE_CHARACTER) then
 	  local y = mana.posY(obj)
-	  mana.chr_warp(obj, id, TILESIZE + 16, y) 
+	  mana.chr_warp(obj, id, 2 * TILESIZE, y) 
 	end
 end
 
 function warp_down(obj, id)
     if(mana.being_type(obj)==TYPE_CHARACTER) then
 	  local x = mana.posX(obj)
-	  mana.chr_warp(obj, id, x, TILESIZE + 16) 
+	  mana.chr_warp(obj, id, x, 2 * TILESIZE) 
 	end
 end
 
 function warp_left(obj, id)
     if(mana.being_type(obj)==TYPE_CHARACTER) then
 	  local y = mana.posY(obj)
-	  mana.chr_warp(obj, id, 197 * TILESIZE + 16, y) 
+	  mana.chr_warp(obj, id, 197 * TILESIZE, y) 
 	end
 end
