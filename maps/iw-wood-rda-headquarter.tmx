@@ -1,48 +1,55 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="80" height="55" tilewidth="32" tileheight="32">
- <properties>
-  <property name="music" value="inside2.ogg"/>
- </properties>
- <tileset firstgid="1" name="collision1_32_32" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/collision1_32_32.png" width="1024" height="1024"/>
- </tileset>
- <tileset firstgid="1025" name="indoor3_32_32" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/indoor3_32_32.png" width="1024" height="1024"/>
- </tileset>
- <tileset firstgid="2049" name="indoor2_32_32" tilewidth="32" tileheight="32">
-  <image source="../graphics/tiles/indoor2_32_32.png" width="1024" height="1024"/>
- </tileset>
- <tileset firstgid="3073" name="indoor1_32_64" tilewidth="32" tileheight="64">
-  <image source="../graphics/tiles/indoor1_32_64.png" width="1024" height="1024"/>
- </tileset>
- <tileset firstgid="3585" name="indoor1_32_96" tilewidth="32" tileheight="96">
-  <image source="../graphics/tiles/indoor1_32_96.png" width="1024" height="960"/>
- </tileset>
- <tileset firstgid="3905" name="indoor2_32_64" tilewidth="32" tileheight="64">
-  <image source="../graphics/tiles/indoor2_32_64.png" width="1024" height="1024"/>
- </tileset>
- <tileset firstgid="4417" name="indoor2_32_96" tilewidth="32" tileheight="96">
-  <image source="../graphics/tiles/indoor2_32_96.png" width="1024" height="960"/>
- </tileset>
- <layer name="Ground" width="80" height="55">
-  <data encoding="base64" compression="gzip">
+  <properties>
+    <property name="music" value="inside2.ogg" />
+  </properties>
+  <tileset firstgid="1" name="collision1_32_32" tilewidth="32" tileheight="32">
+    <image source="../graphics/tiles/collision1_32_32.png" width="1024" height="1024" />
+  </tileset>
+  <tileset firstgid="1025" name="indoor3_32_32" tilewidth="32" tileheight="32">
+    <image source="../graphics/tiles/indoor3_32_32.png" width="1024" height="1024" />
+  </tileset>
+  <tileset firstgid="2049" name="indoor2_32_32" tilewidth="32" tileheight="32">
+    <image source="../graphics/tiles/indoor2_32_32.png" width="1024" height="1024" />
+  </tileset>
+  <tileset firstgid="3073" name="indoor1_32_64" tilewidth="32" tileheight="64">
+    <image source="../graphics/tiles/indoor1_32_64.png" width="1024" height="1024" />
+  </tileset>
+  <tileset firstgid="3585" name="indoor1_32_96" tilewidth="32" tileheight="96">
+    <image source="../graphics/tiles/indoor1_32_96.png" width="1024" height="960" />
+  </tileset>
+  <tileset firstgid="3905" name="indoor2_32_64" tilewidth="32" tileheight="64">
+    <image source="../graphics/tiles/indoor2_32_64.png" width="1024" height="1024" />
+  </tileset>
+  <tileset firstgid="4417" name="indoor2_32_96" tilewidth="32" tileheight="96">
+    <image source="../graphics/tiles/indoor2_32_96.png" width="1024" height="960" />
+  </tileset>
+  <layer name="Ground" width="80" height="55">
+    <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA+3QvQ3CMBCA0RTOIkwB4xB+CmAMYBNYLWvgIgWKFNOAfBaveDrrCuv0jX3XjQAAAADwJ1JqQ+1OS1apDbU7LdmmNtTuVOo3ZLv0/fd8V/Lpz9qdSv32eR6COvbx+13zvAV1108//fTTLyT99NNPP/1i0k8//fT7Zb9HH9ezgX7D5JSdJ5e3fW2R+82t862bhu4FAAAAAADa9wLQxSEowEQAAA==
   </data>
- </layer>
- <layer name="Fringe" width="80" height="55">
-  <data encoding="base64" compression="gzip">
+  </layer>
+  <layer name="Fringe" width="80" height="55">
+    <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA+3BMQEAAADCoPVPbQdvoAAAAAAAAAAAAAAAAAAAAAAAPgOgSzqvwEQAAA==
   </data>
- </layer>
- <layer name="Over" width="80" height="55">
-  <data encoding="base64" compression="gzip">
+  </layer>
+  <layer name="Over" width="80" height="55">
+    <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA+3BMQEAAADCoPVPbQdvoAAAAAAAAAAAAAAAAAAAAAAAPgOgSzqvwEQAAA==
   </data>
- </layer>
- <layer name="Collision" width="80" height="55" visible="0">
-  <data encoding="base64" compression="gzip">
+  </layer>
+  <layer name="Collision" width="80" height="55" visible="0">
+    <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA+3QwQkAMQACwZD+i74uTiUjzF/2nnMuAAAAAACUW1m6k376NVpZupN++jVaWbqTfvo1Wlm6k376NVpZupN++jVaWbqTfv/2TP8AAAAAAADe8QEw0pFFwEQAAA==
   </data>
- </layer>
- <objectgroup name="Object" width="80" height="55" visible="0"/>
+  </layer>
+  <objectgroup name="Object" width="80" height="55" visible="0" />
+  <objectgroup name="Object" width="70" height="70" x="70" y="70">
+    <object name="External Map Events" type="SCRIPT" x="0" y="0">
+      <properties>
+        <property name="FILENAME" value="scripts/maps/iw-wood-rda-headquarter.lua" />
+      </properties>
+    </object>
+  </objectgroup>
 </map>
