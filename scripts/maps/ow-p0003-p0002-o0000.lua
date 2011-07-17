@@ -26,4 +26,14 @@ atinit(function()
     sign.create_sign(154, 128, sign_entrance) --- Schild Ortseingang
     sign.create_sign(62, 106, sign_entrance) --- Schild Ortseingang
     sign.create_sign(95, 47, sign_entrance) --- Schild Ortseingang
+
+    create_npc("Awond", 110, 159 * TILESIZE, 39 * TILESIZE + 16, awond_talk, nil)
 end)
+
+function awond_talk(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Sei gegrüßt Reisender!",
+      "Das war ein harter Tag.",
+      "Ich hoffe meine Frau macht schonmal das Abendessen.",
+      "Setz dich doch zu mir."))
+    do_npc_close(npc, ch)
+end
