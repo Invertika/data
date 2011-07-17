@@ -5,7 +5,7 @@
 -- zur Verfügung                                                                --
 --                                                                              --
 ----------------------------------------------------------------------------------
---  Copyright 2008 The Invertika Development Team                               --
+--  Copyright 2008-2011 The Invertika Development Team                          --
 --                                                                              --
 --  This file is part of Invertika.                                             --
 --                                                                              --
@@ -15,36 +15,36 @@
 ----------------------------------------------------------------------------------
 
 function create_inter_map_warp_trigger(MapUp, MapRight, MapDown, MapLeft)
- mana.trigger_create(0 * TILESIZE, 0 * TILESIZE, 200 * TILESIZE, 1.5 * TILESIZE + 1, "warp_up", MapUp, true) ---Obere Warplinie
- mana.trigger_create(198.5 * TILESIZE, 1 * TILESIZE, 1.5 * TILESIZE, 198 * TILESIZE, "warp_right", MapRight, true) ---Rechte Warplinie
- mana.trigger_create(0 * TILESIZE, 198.5 * TILESIZE, 200 * TILESIZE, 1.5 * TILESIZE, "warp_down", MapDown, true) ---Untere Warplinie
- mana.trigger_create(0 * TILESIZE, 1 * TILESIZE, 1.5 * TILESIZE + 1, 198 * TILESIZE, "warp_left", MapLeft, true) ---Linke Warplinie
+ mana.trigger_create(0 * TILESIZE, 0 * TILESIZE, 200 * TILESIZE, 2 * TILESIZE, "warp_up", MapUp, true) ---Obere Warplinie
+ mana.trigger_create(198 * TILESIZE, 1 * TILESIZE, 2 * TILESIZE, 198 * TILESIZE, "warp_right", MapRight, true) ---Rechte Warplinie
+ mana.trigger_create(0 * TILESIZE, 198 * TILESIZE, 200 * TILESIZE, 2 * TILESIZE, "warp_down", MapDown, true) ---Untere Warplinie
+ mana.trigger_create(0 * TILESIZE, 1 * TILESIZE, 2 * TILESIZE, 198 * TILESIZE, "warp_left", MapLeft, true) ---Linke Warplinie
 end
 
 function warp_up(obj, id)
     if(mana.being_type(obj)==TYPE_CHARACTER) then
-	  local x = mana.posX(obj)
-	  mana.chr_warp(obj, id, x, 198.2 * TILESIZE) 
-	end
+          local x = mana.posX(obj)
+          mana.chr_warp(obj, id, x, 197 * TILESIZE) 
+        end
 end
 
 function warp_right(obj, id)
     if(mana.being_type(obj)==TYPE_CHARACTER) then
-	  local y = mana.posY(obj)
-	  mana.chr_warp(obj, id, 1.8 * TILESIZE, y) 
-	end
+          local y = mana.posY(obj)
+          mana.chr_warp(obj, id, 2 * TILESIZE, y) 
+        end
 end
 
 function warp_down(obj, id)
     if(mana.being_type(obj)==TYPE_CHARACTER) then
-	  local x = mana.posX(obj)
-	  mana.chr_warp(obj, id, x, 1.8 * TILESIZE) 
-	end
+          local x = mana.posX(obj)
+          mana.chr_warp(obj, id, x, 2 * TILESIZE) 
+        end
 end
 
 function warp_left(obj, id)
     if(mana.being_type(obj)==TYPE_CHARACTER) then
-	  local y = mana.posY(obj)
-	  mana.chr_warp(obj, id, 198.2 * TILESIZE, y) 
-	end
+          local y = mana.posY(obj)
+          mana.chr_warp(obj, id, 197 * TILESIZE, y) 
+        end
 end
