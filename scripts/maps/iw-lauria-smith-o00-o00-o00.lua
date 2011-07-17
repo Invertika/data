@@ -16,7 +16,7 @@
 
 require "scripts/lua/npclib"
 
-dofile("data/scripts/libs/warp.lua")
+
 
 atinit(function()
     
