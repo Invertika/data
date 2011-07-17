@@ -37,18 +37,18 @@ end)
 
 
 function gabriel_talk(npc, ch)
-    do_message(npc, ch, "Ich bin Totengräber und habe schon lange keine neuen Aufträge mehr bekommen. Warum mussten auch die Untoten über die Stadt kommen. Mir tun sie komischerweise nichts. Vielleicht, weil ich Ihre Gräber schon seit langem pflege. Manchmal habe ich das Gefühl, sie wollen mit mir sprechen, aber wenn ich zu ihnen gehe und versuche ihnen zuzuhören, stammeln sie nur unverständliches Gemurmel.")
+    do_message(npc, ch, "Ich bin Totengräber und habe schon lange keine neuen Aufträge mehr bekommen. Warum mussten auch die Untoten über die Stadt kommen. Mir tun sie komischerweise nichts. Vielleicht, weil ich Ihre Gräber schon seit langem pflege? Manchmal habe ich das Gefühl, sie wollen mit mir sprechen, aber wenn ich zu ihnen gehe und versuche ihnen zuzuhören, stammeln sie nur unverständliches Gemurmel.")
     do_npc_close(npc, ch)
 end
 
 function patrick_talk(npc, ch)
-    do_message(npc, ch, "Hallo Fremder, willkommen in Qakari, sei aber vorsichtig in der Umgebung dieser Stadt. Die Untoten reagieren Fremden gegenüber nicht sehr freundlich. Solltest du den Mut haben in die Stadt zu gehen, sei noch vorsichtiger. Auch wenn sie schon gestorben sind, haben sie etwas dagegen, wenn die Gräber von unbekannten Personen besucht werden.")
+    do_message(npc, ch, "Hallo Fremder, willkommen in Qakari. Sei aber vorsichtig in der Umgebung dieser Stadt; die Untoten reagieren Fremden gegenüber nicht sehr freundlich. Solltest du den Mut haben in die Stadt zu gehen, sei noch vorsichtiger. Auch wenn sie schon gestorben sind, haben sie etwas dagegen, wenn die Gräber von unbekannten Personen besucht werden.")
     do_npc_close(npc, ch)
 end
 
 
 function peter_talk(npc, ch)
-    do_message(npc, ch, "Ich erinner mich noch, als wäre es gestern gewesen, als ich hier mit meinem Bruder aufgewachsen bin. Warum ist er nur so früh gestorben? Seit er untod ist, kann ich mich nicht mehr richtigt mit ihm unterhalten.")
+    do_message(npc, ch, "Ich erinnere mich noch, als wäre es gestern gewesen, als ich hier mit meinem Bruder aufgewachsen bin. Warum ist er nur so früh gestorben? Seit er untot ist, kann ich mich nicht mehr richtig mit ihm unterhalten.")
     do_npc_close(npc, ch)
 end
 
