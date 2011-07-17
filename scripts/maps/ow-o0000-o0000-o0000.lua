@@ -19,14 +19,16 @@ dofile("data/scripts/libs/warp.lua")
 atinit(function()
  create_inter_map_warp_trigger(62, 72, 56, 6) --- Intermap warp
  nethek.create_netheksaeule(181 * TILESIZE, 125 * TILESIZE + 16) --- Netheksäule
+ mana.trigger_create(41 * TILESIZE + 8, 105 * TILESIZE + 8, 1.5 * TILESIZE, 1.5 * TILESIZE, "warp_escape_tunnel", 0, true) --- Warp zum Fluchttunnel
  
  --Schilder
  sign.create_sign(113, 84, "Frisörsalon Umet\
 Schneiden, Färben, Waschen, Perücken und mehr.") -- Schild vor dem Friseur
  sign.create_sign(131, 82, "Feinste Waffen zu günstigen Preisen\
-wir müssen darauf hinweisen, dass bei Diebstahl ein Ladenverbot verhängt wird sowie die Hand als Entschädigung dabehalten wird.") -- Schild vor dem Waffenladen
+Wir müssen darauf hinweisen, dass bei Diebstahl ein Ladenverbot verhängt wird sowie die Hand als Entschädigung dabehalten wird.") -- Schild vor dem Waffenladen
  sign.create_sign(43, 107, "Kein Trinkwasser!") -- Schild vor dem Brunnen
  sign.create_sign(146, 160, "Baden und Angeln verboten!") -- Schild vor dem Wasserloch
+
  -- NPCs
  create_npc("Elmo", 7, 176 * TILESIZE + 16, 154 * TILESIZE + 16, elmo_talk, nil) --- Elmo
  create_npc("Sam", 7, 183 * TILESIZE + 16, 154 * TILESIZE + 16, sam_talk, nil) --- Sam
@@ -819,4 +821,10 @@ function lidi_talk(npc, ch)
         do_message(npc, ch, "Sehe ich nicht total fesch mit dieser Brille aus?")
     end
     do_npc_close(npc, ch)
+end
+
+function warp_escape_tunnel(obj, blubb)
+    if(mana.being_type(obj)==TYPE_CHARACTER) then
+        mana.chr_warp(obj, 20146, 35 * TILESIZE, 35 * TILESIZE + 16) 
+    end
 end
