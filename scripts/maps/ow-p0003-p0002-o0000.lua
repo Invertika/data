@@ -67,7 +67,7 @@ function mordyno_update(npc)
     else
         mordyno_timer = mordyno_timer + 1
     end
-    if mordyno_timer == 25 then
+    if mordyno_timer == 250 then
         mana.being_say(npc, invertika.get_random_element("Kauft Leute! Kauf!", 
           "Hier gibt es nur beste Ware!",
           "Kommen sie meine Herren, Kommen sie meine Damen!"))
