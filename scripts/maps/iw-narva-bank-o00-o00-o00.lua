@@ -15,7 +15,8 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
+require "scripts/libs/banker"
 
 atinit(function()
-    
+   create_npc("Banker", 5, 31 * TILESIZE + 16, 36 * TILESIZE + 16, banker.banker_talk, nil)
 end)
