@@ -29,7 +29,7 @@ atinit(function()
     sign.create_sign(95, 47, sign_entrance) --- Schild Ortseingang
 
     create_npc("Awond", 120, 159 * TILESIZE, 40 * TILESIZE, awond_talk, nil)
-    create_npc("Mordyno", 5, 101 * TILESIZE + 16, 109 * TILESIZE + 16, mordyno_talk, mordyno_update)
+    create_npc("Mordyno", 141, 101 * TILESIZE + 16, 109 * TILESIZE + 16, mordyno_talk, mordyno_update)
 end)
 
 function awond_talk(npc, ch)
