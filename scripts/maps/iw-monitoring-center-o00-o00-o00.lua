@@ -23,6 +23,7 @@ atinit(function()
  create_npc("Jo", 124, 22 * TILESIZE + 16, 32 * TILESIZE + 16, jo_talk, nil) --- Jo
  create_npc("Leo", 146, 57 * TILESIZE + 16, 23 * TILESIZE + 16, leo_talk, nil) --- Leo
  create_npc("Meg", 65, 20 * TILESIZE + 16, 32 * TILESIZE + 16, meg_talk, nil) --- Meg
+ create_npc("Amy", 18, 14 * TILESIZE + 16, 9 * TILESIZE + 16, amy_talk, nil) --- Amy
 end)
 
 function sei_talk(npc, ch)
@@ -58,5 +59,14 @@ function meg_talk(npc, ch)
 	    "Jo, wollen wir nach Alexia ein bischen was einkaufen? Sag mal belauscht du uns etwa?",
 	    "So Munition verstaut, Waffe geladen und gesäubert. Kann losgehen.",
 	    "Irgendwie langweilig wenn nichts los ist."))
+	do_npc_close(npc, ch)
+end
+
+function amy_talk(npc, ch)
+	do_message(npc, ch, invertika.get_random_element("So die Datenverbindung herstellen und schon kann es losgehen.",
+	    "Mmm dieser Algorithmus ist ziemlich komplex. Ich sollte ihn rekursiv gestalten. ",
+	    "So noch ein paar Minuten und ich habe alle Daten heruntergeladen.",
+	    "Dieses Programm könnte uns noch nützlich sein.",
+	    "Ersatunlich, wer auch immer das geschrieben hat, hat eine Menge Ahnung."))
 	do_npc_close(npc, ch)
 end
