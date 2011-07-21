@@ -19,8 +19,10 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
- create_npc("Sei", 145, 11 * TILESIZE + 16, 33 * TILESIZE + 16, sei_talk, nil) --- Sei
+ create_npc("Sei", 111, 11 * TILESIZE + 16, 33 * TILESIZE + 16, sei_talk, nil) --- Sei
  create_npc("Jo", 124, 22 * TILESIZE + 16, 32 * TILESIZE + 16, jo_talk, nil) --- Jo
+ create_npc("Leo", 146, 57 * TILESIZE + 16, 23 * TILESIZE + 16, leo_talk, nil) --- Leo
+ create_npc("Meg", 65, 20 * TILESIZE + 16, 32 * TILESIZE + 16, meg_talk, nil) --- Meg
 end)
 
 function sei_talk(npc, ch)
@@ -38,5 +40,23 @@ function jo_talk(npc, ch)
 	    "Warten bis zum nächsten Auftrag...",
 	    "Solltest du nicht für das Essen sorgen...",
 	    "Ich habe keinen Hunger."))
+	do_npc_close(npc, ch)
+end
+
+function leo_talk(npc, ch)
+	do_message(npc, ch, invertika.get_random_element("Ich kümmere mich hier um die Technik.",
+	    "Die Transcieverkerne verbrauchen aus irgendeinem Grund zu viel Strom.",
+	    "Das schlimme ist, wenn du alles richtig machst merkt es keiner.",
+	    "Als nächstes müssen die Bandspeicher überprüft werden.",
+	    "Mist schon wieder abgestürzt."))
+	do_npc_close(npc, ch)
+end
+
+function meg_talk(npc, ch)
+	do_message(npc, ch, invertika.get_random_element("Jo, diese mechanischen Gehirne waren doch seltsam oder?",
+	    "Man habe ich wieder einen Hunger, warum hast du noch nichts gekocht?",
+	    "Jo, wollen wir nach Alexia ein bischen was einkaufen? Sag mal belauscht du uns etwa?",
+	    "So Munition verstaut, Waffe geladen und gesäubert. Kann losgehen.",
+	    "Irgendwie langweilig wenn nichts los ist."))
 	do_npc_close(npc, ch)
 end
