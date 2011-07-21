@@ -16,7 +16,16 @@
 
 
 require "scripts/lua/npclib"
-
+require "scripts/libs/invertika"
 
 atinit(function()
+ create_npc("Sei", 145, 11 * TILESIZE + 16, 33 * TILESIZE + 16, sei_talk, nil) --- Sei
 end)
+
+function sei_talk(npc, ch)
+	do_message(npc, ch, invertika.get_random_element("Willkommen im Überwachungszentrum, hast du etwas zu essen mitgebracht?",
+	    "Denk daran, alles zu vergessen wenn du uns verlässt.",
+	    "Alles was du hier siehst ist streng geheim.",
+	    "Wir überwachen, ganz bestimmte Organisationen."))
+	do_npc_close(npc, ch)
+end
