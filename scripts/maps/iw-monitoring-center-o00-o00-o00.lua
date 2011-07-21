@@ -20,12 +20,23 @@ require "scripts/libs/invertika"
 
 atinit(function()
  create_npc("Sei", 145, 11 * TILESIZE + 16, 33 * TILESIZE + 16, sei_talk, nil) --- Sei
+ create_npc("Jo", 124, 22 * TILESIZE + 16, 32 * TILESIZE + 16, jo_talk, nil) --- Jo
 end)
 
 function sei_talk(npc, ch)
 	do_message(npc, ch, invertika.get_random_element("Willkommen im Überwachungszentrum, hast du etwas zu essen mitgebracht?",
 	    "Denk daran, alles zu vergessen wenn du uns verlässt.",
 	    "Alles was du hier siehst ist streng geheim.",
-	    "Wir überwachen, ganz bestimmte Organisationen."))
+	    "Wir überwachen, ganz bestimmte Organisationen.",
+	    "Ich habe hier das sagen."))
+	do_npc_close(npc, ch)
+end
+
+function jo_talk(npc, ch)
+	do_message(npc, ch, invertika.get_random_element("Wenn du meinst...",
+	    "Du redest zu viel...",
+	    "Warten bis zum nächsten Auftrag...",
+	    "Solltest du nicht für das Essen sorgen...",
+	    "Ich habe keinen Hunger."))
 	do_npc_close(npc, ch)
 end
