@@ -150,13 +150,13 @@ local tr_timer = {}
 
 function create_random_talk_function(...)
     local strings = {...}
-    return function(npc)
-        if not tr_timer[npc] then
-            tr_timer[npc] = 1 
-        end 
-        tr_timer[npc] = tr_timer[npc] + 1 
-        if tr_timer[npc] == 250 then
-            mana.being_say(npc, invertika.get_random_element(strings))
-        end 
+    return function(npc) \
+        if not tr_timer[npc] then \
+            tr_timer[npc] = 1  \
+        end  \
+        tr_timer[npc] = tr_timer[npc] + 1  \
+        if tr_timer[npc] == 250 then \
+            mana.being_say(npc, invertika.get_random_element(strings)) \
+        end  \
     end 
 end
