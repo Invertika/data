@@ -144,5 +144,19 @@ end
 -- @param being Das zu tötende Lebewesen
 function kill_being(being)
     mana.being_damage(being, 999999, 0, 99999, DAMAGE_PHYSICAL, ELEMET_NEUTRAL)
+end
 
+local tr_timer = {}
+
+function create_random_talk_function(...)
+    local strings = {...}
+    return function(npc)
+        if not tr_timer[npc] then
+            tr_timer[npc] = 1 
+        end 
+        tr_timer[npc] = tr_timer[npc] + 1 
+        if tr_timer[npc] == 250 then
+            mana.being_say(npc, invertika.get_random_element(strings))
+        end 
+    end 
 end

@@ -30,7 +30,7 @@ atinit(function()
 
     create_npc("Awond", 120, 159 * TILESIZE, 40 * TILESIZE, awond_talk, nil)
     create_npc("Mordyno", 141, 101 * TILESIZE + 16, 109 * TILESIZE + 16, mordyno_talk, mordyno_update)
-    mordyno_random_talk = npclib.create_random_talk_function(
+    mordyno_random_talk = invertika.create_random_talk_function(
           "Kauft Leute! Kauft!", 
           "Hier gibt es nur beste Ware!",
           "Kommen sie meine Herren, Kommen sie meine Damen!",
