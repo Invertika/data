@@ -30,6 +30,16 @@ atinit(function()
 
     create_npc("Awond", 120, 159 * TILESIZE, 40 * TILESIZE, awond_talk, nil)
     create_npc("Mordyno", 141, 101 * TILESIZE + 16, 109 * TILESIZE + 16, mordyno_talk, mordyno_update)
+    mordyno_random_talk = npclib.create_random_talk_function(
+          "Kauft Leute! Kauft!", 
+          "Hier gibt es nur beste Ware!",
+          "Kommen sie meine Herren, Kommen sie meine Damen!",
+          "Messer von feinster Qualität, nur 50 Aki das Stück! 140 Aki in der Luxusvariante!",
+          "Dolche, der stetige Begleiter gegen die Gefahren der Wüste, nur 1000 Aki!",
+          "Einen Holzstab zum Üben im Umgang mit Stabwaffen, nur 1690 Aki!",
+          "Baumwollkleidung, in allen Farben, nur 250 Aki das Stück!",
+          "Die neuste Mode zu Spottpreisen! Kaufen sie, so lange der Vorrat reicht.",
+          "Messer jetzt reduziert für nur 50 Aki das Stück! Greifen sie zu!")
 end)
 
 function awond_talk(npc, ch)
@@ -62,21 +72,5 @@ end
 
 function mordyno_update(npc)
     npclib.walkaround_wide(npc)
-    if not mordyno_timer then
-        mordyno_timer = 1
-    else
-        mordyno_timer = mordyno_timer + 1
-    end
-    if mordyno_timer == 250 then
-        mana.being_say(npc, invertika.get_random_element("Kauft Leute! Kauft!", 
-          "Hier gibt es nur beste Ware!",
-          "Kommen sie meine Herren, Kommen sie meine Damen!",
-          "Messer von feinster Qualität, nur 50 Aki das Stück! 140 Aki in der Luxusvariante!",
-          "Dolche, der stetige Begleiter gegen die Gefahren der Wüste, nur 1000 Aki!",
-          "Einen Holzstab zum Üben im Umgang mit Stabwaffen, nur 1690 Aki!",
-          "Baumwollkleidung, in allen Farben, nur 250 Aki das Stück!",
-          "Die neuste Mode zu Spottpreisen! Kaufen sie, so lange der Vorrat reicht.",
-          "Messer jetzt reduziert für nur 50 Aki das Stück! Greifen sie zu!"))
-          mordyno_timer = 0
-    end
+    mordyno_random_talk()
 end
