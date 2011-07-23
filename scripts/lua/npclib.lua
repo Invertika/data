@@ -18,6 +18,8 @@
 
 module("npclib", package.seeall);
 
+require("scripts/libs/invertika")
+
 
 -- Update function walkaround_small
 -- makes the NPC walk around in a 64x64 pixel square around its start location.
@@ -92,6 +94,24 @@ function walkaround_map(npc)
     local y = math.random(-128, 128) + mana.posY(npc)
     mana.being_walk(npc, x, y, 2)
   end
+end
+
+-- Update function talk_random
+-- makes a NPC talk random strings.
+
+local tr_timer = {}
+
+function create_random_talk_function(...)
+    local strings = {...}
+    return function(npc)
+        if not tr_timer[npc] then
+            tr_timer[npc] = 1
+        end
+        tr_timer[npc] = tr_timer[npc] + 1
+        if tr_timer[npc] == 250 then
+            mana.being_say(npc, invertika.get_random_element(strings))
+        end
+    end
 end
 
 -- Allows passage of more information to an NPC's talk function
