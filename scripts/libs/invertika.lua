@@ -147,16 +147,18 @@ function kill_being(being)
 end
 
 local tr_timer = {}
+local tr_messages = {}
 
-function create_random_talk_function(...)
-    local strings = {...}
-    return function(npc) \
-        if not tr_timer[npc] then \
-            tr_timer[npc] = 1  \
-        end  \
-        tr_timer[npc] = tr_timer[npc] + 1  \
-        if tr_timer[npc] == 250 then \
-            mana.being_say(npc, invertika.get_random_element(strings)) \
-        end  \
+function create_npc_talk_random(npc, ...)
+    tr_messages[npc] = {...}
+end
+
+function npc_talk_random(npc)
+    if not tr_timer[npc] then
+        tr_timer[npc] = 1 
+    end 
+    tr_timer[npc] = tr_timer[npc] + 1 
+    if tr_timer[npc] == 250 then
+        mana.being_say(npc, get_random_element(tr_messages[npc]))
     end 
 end
