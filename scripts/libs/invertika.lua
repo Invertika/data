@@ -156,6 +156,7 @@ end
 function npc_talk_random(npc)
     if not tr_timer[npc] then
         tr_timer[npc] = 1 
+        tr_messages[npc] = {"FIXME"}
     end 
     tr_timer[npc] = tr_timer[npc] + 1 
     if tr_timer[npc] == 250 then
