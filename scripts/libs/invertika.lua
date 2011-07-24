@@ -149,8 +149,8 @@ end
 local tr_timer = {}
 local tr_messages = {}
 
-function create_npc_talk_random(npc, ...)
-    tr_messages[npc] = arg
+function create_npc_talk_random(npc,  messages)
+    tr_messages[npc] = messages
 end
 
 function npc_talk_random(npc)

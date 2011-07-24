@@ -31,7 +31,7 @@ atinit(function()
     create_npc("Awond", 120, 159 * TILESIZE, 40 * TILESIZE, awond_talk, nil)
     mordyno = create_npc("Mordyno", 141, 101 * TILESIZE + 16, 109 * TILESIZE + 16, mordyno_talk, mordyno_update)
     invertika.create_npc_talk_random(mordyno,
-          "Kauft Leute! Kauft!", 
+          {"Kauft Leute! Kauft!", 
           "Hier gibt es nur beste Ware!",
           "Kommen sie meine Herren, Kommen sie meine Damen!",
           "Messer von feinster Qualität, nur 50 Aki das Stück! 140 Aki in der Luxusvariante!",
@@ -39,7 +39,7 @@ atinit(function()
           "Einen Holzstab zum Üben im Umgang mit Stabwaffen, nur 1690 Aki!",
           "Baumwollkleidung, in allen Farben, nur 250 Aki das Stück!",
           "Die neuste Mode zu Spottpreisen! Kaufen sie, so lange der Vorrat reicht.",
-          "Messer jetzt reduziert für nur 50 Aki das Stück! Greifen sie zu!")
+          "Messer jetzt reduziert für nur 50 Aki das Stück! Greifen sie zu!"})
 end)
 
 function awond_talk(npc, ch)
