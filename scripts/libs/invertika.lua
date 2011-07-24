@@ -147,6 +147,7 @@ function kill_being(being)
 end
 
 tr_timer = {}
+tr_timer_next = {}
 tr_messages = {}
 
 function create_npc_talk_random(npc,  messages)
@@ -156,11 +157,13 @@ end
 function npc_talk_random(npc)
     if not tr_timer[npc] then
         tr_timer[npc] = 1 
+        tr_timer_next[npc] = math.random(200, 300)
     end 
     tr_timer[npc] = tr_timer[npc] + 1 
-    if tr_timer[npc] == 250 then
+    if tr_timer[npc] == tr_timer_next[npc] then
         local text = get_random_element(tr_messages[npc][ math.random(1, #tr_messages[npc])])
         mana.being_say(npc, text)
         tr_timer[npc] = 1
+        tr_timer_next[npc] = math.random(200, 300)
     end 
 end
