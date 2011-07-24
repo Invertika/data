@@ -160,7 +160,7 @@ function npc_talk_random(npc)
     end 
     tr_timer[npc] = tr_timer[npc] + 1 
     if tr_timer[npc] == 250 then
-        local text = get_random_element(tr_messages[npc])
+        local text = get_random_element(tr_messages[npc][ math.random(1, #tr_messages[npc])])
         mana.being_say(npc, text)
         tr_timer[npc] = 1
     end 
