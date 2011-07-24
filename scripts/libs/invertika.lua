@@ -146,8 +146,8 @@ function kill_being(being)
     mana.being_damage(being, 999999, 0, 99999, DAMAGE_PHYSICAL, ELEMET_NEUTRAL)
 end
 
-local tr_timer = {}
-local tr_messages = {}
+tr_timer = {}
+tr_messages = {}
 
 function create_npc_talk_random(npc,  messages)
     tr_messages[npc] = messages
