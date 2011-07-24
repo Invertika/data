@@ -106,7 +106,7 @@ end
 --- Fügt Character ch amount Aki hinzu (bei negativen Werten wird abgezogen)
 -- @param ch Der Spieler dem Geld gegeben werden soll.
 -- @param amount Menge des Geldes.
-function set_money(ch, amount)
+function add_money(ch, amount)
     local current_money = mana.chr_money(ch)
     if current_money + amount < 0 then
         error("add_money failed: money would be less than 0")

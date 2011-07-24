@@ -257,7 +257,7 @@ function bruce_talk(npc, ch)
   function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_bruce_quest", tonumber(x)) end
   
 	if get_qstatus()==0 then
-		invertika.set_money(ch, 1000)
+		invertika.add_money(ch, 1000)
 		set_qstatus(1)
 		do_message(npc, ch, "Ahhh ich verstehe, du bist neu hier. Hier ein paar Münzen fuer den Anfang...")		
 	elseif get_qstatus()==1 then
@@ -411,19 +411,19 @@ function nobur_talk(npc, ch)
 		
 			if count < 10 then
 			  do_message(npc, ch, "Nimm diese Münzen als Dank.")
-			  invertika.set_money(ch, 50) 
+			  invertika.add_money(ch, 50) 
 			  break;
 			elseif count < 20 then
 			  do_message(npc, ch, "Nimm diese Münzen als Dank.")
-			  invertika.set_money(ch, 150) 
+			  invertika.add_money(ch, 150) 
 			  break;
 			elseif count < 30 then
 			  do_message(npc, ch, "Nimm diese Münzen als Dank.")
-			  invertika.set_money(ch, 350) 
+			  invertika.add_money(ch, 350) 
 			  break;
 			elseif count < 40 then
 			  do_message(npc, ch, "Nimm diese Münzen als Dank.")
-			  invertika.set_money(ch, 500) 
+			  invertika.add_money(ch, 500) 
 			  break;
 			elseif count < 150 then
 			  do_message(npc, ch, "Nimm diesen lustigen Hut als Dankeschön.")
@@ -431,7 +431,7 @@ function nobur_talk(npc, ch)
 			  break;
 			elseif count >= 150 then
 			  do_message(npc, ch, "Nimm diese Münzen als Dank.")
-			  invertika.set_money(ch, 2500) 
+			  invertika.add_money(ch, 2500) 
 			  break;
 			end
 			
@@ -698,7 +698,7 @@ function bernie_talk(npc, ch)
 		if v == 1 then
 		    local PlayerMoney=mana.chr_money(ch)
 		    if PlayerMoney >= 99999 then
-			invertika.set_money(ch, -99999)
+			invertika.add_money(ch, -99999)
 			invertika.add_items(ch, 10005, 1, "Niedermetzler 3000")
 			do_message(npc, ch, invertika.get_random_element("Viel Spaß mit deinem Niedermetzler 3000.",
 	  "Nun hast du ihn, den Niedermetzler 3000.",
@@ -712,7 +712,7 @@ function bernie_talk(npc, ch)
 		    end
         elseif v == 2 then
             if mana.chr_money(ch) >= 12500 then
-                invertika.set_money(ch, -12500)
+                invertika.add_money(ch, -12500)
                 invertika.add_items(ch, 20023, 1, "Sonnenbrille")
                 do_message(npc, ch, "Da. Nimm Sie. Willst du auch einen Niedermetzler 3000?")
             else
@@ -744,7 +744,7 @@ function valeria_talk(npc, ch)
 		if v == 1 then
 		    local PlayerMoney=mana.chr_money(ch)
 		    if PlayerMoney >= 1000 then
-			invertika.set_money(ch, -1000)
+			invertika.add_money(ch, -1000)
 			mana.being_heal(ch);
 			do_message(npc, ch, invertika.get_random_element("Du bist vollständig geheilt.",
 	  "Fertig. Du kannst wieder deines Weges gehen."))

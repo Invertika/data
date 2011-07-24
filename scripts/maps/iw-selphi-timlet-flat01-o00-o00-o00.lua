@@ -72,7 +72,7 @@ function goron_talk(npc, ch)
                                     local v2 = do_choice(npc, ch, "Bezahlen.", "Nein. Dann doch nicht.")
                                     if v2 == 1 then
                                         if mana.chr_money(ch) >= 1200 then
-                                            invertika.set_money(ch, -1200)
+                                            invertika.add_money(ch, -1200)
                                             if v1 == 1 then
                                                 invertika.add_items(ch, 40030, -1, "grüner Garn")
                                             elseif v1 == 2 then

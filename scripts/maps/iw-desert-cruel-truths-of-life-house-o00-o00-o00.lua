@@ -34,7 +34,7 @@ function veritas_talk(npc, ch)
 					if vMoney == 1 then
 					    local PlayerMoney=mana.chr_money(ch)
 		                if PlayerMoney >= 15000 then
-					        invertika.set_money(ch, -15000)
+					        invertika.add_money(ch, -15000)
 						
 					        do_message(npc, ch, "Ausgezeichnet. Ich hoffe du bist vorbereitet. Ich lese nun eine grausame Wahrheit des Lebens aus diesem Buch.")
 						

@@ -50,7 +50,7 @@ function chodar_talk(npc, ch)
                 if v == 1 then
                     invertika.add_items(ch, 30006, -1, "Bier")
                     do_message(npc, ch, "Ah. Endlich! Hier hast du deine 25 Aki.")
-                    invertika.set_money(ch, 25)
+                    invertika.add_money(ch, 25)
                     set_qstatus(2)
                     do_message(npc, ch, "Kannst du mir nen zuverlässigen Burschen empfehlen, der Zugang zum Palast hat? Dieser komische Kauz Nepuret wollte mir nicht diesen Brief geben...")
                     while true do

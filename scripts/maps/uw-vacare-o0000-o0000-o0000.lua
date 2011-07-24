@@ -159,7 +159,7 @@ function valaia_talk(npc, ch)
     invertika.init_quest_status(ch, quest_string)
 	if invertika.get_quest_status(ch, quest_string) == 0 then
       do_message(npc, ch, "Ich sehe du hast gar kein Geld bei dir. Nun ja ich will mal nicht so sein, nimm ein bischen von meinem.")
-      invertika.set_money(ch, 500)
+      invertika.add_money(ch, 500)
       invertika.set_quest_status(ch, quest_string, 1)
     end
 	
