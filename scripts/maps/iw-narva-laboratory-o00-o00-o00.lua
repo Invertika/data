@@ -19,12 +19,12 @@ require "scripts/libs/invertika"
 
 atinit(function()
     schedule_every(5, explosion)
-    nalaf = create_npc("Nalaf", 0, 41 * TILESIZE + 16, 35 * TILESIZE + 16, nalaf_talk, invertika.npc_talk_random)
+    nalaf = create_npc("Nalaf", 11, 41 * TILESIZE + 16, 35 * TILESIZE + 16, nalaf_talk, invertika.npc_talk_random)
     invertika.create_npc_talk_random(nalaf,
       {"Hm. das scheint nicht zu klappen...",
       "Wäre auch ein Wunder wenn es funktioniert hätte.",
       "Achtung! Bitte einen Schritt zurücktreten!"})
-    warves = create_npc("Warves", 0, 45 * TILESIZE + 16, 38 * TILESIZE + 16, warves_talk, invertika.npc_talk_random)
+    warves = create_npc("Warves", 7, 45 * TILESIZE + 16, 38 * TILESIZE + 16, warves_talk, invertika.npc_talk_random)
     invertika.create_npc_talk_random(warves,
       {"Probier das hier mal.",
       "Ich probier mal eine neue Mischung.",
