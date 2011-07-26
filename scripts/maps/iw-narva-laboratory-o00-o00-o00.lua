@@ -96,6 +96,6 @@ end
 function warves_talk(npc, ch)
     do_message(npc, ch, invertika.get_random_element(
       "Vorsicht mit den Reagenzgläsern!",
-      "Wir experimentieren hier mit neuen Mittel.") -- TODO: Mehr Varianten
+      "Wir experimentieren hier mit neuen Mittel.")) -- TODO: Mehr Varianten
     do_npc_close(npc, ch)
 end
