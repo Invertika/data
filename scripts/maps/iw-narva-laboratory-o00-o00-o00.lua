@@ -68,7 +68,7 @@ function nalaf_talk(npc, ch)
             end
         end
     elseif get_qstatus() == 1 then
-        local count = mana.chr_inv_count(40043)
+        local count = mana.chr_inv_count(ch, 40043)
         if count > 0 then
             do_message(npc, ch, "Ah. Du hast Sandkriecherüberreste... Überlässt du sie uns für 200 Aki das Stück?")
             while true do
