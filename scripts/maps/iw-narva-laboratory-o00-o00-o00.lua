@@ -23,12 +23,12 @@ atinit(function()
     invertika.create_npc_talk_random(nalaf,
       {"Hm. das scheint nicht zu klappen...",
       "Wäre auch ein Wunder wenn es funktioniert hätte.",
-      "Achtung! Bitte einen Schritt zurücktreten!"})
+      "Achtung! Bitte einen Schritt zurücktreten!"}) --TODO: Mehr Auswahl
     warves = create_npc("Warves", 7, 45 * TILESIZE + 16, 38 * TILESIZE + 16, warves_talk, invertika.npc_talk_random)
     invertika.create_npc_talk_random(warves,
       {"Probier das hier mal.",
       "Ich probier mal eine neue Mischung.",
-      "Hmm..."})
+      "Hmm..."}) -- TODO: Mehr Auswahl
 
 end)
 
@@ -76,6 +76,7 @@ function nalaf_talk(npc, ch)
                 if v == 1 then
                     -- Verkauf der Items in letzter Sekunde unterbinden
                     count = mana.chr_inv_count(40043)
+                    set_qstatus(2)
                     invertika.add_items(ch, 40043, -count, "Überreste eines Sandkriechers")
                     invertika.add_money(ch, count * 200)
                     do_message(npc, ch, "Vielen Dank. Erzähl niemandem, dass du uns diese Stoffe gebracht hast. Unsere Forschungen sind hoch geheim.")
@@ -87,6 +88,8 @@ function nalaf_talk(npc, ch)
         else
             do_message(npc, ch, invertika.get_random_element("Wenn du mir ein Paar Sandkricherüberreste bringst geb ich dir ein paar Münzen.", "Wolltest du nicht ein paar Sandkriecher für unsere Forschungen jagen?"))
         end
+    elseif get_qstatus() == 2 then
+        do_message(npc, ch, "Zur Zeit habe ich keine weiteren Aufgaben für dich.")
     end
 
     do_npc_close(npc, ch)
