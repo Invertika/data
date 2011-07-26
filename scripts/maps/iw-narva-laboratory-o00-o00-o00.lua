@@ -75,7 +75,7 @@ function nalaf_talk(npc, ch)
                 local v = do_choice(npc, ch, "Verkaufen.", "Behalten.")
                 if v == 1 then
                     -- Verkauf der Items in letzter Sekunde unterbinden
-                    count = mana.chr_inv_count(40043)
+                    count = mana.chr_inv_count(ch, 40043)
                     set_qstatus(2)
                     invertika.add_items(ch, 40043, -count, "Überreste eines Sandkriechers")
                     invertika.add_money(ch, count * 200)
