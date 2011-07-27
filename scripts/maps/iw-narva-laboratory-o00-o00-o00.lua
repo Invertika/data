@@ -37,7 +37,7 @@ function explosion()
 end
 
 function nalaf_talk(npc, ch)
-    local quest_string = "narva_laboratory_nalaf"
+    local quest_string = "narva_laboratory_nalaf_quest"
     invertika.init_quest_status(ch, quest_string)
     function get_qstatus() return invertika.get_quest_status(ch, quest_string) end
     function set_qstatus(x) invertika.set_quest_status(ch, quest_string, x) end
