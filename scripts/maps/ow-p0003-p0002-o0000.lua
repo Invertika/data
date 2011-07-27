@@ -105,7 +105,7 @@ function bache_talk(npc, ch)
             do_message(npc, ch, "Du hast Holz!")
             do_message(npc, ch, "Würdest du mir es überlassen?")
             while true do
-                local v == do_choice(npc, ch, "Nimm es dir.", "Nein. Das brauch ich selber.")
+                local v = do_choice(npc, ch, "Nimm es dir.", "Nein. Das brauch ich selber.")
                 if v == 1 then
                     local count = mana.chr_inv_count(ch, 40040)
                     if count == 0 then break end
