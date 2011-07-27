@@ -33,7 +33,7 @@ atinit(function()
 end)
 
 function explosion()
-    mana.effect_create(5, 41 * TILESIZE + 16, 37 * TILESIZE)
+    mana.effect_create(5, 41 * TILESIZE + 16, 37 * TILESIZE + 16)
 end
 
 function nalaf_talk(npc, ch)
