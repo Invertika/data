@@ -19,9 +19,7 @@ end
 function kaboom(my_user, my_x, my_y)
     local affected_beings = mana.get_beings_in_circle(my_x, my_y, DAMAGE_RADIUS)
     mana.being_say(my_user, table.getn(affected_beings))
-    mana.being_say(my_user, "Debug 2")
     for nr, being in pairs(affected_beings) do
-        mana.being_say(my_user, "Debug 3")
         local distance = get_distance(my_x, my_y, mana.posX(being), mana.posY(being))
         local damage = DAMAGE_DAMAGE * math.pow(DAMAGE_FACTOR_DECREASE, distance)
         -- mana.being_say(being, string.format("Name: %s, Distanz: %s, Damage: %s",
