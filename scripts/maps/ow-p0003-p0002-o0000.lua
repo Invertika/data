@@ -121,6 +121,10 @@ function bache_talk(npc, ch)
                     break
                 end
             end
+        else
+            do_message(npc, ch, invertika.get_random_element(
+              "Ich nehme es dir nich übel wenn du das Holz nicht besorgst.",
+              "Du musst das Holz nicht besorgen.")) -- TODO: Mehr Auswahl.
         end
     elseif get_qstatus() == 2 then
         do_message(npc, ch, "Vielen Dank für das Holz! Ich werde das nie vergessen.")
