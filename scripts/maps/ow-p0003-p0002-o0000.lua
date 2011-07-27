@@ -40,6 +40,9 @@ atinit(function()
           "Baumwollkleidung, in allen Farben, nur 250 Aki das Stück!",
           "Die neuste Mode zu Spottpreisen! Kaufen sie, so lange der Vorrat reicht.",
           "Messer jetzt reduziert für nur 50 Aki das Stück! Greifen sie zu!"})
+
+
+    create_npc("Bache", 45, 116 * TILESIZE + 16, 61 * TILESIZE + 16, bache_talk, nil)
 end)
 
 function awond_talk(npc, ch)
@@ -73,4 +76,54 @@ end
 function mordyno_update(npc)
     npclib.walkaround_wide(npc)
     invertika.npc_talk_random(npc)
+end
+
+function bache_talk(npc, ch)
+    local quest_string = "narva_bache_quest"
+    invertika.init_quest_status(ch, quest_string)
+    function get_qstatus() return invertika.get_quest_status(ch, quest_string) end
+    function set_qstatus(x) invertika.set_quest_status(ch, quest_string, x) end
+    if get_qstatus() == 0 then
+        do_message(npc, ch, "Sei gegrüßt Fremder.")
+        do_message(npc, ch, "Ich bin auf der Suche nach brauchbarem Bauholz")
+        do_message(npc, ch, "Leider ist das Palmen holz hier nicht zu gebrauchen...")
+        do_message(npc, ch, "Ich muss mich wohl auf eine weitere Reise machen.")
+        while true do
+            local v = do_choice(npc, ch, "Soll ich Holz für dich besorgen?", "Viel Glück bei der Reise.")
+            if v == 1 then
+                set_qstatus(1)
+                do_message(npc, ch, "Das würdest du tun? Hm... Ich kann dir aber nicht viel als Belohnung geben...")
+                break
+            elseif v == 2 then
+                do_message(npc, ch, "Danke.")
+                break
+            end
+        end
+    elseif get_qstatus() == 1 then
+        local count = mana.chr_inv_count(ch, 40040)
+        if count > 0 then
+            do_message(npc, ch, "Du hast Holz!")
+            do_message(npc, ch, "Würdest du mir es überlassen?")
+            while true do
+                local v == do_choice(npc, ch, "Nimm es dir.", "Nein. Das brauch ich selber.")
+                if v == 1 then
+                    local count = mana.chr_inv_count(ch, 40040)
+                    if count == 0 then break end
+                    set_qstatus(2)
+                    invertika.add_items(ch, 40040, -count, "Holz")
+                    do_message(npc, ch, "Vielen Dank.")
+                    do_message(npc, ch, "Ich kann dir leider nicht viel geben...")
+                    do_message(npc, ch, "Aber nimm diese Axt. Hier kann ich mit der nicht viel anfangen.")
+                    invertika.add_items(ch, 10014, 1, "Axt")
+                    break
+                elseif v == 2 then
+                    do_message(npc, ch, "Schade.")
+                    break
+                end
+            end
+        end
+    elseif get_qstatus() == 2 then
+        do_message(npc, ch, "Vielen Dank für das Holz! Ich werde das nie vergessen.")
+    end
+    do_npc_close(npc, ch)
 end
