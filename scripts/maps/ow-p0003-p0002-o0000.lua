@@ -145,7 +145,7 @@ function cloina_talk(npc, ch)
        {30018, 30, 250},
        {30019, 30, 550},
        {30023, 30, 150},
-       {30025, 30, 1000} }
+       {30025, 30, 1000} })
 end
 
 function brielm_talk(npc, ch)
