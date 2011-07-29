@@ -135,7 +135,7 @@ end
 
 function cloina_talk(npc, ch)
     do_message(npc, ch, "Ich verkaufe hier Heilmittel aus meinen selbstangebauten Kräutern.")
-    mana.npc_trage(npc, ch, false,
+    mana.npc_trade(npc, ch, false,
      { {30001, 30, 300},
        {30002, 30, 100},
        {30008, 30, 200},
