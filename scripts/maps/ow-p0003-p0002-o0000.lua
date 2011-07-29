@@ -135,7 +135,6 @@ end
 
 function cloina_talk(npc, ch)
     do_message(npc, ch, "Ich verkaufe hier Heilmittel aus meinen selbstangebauten Kräutern.")
-    do_npc_close(npc, ch)
     mana.npc_trage(npc, ch, false,
      { {30001, 30, 300},
        {30002, 30, 100},
@@ -146,6 +145,7 @@ function cloina_talk(npc, ch)
        {30019, 30, 550},
        {30023, 30, 150},
        {30025, 30, 1000} })
+    do_npc_close(npc, ch)
 end
 
 function brielm_talk(npc, ch)
