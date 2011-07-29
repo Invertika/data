@@ -21,7 +21,7 @@ require "scripts/libs/sign"
 dofile("data/scripts/libs/warp.lua")
 
 atinit(function()
-    create_inter_map_warp_trigger(19001, 110, 98, 88) --- Intermap warp
+    create_inter_map_warp_trigger(nil, 110, 98, 88) --- Intermap warp
 
     sign_entrance = "Alexia"
     sign.create_sign(10, 74, sign_entrance) --- Schild Ortseingang

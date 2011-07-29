@@ -20,6 +20,6 @@ require "scripts/libs/nethek"
 dofile("data/scripts/libs/warp.lua")
 
 atinit(function()
- create_inter_map_warp_trigger(19001, 44, 54, 19001) --- Intermap warp
+ create_inter_map_warp_trigger(nil, 44, 54, 19001) --- Intermap warp
  nethek.create_netheksaeule(128 * TILESIZE, 95 * TILESIZE + 16) --- Netheksäule
 end)
