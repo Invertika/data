@@ -42,7 +42,8 @@ atinit(function()
           "Messer jetzt reduziert für nur 50 Aki das Stück! Greifen sie zu!"})
 
     create_npc("Bache", 45, 116 * TILESIZE + 16, 61 * TILESIZE + 16, bache_talk, nil)
-    create_pnc("Cloina", 79, 94 * TILESIZE + 16, 105 * TILESIZE + 16, cloina_talk, nil)
+    create_npc("Cloina", 79, 94 * TILESIZE + 16, 105 * TILESIZE + 16, cloina_talk, nil)
+    create_npc("Brielm", 72, 109 * TILESIZE + 16, 102 * TILESIZE + 16, brielm_talk, nil)
 end)
 
 function awond_talk(npc, ch)
@@ -145,4 +146,12 @@ function cloina_talk(npc, ch)
        {30019, 30, 550},
        {30023, 30, 150},
        {30025, 30, 1000} }
+end
+
+function brielm_talk(npc, ch)
+    do_message(npc, ch, invertika.get_random_element(
+      "Willkommen in Narva",
+      "Wir leben hier vom Handel zwischen den Wüstenbewohnern und denen aus dem Grasland.",
+      "Ich hoffe es gefällt dir hier.")) -- TODO: Mehr Auswahl.
+    do_npc_close(npc, ch)
 end
