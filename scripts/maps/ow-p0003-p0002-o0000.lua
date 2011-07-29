@@ -41,8 +41,8 @@ atinit(function()
           "Die neuste Mode zu Spottpreisen! Kaufen sie, so lange der Vorrat reicht.",
           "Messer jetzt reduziert für nur 50 Aki das Stück! Greifen sie zu!"})
 
-
     create_npc("Bache", 45, 116 * TILESIZE + 16, 61 * TILESIZE + 16, bache_talk, nil)
+    create_pnc("Cloina", 79, 94 * TILESIZE + 16, 105 * TILESIZE + 16, cloina_talk, nil)
 end)
 
 function awond_talk(npc, ch)
@@ -130,4 +130,19 @@ function bache_talk(npc, ch)
         do_message(npc, ch, "Vielen Dank für das Holz! Ich werde das nie vergessen.")
     end
     do_npc_close(npc, ch)
+end
+
+function cloina_talk(npc, ch)
+    do_message(npc, ch, "Ich verkaufe hier Heilmittel aus meinen selbstangebauten Kräutern.")
+    do_npc_close(npc, ch)
+    mana.npc_trage(npc, ch, false,
+     { {30001, 30, 300},
+       {30002, 30, 100},
+       {30008, 30, 200},
+       {30015, 30, 250},
+       {30016, 30, 500},
+       {30018, 30, 250},
+       {30019, 30, 550},
+       {30023, 30, 150},
+       {30025, 30, 1000} }
 end
