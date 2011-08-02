@@ -302,7 +302,41 @@ function bruce_talk(npc, ch)
     else
       do_message(npc, ch, "Ich brauche 50 Skorpionstachel. Nicht mehr, und nicht weniger!")
     end
-  elseif get_qstatus()>=9 then
+  elseif get_qstatus() = 9 then
+    do_message(npc, ch, "*hust* *hust* *räusper*")
+    do_message(npc, ch, "Mir geht es nicht so gut.")
+    do_message(npc, ch, "Ich muss mir wohl hier in der prallen Hitze eine Erkältung eingefangen haben...")
+    do_message(npc, ch, "Wäre nett wenn du mir ein paar Tabletten besorgen könntest.")
+    do_message(npc, ch, "Diese Energetia sollten ihre Aufgabe tun.")
+    do_message(npc, ch, "Besorg mir doch bitte ein paar von ihnen.")
+    set_qstatus(10)
+  elseif get_qstatus() = 10 then
+    local count = mana.chr_inv_count(ch, 30018)
+    if count >= 3 then
+        do_message(npc, ch, "Du hast die Tabletten gegen meinen Husten.")
+        do_message(npc, ch, "Gibst du sie mir?")
+        while true do
+            local v = do_choice(npc, ch, "Ja.", "Nein.")
+            if v == 1 then
+                if invertika.add_items(ch, 30018, -3, "Energetia") then
+                    set_qstatus(11)
+                    do_message(npc, ch, "Danke. Das wird meinem Husten helfen.")
+                    do_message(npc, ch, "Nimm dies als Unkostenerstattung.")
+                    invertika.add_money(ch, 700)
+                end
+                break
+            else
+                do_message(npc, ch, "Schade.")
+                break
+            end
+        end
+    elseif count > 0 then
+        do_message(npc, ch, "Mit so wenigen Tabletten komme ich nicht weit. *Hust*")
+    else
+        do_message(npc, ch, "*Hust* *räusper* Hol mir doch bitte ein paar *hust* Tabeletten gegen meinen Husten.")
+        do_message(npc, ch, "Diese Energetia sollten es tun.")
+    end
+  elseif get_qstatus()>=11 then
     do_message(npc, ch, "Ich habe momentan keine Aufgabe für dich.")
   end
 
