@@ -45,7 +45,7 @@ atinit(function()
  create_npc("Asam", 72, 66 * TILESIZE + 16, 130 * TILESIZE + 16, asam_talk, nil) --- Asam
  
  -- Kommunikation mit Spielern Essar
- create_npc("Essar", 21, 68 * TILESIZE + 16, 124 * TILESIZE + 16, assar_talk, nil)
+ create_npc("Essar", 21, 68 * TILESIZE + 16, 124 * TILESIZE + 16, essar_talk, nil)
  -- Leben und Sterben Corona  
  create_npc("Corona ", 12, 89 * TILESIZE + 16, 135 * TILESIZE + 16, corona_talk, nil) --- Corona 
  
