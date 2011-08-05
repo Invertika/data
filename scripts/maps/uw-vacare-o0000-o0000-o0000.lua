@@ -20,8 +20,6 @@ require "scripts/libs/invertika"
 dofile("data/scripts/libs/warp.lua")
 
 atinit(function()
- create_inter_map_warp_trigger(19002, 19002, 19002, 19002) --- Intermap warp
- 
  --- Erster Start
  mana.trigger_create(115 * TILESIZE, 15 * TILESIZE, 50 * TILESIZE, 23 * TILESIZE, "firststart_trigger", 0, true) --- Erste Meldung
  
@@ -46,6 +44,8 @@ atinit(function()
  -- Regeln Asam 
  create_npc("Asam", 72, 66 * TILESIZE + 16, 130 * TILESIZE + 16, asam_talk, nil) --- Asam
  
+ -- Kommunikation mit Spielern Essar
+ create_npc("Essar", 21, 68 * TILESIZE + 16, 124 * TILESIZE + 16, assar_talk, nil)
  -- Leben und Sterben Corona  
  create_npc("Corona ", 12, 89 * TILESIZE + 16, 135 * TILESIZE + 16, corona_talk, nil) --- Corona 
  
@@ -228,4 +228,23 @@ function vacare_talk(npc, ch)
 		end
 	end
 	do_npc_close(npc, ch)
+end
+
+function essar_talk(npc, ch)
+    do_message(npc, ch, "Ich bin hier um dir zu erklären wie du mit anderen Spielern kommunizieren kannst.")
+    do_message(npc, ch, "Als erstes gibt es den normalen Chat.")
+    do_message(npc, ch, "Wenn du im Spiel Enter drückst erscheint ein Cursor im Chatfenster.")
+    do_message(npc, ch, "Hier kannst du deine Nachricht eingeben.")
+    do_message(npc, ch, "Diese Nachricht wird aber nur in deinem unmittelbarem Umfeld wahrgenommen.")
+    do_message(npc, ch, "Falls man nun aber Nachrichten an Spieler schreiben möchte die weiter entfernt sind muss man eine andere Chatweise wählen.")
+    do_message(npc, ch, "Diese Weise nennt sich \"whispern\". Um einem Spieler damit anzuschreiben muss man in das Chatfenster /w <Spielernamen> <mein Text> eingeben.")
+    do_message(npc, ch, "Da dies nur mit einzelen Spielern geht gibt es auch eine Möglichkeit mit mehreren Spielern über weitere Strecken zu kommunizieren.")
+    do_message(npc, ch, "Dies geschieht in dem du einem Kanal beitrittst. Das kannst du ganz  einfach mittels /join <Kanalname> machen.")
+    do_message(npc, ch, "Es öffnet sich ein neuer Tab im Chatfenster und du kannst dort mit anderen Leuten chatten.")
+    do_message(npc, ch, "Falls du nun als Neuling Kontakt zu anderen Spieler suchst empfiehlt sich als erstes mal dem invertika Kanal beizutreten: /join invertika.")
+    do_message(npc, ch, "Ist dort niemand da kannst du mal schauen wer grade generell online ist: /who. Dies zeigt dir eine Liste alle Spieler an die Online sind.")
+    do_message(npc, ch, "Dann kannst du mittels /w <Spielername> <text> einen der Spieler anschreiben.")
+    do_message(npc, ch, "Hilfe über diese und weitere Befehle kannst du über /help jederzeit abrufen.")
+    do_message(npc, ch, "Viel Spaß mit Invertika.")
+    do_npc_close(npc, ch)
 end
