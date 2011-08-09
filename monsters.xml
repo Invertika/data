@@ -1543,6 +1543,52 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
             animation="attack"
             />
     </monster>
+	
+	<monster id="37" name="Mork" targetCursor="small">
+        <sprite>monsters/mouboo.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="30011" percent="15"/>
+		<drop item="20013" percent="15"/>
+		<drop item="20015" percent="15"/>
+		<drop item="20017" percent="15"/>
+        <drop item="20004" percent="5"/>
+		<drop item="20018" percent="15"/>
+        <attributes
+            hp="700"
+            size="4"
+            speed="1.0"
+            attack-min="320"
+            attack-delta="130"
+            attack-magic="0"
+            hit="80"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <vulnerability element="fire" factor="1.5"/>
+        <vulnerability element="earth" factor="0.7"/>
+        <exp>750</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="32"
+            animation="attack"
+            />
+    </monster>
 
     <!-- Pflanzen IDs >= 10001 - 20000 -->
     <monster id="10001" name="Baum" targetCursor="small">
