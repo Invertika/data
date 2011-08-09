@@ -23,7 +23,7 @@ atinit(function()
     create_npc("Ansdan", 60, 25 * TILESIZE + 16, 39 * TILESIZE + 16, ansdan_talk, nil) --- Ansdan
 end)
 
-function andsdan_talk(npc, ch)
+function ansdan_talk(npc, ch)
     do_message(npc, ch, invertika.get_random_element("Willkommen!",
       "Dies ist mein Bescheidenes Heim.",
       "Möge Invertika euch beschützen."))
