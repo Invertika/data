@@ -74,17 +74,15 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
 	
 	<monster id="2" name="Made" targetCursor="small">
-	    <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
         <sprite>monsters/maggot.xml</sprite>
         <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
         <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
         <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
         <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
         <drop item="30001" percent="15"/>
-	<drop item="40005" percent="40"/>
-	<drop item="30011" percent="15"/>
+        <drop item="40005" percent="40"/>
+        <drop item="30011" percent="15"/>
+		<drop item="40028" percent="0.01"/>
         <attributes
             hp="20"
             size="4"
@@ -121,9 +119,6 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
 	
     <monster id="3" name="Skorpion">
-        <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
         <sprite>monsters/scorpion.xml|#4d422d,826242,d8c282,ffffff</sprite>
         <sound event="hit">monsters/scorpion/scorpion-hit1.ogg</sound>
         <sound event="hit">monsters/scorpion/scorpion-hit2.ogg</sound>
@@ -131,6 +126,7 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
         <sound event="hit">monsters/scorpion/scorpion-hit4.ogg</sound>
         <sound event="miss">monsters/scorpion/scorpion-miss1.ogg</sound>
         <drop item="40004" percent="20"/>
+        <drop item="40028" percent="0.01"/>
         <exp>10</exp>
         <attributes
             hp="50"
@@ -176,16 +172,14 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
 	
 	<!-- Schwache Made für das Vacare -->
 	<monster id="4" name="Weiße Made" targetCursor="small">
-	    <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
         <sprite>monsters/maggot.xml</sprite>
         <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
         <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
         <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
         <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
         <drop item="30001" percent="20"/>
-	<drop item="40005" percent="20"/>
+		<drop item="40028" percent="0.01"/>
+		<drop item="40005" percent="20"/>
         <attributes
             hp="10"
             size="4"
@@ -213,9 +207,6 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
 	
 	<monster id="5" name="Riesenmade" targetCursor="large">
-	    <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
         <sprite>monsters/maggot-giant.xml</sprite>
         <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
         <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
@@ -224,6 +215,7 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
         <drop item="30001" percent="9"/>
         <drop item="30002" percent="1"/>
         <drop item="30004" percent="7.5"/>
+		<drop item="40028" percent="0.01"/>
 		<exp>75</exp>
 		<behavior
             aggressive="false"
@@ -248,9 +240,6 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
 	
 	<monster id="6" name="Roter Skorpion">
-	    <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
         <sprite>monsters/scorpion.xml|#791d0a,cd5d27,f28d54,ffffff</sprite>
         <sound event="hit">monsters/scorpion/scorpion-hit1.ogg</sound>
         <sound event="hit">monsters/scorpion/scorpion-hit2.ogg</sound>
@@ -260,6 +249,7 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
         <drop item="30006" percent="20"/>
         <drop item="30004" percent="1"/>
         <drop item="30005" percent="5"/>
+		<drop item="40028" percent="0.01"/>
         <exp>10</exp>
         <attributes
             hp="100"
@@ -294,9 +284,6 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
 	
 	<monster id="7" name="Schwarzer Skorpion">
-	    <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
         <sprite>monsters/scorpion.xml|#0d1313,435a5a,879999,ffffff</sprite>
         <sound event="hit">monsters/scorpion/scorpion-hit1.ogg</sound>
         <sound event="hit">monsters/scorpion/scorpion-hit2.ogg</sound>
@@ -339,15 +326,13 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
 	
 	<monster id="8" name="Fledermaus">
-	    <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
         <sprite>monsters/bat.xml</sprite>
         <sound event="die">monsters/bat/bat-dying1.ogg</sound>
         <sound event="hit">monsters/bat/bat-hit1.ogg</sound>
         <drop item="30010" percent="1.5"/>
         <drop item="30013" percent="4"/>
         <drop item="30012" percent="1.5"/>
+		<drop item="40028" percent="0.01"/>
         <drop item="40006" percent="0.7"/>
 		<exp>80</exp>
 		<behavior
@@ -373,11 +358,8 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
     
     <monster id="9" name="Eidechse" targetCursor="large">
-        <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
         <sprite>monsters/lizard.xml</sprite>
-        <!-- Kommt noch
+        <!-- noch nicht implementiert
         <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
         <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
         <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
@@ -417,9 +399,6 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
 
     <monster id="10" name="Kellerskorpion">
-        <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
         <sprite>monsters/scorpion.xml|#4C4C4C,7F7F7F,CCCCCC,ffffff</sprite>
         <sound event="hit">monsters/scorpion/scorpion-hit1.ogg</sound>
         <sound event="hit">monsters/scorpion/scorpion-hit2.ogg</sound>
@@ -427,6 +406,7 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
         <sound event="hit">monsters/scorpion/scorpion-hit4.ogg</sound>
         <sound event="miss">monsters/scorpion/scorpion-miss1.ogg</sound>
         <drop item="40016" percent="50"/>
+		<drop item="40028" percent="0.01"/>
         <exp>15</exp>
         <attributes
             hp="200"
@@ -471,9 +451,6 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
 
     <monster id="11" name="Zombie">
-        <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
         <sprite>monsters/zombie.xml</sprite>
         <sound event="hit">monsters/zombie/zombie-hit1.ogg</sound>
         <sound event="hit">monsters/zombie/zombie-hit2.ogg</sound>
@@ -482,6 +459,7 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
         <sound event="move">monsters/zombie/zombie-move1.ogg</sound>
         <sound event="move">monsters/zombie/zombie-move2.ogg</sound>
         <drop item="20021" percent="2"/>
+		<drop item="40028" percent="0.01"/>
         <exp>1000</exp>
 	<behavior
             aggressive="true"
@@ -516,15 +494,13 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
 
     <monster id="12" name="Ameisenlöwe">
-        <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
-        <drop item="30026" percent="25" />
         <sprite>monsters/antlion.xml</sprite>
         <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
         <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
         <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
         <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+		<drop item="40028" percent="0.01"/>
+        <drop item="30026" percent="25" />
         <exp>250</exp>
 	<behavior
             aggressive="true"
@@ -559,15 +535,13 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
 
     <monster id="13" name="Schlange">
-        <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
         <sprite>monsters/snake.xml</sprite>
         <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
         <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
         <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
         <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
-	<drop item="30025" percent="3"/>
+        <drop item="40028" percent="0.01"/>
+        <drop item="30025" percent="3"/>
         <exp>200</exp>
 	<behavior
             aggressive="true"
@@ -602,16 +576,14 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
 
     <monster id="14" name="Sandwurm">
-        <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
-        <drop item="30004" percent="10" />
-        <drop item="30005" percent="5" />
         <sprite>monsters/desertworm.xml</sprite>
         <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
         <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
         <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
         <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+		<drop item="40028" percent="0.01"/>
+        <drop item="30004" percent="10" />
+        <drop item="30005" percent="5" />
         <exp>500</exp>
 	<behavior
             aggressive="true"
@@ -645,15 +617,13 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
             />
     </monster>
 
-    <monster id="15" name="Mammut" targetCursor="large">
-        <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
+    <monster id="15" name="Mammut" targetCursor="large">      
         <sprite>monsters/mammoth.xml</sprite>
         <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
         <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
         <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
         <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+		<drop item="40028" percent="0.01"/>
         <attributes
             hp="10000"
             size="200"
@@ -688,15 +658,13 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
     
     <monster id="16" name="Sandkriecher" targetCursor="large">
-        <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
-        <drop item="40043" percent="20"/>
         <sprite>monsters/dust.xml</sprite>
         <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
         <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
         <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
         <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+		<drop item="40028" percent="0.01"/>
+        <drop item="40043" percent="20"/>
         <attributes
             hp="2000"
             size="320"
@@ -731,17 +699,15 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
     
 	<monster id="17" name="Ratte" targetCursor="small">
-	    <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
         <sprite>monsters/rat.xml</sprite>
         <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
         <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
         <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
         <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
         <drop item="30018" percent="15"/>
-	<drop item="40007" percent="25"/>
-	<drop item="30013" percent="5"/>
+        <drop item="40007" percent="25"/>
+		<drop item="40028" percent="0.01"/>
+        <drop item="30013" percent="5"/>
         <attributes
             hp="50"
             size="4"
@@ -778,17 +744,15 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
     
 	<monster id="18" name="Eichhörnchen" targetCursor="small">
-	    <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
         <sprite>monsters/squirrel.xml</sprite>
         <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
         <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
         <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
         <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
         <drop item="40017" percent="1"/>
-	<drop item="30012" percent="25"/>
-	<drop item="30002" percent="5"/>
+		<drop item="40028" percent="0.01"/>
+		<drop item="30012" percent="25"/>
+		<drop item="30002" percent="5"/>
         <attributes
             hp="75"
             size="4"
@@ -825,14 +789,12 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
     
 	<monster id="19" name="Eisameisenlöwe">
-	    <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
         <sprite>monsters/antlion-ice.xml</sprite>
         <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
         <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
         <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
         <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+		<drop item="40028" percent="0.01"/>
         <exp>450</exp>
 	<behavior
             aggressive="true"
@@ -867,14 +829,12 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
     
 	<monster id="20" name="Terranite">
-	    <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
         <sprite>monsters/terranite-mask.xml</sprite>
         <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
         <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
         <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
         <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+		<drop item="40028" percent="0.01"/>
         <exp>850</exp>
 	<behavior
             aggressive="true"
@@ -909,9 +869,6 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
 
     <monster id="21" name="Weihnachtsschleim">
-        <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
         <sprite>monsters/slime-santa.xml</sprite>
         <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
         <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
@@ -920,6 +877,7 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
         <drop item="40013" percent="15"/>
         <drop item="40014" percent="40"/>
         <drop item="40015" percent="15"/>
+		<drop item="40028" percent="0.01"/>
         <exp>10</exp>
         <behavior
             aggressive="false"
@@ -954,15 +912,13 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
     
     <monster id="22" name="Geist">
-        <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
         <sprite>monsters/ghost.xml</sprite>
         <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
         <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
         <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
         <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
         <drop item="10010" percent="100"/>
+		<drop item="40028" percent="0.01"/>
         <exp>2000</exp>
 	<behavior
             aggressive="false"
@@ -997,15 +953,13 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
     
     <monster id="23" name="Zombiegeist">
-        <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
         <sprite>monsters/ghost.xml</sprite>
         <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
         <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
         <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
         <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
 	    <drop item="10010" percent="0.02"/>
+		<drop item="40028" percent="0.01"/>
         <exp>2000</exp>
 	<behavior
             aggressive="true"
@@ -1040,14 +994,12 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
     
     <monster id="24" name="Schmetterling" targetCursor="small">
-        <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
         <sprite>monsters/butterfly.xml</sprite>
         <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
         <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
         <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
         <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+		<drop item="40028" percent="0.01"/>
         <attributes
             hp="55"
             size="4"
@@ -1082,15 +1034,13 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
     
      <monster id="25" name="Baummonster" targetCursor="small">
-        <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
-        <drop item="10009" percent="10" />
         <sprite>monsters/logmonster.xml</sprite>
         <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
         <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
         <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
         <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+		<drop item="40028" percent="0.01"/>
+        <drop item="10009" percent="10" />
         <attributes
             hp="5500"
             size="4"
@@ -1125,17 +1075,16 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
     
     <monster id="26" name="Feuergoblin" targetCursor="small">
-        <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
+
         <sprite>monsters/goblin-fire.xml</sprite>
         <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
         <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
         <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
         <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
         <drop item="40017" percent="1"/>
-	<drop item="30012" percent="25"/>
-	<drop item="30002" percent="5"/>
+        <drop item="40028" percent="0.01"/>
+        <drop item="30012" percent="25"/>
+        <drop item="30002" percent="5"/>
         <attributes
             hp="750"
             size="4"
@@ -1172,17 +1121,15 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
     
    <monster id="27" name="Eisgoblin" targetCursor="small">
-        <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
         <sprite>monsters/goblin-ice.xml</sprite>
         <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
         <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
         <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
         <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
         <drop item="40017" percent="1"/>
-	<drop item="30012" percent="25"/>
-	<drop item="30002" percent="5"/>
+        <drop item="40028" percent="0.01"/>
+        <drop item="30012" percent="25"/>
+        <drop item="30002" percent="5"/>
         <attributes
             hp="750"
             size="4"
@@ -1219,16 +1166,14 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
     
     <monster id="28" name="Spinne" targetCursor="small">
-        <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
-        <drop item="30002" percent="1" />
-        <drop item="30003" percent="0.5" />
         <sprite>monsters/spider.xml</sprite>
         <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
         <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
         <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
         <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+		<drop item="40028" percent="0.01"/>
+        <drop item="30002" percent="1" />
+        <drop item="30003" percent="0.5" />
         <attributes
             hp="500"
             size="4"
@@ -1266,16 +1211,14 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
     
     <monster id="29" name="Hemlockspinne" targetCursor="small">
-        <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
-        <drop item="30002" percent="5" />
-        <drop item="30003" percent="5" />
         <sprite>monsters/spider.xml</sprite>
         <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
         <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
         <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
         <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+		<drop item="40028" percent="0.01"/>
+        <drop item="30002" percent="5" />
+        <drop item="30003" percent="5" />
         <attributes
             hp="2500"
             size="4"
@@ -1313,16 +1256,14 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
     
     <monster id="30" name="Nogatchspinne" targetCursor="small">
-        <!-- BEGIN global drops -->
-        <drop item="40028" percent="0.01"/>
-        <!-- END global drops -->
-        <drop item="30002" percent="50" />
-        <drop item="30003" percent="50" />
         <sprite>monsters/spider.xml</sprite>
         <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
         <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
         <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
         <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+		<drop item="40028" percent="0.01"/>
+        <drop item="30002" percent="50" />
+        <drop item="30003" percent="50" />
         <attributes
             hp="8500"
             size="4"
@@ -1338,7 +1279,7 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
             />
         <vulnerability element="fire" factor="4.0"/>
         <vulnerability element="ice" factor="4.0"/>
-	<vulnerability element="earth" factor="4.0"/>
+        <vulnerability element="earth" factor="4.0"/>
         <exp>1000</exp>
         <!-- average stroll- and track range-->
         <behavior
@@ -1360,12 +1301,12 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
     </monster>
 	
     <monster id="31" name="Seraphim Nex" targetCursor="small">
-        <drop item="10012" percent="5" />
         <sprite>monsters/reaper.xml</sprite>
         <sound event="hit">monsters/reaper/reaper-hurt.ogg</sound>
         <sound event="hit">monsters/reaper/reaper-hurt.ogg</sound>
         <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
         <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+		<drop item="10012" percent="5" />
         <attributes
             hp="50000"
             size="4"
@@ -1396,6 +1337,37 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
             damage-factor="1"
             range="32"
             animation="attack"
+            />
+    </monster>
+	
+	<monster id="32" name="Vampierfledermaus">
+        <sprite>monsters/bat-vampire.xml</sprite>
+        <sound event="die">monsters/bat/bat-dying1.ogg</sound>
+        <sound event="hit">monsters/bat/bat-hit1.ogg</sound>
+        <drop item="10001" percent="1.5"/>
+        <drop item="30005" percent="4"/>
+        <drop item="30011" percent="1.5"/>
+        <drop item="30024" percent="0.7"/>
+		<exp>280</exp>
+		<behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+         />
+        <attributes
+            hp="50"
+            size="4"
+            speed="2.0"
+            attack-min="20"
+            attack-delta="4"
+            attack-magic="0"
+            hit="300"
+            evade="10"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
             />
     </monster>
 
@@ -1431,8 +1403,8 @@ exp<TAG>:                 Tells how much experience point a monster is giving up
             attack-distance="0"
             />
     </monster>
+    <!-- Invertika Testmonster IDs 50001 - 60000-->
     
-    <!-- Invertika Testmonster IDs 10001 - 20000-->
     <monster id="50001" name="Ipsum">
         <sprite>monsters/ufo.xml</sprite>
         <exp>99999999</exp>
