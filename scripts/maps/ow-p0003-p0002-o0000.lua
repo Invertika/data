@@ -87,7 +87,7 @@ function bache_talk(npc, ch)
     if get_qstatus() == 0 then
         do_message(npc, ch, "Sei gegrüßt Fremder.")
         do_message(npc, ch, "Ich bin auf der Suche nach brauchbarem Bauholz")
-        do_message(npc, ch, "Leider ist das Palmen holz hier nicht zu gebrauchen...")
+        do_message(npc, ch, "Leider ist das Palmenholz hier nicht zu gebrauchen...")
         do_message(npc, ch, "Ich muss mich wohl auf eine weitere Reise machen.")
         while true do
             local v = do_choice(npc, ch, "Soll ich Holz für dich besorgen?", "Viel Glück bei der Reise.")
@@ -124,7 +124,7 @@ function bache_talk(npc, ch)
             end
         else
             do_message(npc, ch, invertika.get_random_element(
-              "Ich nehme es dir nich übel wenn du das Holz nicht besorgst.",
+              "Ich nehme es dir nicht übel wenn du das Holz nicht besorgst.",
               "Du musst das Holz nicht besorgen.")) -- TODO: Mehr Auswahl.
         end
     elseif get_qstatus() == 2 then

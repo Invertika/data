@@ -50,7 +50,7 @@ function nalaf_talk(npc, ch)
                 do_message(npc, ch, "Hm...")
                 do_message(npc, ch, "Wo du so fragst. Wir forschen an einem neuen Mittel. Alles höchst legal. Du brauchst keine Sorgen zu haben.")
                 do_message(npc, ch, "Aber wir benötigen für unsere Forschungen Überreste von Sandkriechern.")
-                do_message(npc, ch, "Die Überreste dieser Kreatur sind allerdings schwer zu bekommen, da sie nur relativ selten Auftritt.")
+                do_message(npc, ch, "Die Überreste dieser Kreatur sind allerdings schwer zu bekommen, da sie nur relativ selten auftritt.")
                 do_message(npc, ch, "Wenn du dir ein paar Münzen dazu verdienen willst könntest du ein paar dieser Körper besorgen.")
                 while true do
                     local v2 = do_choice(npc, ch, "Mach ich.", "Jetzt nicht.")
@@ -86,7 +86,7 @@ function nalaf_talk(npc, ch)
                 end
             end
         else
-            do_message(npc, ch, invertika.get_random_element("Wenn du mir ein Paar Sandkricherüberreste bringst geb ich dir ein paar Münzen.", "Wolltest du nicht ein paar Sandkriecher für unsere Forschungen jagen?"))
+            do_message(npc, ch, invertika.get_random_element("Wenn du mir ein Paar Sandkriecherüberreste bringst geb ich dir ein paar Münzen.", "Wolltest du nicht ein paar Sandkriecher für unsere Forschungen jagen?"))
         end
     elseif get_qstatus() == 2 then
         do_message(npc, ch, "Zur Zeit habe ich keine weiteren Aufgaben für dich.")
@@ -99,6 +99,6 @@ end
 function warves_talk(npc, ch)
     do_message(npc, ch, invertika.get_random_element(
       "Vorsicht mit den Reagenzgläsern!",
-      "Wir experimentieren hier mit neuen Mittel.")) -- TODO: Mehr Varianten
+      "Wir experimentieren hier mit neuen Mitteln.")) -- TODO: Mehr Varianten
     do_npc_close(npc, ch)
 end
