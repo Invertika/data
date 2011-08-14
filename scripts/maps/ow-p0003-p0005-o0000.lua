@@ -24,7 +24,6 @@ atinit(function()
     create_inter_map_warp_trigger(nil, 110, 98, 88) --- Intermap warp
 
     sign_entrance = "Alexia"
-    sign.create_sign(10, 74, sign_entrance) --- Schild Ortseingang
     sign.create_sign(84, 132, sign_entrance) --- Schild Ortseingang
 
     create_npc("Regret", 8, 55 * TILESIZE + 16, 173 * TILESIZE + 16, regret_talk, nil) --- Regret 
