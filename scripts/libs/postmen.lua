@@ -10,7 +10,16 @@ GIFTS = {{id=40005, name="Madenschleim"}, {id=40004, name="Skorpionstachel"}, {i
 
 function create_postman_npc(id, name, sprite, x, y, possible_designations, itemid)
     new_postman = create_npc("Postmann_" .. name, sprite, x, y, postman_talk, nil)
-    postman[new_postman] = {id=id, name=name, designations=possible_designations, item=itemid}
+    postman[new_postman] = {npc=newpostman, id=id, name=name, designations=possible_designations, item=itemid}
+end
+
+function get_by_npc(npc)
+    for i,v in pairs(postman) do
+        if v.npc == npc then
+            return v
+        end
+    end
+    error("NPC ist not registered as postmen.")
 end
 
 --- Prüft was für einen Auftrag der Spieler von dem NPC hat.
@@ -18,7 +27,8 @@ end
 -- @param ch Der Spieler
 -- @return Das Ziel, dass von dem npc vergeben wurde.
 function get_order_designation(npc, ch)
-    return invertika.get_quest_status_string(ch, string.format("%s_order_designation", postman[npc].id))
+    local data = get_by_npc(npc)
+    return invertika.get_quest_status_string(ch, string.format("%s_order_designation", data.id))
 end
 
 --- Gibt das Ziel eines Auftrag der durch den Postboten mit einer id vergeben wurde
@@ -34,8 +44,9 @@ end
 -- @param ch Der Spieler
 -- @return (true, npc) wenn ein Auftrag erfüllt werden kann, false wenn nicht.
 function can_do_order(npc, ch)
+    local data = get_by_npc(npc)
     for i, v in pairs(postman) do
-        if get_order_designation(npc, ch) == postman[npc].id then
+        if get_order_designation(npc, ch) == data.id then
             return true, i
         end
     end
@@ -47,7 +58,8 @@ end
 -- @param ch Der Spieler
 -- @return true wenn ja
 function has_package_for_npc(npc, ch)
-    return mana.chr_inv_count(ch, postman[npc].item) > 0
+    local data = get_by_npc(npc)
+    return mana.chr_inv_count(ch, npc.item) > 0
 end
 
 --- Sucht ein neues Ziel aus.
@@ -55,7 +67,8 @@ end
 -- @param ch Der Spieler
 -- @return Id des neuen Postbotens
 function get_new_designation(npc)
-    return invertika.get_random_element(postman[npc].designations).id
+    local data = get_by_npc(npc)
+    return invertika.get_random_element(data.designations).id
 end
 
 --- Gibt den Namen für die Id zurück.
@@ -76,7 +89,8 @@ end
 -- @return Distanz vom Start des Spielers zum Ziel
 function get_distance(ch, npc_start)
     local designation = get_order_designation(npc, ch)
-    for i, v in pairs(postman[npc_start].designations) do
+    local data = get_by_npc(npc)
+    for i, v in pairs(data.designations) do
         if v.id == designation then
             return v.distance
         end
@@ -97,10 +111,11 @@ end
 
 --- Talk Funktion
 function postman_talk(npc, ch)
+    local data = get_by_npc(npc)
     do_message(npc, ch, "Hallo.")
     -- Quest-Stati initialisieren
-    invertika.init_quest_status_string(ch, string.format("%s_order_designation", postman[npc].id))
-    invertika.init_quest_status(ch, string.format("%s_order_done", postman[npc].id))
+    invertika.init_quest_status_string(ch, string.format("%s_order_designation", data.id))
+    invertika.init_quest_status(ch, string.format("%s_order_done", data.id))
     
     local designation = get_order_designation(npc, ch)
     
@@ -111,14 +126,14 @@ function postman_talk(npc, ch)
         if has_order then
             do_message(npc, ch, "2")
             do_message(npc, ch, invertika.get_random_element("Schon wieder ein Paket für mich? Gib mal her!",
-              string.format("Ein Paket von der Poststelle %s... Das kommt auf diesen Stapel.", postman[start_npc].name)))
+              string.format("Ein Paket von der Poststelle %s... Das kommt auf diesen Stapel.", get_by_npc(start_npc).name)))
             do_message(npc, ch, "Paket abgeben?")
             while true do
                 local v = do_choice(npc, ch, "Ja.", "Nein.")
                 if v == 1 then
                     do_message(string.format("%s_order_done", postman[start_npc].id))
-                    invertika.add_items(ch, postman[npc].item, -1, string.format("Paket für Poststelle %s", postman[npc].name))
-                    invertika.set_quest_status(ch, string.format("%s_order_done", postman[start_npc].id), 1)
+                    invertika.add_items(ch, npc.item, -1, string.format("Paket für Poststelle %s", data.name))
+                    invertika.set_quest_status(ch, string.format("%s_order_done", data.id), 1)
                     do_message(npc, ch, "Danke.")
                     break
                 elseif v == 2 then
@@ -146,7 +161,7 @@ function postman_talk(npc, ch)
         while true do
             local v = do_choice(npc, ch, "Ja.", "Nein.")
             if v == 1 then
-                invertika.set_quest_status_string(ch, string.format("%s_order_designation", postman[npc].id), order_designation)
+                invertika.set_quest_status_string(ch, string.format("%s_order_designation", data.id), order_designation)
                 invertika.add_items(ch, get_desired_itemid(order_designation), 1, string.format("Paket für Poststelle %s", get_name_by_id(order_designation)))
                 do_message(npc, ch, "Danke.")
                 break
