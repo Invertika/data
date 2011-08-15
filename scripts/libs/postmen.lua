@@ -68,7 +68,8 @@ end
 -- @return Id des neuen Postbotens
 function get_new_designation(npc)
     local data = get_by_npc(npc)
-    return invertika.get_random_element(data.designations).id
+    local i = math.random(1, #data.designations)
+    return (data.designations[i]).id
 end
 
 --- Gibt den Namen für die Id zurück.
