@@ -302,7 +302,7 @@ function bruce_talk(npc, ch)
     else
       do_message(npc, ch, "Ich brauche 50 Skorpionstachel. Nicht mehr, und nicht weniger!")
     end
-  elseif get_qstatus() = 9 then
+  elseif get_qstatus() == 9 then
     do_message(npc, ch, "*hust* *hust* *räusper*")
     do_message(npc, ch, "Mir geht es nicht so gut.")
     do_message(npc, ch, "Ich muss mir wohl hier in der prallen Hitze eine Erkältung eingefangen haben...")
@@ -310,7 +310,7 @@ function bruce_talk(npc, ch)
     do_message(npc, ch, "Diese Energetia sollten ihre Aufgabe tun.")
     do_message(npc, ch, "Besorg mir doch bitte ein paar von ihnen.")
     set_qstatus(10)
-  elseif get_qstatus() = 10 then
+  elseif get_qstatus() == 10 then
     local count = mana.chr_inv_count(ch, 30018)
     if count >= 3 then
         do_message(npc, ch, "Du hast die Tabletten gegen meinen Husten.")
@@ -708,10 +708,48 @@ function bankwache_talk(npc, ch)
 end
 
 function stadtwache_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Wir bewachen den Eingang zur Stadt.",
-	  "Wir sichern die Stadtgrenze vor feindlichen Mächten.",
-	  "Sei vorsichtig, wenn du die Stadt verlässt."))
-	  do_npc_close(npc, ch)
+    local quest_string_number = "selphi_timlet_guards_hunt_number"
+    local quest_string_monsterid = "selphi_timlet_guards_hunt_monsterid"
+    local quest_string_monster_name = "selphi_timlet_guards_hunt_monstername"
+    local quest_string_kills = "selphi_timlet_guards_hunt_kills"
+    invertika.init_quest_status(quest_string_number)
+    invertika.init_quest_status(quest_string_kills)
+    local number_of_jobs = invertika.get_quest_status(ch, quest_string_number)
+    if number_of_jobs == 0 then
+        do_message(npc, ch, "Wir garantieren hier die Sicherheit der Stadt.")
+        do_message(npc, ch, "Übrigens. Der König zahlt regelmäßig Prämien wenn Ungeziefer tötest.")
+        do_message(npc, ch, "Was zur Zeit getötet werden soll erfährst du bei uns.")
+        do_message(npc, ch, "Auch die Belohnungen verteilen wir.")
+    end
+    local required_kills = invertika.get_quest_status(ch, quest_string_kills)
+    local new_job = false
+    if required_kills ~= 0 then
+        local kills = mana.chr_get_kill_count(ch, invertika.get_quest_status(ch, quest_string_monsterid))
+        if kills >= required_kills then
+            number_of_jobs = number_of_jobs + 1
+            invertika.set_quest_status(ch, quest_string_number, number_of_jobs)
+            do_message(npc, ch, "Danke, dass du die Monster getötet hast. Die Viecher wurden eine echte Plage!")
+            invertika.add_money(ch, number_of_jobs * 100)
+            new_job = true
+        else
+            do_message(npc, ch, string.format("Du musst noch %s %s töten bevor es eine Belohnung gibt.", required_kills - kills, invertika.get_quest_status(ch, quest_string_monster_name)))
+        end
+    end
+    if new_job then
+        local monster = nil
+        if number_of_jobs < 5 then
+            monster = { {id=2, name="Maden", factor=10},
+              {id=3, name="Skorpione", factor=10},
+              {id=6, name="rote Skorpione". factor=2}}
+        elseif number_of_jobs < 10 then
+            monster = { {id=7, name="schwarze Skorpione", factor=3},
+              {id=12, name="Ameistenlöwen", factor=1}}
+        else
+            monster = { {id=11, name="Zombies", factor=4},
+              {id=20, name="Terraniten", factor=5}}
+        end
+    end
+	do_npc_close(npc, ch)
 end
 
 function palastwache_talk(npc, ch)
