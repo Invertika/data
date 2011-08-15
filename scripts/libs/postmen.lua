@@ -10,7 +10,7 @@ GIFTS = {{id=40005, name="Madenschleim"}, {id=40004, name="Skorpionstachel"}, {i
 
 function create_postman_npc(id, name, sprite, x, y, possible_designations, itemid)
     new_postman = create_npc("Postmann_" .. name, sprite, x, y, postman_talk, nil)
-    postman[new_postman] = {npc=newpostman, id=id, name=name, designations=possible_designations, item=itemid}
+    table.insert(postman, {npc=newpostman, id=id, name=name, designations=possible_designations, item=itemid})
 end
 
 function get_by_npc(npc)
