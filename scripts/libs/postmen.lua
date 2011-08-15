@@ -9,7 +9,7 @@ postman = {}
 GIFTS = {{id=40005, name="Madenschleim"}, {id=40004, name="Skorpionstachel"}, {id=40006, name="Casino Münzen"}}
 
 function create_postman_npc(id, name, sprite, x, y, possible_designations, itemid)
-    new_postman = create_npc("Postmann", sprite, x, y, postman_talk, nil)
+    new_postman = create_npc("Postmann_" .. name, sprite, x, y, postman_talk, nil)
     postman[new_postman] = {id=id, name=name, designations=possible_designations, item=itemid}
 end
 
@@ -62,12 +62,11 @@ end
 -- @param id Die Id.
 -- @return den lesbaren Namen für die Id
 function get_name_by_id(id)
-    return "TODO"
---    for i, v in pairs(postman) do
---        if v.id == id then
---            return v.name
---        end
---    end
+    for i, v in pairs(postman) do
+        if v.id == id then
+            return v.name
+        end
+    end
 end
 
 
