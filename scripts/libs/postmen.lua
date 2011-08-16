@@ -22,6 +22,17 @@ function get_by_npc(npc)
     error("NPC ist not registered as postmen.")
 end
 
+function get_by_npc(npc, ch)
+    do_message(npc, ch, "get_by_npc-1")
+    for i,v in pairs(postman) do
+        if v.npc == npc then
+		    do_message(npc, ch, "get_by_npc-2")
+            return v
+        end
+    end
+    error("NPC ist not registered as postmen.")
+end
+
 --- Prüft was für einen Auftrag der Spieler von dem NPC hat.
 -- @param npc Der Postmann NPC
 -- @param ch Der Spieler
@@ -58,7 +69,9 @@ end
 -- @param ch Der Spieler
 -- @return true wenn ja
 function has_package_for_npc(npc, ch)
-    local data = get_by_npc(npc)
+    do_message(npc, ch, "has_package_for_npc-1")
+    local data = get_by_npc(npc, ch)
+    do_message(npc, ch, "has_package_for_npc-2")
     return mana.chr_inv_count(ch, npc.item) > 0
 end
 
