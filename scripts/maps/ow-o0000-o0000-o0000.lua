@@ -748,6 +748,15 @@ function stadtwache_talk(npc, ch)
             monster = { {id=11, name="Zombies", factor=4},
               {id=20, name="Terraniten", factor=5}}
         end
+        local monster_data = monster[math.random(1, #monster)]
+        invertika.set_quest_status(ch, quest_string_monsterid, monster_data.id)
+        required_kills = monster_data.factor * number_of_jobs
+        invertika.set_quest_status(ch, quest_string_kills, required_kills + kills)
+        local kills = mana.chr_get_kill_count(ch, invertika.get_quest_status(ch, quest_string_monsterid))
+        invertika.set_quest_status_string(ch, quest_string_monster_name, monster_data.name)
+        do_message(npc, ch, string.format(
+                   "Als nächstes sollst du %s %s töten.", required_kills, monster_data.name)
+                   )
     end
 	do_npc_close(npc, ch)
 end
