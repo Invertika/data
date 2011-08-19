@@ -712,10 +712,13 @@ function stadtwache_talk(npc, ch)
     local quest_string_monsterid = "selphi_timlet_guards_hunt_monsterid"
     local quest_string_monster_name = "selphi_timlet_guards_hunt_monstername"
     local quest_string_kills = "selphi_timlet_guards_hunt_kills"
+	
     invertika.init_quest_status(ch, quest_string_number)
     invertika.init_quest_status(ch, quest_string_kills)
+	
     local number_of_jobs = invertika.get_quest_status(ch, quest_string_number)
     local new_job = false
+	
     if number_of_jobs == 0 then
         do_message(npc, ch, "Wir garantieren hier die Sicherheit der Stadt.")
         do_message(npc, ch, "Übrigens. Der König zahlt regelmäßig Prämien wenn Ungeziefer tötest.")
@@ -723,7 +726,9 @@ function stadtwache_talk(npc, ch)
         do_message(npc, ch, "Auch die Belohnungen verteilen wir.")
         new_job = true
     end
+	
     local required_kills = invertika.get_quest_status(ch, quest_string_kills)
+	
     if required_kills ~= 0 then
         local kills = mana.chr_get_kill_count(ch, invertika.get_quest_status(ch, quest_string_monsterid))
         if kills >= required_kills then
@@ -736,6 +741,7 @@ function stadtwache_talk(npc, ch)
             do_message(npc, ch, string.format("Du musst noch %s %s töten bevor es eine Belohnung gibt.", required_kills - kills, invertika.get_quest_status_string(ch, quest_string_monster_name)))
         end
     end
+	
     if new_job then
         local monster = nil
         if number_of_jobs < 5 then
