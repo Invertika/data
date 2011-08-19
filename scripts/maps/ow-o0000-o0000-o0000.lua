@@ -715,14 +715,15 @@ function stadtwache_talk(npc, ch)
     invertika.init_quest_status(ch, quest_string_number)
     invertika.init_quest_status(ch, quest_string_kills)
     local number_of_jobs = invertika.get_quest_status(ch, quest_string_number)
+    local new_job = false
     if number_of_jobs == 0 then
         do_message(npc, ch, "Wir garantieren hier die Sicherheit der Stadt.")
         do_message(npc, ch, "Übrigens. Der König zahlt regelmäßig Prämien wenn Ungeziefer tötest.")
         do_message(npc, ch, "Was zur Zeit getötet werden soll erfährst du bei uns.")
         do_message(npc, ch, "Auch die Belohnungen verteilen wir.")
+        new_job = true
     end
     local required_kills = invertika.get_quest_status(ch, quest_string_kills)
-    local new_job = false
     if required_kills ~= 0 then
         local kills = mana.chr_get_kill_count(ch, invertika.get_quest_status(ch, quest_string_monsterid))
         if kills >= required_kills then
