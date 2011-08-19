@@ -739,14 +739,18 @@ function stadtwache_talk(npc, ch)
     end
     local required_kills = invertika.get_quest_status(ch, quest_string_kills)
     if required_kills ~= 0 then
+        do_message(npc, ch, "Nicht das erste mal da.")
         local kills = mana.chr_get_kill_count(ch, invertika.get_quest_status(ch, quest_string_monsterid))
+        do_message(npc, ch, "Du hast " .. kills .. " Kills")
         if kills >= required_kills then
+            do_message(npc, ch, "Ok. Das waren genug.")
             number_of_jobs = number_of_jobs + 1
             invertika.set_quest_status(ch, quest_string_number, number_of_jobs)
             do_message(npc, ch, "Danke, dass du die Monster getötet hast. Die Viecher wurden eine echte Plage!")
             invertika.add_money(ch, number_of_jobs * 100)
             new_job = true
         else
+            do_message(npc, ch, "Du musst noch mehr töten.")
             do_message(npc, ch, string.format("Du musst noch %s %s töten bevor es eine Belohnung gibt.", required_kills - kills, invertika.get_quest_status(ch, quest_string_monster_name)))
         end
     end
@@ -765,7 +769,7 @@ function stadtwache_talk(npc, ch)
         end
         local monster_data = monster[math.random(1, #monster)]
         invertika.set_quest_status(ch, quest_string_monsterid, monster_data.id)
-        required_kills = monster_data.factor * number_of_jobs
+        required_kills = monster_data.factor * (number_of_jobs + 1)
         local kills = mana.chr_get_kill_count(ch, invertika.get_quest_status(ch, quest_string_monsterid))
         invertika.set_quest_status(ch, quest_string_kills, required_kills + kills)
         invertika.set_quest_status_string(ch, quest_string_monster_name, monster_data.name)
