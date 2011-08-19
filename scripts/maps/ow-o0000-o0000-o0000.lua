@@ -712,8 +712,8 @@ function stadtwache_talk(npc, ch)
     local quest_string_monsterid = "selphi_timlet_guards_hunt_monsterid"
     local quest_string_monster_name = "selphi_timlet_guards_hunt_monstername"
     local quest_string_kills = "selphi_timlet_guards_hunt_kills"
-    invertika.init_quest_status(quest_string_number)
-    invertika.init_quest_status(quest_string_kills)
+    invertika.init_quest_status(ch, quest_string_number)
+    invertika.init_quest_status(ch, quest_string_kills)
     local number_of_jobs = invertika.get_quest_status(ch, quest_string_number)
     if number_of_jobs == 0 then
         do_message(npc, ch, "Wir garantieren hier die Sicherheit der Stadt.")
