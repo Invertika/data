@@ -712,20 +712,6 @@ function stadtwache_talk(npc, ch)
     local quest_string_monsterid = "selphi_timlet_guards_hunt_monsterid"
     local quest_string_monster_name = "selphi_timlet_guards_hunt_monstername"
     local quest_string_kills = "selphi_timlet_guards_hunt_kills"
--- DEBUG
-    while true do
-        local v = do_choice(npc, ch, "Ja.", "Nein.")
-        if v == 1 then
-            invertika.set_quest_status(ch, quest_string_number, 0)
-            invertika.set_quest_status(ch, quest_string_monsterid, 0)
-            invertika.set_quest_status_string(ch, quest_string_monster_name, "")
-            invertika.set_quest_status_kills(ch, quest_string_kills, 0)
-            break
-        elseif v == 2 then
-            break
-        end
-    end
--- DEBUG
     invertika.init_quest_status(ch, quest_string_number)
     invertika.init_quest_status(ch, quest_string_kills)
     local number_of_jobs = invertika.get_quest_status(ch, quest_string_number)
@@ -739,18 +725,14 @@ function stadtwache_talk(npc, ch)
     end
     local required_kills = invertika.get_quest_status(ch, quest_string_kills)
     if required_kills ~= 0 then
-        do_message(npc, ch, "Nicht das erste mal da.")
         local kills = mana.chr_get_kill_count(ch, invertika.get_quest_status(ch, quest_string_monsterid))
-        do_message(npc, ch, "Du hast " .. kills .. " Kills")
         if kills >= required_kills then
-            do_message(npc, ch, "Ok. Das waren genug.")
             number_of_jobs = number_of_jobs + 1
             invertika.set_quest_status(ch, quest_string_number, number_of_jobs)
             do_message(npc, ch, "Danke, dass du die Monster getötet hast. Die Viecher wurden eine echte Plage!")
             invertika.add_money(ch, number_of_jobs * 100)
             new_job = true
         else
-            do_message(npc, ch, "Du musst noch mehr töten.")
             do_message(npc, ch, string.format("Du musst noch %s %s töten bevor es eine Belohnung gibt.", required_kills - kills, invertika.get_quest_status_string(ch, quest_string_monster_name)))
         end
     end
