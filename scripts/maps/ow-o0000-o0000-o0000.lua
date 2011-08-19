@@ -712,6 +712,20 @@ function stadtwache_talk(npc, ch)
     local quest_string_monsterid = "selphi_timlet_guards_hunt_monsterid"
     local quest_string_monster_name = "selphi_timlet_guards_hunt_monstername"
     local quest_string_kills = "selphi_timlet_guards_hunt_kills"
+-- DEBUG
+    while true do
+        local v = do_choice(npc, ch, "Ja.", "Nein.")
+        if v == 1 then
+            invertika.set_quest_status(ch, quest_string_number, 0)
+            invertika.set_quest_status(ch, quest_string_monsterid, 0)
+            invertika.set_quest_status_string(ch, quest_string_monster_name, "")
+            invertika.set_quest_status_kills(ch, quest_string_kills, 0)
+            break
+        elseif v == 2 then
+            break
+        end
+    end
+-- DEBUG
     invertika.init_quest_status(ch, quest_string_number)
     invertika.init_quest_status(ch, quest_string_kills)
     local number_of_jobs = invertika.get_quest_status(ch, quest_string_number)
