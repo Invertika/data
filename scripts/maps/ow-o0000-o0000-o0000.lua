@@ -25,7 +25,7 @@ atinit(function()
  sign.create_sign(113, 84, "Frisörsalon Umet\
 Schneiden, Färben, Waschen, Perücken und mehr.") -- Schild vor dem Friseur
  sign.create_sign(131, 82, "Feinste Waffen zu günstigen Preisen\
-Wir müssen darauf hinweisen, dass bei Diebstahl ein Ladenverbot verhängt wird sowie die Hand als Entschädigung dabehalten wird.") -- Schild vor dem Waffenladen
+Wir müssen darauf hinweisen, dass bei Diebstahl ein Ladenverbot verhängt wird sowie die Hand als Entschädigung einbehalten wird.") -- Schild vor dem Waffenladen
  sign.create_sign(43, 107, "Kein Trinkwasser!") -- Schild vor dem Brunnen
  sign.create_sign(146, 160, "Baden und Angeln verboten!") -- Schild vor dem Wasserloch
 
