@@ -745,15 +745,21 @@ function stadtwache_talk(npc, ch)
     if new_job then
         local monster = nil
         if number_of_jobs < 5 then
-            monster = { {id=2, name="Maden", factor=10},
-              {id=3, name="Skorpione", factor=10},
+            monster = { {id=2, name="Maden", factor=11},
+              {id=3, name="Skorpione", factor=9},
               {id=6, name="rote Skorpione", factor=2}}
         elseif number_of_jobs < 10 then
             monster = { {id=7, name="schwarze Skorpione", factor=3},
-              {id=12, name="Ameisenlöwen", factor=1}}
+              {id=12, name="Ameisenlöwen", factor=1},
+              {id=8, name="Feldermäuse", factor=2},
+              {id=5, name="riesen Maden", factor=1},
+              {id=13, name="Schlangen", factor=1}}
         else
             monster = { {id=11, name="Zombies", factor=4},
-              {id=20, name="Terraniten", factor=5}}
+              {id=20, name="Terraniten", factor=5},
+              {id=16, name="Sandkriecher", factor=1},
+              {id=35, name="Schnecken", factor=1},
+              {id=14, name="Sandwürmer", factor=1}}
         end
         local monster_data = monster[math.random(1, #monster)]
         invertika.set_quest_status(ch, quest_string_monsterid, monster_data.id)
