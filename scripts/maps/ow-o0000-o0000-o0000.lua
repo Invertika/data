@@ -751,7 +751,7 @@ function stadtwache_talk(npc, ch)
             new_job = true
         else
             do_message(npc, ch, "Du musst noch mehr töten.")
-            do_message(npc, ch, string.format("Du musst noch %s %s töten bevor es eine Belohnung gibt.", required_kills - kills, invertika.get_quest_status(ch, quest_string_monster_name)))
+            do_message(npc, ch, string.format("Du musst noch %s %s töten bevor es eine Belohnung gibt.", required_kills - kills, invertika.get_quest_status_string(ch, quest_string_monster_name)))
         end
     end
     if new_job then
