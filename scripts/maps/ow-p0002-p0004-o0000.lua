@@ -33,7 +33,7 @@ end)
 
 function robert_talk(npc, ch)
 	do_message(npc, ch, invertika.get_random_element("Ich bin Steuerberater.",
-	                                                 "Paragraph 16, königliches Steuergesetz: Milch wird mit 4% des normalen Steuersatzes versteuert.",
+	                                                 "Paragraph 16, kÃ¶nigliches Steuergesetz: Milch wird mit 4% des normalen Steuersatzes versteuert.",
 													 "Das schlimme an Steuergesetzen ist, das sie keinen Sinn machen...",
 													 "Ich glaube meine Beratung wird mit 7% versteuert."))
 	do_npc_close(npc, ch)
