@@ -7,7 +7,7 @@ function use(user)
 
     if count >=20 then
         mana.being_say(user, invertika.get_random_element(
-          "Und wieder tausende Kilokalorien."
+          "Und wieder tausende Kilokalorien.",
           "Mist, ich wollte doch nicht mehr so viel essen!",
           "Schon wieder Schokolade? Ich will Gurken!",
           "Schokolade, lecker - *mampf*"))
