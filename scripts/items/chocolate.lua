@@ -11,8 +11,8 @@ function use(user)
           "Mist, ich wollte doch nicht mehr so viel essen!",
           "Schon wieder Schokolade? Ich will Gurken!",
           "Schokolade, lecker - *mampf*",
-		  "Schokolade macht glücklich, wie traurig.",
-		  "Noch drei Stück und ich kann meine Diät vergessen..."))
+          "Schokolade macht glÃ¼cklich, wie traurig.",
+          "Noch drei StÃ¼ck und ich kann meine DiÃ¤t vergessen..."))
         invertika.set_quest_status(ch, quest_string, 0)
     end
 end
