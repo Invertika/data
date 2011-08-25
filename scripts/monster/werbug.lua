@@ -8,6 +8,8 @@
 --  Software Foundation; either version 2 of the License, or any later version. --
 ----------------------------------------------------------------------------------
 
+require "scripts/libs/invertika"
+
 function update(mob)
   local r = math.random(0, 200);
   if r == 0 then

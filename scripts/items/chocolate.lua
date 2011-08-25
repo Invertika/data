@@ -1,3 +1,5 @@
+require "scripts/libs/invertika"
+
 function use(user)
     local quest_string = "character_chocolate_count"
     invertika.init_quest_status(ch, quest_string)
