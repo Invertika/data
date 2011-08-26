@@ -751,7 +751,7 @@ function stadtwache_talk(npc, ch)
         elseif number_of_jobs < 10 then
             monster = { {id=7, name="schwarze Skorpione", factor=3},
               {id=12, name="Ameisenlöwen", factor=1},
-              {id=8, name="Feldermäuse", factor=2},
+              {id=8, name="Fledermäuse", factor=2},
               {id=5, name="riesen Maden", factor=1},
               {id=13, name="Schlangen", factor=1}}
         else
