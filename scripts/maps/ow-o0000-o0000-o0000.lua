@@ -767,8 +767,11 @@ function stadtwache_talk(npc, ch)
         local kills = mana.chr_get_kill_count(ch, invertika.get_quest_status(ch, quest_string_monsterid))
         invertika.set_quest_status(ch, quest_string_kills, required_kills + kills)
         invertika.set_quest_status_string(ch, quest_string_monster_name, monster_data.name)
-        do_message(npc, ch, string.format(
-                   "Als nächstes sollst du %s %s töten.", required_kills, monster_data.name)
+        do_message(npc, ch, string.format(invertika.get_random_element(
+                   "Als nächstes sollst du %s %s töten.",
+                   "Für eine weitere Belohnung erledige bitte %s %s.",
+                   "%s %s, Dann gibt es eine neue Belohnung."),
+                                          required_kills, monster_data.name)
                    )
     end
 	do_npc_close(npc, ch)
