@@ -721,9 +721,9 @@ function stadtwache_talk(npc, ch)
 	
     if number_of_jobs == 0 then
         do_message(npc, ch, "Wir garantieren hier die Sicherheit der Stadt.")
-        do_message(npc, ch, "Übrigens. Der König zahlt regelmäßig Prämien wenn Ungeziefer tötest.")
+        do_message(npc, ch, "Übrigens. Der König zahlt regelmäßig Prämien wenn du Ungeziefer tötest.")
         do_message(npc, ch, "Was zur Zeit getötet werden soll erfährst du bei uns.")
-        do_message(npc, ch, "Auch die Belohnungen verteilen wir.")
+        do_message(npc, ch, "Wir verteilen auch die Belohnungen.")
         new_job = true
     end
 	
@@ -770,7 +770,7 @@ function stadtwache_talk(npc, ch)
         do_message(npc, ch, string.format(invertika.get_random_element(
                    "Als nächstes sollst du %s %s töten.",
                    "Für eine weitere Belohnung erledige bitte %s %s.",
-                   "%s %s, Dann gibt es eine neue Belohnung."),
+                   "%s %s, dann gibt es eine neue Belohnung."),
                                           required_kills, monster_data.name)
                    )
     end
