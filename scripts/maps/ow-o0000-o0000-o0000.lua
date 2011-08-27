@@ -724,6 +724,9 @@ function stadtwache_talk(npc, ch)
         do_message(npc, ch, "Übrigens. Der König zahlt regelmäßig Prämien wenn du Ungeziefer tötest.")
         do_message(npc, ch, "Was zur Zeit getötet werden soll erfährst du bei uns.")
         do_message(npc, ch, "Wir verteilen auch die Belohnungen.")
+
+        number_of_jobs = number_of_jobs + 1
+        invertika.set_quest_status(ch, quest_string_number, number_of_jobs)
         new_job = true
     end
 	
