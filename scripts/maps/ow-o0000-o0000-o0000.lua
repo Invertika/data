@@ -715,6 +715,7 @@ function stadtwache_talk(npc, ch)
 	
     invertika.init_quest_status(ch, quest_string_number)
     invertika.init_quest_status(ch, quest_string_kills)
+    invertika.init_quest_status(ch, quest_string_monsterid)
 	
     local number_of_jobs = invertika.get_quest_status(ch, quest_string_number)
     local new_job = false
@@ -764,7 +765,11 @@ function stadtwache_talk(npc, ch)
               {id=35, name="Schnecken", factor=1},
               {id=14, name="Sandwürmer", factor=1}}
         end
+        local old_id = invertika.get_quest_status(ch, quest_string_monsterid)
         local monster_data = monster[math.random(1, #monster)]
+        while monster_data == old_id do
+            monster_data = monster[math.random(1, #monster)]
+        end
         invertika.set_quest_status(ch, quest_string_monsterid, monster_data.id)
         required_kills = monster_data.factor * (number_of_jobs + 1)
         local kills = mana.chr_get_kill_count(ch, invertika.get_quest_status(ch, quest_string_monsterid))
