@@ -126,7 +126,7 @@ end
 function lora_talk(npc, ch)
 	do_message(npc, ch, invertika.get_random_element("Da schauen wir doch mal ob wir an diese Information kommen.",
 	    "Er wird es mir sicherlich gleich verraten. Na da ist die Nachricht ja. Interessant...",
-	    "Diese Informationen sollten sofort an Sie geleitet werden, das könnte in einem operativen Einsatz münden.",
+	    "Diese Informationen sollten sofort an Sei weitergeleitet werden, das könnte in einem operativen Einsatz münden.",
 	    "Ah da ist der neue Bericht. Schauen wir mal rein.",
 	    "Noch 40 Berichte zum lesen. Na dann wollen wir mal..."))
 	do_npc_close(npc, ch)
