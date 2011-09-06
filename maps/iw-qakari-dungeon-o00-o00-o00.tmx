@@ -1,81 +1,84 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="70" height="70" tilewidth="32" tileheight="32">
-  <properties>
-    <property name="music" value="cavesong.ogg" />
-  </properties>
-  <tileset firstgid="1" name="collision1_32_32" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/collision1_32_32.png" />
-  </tileset>
-  <tileset firstgid="1025" name="misc1_32_32" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/misc1_32_32.png" />
-  </tileset>
-  <tileset firstgid="2049" name="cave3_32_32" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/cave3_32_32.png" />
-  </tileset>
-  <tileset firstgid="3073" name="cave1_32_64" tilewidth="32" tileheight="64">
-    <image source="../graphics/tiles/cave1_32_64.png" />
-  </tileset>
-  <tileset firstgid="3585" name="cave4_32_32" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/cave4_32_32.png" />
-  </tileset>
-  <tileset firstgid="4609" name="wood1_32_96" tilewidth="32" tileheight="96">
-    <image source="../graphics/tiles/wood1_32_96.png" />
-  </tileset>
-  <layer name="Ground" width="70" height="70">
-    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/Iv6y3+DX+DV+9P8f/f9H///R/3/0/x/9/0f//9H/f/T/H/3/R///0f9/9P8f/f9H////9/9/NL4f/f9H///R/3/0/x/9/7b//+gWbX6+/f8Z/f8J/X92y//7796mfez/x/T/37UD6/9t/z+n/0/o/3/YLf/vv3ub9rH/Z/T/eQfW/9v+/0fQ//8Q+v+v0/n/PxP57L8c+H+3nfn/fzvw+R9M//+jtP//t/7/d/8Nhsf7s/n/H9f+/9/6/2+SLv/tDd//fKXL+/z//y90eR9euM3///9Cl2/6//9vpcvXocuvc4s23f8P8dn/n+gSG/Ovc4v/m/b+Z/9fpMuH6JJfZ+D//3+gy/vS59e5xf+77f+/TJdNNHgfGsXa/P+VLu/z//+/0SUmR7/Ohv/773U/77b9/zJd3pdf3ued/7/SZchG35aG/3+iy69zi//ftv3/V+ny6wz8/j702fT9/xfo8uvo/zeN/X3pYt7Bz5jM/Xymy6b3fj7QpSuDQ//33/n/Kl1uO77btP8m6HKbsXyT//fp8j7j9N+Jvdf93m+D3/+/xC/4/21ogv/fNqbstjP9/H+NLvj/bcbbHedt3zNt/79Ol9vyxW3/b/r4/yJd8P+h8bzv////Rhf8/0Po0YXThfX/Zbr8bP7//+10+ZD//24/Jv+/Tdsf/f9H///R/3/0/x/9/0f//9H/f/j//1GfP/r/j/7/o///6P8/+v+P/v+j///o/z/6/4/+/6P//1z9//8B+jUMI5BMAAA=</data>
-  </layer>
-  <layer name="Ground" width="70" height="70">
-    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6NHz0/en70/Oj50fOj50fPj54fPT96fvT86PnR86PnR8//758fDfBHz4+eHz0/en70/Oj54T2L3+DX+DWW9P/qN7ih4c+z54//DX6NX+NPoP//ib/BDQ1/9Pzo+dHzo+dHz4+eHz1f+/nRiz96fvT86PnR86PnR8+Pnh89P3p+9Pzo+dHzo+dHz///nx+N8EfPj54fPT96fvT86PnR86PnR8+Pnh89P3p+9Pzo+f//86MR/uj50fOj50fPj54fPT96fvT86PnR86Pn5+r5fwD0IWgnkEwAAA==</data>
-  </layer>
-  <layer name="Fringe" width="70" height="70">
-    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6NHz0/en70/Oj50fOj50fPj54fPT96fvT86PnR86PnR8//758fDfBHz4+eHz0/en70/Oj50fNz/fxav9Gv8Wv82vT/X+c3urHpj54fPT96fvT8rD1/5m9xY5MfPf8/eP70n8fzfCNxfvR88POn/Yi/Puj5U39Evx89Pw+eH+mJHz0/en70/Gw/P7KnP3p+9Pzo+dl+/ovf4MYmP3p+jQ/Xxx+Sv7gR+I+eH/rzX/0GNzb50fOj50fPj54fPT96fvT86PnR86PnR8+Pnh89P3re6/lR4x89P3p+9Pzo+dHzo+dHz4+eHz0/en70/Fw9/w9gF1zikEwAAA==</data>
-  </layer>
-  <layer name="Over" width="70" height="70">
-    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6NHz0/en70/Oj50fOj50fPj54fPT96fvT86PnR86PnR8//758fDfBHz4+eHz0/en70/Oj50fOj50fPj54fPT96fvT86Pn///OjEf7o+dHzo+dHz4+eHz0/en70/Oj50fOj50fPj54fPf//f340wh89P3p+9Pzo+dHz8/H5DX6DX+PX+Pjn4P8/Rv//0fOj50fPj54fPT96fvT86Pm5eH7U54+eHz0/en70/Oj50fOj50fPj54fPT96fq6e/wfVi/sXkEwAAA==</data>
-  </layer>
-  <layer name="Collision" width="70" height="70">
-    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6tX+PX+DV+9P8f/f9H///R/3/0/x/9/0f//9H/f/T/H/3/R///0f9/9P8f/f9H////9/9/NL4f/f9H///R/3/0/x/9/0f//9H/f/T/H+7/f5jPbfD5f8P/fy6e2+D1c/3/n4vnNnj9XP//Z+vZBPs2eP1c///n4rkNXj/X/+8+sc++6ec2eP1c/H8TXX4Yz8/1mG/z/w99vg6M2+D1c/3/n4vnNnj9XP//5+K5DV4/1///uXhug9fP9f/N4//+s/3cBq+f6///XDy3wevn+v8/F89t8Pq5/v/PxXMbvH6u/999Yp99089t8Pq5/v/PxXMbvH6u//9z8dwGr5/r//9cPLfB6+f6/z8Xz23w+rn+/22f92kbe/z3b4OX//+fi99/Lp7b4PVz/f+fi+c2eP1c///n4rkNXj/X//+5eG6D18/1/38untvg9XP9/5+L5zZ4/Vz//+fiuQ1eP/r/j/7/o///6P8/+v+P/v+j///o/z8b//8RzB/9/0f//9H/f/T/H/3/R///0f9/9P8f/f9H///R/3+u/v//ABB5SmaQTAAA</data>
-  </layer>
-  <objectgroup name="Object" width="70" height="70" x="-1" y="-1">
-    <object name="External Map Events" type="SCRIPT" x="0" y="0" width="0" height="0">
-      <properties>
-        <property name="FILENAME" value="scripts/maps/iw-qakari-dungeon-o00-o00-o00.lua" />
-      </properties>
-    </object>
-    <object name="Fledermaus" type="SPAWN" x="791" y="832" width="819" height="692">
-      <properties>
-        <property name="MAX_BEINGS" value="4" />
-        <property name="MONSTER_ID" value="8" />
-        <property name="SPAWN_RATE" value="5" />
-      </properties>
-    </object>
-    <object name="Eidechse" type="SPAWN" x="1043" y="1471" width="333" height="121">
-      <properties>
-        <property name="MAX_BEINGS" value="1" />
-        <property name="MONSTER_ID" value="9" />
-        <property name="SPAWN_RATE" value="1" />
-      </properties>
-    </object>
-    <object name="Warp to Quakari" type="WARP" x="1068" y="700" width="71" height="102">
-      <properties>
-        <property name="DEST_MAP" value="ow-n0002-p0001-o0000" />
-        <property name="DEST_X" value="3986" />
-        <property name="DEST_Y" value="1824" />
-      </properties>
-    </object>
-    <object name="Ratte" type="SPAWN" x="873" y="878" width="559" height="269">
-      <properties>
-        <property name="MAX_BEINGS" value="5" />
-        <property name="MONSTER_ID" value="17" />
-        <property name="SPAWN_RATE" value="2" />
-      </properties>
-    </object>
-    <object name="Geist" type="SPAWN" x="716" y="806" width="907" height="822">
-      <properties>
-        <property name="MAX_BEINGS" value="7" />
-        <property name="MONSTER_ID" value="23" />
-        <property name="SPAWN_RATE" value="2" />
-      </properties>
-    </object>
-  </objectgroup>
+ <properties>
+  <property name="music" value="cavesong.ogg"/>
+ </properties>
+ <tileset firstgid="1" name="collision1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="1025" name="misc1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/misc1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="2049" name="cave3_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave3_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3073" name="cave1_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/cave1_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3585" name="cave4_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave4_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="4609" name="wood1_32_96" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/wood1_32_96.png" width="1024" height="960"/>
+ </tileset>
+ <layer name="Ground" width="70" height="70">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3YT0pDMRCA8S6yqMfwTw+iC++hiHgNi4gH6Wm8iItewgEJPMIkzKRWM3nf4gfSJtD5mvce9rDdbA4AAAAAAAAAAIirAT7DaO7FnXgyWu617indissBZm95Fo/izWi517qn9CBeBpi95V3sRSp8Kq99VZTrsmPl9VfxMcDsLbvGvOd0PcDsf9XlSBfOy9Z/FtbUhfNSlzrmr52zmbpoMyeDZdcsYpdT7iWtNtG7ePt4zkxeH7lLq4GnkbZm1i4es3XRriPL/OX9WNsXuYv3vHj2zNql9oy2NpypS2vOtXRJlb89faJ3sXzXPc+kvFa75tbcpbVvDV167k9Ru1jn633GR+rS20bbV76fivdm7WL9n7JcF/W8eNr0XFOzdPnt33Ujd9G+e22NxWxd8ky9PbQ2y9cidzmn0buc4ubix39/DgAAAAAAAABj+Qb6NQwjkEwAAA==
+  </data>
+ </layer>
+ <layer name="Ground" width="70" height="70">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3QsQ0AIAwDwZRZFpgEWJkMgQTFnfS95QgAAAAAAOCWlhG9Gvl6yV9m/bGq7RcAAAAAAAAAAAAAAAD4zgH0IWgnkEwAAA==
+  </data>
+ </layer>
+ <layer name="Fringe" width="70" height="70">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3YwQmAMAwF0KAePPTk6ipuKI6hO5RYtO9B7p+kTaERAAAAAAAAuYYSMT41ldZJgJ4dS+sEvGE3ZxJtzleVVf/ogD0BZPOeAtnOuXWCb6jdx/4v/uVybwAAAAAAAPiJG2AXXOKQTAAA
+  </data>
+ </layer>
+ <layer name="Over" width="70" height="70">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3PQREAIAwDwTyDEvw7xAXtY3fmBFwCAAAAAAAAAAAAAAAAAPu0yR3odPocAAAAAOCvB9WL+xeQTAAA
+  </data>
+ </layer>
+ <layer name="Collision" width="70" height="70">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3SMQqEQBBE0Wbuf2gjEwMDR7taeAMPNpKtT6+qWgAAAAAAAB+rAf+hc2vXS2+d2OR86c26zOty9+30ZvfyXpeOVunN7iXX5ck30pvdiy669HbpbJTe7F500SXTpaNVerN70UUXXf7QZbfhuvyeLvHSm3XRRRdddJkn8dKbAQAAAAC6HSFSsUuQTAAA
+  </data>
+ </layer>
+ <objectgroup name="Object" width="70" height="70" x="-1" y="-1">
+  <object name="External Map Events" type="SCRIPT" x="0" y="0">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/iw-qakari-dungeon-o00-o00-o00.lua"/>
+   </properties>
+  </object>
+  <object name="Fledermaus" type="SPAWN" x="791" y="832" width="819" height="692">
+   <properties>
+    <property name="MAX_BEINGS" value="4"/>
+    <property name="MONSTER_ID" value="8"/>
+    <property name="SPAWN_RATE" value="5"/>
+   </properties>
+  </object>
+  <object name="Eidechse" type="SPAWN" x="1043" y="1471" width="333" height="121">
+   <properties>
+    <property name="MAX_BEINGS" value="1"/>
+    <property name="MONSTER_ID" value="9"/>
+    <property name="SPAWN_RATE" value="1"/>
+   </properties>
+  </object>
+  <object name="Warp to Quakari" type="WARP" x="1088" y="736" width="32" height="32">
+   <properties>
+    <property name="DEST_MAP" value="ow-n0002-p0001-o0000"/>
+    <property name="DEST_X" value="3986"/>
+    <property name="DEST_Y" value="1824"/>
+   </properties>
+  </object>
+  <object name="Geist" type="SPAWN" x="716" y="806" width="907" height="822">
+   <properties>
+    <property name="MAX_BEINGS" value="7"/>
+    <property name="MONSTER_ID" value="23"/>
+    <property name="SPAWN_RATE" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>
