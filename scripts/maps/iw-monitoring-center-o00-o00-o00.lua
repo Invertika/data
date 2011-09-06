@@ -63,7 +63,7 @@ end
 function meg_talk(npc, ch)
 	do_message(npc, ch, invertika.get_random_element("Jo, diese mechanischen Gehirne waren doch seltsam oder?",
 	    "Man habe ich wieder einen Hunger, warum hast du noch nichts gekocht?",
-	    "Jo, wollen wir nach Alexia ein bischen was einkaufen? Sag mal belauscht du uns etwa?",
+	    "Jo, wollen wir nach Alexia ein bisschen was einkaufen? Sag mal belauschst du uns etwa?",
 	    "So Munition verstaut, Waffe geladen und gesäubert. Kann losgehen.",
 	    "Irgendwie langweilig wenn nichts los ist."))
 	do_npc_close(npc, ch)
@@ -74,14 +74,14 @@ function amy_talk(npc, ch)
 	    "Mmm dieser Algorithmus ist ziemlich komplex. Ich sollte ihn rekursiv gestalten. ",
 	    "So noch ein paar Minuten und ich habe alle Daten heruntergeladen.",
 	    "Dieses Programm könnte uns noch nützlich sein.",
-	    "Ersatunlich, wer auch immer das geschrieben hat, hat eine Menge Ahnung."))
+	    "Erstaunlich. Wer auch immer das geschrieben hat, hat eine Menge Ahnung."))
 	do_npc_close(npc, ch)
 end
 
 function bert_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Schauen wir mal was die Konkurenz so macht.",
+	do_message(npc, ch, invertika.get_random_element("Schauen wir mal was die Konkurrenz so macht.",
 	    "Oh bei The Mana World wird eine neue Stadt gebaut, da müssen wir etwas tun.",
-	    "Server Check für The Mana World wurde vorgenommen, er läuft immer noch auf EAthena.",
+	    "Server Check für The Mana World wurde vorgenommen, er läuft immer noch auf eAthena.",
 	    "Webseite von The Mana World unverändert soweit ich das sehen kann.",
 	    "Interessante Onlineanzeige."))
 	do_npc_close(npc, ch)
@@ -90,7 +90,7 @@ end
 function sascha_talk(npc, ch)
 	do_message(npc, ch, invertika.get_random_element("Ich überwache The Alternate World.",
 	    "Mmm da stimmt irgendwas mit den Grafiken nicht.",
-	    "Interessante organische Maps. Das sollte wir auch machen.",
+	    "Interessante organische Maps. Das sollten wir auch machen.",
 	    "Und so füge ich dem Bericht X33/2 die Anmerkung zur genaueren Untersuchung hinzu.",
 	    "Vielleicht doch nicht so wichtig, aber ich schreibe es mir mal auf."))
 	do_npc_close(npc, ch)
