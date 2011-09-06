@@ -20,6 +20,8 @@ atinit(function()
  create_inter_map_warp_trigger(62, 72, 56, 6) --- Intermap warp
  nethek.create_netheksaeule(181 * TILESIZE, 125 * TILESIZE + 16) --- Netheksäule
  mana.trigger_create(41 * TILESIZE + 8, 105 * TILESIZE + 8, 1.5 * TILESIZE, 1.5 * TILESIZE, "warp_escape_tunnel", 0, true) --- Warp zum Fluchttunnel
+ mana.trigger_create(113 * TILESIZE, 141 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "waypoint_archway_1", 0, true) --- Rundenzähler Torbögen (Waypoint 1)
+ mana.trigger.create(112 * TILESIZE, 180 * TILESIZE, 5 * TILESIZE, 4 * TILESIZE, "waypoint_archway_2", 0, true) --- Rundenzähler Torbögen (Waypoint 2)
  
  --Schilder
  sign.create_sign(113, 84, "Frisörsalon Umet\
@@ -932,4 +934,37 @@ function warp_escape_tunnel(obj, blubb)
     if(mana.being_type(obj)==TYPE_CHARACTER) then
         mana.chr_warp(obj, 20146, 35 * TILESIZE, 35 * TILESIZE + 16) 
     end
+end
+
+function waypoint_archway_1(obj, blubb)
+    if(mana.being_type(obj)==TYPE_CHARACTER) then
+        --- Questvar initialisieren, falls noch nicht geschehen
+        invertika.init_quest_status(obj, "selphie_timlet_archway_quest")
+	local archway_quest = invertika.get_quest_status(obj, "selphie_timlet_archway_quest")
+	if(archway_quest % 2 == 1) then
+            --- halbe Umdrehung wird dazugezählt
+            invertika.set_quest_status(obj, "selphie_timlet_archway_quest", archway_quest + 1)
+            archway_do_sth(obj, (archway_quest+1)/2)
+	end
+    end
+end
+
+function waypoint_archway_2(obj, blubb)
+    if(mana.being_type(obj)==TYPE_CHARACTER) then
+        --- Questvar initialisieren, falls noch nicht geschehen
+        invertika.init_quest_status(obj, "selphie_timlet_archway_quest")
+	local archway_quest = invertika.get_quest_status(obj, "selphie_timlet_archway_quest")
+	if(archway_quest % 2 == 0) then
+            --- halbe Umdrehung wird dazugezählt
+            invertika.set_quest_status(obj, "selphie_timlet_archway_quest", archway_quest + 1)
+	end
+    end
+end
+
+function archway_do_sth(obj, count)
+    if(count % 17 == 0) then
+        mana.chat_message(obj, "Vor lauter Langeweile wegen dem ganzen Torbögen-Durchlaufen, findest du ein paar Aki auf der Erde, die du zuvor wahrscheinlich übersehen hast!")
+        invertika.add_money(obj, math.random(1, 500)) --- Wenn man davon ausgeht, dass man in 17 Runden wahrscheinlich etwa 50 Maden mit HDW von über 5 = 250 Aki minimum verdienen kann, sind 250 Aki Durchschnittsgewinn beim Durchlaufen der Torbögen OK
+    end
+    --- More to come
 end
