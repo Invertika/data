@@ -930,40 +930,40 @@ function lidi_talk(npc, ch)
     do_npc_close(npc, ch)
 end
 
-function warp_escape_tunnel(obj, blubb)
+function warp_escape_tunnel(obj, arg)
     if(mana.being_type(obj)==TYPE_CHARACTER) then
         mana.chr_warp(obj, 20146, 35 * TILESIZE, 35 * TILESIZE + 16) 
     end
 end
 
-function waypoint_archway_1(obj, blubb)
+function waypoint_archway_1(obj, arg)
     if(mana.being_type(obj)==TYPE_CHARACTER) then
         --- Questvar initialisieren, falls noch nicht geschehen
         invertika.init_quest_status(obj, "selphie_timlet_archway_quest")
-	local archway_quest = invertika.get_quest_status(obj, "selphie_timlet_archway_quest")
-	if(archway_quest % 2 == 1) then
+	    ---local archway_quest = invertika.get_quest_status(obj, "selphie_timlet_archway_quest")
+	    ---if(archway_quest % 2 == 1) then
             --- halbe Umdrehung wird dazugezählt
-            invertika.set_quest_status(obj, "selphie_timlet_archway_quest", archway_quest + 1)
+            ---invertika.set_quest_status(obj, "selphie_timlet_archway_quest", archway_quest + 1)
             ---archway_do_sth(obj, (archway_quest+1)/2)
-	end
+        ---end
     end
 end
 
-function waypoint_archway_2(obj, blubb)
+function waypoint_archway_2(obj, arg)
     if(mana.being_type(obj)==TYPE_CHARACTER) then
         --- Questvar initialisieren, falls noch nicht geschehen
         invertika.init_quest_status(obj, "selphie_timlet_archway_quest")
-	local archway_quest = invertika.get_quest_status(obj, "selphie_timlet_archway_quest")
-	if(archway_quest % 2 == 0) then
+	    ---local archway_quest = invertika.get_quest_status(obj, "selphie_timlet_archway_quest")
+	    ---if(archway_quest % 2 == 0) then
             --- halbe Umdrehung wird dazugezählt
-            invertika.set_quest_status(obj, "selphie_timlet_archway_quest", archway_quest + 1)
-	end
+            ---invertika.set_quest_status(obj, "selphie_timlet_archway_quest", archway_quest + 1)
+        ---end
     end
 end
 
 function archway_do_sth(obj, count)
     if(count % 17 == 0) then
-        mana.chat_message(obj, "Vor lauter Langeweile wegen dem ganzen Torbögen-Durchlaufen, findest du ein paar Aki auf der Erde, die du zuvor wahrscheinlich übersehen hast!")
+        mana.chatmessage(obj, "Vor lauter Langeweile wegen dem ganzen Torbögen-Durchlaufen, findest du ein paar Aki auf der Erde, die du zuvor wahrscheinlich übersehen hast!")
         invertika.add_money(obj, math.random(1, 500)) --- Wenn man davon ausgeht, dass man in 17 Runden wahrscheinlich etwa 50 Maden mit HDW von über 5 = 250 Aki minimum verdienen kann, sind 250 Aki Durchschnittsgewinn beim Durchlaufen der Torbögen OK
     end
     --- More to come
