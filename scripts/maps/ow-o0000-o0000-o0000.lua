@@ -940,8 +940,10 @@ function waypoint_archway_1(obj, arg)
     if(mana.being_type(obj)==TYPE_CHARACTER) then
         --- Questvar initialisieren, falls noch nicht geschehen
         invertika.init_quest_status(obj, "selphie_timlet_archway_quest")
-	    ---local archway_quest = invertika.get_quest_status(obj, "selphie_timlet_archway_quest")
-	    ---if(archway_quest % 2 == 1) then
+	    local archway_quest = invertika.get_quest_status(obj, "selphie_timlet_archway_quest")
+	    mana.being_say(obj, "Ich habe den Wegpunkt passiert")
+        mana.being_say(obj, archway_quest)
+        ---if(archway_quest % 2 == 1) then
             --- halbe Umdrehung wird dazugezählt
             ---invertika.set_quest_status(obj, "selphie_timlet_archway_quest", archway_quest + 1)
             ---archway_do_sth(obj, (archway_quest+1)/2)
