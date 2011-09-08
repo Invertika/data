@@ -275,7 +275,7 @@ end
 
 --- Bibliotheksfunktion
 function trap(ch, x, y, width, height, monsterid)
-  if (mana.being_type(ch) = TYPE_CHARACTER) then --- Nur Player löst Falle aus
+  if (mana.being_type(ch) == TYPE_CHARACTER) then --- Nur Player löst Falle aus
    local x1 = x - width/2
    local y1 = y - height/2
    local x2 = x + width/2
