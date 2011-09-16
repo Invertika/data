@@ -63,7 +63,7 @@ function averin_talk(npc, ch)
 	  else
 	      do_message(npc, ch, invertika.get_random_element("Wo ist das Antwortschreiben?",
 	      "Du solltest doch eine Antwort von der Botschaft mitbringen?",
-	      "Hast du das Antwortschtreiben vergessen?"))
+	      "Hast du das Antwortschreiben vergessen?"))
 	  end
 	elseif (invertika.get_quest_status(ch, "selphi_timlet_royal_pass")==3) then
 	  do_message(npc, ch, invertika.get_random_element("Danke für deine Hilfe.",
