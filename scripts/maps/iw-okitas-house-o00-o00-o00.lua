@@ -56,7 +56,7 @@ function tetse_talk(npc, ch)
                 end
             end
         else
-            do_message(npc, ch, "Ich verlor einst ein Schwert. Wenn du es findest bekommst du von mir einen gute Belohnung.")
+            do_message(npc, ch, "Ich verlor einst ein Schwert. Wenn du es findest bekommst du von mir eine gute Belohnung.")
         end
     else
         do_message(npc, ch, invertika.get_random_element("Ja Saya, ich decke gleich den Tisch. Ich muss nur noch schnell mein Katana schärfen.",
