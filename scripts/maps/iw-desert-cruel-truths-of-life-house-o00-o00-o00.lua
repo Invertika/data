@@ -41,8 +41,8 @@ function veritas_talk(npc, ch)
 						    mana.effect_create(5, 37 * TILESIZE, 19 * TILESIZE)
 						    mana.effect_create(5, 44 * TILESIZE, 19 * TILESIZE)
 						
-					        do_message(npc, ch, invertika.get_random_element("Es gibt keinen Gott!", "Genie dein Leben, denn nach dem Tod ist es vorbei!", "Nach dem Tod kommt nur noch Dunkelheit!", "Alles ist verglich!",
-						                                                     "Jeder vergangene Moment könnte der letzte sein!", "Der Tod ist nur einen Fingerzeig entfernt!", "Moral ist nichts weiter als das klammern an ein universelles Prinzip!",
+					        do_message(npc, ch, invertika.get_random_element("Es gibt keinen Gott!", "Genieße dein Leben, denn nach dem Tod ist es vorbei!", "Nach dem Tod kommt nur noch Dunkelheit!", "Alles ist verglich!",
+						                                                     "Jeder vergangene Moment könnte der letzte sein!", "Der Tod ist nur einen Fingerzeig entfernt!", "Moral ist nichts weiter als das Klammern an ein universelles Prinzip!",
 									    									 "Nichts wird so sein wie es war!"))
 																			 
 							do_message(npc, ch, "Ich hoffe diese Wahrheit konnte dich inspirieren.")
