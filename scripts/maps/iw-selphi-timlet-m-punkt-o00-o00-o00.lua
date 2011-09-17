@@ -37,7 +37,7 @@ function manitu_talk(npc, ch)
 			do_message(npc, ch, "Nein warum sollte ich mir merken was ihr macht? Ich fuehre keine Protokolle. Schliesslich haben wir doch alle etwas zu verbergen :)")
 		elseif v == 3 then	
 				do_message(npc, ch, invertika.get_random_element("Wenn du einen Urlaub gebucht hast, halte dich von allem gefaehrlichen fern, bevor du im Urlaub bist. Der große Geist mir diese Weisheit beibrachte.",
-	  "Weisheit... Mmm... Der große Geist sagte mir ein Server kann man immer gut gebrauchen. Was er wohl damit meinte?",
+	  "Weisheit... Mmm... Der große Geist sagte mir einen Server kann man immer gut gebrauchen. Was er wohl damit meinte?",
 	  "Der große Geist sagt: Sei fair zu deinen Geschäftspartnern.",
 	  "Sei Menschlich und der Dank ist dir sicher."))
 		elseif v == 4 then break
