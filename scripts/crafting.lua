@@ -32,6 +32,17 @@ function on_craft(ch, recipe)
     --craft_lax(ch, recipe)
 end
 
+function create_give_items_function(ch, item_id, amount)
+    return function() mana.chr_inv_change(ch, item_id, amount) end
+end
+
+function check_for_items_function(...)
+    return function(ch, recipe) \
+        if 
+    end
+end
+
+local possible_crafts = { {id=8, amount=2, 
 
 -- a primitive example crafting system which cares about item order and exact amount
 function craft_strict(ch, recipe)

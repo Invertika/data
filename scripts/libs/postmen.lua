@@ -72,7 +72,7 @@ function has_package_for_npc(npc, ch)
     do_message(npc, ch, "has_package_for_npc-1")
     local data = get_by_npc(npc, ch)
     do_message(npc, ch, "has_package_for_npc-2")
-    return mana.chr_inv_count(ch, npc.item) > 0
+    return mana.chr_inv_count(ch, data.item) > 0
 end
 
 --- Sucht ein neues Ziel aus.

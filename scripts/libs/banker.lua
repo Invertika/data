@@ -293,7 +293,6 @@ function banker_talk(npc, ch)
       end
     elseif v2 == 8 then
       --- abbrechen
-		end
 	elseif v == 8 then --- Was bringt mir die Bank
 		do_message(npc, ch, "In der Zentralbank von Amoneus kannst du Geld einzahlen und es von uns aufbewahren lassen. Auf das eingezahlte Geld erhälst du Zinsen.")
 	elseif v == 9 then --- Auf Wiedersehen.
