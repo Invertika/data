@@ -24,8 +24,8 @@ require "scripts/libs/ghost"
 
 -- This function is called when the hit points of a character reach zero. 
 function on_chr_death(ch)
-    death.increase_death_counter(ch)
     death.pay_death_price(ch)
+    death.increase_death_counter(ch)
     -- ghost.death_spawn_ghost(ch)
 end
 
