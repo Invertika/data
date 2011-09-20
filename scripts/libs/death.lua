@@ -49,6 +49,6 @@ end
 --- und zieht sie dem Spieler ab
 function pay_death_price(ch)
 	local PlayerMoney=mana.chr_money(ch)
-	local DeathPay=PlayerMoney / 100 * PERCENT_MONEY_REDUCE_PER_DEATH
+	local DeathPay = math.ceil(PlayerMoney / 100 * PERCENT_MONEY_REDUCE_PER_DEATH)
     mana.chr_money_change(ch, -DeathPay)
 end
