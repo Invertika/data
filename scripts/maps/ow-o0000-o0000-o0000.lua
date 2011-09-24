@@ -890,7 +890,7 @@ function amulet_trigger(ch, args)
 
     if get_qstatus() == 0 then
         set_qstatus(1)
-        invertika.add_items(ch, 40029, 1, "ein Stück eines zerbrochen Amuletts")
+        invertika.add_items(ch, 40029, 1, "Stück eines zerbrochen Amuletts")
     end
   end
 end
