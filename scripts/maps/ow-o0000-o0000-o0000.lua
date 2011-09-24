@@ -761,11 +761,11 @@ function stadtwache_talk(npc, ch)
               {id=5, name="riesen Maden", factor=1},
               {id=13, name="Schlangen", factor=1}}
         else
-            monster = { {id=11, name="Zombies", factor=4},
-              {id=20, name="Terraniten", factor=1},
+            monster = { {id=11, name="Zombies", factor=2},
+              {id=20, name="Terraniten", factor=4},
               {id=16, name="Sandkriecher", factor=1},
-              {id=35, name="Schnecken", factor=1},
-              {id=14, name="Sandwürmer", factor=1}}
+              {id=35, name="Schnecken", factor=2},
+              {id=14, name="Sandwürmer", factor=3}}
         end
         local old_id = invertika.get_quest_status(ch, quest_string_monsterid)
         local monster_data = monster[math.random(1, #monster)]
