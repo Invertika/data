@@ -20,7 +20,7 @@ require "scripts/lua/npclib"
 require "scripts/libs/nethek"
 
 --- Konstanten
-PERCENT_MONEY_REDUCE_PER_DEATH = 15 --- Prozent des Bargeldes welches abgezogen wird beim Tod
+PERCENT_MONEY_REDUCE_PER_DEATH = 33 --- Prozent des Bargeldes welches abgezogen wird beim Tod
 
 --- Zählt die Anzahl der Tode
 function increase_death_counter(ch)
