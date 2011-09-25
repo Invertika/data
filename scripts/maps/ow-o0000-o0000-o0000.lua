@@ -902,7 +902,7 @@ function lidi_talk(npc, ch)
         return invertika.get_quest_status(ch, queststring)
     end
     local set_qstatus = function(x)
-        invertika.set_quest_Status(ch, queststring, x)
+        invertika.set_quest_status(ch, queststring, x)
     end
     
     if get_qstatus() == 0 then
@@ -926,6 +926,13 @@ function lidi_talk(npc, ch)
         end
     elseif get_qstatus() == 1 then
         do_message(npc, ch, "Sehe ich nicht total fesch mit dieser Brille aus?")
+        set_qstatus(2)
+    elseif get_qstatus() == 2 then
+        do_message(npc, ch, "Sag mal, hast du meine Sonnenbrille gesehen?")
+        set_qstatus(3)
+    else
+        do_message(npc, ch, "... sie ist weg. Weeeg! Wie soll ich mich jetzt nur wieder unter die Leute wagen?")
+        set_qstatus(0)
     end
     do_npc_close(npc, ch)
 end
