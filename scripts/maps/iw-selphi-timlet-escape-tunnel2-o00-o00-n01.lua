@@ -23,7 +23,7 @@ atinit(function()
 \
 Ganz bestimmt nicht geheim oder schwer zu finden oder so ^^\
 Deshalb wird hier auch nicht mit illegaler Ware gehandelt.");
-    create_npc("Gerhard", 7, 27 * TILESIZE + 16, 5 * TILESIZE + 16, gerhard_talk, nil) --- Gerhard
+    create_npc("Gerhard", 104, 27 * TILESIZE + 16, 5 * TILESIZE + 16, gerhard_talk, nil) --- Gerhard
 end)
 
 function gerhard_talk(npc, ch)
