@@ -110,15 +110,15 @@ function banker_talk(npc, ch)
   
  while true do 
 	local v = do_choice(npc, ch, "Kontostand abfragen.",
-							   "Geld auf das Konto einzahlen.",
-							   "Geld vom Konto abheben.",
-							   "Einen Kredit aufnehmen.",
-							   "Einen Kredit abbezahlen.",
-                 "Scheck einlösen.",
-                 "Scheck ausstellen.",
-							   "Was bringt mir die Bank?",
-							   "Auf Wiedersehen.")
-							  
+                                 "Geld auf das Konto einzahlen.",
+                                 "Geld vom Konto abheben.",
+                                 "Einen Kredit aufnehmen.",
+                                 "Einen Kredit abbezahlen.",
+                                 "Scheck einlösen.",
+                                 "Scheck ausstellen.",
+                                 "Was bringt mir die Bank?",
+                                 "Auf Wiedersehen.")
+
 
 	if v == 1 then --- Kontostand abfragen
 		bank_get_account_balance_dlg(npc, ch)
@@ -160,7 +160,7 @@ function banker_talk(npc, ch)
 		elseif v2 == 8 then --- 50000
 			bank_get_money_from_account_dlg(npc, ch, 50000)
         elseif v2 == 9 then --- Auswahl
-            bank_pay_money_to_account_dlg(npc, ch, do_ask_integer(npc, ch, 0, math.floor(bank_get_account_balance(ch)), 1))
+            bank_get_money_from_account_dlg(npc, ch, do_ask_integer(npc, ch, 0, math.floor(bank_get_account_balance(ch)), 1))
 		elseif v2 == 10 then --- Alles
 			bank_get_money_from_account_dlg(npc, ch, math.floor(bank_get_account_balance(ch)))
 		end
