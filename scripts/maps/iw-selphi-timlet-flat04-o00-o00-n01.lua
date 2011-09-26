@@ -22,6 +22,6 @@ end)
 
 function warp_escape_tunnel2(obj, arg)
     if(mana.being_type(obj)==TYPE_CHARACTER) then
-        mana.chr_warp(obj, 20188, 3 * TILESIZE + 16, 14 * TILESIZE + 16)
+        mana.chr_warp(obj, 20188, 8 * TILESIZE + 16, 14 * TILESIZE + 16)
     end
 end
