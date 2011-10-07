@@ -32,33 +32,33 @@ Race.CurrentCheckpoints=0;
 
 -- Konstuktor
 function Theatre:new(racename, numberofCheckpoints)
-  local res = {}
-  setmetatable(res, self)
-  self.__index = self
-  
-  Race.RaceName=racename
-  Race.NumberOfCheckpoints=numberofCheckpoints
+    local res = {}
+    setmetatable(res, self)
+    self.__index = self
+    
+    Race.RaceName=racename
+    Race.NumberOfCheckpoints=numberofCheckpoints
 end
 
 
 function Theatre:Start()
-  Race.StartTime=datetime.get_current_datetime();
-  Race.InProgress=true;
+    Race.StartTime=datetime.get_current_datetime();
+    Race.InProgress=true;
 end
 
 function Theatre:Checkpoint(int number)
-  if number==Race.CurrentCheckpoints+1 then
-    Race.CurrentCheckpoints=number;
-  end
+    if number==Race.CurrentCheckpoints+1 then
+        Race.CurrentCheckpoints=number;
+    end
 end
 
 function Theatre:End()
-  if Race.CurrentCheckpoints == Race.NumberOfCheckpoints then
-    EndTime=datetime.get_current_datetime();
-    Race.InProgress=false;
-  end
+    if Race.CurrentCheckpoints == Race.NumberOfCheckpoints then
+        EndTime=datetime.get_current_datetime();
+        Race.InProgress=false;
+    end
 end
 
 function Theatre:GetTimeForLastRace()
-  return Race.EndTime-Race.StartTime;
+    return Race.EndTime-Race.StartTime;
 end
