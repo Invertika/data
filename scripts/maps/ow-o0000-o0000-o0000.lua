@@ -953,7 +953,7 @@ function waypoint_archway_1(obj, arg)
         if(archway_quest % 2 == 1) then
             --- halbe Umdrehung wird dazugezählt
             invertika.set_quest_status(obj, "selphie_timlet_archway_quest", archway_quest + 1)
-            ---archway_do_sth(obj, (archway_quest+1)/2)
+            archway_do_sth(obj, (archway_quest+1)/2)
         end
     end
 end
