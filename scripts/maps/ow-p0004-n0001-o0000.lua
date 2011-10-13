@@ -93,7 +93,7 @@ atinit(function()
  
  -- Grabsteine
  for i, v in ipairs(grave_stone_data) do
-    create_npc(gravestone_npc_name, gravestone_npc_id, v[1] * 32 + 16, v[2] * 32 + 16, npclib.talk(v[3]))
+    create_npc(gravestone_npc_name, gravestone_npc_id, v[1] * 32 + 16, v[2] * 32 + 16, npclib.auto_talk(v[3]))
  end
 end)
 
