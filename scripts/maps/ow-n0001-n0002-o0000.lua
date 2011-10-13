@@ -81,7 +81,7 @@ function seeseekey_talk(npc, ch)
 	  "Wie Freitag und schon 19 Uhr? Oh Gott, ich muss zum Bloggerstammtisch.",
 	  "Wie das gibt es nix für? Dann muss ich mir halt was schreiben.",
 	  "So die PIN an diese Stelle, den Arduino mit Strom versorgen und schon ... ha, es LEBT!!!",
-	  "Dwight Schulz ist Republikaner. Murdok vom A-Team ist Republikaner. Reginald Barclay ist Republikaner. Oh Gott die Weit ist so böse..."))
+	  "Dwight Schulz ist Republikaner. Murdok vom A-Team ist Republikaner. Reginald Barclay ist Republikaner. Oh Gott die Welt ist so böse..."))
 	do_npc_close(npc, ch)
 end
 
@@ -100,7 +100,7 @@ function delegan_talk(npc, ch)
 end
 
 function bulldog98_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Wenn du aufhören willst zu rauchen, höre auch auf Windows zu nutzten. Es wird dir dabei helfen.",
+	do_message(npc, ch, invertika.get_random_element("Wenn du aufhören willst zu rauchen, höre auch auf Windows zu nutzen. Es wird dir dabei helfen.",
 	  "(Linux...) Hält, was andere versprechen.",
 	  "Die große Welt paßt nicht durch kleine Fenster - Linux!",
 	  "Freie Software für eine freie Welt.",
