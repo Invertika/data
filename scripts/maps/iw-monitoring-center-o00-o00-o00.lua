@@ -1,4 +1,4 @@
-----------------------------------------------------------------------------------
+﻿----------------------------------------------------------------------------------
 -- Map File                                                                     --
 --                                                                              --
 -- In dieser Datei stehen die entsprechenden externen NPC's, Trigger und        --
@@ -37,7 +37,7 @@ function sei_talk(npc, ch)
 	do_message(npc, ch, invertika.get_random_element("Willkommen im Überwachungszentrum, hast du etwas zu essen mitgebracht?",
 	    "Denk daran, alles zu vergessen wenn du uns verlässt.",
 	    "Alles was du hier siehst ist streng geheim.",
-	    "Wir überwachen, ganz bestimmte Organisationen.",
+	    "Wir überwachen ganz bestimmte Organisationen.",
 	    "Ich habe hier das Sagen."))
 	do_npc_close(npc, ch)
 end
@@ -53,7 +53,7 @@ end
 
 function leo_talk(npc, ch)
 	do_message(npc, ch, invertika.get_random_element("Ich kümmere mich hier um die Technik.",
-	    "Die Transcieverkerne verbrauchen aus irgendeinem Grund zu viel Strom.",
+	    "Die Transceiverkerne verbrauchen aus irgendeinem Grund zu viel Strom.",
 	    "Das schlimme ist, wenn du alles richtig machst merkt es keiner.",
 	    "Als nächstes müssen die Bandspeicher überprüft werden.",
 	    "Mist schon wieder abgestürzt."))
@@ -71,8 +71,8 @@ end
 
 function amy_talk(npc, ch)
 	do_message(npc, ch, invertika.get_random_element("So die Datenverbindung herstellen und schon kann es losgehen.",
-	    "Mmm dieser Algorithmus ist ziemlich komplex. Ich sollte ihn rekursiv gestalten. ",
-	    "So noch ein paar Minuten und ich habe alle Daten heruntergeladen.",
+	    "Mmm, dieser Algorithmus ist ziemlich komplex. Ich sollte ihn rekursiv gestalten. ",
+	    "So, noch ein paar Minuten und ich habe alle Daten heruntergeladen.",
 	    "Dieses Programm könnte uns noch nützlich sein.",
 	    "Erstaunlich. Wer auch immer das geschrieben hat, hat eine Menge Ahnung."))
 	do_npc_close(npc, ch)
@@ -82,7 +82,7 @@ function bert_talk(npc, ch)
 	do_message(npc, ch, invertika.get_random_element("Schauen wir mal was die Konkurrenz so macht.",
 	    "Oh bei The Mana World wird eine neue Stadt gebaut, da müssen wir etwas tun.",
 	    "Server Check für The Mana World wurde vorgenommen, er läuft immer noch auf eAthena.",
-	    "Webseite von The Mana World unverändert soweit ich das sehen kann.",
+	    "Webseite von The Mana World unverändert, soweit ich das sehen kann.",
 	    "Interessante Onlineanzeige."))
 	do_npc_close(npc, ch)
 end
@@ -98,18 +98,18 @@ end
 
 function david_talk(npc, ch)
 	do_message(npc, ch, invertika.get_random_element("Ich überwache die visuellen Kanäle.",
-	    "Oh die haben einen neuen Werbespot geschaltet, das muss ich sofort melden.",
-	    "Mmmm der neue Invertika Spot sollte doch längst auf Sendung sein.",
+	    "Oh, die haben einen neuen Werbespot geschaltet, das muss ich sofort melden.",
+	    "Mmmm, der neue Invertika Spot sollte doch längst auf Sendung sein.",
 	    "Der Darsteller des neusten Manasource basierenden Projektes hat Charisma. Das könnte zu einem Problem werden.",
-	    "Gut schauen wir nun mal auf den anderen Kanälen."))
+	    "Gut, schauen wir nun mal auf den anderen Kanälen."))
 	do_npc_close(npc, ch)
 end
 
 function jan_talk(npc, ch)
 	do_message(npc, ch, invertika.get_random_element("Ziemlich durcheinander dort, wird alles ziemlich chaotisch.",
 	    "Interessant, keine Mapper und Grafiker, zumindestens offiziell.",
-	    "Oh ich sehe, sie haben einige Werbespots.",
-	    "Aha eine spezifische Ausrichtung auf ein deutschsprachiges Publikum.",
+	    "Oh, ich sehe, sie haben einige Werbespots.",
+	    "Aha, eine spezifische Ausrichtung auf ein deutschsprachiges Publikum.",
 	    "Ziemlich viele Serverausfälle laut dieser Anzeige."))
 	do_npc_close(npc, ch)
 end

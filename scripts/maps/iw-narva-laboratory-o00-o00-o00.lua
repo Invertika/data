@@ -1,4 +1,4 @@
-----------------------------------------------------------------------------------
+﻿----------------------------------------------------------------------------------
 -- Map File                                                                     --
 --                                                                              --
 -- In dieser Datei stehen die entsprechenden externen NPC's, Trigger und        --
@@ -51,7 +51,7 @@ function nalaf_talk(npc, ch)
                 do_message(npc, ch, "Wo du so fragst. Wir forschen an einem neuen Mittel. Alles höchst legal. Du brauchst keine Sorgen zu haben.")
                 do_message(npc, ch, "Aber wir benötigen für unsere Forschungen Überreste von Sandkriechern.")
                 do_message(npc, ch, "Die Überreste dieser Kreatur sind allerdings schwer zu bekommen, da sie nur relativ selten auftritt.")
-                do_message(npc, ch, "Wenn du dir ein paar Münzen dazu verdienen willst könntest du ein paar dieser Körper besorgen.")
+                do_message(npc, ch, "Wenn du dir ein paar Münzen dazu verdienen willst, könntest du ein paar dieser Körper besorgen.")
                 while true do
                     local v2 = do_choice(npc, ch, "Mach ich.", "Jetzt nicht.")
                     if v2 == 1 then

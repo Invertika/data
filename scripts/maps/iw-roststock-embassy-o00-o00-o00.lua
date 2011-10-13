@@ -1,4 +1,4 @@
-----------------------------------------------------------------------------------
+﻿----------------------------------------------------------------------------------
 -- Map File                                                                     --
 --                                                                              --
 -- In dieser Datei stehen die entsprechenden externen NPC's, Trigger und        --
@@ -31,7 +31,7 @@ function botschafter_talk(npc, ch)
 	      "Ich bin schon viele Jahre hier.",
 	      "Kenne ich dich?",
 	      "Was ist denn? Nichts. Gut dann lass mich weiter arbeiten.",
-	      "Im Moment nicht ich bin beschäftigt",
+	      "Im Moment bin ich nicht beschäftigt",
 	      "Ich würde mal gerne zum Meer."))
 	elseif (invertika.get_quest_status(ch, "selphi_timlet_royal_pass") == 1) then
 	   local count = mana.chr_inv_count(ch, 40011) 
