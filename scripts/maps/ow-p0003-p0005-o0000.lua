@@ -64,7 +64,7 @@ function vektor_talk(npc, ch)
                 invertika.set_quest_status(ch, "selphi_timlet_felix_quest", 2)
                 break
             elseif v == 2 then
-                do_message(npc, ch, "Was? Du gehtst schon?")
+                do_message(npc, ch, "Was? Du gehst schon?")
                 invertika.set_quest_status(ch, "selphi_timlet_felix_quest", -1)
                 break
             end
