@@ -1,4 +1,4 @@
-----------------------------------------------------------------------------------
+﻿----------------------------------------------------------------------------------
 -- Map File                                                                     --
 --                                                                              --
 -- In dieser Datei stehen die entsprechenden externen NPC's, Trigger und        --
@@ -33,7 +33,7 @@ function rezeptionist_talk(npc, ch)
         do_message(npc, ch, "Schon wieder eine Klageschrift von Ceech?")
         do_message(npc, ch, "Er verklagt alles und jeden. Mich hat er wegen den Kokussnüssen dran gekriegt.")
         do_message(npc, ch, "Es wäre unverantwortlich die Kokusnüsse einfach fallen zu lassen.")
-        do_message(npc, ch, "Gewinnt er diese Klage so erhält er Anspruch auf die Kokusnuss Ernte.")
+        do_message(npc, ch, "Gewinnt er diese Klage, so erhält er Anspruch auf die Kokusnuss Ernte.")
         do_message(npc, ch, "Er hat sich schon viele Feinde hier in der Stadt gemacht.")
         do_message(npc, ch, "Hör mir mal zu: Du verlierst den Brief einfach. Lass Ceech einfach links liegen.")
         do_message(npc, ch, "Der Kerl ist geizig und kein guter Freund.")

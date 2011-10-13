@@ -1,4 +1,4 @@
-----------------------------------------------------------------------------------
+﻿----------------------------------------------------------------------------------
 -- Map File                                                                     --
 --                                                                              --
 -- In dieser Datei stehen die entsprechenden externen NPC's, Trigger und        --
@@ -44,7 +44,7 @@ function luor_talk(npc, ch)
               "Du siehst aus als ob du einen Brief hättest? Nicht? Na gut, dann nicht."))
         end
     elseif get_qstatus() >= 4 then
-        do_message(npc, ch, "Danke für den Brief aber jetzt muss ich arbeiten!")
+        do_message(npc, ch, "Danke für den Brief, aber jetzt muss ich arbeiten!")
     else
         do_message(npc, ch, "Sei gegrüßt, ich bin Luor, Herscher über Selphi Timlet, Bewahrer des Heiligen Kelches von Rixx. Wie lautet deine Bitte? - Obwohl lieber nicht, im Moment steht es mir nicht nach einer Audienz.")
     end
@@ -53,7 +53,7 @@ end
 
 function krenel_talk(npc, ch)
     do_message(npc, ch, invertika.get_random_element("Wir müssen Aktivität vortäuschen...",
-      "Aktivität simulieren... Also steh hier nicht rum. Los hop hop!",
+      "Aktivität simulieren... Also steh hier nicht rum. Los, hop hop!",
       "Ich täusche Aktivität vor, also schau nicht so und mache das gleiche.",
       "Wenn wir das nicht tun ist alles zu spät.",
       "Das ganze Invertika Team macht das so... aber psssst..."))

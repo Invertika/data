@@ -1,4 +1,4 @@
-----------------------------------------------------------------------------------
+﻿----------------------------------------------------------------------------------
 -- Map File                                                                     --
 --                                                                              --
 -- In dieser Datei stehen die entsprechenden externen NPC's, Trigger und        --
@@ -57,7 +57,7 @@ function sandra_talk(npc, ch)
 		if v == 1 then
 			do_message(npc, ch, "S.A.N.D.R.A. steht fuer Serious Awake Nullification Droid for Regard Answers.")
 		elseif v == 2 then
-			do_message(npc, ch, "Wir verkaufen hier Sachen die man nicht sehen kann. Du glaubst garnicht was das in der Lagerung einspart.")
+			do_message(npc, ch, "Wir verkaufen hier Sachen, die man nicht sehen kann. Du glaubst garnicht was das in der Lagerung einspart.")
 		elseif v == 3 then break
 		end
 	end
