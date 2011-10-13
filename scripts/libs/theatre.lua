@@ -37,7 +37,7 @@ function Theatre:new(x, y, width, height)
 	setmetatable(res, self)
 	self.__index = self
 
-    --Scheudler aktivieren
+    --Scheduler aktivieren
     schedule_every(2, function()
       Theatre:NextStep()
     end)
@@ -48,7 +48,7 @@ end
 
 
 function Theatre:NextStep()
-    --Schaue in Spielplan (welches Stück wird zu Zeit gespielt
+    --Schaue in Spielplan (welches Stück wird zur Zeit gespielt)
   
     plotOsterspaziergangInst:nextPlotStep()
   
