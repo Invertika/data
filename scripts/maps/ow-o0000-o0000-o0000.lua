@@ -133,7 +133,7 @@ function weihnachtsmann_talk(npc, ch)
 	    --Weihnachtsgeschenke entfernen
 	    invertika.add_items(ch, 40013, -count13, "grünes Geschenk")
 	    invertika.add_items(ch, 40014, -count14, "blaues Geschenk")
-	    invertika.add_items(ch, 40015, -count15, "lila Geschank")
+	    invertika.add_items(ch, 40015, -count15, "lila Geschenk")
 	    
 	    --Belohnung
 	    invertika.add_items(ch, 20010, 1, "Santa Clause Mütze")
@@ -335,7 +335,7 @@ function bruce_talk(npc, ch)
     elseif count > 0 then
         do_message(npc, ch, "Mit so wenigen Tabletten komme ich nicht weit. *Hust*")
     else
-        do_message(npc, ch, "*Hust* *räusper* Hol mir doch bitte ein paar *hust* Tabeletten gegen meinen Husten.")
+        do_message(npc, ch, "*Hust* *räusper* Hol mir doch bitte ein paar *hust* Tabletten gegen meinen Husten.")
         do_message(npc, ch, "Diese Energetia sollten es tun.")
     end
   elseif get_qstatus()>=11 then
@@ -485,7 +485,7 @@ end
 function alex_talk(npc, ch)
 	do_message(npc, ch, invertika.get_random_element("Siehst du ihn? Ist er hier irgendwo? Nicht das es mich findet, also pssst!",
 	  "Was machst du hier? Nicht das du ihn zu mir führst...",
-	  "Wenn ich meine? Na Bahamut.",
+	  "Wen ich meine? Na Bahamut.",
 	  "Ich halte es nicht mehr aus, aber hier bin ich sicher.",
 	  "Siehst du ihn? Ich sehe ihn überall, hinter jeder Ecke.",
 	  "Gehörst du zu ihm? Wenn ja dann verschwinde!"))
@@ -701,7 +701,7 @@ function colloseumwache_talk(npc, ch)
 end
 
 function bankwache_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Wir bewachen den die Zentralbank.",
+	do_message(npc, ch, invertika.get_random_element("Wir bewachen die Zentralbank.",
 	  "Dies ist die Zentralbank. Hier wird eine Menge Geld gelagert.",
 	  "Wir passen auf das niemand in die Bank einbricht.",
 	  "Dank uns gab es noch nie einen Einbruch in der Zentralbank.",
