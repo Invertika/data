@@ -92,7 +92,7 @@ atinit(function()
  mana.trigger_create(85 * TILESIZE, 186 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "wache_trigger", 1, true) --- Trigger Tor
  
  -- Grabsteine
- for i, v in ipairs(grave_stone_data) do
+ for i, v in ipairs(gravestone_data) do
     create_npc(gravestone_npc_name, gravestone_npc_id, v[1] * 32 + 16, v[2] * 32 + 16, npclib.auto_talk(v[3]))
  end
 end)
