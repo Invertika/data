@@ -148,7 +148,7 @@ function syntyche_talk(npc, ch)
 
     do_message(npc, ch, "Mit den Charakterpunkten kannst du deine Statuswerte verbessern. Dazu musst du auf Status klicken. Unten stehen deine vorhandene Anzahl an Charakterpunkten und Korrekturpunkten. Nun kannst du diese Punkte auf die Statuswerte verteilen. Wenn du denkst das du bei der Verteilung der Punkte einen Fehler gemacht hast so kannst du die Änderung zurücknehmen, solange du genug Korrekturpunkte hast.")
 	
-    do_message(npc, ch, "Also achte darauf das du die du deine Charakterpunkte auf die richtigen Werte verteilst.")
+    do_message(npc, ch, "Also achte darauf, dass du deine Charakterpunkte auf die richtigen Werte verteilst.")
 	do_npc_close(npc, ch)
 end
 
@@ -163,7 +163,7 @@ function valaia_talk(npc, ch)
       invertika.set_quest_status(ch, quest_string, 1)
     end
 	
-    do_message(npc, ch, "Also fangen wir am besten mit dem Handel zwischen dir und einem NPC. Du kannst bei einem NPC Dinge kaufen und auch verkaufen. Was du kaufen kannst und was nicht legt der NPC fest. Was möchtest du tun?")
+    do_message(npc, ch, "Also fangen wir am besten mit dem Handel zwischen dir und einem NPC an. Du kannst bei einem NPC Dinge kaufen und auch verkaufen. Was du kaufen kannst und was nicht legt der NPC fest. Was möchtest du tun?")
 	
 	while true do 
 		local v = do_choice(npc, ch, "Kaufen",
@@ -181,7 +181,7 @@ function valaia_talk(npc, ch)
 	
     do_message(npc, ch, "Gut du hast genug gehandelt. Neben dem NPC Handel gibt es noch den Handel mit anderen Spielern. Um mit einem Spieler zu handeln klicke mit der rechten Maustaste auf ihn und wähle Handeln aus dem Menü aus.")
 	
-    do_message(npc, ch, "Daraufhin öffnet sich ein Fenster. Zusätzlich solltest du das Inventarfenster öffnen. Wähle nun ein Item im aus und drücke im Handelsfenster auf Hinzufügen. Dadurch wird das Item dem Handel hinzugefügt. Wenn du denn Handel beenden möchtest so klicke auf Vorschlagen und dann auf Bestätigen. Der Handel ist damit abgeschlossen.")
+    do_message(npc, ch, "Daraufhin öffnet sich ein Fenster. Zusätzlich solltest du das Inventarfenster öffnen. Wähle nun ein Item aus und drücke im Handelsfenster auf Hinzufügen. Dadurch wird das Item dem Handel hinzugefügt. Wenn du denn Handel beenden möchtest so klicke auf Vorschlagen und dann auf Bestätigen. Der Handel ist damit abgeschlossen.")
 	
     do_message(npc, ch, "Ja das wars auch schon zum Thema Handel.")
 	do_npc_close(npc, ch)
@@ -242,7 +242,7 @@ function essar_talk(npc, ch)
     do_message(npc, ch, "Da dies nur mit einzelnen Spielern geht gibt es auch eine Möglichkeit mit mehreren Spielern über weitere Strecken zu kommunizieren.")
     do_message(npc, ch, "Dies geschieht indem du einem Kanal beitrittst. Das kannst du ganz einfach mittels /join <Kanalname> machen.")
     do_message(npc, ch, "Es öffnet sich ein neuer Tab im Chatfenster und du kannst dort mit anderen Leuten chatten.")
-    do_message(npc, ch, "Falls du nun als Neuling Kontakt zu anderen Spieler suchst empfiehlt sich als erstes mal dem invertika Kanal beizutreten: /join invertika.")
+    do_message(npc, ch, "Falls du nun als Neuling Kontakt zu anderen Spielern suchst empfiehlt sich als erstes mal dem invertika Kanal beizutreten: /join invertika.")
     do_message(npc, ch, "Ist dort niemand da kannst du mal schauen wer grade generell online ist: /who. Dies zeigt dir eine Liste aller Spieler an die Online sind.")
     do_message(npc, ch, "Dann kannst du mittels /w <Spielername> <text> einen der Spieler anschreiben.")
     do_message(npc, ch, "Hilfe über diese und weitere Befehle kannst du über /help jederzeit abrufen.")
