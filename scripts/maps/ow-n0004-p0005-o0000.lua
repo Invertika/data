@@ -15,11 +15,13 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
+require "scripts/libs/sign"
 
 dofile("data/scripts/libs/warp.lua")
 
 atinit(function()
    create_inter_map_warp_trigger(nil, 33, 43, 55) --- Intermap warp
+
    sign_entrance = "Burg Cedric"
    sign.create_sign(106, 182, sign_entrance) --- Schild Burgeingang
 end)
