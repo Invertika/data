@@ -22,7 +22,7 @@ dofile("data/scripts/libs/warp.lua")
 
 atinit(function()
    create_inter_map_warp_trigger(nil, 33, 43, 55) --- Intermap warp
-   nethek.create_netheksaeule(47 * TILESIZE, 127 * TILESIZE + 16) ---Netheksäule
+   nethek.create_netheksaeule(103 * TILESIZE, 105 * TILESIZE + 16) ---Netheksäule
 
    sign_entrance = "Burg Cedric"
    sign.create_sign(106, 182, sign_entrance) --- Schild Burgeingang
