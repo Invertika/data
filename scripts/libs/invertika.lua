@@ -178,7 +178,7 @@ function npc_greet_random(npc)
                 if (type == TYPE_NPC or type == TYPE_CHARACTER) and v ~= npc and math.random() < 0.3 then
                     mana.being_say(npc, string.format(
                         get_random_element("Hallo %s!", "Tag %s.",
-                            "Ah. Lange nicht gesehen %s."), mana.being_name(v)))
+                            "Ah. Lange nicht gesehen %s."), mana.being_get_name(v)))
                     break
                 end
             end
