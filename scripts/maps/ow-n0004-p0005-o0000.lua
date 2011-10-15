@@ -65,10 +65,10 @@ function diem_update(npc)
 end
 
 funktion chris_talk(npc, ch)
-   do_message(npc, ch, "Guten Tag der Herr.")
-   do_npc_close(npc, ch)
-end)
+    do_message(npc, ch, "Guten Tag der Herr.")
+    do_npc_close(npc, ch)
+end
 
 function chris_update(npc)
-   npclib.walkaround_wide(npc)
-end)
+    npclib.walkaround_wide(npc)
+end
