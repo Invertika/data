@@ -167,3 +167,24 @@ function npc_talk_random(npc)
         tr_timer_next[npc] = math.random(200, 300)
     end 
 end
+
+tg_timer = {}
+function npc_greet_random(npc)
+    if tg_timer[npc] then
+        if tr_timer[npc] > 500 then
+            local beings = mana.get_beings_in_circle(mana.posX(npc), mana.posY(npc), 10 * TILESIZE)
+            for i, v in ipairs(beings) do
+                local type = mana.being_type(v)
+                if (type == TYPE_NPC or type == TYPE_CHARACTER) and v ~= npc and math.random() < 0.3 then
+                    mana.being_say(npc, string.format(get_random_element("Hallo %s!",
+                        "Tag %s.", "Ah. Lange nicht gesehen %s.")), mana.being_name(v))
+                    break
+                end
+            end
+            tr_timer[npc] = 1
+        end
+        tg_timer[npc] = tg_timer[npc] + 1
+    else
+        tg_timer[npc] = 1
+    end
+end
