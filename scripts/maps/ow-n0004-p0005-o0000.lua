@@ -64,11 +64,11 @@ function diem_update(npc)
     invertika.npc_talk_random(npc)
 end
 
----funktion chris_talk(npc, ch)
-    ---do_message(npc, ch, "Guten Tag der Herr.")
-    ---do_npc_close(npc, ch)
----end
+function chris_talk(npc, ch)
+    do_message(npc, ch, "Guten Tag der Herr.")
+    do_npc_close(npc, ch)
+end
 
----function chris_update(npc)
- ---   npclib.walkaround_wide(npc)
----end
+function diem_update(npc)
+    npclib.walkaround_wide(npc)
+end
