@@ -35,7 +35,7 @@ atinit(function()
         "Beste Waren! Hergestellt in den königlichen Schmieden!",
         "Sehen Sie! Dieses Schert ist unzerbrechbar! ZACK. Oh...",
         "Kommen Sie meine Herren. Diese Waffen sind die besten."})
-    create_npc("Chris", 72, 90 * TILESIZE + 16, 104 * TILESIZE + 16, chris_talk, chris_update)
+    ---create_npc("Chris", 72, 90 * TILESIZE + 16, 104 * TILESIZE + 16, chris_talk, chris_update)
 end)
 
 function diem_talk(npc, ch)
@@ -64,11 +64,11 @@ function diem_update(npc)
     invertika.npc_talk_random(npc)
 end
 
-funktion chris_talk(npc, ch)
-    do_message(npc, ch, "Guten Tag der Herr.")
-    do_npc_close(npc, ch)
-end
+---funktion chris_talk(npc, ch)
+    ---do_message(npc, ch, "Guten Tag der Herr.")
+    ---do_npc_close(npc, ch)
+---end
 
-function chris_update(npc)
-    npclib.walkaround_wide(npc)
-end
+---function chris_update(npc)
+ ---   npclib.walkaround_wide(npc)
+---end
