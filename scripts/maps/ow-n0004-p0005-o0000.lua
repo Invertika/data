@@ -29,7 +29,7 @@ atinit(function()
     sign_entrance = "Burg Cedric"
     sign.create_sign(106, 182, sign_entrance) --- Schild Burgeingang
 
-    diem = create_npc("Diem", 120, 130 * TILESIZE + 16, 150 * TILESIZE + 16, diem_talk, diem_update)
+    diem = create_npc("Diem", 120, 60 * TILESIZE + 16, 160 * TILESIZE + 16, diem_talk, diem_update)
     invertika.create_npc_talk_random(diem,
         {"Kauft Leute! Kauft!",
         "Beste Waren! Hergestellt in den königlichen Schmieden!",
