@@ -41,6 +41,11 @@ atinit(function()
 
     --TODO change sprite id
     create_npc("Estjdan", 120, 60 * TILESIZE + 16, 160 * TILESIZE + 16, estjdan_talk, invertika.npc_greet_random)
+	
+	create_npc("Palstwache", 110, 58 * TILESIZE + 16, 100 * TILESIZE +16, nil, invertika.npc_greet_random)
+	create_npc("Palstwache", 110, 61 * TILESIZE + 16, 100 * TILESIZE +16, nil, invertika.npc_greet_random)
+	
+	
 end)
 
 function diem_talk(npc, ch)
