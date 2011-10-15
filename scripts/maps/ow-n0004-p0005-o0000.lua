@@ -35,7 +35,7 @@ atinit(function()
         "Beste Waren! Hergestellt in den königlichen Schmieden!",
         "Sehen Sie! Dieses Schert ist unzerbrechbar! ZACK. Oh...",
         "Kommen Sie meine Herren. Diese Waffen sind die besten."})
-    create_npc("Chris", 120, 90 * TILESIZE, 104 * TILESIZE, chris_talk, chris_update)
+    chris = create_npc("Chris", 120, 90 * TILESIZE, 104 * TILESIZE, chris_talk, chris_update)
 end)
 
 function diem_talk(npc, ch)
