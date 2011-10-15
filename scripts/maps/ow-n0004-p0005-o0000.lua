@@ -24,7 +24,7 @@ dofile("data/scripts/libs/warp.lua")
 
 atinit(function()
     create_inter_map_warp_trigger(nil, 33, 43, 55) --- Intermap warp
-    nethek.create_netheksaeule(103 * TILESIZE, 107 * TILESIZE + 16) ---Netheksäule
+    nethek.create_netheksaeule(103 * TILESIZE, 107 * TILESIZE + 16) ---NetheksÃ¤ule
 
     sign_entrance = "Burg Cedric"
     sign.create_sign(106, 182, sign_entrance) --- Schild Burgeingang
@@ -33,7 +33,7 @@ atinit(function()
     diem = create_npc("Diem", 120, 60 * TILESIZE + 16, 160 * TILESIZE + 16, diem_talk, diem_update)
     invertika.create_npc_talk_random(diem,
         {"Kauft Leute! Kauft!",
-        "Beste Waren! Hergestellt in den königlichen Schmieden!",
+        "Beste Waren! Hergestellt in den kÃ¶niglichen Schmieden!",
         "Sehen Sie! Dieses Schert ist unzerbrechbar! ZACK. Oh...",
         "Kommen Sie meine Herren. Diese Waffen sind die besten."})
 
