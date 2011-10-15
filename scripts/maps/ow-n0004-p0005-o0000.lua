@@ -29,13 +29,18 @@ atinit(function()
     sign_entrance = "Burg Cedric"
     sign.create_sign(106, 182, sign_entrance) --- Schild Burgeingang
 
+    --TODO change sprite id
     diem = create_npc("Diem", 120, 60 * TILESIZE + 16, 160 * TILESIZE + 16, diem_talk, diem_update)
     invertika.create_npc_talk_random(diem,
         {"Kauft Leute! Kauft!",
         "Beste Waren! Hergestellt in den königlichen Schmieden!",
         "Sehen Sie! Dieses Schert ist unzerbrechbar! ZACK. Oh...",
         "Kommen Sie meine Herren. Diese Waffen sind die besten."})
+
     create_npc("Chris", 72, 90 * TILESIZE + 16, 104 * TILESIZE + 16, chris_talk, npclib.walkaround_wide)
+
+    --TODO change sprite id
+    create_npc("Estjdan", 120, 60 * TILESIZE + 16, 160 * TILESIZE + 16, estjdan_talk, invertika.npc_greet_random)
 end)
 
 function diem_talk(npc, ch)
@@ -66,5 +71,10 @@ end
 
 function chris_talk(npc, ch)
     do_message(npc, ch, "Guten Tag der Herr.")
+    do_npc_close(npc, ch)
+end
+
+function estjdan_talk(npc, ch)
+    do_message(npc, ch, "Tag der Herr")
     do_npc_close(npc, ch)
 end
