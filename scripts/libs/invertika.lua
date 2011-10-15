@@ -171,7 +171,7 @@ end
 tg_timer = {}
 function npc_greet_random(npc)
     if tg_timer[npc] then
-        if tr_timer[npc] > 500 then
+        if tg_timer[npc] > 500 then
             local beings = mana.get_beings_in_circle(mana.posX(npc), mana.posY(npc), 10 * TILESIZE)
             for i, v in ipairs(beings) do
                 local type = mana.being_type(v)
@@ -181,7 +181,7 @@ function npc_greet_random(npc)
                     break
                 end
             end
-            tr_timer[npc] = 1
+            tg_timer[npc] = 1
         end
         tg_timer[npc] = tg_timer[npc] + 1
     else
