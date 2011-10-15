@@ -35,7 +35,7 @@ atinit(function()
         "Beste Waren! Hergestellt in den königlichen Schmieden!",
         "Sehen Sie! Dieses Schert ist unzerbrechbar! ZACK. Oh...",
         "Kommen Sie meine Herren. Diese Waffen sind die besten."})
-    chris = create_npc("Chris", 72, 90 * TILESIZE + 16, 104 * TILESIZE + 16, chris_talk, chris_update)
+    create_npc("Chris", 72, 90 * TILESIZE + 16, 104 * TILESIZE + 16, chris_talk, chris_update)
 end)
 
 function diem_talk(npc, ch)
@@ -69,6 +69,6 @@ funktion chris_talk(npc, ch)
    do_npc_close(npc, ch)
 end)
 
-function chris_update(npc, ch)
+function chris_update(npc)
    npclib.walkaround_wide(npc)
 end)
