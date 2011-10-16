@@ -29,7 +29,7 @@ atinit(function()
     sign_entrance = "Burg Cedric"
     sign.create_sign(106, 182, sign_entrance) --- Schild Burgeingang
     
-    mana.trigger_create(101 * TILESIZE, 137 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "wache_trigger", 1, true)
+    mana.trigger_create(101 * TILESIZE, 170 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "wache_trigger", 1, true)
 	
     --TODO change sprite id
     diem = create_npc("Diem", 120, 60 * TILESIZE + 16, 160 * TILESIZE + 16, diem_talk, diem_update)
