@@ -97,7 +97,7 @@ end
 
 function wache_bank_talk(npc, ch)
     do_message(npc, ch, "Wir bewachen die Bank.")
-    do_npc_close(npc, ch);
+    do_npc_close(npc, ch)
 end
 
 function wache_casino_talk(npc, ch)
@@ -106,7 +106,7 @@ function wache_casino_talk(npc, ch)
 end
 
 function wache_talk(npc, ch)
-	if mana.cht_inv_count(ch, 40047) == 0 then
+	if mana.chr_inv_count(ch, 40047) == 0 then
 	    --TODO besseren Text
 	    do_message(npc, ch, "Kein Durchlass für dich")
 	else
@@ -116,7 +116,7 @@ function wache_talk(npc, ch)
 end
 
 function wache_trigger(ch, id)
-    if (mana.being_type(ch) ~= TYPE_MONSTER then
+    if mana.being_type(ch) ~= TYPE_MONSTER then
         if mana.chr_inv_count(ch, 40047) == 0 then
             local x = mana.posX(ch)
             mana.chr_warp(ch, nil, x, 176 * TILESIZE + 16)
