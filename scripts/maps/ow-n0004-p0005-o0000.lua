@@ -45,9 +45,9 @@ atinit(function()
 	create_npc("Palstwache", 26, 58 * TILESIZE + 16, 100 * TILESIZE + 16, nil, invertika.npc_greet_random)
 	create_npc("Palstwache", 26, 61 * TILESIZE + 16, 100 * TILESIZE + 16, nil, invertika.npc_greet_random)
 	
-	create_npc("Wache", 26, 150 * TIELSIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
-	create_npc("Wache", 26, 153 * TIELSIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
-	create_npc("Wache", 26, 52 * TIELSIZE + 16, 149 * TILESIZE + 16, wache_casino_talk, nil)
+	create_npc("Wache", 26, 150 * TILESIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
+	create_npc("Wache", 26, 153 * TILESIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
+	create_npc("Wache", 26, 52 * TILESIZE + 16, 149 * TILESIZE + 16, wache_casino_talk, nil)
 end)
 
 function diem_talk(npc, ch)
