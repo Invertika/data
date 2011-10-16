@@ -28,7 +28,9 @@ atinit(function()
 
     sign_entrance = "Burg Cedric"
     sign.create_sign(106, 182, sign_entrance) --- Schild Burgeingang
-
+    
+    mana.trigger_create(101 * TILESIZE, 137 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "wache_trigger", 1, true)
+	
     --TODO change sprite id
     diem = create_npc("Diem", 120, 60 * TILESIZE + 16, 160 * TILESIZE + 16, diem_talk, diem_update)
     invertika.create_npc_talk_random(diem,
@@ -51,8 +53,8 @@ atinit(function()
 	create_npc("Wache", 26, 52 * TILESIZE + 16, 149 * TILESIZE + 16, wache_casino_talk, nil)
 	
 	--TODO change sprite id
-	create_npc("Wache", 26, 100 * TILESIZE + 16, 174 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
-	create_npc("Wache", 26, 104 * TILESIZE + 16, 174 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
+	wache_unten_links = create_npc("Wache", 26, 100 * TILESIZE + 16, 174 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
+	wache_unten_rechts = create_npc("Wache", 26, 104 * TILESIZE + 16, 174 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
 	create_npc("Wache", 26, 100 * TILESIZE + 16, 140 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
 	create_npc("Wache", 26, 104 * TILESIZE + 16, 140 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
 end)
@@ -104,6 +106,25 @@ function wache_casino_talk(npc, ch)
 end
 
 function wache_talk(npc, ch)
-    do_message(npc, ch, "Wir bewachen die Stadt.")
+	if mana.cht_inv_count(ch, 40047) == 0 then
+	    --TODO besseren Text
+	    do_message(npc, ch, "Kein Durchlass für dich")
+	else
+	    do_message(npc, ch, "Wir bewachen die Stadt.")
+	end
 	do_npc_close(npc, ch)
+end
+
+function wache_trigger(ch, id)
+    if (mana.being_type(ch) ~= TYPE_MONSTER then
+        if mana.chr_inv_count(ch, 40047) == 0 then
+            local x = mana.posX(ch)
+            mana.chr_warp(ch, nil, x, 176 * TILESIZE + 16)
+            if x < 102 * TILESIZE + 16 then
+                mana.being_say(wache_unten_links, "Kein Durchlass")
+            else
+                mana.being_say(wache_unten_rechts, "Kein Durchlass")
+            end
+        end
+	end
 end
