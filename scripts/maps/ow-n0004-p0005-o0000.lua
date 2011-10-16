@@ -42,10 +42,12 @@ atinit(function()
     --TODO change sprite id
     create_npc("Estjdan", 120, 60 * TILESIZE + 16, 160 * TILESIZE + 16, estjdan_talk, invertika.npc_greet_random)
 	
-	create_npc("Palstwache", 110, 58 * TILESIZE + 16, 100 * TILESIZE +16, nil, invertika.npc_greet_random)
-	create_npc("Palstwache", 110, 61 * TILESIZE + 16, 100 * TILESIZE +16, nil, invertika.npc_greet_random)
+	create_npc("Palstwache", 26, 58 * TILESIZE + 16, 100 * TILESIZE + 16, nil, invertika.npc_greet_random)
+	create_npc("Palstwache", 26, 61 * TILESIZE + 16, 100 * TILESIZE + 16, nil, invertika.npc_greet_random)
 	
-	
+	create_npc("Wache", 25, 150 * TIELSIZE + 16, 119 * TILESIZE + 16, nil, wache_bank_talk)
+	create_npc("Wache", 25, 153 * TIELSIZE + 16, 119 * TILESIZE + 16, nil, wache_bank_talk)
+	create_npc("Wache", 52, * TIELSIZE + 16, 149 * TILESIZE + 16, nil, wache_casino_talk)
 end)
 
 function diem_talk(npc, ch)
@@ -82,4 +84,14 @@ end
 function estjdan_talk(npc, ch)
     do_message(npc, ch, "Tag der Herr")
     do_npc_close(npc, ch)
+end
+
+function wache_bank_talk(npc, ch)
+do_message(npc, ch, "Wir bewachen die Bank")
+do_npc_close(npc, ch);
+end
+
+function wache_casino_talk(npc, ch)
+do_message(npc, ch, "Wir bewachen das Kasino")
+do_npc_close(npc, ch);
 end
