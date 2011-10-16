@@ -953,7 +953,12 @@ function waypoint_archway_1(obj, arg)
         if(archway_quest % 2 == 1) then
             --- halbe Umdrehung wird dazugezählt
             invertika.set_quest_status(obj, "selphie_timlet_archway_quest", archway_quest + 1)
-            archway_do_sth(obj, (archway_quest+1)/2)
+            local rounds = (archway_quest+1)/2
+            -- eigentlich sollte hier eine 17 stehen, sind nur zu testzwecken lediglich 2 runden
+            if(count % 2 == 0) then
+                mana.chatmessage(obj, "Vor lauter Langeweile wegen dem ganzen Torbögen-Durchlaufen, findest du ein paar Aki auf der Erde, die du zuvor wahrscheinlich übersehen hast!")
+        invertika.add_money(obj, math.random(1, 500)) --- Wenn man davon ausgeht, dass man in 17 Runden wahrscheinlich etwa 50 Maden mit HDW von über 5 = 250 Aki minimum verdienen kann, sind 250 Aki Durchschnittsgewinn beim Durchlaufen der Torbögen OK
+            end
         end
     end
 end
@@ -970,13 +975,4 @@ function waypoint_archway_2(obj, arg)
             invertika.set_quest_status(obj, "selphie_timlet_archway_quest", archway_quest + 1)
         end
     end
-end
-
-function archway_do_sth(obj, count)
-    -- eigentlich sollte hier 17 stehen, nur zu Testzwecken runtergesetzt auf 2 Umrundungen
-    if(count % 2 == 0) then
-        mana.chatmessage(obj, "Vor lauter Langeweile wegen dem ganzen Torbögen-Durchlaufen, findest du ein paar Aki auf der Erde, die du zuvor wahrscheinlich übersehen hast!")
-        invertika.add_money(obj, math.random(1, 500)) --- Wenn man davon ausgeht, dass man in 17 Runden wahrscheinlich etwa 50 Maden mit HDW von über 5 = 250 Aki minimum verdienen kann, sind 250 Aki Durchschnittsgewinn beim Durchlaufen der Torbögen OK
-    end
-    --- More to come
 end
