@@ -121,7 +121,8 @@ function wache_trigger(ch, id)
             local x = mana.posX(ch)
             mana.chr_warp(ch, nil, x, 176 * TILESIZE + 16)
             if x < 102 * TILESIZE + 16 then
-                mana.being_say(wache_unten_links, "Kein Durchlass")
+                mana.being_say(wache_unten_links, 
+				"Kein Durchlass")
             else
                 mana.being_say(wache_unten_rechts, "Kein Durchlass")
             end
