@@ -18,6 +18,7 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 require "scripts/libs/dice"
 require "scripts/libs/slotmachine"
+require "scripts/libs/roulette"
 
 atinit(function()
     create_npc("Daniel", 63, 20 * TILESIZE + 16, 27 * TILESIZE + 16 , daniel_talk, nil)
@@ -27,7 +28,12 @@ atinit(function()
 	
     create_npc("Slotmaschine", 1, 39 * TILESIZE + 16, 27 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
     create_npc("Slotmaschine", 1, 39 * TILESIZE + 16, 30 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+
+    create_npc("Roulette", 1, 31 * TILESIZE + 16, 26 * TILESIZE + 16, roulette.roulette_talk, nil)
+    create_npc("Roulette", 1, 31 * TILESIZE + 16, 29 * TILESIZE + 16, roulette.roulette_talk, nil)
 end)
 
 function daniel_talk(npc, ch)
+    do_message(npc, ch, "Hmmm.")
+    do_npc_close(npc, ch)
 end
