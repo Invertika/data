@@ -87,11 +87,11 @@ function estjdan_talk(npc, ch)
 end
 
 function wache_bank_talk(npc, ch)
-do_message(npc, ch, "Wir bewachen die Bank")
-do_npc_close(npc, ch);
+    do_message(npc, ch, "Wir bewachen die Bank")
+    do_npc_close(npc, ch);
 end
 
 function wache_casino_talk(npc, ch)
-do_message(npc, ch, "Wir bewachen das Kasino")
-do_npc_close(npc, ch);
+    do_message(npc, ch, "Wir bewachen das Kasino")
+    do_npc_close(npc, ch)
 end
