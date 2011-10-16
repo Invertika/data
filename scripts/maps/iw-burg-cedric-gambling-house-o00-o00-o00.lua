@@ -21,7 +21,7 @@ require "scripts/libs/slotmachine"
 require "scripts/libs/roulette"
 
 atinit(function()
-    create_npc("Daniel", 63, 20 * TILESIZE + 16, 27 * TILESIZE + 16 , daniel_talk, nil)
+    create_npc("Daniel", 63, 19 * TILESIZE + 16, 27 * TILESIZE + 16 , daniel_talk, nil)
 
     create_npc("Würfeltisch", 1, 30 * TILESIZE + 16, 26 * TILESIZE + 16, dice.dicemanager_talk, nil)
     create_npc("Würfeltisch", 1, 27 * TILESIZE + 16, 29 * TILESIZE + 16, dice.dicemanager_talk, nil)
