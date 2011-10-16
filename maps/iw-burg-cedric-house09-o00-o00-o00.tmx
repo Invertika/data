@@ -1,8 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="20" height="20" tilewidth="32" tileheight="32">
- <layer name="Kachelebene 1" width="20" height="20">
+<map version="1.0" orientation="orthogonal" width="70" height="50" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="music" value="inside.ogg"/>
+ </properties>
+ <tileset firstgid="1" name="collision1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="1025" name="indoor1_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/indoor1_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="1537" name="indoor2_32_96" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/indoor2_32_96.png" width="1024" height="960"/>
+ </tileset>
+ <tileset firstgid="1857" name="indoor1_32_128" tilewidth="32" tileheight="128">
+  <image source="../graphics/tiles/indoor1_32_128.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="2113" name="indoor2_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/indoor2_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3137" name="indoor2_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/indoor2_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3649" name="indoor2_32_96" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/indoor2_32_96.png" width="1024" height="960"/>
+ </tileset>
+ <tileset firstgid="3969" name="indoor3_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/indoor3_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <layer name="Ground" width="70" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC2NgGAWjYBSMglEwCkgHADV9EcVABgAA
+   H4sIAAAAAAAAC+3QsQ0AIQwEQTpAVEmLfDl0AuRERg/JWJrQwW0tKVUAAAAAAACO9fyP17tudlmniy666BLR5p4vsCn6BwAAAAAA7A2kARfqsDYAAA==
   </data>
  </layer>
+ <layer name="Ground" width="70" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3QSQrCQBCF4dqII3RfQnA6iNNRvIQorryE0WUuYdYeygpREtSEWpri/6Dg0bzNaxEAAAAAAAAAAFDnEESOr2vKJ71RFNkb+2130Q0d3ZuEIt9CmZNKzm8Rv9/f+frx3nZ33TDWvVkochZ+5/y2sblTzd51Y5l3sb7nTU+39o17z4beQDtDB/830Q1T447U0JtpZ+7gX5a6YWXc8TD01trZOPgXAAAAAAAAAADwf57XprOUsDYAAA==
+  </data>
+ </layer>
+ <layer name="Ground" width="70" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3TwQmAMAxA0Q4giEu5iFupE6mTqEPYBcRG8FB5D3Lqp5BDUgIAAAAAAHhnbGP9dNPPwX9qMnTl70/tn/TNN23NlnwHa56t4B4ibe32vOOR5yzYNdICAAAAAADwjQsF+6cBsDYAAA==
+  </data>
+ </layer>
+ <layer name="Fringe" width="70" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3KwQmAMBAEwCvgSE9Rg+m/IvOLIPEl+JmB5Rb2IgAAAAAAAPjCluu+jxwjLedWbz813y8wnSWil2cHAAAAAADgfxc7dDNFsDYAAA==
+  </data>
+ </layer>
+ <layer name="Over" width="70" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3BMQEAAADCoPVPbQhfoAAAAAAAAAAAAAAAAADgN2YIZcmwNgAA
+  </data>
+ </layer>
+ <layer name="Collision" width="70" height="50" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3SQQrAIAwEwJD/P9oPWKrYVNAJDOSSwy7JiEgAAAAAAAAoUjW7c33dz0xnb/cnGMn6tN/Qy+rszvHXz1TeAQAAAAAAfQ2B8FUdsDYAAA==
+  </data>
+ </layer>
+ <objectgroup name="Object" width="70" height="50">
+  <object name="Warp to city" type="WARP" x="737" y="896" width="64" height="23">
+   <properties>
+    <property name="DEST_MAP" value="ow-n0004-p0005-o0000"/>
+    <property name="DEST_X" value="4624"/>
+    <property name="DEST_Y" value="4784"/>
+   </properties>
+  </object>
+  <object name="Warp to citiy" type="WARP" x="1184" y="896" width="65" height="20">
+   <properties>
+    <property name="DEST_MAP" value="ow-n0004-p0005-o0000"/>
+    <property name="DEST_X" value="4880"/>
+    <property name="DEST_Y" value="4784"/>
+   </properties>
+  </object>
+  <object name="External Map Events" type="SCRIPT" x="48" y="32" width="52" height="120">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/iw-burg-cedric-house09-o00-o00-o00.lua"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>
