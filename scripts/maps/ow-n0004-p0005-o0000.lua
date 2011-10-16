@@ -47,7 +47,7 @@ atinit(function()
 	
 	create_npc("Wache", 25, 150 * TIELSIZE + 16, 119 * TILESIZE + 16, nil, wache_bank_talk)
 	create_npc("Wache", 25, 153 * TIELSIZE + 16, 119 * TILESIZE + 16, nil, wache_bank_talk)
-	create_npc("Wache", 52, * TIELSIZE + 16, 149 * TILESIZE + 16, nil, wache_casino_talk)
+	create_npc("Wache", 25, 52 * TIELSIZE + 16, 149 * TILESIZE + 16, nil, wache_casino_talk)
 end)
 
 function diem_talk(npc, ch)
