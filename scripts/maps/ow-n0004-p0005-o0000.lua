@@ -86,29 +86,37 @@ function diem_update(npc)
 end
 
 function chris_talk(npc, ch)
+    --TODO bessere Texte
     do_message(npc, ch, "Guten Tag der Herr.")
     do_npc_close(npc, ch)
 end
 
 function estjdan_talk(npc, ch)
+    --TODO zu einem Händler machen keine Getränke, Lebensmittel
     do_message(npc, ch, "Tag der Herr")
     do_npc_close(npc, ch)
 end
 
 function wache_bank_talk(npc, ch)
+    --TODO bessere Texte
     do_message(npc, ch, "Wir bewachen die Bank.")
     do_npc_close(npc, ch)
 end
 
 function wache_casino_talk(npc, ch)
+    --TODO bessere Texte
     do_message(npc, ch, "Wir bewachen das Kasino.")
     do_npc_close(npc, ch)
 end
 
 function wache_talk(npc, ch)
 	if mana.chr_inv_count(ch, 40047) == 0 then
-	    --TODO besseren Text
-	    do_message(npc, ch, "Kein Durchlass für dich")
+        do_message(npc, ch, "Ich habe meinen MacGuffin verloren!")
+        do_message(npc, ch, "Er ist bestimmt in der Höhle XY, ganz sicher!")
+        do_message(npc, ch, "Woher ich das weiß?")
+        do_message(npc, ch, "Das gehört sich für einen MacGuffin einfach so!")
+        do_message(npc, ch, "Und deshalb lasse ich dich auch nicht in die Stadt, bevor du ihn mir wiedergebracht hast.")
+        do_message(npc, ch, "Obwohl.. so wie DU aussiehst, wird das wohl eh nix..")
 	else
 	    do_message(npc, ch, "Wir bewachen die Stadt.")
 	end
