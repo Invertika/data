@@ -15,10 +15,10 @@
 ----------------------------------------------------------------------------------
 
 
--- require "scripts/lua/npclib"
--- require "scripts/libs/invertika"
--- 
--- local tano = {}
+require "scripts/lua/npclib"
+require "scripts/libs/invertika"
+ 
+local tano = {}
 -- local waypointstate = {}
 
 atinit(function()
