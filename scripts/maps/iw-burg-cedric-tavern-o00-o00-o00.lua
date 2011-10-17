@@ -18,5 +18,5 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
-    create_npc("Egam", 19, 22 * TILESIZE + 16, 30 * TILESIZE + 16, nil, nil)
+    create_npc("Egam", 19, 19 * TILESIZE + 16, 27 * TILESIZE + 16, nil, nil)
 end)
