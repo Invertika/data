@@ -26,7 +26,7 @@ function egam_talk(npc, ch)
     while true do
         local v = do_choice(npc, ch, "Kaufen.",
 		                     "Nichts. Danke.")
-        if v == 0 then
+        if v == 1 then
 		    mana.npc_trade(npc, ch, false, {
             {30009, 25, 15},
             {30010, 25, 15},
