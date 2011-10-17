@@ -34,6 +34,21 @@ atinit(function()
 end)
 
 function daniel_talk(npc, ch)
-    do_message(npc, ch, "Hmmm.")
+    do_message(npc, ch, "Moin. Was wollen sie?")
+    while true do
+        local v = do_choice(npc, ch, "Kaufen.",
+		                     "Nichts. Danke.")
+        if v == 1 then
+		    mana.npc_trade(npc, ch, false, {
+            {30001, 25, 30},
+            {30006, 400, 20},
+            {30007, 300, 20}
+            })
+            break
+        elseif v == 2 then
+		    do_message(npc, ch, "Tschüß.")
+            break
+        end
+    end
     do_npc_close(npc, ch)
 end
