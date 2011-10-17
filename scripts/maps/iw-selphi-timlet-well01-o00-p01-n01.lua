@@ -19,45 +19,45 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
  
 local tano = {}
--- local waypointstate = {}
+local waypointstate = {}
 
 atinit(function()
-  --- NPCs
-  tano[1] = create_npc("Irdath", 89, 35 * TILESIZE + 16, 44 * TILESIZE + 16, tano1_talk, npclib.walkaround_small) --- Ta No 1 (Ta No am Eingang)
-  tano[2] = create_npc("Rhaor", 91, 42 * TILESIZE + 16, 36 * TILESIZE + 16, tano2_talk, nil) --- Ta No 2 (Schatzkammer Wächter)
-  tano[3] = create_npc("Karl", 92, 25 * TILESIZE + 16, 41 * TILESIZE + 16, tano3_talk, nil) --- Ta No 3 (Verkäufer)
-  tano[4] = create_npc("Samos", 93, 67 * TILESIZE + 16, 14 * TILESIZE + 16, tano4_talk, nil) --- Ta No 4 (Sektenführer)
-  tano[5] = create_npc("Ceria", 94, 20 * TILESIZE + 16, 20 * TILESIZE + 16, tano5_talk, nil) --- Ta No 5 (Köchin)
-  tano[6] = create_npc("Enlelm", 95, 19 * TILESIZE + 16, 19 * TILESIZE + 16, tano6_talk, nil) --- Ta No 6 (Küchenhilfe)
-  tano[7] = create_npc("Byler", 96, 17 * TILESIZE + 16, 24 * TILESIZE + 16, tano7_talk, nil) --- Ta No 7 (Normal m)
-  tano[8] = create_npc("Lyril", 97, 21 * TILESIZE + 16, 24 * TILESIZE + 16, tano8_talk, nil) --- Ta No 8 (Normal f)
-  tano[9] = create_npc("Iawar", 98, 26 * TILESIZE + 16, 24 * TILESIZE + 16, tano9_talk, nil) --- Ta No 9 (Normal m)
-  tano[10] = create_npc("Isskel", 99, 18 * TILESIZE + 16, 29 * TILESIZE + 16, tano10_talk, nil) --- Ta No 10 (Normal m)
-  tano[11] = create_npc("Kahlan", 100, 22 * TILESIZE + 16, 29 * TILESIZE + 16, tano11_talk, nil) --- Ta No 11 (Normal f)
-  --- Blickrichtungen
-  schedule_in(1, function()
-     mana.being_set_direction(tano[7], DIRECTION_RIGHT)
-     mana.being_set_direction(tano[8], DIRECTION_LEFT)
-     mana.being_set_direction(tano[9], DIRECTION_DOWN)
-     mana.being_set_direction(tano[10], DIRECTION_RIGHT)
-     mana.being_set_direction(tano[11], DIRECTION_LEFT)
-  end)
---  --- Waypoints
---     --- Ta No 5 (Köchin)
---      mana.trigger_create(20 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, "waypoints", 1, true) --- Wegpunkt 1 (Küchenanrichte, ganz links)
---      mana.trigger_create(23 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, "waypoints", 2, true) --- Wegpunkt 2 (Küchenanrichte, zweite von rechts)
---      mana.trigger_create(24 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, "waypoints", 3, true) --- Wegpunkt 3 (Küchenanrichte, ganz rechts)
---      waypointstate[tano[5]] = 1
---  
---     --- Ta No 6 (Küchenhilfe)
---      mana.trigger_create(19 * TILESIZE + 16, 19 * TILESIZE + 16, 1, 1, "waypoints", 1, true) --- Wegpunkt 1 (Küchenanrichte, links vor dem Ofen)
---      mana.trigger_create(9 * TILESIZE + 16, 14 * TILESIZE + 16, 1, 1, "waypoints", 2, true) --- Wegpunkt 2 (Vorratskammer, oben vor dem Regal)
---      mana.trigger_create(9 * TILESIZE + 16, 19 * TILESIZE + 16, 1, 1, "waypoints", 3, true) --- Wegpunkt 3 (Vorratskammer, unten vor einer Kiste)
---      mana.trigger_create(7 * TILESIZE + 16, 16 * TILESIZE + 16, 1, 1, "waypoints", 4, true) --- Wegpunkt 4 (Vorratskammer, links vor einem Sack)
---      waypointstate[tano[6]] = 1
---  --- Schutz der Schatzkammer
---  mana.trigger_create(42 * TILESIZE, 36 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "treasure_trap", 0, true)
---  mana.trigger_create(39 * TILESIZE, 36 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "treasure_warning", 0, true)
+    --- NPCs
+    tano[1] = create_npc("Irdath", 89, 35 * TILESIZE + 16, 44 * TILESIZE + 16, tano1_talk, npclib.walkaround_small) --- Ta No 1 (Ta No am Eingang)
+    tano[2] = create_npc("Rhaor", 91, 42 * TILESIZE + 16, 36 * TILESIZE + 16, tano2_talk, nil) --- Ta No 2 (Schatzkammer Wächter)
+    tano[3] = create_npc("Karl", 92, 25 * TILESIZE + 16, 41 * TILESIZE + 16, tano3_talk, nil) --- Ta No 3 (Verkäufer)
+    tano[4] = create_npc("Samos", 93, 67 * TILESIZE + 16, 14 * TILESIZE + 16, tano4_talk, nil) --- Ta No 4 (Sektenführer)
+    tano[5] = create_npc("Ceria", 94, 20 * TILESIZE + 16, 20 * TILESIZE + 16, tano5_talk, nil) --- Ta No 5 (Köchin)
+    tano[6] = create_npc("Enlelm", 95, 19 * TILESIZE + 16, 19 * TILESIZE + 16, tano6_talk, nil) --- Ta No 6 (Küchenhilfe)
+    tano[7] = create_npc("Byler", 96, 17 * TILESIZE + 16, 24 * TILESIZE + 16, tano7_talk, nil) --- Ta No 7 (Normal m)
+    tano[8] = create_npc("Lyril", 97, 21 * TILESIZE + 16, 24 * TILESIZE + 16, tano8_talk, nil) --- Ta No 8 (Normal f)
+    tano[9] = create_npc("Iawar", 98, 26 * TILESIZE + 16, 24 * TILESIZE + 16, tano9_talk, nil) --- Ta No 9 (Normal m)
+    tano[10] = create_npc("Isskel", 99, 18 * TILESIZE + 16, 29 * TILESIZE + 16, tano10_talk, nil) --- Ta No 10 (Normal m)
+    tano[11] = create_npc("Kahlan", 100, 22 * TILESIZE + 16, 29 * TILESIZE + 16, tano11_talk, nil) --- Ta No 11 (Normal f)
+    --- Blickrichtungen
+    schedule_in(1, function()
+        mana.being_set_direction(tano[7], DIRECTION_RIGHT)
+        mana.being_set_direction(tano[8], DIRECTION_LEFT)
+        mana.being_set_direction(tano[9], DIRECTION_DOWN)
+        mana.being_set_direction(tano[10], DIRECTION_RIGHT)
+        mana.being_set_direction(tano[11], DIRECTION_LEFT)
+    end)
+    --- Waypoints
+    --- Ta No 5 (Köchin)
+    mana.trigger_create(20 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, "waypoints", 1, true) --- Wegpunkt 1 (Küchenanrichte, ganz links)
+    mana.trigger_create(23 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, "waypoints", 2, true) --- Wegpunkt 2 (Küchenanrichte, zweite von rechts)
+    mana.trigger_create(24 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, "waypoints", 3, true) --- Wegpunkt 3 (Küchenanrichte, ganz rechts)
+    waypointstate[tano[5]] = 1
+  
+    --- Ta No 6 (Küchenhilfe)
+    mana.trigger_create(19 * TILESIZE + 16, 19 * TILESIZE + 16, 1, 1, "waypoints", 1, true) --- Wegpunkt 1 (Küchenanrichte, links vor dem Ofen)
+    mana.trigger_create(9 * TILESIZE + 16, 14 * TILESIZE + 16, 1, 1, "waypoints", 2, true) --- Wegpunkt 2 (Vorratskammer, oben vor dem Regal)
+    mana.trigger_create(9 * TILESIZE + 16, 19 * TILESIZE + 16, 1, 1, "waypoints", 3, true) --- Wegpunkt 3 (Vorratskammer, unten vor einer Kiste)
+    mana.trigger_create(7 * TILESIZE + 16, 16 * TILESIZE + 16, 1, 1, "waypoints", 4, true) --- Wegpunkt 4 (Vorratskammer, links vor einem Sack)
+    waypointstate[tano[6]] = 1
+    --- Schutz der Schatzkammer
+    -- mana.trigger_create(42 * TILESIZE, 36 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "treasure_trap", 0, true)
+    -- mana.trigger_create(39 * TILESIZE, 36 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "treasure_warning", 0, true)
 end)
  
 function tano1_talk(npc, ch)
