@@ -19,10 +19,10 @@ require "scripts/libs/invertika"
 
 atinit(function()
     --TODO change sprite
-    create_npc("Toffi", 120, 22 * TILESIZE + 16, 27 * TILESIZE + 16, toffi_talk, nil)
+    create_npc("Toffi", 81, 22 * TILESIZE + 16, 27 * TILESIZE + 16, toffi_talk, nil)
 end)
 
-function toffi_talk()
+function toffi_talk(npc, ch)
     do_message(npc, ch, "Tag, Was gibt es?")
 	
 	while true do
