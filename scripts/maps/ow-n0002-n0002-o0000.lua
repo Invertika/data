@@ -28,26 +28,26 @@ atinit(function()
 end)
 
 function peter_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Gerade Kanten und symmetrisch muss es sein.",
-	  "Wir sorgen dafür das in der Welt von Invertika eine gewisse Gradlinigkeit herrscht.",
-	  "Ich bin hier der mit dem 90 Grad Winkelmaß.",
-	  "Akkurat muss es geschnitten sein, Akkurat!",
-	  "Bei uns wird das sehr sehr gewissenhaft gemacht."))
-	do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Gerade Kanten und symmetrisch muss es sein.",
+      "Wir sorgen dafür das in der Welt von Invertika eine gewisse Gradlinigkeit herrscht.",
+      "Ich bin hier der mit dem 90 Grad Winkelmaß.",
+      "Akkurat muss es geschnitten sein, Akkurat!",
+      "Bei uns wird das sehr sehr gewissenhaft gemacht."))
+    do_npc_close(npc, ch)
 end
 
 function hans_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Wir sind Landschaftsgärtner. Das muss schließlich alles seine Ordnung haben.",
-	  "Da drüben haben wir ein kleines Problem mit dieser Blume. Schrecklich.",
-	  "Jetzt steht diese Blume dort schon seit 5 Tagen und wir haben noch kein Mittel gegen sie gefunden.",
-	  "Das mit der Blume hätte nicht passieren dürfen."))
-	do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Wir sind Landschaftsgärtner. Das muss schließlich alles seine Ordnung haben.",
+      "Da drüben haben wir ein kleines Problem mit dieser Blume. Schrecklich.",
+      "Jetzt steht diese Blume dort schon seit 5 Tagen und wir haben noch kein Mittel gegen sie gefunden.",
+      "Das mit der Blume hätte nicht passieren dürfen."))
+    do_npc_close(npc, ch)
 end
 
 function siegfried_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Wir sorgen für Ordnung und Ordnung und ganz wichtig Ordnung.",
-	  "Verdammt, was macht diese Blume hier?",
-	  "Diese Blume zerstört die Perfektion.",
-	  "Neeeeeeeeeeeeeeiiiiiiiiiiiiinnnnnnnn, diese Blume darf nicht sein."))
-	do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Wir sorgen für Ordnung und Ordnung und ganz wichtig Ordnung.",
+      "Verdammt, was macht diese Blume hier?",
+      "Diese Blume zerstört die Perfektion.",
+      "Neeeeeeeeeeeeeeiiiiiiiiiiiiinnnnnnnn, diese Blume darf nicht sein."))
+    do_npc_close(npc, ch)
 end

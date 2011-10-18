@@ -23,18 +23,18 @@ atinit(function()
 end)
 
 function nomo_talk(npc, ch)
-	local count = mana.chr_inv_count(ch, 40010) 
-	
-	if count < 1 then
-		do_message(npc, ch, invertika.get_random_element("Blub...",
-	  "Wenn ich das bloß wüsste...",
-	  "Der Regenwurm, der Regenwurm...",
-	  "Immer zu Diensten.",
-	  "Darüber darf ich nicht sprechen.",
-	  "Das glaube ich allerdings nicht."))			
-	else
-		mana.chr_warp(ch,  61, 3936, 3488) 
-		do_message(npc, ch, "Du bist in Besitz des Schlüssels. Willkommen auf der dunklen Seite. Die Kekse liegen im Haus.")
-	end
-	do_npc_close(npc, ch)
+    local count = mana.chr_inv_count(ch, 40010) 
+    
+    if count < 1 then
+        do_message(npc, ch, invertika.get_random_element("Blub...",
+      "Wenn ich das bloß wüsste...",
+      "Der Regenwurm, der Regenwurm...",
+      "Immer zu Diensten.",
+      "Darüber darf ich nicht sprechen.",
+      "Das glaube ich allerdings nicht."))            
+    else
+        mana.chr_warp(ch,  61, 3936, 3488) 
+        do_message(npc, ch, "Du bist in Besitz des Schlüssels. Willkommen auf der dunklen Seite. Die Kekse liegen im Haus.")
+    end
+    do_npc_close(npc, ch)
 end

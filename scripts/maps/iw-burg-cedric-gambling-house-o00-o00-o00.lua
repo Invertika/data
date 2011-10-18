@@ -25,7 +25,7 @@ atinit(function()
 
     create_npc("Würfeltisch", 1, 27 * TILESIZE + 16, 26 * TILESIZE + 16, dice.dicemanager_talk, nil)
     create_npc("Würfeltisch", 1, 27 * TILESIZE + 16, 29 * TILESIZE + 16, dice.dicemanager_talk, nil)
-	
+    
     create_npc("Slotmaschine", 1, 39 * TILESIZE + 16, 27 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
     create_npc("Slotmaschine", 1, 39 * TILESIZE + 16, 30 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
 
@@ -37,16 +37,16 @@ function daniel_talk(npc, ch)
     do_message(npc, ch, "Moin. Was wollen sie?")
     while true do
         local v = do_choice(npc, ch, "Kaufen.",
-		                     "Nichts. Danke.")
+                             "Nichts. Danke.")
         if v == 1 then
-		    mana.npc_trade(npc, ch, false, {
+            mana.npc_trade(npc, ch, false, {
             {30001, 25, 30},
             {30006, 400, 20},
             {30007, 300, 20}
             })
             break
         elseif v == 2 then
-		    do_message(npc, ch, "Tschüß.")
+            do_message(npc, ch, "Tschüß.")
             break
         end
     end

@@ -26,11 +26,11 @@ atinit(function()
 end)
 
 function saya_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Oh wir haben Gäste. Tetse, deckst du den Tisch ich bin fast fertig.",
-	  "Tetse lernte ich vor sehr langer Zeit kennen.",
-	  "Wir haben hier alles was wir brauchen.",
-	  "Okita ist vor einiger Zeit gegangen, er sagte er müsse einige Dinge klären."))
-	  do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Oh wir haben Gäste. Tetse, deckst du den Tisch ich bin fast fertig.",
+      "Tetse lernte ich vor sehr langer Zeit kennen.",
+      "Wir haben hier alles was wir brauchen.",
+      "Okita ist vor einiger Zeit gegangen, er sagte er müsse einige Dinge klären."))
+      do_npc_close(npc, ch)
 end
 
 function tetse_talk(npc, ch)

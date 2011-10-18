@@ -28,6 +28,6 @@ atinit(function()
 end)
 
 function grabstein_talk(npc, ch)
-	do_message(npc, ch, "Ayume\n12430-12470\n\nIn Trauer: Saya und Tetse")
-	do_npc_close(npc, ch)
+    do_message(npc, ch, "Ayume\n12430-12470\n\nIn Trauer: Saya und Tetse")
+    do_npc_close(npc, ch)
 end

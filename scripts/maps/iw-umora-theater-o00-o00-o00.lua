@@ -25,16 +25,16 @@ atinit(function()
 end)
 
 function ingrid_talk(npc, ch)
-	do_message(npc, ch, "Das Theater hat leider noch nicht geöffnet, da wir noch an der Bühne arbeiten.")
-	do_npc_close(npc, ch)
+    do_message(npc, ch, "Das Theater hat leider noch nicht geöffnet, da wir noch an der Bühne arbeiten.")
+    do_npc_close(npc, ch)
 end
 
 function anne_talk(npc, ch)
-	do_message(npc, ch, "Ja, hier können sie ihre Garderobe abgeben, sobald wir geöffnet haben.")
-	do_npc_close(npc, ch)
+    do_message(npc, ch, "Ja, hier können sie ihre Garderobe abgeben, sobald wir geöffnet haben.")
+    do_npc_close(npc, ch)
 end
 
 function paul_talk(npc, ch)
-	do_message(npc, ch, "Ihre Garderobe können sie erst nach der Eröffnung abgeben.")
-	do_npc_close(npc, ch)
+    do_message(npc, ch, "Ihre Garderobe können sie erst nach der Eröffnung abgeben.")
+    do_npc_close(npc, ch)
 end

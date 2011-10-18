@@ -42,10 +42,10 @@ function wache_talk(npc, ch)
 end
 
 function get_wache_say()
-   	 return invertika.get_random_element("Halt! Du brauchst eine VIP-Karte um hier rein zu kommen.",
-	  "Ohne VIP Karte geht es hier nicht weiter!",
-	  "Du hast keinen VIP Ausweis. Tut mir leid.",
-	  "Da könnte ja jeder kommen! Nur mit VIP Ausweis!")
+        return invertika.get_random_element("Halt! Du brauchst eine VIP-Karte um hier rein zu kommen.",
+      "Ohne VIP Karte geht es hier nicht weiter!",
+      "Du hast keinen VIP Ausweis. Tut mir leid.",
+      "Da könnte ja jeder kommen! Nur mit VIP Ausweis!")
  end
 
 function wache_trigger(ch, id)
@@ -69,8 +69,8 @@ end
 
 function estech_talk(npc, ch)
     invertika.init_quest_status(ch, "selphi_timlet_inard_training");
-	invertika.init_quest_status(ch, "selphi_timlet_orkana_feierabend");
-	
+    invertika.init_quest_status(ch, "selphi_timlet_orkana_feierabend");
+    
     function get_qstatus() return invertika.get_quest_status(ch, "selphi_timlet_inard_training") end
     function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_inard_training", tonumber(x)) end
     function get_feierabend() return invertika.get_quest_status(ch, "selphi_timlet_orkana_feierabend") end

@@ -22,11 +22,11 @@ atinit(function()
 end)
 
 function velera_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Ja schon wieder ein Sandsturm. So wie immer...",
-	  "Warum Roststock Roststock heißt? Also wenn du da nicht selbst draufkommst.",
-	  "Ich wohne hier seitdem ich denken kann...",
-	  "Mein Freund Björn ist, schon wieder nicht hier...",
-	  "Ich bin Velera. Wie bitte? Ja ich bin vergeben.",
-	  "Heute ist mal wieder einer dieser seltsamen Tage.")) 
-	 do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Ja schon wieder ein Sandsturm. So wie immer...",
+      "Warum Roststock Roststock heißt? Also wenn du da nicht selbst draufkommst.",
+      "Ich wohne hier seitdem ich denken kann...",
+      "Mein Freund Björn ist, schon wieder nicht hier...",
+      "Ich bin Velera. Wie bitte? Ja ich bin vergeben.",
+      "Heute ist mal wieder einer dieser seltsamen Tage.")) 
+     do_npc_close(npc, ch)
 end

@@ -21,23 +21,23 @@ atinit(function()
 end)
 
 function vertox_talk(npc, ch)
-	do_message(npc, ch, "Du benötigst Sprengstoff? Da bist du hier genau richtig!")
-	
-	while true do 
-		local v = do_choice(npc, ch, "Kaufen.",
-					     "Verkaufen.",
-					     "Nichts. Danke.")
-								   
-		if v == 1 then
-			mana.npc_trade(npc, ch, false, { {40025, 20, 650}})
-			break
-		elseif v == 2 then
-			mana.npc_trade(npc, ch, true)
-			break
-		elseif v == 3 then
-			do_message(npc, ch, "Bis zum nächsten Mal!")
-			break
-		end
-	end
-	do_npc_close(npc, ch)
+    do_message(npc, ch, "Du benötigst Sprengstoff? Da bist du hier genau richtig!")
+    
+    while true do 
+        local v = do_choice(npc, ch, "Kaufen.",
+                         "Verkaufen.",
+                         "Nichts. Danke.")
+                                   
+        if v == 1 then
+            mana.npc_trade(npc, ch, false, { {40025, 20, 650}})
+            break
+        elseif v == 2 then
+            mana.npc_trade(npc, ch, true)
+            break
+        elseif v == 3 then
+            do_message(npc, ch, "Bis zum nächsten Mal!")
+            break
+        end
+    end
+    do_npc_close(npc, ch)
 end

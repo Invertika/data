@@ -23,6 +23,6 @@ atinit(function()
 end)
 
 function tom_talk(npc, ch)
-	do_message(npc, ch, "Die Bar hat noch nicht geöffnet.")
-	do_npc_close(npc, ch)
+    do_message(npc, ch, "Die Bar hat noch nicht geöffnet.")
+    do_npc_close(npc, ch)
 end

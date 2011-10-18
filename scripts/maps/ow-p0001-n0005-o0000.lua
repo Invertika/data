@@ -57,35 +57,35 @@ illegalCount=0;
 
 function wache_trigger(ch, id)
    if (mana.being_type(ch) ~= TYPE_MONSTER) then --- Nur Player durchlassen
-	 local count = mana.chr_inv_count(ch, 40010)
-	 
-	 if count == 0 then
-	   local x = mana.posX(ch)
-	   local y = mana.posY(ch)
-	   mana.chr_warp(ch, mana.get_map_id(), x, 90 * TILESIZE) 
-	   
-	   mana.being_say(wache, invertika.get_random_element("Keinen Schritt weiter!",
-	  "Verlassen sie sofort dieses Gelände!",
-	  "Kein Zutritt!"))
-	   
-	   illegalCount=illegalCount+1
-	   
-	   mana.being_damage(ch, 500, 250, 10075, 0, 0)
-	 else
-	   if illegalCount==0 then
-	     mana.being_say(wache, invertika.get_random_element("Willkommen Sir.",
-	    "Sir.",
-	    "Keine besonderen Vorkommnise, Sir."))
-	   else
-	     mana.being_say(wache, "Sir, es wurden " + tostring(illegalCount) + " illegale Übertritte registriert.")
-	     illegalCount=0
-	   end
-	 end
+     local count = mana.chr_inv_count(ch, 40010)
+     
+     if count == 0 then
+       local x = mana.posX(ch)
+       local y = mana.posY(ch)
+       mana.chr_warp(ch, mana.get_map_id(), x, 90 * TILESIZE) 
+       
+       mana.being_say(wache, invertika.get_random_element("Keinen Schritt weiter!",
+      "Verlassen sie sofort dieses Gelände!",
+      "Kein Zutritt!"))
+       
+       illegalCount=illegalCount+1
+       
+       mana.being_damage(ch, 500, 250, 10075, 0, 0)
+     else
+       if illegalCount==0 then
+         mana.being_say(wache, invertika.get_random_element("Willkommen Sir.",
+        "Sir.",
+        "Keine besonderen Vorkommnise, Sir."))
+       else
+         mana.being_say(wache, "Sir, es wurden " + tostring(illegalCount) + " illegale Übertritte registriert.")
+         illegalCount=0
+       end
+     end
   end
  end
  
 function wache_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Verschwinden Sie!",
-	    "Kein Zutritt!"))
-	  do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Verschwinden Sie!",
+        "Kein Zutritt!"))
+      do_npc_close(npc, ch)
 end

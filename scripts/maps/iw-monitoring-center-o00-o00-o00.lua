@@ -34,100 +34,100 @@ atinit(function()
 end)
 
 function sei_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Willkommen im Überwachungszentrum, hast du etwas zu essen mitgebracht?",
-	    "Denk daran, alles zu vergessen wenn du uns verlässt.",
-	    "Alles was du hier siehst ist streng geheim.",
-	    "Wir überwachen ganz bestimmte Organisationen.",
-	    "Ich habe hier das Sagen."))
-	do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Willkommen im Überwachungszentrum, hast du etwas zu essen mitgebracht?",
+        "Denk daran, alles zu vergessen wenn du uns verlässt.",
+        "Alles was du hier siehst ist streng geheim.",
+        "Wir überwachen ganz bestimmte Organisationen.",
+        "Ich habe hier das Sagen."))
+    do_npc_close(npc, ch)
 end
 
 function jo_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Wenn du meinst...",
-	    "Du redest zu viel...",
-	    "Warten bis zum nächsten Auftrag...",
-	    "Solltest du nicht für das Essen sorgen...",
-	    "Ich habe keinen Hunger."))
-	do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Wenn du meinst...",
+        "Du redest zu viel...",
+        "Warten bis zum nächsten Auftrag...",
+        "Solltest du nicht für das Essen sorgen...",
+        "Ich habe keinen Hunger."))
+    do_npc_close(npc, ch)
 end
 
 function leo_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Ich kümmere mich hier um die Technik.",
-	    "Die Transceiverkerne verbrauchen aus irgendeinem Grund zu viel Strom.",
-	    "Das schlimme ist, wenn du alles richtig machst merkt es keiner.",
-	    "Als nächstes müssen die Bandspeicher überprüft werden.",
-	    "Mist schon wieder abgestürzt."))
-	do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Ich kümmere mich hier um die Technik.",
+        "Die Transceiverkerne verbrauchen aus irgendeinem Grund zu viel Strom.",
+        "Das schlimme ist, wenn du alles richtig machst merkt es keiner.",
+        "Als nächstes müssen die Bandspeicher überprüft werden.",
+        "Mist schon wieder abgestürzt."))
+    do_npc_close(npc, ch)
 end
 
 function meg_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Jo, diese mechanischen Gehirne waren doch seltsam oder?",
-	    "Man habe ich wieder einen Hunger, warum hast du noch nichts gekocht?",
-	    "Jo, wollen wir nach Alexia ein bisschen was einkaufen? Sag mal belauschst du uns etwa?",
-	    "So Munition verstaut, Waffe geladen und gesäubert. Kann losgehen.",
-	    "Irgendwie langweilig wenn nichts los ist."))
-	do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Jo, diese mechanischen Gehirne waren doch seltsam oder?",
+        "Man habe ich wieder einen Hunger, warum hast du noch nichts gekocht?",
+        "Jo, wollen wir nach Alexia ein bisschen was einkaufen? Sag mal belauschst du uns etwa?",
+        "So Munition verstaut, Waffe geladen und gesäubert. Kann losgehen.",
+        "Irgendwie langweilig wenn nichts los ist."))
+    do_npc_close(npc, ch)
 end
 
 function amy_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("So die Datenverbindung herstellen und schon kann es losgehen.",
-	    "Mmm, dieser Algorithmus ist ziemlich komplex. Ich sollte ihn rekursiv gestalten. ",
-	    "So, noch ein paar Minuten und ich habe alle Daten heruntergeladen.",
-	    "Dieses Programm könnte uns noch nützlich sein.",
-	    "Erstaunlich. Wer auch immer das geschrieben hat, hat eine Menge Ahnung."))
-	do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("So die Datenverbindung herstellen und schon kann es losgehen.",
+        "Mmm, dieser Algorithmus ist ziemlich komplex. Ich sollte ihn rekursiv gestalten. ",
+        "So, noch ein paar Minuten und ich habe alle Daten heruntergeladen.",
+        "Dieses Programm könnte uns noch nützlich sein.",
+        "Erstaunlich. Wer auch immer das geschrieben hat, hat eine Menge Ahnung."))
+    do_npc_close(npc, ch)
 end
 
 function bert_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Schauen wir mal was die Konkurrenz so macht.",
-	    "Oh bei The Mana World wird eine neue Stadt gebaut, da müssen wir etwas tun.",
-	    "Server Check für The Mana World wurde vorgenommen, er läuft immer noch auf eAthena.",
-	    "Webseite von The Mana World unverändert, soweit ich das sehen kann.",
-	    "Interessante Onlineanzeige."))
-	do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Schauen wir mal was die Konkurrenz so macht.",
+        "Oh bei The Mana World wird eine neue Stadt gebaut, da müssen wir etwas tun.",
+        "Server Check für The Mana World wurde vorgenommen, er läuft immer noch auf eAthena.",
+        "Webseite von The Mana World unverändert, soweit ich das sehen kann.",
+        "Interessante Onlineanzeige."))
+    do_npc_close(npc, ch)
 end
 
 function sascha_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Ich überwache The Alternate World.",
-	    "Mmm da stimmt irgendwas mit den Grafiken nicht.",
-	    "Interessante organische Maps. Das sollten wir auch machen.",
-	    "Und so füge ich dem Bericht X33/2 die Anmerkung zur genaueren Untersuchung hinzu.",
-	    "Vielleicht doch nicht so wichtig, aber ich schreibe es mir mal auf."))
-	do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Ich überwache The Alternate World.",
+        "Mmm da stimmt irgendwas mit den Grafiken nicht.",
+        "Interessante organische Maps. Das sollten wir auch machen.",
+        "Und so füge ich dem Bericht X33/2 die Anmerkung zur genaueren Untersuchung hinzu.",
+        "Vielleicht doch nicht so wichtig, aber ich schreibe es mir mal auf."))
+    do_npc_close(npc, ch)
 end
 
 function david_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Ich überwache die visuellen Kanäle.",
-	    "Oh, die haben einen neuen Werbespot geschaltet, das muss ich sofort melden.",
-	    "Mmmm, der neue Invertika Spot sollte doch längst auf Sendung sein.",
-	    "Der Darsteller des neusten Manasource basierenden Projektes hat Charisma. Das könnte zu einem Problem werden.",
-	    "Gut, schauen wir nun mal auf den anderen Kanälen."))
-	do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Ich überwache die visuellen Kanäle.",
+        "Oh, die haben einen neuen Werbespot geschaltet, das muss ich sofort melden.",
+        "Mmmm, der neue Invertika Spot sollte doch längst auf Sendung sein.",
+        "Der Darsteller des neusten Manasource basierenden Projektes hat Charisma. Das könnte zu einem Problem werden.",
+        "Gut, schauen wir nun mal auf den anderen Kanälen."))
+    do_npc_close(npc, ch)
 end
 
 function jan_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Ziemlich durcheinander dort, wird alles ziemlich chaotisch.",
-	    "Interessant, keine Mapper und Grafiker, zumindestens offiziell.",
-	    "Oh, ich sehe, sie haben einige Werbespots.",
-	    "Aha, eine spezifische Ausrichtung auf ein deutschsprachiges Publikum.",
-	    "Ziemlich viele Serverausfälle laut dieser Anzeige."))
-	do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Ziemlich durcheinander dort, wird alles ziemlich chaotisch.",
+        "Interessant, keine Mapper und Grafiker, zumindestens offiziell.",
+        "Oh, ich sehe, sie haben einige Werbespots.",
+        "Aha, eine spezifische Ausrichtung auf ein deutschsprachiges Publikum.",
+        "Ziemlich viele Serverausfälle laut dieser Anzeige."))
+    do_npc_close(npc, ch)
 end
 
 function jens_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Schauen wir mal was die Zielgruppenanalyse dazu sagt.",
-	    "Ziemlich viel übernommen, kaum eigene Maps. Aber einige neue Städte. Interessant...",
-	    "So Punkt 4 und 5 der Checkliste wurden überprüft, auf zu Punkt 6.",
-	    "Mmm ich kann kein einheitliches System entdecken.",
-	    "Der Umgang der Community lässt zu wünschen übrig."))
-	do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Schauen wir mal was die Zielgruppenanalyse dazu sagt.",
+        "Ziemlich viel übernommen, kaum eigene Maps. Aber einige neue Städte. Interessant...",
+        "So Punkt 4 und 5 der Checkliste wurden überprüft, auf zu Punkt 6.",
+        "Mmm ich kann kein einheitliches System entdecken.",
+        "Der Umgang der Community lässt zu wünschen übrig."))
+    do_npc_close(npc, ch)
 end
 
 function lora_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Da schauen wir doch mal ob wir an diese Information kommen.",
-	    "Er wird es mir sicherlich gleich verraten. Na da ist die Nachricht ja. Interessant...",
-	    "Diese Informationen sollten sofort an Sei weitergeleitet werden, das könnte in einem operativen Einsatz münden.",
-	    "Ah da ist der neue Bericht. Schauen wir mal rein.",
-	    "Noch 40 Berichte zum lesen. Na dann wollen wir mal..."))
-	do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Da schauen wir doch mal ob wir an diese Information kommen.",
+        "Er wird es mir sicherlich gleich verraten. Na da ist die Nachricht ja. Interessant...",
+        "Diese Informationen sollten sofort an Sei weitergeleitet werden, das könnte in einem operativen Einsatz münden.",
+        "Ah da ist der neue Bericht. Schauen wir mal rein.",
+        "Noch 40 Berichte zum lesen. Na dann wollen wir mal..."))
+    do_npc_close(npc, ch)
 end

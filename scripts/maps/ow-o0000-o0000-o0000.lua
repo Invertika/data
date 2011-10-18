@@ -98,73 +98,73 @@ end)
 --Zeitabhägige Events
 -- Weihnachten
 function weihnachtsmann_talk(npc, ch)
-	invertika.init_quest_status(ch, "selphi_timlet_santa_clause")
+    invertika.init_quest_status(ch, "selphi_timlet_santa_clause")
   
-	-- quest get/set functions
-	function get_qstatus() return invertika.get_quest_status(ch, "selphi_timlet_santa_clause") end
-	function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_santa_clause", x) end
+    -- quest get/set functions
+    function get_qstatus() return invertika.get_quest_status(ch, "selphi_timlet_santa_clause") end
+    function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_santa_clause", x) end
   
-	if get_qstatus()==0 then
-	  do_message(npc, ch, "Ho Ho Ho. Ich bin der Weihnachtsmann. Meine Geschenke sind schon wieder überall verteilt. Diese Weihnachtsschleime rauben mir den letzten Nerv. Magst du mir helfen sie wieder einzusammeln?")
-	
-	  while true do 
-	  	  local v = do_choice(npc, ch, "Ja.", "Nein.")
-								   
-		  if v == 1 then
-			do_message(npc, ch, "Das ist super ich denke so 25 Stück sollten mir reichen. Ich warte dann hier auf dich.")
-			set_qstatus(1)
-			break
-		  elseif v == 2 then
-			do_message(npc, ch, "Schade, dann halt nicht...")
-			break
-		  end
-	  end
-	elseif get_qstatus()==1 then
-	  local count13 = mana.chr_inv_count(ch, 40013)
-	  local count14 = mana.chr_inv_count(ch, 40014)
-	  local count15 = mana.chr_inv_count(ch, 40015)
-	  
-	  local countAll=count13+count14+count15;
-	  
-	  if countAll >= 25 then
-	    --Nachricht
-	    do_message(npc, ch, "Du hast es wirklich geschafft. Ich danke dir. Na das schreit ja geradezu nach einer Belohnung. Da habe ich doch einige Sachen für dich.")
-	    
-	    --Weihnachtsgeschenke entfernen
-	    invertika.add_items(ch, 40013, -count13, "grünes Geschenk")
-	    invertika.add_items(ch, 40014, -count14, "blaues Geschenk")
-	    invertika.add_items(ch, 40015, -count15, "lila Geschenk")
-	    
-	    --Belohnung
-	    invertika.add_items(ch, 20010, 1, "Santa Clause Mütze")
-	    invertika.add_items(ch, 30021, 10, "Zuckerstange")
-	    invertika.add_items(ch, 30022, 10, "Weihnachtskuchen")
-	    invertika.add_items(ch, 30023, 10, "Lebkuchenmänchen")
-	    invertika.add_items(ch, 40020, 1, "5000 Aki Scheck")
-	    set_qstatus(2)
-	  else
-	    do_message(npc, ch, invertika.get_random_element("Na ein paar Geschenke fehlen da noch.",
-	     "Ich brauche mindestens 25 Geschenke.",
-	     "Ein paar Weihnachtsschleime wirst du schon noch erledigen müssen."))
-	  end
-	elseif get_qstatus()==2 then
-	  do_message(npc, ch, invertika.get_random_element("Danke für deine Hilfe. Wir sehen uns dann nächstes Jahr wieder.",
-	  "So alle Geschenke wieder sicher verstaut.",
-	  "Schön das du es den Weihnachtsschleimen mal gezeigt hast.",
-	  "Nun habe ich für dieses Jahr wieder meine Ruhe.",
-	  "Jetzt muss ich die Geschenke nur noch verteilen.",
-	  "Danke für deine großartige Hilfe."))
-	end
-	
-	do_npc_close(npc, ch)
+    if get_qstatus()==0 then
+      do_message(npc, ch, "Ho Ho Ho. Ich bin der Weihnachtsmann. Meine Geschenke sind schon wieder überall verteilt. Diese Weihnachtsschleime rauben mir den letzten Nerv. Magst du mir helfen sie wieder einzusammeln?")
+    
+      while true do 
+            local v = do_choice(npc, ch, "Ja.", "Nein.")
+                                   
+          if v == 1 then
+            do_message(npc, ch, "Das ist super ich denke so 25 Stück sollten mir reichen. Ich warte dann hier auf dich.")
+            set_qstatus(1)
+            break
+          elseif v == 2 then
+            do_message(npc, ch, "Schade, dann halt nicht...")
+            break
+          end
+      end
+    elseif get_qstatus()==1 then
+      local count13 = mana.chr_inv_count(ch, 40013)
+      local count14 = mana.chr_inv_count(ch, 40014)
+      local count15 = mana.chr_inv_count(ch, 40015)
+      
+      local countAll=count13+count14+count15;
+      
+      if countAll >= 25 then
+        --Nachricht
+        do_message(npc, ch, "Du hast es wirklich geschafft. Ich danke dir. Na das schreit ja geradezu nach einer Belohnung. Da habe ich doch einige Sachen für dich.")
+        
+        --Weihnachtsgeschenke entfernen
+        invertika.add_items(ch, 40013, -count13, "grünes Geschenk")
+        invertika.add_items(ch, 40014, -count14, "blaues Geschenk")
+        invertika.add_items(ch, 40015, -count15, "lila Geschenk")
+        
+        --Belohnung
+        invertika.add_items(ch, 20010, 1, "Santa Clause Mütze")
+        invertika.add_items(ch, 30021, 10, "Zuckerstange")
+        invertika.add_items(ch, 30022, 10, "Weihnachtskuchen")
+        invertika.add_items(ch, 30023, 10, "Lebkuchenmänchen")
+        invertika.add_items(ch, 40020, 1, "5000 Aki Scheck")
+        set_qstatus(2)
+      else
+        do_message(npc, ch, invertika.get_random_element("Na ein paar Geschenke fehlen da noch.",
+         "Ich brauche mindestens 25 Geschenke.",
+         "Ein paar Weihnachtsschleime wirst du schon noch erledigen müssen."))
+      end
+    elseif get_qstatus()==2 then
+      do_message(npc, ch, invertika.get_random_element("Danke für deine Hilfe. Wir sehen uns dann nächstes Jahr wieder.",
+      "So alle Geschenke wieder sicher verstaut.",
+      "Schön das du es den Weihnachtsschleimen mal gezeigt hast.",
+      "Nun habe ich für dieses Jahr wieder meine Ruhe.",
+      "Jetzt muss ich die Geschenke nur noch verteilen.",
+      "Danke für deine großartige Hilfe."))
+    end
+    
+    do_npc_close(npc, ch)
 end
 
 function rentier_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Mmmmmpppfh.",
-	    "Bsssss.",
-	    "Brrrrrr.",
-	    "Schnauf."))
-	do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Mmmmmpppfh.",
+        "Bsssss.",
+        "Brrrrrr.",
+        "Schnauf."))
+    do_npc_close(npc, ch)
 end
 
 -- Silvester
@@ -190,65 +190,65 @@ end
 
 -- Normale Events
  function get_wache_say()
-   	 return invertika.get_random_element("Ohne Passierschein geht es hier nicht durch!",
-	  "Durchgang nur mit Passierschein!",
-	  "Du hast keinen Passierschein. Deshalb darfst du den Palast nicht betreten!",
-	  "Halt, du benötigst einen Passierschein!")
+        return invertika.get_random_element("Ohne Passierschein geht es hier nicht durch!",
+      "Durchgang nur mit Passierschein!",
+      "Du hast keinen Passierschein. Deshalb darfst du den Palast nicht betreten!",
+      "Halt, du benötigst einen Passierschein!")
  end
 
  function wache_trigger(ch, id)
    if (mana.being_type(ch) == TYPE_CHARACTER) then --- Nur Player durchlassen
-	 local count = mana.chr_inv_count(ch, 40009)
-	 
-	 if count == 0 then
-	   local x = mana.posX(ch)
-	   local y = mana.posY(ch)
-	   mana.chr_warp(ch, mana.get_map_id(), x, 70 * TILESIZE) 
-	   
-	   if (id == 1) then
-	     mana.being_say(wache1, get_wache_say())
-	   elseif (id == 2) then
-	     mana.being_say(wache2, get_wache_say())
-	   end
-	 end
+     local count = mana.chr_inv_count(ch, 40009)
+     
+     if count == 0 then
+       local x = mana.posX(ch)
+       local y = mana.posY(ch)
+       mana.chr_warp(ch, mana.get_map_id(), x, 70 * TILESIZE) 
+       
+       if (id == 1) then
+         mana.being_say(wache1, get_wache_say())
+       elseif (id == 2) then
+         mana.being_say(wache2, get_wache_say())
+       end
+     end
   end
  end
  
 function elmo_talk(npc, ch)
-	do_message(npc, ch, "Willkommen in Selphi Timlet, der Stadt in der Wüste. Sei nett zu den anderen und habe viel Spaß!")
-	do_npc_close(npc, ch)
+    do_message(npc, ch, "Willkommen in Selphi Timlet, der Stadt in der Wüste. Sei nett zu den anderen und habe viel Spaß!")
+    do_npc_close(npc, ch)
 end
 
 function sam_talk(npc, ch)
-	do_message(npc, ch, "Hi ich bin Sam und ich bin auf der Suche nach der Antwort...")
-	do_npc_close(npc, ch)
+    do_message(npc, ch, "Hi ich bin Sam und ich bin auf der Suche nach der Antwort...")
+    do_npc_close(npc, ch)
 end
 
 function julia_talk(npc, ch)
-	do_message(npc, ch, "Hi, was kann ich für dich tun?")
-	
-	while true do 
-		local v = do_choice(npc, ch, "Kaufen.",
-					     "Verkaufen.",
-					     "Nichts. Danke.")
-								   
-		if v == 1 then
-			mana.npc_trade(npc, ch, false, { {10001, 10, 19}, {10013, 10, 159}, {10002, 10, 997}, {20001, 10, 30}, {20002, 10, 50}, {20011, 10, 30}, {20012, 10, 30}, {20013, 10, 30}, {20014, 10, 30}, {20015, 10, 50}, {20016, 10, 50}, {20017, 10, 50}, {20018, 10, 50}  })
-			break
-		elseif v == 2 then
-			mana.npc_trade(npc, ch, true)
-			break
-		elseif v == 3 then
-			do_message(npc, ch, "Ich wünsche dir noch viel Spaß!")
-			break
-		end
-	end
-	do_npc_close(npc, ch)
+    do_message(npc, ch, "Hi, was kann ich für dich tun?")
+    
+    while true do 
+        local v = do_choice(npc, ch, "Kaufen.",
+                         "Verkaufen.",
+                         "Nichts. Danke.")
+                                   
+        if v == 1 then
+            mana.npc_trade(npc, ch, false, { {10001, 10, 19}, {10013, 10, 159}, {10002, 10, 997}, {20001, 10, 30}, {20002, 10, 50}, {20011, 10, 30}, {20012, 10, 30}, {20013, 10, 30}, {20014, 10, 30}, {20015, 10, 50}, {20016, 10, 50}, {20017, 10, 50}, {20018, 10, 50}  })
+            break
+        elseif v == 2 then
+            mana.npc_trade(npc, ch, true)
+            break
+        elseif v == 3 then
+            do_message(npc, ch, "Ich wünsche dir noch viel Spaß!")
+            break
+        end
+    end
+    do_npc_close(npc, ch)
 end
 
 function jane_talk(npc, ch)
-	do_message(npc, ch, string.format("Wie spät es ist? Ähm es ist %s Uhr. Und bevor du fragst, heute ist der %s im übrigen ist das ein %s.", datetime.get_current_time(), datetime.get_current_date(), datetime.get_current_weekday()))
-	do_npc_close(npc, ch)
+    do_message(npc, ch, string.format("Wie spät es ist? Ähm es ist %s Uhr. Und bevor du fragst, heute ist der %s im übrigen ist das ein %s.", datetime.get_current_time(), datetime.get_current_date(), datetime.get_current_weekday()))
+    do_npc_close(npc, ch)
 end
 
 function bruce_talk(npc, ch)
@@ -258,11 +258,11 @@ function bruce_talk(npc, ch)
   function get_qstatus() return tonumber(invertika.get_quest_status(ch, "selphi_timlet_bruce_quest")) end
   function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_bruce_quest", tonumber(x)) end
   
-	if get_qstatus()==0 then
-		invertika.add_money(ch, 1000)
-		set_qstatus(1)
-		do_message(npc, ch, "Ahhh ich verstehe, du bist neu hier. Hier ein paar Münzen fuer den Anfang...")		
-	elseif get_qstatus()==1 then
+    if get_qstatus()==0 then
+        invertika.add_money(ch, 1000)
+        set_qstatus(1)
+        do_message(npc, ch, "Ahhh ich verstehe, du bist neu hier. Hier ein paar Münzen fuer den Anfang...")        
+    elseif get_qstatus()==1 then
     do_message(npc, ch, "Siehst du die Maden auf den Straßen? Die reinste Plage! Dieses gefräßige Ungeziefer vernichtet das letzte bisschen Vegetation in der Stadt! Willst du uns helfen, unsere schöne Stadt von diesen ekelhaften Würmern zu befreien?")
     set_qstatus(do_choice(npc, ch, "Nein.","Ja."))
   end
@@ -381,126 +381,126 @@ function felix_talk(npc, ch)
         invertika.add_items(ch, 40039, 27, "Teller aus Porzellan")
         set_qstatus(3)
     else
-	    do_message(npc, ch, invertika.get_random_element("Ja so ist das wohl.",
-	      "Ich weiß nicht, so schönes Wetter.",
-	      "Ein Königreich für einen Keks.",
-	      "Mmm was mache ich jetzt bloß ohne Regenschirm.",
-	      "Ich muss es tun, jetzt sofort.",
-	      "Die da du di da?",
-	      "Wie bitte?",
-	      "Nicht zu fassen. Überall diese Dingsbums.",
-	      "Kommt der Sommer schnell und heiß, ähm dann weiß ich auch nicht.",
-	      "Invertika, ja da war was.",
-	      "Kann schon sein, muss aber nicht.",
-	      "Es könnte sein das es stimmt, dann müsste der Fakt das es nicht stimmt aber eine große Rolle spielen da es ja stimmt und gleichzeitig nicht stimmt. Mhn... aber was wäre wenn...",
-	      "Ich bin Felix und wer bist du?",
-	      "Mus mus mus. Jaaaaa. Biene fliegt rückwärts.",
-	      "Mein Kontrabass ist kaputt, aber es lag nicht am Backofen.",
-	      "Durch die Sonne scheint es immer hell.",
-	      "Es ist groß und grün.",
-	      "Je gelber das Telefon desto Hallo. Doch was ist ein Telefon?",
-	      "Der Frosch wurde rot, denn er war tot.",
-	      "Fische füttern fördert den Verstand."))
+        do_message(npc, ch, invertika.get_random_element("Ja so ist das wohl.",
+          "Ich weiß nicht, so schönes Wetter.",
+          "Ein Königreich für einen Keks.",
+          "Mmm was mache ich jetzt bloß ohne Regenschirm.",
+          "Ich muss es tun, jetzt sofort.",
+          "Die da du di da?",
+          "Wie bitte?",
+          "Nicht zu fassen. Überall diese Dingsbums.",
+          "Kommt der Sommer schnell und heiß, ähm dann weiß ich auch nicht.",
+          "Invertika, ja da war was.",
+          "Kann schon sein, muss aber nicht.",
+          "Es könnte sein das es stimmt, dann müsste der Fakt das es nicht stimmt aber eine große Rolle spielen da es ja stimmt und gleichzeitig nicht stimmt. Mhn... aber was wäre wenn...",
+          "Ich bin Felix und wer bist du?",
+          "Mus mus mus. Jaaaaa. Biene fliegt rückwärts.",
+          "Mein Kontrabass ist kaputt, aber es lag nicht am Backofen.",
+          "Durch die Sonne scheint es immer hell.",
+          "Es ist groß und grün.",
+          "Je gelber das Telefon desto Hallo. Doch was ist ein Telefon?",
+          "Der Frosch wurde rot, denn er war tot.",
+          "Fische füttern fördert den Verstand."))
     end
-	  do_npc_close(npc, ch)
+      do_npc_close(npc, ch)
 end
 
 function saria_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Die Wüste ist riesig, drum bleib ich hier.",
-	  "Hüte dich vor der Wüste. Dort treiben rote Skorpione ihr Unwesen.",
-	  "Ey da nicht anfassen, da habe ich einen Sonnenbrand.",
-	  "Alle meine Skorpione, sind in der Wüste.",
-	  "Ich liebe Städte mit Mauern.",
-	  "Ich würde mal gerne zum Meer."))
-	  do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Die Wüste ist riesig, drum bleib ich hier.",
+      "Hüte dich vor der Wüste. Dort treiben rote Skorpione ihr Unwesen.",
+      "Ey da nicht anfassen, da habe ich einen Sonnenbrand.",
+      "Alle meine Skorpione, sind in der Wüste.",
+      "Ich liebe Städte mit Mauern.",
+      "Ich würde mal gerne zum Meer."))
+      do_npc_close(npc, ch)
 end
 
 function nobur_talk(npc, ch)
         invertika.init_quest_status(ch, "selphi_timlet_norbur_scorpion_stingers")
 
-	do_message(npc, ch, "Ich brauche Skorpionstachel. Eine ganze Menge, so zwei Dutzend oder drei, vielleicht auch vier Dutzend. Das wird eine leckere Suppe.")
-	
-	local count = mana.chr_inv_count(ch, 40004) 
-	
-	if count > 0 then
-	  do_message(npc, ch, "Ich sehe du hast ein paar Stachel. Magst du sie mir geben?")
-	  
-	  	while true do 
-		local v = do_choice(npc, ch, "Ja",
-								     "Nein")
-								   
-		if v == 1 then
-			if (invertika.get_quest_status(ch, "selphi_timlet_norbur_scorpion_stingers") == 0) then
-			  invertika.set_quest_status(ch, "selphi_timlet_norbur_scorpion_stingers", count)
-			else
-			  local dbcount = invertika.get_quest_status(ch, "selphi_timlet_norbur_scorpion_stingers");
-			  dbcount = dbcount + count
-			  invertika.set_quest_status(ch, "selphi_timlet_norbur_scorpion_stingers", dbcount)
-			  
-			  if dbcount > 200 then
-			    do_message(npc, ch, "Also wenn ich es mir recht überlege, habe ich schon genug Stachel. Trotzdem danke.")
-				break;
-			  end
-			end
-			
-			invertika.add_items(ch, 40004, -count, "Skorpionstachel")
-		
-			if count < 10 then
-			  do_message(npc, ch, "Nimm diese Münzen als Dank.")
-			  invertika.add_money(ch, 50) 
-			  break;
-			elseif count < 20 then
-			  do_message(npc, ch, "Nimm diese Münzen als Dank.")
-			  invertika.add_money(ch, 150) 
-			  break;
-			elseif count < 30 then
-			  do_message(npc, ch, "Nimm diese Münzen als Dank.")
-			  invertika.add_money(ch, 350) 
-			  break;
-			elseif count < 40 then
-			  do_message(npc, ch, "Nimm diese Münzen als Dank.")
-			  invertika.add_money(ch, 500) 
-			  break;
-			elseif count < 150 then
-			  do_message(npc, ch, "Nimm diesen lustigen Hut als Dankeschön.")
-			  invertika.add_items(ch, 20004, 1, "lustiger Hut")
-			  break;
-			elseif count >= 150 then
-			  do_message(npc, ch, "Nimm diese Münzen als Dank.")
-			  invertika.add_money(ch, 2500) 
-			  break;
-			end
-			
-			break
-		elseif v == 2 then
-			do_message(npc, ch, "Okay dann muss ich weiter suchen.")
-			break
-		end
-	end
-	  
-	end
-	do_npc_close(npc, ch)
+    do_message(npc, ch, "Ich brauche Skorpionstachel. Eine ganze Menge, so zwei Dutzend oder drei, vielleicht auch vier Dutzend. Das wird eine leckere Suppe.")
+    
+    local count = mana.chr_inv_count(ch, 40004) 
+    
+    if count > 0 then
+      do_message(npc, ch, "Ich sehe du hast ein paar Stachel. Magst du sie mir geben?")
+      
+          while true do 
+        local v = do_choice(npc, ch, "Ja",
+                                     "Nein")
+                                   
+        if v == 1 then
+            if (invertika.get_quest_status(ch, "selphi_timlet_norbur_scorpion_stingers") == 0) then
+              invertika.set_quest_status(ch, "selphi_timlet_norbur_scorpion_stingers", count)
+            else
+              local dbcount = invertika.get_quest_status(ch, "selphi_timlet_norbur_scorpion_stingers");
+              dbcount = dbcount + count
+              invertika.set_quest_status(ch, "selphi_timlet_norbur_scorpion_stingers", dbcount)
+              
+              if dbcount > 200 then
+                do_message(npc, ch, "Also wenn ich es mir recht überlege, habe ich schon genug Stachel. Trotzdem danke.")
+                break;
+              end
+            end
+            
+            invertika.add_items(ch, 40004, -count, "Skorpionstachel")
+        
+            if count < 10 then
+              do_message(npc, ch, "Nimm diese Münzen als Dank.")
+              invertika.add_money(ch, 50) 
+              break;
+            elseif count < 20 then
+              do_message(npc, ch, "Nimm diese Münzen als Dank.")
+              invertika.add_money(ch, 150) 
+              break;
+            elseif count < 30 then
+              do_message(npc, ch, "Nimm diese Münzen als Dank.")
+              invertika.add_money(ch, 350) 
+              break;
+            elseif count < 40 then
+              do_message(npc, ch, "Nimm diese Münzen als Dank.")
+              invertika.add_money(ch, 500) 
+              break;
+            elseif count < 150 then
+              do_message(npc, ch, "Nimm diesen lustigen Hut als Dankeschön.")
+              invertika.add_items(ch, 20004, 1, "lustiger Hut")
+              break;
+            elseif count >= 150 then
+              do_message(npc, ch, "Nimm diese Münzen als Dank.")
+              invertika.add_money(ch, 2500) 
+              break;
+            end
+            
+            break
+        elseif v == 2 then
+            do_message(npc, ch, "Okay dann muss ich weiter suchen.")
+            break
+        end
+    end
+      
+    end
+    do_npc_close(npc, ch)
 end
 
 function alex_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Siehst du ihn? Ist er hier irgendwo? Nicht das es mich findet, also pssst!",
-	  "Was machst du hier? Nicht das du ihn zu mir führst...",
-	  "Wen ich meine? Na Bahamut.",
-	  "Ich halte es nicht mehr aus, aber hier bin ich sicher.",
-	  "Siehst du ihn? Ich sehe ihn überall, hinter jeder Ecke.",
-	  "Gehörst du zu ihm? Wenn ja dann verschwinde!"))
-	  do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Siehst du ihn? Ist er hier irgendwo? Nicht das es mich findet, also pssst!",
+      "Was machst du hier? Nicht das du ihn zu mir führst...",
+      "Wen ich meine? Na Bahamut.",
+      "Ich halte es nicht mehr aus, aber hier bin ich sicher.",
+      "Siehst du ihn? Ich sehe ihn überall, hinter jeder Ecke.",
+      "Gehörst du zu ihm? Wenn ja dann verschwinde!"))
+      do_npc_close(npc, ch)
 end
 
 function inard_talk(npc, ch)
     invertika.init_quest_status(ch, "selphi_timlet_inard_training");
-	invertika.init_quest_status(ch, "selphi_timlet_orkana_feierabend");
+    invertika.init_quest_status(ch, "selphi_timlet_orkana_feierabend");
  
     -- quest get/set functions
     function get_qstatus() return tonumber(invertika.get_quest_status(ch, "selphi_timlet_inard_training")) end
     function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_inard_training", tonumber(x)) end
-	
-	function get_feierabend() return tonumber(invertika.get_quest_status(ch, "selphi_timlet_orkana_feierabend")) end
+    
+    function get_feierabend() return tonumber(invertika.get_quest_status(ch, "selphi_timlet_orkana_feierabend")) end
 
     if get_qstatus() == 0 then
         do_message(npc, ch, "Ahhh. Was ein herrlicher Tag und ich hänge hier im Innenhof rum! Wie gerne würde ich mal wieder eine Stunde trainieren!")
@@ -553,13 +553,13 @@ function inard_talk(npc, ch)
 end
 
 function belart_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Ich komme aus Narva. Es ist schön dort. Ich vermisse es ein wenig.",
-	  "Hast du schonmal Unbal getrunken? Es ist köstlich.",
-	  "Ich hatte mal eine wunderschöne Rüstung. Leider musste ich sie verkaufen.",
-	  "Du siehst aus als wenn du neu hier bist. Willkommen in Selphi Timlet.",
-	  "Ich kannte mal jemanden der sah fast so aus wie du. Aber das ist lange her.",
-	  "Mein Name ist Belart und ich komme aus Narva. Und du?"))
-	  do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Ich komme aus Narva. Es ist schön dort. Ich vermisse es ein wenig.",
+      "Hast du schonmal Unbal getrunken? Es ist köstlich.",
+      "Ich hatte mal eine wunderschöne Rüstung. Leider musste ich sie verkaufen.",
+      "Du siehst aus als wenn du neu hier bist. Willkommen in Selphi Timlet.",
+      "Ich kannte mal jemanden der sah fast so aus wie du. Aber das ist lange her.",
+      "Mein Name ist Belart und ich komme aus Narva. Und du?"))
+      do_npc_close(npc, ch)
 end
 
 function imangi_talk(npc, ch)
@@ -590,20 +590,20 @@ function imangi_talk(npc, ch)
     elseif (q_status == 4) or (q_status == 5) then
         do_message(npc, ch, "Ich freue mich schon ihn zu treffen.")
     else
-	    do_message(npc, ch, invertika.get_random_element("Ich verkaufe nichts.",
-	    "Hier gibt es nichts zu sehen.",
-	    "Ich kann dir nicht helfen.",
-	    "Geh weg.",
-	    "Ich kenne dich nicht, also will ich auch nix mit dir zu tun haben.",
-	    "Nein, nein, nein und nochmal nein."))
+        do_message(npc, ch, invertika.get_random_element("Ich verkaufe nichts.",
+        "Hier gibt es nichts zu sehen.",
+        "Ich kann dir nicht helfen.",
+        "Geh weg.",
+        "Ich kenne dich nicht, also will ich auch nix mit dir zu tun haben.",
+        "Nein, nein, nein und nochmal nein."))
     end
-	  do_npc_close(npc, ch)
+      do_npc_close(npc, ch)
 end
 
 function ortana_talk(npc, ch)
-	invertika.init_quest_status(ch, "selphi_timlet_inard_training");
-	invertika.init_quest_status(ch, "selphi_timlet_orkana_feierabend");
-	
+    invertika.init_quest_status(ch, "selphi_timlet_inard_training");
+    invertika.init_quest_status(ch, "selphi_timlet_orkana_feierabend");
+    
     function get_qstatus() return tonumber(invertika.get_quest_status(ch, "selphi_timlet_inard_training")) end
     function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_inard_training", tonumber(x)) end
     function get_feierabend() return tonumber(invertika.get_quest_status(ch, "selphi_timlet_orkana_feierabend")) end
@@ -652,61 +652,61 @@ function ortana_talk(npc, ch)
 end
 
 function tonver_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Oh nein, ich habe schon wieder alles verspielt.",
-	  "Ich lasse viel zu viel Geld in diesem Laden.",
-	  "Nur noch 47 Aki. Naja das muss reichen.",
-	  "Das nächste Mal gewinne ich ganz bestimmt.",
-	  "Wenn ich 5 Aki setze und gewinne dann habe ich danach ein paar Aki mehr. Glaube ich...",
-	  "Alles weg... Schon wieder... Aber beim nächsten mal... Da gewinne ich..."))
-	  do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Oh nein, ich habe schon wieder alles verspielt.",
+      "Ich lasse viel zu viel Geld in diesem Laden.",
+      "Nur noch 47 Aki. Naja das muss reichen.",
+      "Das nächste Mal gewinne ich ganz bestimmt.",
+      "Wenn ich 5 Aki setze und gewinne dann habe ich danach ein paar Aki mehr. Glaube ich...",
+      "Alles weg... Schon wieder... Aber beim nächsten mal... Da gewinne ich..."))
+      do_npc_close(npc, ch)
 end
 
 function elmes_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Manche Leute rennen im Kreis durch diese Bögen. Warum auch immer sie dies tun.",
-	  "Ich genieße die Sonne. Deshalb der Hut.",
-	  "Früher als ich noch jung war, da hatte ich mal einen Kater. Doch er ward eines Tages verschwunden. Er hieß Effendi. Wo er wohl sein wird?",
-	  "Man erzählt sich von einem Schatz in der Wüste, verborgen in einer Höhle welche tief unter die Erde führt. Oder war die Höhle in der grünen Ebene? Ich weiß es nicht mehr genau.",
-	  "Das letze mal als es regnete versank ich im Sand. Ich konnte mich erst nach 4 Stunden befreien.",
-	  "Sei vorsichtig wenn du dich durch die große Wüste begibst."))
-	  do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Manche Leute rennen im Kreis durch diese Bögen. Warum auch immer sie dies tun.",
+      "Ich genieße die Sonne. Deshalb der Hut.",
+      "Früher als ich noch jung war, da hatte ich mal einen Kater. Doch er ward eines Tages verschwunden. Er hieß Effendi. Wo er wohl sein wird?",
+      "Man erzählt sich von einem Schatz in der Wüste, verborgen in einer Höhle welche tief unter die Erde führt. Oder war die Höhle in der grünen Ebene? Ich weiß es nicht mehr genau.",
+      "Das letze mal als es regnete versank ich im Sand. Ich konnte mich erst nach 4 Stunden befreien.",
+      "Sei vorsichtig wenn du dich durch die große Wüste begibst."))
+      do_npc_close(npc, ch)
 end
 
 function nepuret_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Ich bin Nepuret.",
-	  "Das ist das Haus von Averin, dem Chef der königlichen Palastwache.",
-	  "Ich bewache dieses Haus.",
-	  "Nein, ich stehe hier nicht zum Spaß. Ich achte darauf das niemand gefährliches sich diesem Haus nähert.",
-	  "Man muss immer achtsam sein, sonst ist man plötzlich weg vom Fenster.",
-	  "Ich diene bereits seit vielen Jahren als persönliche Wache von Averin."))
-	  do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Ich bin Nepuret.",
+      "Das ist das Haus von Averin, dem Chef der königlichen Palastwache.",
+      "Ich bewache dieses Haus.",
+      "Nein, ich stehe hier nicht zum Spaß. Ich achte darauf das niemand gefährliches sich diesem Haus nähert.",
+      "Man muss immer achtsam sein, sonst ist man plötzlich weg vom Fenster.",
+      "Ich diene bereits seit vielen Jahren als persönliche Wache von Averin."))
+      do_npc_close(npc, ch)
 end
 
 function nero_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Wo man den königlichen Passierschein bekommt? Ja das weiss ich *kicher*.",
-	  "Averin vergibt die königlichen Passierscheine.",
-	  "Ja, ich habe einen königlichen Passierschein! Ob du ihn bekommst? Nein, besorge dir selber einen!",
-	  "Averin... la la la - Frag dort!",
-	  "Ich habe es mit dem Feuer... ich kann nicht von ihm lassen.",
-	  "Averin ist die Person mit der du reden solltest, nicht ich!"))
-	  do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Wo man den königlichen Passierschein bekommt? Ja das weiss ich *kicher*.",
+      "Averin vergibt die königlichen Passierscheine.",
+      "Ja, ich habe einen königlichen Passierschein! Ob du ihn bekommst? Nein, besorge dir selber einen!",
+      "Averin... la la la - Frag dort!",
+      "Ich habe es mit dem Feuer... ich kann nicht von ihm lassen.",
+      "Averin ist die Person mit der du reden solltest, nicht ich!"))
+      do_npc_close(npc, ch)
 end
 
 function colloseumwache_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Das ist das Colloseum auch die Arena genannt.",
-	  "In der Arena finden Kämpfe statt, manchmal zumindestens.",
-	  "Aergius war ein großer Kämpfer, bis er fort ging.",
-	  "Achte auf deine Deckung, sonst kann es dich ganz böse erwischen.",
-	  "Du siehst stark aus, vielleicht könntest du ein Kämpfer werden?"))
-	  do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Das ist das Colloseum auch die Arena genannt.",
+      "In der Arena finden Kämpfe statt, manchmal zumindestens.",
+      "Aergius war ein großer Kämpfer, bis er fort ging.",
+      "Achte auf deine Deckung, sonst kann es dich ganz böse erwischen.",
+      "Du siehst stark aus, vielleicht könntest du ein Kämpfer werden?"))
+      do_npc_close(npc, ch)
 end
 
 function bankwache_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Wir bewachen die Zentralbank.",
-	  "Dies ist die Zentralbank. Hier wird eine Menge Geld gelagert.",
-	  "Wir passen auf das niemand in die Bank einbricht.",
-	  "Dank uns gab es noch nie einen Einbruch in der Zentralbank.",
-	  "Denk immer daran: Wir behalten dich im Auge."))
-	  do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Wir bewachen die Zentralbank.",
+      "Dies ist die Zentralbank. Hier wird eine Menge Geld gelagert.",
+      "Wir passen auf das niemand in die Bank einbricht.",
+      "Dank uns gab es noch nie einen Einbruch in der Zentralbank.",
+      "Denk immer daran: Wir behalten dich im Auge."))
+      do_npc_close(npc, ch)
 end
 
 function stadtwache_talk(npc, ch)
@@ -714,14 +714,14 @@ function stadtwache_talk(npc, ch)
     local quest_string_monsterid = "selphi_timlet_guards_hunt_monsterid"
     local quest_string_monster_name = "selphi_timlet_guards_hunt_monstername"
     local quest_string_kills = "selphi_timlet_guards_hunt_kills"
-	
+    
     invertika.init_quest_status(ch, quest_string_number)
     invertika.init_quest_status(ch, quest_string_kills)
     invertika.init_quest_status(ch, quest_string_monsterid)
-	
+    
     local number_of_jobs = invertika.get_quest_status(ch, quest_string_number)
     local new_job = false
-	
+    
     if number_of_jobs == 0 then
         do_message(npc, ch, "Wir garantieren hier die Sicherheit der Stadt.")
         do_message(npc, ch, "Übrigens. Der König zahlt regelmäßig Prämien wenn du Ungeziefer tötest.")
@@ -732,9 +732,9 @@ function stadtwache_talk(npc, ch)
         invertika.set_quest_status(ch, quest_string_number, number_of_jobs)
         new_job = true
     end
-	
+    
     local required_kills = invertika.get_quest_status(ch, quest_string_kills)
-	
+    
     if required_kills ~= 0 then
         local kills = mana.chr_get_kill_count(ch, invertika.get_quest_status(ch, quest_string_monsterid))
         if kills >= required_kills then
@@ -747,7 +747,7 @@ function stadtwache_talk(npc, ch)
             do_message(npc, ch, string.format("Du musst noch %s %s töten bevor es eine Belohnung gibt.", required_kills - kills, invertika.get_quest_status_string(ch, quest_string_monster_name)))
         end
     end
-	
+    
     if new_job then
         local monster = nil
         if number_of_jobs < 5 then
@@ -784,39 +784,39 @@ function stadtwache_talk(npc, ch)
                                           required_kills, monster_data.name)
                    )
     end
-	do_npc_close(npc, ch)
+    do_npc_close(npc, ch)
 end
 
 function palastwache_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Zutritt nur mit königlichen Passierschein!",
-	  "Du benötigst einen königlichen Passierschein um den Palast zu betreten.",
-	  "Ohne königlichen Passierschein kein Zutritt!"))
-	  do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Zutritt nur mit königlichen Passierschein!",
+      "Du benötigst einen königlichen Passierschein um den Palast zu betreten.",
+      "Ohne königlichen Passierschein kein Zutritt!"))
+      do_npc_close(npc, ch)
 end
 
 function bernie_talk(npc, ch)
-	do_message(npc, ch, "Hey du, du brauchst ihn doch bestimmt, den Niedermetzler 3000. Das ist genau das richtige für dich, da kannst du garnicht widerstehen. Komm schon für nur 99999 Aki gehört er dir? Oder eine Sonnenbrille? Neuste Mode? 12500 Aki! Ein besonderes Modell!")
-	
-	while true do 
-		local v = do_choice(npc, ch, "Her mit dem Niedermetzler!",
+    do_message(npc, ch, "Hey du, du brauchst ihn doch bestimmt, den Niedermetzler 3000. Das ist genau das richtige für dich, da kannst du garnicht widerstehen. Komm schon für nur 99999 Aki gehört er dir? Oder eine Sonnenbrille? Neuste Mode? 12500 Aki! Ein besonderes Modell!")
+    
+    while true do 
+        local v = do_choice(npc, ch, "Her mit dem Niedermetzler!",
                                      "Ich will die Sonnenbrille!",
-								     "Lieber nicht...")
-								   
-		if v == 1 then
-		    local PlayerMoney=mana.chr_money(ch)
-		    if PlayerMoney >= 99999 then
-			invertika.add_money(ch, -99999)
-			invertika.add_items(ch, 10005, 1, "Niedermetzler 3000")
-			do_message(npc, ch, invertika.get_random_element("Viel Spaß mit deinem Niedermetzler 3000.",
-	  "Nun hast du ihn, den Niedermetzler 3000.",
-	  "Bitteschön, der Niedermetzler 3000, die ultimative Waffe."))
-		      break;
-		    else
-		      do_message(npc, ch, invertika.get_random_element("Du hast nicht genug Geld, komm später wieder.",
-	  "So nicht, das Geld benötigst du schon.",
-	  "Ne ne ne. Kram erstmal das Geld zusammen!"))
-		      break;
-		    end
+                                     "Lieber nicht...")
+                                   
+        if v == 1 then
+            local PlayerMoney=mana.chr_money(ch)
+            if PlayerMoney >= 99999 then
+            invertika.add_money(ch, -99999)
+            invertika.add_items(ch, 10005, 1, "Niedermetzler 3000")
+            do_message(npc, ch, invertika.get_random_element("Viel Spaß mit deinem Niedermetzler 3000.",
+      "Nun hast du ihn, den Niedermetzler 3000.",
+      "Bitteschön, der Niedermetzler 3000, die ultimative Waffe."))
+              break;
+            else
+              do_message(npc, ch, invertika.get_random_element("Du hast nicht genug Geld, komm später wieder.",
+      "So nicht, das Geld benötigst du schon.",
+      "Ne ne ne. Kram erstmal das Geld zusammen!"))
+              break;
+            end
         elseif v == 2 then
             if mana.chr_money(ch) >= 12500 then
                 invertika.add_money(ch, -12500)
@@ -824,60 +824,60 @@ function bernie_talk(npc, ch)
                 do_message(npc, ch, "Da. Nimm Sie. Willst du auch einen Niedermetzler 3000?")
             else
 
-		      do_message(npc, ch, invertika.get_random_element("Du hast nicht genug Geld, komm später wieder.",
-	  "So nicht, das Geld benötigst du schon.",
-	  "Ne ne ne. Kram erstmal das Geld zusammen!"))
+              do_message(npc, ch, invertika.get_random_element("Du hast nicht genug Geld, komm später wieder.",
+      "So nicht, das Geld benötigst du schon.",
+      "Ne ne ne. Kram erstmal das Geld zusammen!"))
             end
-		elseif v == 3 then
-			do_message(npc, ch, invertika.get_random_element("Dann halt nicht. Aber vielleicht später?",
-	  "Wer nicht will der hat schon...",
-	  "Okay, ein ander Mal vielleicht."))
-			break
-		end
-	end
-	do_npc_close(npc, ch)
+        elseif v == 3 then
+            do_message(npc, ch, invertika.get_random_element("Dann halt nicht. Aber vielleicht später?",
+      "Wer nicht will der hat schon...",
+      "Okay, ein ander Mal vielleicht."))
+            break
+        end
+    end
+    do_npc_close(npc, ch)
 end
 
 function valeria_talk(npc, ch)
-	
-	invertika.init_quest_status(ch, "selphi_timlet_valeria_letzteHeilung")
-	local letzteHeilung = invertika.get_quest_status(ch, "selphi_timlet_valeria_letzteHeilung")
+    
+    invertika.init_quest_status(ch, "selphi_timlet_valeria_letzteHeilung")
+    local letzteHeilung = invertika.get_quest_status(ch, "selphi_timlet_valeria_letzteHeilung")
 
-	do_message(npc, ch, "Soll ich dich heilen?")
+    do_message(npc, ch, "Soll ich dich heilen?")
 
-	while true do 
-		local v = do_choice(npc, ch, "Alles heilen (1000 Aki)", "Nur 1000 HP (kostenlos)", "Nein ich brauche keine Heilung")
-								   
-		if v == 1 then
-		    local PlayerMoney=mana.chr_money(ch)
-		    if PlayerMoney >= 1000 then
-			invertika.add_money(ch, -1000)
-			mana.being_heal(ch);
-			do_message(npc, ch, invertika.get_random_element("Du bist vollständig geheilt.",
-	  "Fertig. Du kannst wieder deines Weges gehen."))
-		    else
-		      do_message(npc, ch, invertika.get_random_element("Du benötigst mehr Aki.",
-	  "Du hast keine 1000 Aki."))
-		    end
-		elseif v == 2 then
-			if letzteHeilung + (60 * 60 * 2) > os.time(t) then 
-				do_message(npc, ch, "Nein. Ich heile dich nicht alle paar Minuten kostenlos. Komm doch später vielleicht nochmal vorbei")
-				break
-			else
-				mana.being_heal(ch, 1000)
-				do_message(npc, ch, invertika.get_random_element("Ich habe dir 1000 HP geschenkt.",
-		  "Du siehst wieder frisch aus."))
-				i = os.time(t)
-				invertika.set_quest_status(ch, "selphi_timlet_valeria_letzteHeilung", i)
-				break
-			end
-		elseif v == 3 then
-			do_message(npc, ch, invertika.get_random_element("Wie du wünschst.",
-	  "Entschuldigung, ich wollte mich dir nicht aufdrängen."))
-			break
-		end
-	end
-	do_npc_close(npc, ch)
+    while true do 
+        local v = do_choice(npc, ch, "Alles heilen (1000 Aki)", "Nur 1000 HP (kostenlos)", "Nein ich brauche keine Heilung")
+                                   
+        if v == 1 then
+            local PlayerMoney=mana.chr_money(ch)
+            if PlayerMoney >= 1000 then
+            invertika.add_money(ch, -1000)
+            mana.being_heal(ch);
+            do_message(npc, ch, invertika.get_random_element("Du bist vollständig geheilt.",
+      "Fertig. Du kannst wieder deines Weges gehen."))
+            else
+              do_message(npc, ch, invertika.get_random_element("Du benötigst mehr Aki.",
+      "Du hast keine 1000 Aki."))
+            end
+        elseif v == 2 then
+            if letzteHeilung + (60 * 60 * 2) > os.time(t) then 
+                do_message(npc, ch, "Nein. Ich heile dich nicht alle paar Minuten kostenlos. Komm doch später vielleicht nochmal vorbei")
+                break
+            else
+                mana.being_heal(ch, 1000)
+                do_message(npc, ch, invertika.get_random_element("Ich habe dir 1000 HP geschenkt.",
+          "Du siehst wieder frisch aus."))
+                i = os.time(t)
+                invertika.set_quest_status(ch, "selphi_timlet_valeria_letzteHeilung", i)
+                break
+            end
+        elseif v == 3 then
+            do_message(npc, ch, invertika.get_random_element("Wie du wünschst.",
+      "Entschuldigung, ich wollte mich dir nicht aufdrängen."))
+            break
+        end
+    end
+    do_npc_close(npc, ch)
 end
 
 function amulet_trigger(ch, args)
@@ -944,15 +944,15 @@ function warp_escape_tunnel(obj, arg)
 end
 
 function waypoint_archway_1(obj, arg)
-    if(mana.being_type(obj)==TYPE_CHARACTER) then
+    if((mana.being_type(obj)==TYPE_CHARACTER) and (mana.get_quest_var(obj, "selphi_timlet_archway_quest")!=nil)) then
         --- Questvar initialisieren, falls noch nicht geschehen
         mana.being_say(obj, "Ich habe den Wegpunkt passiert")
-        invertika.init_quest_status(obj, "selphie_timlet_archway_quest")
-	    local archway_quest = invertika.get_quest_status(obj, "selphie_timlet_archway_quest")
+        invertika.init_quest_status(obj, "selphi_timlet_archway_quest")
+        local archway_quest = invertika.get_quest_status(obj, "selphi_timlet_archway_quest")
         mana.being_say(obj, archway_quest)
         if(archway_quest % 2 == 1) then
             --- halbe Umdrehung wird dazugezählt
-            invertika.set_quest_status(obj, "selphie_timlet_archway_quest", archway_quest + 1)
+            invertika.set_quest_status(obj, "selphi_timlet_archway_quest", archway_quest + 1)
             local rounds = (archway_quest+1)/2
             -- eigentlich sollte hier eine 17 stehen, sind nur zu testzwecken lediglich 2 runden
             if(rounds % 2 == 0) then
@@ -964,15 +964,15 @@ function waypoint_archway_1(obj, arg)
 end
 
 function waypoint_archway_2(obj, arg)
-    if(mana.being_type(obj)==TYPE_CHARACTER) then
+    if((mana.being_type(obj)==TYPE_CHARACTER) and (mana.get_quest_var(obj, "selphi_timlet_archway_quest")!=nil)) then
         --- Questvar initialisieren, falls noch nicht geschehen
         mana.being_say(obj, "Ich habe den Wegpunkt passiert")
-        invertika.init_quest_status(obj, "selphie_timlet_archway_quest")
-	    local archway_quest = invertika.get_quest_status(obj, "selphie_timlet_archway_quest")
+        invertika.init_quest_status(obj, "selphi_timlet_archway_quest")
+        local archway_quest = invertika.get_quest_status(obj, "selphi_timlet_archway_quest")
         mana.being_say(obj, archway_quest)
-	    if(archway_quest % 2 == 0) then
+        if(archway_quest % 2 == 0) then
             --- halbe Umdrehung wird dazugezählt
-            invertika.set_quest_status(obj, "selphie_timlet_archway_quest", archway_quest + 1)
+            invertika.set_quest_status(obj, "selphi_timlet_archway_quest", archway_quest + 1)
         end
     end
 end

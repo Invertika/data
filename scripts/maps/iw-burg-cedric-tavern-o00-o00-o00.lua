@@ -25,15 +25,15 @@ function egam_talk(npc, ch)
     do_message(npc, ch, "Was kann ich für sie tuen?")
     while true do
         local v = do_choice(npc, ch, "Kaufen.",
-		                     "Nichts. Danke.")
+                             "Nichts. Danke.")
         if v == 1 then
-		    mana.npc_trade(npc, ch, false, {
+            mana.npc_trade(npc, ch, false, {
             {30009, 25, 15},
             {30010, 25, 15},
             {30011, 290, 15},
             {30012, 70, 15},
             {30014, 25, 100},
-			{30026, 10, 50},
+            {30026, 10, 50},
             {30027, 1, 25},
             {30001, 25, 30},
             {30006, 400, 20},
@@ -41,7 +41,7 @@ function egam_talk(npc, ch)
             })
             break
         elseif v == 2 then
-		    do_message(npc, ch, "Einen guten Tag noch.")
+            do_message(npc, ch, "Einen guten Tag noch.")
             break
         end
     end

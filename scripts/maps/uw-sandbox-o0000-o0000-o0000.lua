@@ -251,7 +251,7 @@ end
 
 function zelan_talk(npc, ch)
     do_message(npc, ch, "Wo du bist? Im Vacare. Jeder neue kommt hier her bevor es raus geht in die große Welt. Also pass auf dich auf.")
-	do_npc_close(npc, ch)
+    do_npc_close(npc, ch)
 end
 
 function alaria_talk(npc, ch)
@@ -350,15 +350,15 @@ function string_test_talk(npc, ch)
 end
 
 function patrol_waypoint(obj, id)
-	if (mana.being_type(obj) ~= TYPE_MONSTER) then
-		if (id == 1) then
-			mana.chatmessage(obj, "you've reached patrol point 1")
-			mana.being_say(obj, "I have reached patrol point 1")
-		elseif (id == 2) then
-			mana.chatmessage(obj, "you've reached patrol point 2")
-			mana.being_say(obj, "I have reached patrol point 2")
-		end
-	end
+    if (mana.being_type(obj) ~= TYPE_MONSTER) then
+        if (id == 1) then
+            mana.chatmessage(obj, "you've reached patrol point 1")
+            mana.being_say(obj, "I have reached patrol point 1")
+        elseif (id == 2) then
+            mana.chatmessage(obj, "you've reached patrol point 2")
+            mana.being_say(obj, "I have reached patrol point 2")
+        end
+    end
 end
 
 
@@ -561,18 +561,18 @@ end
 local firedemon_timer = 0;
 
 function firedemon_update(npc)
-	firedemon_timer = firedemon_timer + 1
-	if (firedemon_timer == 5) then
-	  firedemon_timer = 0
-	  local victims = mana.get_beings_in_circle(mana.posX(npc), mana.posY(npc), 64)
-	  local i = 1;
-	  while (victims[i]) do
-	    mana.being_damage(victims[i], 20, 10, 32000, DAMAGE_MAGICAL, ELEMENT_FIRE)
-		i = i + 1
-	  end
-	end
+    firedemon_timer = firedemon_timer + 1
+    if (firedemon_timer == 5) then
+      firedemon_timer = 0
+      local victims = mana.get_beings_in_circle(mana.posX(npc), mana.posY(npc), 64)
+      local i = 1;
+      while (victims[i]) do
+        mana.being_damage(victims[i], 20, 10, 32000, DAMAGE_MAGICAL, ELEMENT_FIRE)
+        i = i + 1
+      end
+    end
 
-	npclib.walkaround_map(npc)
+    npclib.walkaround_map(npc)
 end
 
 function post_talk(npc, ch)
@@ -687,15 +687,15 @@ function spinner_update(npc)
 end
 
 function healer_talk(npc, ch)
-	do_message(npc, ch, "Do you need healing?")
-	local c = do_choice(npc, ch, "Heal me fully", "Heal 100 HP", "Don't heal me")
-	if c == 1 then
-		mana.being_heal(ch)
-	elseif c == 2 then
-		mana.being_heal(ch, 100)
-	end
-	
-	do_npc_close(npc, ch)
+    do_message(npc, ch, "Do you need healing?")
+    local c = do_choice(npc, ch, "Heal me fully", "Heal 100 HP", "Don't heal me")
+    if c == 1 then
+        mana.being_heal(ch)
+    elseif c == 2 then
+        mana.being_heal(ch, 100)
+    end
+    
+    do_npc_close(npc, ch)
 end
 
 -- Silvester

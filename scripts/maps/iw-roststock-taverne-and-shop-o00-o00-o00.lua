@@ -25,13 +25,13 @@ atinit(function()
 end)
 
 function bjoern_talk(npc, ch)
-	do_message(npc, ch, invertika.get_random_element("Velera sucht mich? Einen Schluck trinke ich aber noch.",
-	  "Lustig hier, oder?",
-	  "Du möchtest auch was trinken, dann ab zum Barmann!",
-	  "Prost. Wer? Velera? Joah meine Freundin.",
-	  "Ja schon wieder ein Sandsturm. Jeden Tag einer...",
-	  "Willkommen in Roststock. Trink doch was mit.")) 
-	 do_npc_close(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Velera sucht mich? Einen Schluck trinke ich aber noch.",
+      "Lustig hier, oder?",
+      "Du möchtest auch was trinken, dann ab zum Barmann!",
+      "Prost. Wer? Velera? Joah meine Freundin.",
+      "Ja schon wieder ein Sandsturm. Jeden Tag einer...",
+      "Willkommen in Roststock. Trink doch was mit.")) 
+     do_npc_close(npc, ch)
 end
 
 function rodhonu_talk(npc, ch)

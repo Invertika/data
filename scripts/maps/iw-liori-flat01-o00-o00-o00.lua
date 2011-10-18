@@ -23,5 +23,5 @@ end)
 
 function isskel_talk(npc, ch)
     do_message(npc, ch, invertika.get_random_element("Blubb", "Blubb blubb", "Blubb blubb blubb"))
-	do_npc_close(npc, ch)
+    do_npc_close(npc, ch)
 end

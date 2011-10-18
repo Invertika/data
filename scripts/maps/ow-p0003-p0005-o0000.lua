@@ -70,10 +70,10 @@ function vektor_talk(npc, ch)
             end
         end
     else
-	    do_message(npc, ch, invertika.get_random_element("Ich war früher mal ein Superschurke.",
-	        "Ich bin Statiker, aber damit habe ich nichts, aber auch wirklich garnichts zu tun.",
-	        "Eigentlich müsste dieses Haus in sich zusammenfallen. Oder das Universum. Blöderweise passiert nichts von beidem.",
-	        "Wir könnten auch einfach so tun, als ob da gar kein Haus steht."))
+        do_message(npc, ch, invertika.get_random_element("Ich war früher mal ein Superschurke.",
+            "Ich bin Statiker, aber damit habe ich nichts, aber auch wirklich garnichts zu tun.",
+            "Eigentlich müsste dieses Haus in sich zusammenfallen. Oder das Universum. Blöderweise passiert nichts von beidem.",
+            "Wir könnten auch einfach so tun, als ob da gar kein Haus steht."))
     end
     do_npc_close(npc, ch)
 end
