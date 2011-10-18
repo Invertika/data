@@ -66,11 +66,11 @@ function worrany_update(npc)
             if x == 22 * TILESIZE + 16 then
                 x = 18
             elseif x == 18 * TILESIZE + 16 then
+                mana.effect_create(5, x * TILESIZE, 29 * TILESIZE)
                 x = 27
-                mana.effect_create(5, (x + 1) * TILESIZE, 28 * TILESIZE)
             elseif x == 27 * TILESIZE + 16 then
+                mana.effect_create(5, x * TILESIZE, 29 * TILESIZE)
                 x = 22
-                mana.effect_create(5, (x + 1) * TILESIZE, 28 * TILESIZE)
             else
                 x = nil
             end
