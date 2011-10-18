@@ -60,17 +60,17 @@ local walk_timer = {}
 function worrany_update(npc)
     if walk_timer[npc] then
         walk_timer[npc] = walk_timer[npc] + 1
-        local x = mana.posX(npc) / TILESIZE - 0.5
+        local x = mana.posX(npc)
         
         if walk_timer[npc] % 100 == 0 then
             if x == 22 * TILESIZE + 16 then
                 x = 18
             elseif x == 18 * TILESIZE + 16 then
-                mana.effect_create(5, (x + 1) * TILESIZE, 28 * TILESIZE)
                 x = 27
-            elseif x == 27 * TILESIZE + 16 then
                 mana.effect_create(5, (x + 1) * TILESIZE, 28 * TILESIZE)
+            elseif x == 27 * TILESIZE + 16 then
                 x = 22
+                mana.effect_create(5, (x + 1) * TILESIZE, 28 * TILESIZE)
             else
                 x = nil
             end
