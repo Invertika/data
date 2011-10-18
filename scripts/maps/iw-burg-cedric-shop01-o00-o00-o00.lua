@@ -58,13 +58,13 @@ function worrany_talk(npc, ch)
     do_npc_close(npc, ch)
 end
 
-local t_timer = {}
+local walk_timer = {}
 function worrany_update(npc)
-    if timer[npc] then
-        timer = timer + 1
+    if walk_timer[npc] then
+        walk_timer[npc] = walk_timer[npc] + 1
         local x = mana.posX(chr) / TILESIZE - 0.5
         
-        if timer % 100 == 0 then
+        if walk_timer[npc] % 100 == 0 then
             if x == 22 then
                 x = 18
             elseif x == 18 then
@@ -78,6 +78,6 @@ function worrany_update(npc)
             mana.effect_create(5, (x + 1) * TILESIZE, 28 * TILESIZE)
         end
     else
-        timer[npc] = 1
+        walk_timer[npc] = 1
     end
 end
