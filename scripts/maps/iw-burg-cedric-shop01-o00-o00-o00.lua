@@ -28,22 +28,22 @@ end
 
 local timer = {}
 function worrany_update(npc)
-    if not timer[npc] then
-        timer[npc] = 1
-    end
-    
-    timer = timer + 1
-    local x = (mana.posX(chr) - 16) / 32
-    
-    if timer % 100 == 0 then
-        if x == 22 then
-            x = 18
-        elseif x == 18 then
-            x = 27
-        else
-            x = 22
-        end
+    if timer[npc] then
+        timer = timer + 1
+        local x = (mana.posX(chr) - 16) / 32 
+        if timer % 100 == 0 then
+            if x == 22 then
+                x = 18
+            elseif x == 18 then
+                x = 27
+            else
+                x = 22
+            end
         mana.being_walk(npc, x * 32 + 16, 880, 2)
-        mana.effect_create(5, (x + 1) * TILESIZE, 28 * TILESIZE)
+        if x ~= 22 then
+            mana.effect_create(5, (x + 1) * TILESIZE, 28 * TILESIZE)
+        end
+    else 
+        timer[npc] = 1
     end
 end
