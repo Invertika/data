@@ -944,7 +944,7 @@ function warp_escape_tunnel(obj, arg)
 end
 
 function waypoint_archway_1(obj, arg)
-    if((mana.being_type(obj)==TYPE_CHARACTER) and (mana.get_quest_var(obj, "selphi_timlet_archway_quest")!=nil)) then
+    if((mana.being_type(obj)==TYPE_CHARACTER) and (mana.get_quest_var(obj, "selphi_timlet_archway_quest")~=nil)) then
         --- Questvar initialisieren, falls noch nicht geschehen
         mana.being_say(obj, "Ich habe den Wegpunkt passiert")
         invertika.init_quest_status(obj, "selphi_timlet_archway_quest")
