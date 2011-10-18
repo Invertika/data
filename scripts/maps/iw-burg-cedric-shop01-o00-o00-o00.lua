@@ -31,8 +31,8 @@ function worrany_talk(npc, ch)
                              "Nichts. Danke.")
                          
         if v == 1 then
-            mana.npc_trade(npc, ch, false, {
-              {30015, 12, 25}, 
+            mana.npc_trade(npc, ch, false,
+              {{30015, 12, 25}, 
               {30016, 12, 50}, 
               {30017, 12, 75}, 
               {30018, 12, 25}, 
@@ -40,8 +40,8 @@ function worrany_talk(npc, ch)
               {30020, 12, 75}})
             break
         elseif v == 2 then
-            mana.npc_trade(npc, ch, true, {
-              {30015, 12, 12}, 
+            mana.npc_trade(npc, ch, true,
+              {{30015, 12, 12}, 
               {30016, 12, 25}, 
               {30017, 12, 37}, 
               {30018, 12, 12}, 

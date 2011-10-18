@@ -40,11 +40,10 @@ function daniel_talk(npc, ch)
           "Kaufen.",
           "Nichts. Danke.")
         if v == 1 then
-            mana.npc_trade(npc, ch, false, {
-              {30001, 25, 30},
+            mana.npc_trade(npc, ch, false,
+              {{30001, 25, 30},
               {30006, 400, 20},
-              {30007, 300, 20}
-            })
+              {30007, 300, 20}})
             break
         elseif v == 2 then
             do_message(npc, ch, "Tschüß.")
