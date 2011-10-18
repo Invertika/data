@@ -41,7 +41,7 @@ function worrany_update(npc)
         elseif x == 18 then
             x = 27
         else
-            x == 22
+            x = 22
         end
         mana.being_walk(npc, x * 32 + 16, 880, 2)
         mana.effect_create(5, (x + 1) * TILESIZE, 28 * TILESIZE)
