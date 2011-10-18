@@ -32,21 +32,23 @@ function worrany_talk(npc, ch)
                          
         if v == 1 then
             mana.npc_trade(npc, ch, false,
+              {{30015, 12, 250}, 
+              {30016, 12, 500}, 
+              {30017, 12, 750}, 
+              {30018, 12, 250}, 
+              {30019, 12, 550}, 
+              {30020, 12, 750}
+              })
+            break
+        elseif v == 2 then
+            mana.npc_trade(npc, ch, true,
               {{30015, 12, 25}, 
               {30016, 12, 50}, 
               {30017, 12, 75}, 
               {30018, 12, 25}, 
               {30019, 12, 55}, 
-              {30020, 12, 75}})
-            break
-        elseif v == 2 then
-            mana.npc_trade(npc, ch, true,
-              {{30015, 12, 12}, 
-              {30016, 12, 25}, 
-              {30017, 12, 37}, 
-              {30018, 12, 12}, 
-              {30019, 12, 27}, 
-              {30020, 12, 37}})
+              {30020, 12, 75}
+              })
             break
         elseif v == 3 then
             do_message(npc, ch, "Beehren sie uns bald wieder.")
