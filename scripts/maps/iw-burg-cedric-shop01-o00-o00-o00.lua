@@ -35,7 +35,7 @@ function worrany_update(npc)
     timer = timer + 1
     local x = (mana.posX(chr) - 16) / 32
     
-    if (timer % 100 == 0 then
+    if timer % 100 == 0 then
         if x == 22 then
             x = 18
         elseif x == 18 then
