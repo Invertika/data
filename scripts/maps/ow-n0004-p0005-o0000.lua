@@ -34,10 +34,10 @@ atinit(function()
     --TODO change sprite id
     diem = create_npc("Diem", 120, 60 * TILESIZE + 16, 160 * TILESIZE + 16, diem_talk, diem_update)
     invertika.create_npc_talk_random(diem,
-        {"Kauft Leute! Kauft!",
-        "Beste Waren! Hergestellt in den königlichen Schmieden!",
-        "Sehen Sie! Dieses Schert ist unzerbrechbar! ZACK. Oh...",
-        "Kommen Sie meine Herren. Diese Waffen sind die besten."})
+      {"Kauft Leute! Kauft!",
+      "Beste Waren! Hergestellt in den königlichen Schmieden!",
+      "Sehen Sie! Dieses Schert ist unzerbrechlich! ZACK. Oh...",
+      "Kommen Sie meine Herren. Diese Waffen sind die Besten."})
 
     create_npc("Chris", 72, 90 * TILESIZE + 16, 104 * TILESIZE + 16, chris_talk, npclib.walkaround_wide)
 
@@ -61,21 +61,21 @@ end)
 
 function diem_talk(npc, ch)
     npc.trade(npc, ch, false, {
-        {10001, 30, 50},
-        {10013, 30, 140},
-        {10002, 30, 1000},
-        {10009, 30, 1690},
-        {20001, 30, 250},
-        {20002, 30, 250},
-        {20011, 30, 250},
-        {20012, 30, 250},
-        {20013, 30, 250},
-        {20014, 30, 250},
-        {20015, 30, 250},
-        {20016, 30, 250},
-        {20017, 30, 250},
-        {20018, 30, 250},
-        {20009, 30, 500}
+      {10001, 30, 50},
+      {10013, 30, 140},
+      {10002, 30, 1000},
+      {10009, 30, 1690},
+      {20001, 30, 250},
+      {20002, 30, 250},
+      {20011, 30, 250},
+      {20012, 30, 250},
+      {20013, 30, 250},
+      {20014, 30, 250},
+      {20015, 30, 250},
+      {20016, 30, 250},
+      {20017, 30, 250},
+      {20018, 30, 250},
+      {20009, 30, 500}
     })
     do_npc_close(npc, ch)
 end
@@ -106,8 +106,8 @@ end
 function wache_casino_talk(npc, ch)
     --TODO bessere Texte
     do_message(npc, ch, mana.get_random_element("Ich bewache das Kasino.",
-        "Glücksspiel kann süchtig machen.",
-        "Ohne uns Wachen, würde die Satdt im Chaos versinken!"))
+      "Glücksspiel kann süchtig machen.",
+      "Ohne uns Wachen, würde die Stadt im Chaos versinken!"))
     do_npc_close(npc, ch)
 end
 
@@ -121,8 +121,13 @@ function wache_talk(npc, ch)
         do_message(npc, ch, "Obwohl.. so wie DU aussiehst, wird das wohl eh nix..")
 	else
 	    do_message(npc, ch, mana.get_random_element("Wir bewachen die Tore der Stadt",
+<<<<<<< .mine
+          "Gehe weiter. Du blockierst die Straße.",
+          "Ohne uns Wachen, würde die Satdt im Chaos versinken!"))
+=======
             "Gehe weiter. Du blockierst die Straße.",
             "Ohne uns Wachen, würde die Stadt im Chaos versinken!"))
+>>>>>>> .r5630
 	end
 	do_npc_close(npc, ch)
 end
@@ -133,8 +138,7 @@ function wache_trigger(ch, id)
             local x = mana.posX(ch)
             mana.chr_warp(ch, nil, x, 176 * TILESIZE + 16)
             if x < 102 * TILESIZE + 16 then
-                mana.being_say(wache_unten_links, 
-				"Kein Durchlass")
+                mana.being_say(wache_unten_links, "Kein Durchlass")
             else
                 mana.being_say(wache_unten_rechts, "Kein Durchlass")
             end
