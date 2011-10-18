@@ -19,7 +19,9 @@ require "scripts/libs/invertika"
 
 atinit(function()
     worrany = create_npc("Worrany", 69, 22 * TILESIZE + 16, 27 * TILESIZE + 16, worrany_talk, nil)
-    schedule_in(5, worrany_walkleft)
+
+    -- CRASHT DEN SERVER! Erst auskommentieren sobald der Bug gefixt ist.
+    -- schedule_in(10, worrany_walkleft)
 end)
 
 function worrany_talk(npc, ch)
