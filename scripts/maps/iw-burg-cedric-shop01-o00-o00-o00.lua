@@ -62,7 +62,8 @@ local timer = {}
 function worrany_update(npc)
     if timer[npc] then
         timer = timer + 1
-        local x = (mana.posX(chr) - 16) / 32 
+        local x = mana.posX(chr) / 32 - 0.5
+        
         if timer % 100 == 0 then
             if x == 22 then
                 x = 18
@@ -76,7 +77,7 @@ function worrany_update(npc)
         if x ~= 22 then
             mana.effect_create(5, (x + 1) * TILESIZE, 28 * TILESIZE)
         end
-    else 
+    else
         timer[npc] = 1
     end
 end
