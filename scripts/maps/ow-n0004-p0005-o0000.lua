@@ -112,19 +112,19 @@ function wache_casino_talk(npc, ch)
 end
 
 function wache_talk(npc, ch)
-	if mana.chr_inv_count(ch, 40047) == 0 then
+    if mana.chr_inv_count(ch, 40047) == 0 then
         do_message(npc, ch, "Ich habe meinen MacGuffin verloren!")
         do_message(npc, ch, "Er ist bestimmt in der Höhle XY, ganz sicher!")
         do_message(npc, ch, "Woher ich das weiß?")
         do_message(npc, ch, "Das gehört sich für einen MacGuffin einfach so!")
         do_message(npc, ch, "Und deshalb lasse ich dich auch nicht in die Stadt, bevor du ihn mir wiedergebracht hast.")
         do_message(npc, ch, "Obwohl.. so wie DU aussiehst, wird das wohl eh nix..")
-	else
+    else
         do_message(npc, ch, mana.get_random_element("Wir bewachen die Tore der Stadt",
           "Gehe weiter. Du blockierst die Straße.",
           "Ohne uns Wachen, würde die Stadt im Chaos versinken!"))
-	end
-	do_npc_close(npc, ch)
+    end
+    do_npc_close(npc, ch)
 end
 
 function wache_trigger(ch, id)
