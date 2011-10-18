@@ -18,7 +18,7 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
-    create_npc("Worrany", 69, 22 * TILSIZE + 16, 27 * TILESIZE + 16, worrany_talk, worrany_update)
+    create_npc("Worrany", 69, 22 * TILESIZE + 16, 27 * TILESIZE + 16, worrany_talk, worrany_update)
 end)
 
 function worrany_talk(npc, ch)
@@ -62,7 +62,7 @@ local timer = {}
 function worrany_update(npc)
     if timer[npc] then
         timer = timer + 1
-        local x = mana.posX(chr) / 32 - 0.5
+        local x = mana.posX(chr) / TILESIZE - 0.5
         
         if timer % 100 == 0 then
             if x == 22 then
