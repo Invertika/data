@@ -122,7 +122,7 @@ function wache_talk(npc, ch)
 	else
 	    do_message(npc, ch, mana.get_random_element("Wir bewachen die Tore der Stadt",
             "Gehe weiter. Du blockierst die Straße.",
-            "Ohne uns Wachen, würde die Satdt im Chaos versinken!")
+            "Ohne uns Wachen, würde die Satdt im Chaos versinken!"))
 	end
 	do_npc_close(npc, ch)
 end
