@@ -50,7 +50,7 @@ atinit(function()
   create_npc("Healer", 19, 54 * TILESIZE + 16, 32 * TILESIZE + 16, healer_talk, nil)
   skorpion_rennen_npc = create_npc("Skorpion Rennen", 27, 142 * TILESIZE + 16, 72 * TILESIZE +16, scorpionrace.race_manager_talk, nil)
   poker_dealer_npc = create_npc("Dealer", 27, 82 * TILESIZE + 16, 142 * TILESIZE + 16, poker_dealer_talk, nil)
-
+  create_npc("Feuerwerker", 139, 177 * TILESIZE + 16, 185 * TILESIZE + 16, fireworker_talk, npclib.walkaround_small)
   postmen.create_postman_npc("sandbox1", "A1", 27, 75 * TILESIZE + 16, 151 * TILESIZE + 16, {{id="sandbox2", distance=1}, {id="sandbox3", distance=1}, {id="sandbox4", distance=1}}, 40001)
   postmen.create_postman_npc("sandbox2", "A2", 27, 77 * TILESIZE + 16, 151 * TILESIZE + 16, {{id="sandbox1", distance=1}, {id="sandbox3", distance=1}, {id="sandbox4", distance=1}}, 40002)
   postmen.create_postman_npc("sandbox3", "A3", 27, 75 * TILESIZE + 16, 153 * TILESIZE + 16, {{id="sandbox1", distance=1}, {id="sandbox2", distance=1}, {id="sandbox4", distance=1}}, 40003)
@@ -696,4 +696,25 @@ function healer_talk(npc, ch)
 	end
 	
 	do_npc_close(npc, ch)
+end
+
+-- Silvester
+function fireworker_talk(npc, ch)
+  do_message(npc, ch, "Willst du ein wenig Feuerwerk sehen?")
+  local answer = do_choice(npc, ch, "Juhuu! Feuerwerk!", "Nee, danke.")
+  if answer == 1 then
+    local x = mana.posX(npc)
+    local y = mana.posY(npc)
+      for c = 0, 25 do
+        schedule_in (c, function()
+          mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+          mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+          mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+          mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+          mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+          mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+        end)
+      end
+  end
+  do_npc_close(npc, ch)
 end
