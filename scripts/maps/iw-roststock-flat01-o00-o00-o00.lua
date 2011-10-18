@@ -18,15 +18,16 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
- create_npc("Velera", 78, 24 * TILESIZE + 16, 27 * TILESIZE + 16, velera_talk, nil)
+    create_npc("Velera", 78, 24 * TILESIZE + 16, 27 * TILESIZE + 16, velera_talk, nil)
 end)
 
 function velera_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Ja schon wieder ein Sandsturm. So wie immer...",
-      "Warum Roststock Roststock heißt? Also wenn du da nicht selbst draufkommst.",
+    do_message(npc, ch, invertika.get_random_element(
+      "Ja, schon wieder ein Sandsturm. So wie immer...",
+      "Warum Roststock Roststock heißt? Also wenn du da nicht selbst draufkommst...",
       "Ich wohne hier seitdem ich denken kann...",
-      "Mein Freund Björn ist, schon wieder nicht hier...",
+      "Mein Freund Björn ist schon wieder nicht hier...",
       "Ich bin Velera. Wie bitte? Ja ich bin vergeben.",
       "Heute ist mal wieder einer dieser seltsamen Tage.")) 
-     do_npc_close(npc, ch)
+    do_npc_close(npc, ch)
 end

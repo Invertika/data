@@ -47,12 +47,14 @@ function marle_talk(npc, ch)
                 end
             end
         else
-            do_message(npc, ch, invertika.get_random_element("Ich sammele gerne Porzellan.",
+            do_message(npc, ch, invertika.get_random_element(
+              "Ich sammele gerne Porzellan.",
               "Willst du mal meine Porzellan Sammlung sehen?",
-              "Wenn du altes Porzellan findest. Bringe es mir."))
+              "Wenn du altes Porzellan findest, bringe es mir bitte. Du kriegst auch was dafür."))
         end
     else
-        do_message(npc, ch, invertika.get_random_element("Ich würde gerne mal Effendi besuchen.",
+        do_message(npc, ch, invertika.get_random_element(
+          "Ich würde gerne mal Effendi besuchen.",
           "Die beste Freundin von Effendi ist Anne. Habe ich zumindestens gehört.",
           "Eigentlich heißt er garnicht Effendi sondern Effendi der Erste.",
           "Du hättest dir ruhig die Schuhe abputzen können. Jetzt ist hier alles voller Sand.",

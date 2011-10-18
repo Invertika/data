@@ -31,7 +31,7 @@ function nijeta_talk(npc, ch)
     if get_qstatus() == 1 then
         if mana.chr_inv_count(ch, 30025) >= 4 then
             do_message(npc, ch, "Hey, super, du hast die Schlangeneier gekriegt!")
-                invertika.add_items(ch, 30025, -4, "Schlangenei")
+            invertika.add_items(ch, 30025, -4, "Schlangenei")
             set_qstatus(2)
             do_message(npc, ch, "Als nächstes brauche ich 10 Kokosnüsse")
             do_message(npc, ch, "Kann ich noch etwas für dich tun?")
@@ -54,7 +54,7 @@ function nijeta_talk(npc, ch)
     elseif get_qstatus() == 3 then
         if mana.chr_inv_count(ch, 30003) >= 2 then
             do_message(npc, ch, "Perfekt! Danke für das Nogatch Hemlock.")
-                invertika.add_items(ch, 30003, -2, "Nogatch Hemlock")
+            invertika.add_items(ch, 30003, -2, "Nogatch Hemlock")
             set_qstatus(4)
             do_message(npc, ch, "Als Belohnung für deine Mühen bekommst du einen kleinen Vorrat an Arzneimitteln von mir. Du bekommst sogar ein paar der experimentellen und neueren Exemplare!")
             invertika.add_items(ch, 30018, 20, "Energetia")
@@ -71,23 +71,35 @@ function nijeta_talk(npc, ch)
     end
     
     while true do
-        local v = do_choice(npc, ch, "Kaufen.",
-                         "Verkaufen.",
-                         "Ich suche Arbeit.",
-                         "Nichts. Danke.")
+        local v = do_choice(npc, ch,
+          "Kaufen.",
+          "Verkaufen.",
+          "Ich suche Arbeit.",
+          "Nichts. Danke.")
         if v == 1 then
-            mana.npc_trade(npc, ch, false, { {30002, 50, 70}, {30015, 50, 150}, {30016, 50, 450}, {30018, 50, 150}, {30019, 50, 500} })
+            mana.npc_trade(npc, ch, false,
+              {{30002, 50, 70},
+              {30015, 50, 150},
+              {30016, 50, 450},
+              {30018, 50, 150},
+              {30019, 50, 500}})
             break
         elseif v == 2 then
-            mana.npc_trade(npc, ch, true, { {30002, 50, 50}, {30015, 50, 50}, {30016, 50, 250}, {30018, 50, 50}, {30019, 50, 300} })
+            mana.npc_trade(npc, ch, true,
+              {{30002, 50, 50},
+              {30015, 50, 50},
+              {30016, 50, 250},
+              {30018, 50, 50},
+              {30019, 50, 300}})
             break
         elseif v == 3 then
             if get_qstatus()==0 then
                 do_message(npc, ch, "Du könntest mir ein paar mehr oder weniger seltene Sachen besorgen, die ich für meine Medikamente brauche.")
                 do_message(npc, ch, "Lust?")
                 while true do
-                    local v2 = do_choice(npc, ch, "OK. Was soll ich denn besorgen?",
-                                      "Nein danke, besser nicht.")
+                    local v2 = do_choice(npc, ch, 
+                      "OK. Was soll ich denn besorgen?",
+                      "Nein danke, besser nicht.")
                     if v2 == 1 then
                         do_message(npc, ch, "Super! Als erstes benötige ich 4 Schlangeneier.")
                         set_qstatus(1)

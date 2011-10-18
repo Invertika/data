@@ -20,17 +20,17 @@ require "scripts/libs/invertika"
 
 
 atinit(function()
-
- create_npc("Saya", 7, 43 * TILESIZE + 16, 15 * TILESIZE + 16, saya_talk, nil) --- Saya
- create_npc("Tetse", 138, 45 * TILESIZE + 16, 23 * TILESIZE + 16, tetse_talk, nil) --- Tetse
+    create_npc("Saya", 7, 43 * TILESIZE + 16, 15 * TILESIZE + 16, saya_talk, nil) --- Saya
+    create_npc("Tetse", 138, 45 * TILESIZE + 16, 23 * TILESIZE + 16, tetse_talk, nil) --- Tetse
 end)
 
 function saya_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Oh wir haben Gäste. Tetse, deckst du den Tisch ich bin fast fertig.",
+    do_message(npc, ch, invertika.get_random_element(
+      "Oh, wir haben Gäste! Tetse, deckst du den Tisch? Ich bin fast fertig.",
       "Tetse lernte ich vor sehr langer Zeit kennen.",
       "Wir haben hier alles was wir brauchen.",
-      "Okita ist vor einiger Zeit gegangen, er sagte er müsse einige Dinge klären."))
-      do_npc_close(npc, ch)
+      "Okita ist vor einiger Zeit gegangen, er sagte, er müsse einige Dinge klären."))
+    do_npc_close(npc, ch)
 end
 
 function tetse_talk(npc, ch)
@@ -43,7 +43,9 @@ function tetse_talk(npc, ch)
         if mana.chr_inv_count(ch, 10008) > 0 then
             do_message(npc, ch, "Du hast mein Schwert! Ich suche es seit Jahren! Ich habe es einst in einer großen Schlacht verloren. Gibst du es mir wieder?")
             while true do
-                local v = do_choice(npc, ch, "Hier ist es.", "Nein. Dies ist mein Schwert!")
+                local v = do_choice(npc, ch,
+                  "Hier ist es.",
+                  "Nein. Dies ist mein Schwert!")
                 if v == 1 then
                     invertika.add_items(ch, 10008, -1, "Tetses Schwert")
                     do_message(npc, ch, "Nimm als Dank dieses Geld.")
@@ -59,7 +61,8 @@ function tetse_talk(npc, ch)
             do_message(npc, ch, "Ich verlor einst ein Schwert. Wenn du es findest bekommst du von mir eine gute Belohnung.")
         end
     else
-        do_message(npc, ch, invertika.get_random_element("Ja Saya, ich decke gleich den Tisch. Ich muss nur noch schnell mein Katana schärfen.",
+        do_message(npc, ch, invertika.get_random_element(
+          "Ja Saya, ich decke gleich den Tisch. Ich muss nur noch schnell mein Katana schärfen.",
           "Sei willkommen Gast. Gleich gibt es etwas zu essen.",
           "Du suchst Okita? Er ist schon lange Zeit nicht mehr hier gewesen. Ich glaube er wollte zur Küste.",
           "Ja der Sandsturm wütet. Das geht schon die ganze Zeit so.",

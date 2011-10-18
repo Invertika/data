@@ -18,10 +18,13 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
-  create_npc("Isskel", 36, 17 * TILESIZE + 16, 21 * TILESIZE + 16, isskel_talk, nil) --- Isskel
+    create_npc("Isskel", 36, 17 * TILESIZE + 16, 21 * TILESIZE + 16, isskel_talk, nil) --- Isskel
 end)
 
 function isskel_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Blubb", "Blubb blubb", "Blubb blubb blubb"))
+    do_message(npc, ch, invertika.get_random_element(
+      "Blubb",
+      "Blubb blubb",
+      "Blubb blubb blubb"))
     do_npc_close(npc, ch)
 end
