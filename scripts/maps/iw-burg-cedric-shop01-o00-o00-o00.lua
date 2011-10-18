@@ -74,7 +74,9 @@ function worrany_update(npc)
             else
                 x = nil
             end
-            if not(x == nil) then mana.being_walk(npc, x * 32 + 16, 880, 2)
+            if not(x == nil) then 
+                mana.being_walk(npc, x * 32 + 16, 880, 2)
+            end
         end
     else
         walk_timer[npc] = 1
