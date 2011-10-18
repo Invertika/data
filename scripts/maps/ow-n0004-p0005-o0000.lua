@@ -120,7 +120,7 @@ function wache_talk(npc, ch)
         do_message(npc, ch, "Und deshalb lasse ich dich auch nicht in die Stadt, bevor du ihn mir wiedergebracht hast.")
         do_message(npc, ch, "Obwohl.. so wie DU aussiehst, wird das wohl eh nix..")
 	else
-	    do_message(npc, ch, mana.get_random_element("Wir bewachen die Tore der Stadt",
+        do_message(npc, ch, mana.get_random_element("Wir bewachen die Tore der Stadt",
           "Gehe weiter. Du blockierst die Straße.",
           "Ohne uns Wachen, würde die Stadt im Chaos versinken!"))
 	end
