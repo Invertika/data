@@ -138,5 +138,5 @@ function wache_trigger(ch, id)
                 mana.being_say(wache_unten_rechts, "Kein Durchlass")
             end
         end
-	end
+    end
 end
