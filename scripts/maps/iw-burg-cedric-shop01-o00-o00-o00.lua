@@ -22,8 +22,8 @@ atinit(function()
 end)
 
 function worrany_talk(npc, ch)
-    do_message(npc, ch, "Willkommen, in meinem Kräuterladen")
-	do_message(npc, ch, "Was kann ich für sie tun?")
+    do_message(npc, ch, "Willkommen, in meinem KrÃ¤uterladen")
+	do_message(npc, ch, "Was kann ich fÃ¼r sie tun?")
     
 	while true do
         local v = do_choice(npc, ch, "Kaufen.",
@@ -58,7 +58,7 @@ function worrany_talk(npc, ch)
     do_npc_close(npc, ch)
 end
 
-local timer = {}
+local t_timer = {}
 function worrany_update(npc)
     if timer[npc] then
         timer = timer + 1
