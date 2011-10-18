@@ -18,7 +18,8 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
-    create_npc("Worrany", 69, 22 * TILESIZE + 16, 27 * TILESIZE + 16, worrany_talk, worrany_update)
+    worrany = create_npc("Worrany", 69, 22 * TILESIZE + 16, 27 * TILESIZE + 16, worrany_talk, nil)
+    schedule_in(10, worrany_walkleft())
 end)
 
 function worrany_talk(npc, ch)
@@ -58,29 +59,12 @@ function worrany_talk(npc, ch)
     do_npc_close(npc, ch)
 end
 
-local walk_timer = {}
-function worrany_update(npc)
-    if walk_timer[npc] then
-        walk_timer[npc] = walk_timer[npc] + 1
-        local x = mana.posX(npc)
-        
-        if walk_timer[npc] % 100 == 0 then
-            if x == 22 * TILESIZE + 16 then
-                x = 18
-            elseif x == 18 * TILESIZE + 16 then
-                mana.effect_create(5, x * TILESIZE, 29 * TILESIZE)
-                x = 27
-            elseif x == 27 * TILESIZE + 16 then
-                mana.effect_create(5, x * TILESIZE, 29 * TILESIZE)
-                x = 22
-            else
-                x = nil
-            end
-            if not(x == nil) then 
-                mana.being_walk(npc, x * 32 + 16, 880, 2)
-            end
-        end
-    else
-        walk_timer[npc] = 1
-    end
+function worrany_walkleft()
+    mana.being_walk(npc, 18 * 32 + 16, 880, 2)
+    schedule_in(10, worrany_walkright())
+end
+
+function worrany_walkright()
+    mana.being_walk(npc,  27 * 32 + 16, 880, 2)
+    schedule_in(10, worrany_walkleft())
 end
