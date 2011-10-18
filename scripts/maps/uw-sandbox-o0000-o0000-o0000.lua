@@ -245,6 +245,7 @@ function poker_dealer_talk(npc, ch)
 end
 
 function scorpion_talk(npc, ch)
+    schedule_in(5, function() mana.being_say(npc, "BUH!") end)
     do_message(npc, ch, "Ich werde gewinnen!")
     do_npc_close(npc, ch)
 end
