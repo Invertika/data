@@ -105,7 +105,7 @@ end
 
 function wache_casino_talk(npc, ch)
     --TODO bessere Texte
-    do_message(npc, ch, mana.get_random_element("Ich bewache das Kasino.",
+    do_message(npc, ch, invertika.get_random_element("Ich bewache das Kasino.",
       "Glücksspiel kann süchtig machen.",
       "Ohne uns Wachen, würde die Stadt im Chaos versinken!"))
     do_npc_close(npc, ch)
@@ -120,7 +120,7 @@ function wache_talk(npc, ch)
         do_message(npc, ch, "Und deshalb lasse ich dich auch nicht in die Stadt, bevor du ihn mir wiedergebracht hast.")
         do_message(npc, ch, "Obwohl.. so wie DU aussiehst, wird das wohl eh nix..")
     else
-        do_message(npc, ch, mana.get_random_element("Wir bewachen die Tore der Stadt",
+        do_message(npc, ch, invertika.get_random_element("Wir bewachen die Tore der Stadt",
           "Gehe weiter. Du blockierst die Straße.",
           "Ohne uns Wachen, würde die Stadt im Chaos versinken!"))
     end
