@@ -18,7 +18,7 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
-    create_npc("Cedric", 39, 35 * TILESIZE + 16, 27 * TILESIZE + 16, nil, nil)
+    create_npc("Cedric", 39, 35 * TILESIZE + 16, 27 * TILESIZE + 16, cedric_talk, nil)
 end)
 
 cedric_talk(npc, ch)
