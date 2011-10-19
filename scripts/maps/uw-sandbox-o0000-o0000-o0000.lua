@@ -698,24 +698,3 @@ function healer_talk(npc, ch)
     
     do_npc_close(npc, ch)
 end
-
--- Silvester
-function fireworker_talk(npc, ch)
-  do_message(npc, ch, "Willst du ein wenig Feuerwerk sehen?")
-  local answer = do_choice(npc, ch, "Juhuu! Feuerwerk!", "Nee, danke.")
-  if answer == 1 then
-    local x = mana.posX(npc)
-    local y = mana.posY(npc)
-      for c = 0, 25 do
-        schedule_in (c, function()
-          mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
-          mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
-          mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
-          mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
-          mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
-          mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
-        end)
-      end
-  end
-  do_npc_close(npc, ch)
-end
