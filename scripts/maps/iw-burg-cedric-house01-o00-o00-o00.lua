@@ -19,10 +19,16 @@ require "scripts/libs/invertika"
 
 atinit(function()
     create_npc("Cedric", 39, 35 * TILESIZE + 16, 27 * TILESIZE + 16, cedric_talk, nil)
+    create_npc("Ormylt", 44, 61, 29, ormylt_talk, nil)
 end)
 
 function cedric_talk(npc, ch)
     do_message(npc, ch, invertika.get_random_element("Ich bin Graf Cedric.", 
       "Fühle dich, in meiner Burg, wie zu Hause."))
+    do_npc_close(npc, ch)
+end
+
+function ormylt_talk(npc, ch)
+    do_message(npc, ch, "Ich bin die Frau von Graf Cedric")
     do_npc_close(npc, ch)
 end
