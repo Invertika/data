@@ -193,7 +193,7 @@ end
 function schedule_every_day(hour, min, sec, funct)
     local d = os.date("*t")
     local t = os.time()
-    local p = os.time{year=d.year, month=d.month, day=month.day, hour=hour, min=min, sec=sec}
+    local p = os.time{year=d.year, month=d.month, day=d.day, hour=hour, min=min, sec=sec}
     if t > p then
         p = p + 3600 * 24
     end
