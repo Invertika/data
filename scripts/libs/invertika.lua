@@ -189,3 +189,16 @@ function npc_greet_random(npc)
         tg_timer[npc] = 1
     end
 end
+
+function schedule_every_day(hour, min, sec, funct)
+    local d = os.date("*t")
+    local t = os.time()
+    local p = os.time{year=d.year, month=d.month, day=month.day, hour=hour, min=min, sec=sec}
+    if t > p then
+        p = p + 3600 * 24
+    end
+    schedule_in(p - t, function()
+        funct()
+        schedule_every_day(hour, min, sec, funct)
+    end)
+end

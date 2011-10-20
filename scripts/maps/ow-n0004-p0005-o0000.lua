@@ -57,6 +57,9 @@ atinit(function()
     wache_unten_rechts = create_npc("Wache", 26, 104 * TILESIZE + 16, 174 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
     create_npc("Wache", 26, 100 * TILESIZE + 16, 140 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
     create_npc("Wache", 26, 104 * TILESIZE + 16, 140 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
+
+    -- Feuerwerk
+    invertika.schedule_every_day(18, 00, 00, firework_round)
 end)
 
 function diem_talk(npc, ch)
@@ -139,4 +142,25 @@ function wache_trigger(ch, id)
             end
         end
     end
+end
+
+function firework_round()
+    local c = 1
+    while c < 20 do
+        spawn_effect()
+        c = c + 1
+    end
+
+    local d = os.date("*t")
+    local start = os.time{year=d.year, month=d.month, day=d.day,
+                          hour=18, min=0, sec=0}
+    if os.difftime(os.time(), start) < 15 * 60 then
+        schedule_in(3, firework_round())
+    end
+end
+
+function spawn_effect()
+    mana.effect_create(math.random(0, 25),
+                       math.random(10 * TILESIZE, 190 * TILESIZE),
+                       math.random(10 * TILESIZE, 190 * TILESIZE))
 end
