@@ -117,7 +117,7 @@ end
 function wache_talk(npc, ch)
     if mana.chr_inv_count(ch, 40047) == 0 then
         do_message(npc, ch, "Ich habe meinen MacGuffin verloren!")
-        do_message(npc, ch, "Er ist bestimmt in der Höhle XY, ganz sicher!")
+        do_message(npc, ch, "Er ist bestimmt in der Bolero Höhle, ganz sicher!")
         do_message(npc, ch, "Woher ich das weiß?")
         do_message(npc, ch, "Das gehört sich für einen MacGuffin einfach so!")
         do_message(npc, ch, "Und deshalb lasse ich dich auch nicht in die Stadt, bevor du ihn mir wiedergebracht hast.")
