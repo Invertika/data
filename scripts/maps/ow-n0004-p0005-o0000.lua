@@ -39,7 +39,7 @@ atinit(function()
       "Sehen Sie! Dieses Schert ist unzerbrechlich! ZACK. Oh...",
       "Kommen Sie meine Herren. Diese Waffen sind die Besten."})
 
-    create_npc("Chris", 72, 90 * TILESIZE + 16, 104 * TILESIZE + 16, chris_talk, npclib.walkaround_wide)
+    create_npc("Chris", 72, 50 * TILESIZE + 16, 118 * TILESIZE + 16, chris_talk, npclib.walkaround_wide)
 
     --TODO change sprite id
     create_npc("Estjdan", 120, 60 * TILESIZE + 16, 160 * TILESIZE + 16, estjdan_talk, invertika.npc_greet_random)
@@ -58,8 +58,13 @@ atinit(function()
     create_npc("Wache", 26, 100 * TILESIZE + 16, 140 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
     create_npc("Wache", 26, 104 * TILESIZE + 16, 140 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
 
+    create_npc("Cedric", 39, 35 * TILESIZE + 16, 27 * TILESIZE + 16, cedric_talk, nil)
+    
     -- Feuerwerk
-    invertika.schedule_every_day(18, 00, 00, firework_round)
+    invertika.schedule_every_day(18, 00, 00, function() 
+      firework_round 
+      cedric_spech 
+      end)
 end)
 
 function diem_talk(npc, ch)
@@ -163,4 +168,23 @@ function spawn_effect()
     mana.effect_create(math.random(0, 25),
                        math.random(10 * TILESIZE, 190 * TILESIZE),
                        math.random(10 * TILESIZE, 190 * TILESIZE))
+end
+
+function cedric_talk(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Ich bin Graf Cedric.", 
+      "Fühle dich, in meiner Burg, wie zu Hause."))
+    do_npc_close(npc, ch)
+end
+
+function cedric_spech(npc)
+    mana.being_say(npc, "Heute haben wir uns versammelt, um den Wiederaufbau der Burg Cedric zu feiern.")
+    mana.being_say(npc, "Vor nicht allzu langer Zeit, wurde unser gemeinsames Heim von einer Flutwelle überschwemmt.")
+    mana.being_say(npc, "Wir mussten fliehen, um nicht zu ertrinken.")
+    mana.being_say(npc, "Wir lebten in der Zeit als Bettler, Schnorrer und Diebe.")
+    mana.being_say(npc, "Einige von uns sind gestorben oder wurden getötet.")
+    mana.being_say(npc, "Sie werden uns aber immer in Erinnerung bleiben.")
+    mana.being_say(npc, "Als wir hörten, dass sich das Wasser zurückzog, kamen wir hierhin zurück.")
+    mana.being_say(npc, "Wir sahen, dass nur noch die Mauern der Burg standen.")
+    mana.being_say(npc, "Aber durch unseren starken Gemeinschaftssinn, konnten wir die Burg noch prächtiger und schöner wiederaufbauen, als sie jemals war.")
+    mana.being_say(npc, "Ich danke euch, genießt das Feuerwerk.")
 end
