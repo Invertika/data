@@ -42,7 +42,7 @@ atinit(function()
     create_npc("Chris", 72, 50 * TILESIZE + 16, 118 * TILESIZE + 16, chris_talk, npclib.walkaround_wide)
 
     --TODO change sprite id
-    create_npc("Estjdan", 120, 60 * TILESIZE + 16, 160 * TILESIZE + 16, estjdan_talk, invertika.npc_greet_random)
+    create_npc("Estjdan", 120, 141 * TILESIZE + 16, 154 * TILESIZE + 16, estjdan_talk, invertika.npc_greet_random)
     
     create_npc("Palstwache", 26, 58 * TILESIZE + 16, 100 * TILESIZE + 16, nil, invertika.npc_greet_random)
     create_npc("Palstwache", 26, 61 * TILESIZE + 16, 100 * TILESIZE + 16, nil, invertika.npc_greet_random)
@@ -58,7 +58,7 @@ atinit(function()
     create_npc("Wache", 26, 100 * TILESIZE + 16, 140 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
     create_npc("Wache", 26, 104 * TILESIZE + 16, 140 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
 
-    create_npc("Cedric", 39, 35 * TILESIZE + 16, 27 * TILESIZE + 16, cedric_talk, nil)
+    create_npc("Cedric", 39, 81 * TILESIZE + 16, 97 * TILESIZE + 16, cedric_talk, nil)
     
     -- Cedric´s Rede
     invertika.schedule_every_day(17, 59, 00, cedric_spech)
