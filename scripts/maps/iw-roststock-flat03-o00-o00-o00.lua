@@ -48,8 +48,8 @@ function marle_talk(npc, ch)
             end
         else
             do_message(npc, ch, invertika.get_random_element(
-              "Ich sammele gerne Porzellan.",
-              "Willst du mal meine Porzellan Sammlung sehen?",
+              "Ich sammle gerne Porzellan.",
+              "Willst du mal meine Porzellansammlung sehen?",
               "Wenn du altes Porzellan findest, bringe es mir bitte. Du kriegst auch was dafür."))
         end
     else
