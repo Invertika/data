@@ -44,7 +44,7 @@ function botschafter_talk(npc, ch)
             do_message(npc, ch, "Oh, ein Brief. Warte einen Moment...")
             do_message(npc, ch, "Hier, nimm diese Antwort und bringe sie zu Averin.")
         else
-            do_message(npc, ch, "Ihr seid nicht zufällig der Bote von Averin? Ich erwarte einen wichtigen Brief von ihm!"
+            do_message(npc, ch, "Ihr seid nicht zufällig der Bote von Averin? Ich erwarte einen wichtigen Brief von ihm!")
         end
     elseif (invertika.get_quest_status(ch, "selphi_timlet_royal_pass") == 2) then
         do_message(npc, ch, invertika.get_random_element(
