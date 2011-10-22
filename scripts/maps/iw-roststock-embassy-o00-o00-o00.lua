@@ -5,7 +5,7 @@
 -- anderer Dinge.                                                               --
 --                                                                              --
 ----------------------------------------------------------------------------------
---  Copyright 2008-2010 The Invertika Development Team                               --
+--  Copyright 2008-2010 The Invertika Development Team                          --
 --                                                                              --
 --  This file is part of Invertika.                                             --
 --                                                                              --
@@ -44,11 +44,11 @@ function botschafter_talk(npc, ch)
             do_message(npc, ch, "Oh, ein Brief. Warte einen Moment...")
             do_message(npc, ch, "Hier, nimm diese Antwort und bringe sie zu Averin.")
         else
-            do_message(npc, ch, "Ihr seid nicht zufällig der Bote von Avarin? Ich erwarte einen wichtigen Brief von ihm!")
+            do_message(npc, ch, "Ihr seid nicht zufällig der Bote von Averin? Ich erwarte einen wichtigen Brief von ihm!"
         end
     elseif (invertika.get_quest_status(ch, "selphi_timlet_royal_pass") == 2) then
         do_message(npc, ch, invertika.get_random_element(
-          "Schnell, bring Avarin den Brief!",
+          "Schnell, bring Averin den Brief!",
           "Worauf wartest du noch?"))
     elseif (invertika.get_quest_status(ch, "selphi_timlet_royal_pass") >= 3) then
         do_message(npc, ch, invertika.get_random_element(
