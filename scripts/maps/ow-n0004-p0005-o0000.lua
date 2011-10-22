@@ -64,7 +64,7 @@ atinit(function()
     invertika.schedule_every_day(17, 59, 00, cedric_spech)
     
     -- Feuerwerk
-    invertika.schedule_every_day(18, 00, 00, firework_round)
+    invertika.schedule_every_day(18, 30, 00, firework_round)
 end)
 
 function diem_talk(npc, ch)
