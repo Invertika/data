@@ -73,7 +73,7 @@ function chodar_talk(npc, ch)
                 end
             end
         else
-            do_message(npc, ch, "Jetzt stehst du schon wieder da! Ich will mich nicht Unterhalten! Ich will mein Bier!")
+            do_message(npc, ch, "Jetzt stehst du schon wieder da! Ich will mich nicht unterhalten! Ich will mein Bier!")
         end
     elseif get_qstatus() == 2 then
         do_message(npc, ch, "Kannst du mir inzwischen einen zuverlässigen Burschen empfehlen, der Zugang zum Palast hat? Dieser komische Kauz Nepuret wollte mir nicht diesen Brief geben...")
