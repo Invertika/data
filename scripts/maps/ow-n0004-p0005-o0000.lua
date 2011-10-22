@@ -64,7 +64,7 @@ atinit(function()
     invertika.schedule_every_day(18, 45, 00, cedric_spech)
     
     -- Feuerwerk
-    invertika.schedule_every_day(18, 45, 00, firework_round)
+    invertika.schedule_every_day(19, 00, 00, firework_round)
 end)
 
 function diem_talk(npc, ch)
@@ -151,16 +151,16 @@ end
 
 function firework_round()
     local c = 1
-    while c < 20 do
+    while c < 100 do
         spawn_effect()
         c = c + 1
     end
 
     local d = os.date("*t")
     local start = os.time{year=d.year, month=d.month, day=d.day,
-                          hour=18, min=45, sec=0}
+                          hour=19, min=00, sec=0}
     if os.difftime(os.time(), start) < 15 * 60 then
-        schedule_in(3, firework_round)
+        schedule_in(1, firework_round)
     end
 end
 
