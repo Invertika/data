@@ -36,7 +36,7 @@ atinit(function()
     invertika.create_npc_talk_random(diem,
       {"Kauft Leute! Kauft!",
       "Beste Waren! Hergestellt in den königlichen Schmieden!",
-      "Sehen Sie! Dieses Schert ist unzerbrechlich! ZACK. Oh...",
+      "Sehen Sie! Dieses Schwert ist unzerbrechlich! ZACK. Oh...",
       "Kommen Sie meine Herren. Diese Waffen sind die Besten."})
 
     create_npc("Chris", 72, 50 * TILESIZE + 16, 118 * TILESIZE + 16, chris_talk, npclib.walkaround_wide)
@@ -44,8 +44,8 @@ atinit(function()
     --TODO change sprite id
     create_npc("Estjdan", 120, 141 * TILESIZE + 16, 154 * TILESIZE + 16, estjdan_talk, invertika.npc_greet_random)
     
-    create_npc("Palstwache", 26, 58 * TILESIZE + 16, 100 * TILESIZE + 16, nil, invertika.npc_greet_random)
-    create_npc("Palstwache", 26, 61 * TILESIZE + 16, 100 * TILESIZE + 16, nil, invertika.npc_greet_random)
+    create_npc("Palastwache", 26, 58 * TILESIZE + 16, 100 * TILESIZE + 16, nil, invertika.npc_greet_random)
+    create_npc("Palastwache", 26, 61 * TILESIZE + 16, 100 * TILESIZE + 16, nil, invertika.npc_greet_random)
     
     --TODO change sprite id
     create_npc("Wache", 26, 150 * TILESIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
