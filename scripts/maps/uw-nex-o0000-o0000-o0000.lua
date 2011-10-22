@@ -199,7 +199,7 @@ function monty_talk(npc, ch)
        "Dich hab ich aber jetzt nicht erwartet. Ich dachte der Postbote ist schneller.",
        "Wer sich in Gefahr begibt, kommt darin um.",
        "Mmmm Totensteuer... Gute Idee.",
-       "Lass mich raten. Du suchts ein Zimmer.",
+       "Lass mich raten. Du suchst ein Zimmer.",
        "Du erinnerst mich an Joe aus dem Film das Milchtütenmassaker.",
        "Messer, Gabel, Licht sind für kleine Kinder nicht.",
        "Lange nicht gesehen.",
