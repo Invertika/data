@@ -45,7 +45,7 @@ function veritas_talk(npc, ch)
                               "Es gibt keinen Gott!",
                               "Genieße dein Leben, denn nach dem Tod ist es vorbei!",
                               "Nach dem Tod kommt nur noch Dunkelheit!",
-                              "Alles ist verglich!",
+                              "Alles ist vergänglich!",
                               "Jeder vergangene Moment könnte der letzte sein!",
                               "Der Tod ist nur einen Fingerzeig entfernt!",
                               "Moral ist nichts weiter als das Klammern an ein universelles Prinzip!",
