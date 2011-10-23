@@ -68,7 +68,7 @@ atinit(function()
 end)
 
 function diem_talk(npc, ch)
-    npc.trade(npc, ch, false, {
+    mana.npc_trade(npc, ch, false, {
       {10001, 30, 50},
       {10013, 30, 140},
       {10002, 30, 1000},
