@@ -58,7 +58,7 @@ atinit(function()
     create_npc("Wache", 26, 100 * TILESIZE + 16, 140 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
     create_npc("Wache", 26, 104 * TILESIZE + 16, 140 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
 
-    create_npc("Cedric", 39, 81 * TILESIZE + 16, 97 * TILESIZE + 16, cedric_talk, nil)
+    cedric = create_npc("Cedric", 39, 81 * TILESIZE + 16, 97 * TILESIZE + 16, cedric_talk, nil)
     
     -- Cedric´s Rede
     invertika.schedule_every_day(18, 45, 00, cedric_spech)
@@ -176,15 +176,15 @@ function cedric_talk(npc, ch)
     do_npc_close(npc, ch)
 end
 
-function cedric_spech(npc)
-    mana.being_say(npc, "Heute haben wir uns versammelt, um den Wiederaufbau der Burg Cedric zu feiern.")
-    mana.being_say(npc, "Vor nicht allzu langer Zeit, wurde unser gemeinsames Heim von einer Flutwelle überschwemmt.")
-    mana.being_say(npc, "Wir mussten fliehen, um nicht zu ertrinken.")
-    mana.being_say(npc, "Wir lebten in der Zeit als Bettler, Schnorrer und Diebe.")
-    mana.being_say(npc, "Einige von uns sind gestorben oder wurden getötet.")
-    mana.being_say(npc, "Sie werden uns aber immer in Erinnerung bleiben.")
-    mana.being_say(npc, "Als wir hörten, dass sich das Wasser zurückzog, kamen wir hierhin zurück.")
-    mana.being_say(npc, "Wir sahen, dass nur noch die Mauern der Burg standen.")
-    mana.being_say(npc, "Aber durch unseren starken Gemeinschaftssinn, konnten wir die Burg noch prächtiger und schöner wiederaufbauen, als sie jemals war.")
-    mana.being_say(npc, "Ich danke euch, genießt das Feuerwerk.")
+function cedric_spech()
+    mana.being_say(cedric, "Heute haben wir uns versammelt, um den Wiederaufbau der Burg Cedric zu feiern.")
+    mana.being_say(cedric, "Vor nicht allzu langer Zeit, wurde unser gemeinsames Heim von einer Flutwelle überschwemmt.")
+    mana.being_say(cedric, "Wir mussten fliehen, um nicht zu ertrinken.")
+    mana.being_say(cedric, "Wir lebten in der Zeit als Bettler, Schnorrer und Diebe.")
+    mana.being_say(cedric, "Einige von uns sind gestorben oder wurden getötet.")
+    mana.being_say(cedric, "Sie werden uns aber immer in Erinnerung bleiben.")
+    mana.being_say(cedric, "Als wir hörten, dass sich das Wasser zurückzog, kamen wir hierhin zurück.")
+    mana.being_say(cedric, "Wir sahen, dass nur noch die Mauern der Burg standen.")
+    mana.being_say(cedric, "Aber durch unseren starken Gemeinschaftssinn, konnten wir die Burg noch prächtiger und schöner wiederaufbauen, als sie jemals war.")
+    mana.being_say(cedric, "Ich danke euch, genießt das Feuerwerk.")
 end
