@@ -31,28 +31,24 @@ atinit(function()
     
     mana.trigger_create(101 * TILESIZE, 170 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "wache_trigger", 1, true)
     
-    --TODO change sprite id
-    diem = create_npc("Diem", 120, 60 * TILESIZE + 16, 160 * TILESIZE + 16, diem_talk, diem_update)
+    diem = create_npc("Diem", 139, 60 * TILESIZE + 16, 160 * TILESIZE + 16, diem_talk, diem_update)
     invertika.create_npc_talk_random(diem,
       {"Kauft Leute! Kauft!",
       "Beste Waren! Hergestellt in den königlichen Schmieden!",
       "Sehen Sie! Dieses Schwert ist unzerbrechlich! ZACK. Oh...",
       "Kommen Sie meine Herren. Diese Waffen sind die Besten."})
 
-    create_npc("Chris", 72, 50 * TILESIZE + 16, 118 * TILESIZE + 16, chris_talk, npclib.walkaround_wide)
+    create_npc("Chris", 141, 50 * TILESIZE + 16, 118 * TILESIZE + 16, chris_talk, npclib.walkaround_wide)
 
-    --TODO change sprite id
-    create_npc("Estjdan", 120, 141 * TILESIZE + 16, 154 * TILESIZE + 16, estjdan_talk, invertika.npc_greet_random)
+    create_npc("Estjdan", 120, 141 * TILESIZE + 16, 154 * TILESIZE + 16, estjdan_talk, nil)
     
-    create_npc("Palastwache", 26, 58 * TILESIZE + 16, 100 * TILESIZE + 16, nil, invertika.npc_greet_random)
-    create_npc("Palastwache", 26, 61 * TILESIZE + 16, 100 * TILESIZE + 16, nil, invertika.npc_greet_random)
+    create_npc("Palastwache", 26, 58 * TILESIZE + 16, 100 * TILESIZE + 16, nil, nil)
+    create_npc("Palastwache", 26, 61 * TILESIZE + 16, 100 * TILESIZE + 16, nil, nil)
     
-    --TODO change sprite id
     create_npc("Wache", 26, 150 * TILESIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
     create_npc("Wache", 26, 153 * TILESIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
     create_npc("Wache", 26, 52 * TILESIZE + 16, 149 * TILESIZE + 16, wache_casino_talk, nil)
     
-    --TODO change sprite id
     wache_unten_links = create_npc("Wache", 26, 100 * TILESIZE + 16, 174 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
     wache_unten_rechts = create_npc("Wache", 26, 104 * TILESIZE + 16, 174 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
     create_npc("Wache", 26, 100 * TILESIZE + 16, 140 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
