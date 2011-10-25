@@ -20,7 +20,6 @@ require "scripts/libs/banker"
 
 atinit(function()
  create_npc("Botschafter", 66, 51 * TILESIZE + 16, 31 * TILESIZE + 16, botschafter_talk, nil)
- create_npc("Banker", 11, 24 * TILESIZE + 16, 28 * TILESIZE + 16, banker.banker_talk, nil)
 end)
 
 function botschafter_talk(npc, ch)
