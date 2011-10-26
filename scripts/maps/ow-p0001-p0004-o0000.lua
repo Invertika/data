@@ -45,12 +45,7 @@ function wache_trigger(ch, id)
         if mana.chr_inv_count(ch, 40049) == 0 then
             local x = mana.posX(ch)
             local y = mana.posY(ch)
-            if y < 179 * TILESIZE + 16 then
-                y = 179 * TILESIZE + 16
-            else if x < 138 * TILESIZE + 16 then
-                x = 138 * TILESIZE + 16
-            else
-                
+      
             if id == 1 then
                 y = 179 * TILESIZE + 16
             elseif id == 2 then
