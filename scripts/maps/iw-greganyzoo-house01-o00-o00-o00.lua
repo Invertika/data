@@ -31,7 +31,7 @@ function geban_talk(npc, ch)
           "Nichts. Danke.")
                          
         if v == 1 then
-            mana.npc_trade(npc, ch, false,
+            mana.npc_trade(npc, ch, false, {
               {10001, 10, 1500}
               })
             break
