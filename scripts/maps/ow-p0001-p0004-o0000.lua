@@ -21,8 +21,8 @@ dofile("data/scripts/libs/warp.lua")
 
 atinit(function()
  create_inter_map_warp_trigger(77, 87, 75, 65) --- Intermap warp
- nethek.create_netheksaeule(187 * TILESIZE, 173 * TILESIZE + 16) ---Netheksäule
- sign.create_sign(106, 182, "Im Huas können Tickets für den Zoo Rundgang gekauft werden.")
+ nethek.create_netheksaeule(187 * TILESIZE, 173 * TILESIZE + 16) ---NetheksÃ¤ule
+ sign.create_sign(153, 178, "Im Haus kÃ¶nnen Tickets fÃ¼r den Zoo Rundgang gekauft werden.")
  
  mana.trigger_create(138 * TILESIZE, 176 * TILESIZE, 9 * TILESIZE, 3 * TILESIZE, "wache_trigger", 1, true)
  mana.trigger_create(135 * TILESIZE, 186 * TILESIZE, 3 * TILESIZE, 4 * TILESIZE, "wache_trigger", 2, true)
@@ -42,13 +42,13 @@ function wache_talk(npc, ch)
     if mana.chr_inv_count(ch, 40049) > 0 then
         do_message(npc, ch, "Um denn Zoo zu betreten, brauchst du eine Eintrittskarte.")
 	else
-	    do_message(npc, ch, "Viel Spaß.")
+	    do_message(npc, ch, "Viel SpaÃŸ.")
     end
     do_npc_close(npc, ch)
 end
 
 function wache_ausgang_talk(npc, ch)
-    do_message(npc, ch, "Dies ist der Augang. Bitte benutze den Eingang im Süden.")
+    do_message(npc, ch, "Dies ist der Augang. Bitte benutze den Eingang im Osten.")
     do_npc_close(npc, ch)
 end
 
@@ -67,6 +67,8 @@ function wache_trigger(ch, id)
             end
             mana.chr_warp(ch, nil, x, y)
             mana.being_say(wache_oben, "Nur mit Ticket darfst du in den Zoo")
+        elseif mana.chr_inv_count(ch, 40049) < 0 then
+           mana.being_say(wache_oben, "Viel SpaÃŸ")
         end
     end
 end
