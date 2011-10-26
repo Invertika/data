@@ -27,6 +27,7 @@ atinit(function()
  mana.trigger_create(138 * TILESIZE, 176 * TILESIZE, 9 * TILESIZE, 3 * TILESIZE, "wache_trigger", 1, true)
  mana.trigger_create(135 * TILESIZE, 186 * TILESIZE, 3 * TILESIZE, 4 * TILESIZE, "wache_trigger", 2, true)
  mana.trigger_create(168 * TILESIZE, 179 * TILESIZE, 3 * TILESIZE, 11 * TILESIZE, "wache_trigger", 3, true)
+ mana.trigger_create(138 * TILESIZE, 190 * TILESIZE, 13 * TILESIZE, 2 * TILESIZE, "ticket_trigger", 3, true)
  
  wache_oben = create_npc("Wache", 26, 140 * TILESIZE + 16, 180 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
  create_npc("Wache", 26, 138 * TILESIZE + 16, 186 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
@@ -57,6 +58,14 @@ function wache_trigger(ch, id)
             end
             mana.chr_warp(ch, nil, x, y)
             mana.being_say(wache_oben, "Nur mit Ticket darfst du in den Zoo")
+        end
+    end
+end
+
+function ticket_trigger(ch, id)
+    if mana.being_type(ch) ~= TYPE_MONSTER then
+        if mana.chr_inv_count(ch, 40049) > 0 then
+            mana.chr_inv_change(ch, 40049, 1)
         end
     end
 end
