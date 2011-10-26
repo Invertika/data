@@ -27,11 +27,15 @@ atinit(function()
  mana.trigger_create(138 * TILESIZE, 176 * TILESIZE, 9 * TILESIZE, 3 * TILESIZE, "wache_trigger", 1, true)
  mana.trigger_create(135 * TILESIZE, 186 * TILESIZE, 3 * TILESIZE, 4 * TILESIZE, "wache_trigger", 2, true)
  mana.trigger_create(168 * TILESIZE, 179 * TILESIZE, 3 * TILESIZE, 11 * TILESIZE, "wache_trigger", 3, true)
- mana.trigger_create(138 * TILESIZE, 190 * TILESIZE, 13 * TILESIZE, 2 * TILESIZE, "ticket_trigger", 3, true)
+ mana.trigger_create(138 * TILESIZE, 190 * TILESIZE, 13 * TILESIZE, 2 * TILESIZE, "eingang_trigger", 1, true)
+ mana.trigger_create(71 * TILESIZE, 189 * TILESIZE, 14 * TILESIZE, 2 * TILESIZE, "ausgang_trigger", 1, true)
+ mana.trigger_create(71 * TILESIZE, 191 * TILESIZE, 14 * TILESIZE, 2 * TILESIZE, "ausgang_trigger", 2, true)
+
  
- wache_oben = create_npc("Wache", 26, 140 * TILESIZE + 16, 180 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
- create_npc("Wache", 26, 138 * TILESIZE + 16, 186 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
- create_npc("Wache", 26, 167 * TILESIZE + 16, 183 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
+ wache_oben = create_npc("Wache", 26, 140 * TILESIZE + 16, 180 * TILESIZE + 16, wache_talk, nil)
+ create_npc("Wache", 26, 138 * TILESIZE + 16, 186 * TILESIZE + 16, wache_talk, nil)
+ create_npc("Wache", 26, 167 * TILESIZE + 16, 183 * TILESIZE + 16, wache_talk, nil)
+ wache_ausgang = create_npc("Wache", 26, 71 * TILESIZE + 16, 192 * TILESIZE + 16, wache_ausgang_talk, nil)
 end)
 
 function wache_talk(npc, ch)
@@ -40,6 +44,11 @@ function wache_talk(npc, ch)
 	else
 	    do_message(npc, ch, "Viel Spaß.")
     end
+    do_npc_close(npc, ch)
+end
+
+function wache_ausgang_talk(npc, ch)
+    do_message(npc, ch, "Dies ist der Augang. Bitte benutze den Eingang im Süden.")
     do_npc_close(npc, ch)
 end
 
@@ -62,10 +71,24 @@ function wache_trigger(ch, id)
     end
 end
 
-function ticket_trigger(ch, id)
+function ausgang_trigger(ch, id)
+    if mana.being_type(ch) ~= TYPE_MONSTER then
+        if id == 1 then
+            if mana.chr_inv_count(ch, 40049) > 0 then
+                mana.chr_inv_change(ch, 40049, -1)
+            end
+        elseif id == 2 then
+            mana.chr_warp(ch, nil, mana.PosX(ch), 192 * TILESIZE + 16)
+            mana.being_say(wache_ausgang, "Bitte benutze den Eingang im Osten")
+        end
+    end
+end
+
+function eingang_trigger(ch, id)
     if mana.being_type(ch) ~= TYPE_MONSTER then
         if mana.chr_inv_count(ch, 40049) > 0 then
-            mana.chr_inv_change(ch, 40049, -1)
+            mana.being_say(wache_oben, "Bitte benutze den Ausgang im Westen.")
+            mana.chr_warp(ch, nil, mana.PosX(ch), 189 * TILESIZE + 16)
         end
     end
 end
