@@ -16,11 +16,13 @@
 
 require "scripts/lua/npclib"
 require "scripts/libs/nethek"
+require "scripts/libs/sign"
 dofile("data/scripts/libs/warp.lua")
 
 atinit(function()
  create_inter_map_warp_trigger(77, 87, 75, 65) --- Intermap warp
  nethek.create_netheksaeule(187 * TILESIZE, 173 * TILESIZE + 16) ---Netheksäule
+ sign.create_sign(106, 182, "Im Huas können Tickets für den Zoo Rundgang gekauft werden.")
  
  mana.trigger_create(138 * TILESIZE, 176 * TILESIZE, 9 * TILESIZE, 3 * TILESIZE, "wache_trigger", 1, true)
  mana.trigger_create(135 * TILESIZE, 186 * TILESIZE, 3 * TILESIZE, 4 * TILESIZE, "wache_trigger", 2, true)
