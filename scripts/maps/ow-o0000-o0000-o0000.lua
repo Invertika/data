@@ -943,7 +943,7 @@ function warp_escape_tunnel(obj, arg)
     end
 end
 
-function waypoint_archway_1(obj, arg)
+function waypoint_archway_1(ch, arg)
 if (mana.get_quest_var(obj, "selphi_timlet_archway_quest")==nil) then
         --- Questvar initialisieren, falls noch nicht geschehen
         mana.being_say(obj, "Ich habe den Wegpunkt passiert")
@@ -961,14 +961,14 @@ end
             local rounds = (archway_quest+1)/2
             -- eigentlich sollte hier eine 17 stehen, sind nur zu testzwecken lediglich 2 runden
             if(rounds % 2 == 0) then
-                mana.chatmessage(obj, "Vor lauter Langeweile wegen dem ganzen Torbögen-Durchlaufen, findest du ein paar Aki auf der Erde, die du zuvor wahrscheinlich übersehen hast!")
+                mana.chat_message(obj, "Vor lauter Langeweile wegen dem ganzen Torbögen-Durchlaufen, findest du ein paar Aki auf der Erde, die du zuvor wahrscheinlich übersehen hast!")
                 invertika.add_money(obj, math.random(1, 500)) --- Wenn man davon ausgeht, dass man in 17 Runden wahrscheinlich etwa 50 Maden mit HDW von über 5 = 250 Aki minimum verdienen kann, sind 250 Aki Durchschnittsgewinn beim Durchlaufen der Torbögen OK
             end
         end
     end
 end
 
-function waypoint_archway_2(obj, arg)
+function waypoint_archway_2(oby, arg)
 if (mana.get_quest_var(obj, "selphi_timlet_archway_quest")==nil) then
         --- Questvar initialisieren, falls noch nicht geschehen
         mana.being_say(obj, "Ich habe den Wegpunkt passiert")
@@ -986,7 +986,7 @@ end
             local rounds = (archway_quest+1)/2
             -- eigentlich sollte hier eine 17 stehen, sind nur zu testzwecken lediglich 2 runden
             if(rounds % 2 == 0) then
-                mana.chatmessage(obj, "Vor lauter Langeweile wegen dem ganzen Torbögen-Durchlaufen, findest du ein paar Aki auf der Erde, die du zuvor wahrscheinlich übersehen hast!")
+                mana.chat_message(obj, "Vor lauter Langeweile wegen dem ganzen Torbögen-Durchlaufen, findest du ein paar Aki auf der Erde, die du zuvor wahrscheinlich übersehen hast!")
                 invertika.add_money(obj, math.random(1, 500)) --- Wenn man davon ausgeht, dass man in 17 Runden wahrscheinlich etwa 50 Maden mit HDW von über 5 = 250 Aki minimum verdienen kann, sind 250 Aki Durchschnittsgewinn beim Durchlaufen der Torbögen OK
             end
         end
