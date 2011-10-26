@@ -51,7 +51,7 @@ function wache_trigger(ch, id)
             elseif id == 2 then
                 x = 138 * TILESIZE + 16
             elseif id == 3 then
-                x = 138 * TILESIZE + 16
+                x = 165 * TILESIZE + 16
             end
             mana.chr_warp(ch, nil, x, y)
             mana.being_say(wache_oben, "Nur mit Ticket darfst du in den Zoo")
