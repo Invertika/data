@@ -950,7 +950,7 @@ function waypoint_archway_1(obj, arg)
         local archway_quest = mana.chr_get_quest(obj, "selphi_timlet_archway_quest")
         if(not archway_quest) then return false end -- Abbrechen, falls Questvar noch nicht gecached
         mana.being_say(obj, "Ich habe den Wegpunkt passiert")
-        mana.being_say(obj, archway_quest)
+        mana.being_say(obj, tonumber(archway_quest))
         if(archway_quest % 2 == 1) then
             --- halbe Umdrehung wird dazugezählt
             invertika.set_quest_status(obj, "selphi_timlet_archway_quest", archway_quest + 1)
@@ -970,7 +970,7 @@ function waypoint_archway_2(obj, arg)
         local archway_quest = mana.chr_get_quest(obj, "selphi_timlet_archway_quest")
         if(not archway_quest) then return false end -- Abbrechen, falls Questvar noch nicht gecached
         mana.being_say(obj, "Ich habe den Wegpunkt passiert")
-        mana.being_say(obj, archway_quest)
+        mana.being_say(obj, tonumber(archway_quest))
         if(archway_quest % 2 == 0) then
             --- halbe Umdrehung wird dazugezählt
             invertika.set_quest_status(obj, "selphi_timlet_archway_quest", archway_quest + 1)
