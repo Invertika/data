@@ -20,8 +20,8 @@ atinit(function()
  create_inter_map_warp_trigger(62, 72, 56, 6) --- Intermap warp
  nethek.create_netheksaeule(181 * TILESIZE, 125 * TILESIZE + 16) --- Netheksäule
  mana.trigger_create(41 * TILESIZE + 8, 105 * TILESIZE + 8, 1.5 * TILESIZE, 1.5 * TILESIZE, "warp_escape_tunnel", 0, true) --- Warp zum Fluchttunnel
- --mana.trigger_create(113 * TILESIZE, 141 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "waypoint_archway", 0, true) --- Rundenzähler Torbögen (Waypoint 1)
- --mana.trigger_create(112 * TILESIZE, 180 * TILESIZE, 5 * TILESIZE, 4 * TILESIZE, "waypoint_archway", 0, true) --- Rundenzähler Torbögen (Waypoint 2)
+ mana.trigger_create(113 * TILESIZE, 141 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "waypoint_archway_1", 0, true) --- Rundenzähler Torbögen (Waypoint 1)
+ mana.trigger_create(112 * TILESIZE, 180 * TILESIZE, 5 * TILESIZE, 4 * TILESIZE, "waypoint_archway_2", 0, true) --- Rundenzähler Torbögen (Waypoint 2)
  
  --Schilder
  sign.create_sign(113, 84, "Frisörsalon Umet\
@@ -668,6 +668,8 @@ function elmes_talk(npc, ch)
       "Man erzählt sich von einem Schatz in der Wüste, verborgen in einer Höhle welche tief unter die Erde führt. Oder war die Höhle in der grünen Ebene? Ich weiß es nicht mehr genau.",
       "Das letze mal als es regnete versank ich im Sand. Ich konnte mich erst nach 4 Stunden befreien.",
       "Sei vorsichtig wenn du dich durch die große Wüste begibst."))
+      -- Hinweis auf Torbögen => Quest freischalten
+      invertika.init_quest_status(ch, "selphi_timlet_archway_quest")
       do_npc_close(npc, ch)
 end
 
@@ -943,18 +945,35 @@ function warp_escape_tunnel(obj, arg)
     end
 end
 
-function waypoint_archway(ch, id)
-    --- Questvar initialisieren, falls noch nicht geschehen
-    invertika.init_quest_status(ch, "selphi_timlet_archway_quest")
-    
-    if mana.being_type(ch) == TYPE_CHARACTER then
-        local archway_quest = invertika.get_quest_status(ch, "selphi_timlet_archway_quest")
-        --- halbe Umdrehung wird dazugezählt
-        invertika.set_quest_status(ch, "selphi_timlet_archway_quest", archway_quest + 1)
-        local rounds = (archway_quest + 1) / 2
-        if rounds % 2 == 0 then -- Hier müsste eigentlich 17 stehen, wurde aber aufgrund von Testzwecken geändert
-            mana.chat_message(ch, "Vor lauter Langeweile wegen dem ganzen Torbögen-Durchlaufen, findest du ein paar Aki auf der Erde, die du zuvor wahrscheinlich übersehen hast!")
-            invertika.add_money(ch, math.random(1, 500)) --- Wenn man davon ausgeht, dass man in 17 Runden wahrscheinlich etwa 50 Maden mit HDW von über 5 = 250 Aki minimum verdienen kann, sind 250 Aki Durchschnittsgewinn beim Durchlaufen der Torbögen OK
+function waypoint_archway_1(obj, arg)
+    if(mana.being_type(obj)==TYPE_CHARACTER) then
+        local archway_quest = mana.chr_get_quest(obj, "selphi_timlet_archway_quest")
+        if(!archway_quest) return false -- Abbrechen, falls Questvar noch nicht gecached
+        mana.being_say(obj, "Ich habe den Wegpunkt passiert")
+        mana.being_say(obj, archway_quest)
+        if(archway_quest % 2 == 1) then
+            --- halbe Umdrehung wird dazugezählt
+            invertika.set_quest_status(obj, "selphi_timlet_archway_quest", archway_quest + 1)
+            local rounds = (archway_quest+1)/2
+            -- eigentlich sollte hier eine 17 stehen, sind nur zu testzwecken lediglich 2 runden
+            if(rounds % 2 == 0) then
+                mana.being_say(obj, "Jetzt bin ich reich!!! (debug)")
+                mana.chatmessage(obj, "Vor lauter Langeweile wegen dem ganzen Torbögen-Durchlaufen, findest du ein paar Aki auf der Erde, die du zuvor wahrscheinlich übersehen hast!")
+                invertika.add_money(obj, math.random(1, 500)) --- Wenn man davon ausgeht, dass man in 17 Runden wahrscheinlich etwa 50 Maden mit HDW von über 5 = 250 Aki minimum verdienen kann, sind 250 Aki Durchschnittsgewinn beim Durchlaufen der Torbögen OK
+            end
+        end
+    end
+end
+
+function waypoint_archway_2(obj, arg)
+    if(mana.being_type(obj)==TYPE_CHARACTER) then
+        local archway_quest = mana.chr_get_quest(obj, "selphi_timlet_archway_quest")
+        if(!archway_quest) return false -- Abbrechen, falls Questvar noch nicht gecached
+        mana.being_say(obj, "Ich habe den Wegpunkt passiert")
+        mana.being_say(obj, archway_quest)
+        if(archway_quest % 2 == 0) then
+            --- halbe Umdrehung wird dazugezählt
+            invertika.set_quest_status(obj, "selphi_timlet_archway_quest", archway_quest + 1)
         end
     end
 end
