@@ -948,7 +948,7 @@ end
 function waypoint_archway_1(obj, arg)
     if(mana.being_type(obj)==TYPE_CHARACTER) then
         local archway_quest = mana.chr_get_quest(obj, "selphi_timlet_archway_quest")
-        if(!archway_quest) return false -- Abbrechen, falls Questvar noch nicht gecached
+        if(not archway_quest) return false -- Abbrechen, falls Questvar noch nicht gecached
         mana.being_say(obj, "Ich habe den Wegpunkt passiert")
         mana.being_say(obj, archway_quest)
         if(archway_quest % 2 == 1) then
@@ -968,7 +968,7 @@ end
 function waypoint_archway_2(obj, arg)
     if(mana.being_type(obj)==TYPE_CHARACTER) then
         local archway_quest = mana.chr_get_quest(obj, "selphi_timlet_archway_quest")
-        if(!archway_quest) return false -- Abbrechen, falls Questvar noch nicht gecached
+        if(not archway_quest) return false -- Abbrechen, falls Questvar noch nicht gecached
         mana.being_say(obj, "Ich habe den Wegpunkt passiert")
         mana.being_say(obj, archway_quest)
         if(archway_quest % 2 == 0) then
