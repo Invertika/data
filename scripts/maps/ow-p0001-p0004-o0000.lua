@@ -65,7 +65,7 @@ end
 function ticket_trigger(ch, id)
     if mana.being_type(ch) ~= TYPE_MONSTER then
         if mana.chr_inv_count(ch, 40049) > 0 then
-            mana.chr_inv_change(ch, 40049, 1)
+            mana.chr_inv_change(ch, 40049, -1)
         end
     end
 end
