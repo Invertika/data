@@ -32,7 +32,7 @@ function geban_talk(npc, ch)
                          
         if v == 1 then
             mana.npc_trade(npc, ch, false, {
-              {10001, 10, 1500}
+              {40049, 10, 1500}
               })
             break
         elseif v == 2 then
