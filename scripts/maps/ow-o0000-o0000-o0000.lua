@@ -976,13 +976,19 @@ if (mana.get_quest_var(obj, "selphi_timlet_archway_quest")==nil) then
 end
     if mana.being_type(obj)==TYPE_CHARACTER then
         --- Questvar initialisieren, falls noch nicht geschehen
-        mana.being_say(obj, "Ich habe den Wegpunkt passiert")
-        invertika.init_quest_status(obj, "selphi_timlet_archway_quest")
+        --mana.being_say(obj, "Ich habe den Wegpunkt passiert")
+        --invertika.init_quest_status(obj, "selphi_timlet_archway_quest")
         local archway_quest = invertika.get_quest_status(obj, "selphi_timlet_archway_quest")
         mana.being_say(obj, archway_quest)
         if(archway_quest % 2 == 0) then
             --- halbe Umdrehung wird dazugezählt
             invertika.set_quest_status(obj, "selphi_timlet_archway_quest", archway_quest + 1)
+            local rounds = (archway_quest+1)/2
+            -- eigentlich sollte hier eine 17 stehen, sind nur zu testzwecken lediglich 2 runden
+            if(rounds % 2 == 0) then
+                mana.chatmessage(obj, "Vor lauter Langeweile wegen dem ganzen Torbögen-Durchlaufen, findest du ein paar Aki auf der Erde, die du zuvor wahrscheinlich übersehen hast!")
+                invertika.add_money(obj, math.random(1, 500)) --- Wenn man davon ausgeht, dass man in 17 Runden wahrscheinlich etwa 50 Maden mit HDW von über 5 = 250 Aki minimum verdienen kann, sind 250 Aki Durchschnittsgewinn beim Durchlaufen der Torbögen OK
+            end
         end
     end
 end
