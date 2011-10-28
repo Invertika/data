@@ -57,7 +57,7 @@ atinit(function()
     cedric = create_npc("Cedric", 39, 81 * TILESIZE + 16, 97 * TILESIZE + 16, cedric_talk, nil)
     
     -- Cedric´s Rede
-    invertika.schedule_every_day(18, 454545454545454545454545454545454545454545454545454545454545454545454545454545454545454545, 00, cedric_speech)
+    invertika.schedule_every_day(18, 55, 00, cedric_speech)
     
     -- Feuerwerk
     invertika.schedule_every_day(18, 00, 00, firework_round)
