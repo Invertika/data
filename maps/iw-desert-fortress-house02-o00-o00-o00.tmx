@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="30" height="40" tilewidth="32" tileheight="32">
+<map version="1.0" orientation="orthogonal" width="90" height="50" tilewidth="32" tileheight="32">
  <properties>
   <property name="music" value="inside2.ogg"/>
  </properties>
@@ -21,47 +21,66 @@
  <tileset firstgid="3905" name="desert3_32_32" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/desert3_32_32.png" width="1024" height="1024"/>
  </tileset>
- <layer name="Ground" width="30" height="40">
+ <layer name="Ground" width="90" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3Sqw0AIAwA0Ro0rISA/beAMbCE8DOtgCN5puaSluJECgAAwOdiONPo3jyNbvYiaaKfa3R3PcvuzEvdvNix1X1X/0urO6oGDQCArQYX3H0ewBIAAA==
+   H4sIAAAAAAAAC+3UsQ2AIBRF0V9A4wDOovuxK2sYY2dHIoHgKU75mlu8miMqAAAAAAAAwMu+tSn5MePmNrqnzjrrrPNXymJG99TZb/zhN3TWeaXOrY4UcaY5NwAAAAAAAAC9XFTwFeJQRgAA
   </data>
  </layer>
- <layer name="Ground" width="30" height="40">
+ <layer name="Ground" width="90" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3BMQEAAADCoPVPbQ0PoAAAAADg1wAW4j6/wBIAAA==
+   H4sIAAAAAAAAC+3OMQrAIBBE0Q0suYe5id7/ULGwEuxSaHgPfjXNRAAAAAAAAPCVKyNydOd6O6H5/05K//aMSq63E5r/76T2b21Uc72d0PwfAAAAAAAAAAAA4K9ewesFtFBGAAA=
   </data>
  </layer>
- <layer name="Ground" width="30" height="40">
+ <layer name="Ground" width="90" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3BMQEAAADCoPVPbQ0PoAAAAADg1wAW4j6/wBIAAA==
+   H4sIAAAAAAAAC+3WXWrCQBSG4QETtEbqvQuoLS6h3vdHV+AG7N8mSqHuxAvrJrTQfSS5q5vwExOIoZNqIMq07wMfUSaTOefoRYwBAAAAAAAAAABAVeqeMQ3lzDt1JX/TdTLXrq6XylXyvZ+bd9D8eX+n4He50J6uZZ9Nc4/7Rw7/F25U+61yZ+mhd+C8ipzrjHZyTq1ljKf4rd17Yn+b9HPWu8NzHqv2B+XRgR6mqnHiQJ15ac35q8291geZDI/c85eDc7bNuKiPJ609Z/JSQc+hnhlZEjs4ZwAo41vvTStlpnwoc//3PWW9BsYslKXyqbwF1Z31n23mHCqREjNnAAAAAAAAAAAAAICsAeDMBQJQRgAA
   </data>
  </layer>
- <layer name="Fringe" width="30" height="40">
+ <layer name="Ground" width="90" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3BMQEAAADCoPVPbQ0PoAAAAADg1wAW4j6/wBIAAA==
+   H4sIAAAAAAAAC+3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAAAAAAAAAAAAADwa5ZHEYUEYAAA==
   </data>
  </layer>
- <layer name="Over" width="30" height="40">
+ <layer name="Fringe" width="90" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3BMQEAAADCoPVPbQ0PoAAAAADg1wAW4j6/wBIAAA==
+   H4sIAAAAAAAAC+3MsQkAIAwAwZBCLIL7j+sKEdIId813HwEAAAAAAADAz1bNfPbQBwCAN3l6BQAAAAAAAICOC3DsbupQRgAA
   </data>
  </layer>
- <layer name="Collision" width="30" height="40">
+ <layer name="Over" width="90" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3OsQkAQAwDMZP9h84CX3wVCJFB9bmSFAAAp/xMV3dL9/VjogPAnAa5sCTJwBIAAA==
+   H4sIAAAAAAAAC+3NsRFAQABFwR+46DpHE6iEkKZcA8IjsDvz4pcAAAAAAAAAAF/ah+R4COAvzpJcrbE1tebS97fUZG1tte8HAAAAAAAAAOBtNwq/kv5QRgAA
   </data>
  </layer>
- <objectgroup name="Object" width="30" height="40">
+ <layer name="Collision" width="90" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3T4QrAEBQGUHn/h97/tdCwe7Nz67Qiw4daSqkAAAAAAAAAhLhXqy9b9dafyew+V/7vzfxPbRnN7nN3zjPvMZPTKjpPOct5ZUXnOZLz1+ewY57oPHfc5zr4bY3/S84AAAAAAAAA9F2mEA9AUEYAAA==
+  </data>
+ </layer>
+ <objectgroup name="Object" width="90" height="50">
   <object name="External Map Events" type="SCRIPT" x="0" y="0">
    <properties>
     <property name="FILENAME" value="scripts/maps/iw-desert-fortress-house02-o00-o00-o00.lua"/>
    </properties>
   </object>
-  <object name="Warp to city" type="WARP" x="480" y="864" width="32" height="32">
+  <object name="Warp to city" type="WARP" x="737" y="927" width="64" height="32">
    <properties>
     <property name="DEST_MAP" value="ow-p0003-n0004-o0000"/>
-    <property name="DEST_X" value="2448"/>
-    <property name="DEST_Y" value="2672"/>
+    <property name="DEST_X" value="3808"/>
+    <property name="DEST_Y" value="3792"/>
+   </properties>
+  </object>
+  <object name="Warp to city" type="WARP" x="1152" y="928" width="64" height="32">
+   <properties>
+    <property name="DEST_MAP" value="ow-p0003-n0004-o0000"/>
+    <property name="DEST_X" value="4144"/>
+    <property name="DEST_Y" value="3792"/>
+   </properties>
+  </object>
+  <object name="Warp to city" type="WARP" x="1568" y="927" width="64" height="32">
+   <properties>
+    <property name="DEST_MAP" value="ow-p0003-n0004-o0000"/>
+    <property name="DEST_X" value="4464"/>
+    <property name="DEST_Y" value="3792"/>
    </properties>
   </object>
  </objectgroup>
