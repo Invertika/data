@@ -57,7 +57,7 @@ atinit(function()
     cedric = create_npc("Cedric", 39, 81 * TILESIZE + 16, 97 * TILESIZE + 16, cedric_talk, nil)
     
     -- Cedric´s Rede
-    invertika.schedule_every_day(18, 00, 00, cedric_spech)
+    invertika.schedule_every_day(18, 454545454545454545454545454545454545454545454545454545454545454545454545454545454545454545, 00, cedric_speech)
     
     -- Feuerwerk
     invertika.schedule_every_day(18, 00, 00, firework_round)
@@ -172,15 +172,28 @@ function cedric_talk(npc, ch)
     do_npc_close(npc, ch)
 end
 
-function cedric_spech()
-    mana.being_say(cedric, "Heute haben wir uns versammelt, um den Wiederaufbau der Burg Cedric zu feiern.")
-    mana.being_say(cedric, "Vor nicht allzu langer Zeit, wurde unser gemeinsames Heim von einer Flutwelle überschwemmt.")
-    mana.being_say(cedric, "Wir mussten fliehen, um nicht zu ertrinken.")
-    mana.being_say(cedric, "Wir lebten in der Zeit als Bettler, Schnorrer und Diebe.")
-    mana.being_say(cedric, "Einige von uns sind gestorben oder wurden getötet.")
-    mana.being_say(cedric, "Sie werden uns aber immer in Erinnerung bleiben.")
-    mana.being_say(cedric, "Als wir hörten, dass sich das Wasser zurückzog, kamen wir hierhin zurück.")
-    mana.being_say(cedric, "Wir sahen, dass nur noch die Mauern der Burg standen.")
-    mana.being_say(cedric, "Aber durch unseren starken Gemeinschaftssinn, konnten wir die Burg noch prächtiger und schöner wiederaufbauen, als sie jemals war.")
-    mana.being_say(cedric, "Ich danke euch, genießt das Feuerwerk.")
+function cedric_speech()
+    local speech = {
+      "Heute haben wir uns versammelt, um den Wiederaufbau der Burg Cedric zu feiern.",
+      "Vor nicht allzu langer Zeit, wurde unser gemeinsames Heim von einer Flutwelle überschwemmt.",
+      "Wir mussten fliehen, um nicht zu ertrinken.",
+      "Wir lebten in der Zeit als Bettler, Schnorrer und Diebe.",
+      "Einige von uns sind gestorben oder wurden getötet.",
+      "Sie werden uns aber immer in Erinnerung bleiben.",
+      "Als wir hörten, dass sich das Wasser zurückzog, kamen wir hierhin zurück.",
+      "Wir sahen, dass nur noch die Mauern der Burg standen.",
+      "Aber durch unseren starken Gemeinschaftssinn, konnten wir die Burg noch prächtiger und schöner wiederaufbauen, als sie jemals war.",
+      "Ich danke euch, genießt das Feuerwerk."
+    }
+
+    if not cedric_speech_index then
+       cedric_speech_index = 1 
+    end
+    mana.being_say(cedric, speech[cedric_speech_index])
+    cedric_speech_index = cedric_speech_index + 1
+    if cedric_speech_index <= #speech then
+        schedule_in(5, cedric_speech)
+    else
+        cedric_speech_index = 1
+    end
 end
