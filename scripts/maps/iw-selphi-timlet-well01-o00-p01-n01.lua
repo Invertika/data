@@ -152,8 +152,7 @@ function waypoints(being, num)
                 end)
             waypointstate[being] = 1
         end
-    end
-    if being == tano[6] then --- Nur Ta No 6 (Küchenhilfe) beachten
+    elseif being == tano[6] then --- Nur Ta No 6 (Küchenhilfe) beachten
         if (num == 1) then
             --- Wegpunkt 1
             if (waypointstate[being] == 1) then
