@@ -79,6 +79,7 @@ function ausgang_trigger(ch, id)
             if mana.chr_inv_count(ch, 40049) > 0 then
                 mana.chr_inv_change(ch, 40049, -1)
             end
+            mana.being_say(wache_ausgang, "Tschüß.")
         elseif id == 2 then
             mana.chr_warp(ch, nil, mana.posX(ch), 192 * TILESIZE + 16)
             mana.being_say(wache_ausgang, "Bitte benutze den Eingang im Osten")
