@@ -42,8 +42,8 @@ atinit(function()
 
     create_npc("Estjdan", 120, 141 * TILESIZE + 16, 154 * TILESIZE + 16, estjdan_talk, nil)
     
-    create_npc("Palastwache", 26, 58 * TILESIZE + 16, 100 * TILESIZE + 16, nil, nil)
-    create_npc("Palastwache", 26, 61 * TILESIZE + 16, 100 * TILESIZE + 16, nil, nil)
+    create_npc("Palastwache", 26, 58 * TILESIZE + 16, 100 * TILESIZE + 16, palastwache_talk, nil)
+    create_npc("Palastwache", 26, 61 * TILESIZE + 16, 100 * TILESIZE + 16, palastwache_talk, nil)
     
     create_npc("Wache", 26, 150 * TILESIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
     create_npc("Wache", 26, 153 * TILESIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
@@ -196,4 +196,10 @@ function cedric_speech()
     else
         cedric_speech_index = 1
     end
+end
+
+function palastwache_talk(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Wir bewachen den Palast Cedric´s.",
+      "Im Haus hinter uns wohnt Cedric und seine Frau Ormylt"))
+    do_npc_close(npc, ch)
 end
