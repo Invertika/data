@@ -57,10 +57,10 @@ atinit(function()
     cedric = create_npc("Cedric", 39, 81 * TILESIZE + 16, 97 * TILESIZE + 16, cedric_talk, nil)
     
     -- Cedric´s Rede
-    invertika.schedule_every_day(17, 59, 00, cedric_speech)
+    invertika.schedule_every_day(24, 00, 00, cedric_speech)
     
     -- Feuerwerk
-    invertika.schedule_every_day(18, 00, 00, firework_round)
+    invertika.schedule_every_day(24, 01, 00, firework_round)
 end)
 
 function diem_talk(npc, ch)
@@ -154,7 +154,7 @@ function firework_round()
 
     local d = os.date("*t")
     local start = os.time{year=d.year, month=d.month, day=d.day,
-                          hour=18, min=00, sec=0}
+                          hour=24, min=01, sec=0}
     if os.difftime(os.time(), start) < 15 * 60 then
         schedule_in(1, firework_round)
     end
