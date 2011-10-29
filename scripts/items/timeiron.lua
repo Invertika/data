@@ -4,5 +4,5 @@
 require "scripts/libs/datetime"
 
 function use(user)
-	mana.being_say(user, string.format("Es es ist %s Uhr %s im übrigen ist das ein %s.", datetime.get_current_time(), datetime.get_current_date(), datetime.get_current_weekday()))
+	mana.being_say(user, string.format("Es es ist %s Uhr, am %s, im übrigen ist das ein %s.", datetime.get_current_time(), datetime.get_current_date(), datetime.get_current_weekday()))
 end
