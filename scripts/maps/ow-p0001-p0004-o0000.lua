@@ -74,7 +74,7 @@ function wache_trigger(ch, id)
 end
 
 function ausgang_trigger(ch, id)
-    if mana.being_type(ch) ~= TYPE_MONSTER then
+    if mana.being_type(ch) ~= TYPE_CHARACTER then
         if id == 1 then
             if mana.chr_inv_count(ch, 40049) > 0 then
                 mana.chr_inv_change(ch, 40049, -1)
@@ -87,7 +87,7 @@ function ausgang_trigger(ch, id)
 end
 
 function eingang_trigger(ch, id)
-    if mana.being_type(ch) ~= TYPE_MONSTER then
+    if mana.being_type(ch) ~= TYPE_CHARACTER then
         if mana.chr_inv_count(ch, 40049) > 0 then
             mana.being_say(wache_oben, "Bitte benutze den Ausgang im Westen.")
             mana.chr_warp(ch, nil, mana.posX(ch), 189 * TILESIZE + 16)
