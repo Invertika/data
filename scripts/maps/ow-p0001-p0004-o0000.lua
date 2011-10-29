@@ -28,8 +28,8 @@ atinit(function()
  mana.trigger_create(135 * TILESIZE, 186 * TILESIZE, 3 * TILESIZE, 4 * TILESIZE, "wache_trigger", 2, true)
  mana.trigger_create(168 * TILESIZE, 179 * TILESIZE, 3 * TILESIZE, 11 * TILESIZE, "wache_trigger", 3, true)
  mana.trigger_create(138 * TILESIZE, 190 * TILESIZE, 13 * TILESIZE, 2 * TILESIZE, "eingang_trigger", 1, true)
- mana.trigger_create(71 * TILESIZE, 189 * TILESIZE, 14 * TILESIZE, 2 * TILESIZE, "ausgang_trigger", 1, true)
- mana.trigger_create(71 * TILESIZE, 191 * TILESIZE, 14 * TILESIZE, 2 * TILESIZE, "ausgang_trigger", 2, true)
+ mana.trigger_create(71 * TILESIZE, 189 * TILESIZE, 14 * TILESIZE, 1 * TILESIZE, "ausgang_trigger", 1, true)
+ mana.trigger_create(71 * TILESIZE, 191 * TILESIZE, 14 * TILESIZE, 1 * TILESIZE, "ausgang_trigger", 2, true)
 
  
  wache_oben = create_npc("Wache", 26, 140 * TILESIZE + 16, 180 * TILESIZE + 16, wache_talk, nil)
