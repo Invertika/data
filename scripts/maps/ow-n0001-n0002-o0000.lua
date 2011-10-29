@@ -181,7 +181,7 @@ function postremus_talk(npc, ch)
     do_message(npc, ch, invertika.get_random_element("Interessant",
       "Faszinierend",
       "Das alles hier hat keinen, hohen, künstlerischen Wert.",
-      "ja, Jim. Es sind schon wieder die Klingonnen...",
+      "Ja, Jim. Es sind schon wieder die Klingonen...",
       "Jim, lange hält die Enterprise diese Geschwindigkeit nicht mehr aus!"
       ))
     do_npc_close(npc, ch)
