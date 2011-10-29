@@ -118,7 +118,7 @@ end
 function wache_talk(npc, ch)
     if mana.chr_inv_count(ch, 40047) == 0 then
         do_message(npc, ch, "Ich habe meinen MacGuffin verloren!")
-        do_message(npc, ch, "Er ist bestimmt in der Bolero Höhle, ganz sicher!")
+        do_message(npc, ch, "Er ist bestimmt im Westen, in der Bolero Höhle, ganz sicher!")
         do_message(npc, ch, "Woher ich das weiß?")
         do_message(npc, ch, "Das gehört sich für einen MacGuffin einfach so!")
         do_message(npc, ch, "Und deshalb lasse ich dich auch nicht in die Stadt, bevor du ihn mir wiedergebracht hast.")
@@ -137,9 +137,9 @@ function wache_trigger(ch, id)
             local x = mana.posX(ch)
             mana.chr_warp(ch, nil, x, 176 * TILESIZE + 16)
             if x < 102 * TILESIZE + 16 then
-                mana.being_say(wache_unten_links, "Kein Durchlass!")
+                mana.being_say(wache_unten_links, "Bevor ich meinen MacGuffin nciht wiederhabe, kommst du hier nicht durch!")
             else
-                mana.being_say(wache_unten_rechts, "Kein Durchlass!")
+                mana.being_say(wache_unten_rechts, "Bevor ich meinen MacGuffin nciht wiederhabe, kommst du hier nicht durch!")
             end
         end
     end
