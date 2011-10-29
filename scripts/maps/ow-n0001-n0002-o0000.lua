@@ -182,7 +182,7 @@ function postremus_talk(npc, ch)
       "Faszinierend",
       "Das alles hier hat keinen, hohen, künstlerischen Wert.",
       "ja, Jim. Es sind schon wieder die Klingonnen...",
-      "Jim, lange hält die Enterprise diese Geschwindigkeit nciht mehr aus!"
+      "Jim, lange hält die Enterprise diese Geschwindigkeit nicht mehr aus!"
       ))
     do_npc_close(npc, ch)
 end
