@@ -57,10 +57,10 @@ atinit(function()
     cedric = create_npc("Cedric", 39, 81 * TILESIZE + 16, 97 * TILESIZE + 16, cedric_talk, nil)
     
     -- Cedric´s Rede
-    invertika.schedule_every_day(24, 00, 00, cedric_speech)
+    invertika.schedule_every_day(17, 59, 00, cedric_speech)
     
     -- Feuerwerk
-    invertika.schedule_every_day(24, 01, 00, firework_round)
+    invertika.schedule_every_day(18, 00, 00, firework_round)
 end)
 
 function diem_talk(npc, ch)
