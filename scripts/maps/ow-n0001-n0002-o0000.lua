@@ -34,6 +34,7 @@ atinit(function()
  create_npc("Ablu", 82, 90 * TILESIZE + 16, 122 * TILESIZE + 16, ablu_talk, nil) --- Ablu
  create_npc("cmur2", 59, 78 * TILESIZE + 16, 122 * TILESIZE + 16, cmur2_talk, nil) --- cmur2
  create_npc("Kizu", 120, 77 * TILESIZE + 16, 120 * TILESIZE + 16, kizu_talk, nil) --- kizu
+ create_npc("Postremus", 38, 77 * TILESIZE + 16, 116 * TILESIZE + 16, postremus_talk, nil) --- Postremus
 end)
 
 function jurkan_talk(npc, ch)
@@ -173,5 +174,15 @@ function kizu_talk(npc, ch)
     "Ordnung ist das halbe Leben. Ich lebe aber nunmal auf der anderen Seite",
     "Wsutsset du, dsas du dsas heir lseen knast? Das kmnmot dhear, dsas du ein Wrot als gnezas lesit und nhict jdeen Bcubehsatn eninilzet. Nur der etrse und der lzzete Bacushtbe msüesn simetmn.",
     "Welcher Religion gehörst du an? Linux, Windows oder Mac?"))
+    do_npc_close(npc, ch)
+end
+
+function postremus_talk(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Interessant",
+      "Faszinierend",
+      "Das alles hier hat keinen, hohen, künstlerischen Wert.",
+      "ja, Jim. Es sind schon wieder die Klingonnen...",
+      "Jim, lange hält die Enterprise diese Geschwindigkeit nciht mehr aus!"
+      ))
     do_npc_close(npc, ch)
 end
