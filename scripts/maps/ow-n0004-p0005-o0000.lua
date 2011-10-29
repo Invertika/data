@@ -137,9 +137,9 @@ function wache_trigger(ch, id)
             local x = mana.posX(ch)
             mana.chr_warp(ch, nil, x, 176 * TILESIZE + 16)
             if x < 102 * TILESIZE + 16 then
-                mana.being_say(wache_unten_links, "Bevor ich meinen MacGuffin nciht wiederhabe, kommst du hier nicht durch!")
+                mana.being_say(wache_unten_links, "Bevor ich meinen MacGuffin nicht wiederhabe, kommst du hier nicht durch!")
             else
-                mana.being_say(wache_unten_rechts, "Bevor ich meinen MacGuffin nciht wiederhabe, kommst du hier nicht durch!")
+                mana.being_say(wache_unten_rechts, "Bevor ich meinen MacGuffin nicht wiederhabe, kommst du hier nicht durch!")
             end
         end
     end
