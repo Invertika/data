@@ -119,7 +119,7 @@ function wache_talk(npc, ch)
     local quest_string = "burg_cedric_guard_macguffin"
     invertika.init_quest_status(ch, quest_string)
     local q_status = invertika.get_quest_status(ch, quest_string)
-    if q_status = 0 then
+    if q_status == 0 then
         do_message(npc, ch, "Ich habe meinen MacGuffin verloren!")
         do_message(npc, ch, "Er ist bestimmt im Westen, in der Bolero Höhle, ganz sicher!")
         do_message(npc, ch, "Woher ich das weiß?")
@@ -127,7 +127,7 @@ function wache_talk(npc, ch)
         do_message(npc, ch, "Und deshalb lasse ich dich auch nicht in die Stadt, bevor du ihn mir wiedergebracht hast.")
         do_message(npc, ch, "Obwohl.. so wie DU aussiehst, wird das wohl eh nix..")
         invertika.set_quest_status(ch, quest_string, 1)
-    elseif q_status = 1 then
+    elseif q_status == 1 then
         if mana.chr_inv_count(ch, 40047) > 0 then
             do_message(npc, ch, "Ah Danke für den MacGuffin. " ..
                                 "Nun darfst du die Stadt betreten")
@@ -140,7 +140,7 @@ function wache_talk(npc, ch)
               "Du findest einen MacGuffin in der Bolero Höhle. " ..
                 "Bringe mir einen davon"))
         end
-    elseif q_status = 2 then
+    elseif q_status == 2 then
         do_message(npc, ch, invertika.get_random_element(
           "Wir bewachen die Tore der Stadt",
           "Gehe weiter. Du blockierst die Straße.",
