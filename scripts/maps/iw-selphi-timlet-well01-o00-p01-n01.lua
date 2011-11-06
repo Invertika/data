@@ -87,12 +87,19 @@ function tano4_talk(npc, ch)
 end
 
 function tano5_talk(npc, ch)
-    do_message(npc, ch, "Hier könnte ihre Werbung stehen")
+    do_message(npc, ch, invertika.get_random_element("Ich koche hier für die anderen Sektenmitglieder.",
+      "Pah, die sollen sich bloß nicht schon wieder über das Essen beschweren! Verwöhntes Pack...",
+      "Hmm, noch ein bisschen hiervon, und ein wenig hiervon, und probieren ... Arghh, schon wieder zu viel Salz!",
+      "Aus der blöden Spüle kommt schon wieder nur rostiges Wasser!"))
     do_npc_close(npc, ch)
 end
 
 function tano6_talk(npc, ch)
-    do_message(npc, ch, "Hier könnte ihre Werbung stehen")
+    do_message(npc, ch, invertika.get_random_element("Ich hasse Küchendienst... Aber naja, immer noch besser als Abort saubermachen.",
+      "Die Spülmaschine ist schon wieder kaputt und jetzt muss ich alles von Hand waschen...",
+      "Eigentlich hatte ich mir das Leben als Ta No irgendwie spannender vorgestellt, und jetzt stehe ich den ganzen Tag bloss hier in der Küche.",
+      "\"Enlelm, hol dies! Enlelm, hol das!\" - Arghh! Wie ich es hasse!",
+      "Ob ich unzufrieden bei den Ta No bin? Nein, auf keinen Fall! Tritt uns am besten bei und melde dich für den Küchendienst! o0(dann kann ich nämlich hier weg, hehe)"))
     do_npc_close(npc, ch)
 end
 
