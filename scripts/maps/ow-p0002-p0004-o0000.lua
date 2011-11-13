@@ -17,12 +17,15 @@
 require "scripts/lua/npclib"
 require "scripts/libs/sign"
 require "scripts/libs/invertika"
+require "scripts/libs/nethek"
 
 dofile("data/scripts/libs/warp.lua")
 
 atinit(function()
     create_inter_map_warp_trigger(88, 98, 86, 76) --- Intermap warp
 
+    nethek.create_netheksaeule(103 * TILESIZE, 107 * TILESIZE + 16) ---Netheksäule
+    
     sign_entrance = "Lauria"
     sign.create_sign(184, 92, sign_entrance) --- Schild Ortseingang
     sign.create_sign(99, 61, sign_entrance) --- Schild Ortseingang
