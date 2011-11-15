@@ -21,5 +21,16 @@ dofile("data/scripts/libs/warp.lua")
 
 atinit(function()
  create_inter_map_warp_trigger(69, 81, 71, 59) --- Intermap warp
-     nethek.create_netheksaeule(97 * TILESIZE, 155 * TILESIZE + 16) ---Netheksäule
+ nethek.create_netheksaeule(97 * TILESIZE, 155 * TILESIZE + 16) ---Netheksäule
+ 
+  -- NPCs
+ create_npc("Asgard", 47, 139 * TILESIZE + 16, 96 * TILESIZE + 16, asgard_talk, nil) --- Asgard
 end)
+
+function asgard_talk(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Noch nie war jemmand in diesem Turm.",
+        "Was sich im inneren des Turmes befinden mag?",
+        "Es gibt eine Legende, die besagt das der Turm sich eines Tages öffnen wird.",
+        "Viele haben versucht in den Turm einzudringen, aber niemand hat es je geschafft."))
+    do_npc_close(npc, ch)
+end
