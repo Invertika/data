@@ -19,4 +19,6 @@ require "scripts/lua/npclib"
 
 
 atinit(function()
+    --TODO: Change NPC Sprite
+    create_npc("Dache", 28, 29 * TILESIZE + 16, 36 * TILESIZE + 16, nil, nil)
 end)
