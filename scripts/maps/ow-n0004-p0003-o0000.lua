@@ -36,7 +36,7 @@ function betirambo_talk(npc, ch)
           "Ja"),
           invertika.get_random_element("Nein",
           "Nö",
-          "Zu kalt für Eis")
+          "Zu kalt für Eis"))
         if v == 1 then
             mana.npc_trade(npc, ch, false,
               30029, 1, 675)
