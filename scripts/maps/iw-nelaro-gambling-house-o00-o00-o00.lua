@@ -67,7 +67,7 @@ function irac_talk(npc, ch)
               {30007, 300, 200}})
             break
         elseif v == 2 then
-            do_message(npc, ch, invertika.get_random_element("Über was wollen wa den reden?"
+            do_message(npc, ch, invertika.get_random_element("Über was wollen wa den reden?",
               "Über was wollen wir reden?"))
             local w = do_choice(npc, ch, 
               "Über die Familie in der Mitte",
@@ -93,7 +93,7 @@ function irac_talk(npc, ch)
                 do_message(npc, ch, "Nichts besonderes also.")
                 local x = do_choice(npc, ch,
                   "Und wieso ist dann dort eine Klappe nach unten?",
-                  "Okay"
+                  "Okay")
                 if x == 1 then
                     do_message(npc, ch, "Ich weiß selbst nicht, wohin die führt.")
                     break
@@ -115,5 +115,5 @@ function irac_talk(npc, ch)
             break
         end
     end
-    do_npc_close(npc, ch)´
+    do_npc_close(npc, ch)
 end
