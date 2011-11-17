@@ -23,11 +23,11 @@ require "scripts/libs/roulette"
 
 atinit(function()
     --TODO Change Sprite ID
-    create_npc("Irac", 23, 30 * TILESIZE + 16, 37 * TILESIZE + 16, irac_talk, nil)
+    create_npc("Irac", 16, 30 * TILESIZE + 16, 37 * TILESIZE + 16, irac_talk, nil)
     
-    create_npc("Würfeltisch", 1, 13 * TILESIZE + 16, 35 * TILESIZE + 16, dice.dicemanager_talk, nil)
-    create_npc("Würfeltisch", 1, 20 * TILESIZE + 16, 35 * TILESIZE + 16, dice.dicemanager_talk, nil)
-    create_npc("Würfeltisch", 1, 20 * TILESIZE + 16, 39 * TILESIZE + 16, dice.dicemanager_talk, nil)
+    create_npc("WÃ¼rfeltisch", 1, 13 * TILESIZE + 16, 35 * TILESIZE + 16, dice.dicemanager_talk, nil)
+    create_npc("WÃ¼rfeltisch", 1, 20 * TILESIZE + 16, 35 * TILESIZE + 16, dice.dicemanager_talk, nil)
+    create_npc("WÃ¼rfeltisch", 1, 20 * TILESIZE + 16, 39 * TILESIZE + 16, dice.dicemanager_talk, nil)
     
     create_npc("Slotmaschine", 1, 3 * TILESIZE + 16, 35 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
     create_npc("Slotmaschine", 1, 16 * TILESIZE + 16, 35 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
@@ -40,13 +40,13 @@ atinit(function()
 end)
 
 function irac_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Hi, was kann ich für sie tuen?",
+    do_message(npc, ch, invertika.get_random_element("Hi, was kann ich fÃ¼r sie tuen?",
       "Hi, was gibt es?",
       "Hi, wie kann ich ihnen helfen?",
-      "Hallo, was kann ich für sie tuen?",
+      "Hallo, was kann ich fÃ¼r sie tuen?",
       "Hallo, was gibt es?",
       "Hallo, wie kann ich ihnen helfen?",
-      "Guten Tag, was kann ich für sie tuen?",
+      "Guten Tag, was kann ich fÃ¼r sie tuen?",
       "Guten Tag, was gibt es?",
       "Guten Tag, wie kann ich ihnen helfen?",
       "Moin",
@@ -56,9 +56,9 @@ function irac_talk(npc, ch)
           "Kaufen",
         invertika.get_random_element("Quasseln",
           "Reden",
-          "Einen Plausch führen."),
+          "Einen Plausch fÃ¼hren."),
         invertika.get_random_element("Nichts",
-          "Dies war nur eine Hörprobe!",
+          "Dies war nur eine HÃ¶rprobe!",
           "Ich gehe lieber."))
         if v == 1 then
             mana.npc_trade(npc, ch, false,
@@ -67,26 +67,26 @@ function irac_talk(npc, ch)
               {30007, 300, 200}})
             break
         elseif v == 2 then
-            do_message(npc, ch, invertika.get_random_element("Über was wollen wa den reden?",
-              "Über was wollen wir reden?"))
+            do_message(npc, ch, invertika.get_random_element("Ãœber was wollen wa den reden?",
+              "Ãœber was wollen wir reden?"))
             local w = do_choice(npc, ch, 
-              "Über die Familie in der Mitte",
-              "Über die Wassernot",
-              "Über den Raum nebenan",
-              "Über nichts")
+              "Ãœber die Familie in der Mitte",
+              "Ãœber die Wassernot",
+              "Ãœber den Raum nebenan",
+              "Ãœber nichts")
             if w == 1 then
-                do_message(npc, ch, "Soviel weiß hier keiner über die in der Mitte.")
-                do_message(npc, ch, "Sie leben halt sehr zurückgeschieden und lassen kaum einen an sie heran.")
-                do_message(npc, ch, "Es gehen aber Gerüchte um...")
-                do_message(npc, ch, "Frage dazu bitte den XY, der weiß mehr darüber")
+                do_message(npc, ch, "Soviel weiÃŸ hier keiner Ã¼ber die in der Mitte.")
+                do_message(npc, ch, "Sie leben halt sehr zurÃ¼ckgeschieden und lassen kaum einen an sie heran.")
+                do_message(npc, ch, "Es gehen aber GerÃ¼chte um...")
+                do_message(npc, ch, "Frage dazu bitte den XY, der weiÃŸ mehr darÃ¼ber")
                 break
             elseif w == 2 then
-                do_message(npc, ch, "Einst war hier alles mal grün und fruchtbar.")
+                do_message(npc, ch, "Einst war hier alles mal grÃ¼n und fruchtbar.")
                 do_message(npc, ch, "Der Fluss im Norden unserer Stadt war voll mit frischen Wasser.")
-                do_message(npc, ch, "Woher das kamm, weiß ich nicht.")
+                do_message(npc, ch, "Woher das kamm, weiÃŸ ich nicht.")
                 do_message(npc, ch, "Ist aber auch egal.")
-                do_message(npc, ch, "Auf jedenfall, war er nach einer stürmischen Nacht ausgetrocknet.")
-                do_message(npc, ch, "Mehr weiß ich auch nicht.")
+                do_message(npc, ch, "Auf jedenfall, war er nach einer stÃ¼rmischen Nacht ausgetrocknet.")
+                do_message(npc, ch, "Mehr weiÃŸ ich auch nicht.")
                 break
             elseif w == 3 then
                 do_message(npc, ch, "Das war vom Vorbesitzer des Laden noch ein Lagerraum.")
@@ -95,7 +95,7 @@ function irac_talk(npc, ch)
                   "Und wieso ist dann dort eine Klappe nach unten?",
                   "Okay")
                 if x == 1 then
-                    do_message(npc, ch, "Ich weiß selbst nicht, wohin die führt.")
+                    do_message(npc, ch, "Ich weiÃŸ selbst nicht, wohin die fÃ¼hrt.")
                     break
                 elseif x == 2 then
                     break
@@ -105,7 +105,7 @@ function irac_talk(npc, ch)
             end
             break
         elseif v == 3 then
-            do_message(npc, ch, invertika.get_random_element("Tschüß",
+            do_message(npc, ch, invertika.get_random_element("TschÃ¼ÃŸ",
               "Tschau",
               "Bis Bald",
               "Beehren sie uns bald wieder",
