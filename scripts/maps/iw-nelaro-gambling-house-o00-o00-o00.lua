@@ -19,4 +19,6 @@ require "scripts/lua/npclib"
 
 
 atinit(function()
+    --TODO Change Sprite ID
+    create_npc("Irac", 23, 30 * TILESIZE + 16, 37 * TILESIZE + 16, nil, nil)
 end)
