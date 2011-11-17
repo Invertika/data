@@ -50,5 +50,5 @@ function betirambo_talk(npc, ch)
 end
 
 function betirambo_update(npc)
-    //walkaround_map(npc)
+    --walkaround_map(npc)
 end
