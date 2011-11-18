@@ -26,4 +26,41 @@ atinit(function()
 
     sign_descr = "Nelaro"
     sign.create_sign(69, 110, sign_descr) --- Schild Stadtmitte
+    
+    --TODO Change Sprite IDs
+    egroe = create_npc("Egroe", 2, 119 * TILESIZE + 16, 153 * TILESIZE + 16, egroe_talk, egroe_update)
+    invertika.create_npc_talk_random(egroe,
+      {"Quallitätswaren zum billigsten Preis.",
+      "Wasser nur 2500 Aki pro Liter!"})
+    thinaima = create_npc("Thinaima", 2, 64 * TILESIZE + 16, 112 * TILESIZE + 16, thinaima_talk, thinaima_update)
+    invertika.create_npc_talk_random(thinaima,
+      {"Waffen, handgefertigte Waffen!",
+      "Wasser zum billigsten Preis in der Region!",
+      "Edelste Waren aus dem Norden!"})
 end)
+
+function egroe_talk(npc, ch)
+    --TODO mehr Auswahl
+    mana.npc_trade(npc, ch, false, {
+      {10001, 20, 620}
+    })
+    do_npc_close(npc, ch)
+end
+
+function egroe_update(npc)
+    npclib.walkaround_wide(npc)
+    invertika.npc_talk_random(npc)
+end
+
+function thinaima_talk(npc, ch)
+    --TODO mehr Auswahl
+    mana.npc_trade(npc, ch, false, {
+      {10001, 20, 620}
+    })
+    do_npc_close(npc, ch)
+end
+
+function thinaima_update(npc)
+    npclib.walkaround_wide(npc)
+    invertika.npc_talk_random(npc)
+end
