@@ -17,6 +17,7 @@
 require "scripts/lua/npclib"
 require "scripts/libs/nethek"
 require "scripts/libs/sign"
+require "scripts/libs/invertika"
 
 dofile("data/scripts/libs/warp.lua")
 
