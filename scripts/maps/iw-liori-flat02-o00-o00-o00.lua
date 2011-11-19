@@ -19,7 +19,7 @@ require "scripts/libs/invertika"
 
 atinit(function()
     create_npc("Hatsuli", 141, 12 * TILESIZE + 16, 22 * TILESIZE + 16, hatsuli_talk, nil) --- Hatsuli
-    create_npc("Eldachi ", 142, 13 * TILESIZE + 16, 22 * TILESIZE + 16, eldachi_talk, nil) --- Eldachi
+    create_npc("Eldachi", 142, 13 * TILESIZE + 16, 22 * TILESIZE + 16, eldachi_talk, nil) --- Eldachi
 end)
 
 function hatsuli_talk(npc, ch)
