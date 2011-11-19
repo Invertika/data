@@ -40,7 +40,7 @@ atinit(function()
 
     create_npc("Chris", 141, 50 * TILESIZE + 16, 118 * TILESIZE + 16, chris_talk, npclib.walkaround_wide)
 
-    create_npc("Estjdan", 120, 141 * TILESIZE + 16, 154 * TILESIZE + 16, estjdan_talk, nil)
+    create_npc("Estjdian", 120, 141 * TILESIZE + 16, 154 * TILESIZE + 16, estjdian_talk, nil)
     
     create_npc("Palastwache", 26, 58 * TILESIZE + 16, 100 * TILESIZE + 16, palastwache_talk, nil)
     create_npc("Palastwache", 26, 61 * TILESIZE + 16, 100 * TILESIZE + 16, palastwache_talk, nil)
@@ -95,7 +95,7 @@ function chris_talk(npc, ch)
     do_npc_close(npc, ch)
 end
 
-function estjdan_talk(npc, ch)
+function estjdian_talk(npc, ch)
     --TODO zu einem Händler machen keine Getränke, Lebensmittel
     do_message(npc, ch, "Tag der Herr")
     do_npc_close(npc, ch)
