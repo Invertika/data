@@ -18,13 +18,13 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
-    create_npc("Isskel", 36, 17 * TILESIZE + 16, 21 * TILESIZE + 16, isskel_talk, nil) --- Isskel
+    create_npc("Metatron", 36, 17 * TILESIZE + 16, 21 * TILESIZE + 16, metatron_talk, nil) --- Metatron
 end)
 
-function isskel_talk(npc, ch)
+function metatron_talk(npc, ch)
     do_message(npc, ch, invertika.get_random_element(
-      "Blubb",
-      "Blubb blubb",
-      "Blubb blubb blubb"))
+      "Ich bin die Stimme...",
+      "Durch mich spricht sie...",
+      "So höre mir zu..."))
     do_npc_close(npc, ch)
 end
