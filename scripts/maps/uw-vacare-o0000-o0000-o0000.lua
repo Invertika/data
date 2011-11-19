@@ -50,7 +50,7 @@ atinit(function()
  create_npc("Corona", 12, 89 * TILESIZE + 16, 135 * TILESIZE + 16, corona_talk, nil) --- Corona 
  
  -- Verlassen des Vacare
- create_npc("Vacare", 1, 103 * TILESIZE, 139 * TILESIZE + 16, vacare_talk, nil) --- Vacare
+ create_npc("Vacaria", 1, 103 * TILESIZE, 139 * TILESIZE + 16, vacaria_talk, nil) --- Vacaria
 end)
 
 --- Erster Start
@@ -211,7 +211,7 @@ function corona_talk(npc, ch)
     do_npc_close(npc, ch)
 end
 
-function vacare_talk(npc, ch)
+function vacaria_talk(npc, ch)
     do_message(npc, ch, "Bist du bereit für das große Abenteuer?")
     
     while true do 
