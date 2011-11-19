@@ -20,5 +20,13 @@ require "scripts/lua/npclib"
 
 atinit(function()
     --TODO: Change NPC Sprite
-    create_npc("Dache", 28, 29 * TILESIZE + 16, 36 * TILESIZE + 16, nil, nil)
+    create_npc("Dache", 28, 29 * TILESIZE + 16, 36 * TILESIZE + 16, dache_talk, nil)
 end)
+
+function dache_talk(npc, ch)
+    do_message(npc, ch, invertika.get_random_element(
+      "Noch ein Drink und dann wars das.",
+      "So langsam sehe ich alles doppelt.",
+      "Mmmm also ich weiß ja nicht."))
+    do_npc_close(npc, ch)
+end
