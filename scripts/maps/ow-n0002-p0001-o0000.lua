@@ -32,7 +32,7 @@ function()
     create_npc("Gabriel", 46, 59 * TILESIZE + 16, 160 * TILESIZE + 16, gabriel_talk, nil) --- Gabriel
     create_npc("Patrick", 46, 92 * TILESIZE + 16, 180 * TILESIZE + 16, patrick_talk, nil) --- kevin
     create_npc("Peter", 63, 109 * TILESIZE + 16, 167 * TILESIZE + 16, peter_talk, nil) --- Peter
-    create_npc("Maximilian", 57, 86 * TILESIZE + 16, 139 * TILESIZE + 16, maximilian_talk, nil) --- 
+    create_npc("Maximilian", 57, 86 * TILESIZE + 16, 139 * TILESIZE + 16, maximilian_talk, nil) --- Maximilian
 end)
 
 
