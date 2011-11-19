@@ -24,16 +24,16 @@ end)
 
 function hatsuli_talk(npc, ch)
     do_message(npc, ch, invertika.get_random_element(
-      "Blubb",
-      "Blubb blubb",
-      "Blubb blubb blubb"))
+      "Immer muss ich das gleiche sagen.",
+      "Niemand fragt mich warum. Alle denken das muss so.",
+      "Ja und das nur wegen diesem Spinat."))
     do_npc_close(npc, ch)
 end
 
 function eldachi_talk(npc, ch)
     do_message(npc, ch, invertika.get_random_element(
-      "Blubb",
-      "Blubb blubb",
-      "Blubb blubb blubb"))
+      "Früher wollte ich immer eines von diesen Telefonen haben.",
+      "Ach hätte ich doch nur ein Klavier.",
+      "Irgendwoher kenne ich dich..."))
     do_npc_close(npc, ch)
 end
