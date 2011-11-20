@@ -19,4 +19,6 @@ require "scripts/lua/npclib"
 
 
 atinit(function()
+    --TODO Change Sprite ID
+    create_npc("Rhosor", 2, 26 * 32 + 16, 38 * TILESIZE + 16, nil, nil)
 end)
