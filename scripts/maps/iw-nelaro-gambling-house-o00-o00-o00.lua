@@ -95,6 +95,7 @@ function irac_talk(npc, ch)
                   "Okay")
                 if x == 1 then
                     do_message(npc, ch, "Ich weiß selbst nicht, wohin die führt.")
+                    do_message(npc, ch, "Und nein, ich werde es dich auch nciht ausprobieren lassen.")
                     break
                 elseif x == 2 then
                     break
