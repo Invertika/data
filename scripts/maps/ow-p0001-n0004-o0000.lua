@@ -1,4 +1,4 @@
-----------------------------------------------------------------------------------
+﻿----------------------------------------------------------------------------------
 -- Map File                                                                     --
 --                                                                              --
 -- In dieser Datei stehen die entsprechenden externen NPC's, Trigger und        --
@@ -21,7 +21,7 @@ dofile("data/scripts/libs/warp.lua")
 
 atinit(function()
  create_inter_map_warp_trigger(69, 81, 71, 59) --- Intermap warp
- nethek.create_netheksaeule(97 * TILESIZE, 155 * TILESIZE + 16) ---Netheksäule
+ nethek.create_netheksaeule(97 * TILESIZE, 127 * TILESIZE + 16) ---Netheksäule
  
   -- NPCs
  create_npc("Asgard", 47, 139 * TILESIZE + 16, 96 * TILESIZE + 16, asgard_talk, nil) --- Asgard
