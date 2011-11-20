@@ -69,6 +69,14 @@ function thinaima_update(npc)
     invertika.npc_talk_random(npc)
 end
 
+function onurn_talk(npc, ch)
+    do_message(npc, ch, invertika.get_random_element("Psst",
+      "Leisse!",
+      "Ich belausche die in dem Haus da.",
+      "Irgenetwas ist komisch mit denen da drin..",
+      "Manchmal.. Ach, vergiss es."))
+end
+
 function onurn_update(npc)
     walkaround_small(npc)
 end
