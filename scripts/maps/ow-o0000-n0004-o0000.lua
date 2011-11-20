@@ -78,5 +78,5 @@ function onurn_talk(npc, ch)
 end
 
 function onurn_update(npc)
-    walkaround_small(npc)
+    npclib.walkaround_small(npc)
 end
