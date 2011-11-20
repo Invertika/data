@@ -22,7 +22,6 @@ require "scripts/libs/slotmachine"
 require "scripts/libs/roulette"
 
 atinit(function()
-    --TODO Change Sprite ID
     create_npc("Irac", 16, 30 * TILESIZE + 16, 37 * TILESIZE + 16, irac_talk, nil)
     
     create_npc("Würfeltisch", 1, 13 * TILESIZE + 16, 35 * TILESIZE + 16, dice.dicemanager_talk, nil)
@@ -78,7 +77,7 @@ function irac_talk(npc, ch)
                 do_message(npc, ch, "Soviel weiß hier keiner über die in der Mitte.")
                 do_message(npc, ch, "Sie leben halt sehr zurückgeschieden und lassen kaum einen an sie heran.")
                 do_message(npc, ch, "Es gehen aber Gerüchte um...")
-                do_message(npc, ch, "Frage dazu bitte den XY, der weiß mehr darüber")
+                do_message(npc, ch, "Frage dazu bitte den Hobel, der weiß mehr darüber")
                 break
             elseif w == 2 then
                 do_message(npc, ch, "Einst war hier alles mal grün und fruchtbar.")
