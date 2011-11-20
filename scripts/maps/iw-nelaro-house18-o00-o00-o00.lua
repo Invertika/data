@@ -19,4 +19,6 @@ require "scripts/lua/npclib"
 
 
 atinit(function()
+    --TODO Change Sprite ID
+    create_npc("Hobel", 2, 33 * TILESIZE + 16, 36 * TILESIZE + 16, nil, nil)
 end)
