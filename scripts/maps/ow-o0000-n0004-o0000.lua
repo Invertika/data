@@ -38,6 +38,9 @@ atinit(function()
       {"Waffen, handgefertigte Waffen!",
       "Wasser zum billigsten Preis in der Region!",
       "Edelste Waren aus dem Norden!"})
+    
+    --TODO Change Sprite ID
+    create_npc("Onurn", 2, 91 * TILESIZE + 16, 98 * TILESIZE + 16, nil, onurn_update)
 end)
 
 function egroe_talk(npc, ch)
@@ -64,4 +67,8 @@ end
 function thinaima_update(npc)
     npclib.walkaround_wide(npc)
     invertika.npc_talk_random(npc)
+end
+
+function onurn_update(npc)
+    walkaround_small(npc)
 end
