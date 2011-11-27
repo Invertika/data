@@ -40,7 +40,7 @@ atinit(function()
       "Edelste Waren aus dem Norden!"})
     
     --TODO Change Sprite ID
-    create_npc("Onurn", 2, 91 * TILESIZE + 16, 98 * TILESIZE + 16, nil, onurn_update)
+    create_npc("Onurn", 2, 91 * TILESIZE + 16, 98 * TILESIZE + 16, onurn_talk, onurn_update)
 end)
 
 function egroe_talk(npc, ch)
