@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="155" height="40" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="AutoMappingRadius" value="4"/>
+  <property name="DeleteTiles" value="1"/>
+ </properties>
+ <tileset firstgid="1" name="automapping_set_cave_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/automapping_set_cave_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="1025" name="collision1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="2049" name="cave3_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave3_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3073" name="indoor1_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/indoor1_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3585" name="indoor1_32_96" tilewidth="32" tileheight="94">
+  <image source="../graphics/tiles/indoor1_32_96.png" width="1024" height="960"/>
+ </tileset>
+ <tileset firstgid="3905" name="indoor3_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/indoor3_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="4929" name="misc1_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/misc1_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <layer name="DA_set" width="155" height="40" opacity="0.11">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+2W227EQAhD0/3/j672oVK1dSZzAQzUlvzSJoOBo8le1199ybKDkdiZ5J5GYmeSexrJusbrl9n9yjwjWdd4XeJNxrKu8cmaePufRrI8H3Em3vJ6tK/T3SFF5mbPNnJn7EwWjJ30hSTW/Hpm57PmbKUvpEysVdjV6s7YOWfyrr6XmbWTM9g7OmWN3YNVrtV3kSL6inqftcOZPtgZLfKsnIEU0ePJTLLy9pQrQw/WGVbOQ4ro84SxDDvbYY3Nm1fd2Z6QPLOtfmfQ87P/Z3C2e2dny+jBG1IUazP83NXNduet1ovOGlHnqSekuzM88+zOoSpr0bxFzcOKNYuZeHBRlbUo3qLnsfMNtZpH1LeuImuj7BU5GxnJchbRdw7jfrOqYZ05E2crrKEesu08un72u7kTa3f5WXxF8ubJsdXZ7Plbs/Ya/D1Ln1bMRf4eOK2Raf6WrEX/JoveH7O/nVpZ5490srfMrM3m3nk2OrPFs1VYy7YPD+Yy9TOTI0tWL9ZG/bJ7s+atUlZ23gjWKrvCzqpy9jYSO5M8dkXO3kZiZ5KfXYmxHyOxM8k9jcTOJPc0EjuT3NNI7ExyTyOxM8k9jcTOJPc0EjuT3NNI7ExyTyOxM8k9jcTOJPf0N8LmTKTgYAAA
+  </data>
+ </layer>
+ <layer name="Ground" width="155" height="40">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+2aW2oVQRCGA0Fo1E0Y44u6ieiJinETiccLeFtD4iQK3nahvqi7UBHUXUQhqFuwGk+ROmV1d/Wc7pkOqYcPFMKkq/+//6nqyapbWlqtyBVgQjhT+fcZx5fbwJSw5sxvRh32gI6w6cxvRnlWgHXgJHAKOA1sO/Nbq3i9Jkpa0s73aZeAW8B54ALwzP3vt2sNrHUozVrSR1qv12uqZK2hunyftgXsukOvSX6728Be19LsNfAGeOva7VVXyHq9Xp2STTfvuzEzw/dpO+7f+/O5O/Qa99vTyDP4DDtpUCu6Vq7ZR+AT8Nm116vSc4Hr9Xr9ULLt5n03Zmacc7LPuN/ORp7BZ9hpQ1pJa01p1kKvyrN3S1jvl8D6Y767PGJN3mv03Slx0cW9xmfYrgGtYmvV5MKYfpOyNyfLQhwAN0fUJea1e8AGcMPJXsOzt96YVql6Nbrsj1iDJnuR5cAzTgR+/vGIuvi9vw7cd3KeSbXwfL9FavnpZL9NXBt9nNZrY50Zn2n+7Pb1mMZzfWuS+vLcWcOvx/ttgyHlmTQP7Qb2g2bD1M33cfS+YSj/oY4hzUJZMKTffKbh2aXnto/PSvvNr+0B8BB4NNNz0VnDa3KVgf7oMw/xWWjNzd8RYe7VnsepjiHNNH6rdT7wLNCzu59Yr4ZQlvOaUvvve90XwEvg1UzP2P2EVpM7DPSHNA/1eSfROyLMvdrz+B7TMTTvpPyG56O03/hZWNRjuTWl9l/yrJ9rJ67/O9Vr8oSB/tD4bDlSG9a3w/5f4oykwL3Cd1Nsto5pg+ejpN/wOyHvR0r4TFtTav8lr/m5dkrQ5AXtn6Rncn9o+oiY3yRi2pf0mvb30fXzu6ySPRz2JlKmld4TSZP9zN9Fn+Hn2o6Q8ivt96es5th94SKzEHJA/o15XKMXwtzI1TGVz4v6De/S8DthrUzT1KT1WmyWDz1D+v7RCTUv4jONZjyPS/bftEaeG33OccxvfdaMd2nSO6NmztOacrWMeU36LsHvLnL6/UXOW0w3zONS/TevkZ+hXC1rzAyh7xi1Mq2GV3le8Hut3LuLIXpUqh16LjcvaN8Zq7FvPdqZQTOPSe/1o+Cz2J7Q7xI5WVa7Zo3ntHkh/W1XrMZF3k+ad2pqHhtyHqgNf6fye62QBkOfKa4bvyuXMg7hOY3+6oQaD1xZPVN+i8059E58qHlgKK/hPkv3FlTbMesMaYdzMP/W5eE5zf1VO69jfqNzDvUb9Vmp9/rY5H5jbiW7U3nRufnvDWP1nKk10zmH5jH1Gb9PamH/a+jWqtdy1q25Xx4qMzQzqqdWD9kKWu1aqzW27nfA+xkfAj8zdu8p5XErffJYe9JynSH9vgLfZnxvpJ7cvgW/DbW8/8cZ9N4v4PeMP41pFjoffBZuac3G0UXTt5jPjFKE/GYeMwzDMAzDMAzDMAzDMAzDMAzjqPAX+YOmXeBgAAA=
+  </data>
+ </layer>
+ <layer name="Ground" width="155" height="40">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3XsQ2AMAwEQJehAmZgO0ZhFBYBNoEtiAQ9VAlCd5Ill1+4eEcAAACUtbS1EwAA8GTNnW27e9vQ183Cv+35zg4/AgWkLqLpaqcAAAAAAAAAAAB4Z0oRY545XTsAAAAAAAAAwFecFglGAuBgAAA=
+  </data>
+ </layer>
+ <layer name="Fringe" width="155" height="40">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3VsQrCMBAG4BsUHUIUnLV9B+c6+f4P4lMYcBJRcGma9PvgaKDLEXL3RwAAS5VzxKHUMdfuhDXZeG9A44YUMabXeSrfW6lzqUuq2xe/Pfa1O/jPruTl/fT9/1aeAh25dp6hrWUQAH2SR/DOTLgDYH72DnwyF7RkrvdqLgCWw04GoHeyro7W7r21fgHWxI4GAAAAAAAAgP49ATWF0UvgYAAA
+  </data>
+ </layer>
+ <layer name="Over" width="155" height="40">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3aQW7DIBCFYS/pPSq3B4mq3P9E6ZKOcBLGD5hx/0/yNhrgMWAr2wYAAAAAAAAAUNrLtn01nu9y/rc/i/Z5dywfgtqh82pdiiBz6qwV0R7Iqu4LWeZh79j7Z9bXZuXn97mZ5+7IW6sPX72f2TWLvu9mnzE95x/6Rczb2Yx5x5Qha3vA9eoRKW895+UznjH13u1nqvdfpPXyyF5/S++Yju5aK+bFvm/b/beyNoXVeVP1tFrPmLzfLtRmvQutlrn2I3ZMkb9refZb5h63ovYRPa1Wf3vwrOXIudhP1FaL0ie8+2VG7aNzplBnVTEnqnxZ2XtcxrojGpWvlqzrNrLuDD1NYcU4s96FRuTtv+RstRmZU79vZb4LKHE+/TWyZ2Sda6Ws+05Vd6a751XOT/s/DjsnUb/ledcv6niOXCVnLTZ7kcf5ap/UVmfM04+vnLPsMvzX7t1+TM6g8Cxvq/svrueoB5MxAAAAAAAAAACQxQNo2DX/4GAAAA==
+  </data>
+ </layer>
+ <layer name="Collision" width="155" height="40" opacity="0.43">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+2UQQ7CQAwDEeL/b+ZaVe02bJ04WybSXEpJnNjw/rxebwAAAAD4a7bl1gLP5qjcmuC5kK812P4XjMqt80r/KnqzdnZrmvEoUm7tUf1ujdU7u/Wpc9ZlL4WmbjtFtY48dOuMZKza14xy5LWDd512UOm6+93svVR3cefqSmtkD7dGhZ7ZHp083Ovv4lVE8y8+d8iao9/Re9X3mC13zqL3cmrPmrvvGem9f6f6JtE8RT+vzlh07kh7F40K7xReKzVFZs9oVetW+1itdds/a45iJ+Ud1NlQ96vKWnXequ6h9PNu9jJykdGzyssKzdX3yPDyzq4Z9z2b0zlroxuvmLMMzVHdV1WhM/vOqhlqzSvm7GyHbp5Xz8/ove1zt++Tsnam35Wvyrxl9VX2dt8/4xYV9++Quauq0PxPOYvcPNMDh3/O3Wbmdb2/0rfR8y78ojdSzlvffXc1uvih0t3Vu5W0Om7i1jLj36g6az16x31fGPsZeebW2P13Ac+BnEElZAwAAAAAAAAAAAAAAFbmC7ulHoPgYAAA
+  </data>
+ </layer>
+ <objectgroup name="Object" width="155" height="40">
+  <object name="External Map Events" type="SCRIPT" x="0" y="0">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/iw-selphi-timlet-escape-tunnel2-o00-o00-n01.lua"/>
+   </properties>
+  </object>
+  <object name="Warp to ow-p0001-o0000-o0000" type="WARP" x="4768" y="544" width="64" height="32">
+   <properties>
+    <property name="DEST_MAP" value="ow-p0001-o0000-o0000"/>
+    <property name="DEST_X" value="4336"/>
+    <property name="DEST_Y" value="3728"/>
+   </properties>
+  </object>
+  <object name="Warp to iw-selphi-timlet-flat04-o00-o00-n01" type="WARP" x="256" y="416" width="32" height="32">
+   <properties>
+    <property name="DEST_MAP" value="iw-selphi-timlet-flat04-o00-o00-n01"/>
+    <property name="DEST_X" value="1488"/>
+    <property name="DEST_Y" value="752"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

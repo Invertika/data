@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="music" value="inside.ogg"/>
+ </properties>
+ <tileset firstgid="1" name="collision1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="1025" name="indoor3_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/indoor3_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="2049" name="indoor2_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/indoor2_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3073" name="indoor2_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/indoor2_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3585" name="indoor2_32_96" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/indoor2_32_96.png" width="1024" height="960"/>
+ </tileset>
+ <layer name="Ground" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3PMQ0AIAwAwQ6Q4AEj4F9MbWCBgUBCbrj9P2tEAgAAAABc1Nue150+fPg4Z5SIWd53AAAA8LcFPTQPNBAnAAA=
+  </data>
+ </layer>
+ <layer name="Ground" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3PuwmAUAxA0YDiEH7RTXQO95/DFK8QC8FO5Ry4EFIlEQAAAADwf1UdUZfOc3PZv92UN47Zng1Zn7VZly2l+QN/rHnjVrqbAQAAAOCJA1G0inoQJwAA
+  </data>
+ </layer>
+ <layer name="Ground" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3PwQ2CQBRF0VmQCJUolQCVoJ1IJ9iJduVrYMKChZl4TvI2f3V/KQAAAADw3y5dKX02dL8uOeea/ls2NvDHM41bpXPKfc6WBv7Y0/iqdK6537NHA3+80/hpoBMAAADgyBeH4U/+ECcAAA==
+  </data>
+ </layer>
+ <layer name="Fringe" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3RwQnAIBAEwDMq5GH/9WoBPgIRRJmB/d/uRQAAAAAAsEJuEWWktt2X/Pde0OFU6cP2j/8AAADAVAeeSUwPECcAAA==
+  </data>
+ </layer>
+ <layer name="Over" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3BAQ0AAADCoPdPbQ43oAAAAAAAAAAAAODfAC7KO00QJwAA
+  </data>
+ </layer>
+ <layer name="Collision" width="50" height="50" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3ROQoAIAwEwJD/P9rKRkRBCw9mYZpUuyQjIgEAAAAAWFbTu7X3m81yut9u/1d2/PCL0abTPQAAAPhbAeTYtmAQJwAA
+  </data>
+ </layer>
+ <objectgroup name="Object" width="50" height="50">
+  <object name="Warp to city" type="WARP" x="704" y="992" width="64" height="32">
+   <properties>
+    <property name="DEST_MAP" value="ow-n0004-p0005-o0000"/>
+    <property name="DEST_X" value="1488"/>
+    <property name="DEST_Y" value="4944"/>
+   </properties>
+  </object>
+  <object name="External Map Events" type="SCRIPT" x="52" y="44" width="24" height="80">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/iw-castle-cedric-house11-o00-o00-o00.lua"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

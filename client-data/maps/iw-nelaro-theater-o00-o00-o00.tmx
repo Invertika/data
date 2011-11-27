@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="60" height="60" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="music" value="faith.ogg"/>
+ </properties>
+ <tileset firstgid="1" name="collision1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="1025" name="indoor3_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/indoor3_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="2049" name="indoor2_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/indoor2_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3073" name="indoor2_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/indoor2_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3585" name="indoor2_32_96" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/indoor2_32_96.png" width="1024" height="960"/>
+ </tileset>
+ <tileset firstgid="3905" name="indoor1_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/indoor1_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="4417" name="indoor1_32_96" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/indoor1_32_96.png" width="1024" height="960"/>
+ </tileset>
+ <layer name="Ground" width="60" height="60">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3XMQqAMBBE0TQe3bPGY9jYC2KYMLzAr7OvWnYeY0zpKfl413cG4+Xl5eXl5eXl5eXl5eVtjbc73u54u+Ptjrc73u54u1vtTd63iRs5PS8vLy9v0vv25/Vhzp33UcrCy8vLy8vLu2e8vLy8vJL+7gZ+0DQEQDgAAA==
+  </data>
+ </layer>
+ <layer name="Ground" width="60" height="60">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3ZsQ3AMAwDQbvVFhnF+y+VMqXgQmFzB7DjBr8WfHbllvBUbgmncgMAAAAAAIBpyd7ZNdCJZprsnV0DnWimyd7ZNdDbPwAAAAAA/OUFRB0fVEA4AAA=
+  </data>
+ </layer>
+ <layer name="Ground" width="60" height="60">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3YTQrCMBCG4SySVZee02u4t96he/UKthfwBvXnAl7AWQgKJmUSS8vY94FvlabMB4WBOgcAWLKNn3uCaTUL69sZ7dv7slxefbfBuVqyC9/vHjqzai9dDpJjpNPQmVVr/07OGQCUKt0rVvdR6V6xuo9K9wr7CAAAAACA6dVhnKQ0lW6O2HPauznG6ntO/KP4176PRN+TzNwq0kW6ae7O1XeV+KavMtNNkXtkds3dXJ//zH4JAAAAAAAAgHxP9xqst0A4AAA=
+  </data>
+ </layer>
+ <layer name="Ground" width="60" height="60">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3VMQ0AAAjAMH604d8OBrh4SEj7TsAiAAD+qdw1AJhsv+JHAAAAAAAAAAAAwKUG/dHer0A4AAA=
+  </data>
+ </layer>
+ <layer name="Fringe" width="60" height="60">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3ZywrDIBAFUOm74Mb/6iPt/39MLV0UukhsMGDkHBhcGDDDDZmFIQB83FII91xDKnt+G0PY5drHZd9rrkvu45q+aw2niV4f+ZxnpbOgtsPI9zu2tzbHn17OsWwPgP/MnStrm0dz54p5BAAAANC21u86lzB11wlAufc/tVbRHvn2Tb59k2/f5Ns3+fZNvv3axGVWoL4XJElTFEA4AAA=
+  </data>
+ </layer>
+ <layer name="Over" width="60" height="60">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3VIQ6AMBQD0Ap2YOCGnGyYqS0TXxDEe0lVk9omAMDfPUctw9mS683d5u1dBwAr1V/xRwAAAAAAAAAAAADf6h88NexAOAAA
+  </data>
+ </layer>
+ <layer name="Collision" width="60" height="60">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3UQQ6EIAwFUOL9Dz0rN2Z0iIW0MK/JjwsU+hr1aK0dIiJ/kBH1a58VfSNmw8tbKdeenzxVvNHi7Vu7rq/ijRQvL+8Y79MMZqzx8s70ZlSGN3O+2b3w8vLy8vLy7hnevcO7d3jn7R+p6Bnf7qvsvauot+c53lzv216y/yWZc7urVfocVRW8PWfu9B5mf1u8vLy8vLy8tcLLy8u7ivc0j7yKyJx8APxR0mhAOAAA
+  </data>
+ </layer>
+ <objectgroup name="Object" width="60" height="60">
+  <object name="External Map Events" type="SCRIPT" x="0" y="0">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/iw-nelaro-theater-o00-o00-o00.lua"/>
+   </properties>
+  </object>
+  <object name="Warp to city" type="WARP" x="1055" y="1313" width="32" height="32">
+   <properties>
+    <property name="DEST_MAP" value="ow-o0000-n0004-o0000"/>
+    <property name="DEST_X" value="3824"/>
+    <property name="DEST_Y" value="3600"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="60" height="60" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="music" value="peace.ogg"/>
+ </properties>
+ <tileset firstgid="1" name="collision1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="1025" name="indoor3_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/indoor3_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="2049" name="indoor2_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/indoor2_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3073" name="indoor2_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/indoor2_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3585" name="indoor2_32_96" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/indoor2_32_96.png" width="1024" height="960"/>
+ </tileset>
+ <layer name="Ground" width="60" height="60">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3XsQ0CIRiA0WtsdCujm+gm6iTqIEZd5RxD7M4CCgUPj0fy6p8vIQT6Wdf1AMBfqmXp1Zu7dzkfxy97h3Zh9j7hUKh3jNaXY5h9Sjjr/coqWDfUuwm2DfW2dp716i3pGmbfEu4T6y3Roldvbb2xd3Wu93RtvbF7O9d9PaXey+KdXr169erV+2lv7B+R6/9QW29pY/UOPSrYAwAAAAAAlPYELw179EA4AAA=
+  </data>
+ </layer>
+ <layer name="Ground" width="60" height="60">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3VWQrCMBSF4QrJS8BFuBRX5/TqIhxWoYI4rMJ5Gx4QaR8EU1BvE/8PDrfQvJz0QosCAACk6uabEYu+rWATq76dYBOrvt1gk1/2rTr5MvhP68y+fc89Zl9zoAyVkSvfXzPr+zRRx6kyU+bu/fnUbdRxq+yUfaVvzD4vdH5ZI00Ws88HdTjWSOrOupOLj58AAODz2vxjkZEV+4xMjP3rZwAAAAAAAAAAgG+7AzOpfFpAOAAA
+  </data>
+ </layer>
+ <layer name="Fringe" width="60" height="60">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3XYQqCMBTA8WfOnE68R2cJukin6igRdI/qIr0PiSILFGwz9//Bg+cc+MYbU0UAAACAbagbEdfEriK8shWpBmHbfrzL1+pb7QDScnB9ftb89Lk+Ov98APPl+o41Glnb576xJe0S/C7DdmXs52Bsrf8Jtf9ern0wgygS6Yudsc5ywtzY5/P+x8+vVrQvrkbkpnExsSsJ46HrfGq8Flqvbz+P+8v5/L+m9Dc1sc/nzr2IXQEAAAAAAAAAAFjaGyzX2PVAOAAA
+  </data>
+ </layer>
+ <layer name="Over" width="60" height="60">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAAAAAAADwZkvEChtAOAAA
+  </data>
+ </layer>
+ <layer name="Collision" width="60" height="60" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3SUQqAIBBAQfH+h+4r6COw0txVZmEgIsqn1VJKBQAA0vprdutpjd75vTP3Qu9avVHr7+ntmeiO2b1vR28uu7RGjd59e/3Pebq/7M2Td2fr7JnWNzKea89kPt9zPSPbs/eOPmv/c/sZvWv13l1f7+3U+2Qim6/t0WsAAAAAAIC/HUFXxi1AOAAA
+  </data>
+ </layer>
+ <objectgroup name="Object" width="60" height="60">
+  <object name="External Map Events" type="SCRIPT" x="-800" y="-1760">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/iw-okitas-house-o00-o00-o00.lua"/>
+   </properties>
+  </object>
+  <object name="Warp to outer world" type="WARP" x="761" y="1091" width="44" height="61">
+   <properties>
+    <property name="DEST_MAP" value="ow-p0001-p0001-o0000"/>
+    <property name="DEST_X" value="1984"/>
+    <property name="DEST_Y" value="2048"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

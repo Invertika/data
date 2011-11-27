@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="30" height="40" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="music" value="inside2.ogg"/>
+ </properties>
+ <tileset firstgid="1" name="collision1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="1025" name="indoor3_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/indoor3_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="2049" name="indoor2_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/indoor2_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3073" name="indoor2_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/indoor2_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3585" name="indoor2_32_96" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/indoor2_32_96.png" width="1024" height="960"/>
+ </tileset>
+ <tileset firstgid="3905" name="desert3_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/desert3_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <layer name="Ground" width="30" height="40">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3RsQ0AIAhEURprp9L9t8AxjIXlFSagFr94CaHgAngxcwAAADzR6pmo3C7mq37WviovO/fWnX/4r6ozcpcROAsAgG0Ce874BMASAAA=
+  </data>
+ </layer>
+ <layer name="Ground" width="30" height="40">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3NwQnAMAwEQRlE+nA6sfsvKi5BDz0cmIH93kUAANxjZEQWe7Lvd56tt9hs/F1naxdbjb8AAH/yAa6lqeXAEgAA
+  </data>
+ </layer>
+ <layer name="Ground" width="30" height="40">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgGAWjYBSMglEwCkbBKBgFyiwIdjwLdjVcXPRxCwgsxGLXY1b62T9SQDuOuKYV8ALa5w3FPkh2rwCyV9LQLVlAs7OhOAdqjxc3A8MJIPskncNgFIyCUTAKRsEoIAcAAA8xcRLAEgAA
+  </data>
+ </layer>
+ <layer name="Ground" width="30" height="40">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3OoQ0AMAgAQUSR7O+ZtJINaJrcqZcfAQAAbOgzXfnuAwB+cwFm2iC2wBIAAA==
+  </data>
+ </layer>
+ <layer name="Fringe" width="30" height="40">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3OwQkAIAwEsPOlD+n+47qEWJBkgiQAAPDGrGRV9+J/Y3cPAOCuA00Z2H3AEgAA
+  </data>
+ </layer>
+ <layer name="Over" width="30" height="40">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3OMREAMAgEsB8QX1xzrDXAkihIAgAArFdJ1/UCAPgNN1v9ssASAAA=
+  </data>
+ </layer>
+ <layer name="Collision" width="30" height="40" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3S0QkAIAhAQXH/oZsgIsgiPOF+fQhmRCQAAK3szqv+7/eu9p7uzdq3u1V/C0BfAwHWyyXAEgAA
+  </data>
+ </layer>
+ <objectgroup name="Object" width="30" height="40">
+  <object name="External Map Events" type="SCRIPT" x="0" y="0">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/iw-desert-fortress-house04-o00-o00-o00.lua"/>
+   </properties>
+  </object>
+  <object name="Warp to city" type="WARP" x="384" y="831" width="32" height="32">
+   <properties>
+    <property name="DEST_MAP" value="ow-p0003-n0004-o0000"/>
+    <property name="DEST_X" value="3504"/>
+    <property name="DEST_Y" value="4240"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

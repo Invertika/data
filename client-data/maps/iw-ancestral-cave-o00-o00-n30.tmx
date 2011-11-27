@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="70" height="70" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="music" value="cavesong.ogg"/>
+ </properties>
+ <tileset firstgid="1" name="collision1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="1025" name="misc1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/misc1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="2049" name="cave3_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave3_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3073" name="cave1_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/cave1_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3585" name="cave4_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave4_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <layer name="Ground" width="70" height="70">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3QOwrCQBSG0Sl8FdmEigvRwn0YJGQbiogLyUK9jSAphqnCLc7AKS/M/027UiYAAAAAAAiHBH/I5hou4d7o/7XezJ3DPsH2miH04dVo3ZWyCduu/WbuFsYE22ve4RlWC3qET4LtNaeFm/wcE2zXRRdddNElD1100UUXXXTJQBdddNFFF10y0EUXXXTRRZcMdNFFFwAAAACAfL4y2WjhkEwAAA==
+  </data>
+ </layer>
+ <layer name="Fringe" width="70" height="70">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3OuwkAIBBEwUMNDK4R+29QmxA/zMBLl40AAAAAAADYq2REXbU8/QTuNfpbuwAAAAAAAAAAAAAAwD8mZCtqcpBMAAA=
+  </data>
+ </layer>
+ <layer name="Over" width="70" height="70">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3PQREAIAwDwTyDEvw7xAXtY3fmBFwCAAAAAAAAAAAAAAAAAPu0yR3odPocAAAAAOCvB9WL+xeQTAAA
+  </data>
+ </layer>
+ <layer name="Collision" width="70" height="70">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3QsQ3AMADDsCD/H92pHxSVBxrgAdY951wAAAAAAAA+8+fqr4tN3tWfddFFF1102VOs/qyLLrroosueYvVnXXTRRRdd9hSrP+uiiy666LKnWP1ZF10AAAAAAJY9eXEODpBMAAA=
+  </data>
+ </layer>
+ <objectgroup name="Object" width="70" height="70" x="-1" y="-1">
+  <object name="External Map Events" type="SCRIPT" x="0" y="0">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/iw-ancestral-cave-o00-o00-n30.lua"/>
+   </properties>
+  </object>
+  <object name="Vampirfledermaus" type="SPAWN" x="500" y="556" width="1336" height="1192">
+   <properties>
+    <property name="MAX_BEINGS" value="30"/>
+    <property name="MONSTER_ID" value="32"/>
+    <property name="SPAWN_RATE" value="20"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

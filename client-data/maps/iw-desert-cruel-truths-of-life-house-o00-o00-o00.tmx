@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="80" height="55" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="music" value="darkness.ogg"/>
+ </properties>
+ <tileset firstgid="1" name="collision1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="1025" name="indoor3_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/indoor3_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="2049" name="indoor2_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/indoor2_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3073" name="indoor1_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/indoor1_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3585" name="indoor1_32_96" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/indoor1_32_96.png" width="1024" height="960"/>
+ </tileset>
+ <tileset firstgid="3905" name="indoor2_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/indoor2_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="4417" name="indoor2_32_96" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/indoor2_32_96.png" width="1024" height="960"/>
+ </tileset>
+ <layer name="Ground" width="80" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3QoQ2AUBAFwU8Chi7oAiz990EbSAzodxdGjN/stYxxAQAAAMBPTGsP6U9ftvVxvtiKSH/68vasovQn//yrKP3FP/86SH/yz7+K0l/886+D9Cf//Kso/cU//zpIf/LPvz/Y5zGOOd8BAAAAAAD0cQPqd1H+wEQAAA==
+  </data>
+ </layer>
+ <layer name="Ground" width="80" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3DQQ0AIAwEsPGdC6Tg3xQa+O1Cm7QKAAAAAP6xOuNUuzNOdTojAAAAAAAAAAAAAAC8uLEuqbDARAAA
+  </data>
+ </layer>
+ <layer name="Ground" width="80" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3WQQ6CMBCF4UZdNNFLqEtPoZ5EvP8dLIuJDWGgtAGG8n/JJCygfSV5onMAAAAAAAAAgCVcvXO3MHevXz/OwzNm7PmUDFY9Q7ZXmLfXr/eQIdcnZGvCfL1+vYcMucY60u3XHPtqvwFb62+f9mxTenQI9xwT7ovX1N7f1vrbpz3bHD2K19TeXy391b6VJXulfMNr6G9sapeH9kr531NDf2OlXU7pbG62tXQ7cvL/0aScPefZ7t619XdplrMJyx2xnE1Y7ojlbMJyRyxnE5Y7YjmbsNwRy9mE5Y5YzibijlwKRlOy5hb6CwAAAAAAAAAAsLYf0XvrRsBEAAA=
+  </data>
+ </layer>
+ <layer name="Fringe" width="80" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3WWQrDIBQFUFcgpNOiOnf/m6k/j4JtSAKl2vYcEEGMGrkJLyUAAAAAAL7NcUjpVNq5tMvQ+jT92OaUdvm5D9dyV7cX91WPT63DfxtKFlb50U/Zl2wdZnync+ct3b9Hrc/een8APquu9cZqQninyNlY/uSQJercRB917bq0TZ6fr3pePB/rje33i+Lde1nnF/j/0QP1HwAAAAAAQBt3W7K41MBEAAA=
+  </data>
+ </layer>
+ <layer name="Over" width="80" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3BMQEAAADCoPVPbQdvoAAAAAAAAAAAAAAAAAAAAAAAPgOgSzqvwEQAAA==
+  </data>
+ </layer>
+ <layer name="Collision" width="80" height="55" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3SQQ6EIAwFUOL9Dz17MxBhqi3ja/IWJlLtp0dr7QAAAAAAoIS7K3u+7Fx7Offee5u7K3u+p/brnOXVfEdn/2k/Z2adyWr03uhOsvNY3bers/5Ss9/dQdTcUWez85Cf/HayMuN51t7zTI9v/7KDapWdxxP59Xrc0bu6apWdx0p+UXdQ4V+q7V/Uns5+bxcrdXX/InpXV62y83gyv97+RfR8kzfPDgAAAAAArPkA715b8sBEAAA=
+  </data>
+ </layer>
+ <objectgroup name="Object" width="80" height="55">
+  <object name="External Map Events" type="SCRIPT" x="0" y="0">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/iw-desert-cruel-truths-of-life-house-o00-o00-o00.lua"/>
+   </properties>
+  </object>
+  <object name="Warp to Desert" type="WARP" x="1277" y="1115" width="69" height="40">
+   <properties>
+    <property name="DEST_MAP" value="ow-n0001-n0004-o0000"/>
+    <property name="DEST_X" value="3712"/>
+    <property name="DEST_Y" value="2112"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

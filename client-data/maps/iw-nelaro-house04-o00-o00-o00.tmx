@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="60" height="60" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="music" value="faith.ogg"/>
+ </properties>
+ <tileset firstgid="1" name="collision1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="1025" name="indoor3_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/indoor3_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="2049" name="indoor2_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/indoor2_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3073" name="indoor2_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/indoor2_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3585" name="indoor2_32_96" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/indoor2_32_96.png" width="1024" height="960"/>
+ </tileset>
+ <tileset firstgid="3905" name="indoor1_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/indoor1_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <layer name="Ground" width="60" height="60">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3PsQ0AIAwEsRQwKNOHMehZ4EFy4f6uZ1UDAAAAAADAZY08v379+vXrN/3q169fv37z9gMNAAAAAL86W/8HVEA4AAA=
+  </data>
+ </layer>
+ <layer name="Ground" width="60" height="60">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3TsQ3CMBAFUCMMFUtAzRJQMxqjMAYlozAEjoSbiDSxUaz4PekXvpPi/MIhAAAAAAAAzLOJIcRR9in3+Hu3LTzn7y/lmO4+jTLMHnF6V3LOs6Vc0t3XUYbZK07vSs551pp3g//0T7nvc1c3rdK3Tlp9J/quu+/h+9Z66XvurO+ts76ZvuvuW1tvfQEAAACY5wPXDhLvQDgAAA==
+  </data>
+ </layer>
+ <layer name="Ground" width="60" height="60">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3USw7BYBiF4X9QwYRFGGAdIhhiEVgIxlgDcZtgD+KyCszYhDPQRKJBk2qrfZ/kJE3b9PtPb8YAAAAAAAAAAAD8l6RlTEpJW8Guo/thfu7L9ZUczis/7ctru6AUA+47dpif0b6sx+uq6HpVpeZz37nmLZSpMvNxdkuz2krH574HzTsqO2Xv8+x+wO8yosf+bu3vOOrsf+8v/sG2QcKYoTJKvB7rRfAer9RzrWwc+k4i2Leung2lGZO+74S971XP6KbMlYWydHhmboS9r9e2Meh7UsfzI5cY9AUAAAAAAIB7d67kmMJAOAAA
+  </data>
+ </layer>
+ <layer name="Ground" width="60" height="60">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3PoRHAIBQFwe/pjGHoI6R/nwYQKCLebgV3VQAAAAAAAAAAZ3r7u+CuGfY7wn7fsN8n7HeF/QIAAADAzgebopEwQDgAAA==
+  </data>
+ </layer>
+ <layer name="Fringe" width="60" height="60">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3VSwrAMAgFwAf9LkJo73/Z9hJpoM6Aa5+ImAAAAAAAAMAYS0vWt7Y2O8l3zkKzQjW7+/6lw16nunpy9/F9/GcAAAAAoKoHty8njUA4AAA=
+  </data>
+ </layer>
+ <layer name="Over" width="60" height="60">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3VMQrCUBBF0VckqE32qm5CEzcVS92UUySVIIjitzgHbj/NYxIAAAAAAAB4NnbJVJ2qc9f6GuAd627XHfO5fZ8cqmPf+pLXNkOyW9oOra+B77vVBu/VWE3V5c83ye/N9feuSwAAAABA8gA61zH4QDgAAA==
+  </data>
+ </layer>
+ <layer name="Over" width="60" height="60">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3OQQ0AIAwEwftXCGIqBP8OwAU0mUn2vwkAAAAAAAAAAMB8Xcm+rXp9AgAAAAB/OBC92o9AOAAA
+  </data>
+ </layer>
+ <layer name="Collision" width="60" height="60">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3SUQqAIBBAQfH+h+4rMNAQtLZ0FgaCYNkH5pRSBgAAAAAAAC7OKb+fmOjOt3vLieir3fDWrNxb27vye/5yb+9b6Gls7Ynqq904a/S2/0V1z+y92xvd2XPvyI6/9Y7Ojr272K0XAAAAYKYDCyrBZkA4AAA=
+  </data>
+ </layer>
+ <objectgroup name="Object" width="60" height="60">
+  <object name="External Map Events" type="SCRIPT" x="0" y="0">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/iw-nelaro-house04-o00-o00-o00.lua"/>
+   </properties>
+  </object>
+  <object name="Warp to city" type="WARP" x="928" y="1312" width="32" height="32">
+   <properties>
+    <property name="DEST_MAP" value="ow-o0000-n0004-o0000"/>
+    <property name="DEST_X" value="2768"/>
+    <property name="DEST_Y" value="3312"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

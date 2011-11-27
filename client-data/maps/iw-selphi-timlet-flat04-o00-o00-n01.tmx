@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="104" height="50" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="music" value="inside.ogg"/>
+ </properties>
+ <tileset firstgid="1" name="collision1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="1025" name="indoor3_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/indoor3_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="2049" name="indoor2_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/indoor2_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3073" name="indoor2_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/indoor2_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3585" name="indoor2_32_96" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/indoor2_32_96.png" width="1024" height="960"/>
+ </tileset>
+ <tileset firstgid="3905" name="castle1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/castle1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <layer name="Ground" width="104" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3RMQ2AQBBFwS0OAaAGRJ8JzJwNLED12WSK6V/y1la1AAAAAAAAAADgpfsg/cCfvn/mTvqBP/50ln7gjz+dpR/4409n6Qf+9P3zd+eouka+AwAAAAAAAIBvHjSh20FAUQAA
+  </data>
+ </layer>
+ <layer name="Fringe" width="104" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3UTQ7CIBRGUQatidDUxEVodKauQmfqCh26rm5E3qBprUB/1ErNPckLaShQ+QSlAAAAAAAAAAAAAAAA4rJeUhjfStu917/+Cvy7uVFKm+q5SJ/75VlqZ2tv65C+vuOjM6VM1v+bbvq1SrO8/3wiT5RaJFXrmjtGG5vN1lQ5NEtIe7Z1sXWtZVN0yEr2U6pvVmPs3xTyOdpsTuZ5n5vZhDII9ZWZhLLxjQ/tnYwZcjZda8WeT53r3NRbcXf8xlCGvn1srtVHl9zLNdremVI+da57zued/7Jv7rb+LtmE8pG+KdxvsRp6tj41Ht/XzMh1NwMAAAAAAAAAAAAAAMTmAVJdTKRAUQAA
+  </data>
+ </layer>
+ <layer name="Over" width="104" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3QsQ0AEABEUR1hDwr778cIJEQi79U/V1wIAAAAAAAAAABwT8rrbdlo40a7os69dnjzN90/AAAAAAAAAAAAAMBDA0QMXCRAUQAA
+  </data>
+ </layer>
+ <layer name="Collision" width="104" height="50" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3T0Q7CIAwFULL//2hfTcOkgEslniYnGkcn9IartXYBAAAAAAAAAADwuFjxt2xfr2bWjv7zbn877zzBaP+fZpKZ/0quse+pqp79bD5x3/H73Rmz55/pH/WsZNdbXz3/bD69c4/uT+ybebZzP7J3cnbNL9qdQUuu6fW8f64839l/9dx386mu3f3N9FdncGI+36jsGasz+Nd8slWdwcnMEAAAAAAAAOBMLyWpK21AUQAA
+  </data>
+ </layer>
+ <objectgroup name="Object" width="104" height="50">
+  <object name="External Map Events" type="SCRIPT" x="0" y="-2880">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/iw-selphi-timlet-flat04-o00-o00-n01.lua"/>
+   </properties>
+  </object>
+  <object name="Warp to flat4-o0 XCF" type="WARP" x="1920" y="992" width="64" height="32">
+   <properties>
+    <property name="DEST_MAP" value="iw-selphi-timlet-flat04-o00-o00-o00"/>
+    <property name="DEST_X" value="1888"/>
+    <property name="DEST_Y" value="832"/>
+   </properties>
+  </object>
+  <object name="Kellerskorpion" type="SPAWN" x="896" y="736" width="1824" height="256">
+   <properties>
+    <property name="MAX_BEINGS" value="10"/>
+    <property name="MONSTER_ID" value="10"/>
+    <property name="SPAWN_RATE" value="15"/>
+   </properties>
+  </object>
+  <object name="Red Scorpion" type="SPAWN" x="642" y="819" width="256" height="160">
+   <properties>
+    <property name="MAX_BEINGS" value="1"/>
+    <property name="MONSTER_ID" value="6"/>
+    <property name="SPAWN_RATE" value="10"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
