@@ -24,7 +24,7 @@ function elevator_selphi_timlet_ipsum_house_talk(npc, ch) --- NPC für die Nethe
 	DEFAULT_X_POS = 78 * TILESIZE
 	DEFAULT_Y_POS = 25 * TILESIZE
 	
-	while true do 
+	while true do
 		local v = do_choice(npc, ch, "00",
 								     "01",
 								     "02",
@@ -32,7 +32,7 @@ function elevator_selphi_timlet_ipsum_house_talk(npc, ch) --- NPC für die Nethe
 									 "04",
 									 "05",
 									 "Ich möchte nicht Fahrstuhl fahren.")
-								   
+								
 		if v == 1 then
 		    mana.chr_warp(ch, 20148, 25 * TILESIZE, 23 * TILESIZE) 		
 			break;

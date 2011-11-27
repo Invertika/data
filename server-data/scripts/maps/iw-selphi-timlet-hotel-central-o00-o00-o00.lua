@@ -43,7 +43,7 @@ function rezeptionist_talk(npc, ch)
         do_npc_close(npc, ch)
         return
   end
-  
+
   if get_qstatus() == 0 then
     do_message(npc, ch, "Willkommen im Hotel. Was kann ich für dich tun?")
       local v = do_choice(npc, ch, "Hast du Arbeit für mich?","Nichts, danke")
@@ -64,7 +64,7 @@ function rezeptionist_talk(npc, ch)
             do_message(npc, ch, "Was stehst du noch hier rum? Bring mir 10 IP Pakete! Du kannst sie beim Manitu kaufen.")
         end
   elseif get_qstatus() == 2 then
-        do_message(npc, ch, "Kannst du mir helfen, die Maden- und Skorpione hier in der Gegend zu töten? Die vertreiben mir die Kundschaft! Als Beweis für deine Dienste hätte ich gerne 10x Skorpionstachel und 10x Madenschleim!")  
+        do_message(npc, ch, "Kannst du mir helfen, die Maden- und Skorpione hier in der Gegend zu töten? Die vertreiben mir die Kundschaft! Als Beweis für deine Dienste hätte ich gerne 10x Skorpionstachel und 10x Madenschleim!")
       local v = do_choice(npc, ch, "Vergiss es, das ist Tierquälerei!","Hier gibt es Maden?! Ich... muss weg!","Klar, mach ich!")
         if v == 3 then
             do_message(npc, ch, "Viel Erfolg bei der Jagd!")

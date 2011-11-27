@@ -19,7 +19,7 @@ require "scripts/libs/banker"
 require "scripts/libs/slotmachine"
 require "scripts/libs/invertika"
 
-atinit(function() 
+atinit(function()
  create_npc("Brecht", 21, 20 * TILESIZE + 16, 15 * TILESIZE + 16, brecht_talk, nil) --- Brecht
  create_npc("Chodar", 40, 38 * TILESIZE + 16, 18 * TILESIZE + 16, chodar_talk, nil) --- Chodar
 end)
@@ -34,10 +34,10 @@ end
 
 function chodar_talk(npc, ch)
     invertika.init_quest_status(ch, "selphi_timlet_vipcard")
-    
+
     function get_qstatus() return invertika.get_quest_status(ch, "selphi_timlet_vipcard") end
     function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_vipcard", x) end
-    
+
     if get_qstatus() == 0 then
         do_message(npc, ch, "Hey! Du! Steht nicht so dumm rum! Bring mir mein Bier!")
         set_qstatus(1)

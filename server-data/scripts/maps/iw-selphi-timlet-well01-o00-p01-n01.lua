@@ -17,7 +17,7 @@
 
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
- 
+
 local tano = {}
 local waypointstate = {}
 
@@ -48,7 +48,7 @@ atinit(function()
     mana.trigger_create(23 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, "waypoints", 2, true) --- Wegpunkt 2 (Küchenanrichte, zweite von rechts)
     mana.trigger_create(24 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, "waypoints", 3, true) --- Wegpunkt 3 (Küchenanrichte, ganz rechts)
     waypointstate[tano[5]] = 1
-  
+
     --- Ta No 6 (Küchenhilfe)
     mana.trigger_create(19 * TILESIZE + 16, 19 * TILESIZE + 16, 1, 1, "waypoints", 1, true) --- Wegpunkt 1 (Küchenanrichte, links vor dem Ofen)
     mana.trigger_create(9 * TILESIZE + 16, 14 * TILESIZE + 16, 1, 1, "waypoints", 2, true) --- Wegpunkt 2 (Vorratskammer, oben vor dem Regal)
@@ -59,7 +59,7 @@ atinit(function()
     -- mana.trigger_create(42 * TILESIZE, 36 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "treasure_trap", 0, true)
     -- mana.trigger_create(39 * TILESIZE, 36 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "treasure_warning", 0, true)
 end)
- 
+
 function tano1_talk(npc, ch)
     do_message(npc, ch, invertika.get_random_element("Geh doch mal zu Samos, der hat bestimmt einen Auftrag für dich.",
       "Im Laden kannst du erst etwas kaufen, wenn du dir Reputation bei uns erworben hast.",

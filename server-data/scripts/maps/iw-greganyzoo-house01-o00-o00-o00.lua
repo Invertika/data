@@ -24,12 +24,12 @@ end)
 
 function geban_talk(npc, ch)
     do_message(npc, ch, "Hallo, was kann ich für sie tuen?")
-    
+
         while true do
         local v = do_choice(npc, ch,
           "Kaufen.",
           "Nichts. Danke.")
-                         
+
         if v == 1 then
             mana.npc_trade(npc, ch, false, {
               {40049, 10, 1500}

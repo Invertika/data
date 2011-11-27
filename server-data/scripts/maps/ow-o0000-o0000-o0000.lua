@@ -3,8 +3,8 @@
 --
 -- © 2008-2011 by The Invertika Development Team
 --
--- This file is part of Invertika. Invertika is free software; you can redistribute 
--- it and/or modify it under the terms of the GNU General  Public License as published 
+-- This file is part of Invertika. Invertika is free software; you can redistribute
+-- it and/or modify it under the terms of the GNU General  Public License as published
 -- by the Free Software Foundation; either version 3 of the License, or any later version.
 
 require "scripts/lua/npclib"
@@ -22,7 +22,7 @@ atinit(function()
  mana.trigger_create(41 * TILESIZE + 8, 105 * TILESIZE + 8, 1.5 * TILESIZE, 1.5 * TILESIZE, "warp_escape_tunnel", 0, true) --- Warp zum Fluchttunnel
  --mana.trigger_create(113 * TILESIZE, 141 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "waypoint_archway_1", 0, true) --- Rundenzähler Torbögen (Waypoint 1)
  --mana.trigger_create(112 * TILESIZE, 180 * TILESIZE, 5 * TILESIZE, 4 * TILESIZE, "waypoint_archway_2", 0, true) --- Rundenzähler Torbögen (Waypoint 2)
- 
+
  --Schilder
  sign.create_sign(113, 84, "Frisörsalon Umet\
 Schneiden, Färben, Waschen, Perücken und mehr.") -- Schild vor dem Friseur
@@ -47,30 +47,30 @@ Wir müssen darauf hinweisen, dass bei Diebstahl ein Ladenverbot verhängt wird 
  create_npc("Ortana", 8, 97 * TILESIZE + 16, 49 * TILESIZE + 16, ortana_talk, nil) --- Ortana
  create_npc("Tonver", 8, 17 * TILESIZE + 16, 181 * TILESIZE + 16, tonver_talk, nil) --- Tonver
  create_npc("Elmes", 46, 114 * TILESIZE + 16, 180 * TILESIZE + 16, elmes_talk, nil) --- Elmes
- create_npc("Nepuret", 30, 90 * TILESIZE + 16, 185 * TILESIZE + 16, nepuret_talk, nil) --- Nepuret 
+ create_npc("Nepuret", 30, 90 * TILESIZE + 16, 185 * TILESIZE + 16, nepuret_talk, nil) --- Nepuret
  create_npc("Nero", 24, 162 * TILESIZE + 16, 175 * TILESIZE + 16, nero_talk, nil) --- Nero
  create_npc("Bernie", 40, 13 * TILESIZE + 16, 9 * TILESIZE + 16, bernie_talk, nil) --- Bernie
  create_npc("Valeria", 10, 26 * TILESIZE + 16, 49 * TILESIZE + 16, valeria_talk, nil) --- Valeria
- 
+
  create_npc("Alaria", 79, 170 * TILESIZE + 16, 182 * TILESIZE + 16, seller.seller_talk, nil) --- Verkäufer
  create_npc("Lidi", 71, 171 * TILESIZE + 16, 79 * TILESIZE + 16, lidi_talk, nil) -- Lidi
- 
+
  create_npc("Wache", 25, 39 * TILESIZE + 16, 51 * TILESIZE + 16, colloseumwache_talk, nil) --- Colloseumwache
  create_npc("Wache", 25, 44 * TILESIZE + 16, 51 * TILESIZE + 16, colloseumwache_talk, nil) --- Colloseumwache
- 
+
  create_npc("Wache", 29, 26 * TILESIZE + 16, 165 * TILESIZE + 16, bankwache_talk, nil) --- Bankwache
  create_npc("Wache", 29, 31 * TILESIZE + 16, 165 * TILESIZE + 16, bankwache_talk, nil) --- Bankwache
  create_npc("Wache", 29, 45 * TILESIZE + 16, 165 * TILESIZE + 16, bankwache_talk, nil) --- Bankwache
  create_npc("Wache", 29, 49 * TILESIZE + 16, 165 * TILESIZE + 16, bankwache_talk, nil) --- Bankwache
- 
+
  create_npc("Stadtwache", 27, 110 * TILESIZE + 16, 196 * TILESIZE + 16, stadtwache_talk, nil) --- Stadtwache
  create_npc("Stadtwache", 27, 117 * TILESIZE + 16, 196 * TILESIZE + 16, stadtwache_talk, nil) --- Stadtwache
- 
+
  wache1 = create_npc("Palastwache", 27, 143 * TILESIZE + 16, 68 * TILESIZE + 16, palastwache_talk, nil) --- Palastwache
  create_npc("Palastwache", 27, 150 * TILESIZE + 16, 68 * TILESIZE + 16, palastwache_talk, nil) --- Palastwache
  wache2 = create_npc("Palastwache", 27, 181 * TILESIZE + 16, 68 * TILESIZE + 16, palastwache_talk, nil) --- Palastwache
  create_npc("Palastwache", 27, 188 * TILESIZE + 16, 68 * TILESIZE + 16, palastwache_talk, nil) --- Palastwache
- 
+
  --- Trigger für die Überwachung des Torbereiches
  mana.trigger_create(145 * TILESIZE, 17 * TILESIZE, 5 * TILESIZE, 52 * TILESIZE, "wache_trigger", 1, true) --- Trigger Tor 1
  mana.trigger_create(183 * TILESIZE, 17 * TILESIZE, 5 * TILESIZE, 52 * TILESIZE, "wache_trigger", 2, true) --- Trigger Tor 2
@@ -86,11 +86,11 @@ Wir müssen darauf hinweisen, dass bei Diebstahl ein Ladenverbot verhängt wird 
  mana.trigger_create(191 * TILESIZE, 119 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 8, true)
  mana.trigger_create(102 * TILESIZE, 141 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 9, true)
  mana.trigger_create(87 * TILESIZE, 151 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 10, true)
- 
+
  ---Weihnachten
  --create_npc("Rentier", 74, 177 * TILESIZE + 16, 185 * TILESIZE + 16, rentier_talk, nil) --- Rentier
  --create_npc("Weihnachtsmann", 9, 184 * TILESIZE + 16, 185 * TILESIZE + 16, weihnachtsmann_talk, nil) --- Weihnachtsman
- 
+
  ---Neujahr
  ---create_npc("Feuerwerker", 139, 177 * TILESIZE + 16, 185 * TILESIZE + 16, fireworker_talk, npclib.walkaround_small)
 end)
@@ -99,17 +99,17 @@ end)
 -- Weihnachten
 function weihnachtsmann_talk(npc, ch)
     invertika.init_quest_status(ch, "selphi_timlet_santa_clause")
-  
+
     -- quest get/set functions
     function get_qstatus() return invertika.get_quest_status(ch, "selphi_timlet_santa_clause") end
     function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_santa_clause", x) end
-  
+
     if get_qstatus()==0 then
       do_message(npc, ch, "Ho Ho Ho. Ich bin der Weihnachtsmann. Meine Geschenke sind schon wieder überall verteilt. Diese Weihnachtsschleime rauben mir den letzten Nerv. Magst du mir helfen sie wieder einzusammeln?")
-    
-      while true do 
+
+      while true do
             local v = do_choice(npc, ch, "Ja.", "Nein.")
-                                   
+
           if v == 1 then
             do_message(npc, ch, "Das ist super ich denke so 25 Stück sollten mir reichen. Ich warte dann hier auf dich.")
             set_qstatus(1)
@@ -123,18 +123,18 @@ function weihnachtsmann_talk(npc, ch)
       local count13 = mana.chr_inv_count(ch, 40013)
       local count14 = mana.chr_inv_count(ch, 40014)
       local count15 = mana.chr_inv_count(ch, 40015)
-      
+
       local countAll=count13+count14+count15;
-      
+
       if countAll >= 25 then
         --Nachricht
         do_message(npc, ch, "Du hast es wirklich geschafft. Ich danke dir. Na das schreit ja geradezu nach einer Belohnung. Da habe ich doch einige Sachen für dich.")
-        
+
         --Weihnachtsgeschenke entfernen
         invertika.add_items(ch, 40013, -count13, "grünes Geschenk")
         invertika.add_items(ch, 40014, -count14, "blaues Geschenk")
         invertika.add_items(ch, 40015, -count15, "lila Geschenk")
-        
+
         --Belohnung
         invertika.add_items(ch, 20010, 1, "Santa Clause Mütze")
         invertika.add_items(ch, 30021, 10, "Zuckerstange")
@@ -155,7 +155,7 @@ function weihnachtsmann_talk(npc, ch)
       "Jetzt muss ich die Geschenke nur noch verteilen.",
       "Danke für deine großartige Hilfe."))
     end
-    
+
     do_npc_close(npc, ch)
 end
 
@@ -199,12 +199,12 @@ end
  function wache_trigger(ch, id)
    if (mana.being_type(ch) == TYPE_CHARACTER) then --- Nur Player durchlassen
      local count = mana.chr_inv_count(ch, 40009)
-     
+
      if count == 0 then
        local x = mana.posX(ch)
        local y = mana.posY(ch)
-       mana.chr_warp(ch, mana.get_map_id(), x, 70 * TILESIZE) 
-       
+       mana.chr_warp(ch, mana.get_map_id(), x, 70 * TILESIZE)
+
        if (id == 1) then
          mana.being_say(wache1, get_wache_say())
        elseif (id == 2) then
@@ -213,7 +213,7 @@ end
      end
   end
  end
- 
+
 function elmo_talk(npc, ch)
     do_message(npc, ch, "Willkommen in Selphi Timlet, der Stadt in der Wüste. Sei nett zu den anderen und habe viel Spaß!")
     do_npc_close(npc, ch)
@@ -226,12 +226,12 @@ end
 
 function julia_talk(npc, ch)
     do_message(npc, ch, "Hi, was kann ich für dich tun?")
-    
-    while true do 
+
+    while true do
         local v = do_choice(npc, ch, "Kaufen.",
                          "Verkaufen.",
                          "Nichts. Danke.")
-                                   
+
         if v == 1 then
             mana.npc_trade(npc, ch, false, { {10001, 10, 19}, {10013, 10, 159}, {10002, 10, 997}, {20001, 10, 30}, {20002, 10, 50}, {20011, 10, 30}, {20012, 10, 30}, {20013, 10, 30}, {20014, 10, 30}, {20015, 10, 50}, {20016, 10, 50}, {20017, 10, 50}, {20018, 10, 50}  })
             break
@@ -257,11 +257,11 @@ function bruce_talk(npc, ch)
   -- quest get/set functions
   function get_qstatus() return tonumber(invertika.get_quest_status(ch, "selphi_timlet_bruce_quest")) end
   function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_bruce_quest", tonumber(x)) end
-  
+
     if get_qstatus()==0 then
         invertika.add_money(ch, 1000)
         set_qstatus(1)
-        do_message(npc, ch, "Ahhh ich verstehe, du bist neu hier. Hier ein paar Münzen fuer den Anfang...")        
+        do_message(npc, ch, "Ahhh ich verstehe, du bist neu hier. Hier ein paar Münzen fuer den Anfang...")
     elseif get_qstatus()==1 then
     do_message(npc, ch, "Siehst du die Maden auf den Straßen? Die reinste Plage! Dieses gefräßige Ungeziefer vernichtet das letzte bisschen Vegetation in der Stadt! Willst du uns helfen, unsere schöne Stadt von diesen ekelhaften Würmern zu befreien?")
     set_qstatus(do_choice(npc, ch, "Nein.","Ja."))
@@ -350,7 +350,7 @@ function felix_talk(npc, ch)
     invertika.init_quest_status(ch, quest_string)
     local get_qstatus = function() return invertika.get_quest_status(ch, quest_string) end
     local set_qstatus = function(x) invertika.set_quest_status(ch, quest_string, x) end
-    
+
     if get_qstatus() == 0 then
         do_message(npc, ch, invertika.get_random_element("Hallo Reisender.", "Guten Tag.", "Hallo.", "Schönes Wetter nicht?"))
         do_message(npc, ch, "Hättest du Lust für mich etwas zu erledigen?")
@@ -419,16 +419,16 @@ function nobur_talk(npc, ch)
         invertika.init_quest_status(ch, "selphi_timlet_norbur_scorpion_stingers")
 
     do_message(npc, ch, "Ich brauche Skorpionstachel. Eine ganze Menge, so zwei Dutzend oder drei, vielleicht auch vier Dutzend. Das wird eine leckere Suppe.")
-    
-    local count = mana.chr_inv_count(ch, 40004) 
-    
+
+    local count = mana.chr_inv_count(ch, 40004)
+
     if count > 0 then
       do_message(npc, ch, "Ich sehe du hast ein paar Stachel. Magst du sie mir geben?")
-      
-          while true do 
+
+          while true do
         local v = do_choice(npc, ch, "Ja",
                                      "Nein")
-                                   
+
         if v == 1 then
             if (invertika.get_quest_status(ch, "selphi_timlet_norbur_scorpion_stingers") == 0) then
               invertika.set_quest_status(ch, "selphi_timlet_norbur_scorpion_stingers", count)
@@ -436,30 +436,30 @@ function nobur_talk(npc, ch)
               local dbcount = invertika.get_quest_status(ch, "selphi_timlet_norbur_scorpion_stingers");
               dbcount = dbcount + count
               invertika.set_quest_status(ch, "selphi_timlet_norbur_scorpion_stingers", dbcount)
-              
+
               if dbcount > 200 then
                 do_message(npc, ch, "Also wenn ich es mir recht überlege, habe ich schon genug Stachel. Trotzdem danke.")
                 break;
               end
             end
-            
+
             invertika.add_items(ch, 40004, -count, "Skorpionstachel")
-        
+
             if count < 10 then
               do_message(npc, ch, "Nimm diese Münzen als Dank.")
-              invertika.add_money(ch, 50) 
+              invertika.add_money(ch, 50)
               break;
             elseif count < 20 then
               do_message(npc, ch, "Nimm diese Münzen als Dank.")
-              invertika.add_money(ch, 150) 
+              invertika.add_money(ch, 150)
               break;
             elseif count < 30 then
               do_message(npc, ch, "Nimm diese Münzen als Dank.")
-              invertika.add_money(ch, 350) 
+              invertika.add_money(ch, 350)
               break;
             elseif count < 40 then
               do_message(npc, ch, "Nimm diese Münzen als Dank.")
-              invertika.add_money(ch, 500) 
+              invertika.add_money(ch, 500)
               break;
             elseif count < 150 then
               do_message(npc, ch, "Nimm diesen lustigen Hut als Dankeschön.")
@@ -467,17 +467,17 @@ function nobur_talk(npc, ch)
               break;
             elseif count >= 150 then
               do_message(npc, ch, "Nimm diese Münzen als Dank.")
-              invertika.add_money(ch, 2500) 
+              invertika.add_money(ch, 2500)
               break;
             end
-            
+
             break
         elseif v == 2 then
             do_message(npc, ch, "Okay dann muss ich weiter suchen.")
             break
         end
     end
-      
+
     end
     do_npc_close(npc, ch)
 end
@@ -495,11 +495,11 @@ end
 function inard_talk(npc, ch)
     invertika.init_quest_status(ch, "selphi_timlet_inard_training");
     invertika.init_quest_status(ch, "selphi_timlet_orkana_feierabend");
- 
+
     -- quest get/set functions
     function get_qstatus() return tonumber(invertika.get_quest_status(ch, "selphi_timlet_inard_training")) end
     function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_inard_training", tonumber(x)) end
-    
+
     function get_feierabend() return tonumber(invertika.get_quest_status(ch, "selphi_timlet_orkana_feierabend")) end
 
     if get_qstatus() == 0 then
@@ -603,7 +603,7 @@ end
 function ortana_talk(npc, ch)
     invertika.init_quest_status(ch, "selphi_timlet_inard_training");
     invertika.init_quest_status(ch, "selphi_timlet_orkana_feierabend");
-    
+
     function get_qstatus() return tonumber(invertika.get_quest_status(ch, "selphi_timlet_inard_training")) end
     function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_inard_training", tonumber(x)) end
     function get_feierabend() return tonumber(invertika.get_quest_status(ch, "selphi_timlet_orkana_feierabend")) end
@@ -716,14 +716,14 @@ function stadtwache_talk(npc, ch)
     local quest_string_monsterid = "selphi_timlet_guards_hunt_monsterid"
     local quest_string_monster_name = "selphi_timlet_guards_hunt_monstername"
     local quest_string_kills = "selphi_timlet_guards_hunt_kills"
-    
+
     invertika.init_quest_status(ch, quest_string_number)
     invertika.init_quest_status(ch, quest_string_kills)
     invertika.init_quest_status(ch, quest_string_monsterid)
-    
+
     local number_of_jobs = invertika.get_quest_status(ch, quest_string_number)
     local new_job = false
-    
+
     if number_of_jobs == 0 then
         do_message(npc, ch, "Wir garantieren hier die Sicherheit der Stadt.")
         do_message(npc, ch, "Übrigens. Der König zahlt regelmäßig Prämien wenn du Ungeziefer tötest.")
@@ -734,9 +734,9 @@ function stadtwache_talk(npc, ch)
         invertika.set_quest_status(ch, quest_string_number, number_of_jobs)
         new_job = true
     end
-    
+
     local required_kills = invertika.get_quest_status(ch, quest_string_kills)
-    
+
     if required_kills ~= 0 then
         local kills = mana.chr_get_kill_count(ch, invertika.get_quest_status(ch, quest_string_monsterid))
         if kills >= required_kills then
@@ -749,7 +749,7 @@ function stadtwache_talk(npc, ch)
             do_message(npc, ch, string.format("Du musst noch %s %s töten bevor es eine Belohnung gibt.", required_kills - kills, invertika.get_quest_status_string(ch, quest_string_monster_name)))
         end
     end
-    
+
     if new_job then
         local monster = nil
         if number_of_jobs < 5 then
@@ -798,12 +798,12 @@ end
 
 function bernie_talk(npc, ch)
     do_message(npc, ch, "Hey du, du brauchst ihn doch bestimmt, den Niedermetzler 3000. Das ist genau das richtige für dich, da kannst du garnicht widerstehen. Komm schon für nur 99999 Aki gehört er dir? Oder eine Sonnenbrille? Neuste Mode? 12500 Aki! Ein besonderes Modell!")
-    
-    while true do 
+
+    while true do
         local v = do_choice(npc, ch, "Her mit dem Niedermetzler!",
                                      "Ich will die Sonnenbrille!",
                                      "Lieber nicht...")
-                                   
+
         if v == 1 then
             local PlayerMoney=mana.chr_money(ch)
             if PlayerMoney >= 99999 then
@@ -841,15 +841,15 @@ function bernie_talk(npc, ch)
 end
 
 function valeria_talk(npc, ch)
-    
+
     invertika.init_quest_status(ch, "selphi_timlet_valeria_letzteHeilung")
     local letzteHeilung = invertika.get_quest_status(ch, "selphi_timlet_valeria_letzteHeilung")
 
     do_message(npc, ch, "Soll ich dich heilen?")
 
-    while true do 
+    while true do
         local v = do_choice(npc, ch, "Alles heilen (1000 Aki)", "Nur 1000 HP (kostenlos)", "Nein ich brauche keine Heilung")
-                                   
+
         if v == 1 then
             local PlayerMoney=mana.chr_money(ch)
             if PlayerMoney >= 1000 then
@@ -862,7 +862,7 @@ function valeria_talk(npc, ch)
       "Du hast keine 1000 Aki."))
             end
         elseif v == 2 then
-            if letzteHeilung + (60 * 60 * 2) > os.time(t) then 
+            if letzteHeilung + (60 * 60 * 2) > os.time(t) then
                 do_message(npc, ch, "Nein. Ich heile dich nicht alle paar Minuten kostenlos. Komm doch später vielleicht nochmal vorbei")
                 break
             else
@@ -906,7 +906,7 @@ function lidi_talk(npc, ch)
     local set_qstatus = function(x)
         invertika.set_quest_status(ch, queststring, x)
     end
-    
+
     if get_qstatus() == 0 then
         if mana.chr_inv_count(ch, 20023) > 0 then
             do_message(npc, ch, "Oh Gott du hast SIE. Ich brauche diese Brille, gibst du sie mir?")
@@ -918,7 +918,7 @@ function lidi_talk(npc, ch)
                     do_message(npc, ch, "Danke, danke, danke. Hier nimm das als Dankeschön.")
                     set_qstatus(1)
                     break
-                elseif v == 2 then 
+                elseif v == 2 then
                     do_message(npc, ch, "Pffffff, dann nicht...")
                     break
                 end
@@ -941,7 +941,7 @@ end
 
 function warp_escape_tunnel(obj, arg)
     if(mana.being_type(obj)==TYPE_CHARACTER) then
-        mana.chr_warp(obj, 20146, 35 * TILESIZE, 35 * TILESIZE + 16) 
+        mana.chr_warp(obj, 20146, 35 * TILESIZE, 35 * TILESIZE + 16)
     end
 end
 

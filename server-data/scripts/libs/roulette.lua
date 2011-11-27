@@ -62,7 +62,7 @@ function roulette_talk(npc, ch)
     else
       mana.chr_money_change(ch, -money)
 		end
-    
+
     do_message(npc, ch, "Auf was möchtest du setzen?")
     local v = do_choice(npc, ch,"Farbe",
                                 "Gleich/Ungleich",
@@ -73,12 +73,12 @@ function roulette_talk(npc, ch)
     elseif v == 2 then w = do_choice(npc, ch,"Gleich","Ungleich")
     elseif v == 3 then w = do_choice(npc, ch,"Hoch","Tief")
     elseif v == 4 then w = do_choice(npc, ch,
-      "0","1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", 
-      "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", 
+      "0","1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12",
+      "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24",
       "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36")
     w = w - 1
     end
-    
+
     local random_number = math.random(0, 36)
     local text_win = "Die Zahl ist: " .. tostring(random_number) .. ". Du hast "
     local text_loose =  "Die Zahl ist: " .. tostring(random_number) .. ". Du hast verloren!"

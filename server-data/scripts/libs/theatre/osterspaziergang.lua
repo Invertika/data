@@ -28,6 +28,6 @@ function plotOsterspaziergang:nextPlotStep()
   elseif self.step == 2 then
     --mana.being_say(self.Julia, "Im Tale grünet Hoffnungsglück;")
   end
-  
+
   self.step = self.step+1
 end
