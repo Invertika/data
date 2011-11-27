@@ -26,7 +26,9 @@ atinit(function()
     nethek.create_netheksaeule(122 * TILESIZE, 114 * TILESIZE + 16) --- Netheksäule
 
     sign_entrance = "Liori"
-    sign.create_sign(156, 107, sign_entrance) --- Schild Ortseingang
+    sign.create_sign(131, 108, sign_entrance) --- Schild Ortseingang
+    sign.create_sign(92, 78, "\"Bank der Zweisamkeit\"\n\nBitte seien sie diskret, falls die Bank bereits besetzt sein sollte.")
+    sign.create_sign(122, 68, "\"Statue von Er--i--l--mon\"\n\nZu gedenken des Gründers von Liori. Sein Name soll uns auf ewig in Erinnerung bleiben!")
 
     --NPCs
     create_npc("Deaqon", 35, 94 * TILESIZE + 16, 103 * TILESIZE + 16, seller.seller_talk, nil) --- Verkäufer
