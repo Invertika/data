@@ -35,7 +35,7 @@ function Theatre:new(racename, numberofCheckpoints)
     local res = {}
     setmetatable(res, self)
     self.__index = self
-    
+
     Race.RaceName=racename
     Race.NumberOfCheckpoints=numberofCheckpoints
 end

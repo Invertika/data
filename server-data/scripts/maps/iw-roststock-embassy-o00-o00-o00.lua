@@ -13,7 +13,7 @@
 --  under the terms of the GNU General  Public License as published by the Free --
 --  Software Foundation; either version 2 of the License, or any later version. --
 ----------------------------------------------------------------------------------
- 
+
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 require "scripts/libs/banker"

@@ -29,7 +29,7 @@ end)
 function gerhard_talk(npc, ch)
     -- Dieser Händler könnte später mal Speed verkaufen.
     do_message(npc, ch, "Bist du ein Mitglied der Stadtwache? Nein? Sehr gut, was kann ich für dich tun?")
-    while true do 
+    while true do
         local v = do_choice(npc, ch, "Kaufen.",
                                      "Verkaufen.",
                                      "Nichts. Danke.")

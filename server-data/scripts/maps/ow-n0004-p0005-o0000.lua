@@ -28,9 +28,9 @@ atinit(function()
 
     sign_entrance = "Burg Cedric"
     sign.create_sign(106, 182, sign_entrance) --- Schild Burgeingang
-    
+
     mana.trigger_create(101 * TILESIZE, 170 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "wache_trigger", 1, true)
-    
+
     diem = create_npc("Diem", 139, 60 * TILESIZE + 16, 160 * TILESIZE + 16, diem_talk, diem_update)
     invertika.create_npc_talk_random(diem,
       {"Kauft Leute! Kauft!",
@@ -41,24 +41,24 @@ atinit(function()
     create_npc("Chris", 141, 50 * TILESIZE + 16, 118 * TILESIZE + 16, chris_talk, npclib.walkaround_wide)
 
     create_npc("Estjdian", 120, 141 * TILESIZE + 16, 154 * TILESIZE + 16, estjdian_talk, nil)
-    
+
     create_npc("Palastwache", 26, 58 * TILESIZE + 16, 100 * TILESIZE + 16, palastwache_talk, nil)
     create_npc("Palastwache", 26, 61 * TILESIZE + 16, 100 * TILESIZE + 16, palastwache_talk, nil)
-    
+
     create_npc("Wache", 26, 150 * TILESIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
     create_npc("Wache", 26, 153 * TILESIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
     create_npc("Wache", 26, 52 * TILESIZE + 16, 149 * TILESIZE + 16, wache_casino_talk, nil)
-    
+
     wache_unten_links = create_npc("Wache", 26, 100 * TILESIZE + 16, 174 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
     wache_unten_rechts = create_npc("Wache", 26, 104 * TILESIZE + 16, 174 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
     create_npc("Wache", 26, 100 * TILESIZE + 16, 140 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
     create_npc("Wache", 26, 104 * TILESIZE + 16, 140 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
 
     cedric = create_npc("Cedric", 39, 81 * TILESIZE + 16, 97 * TILESIZE + 16, cedric_talk, nil)
-    
+
     -- Cedric´s Rede
     invertika.schedule_every_day(17, 59, 00, cedric_speech)
-    
+
     -- Feuerwerk
     invertika.schedule_every_day(18, 00, 00, firework_round)
 end)
@@ -185,7 +185,7 @@ function spawn_effect()
 end
 
 function cedric_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Ich bin Graf Cedric.", 
+    do_message(npc, ch, invertika.get_random_element("Ich bin Graf Cedric.",
       "Fühle dich, in meiner Burg, wie zu Hause."))
     do_npc_close(npc, ch)
 end
@@ -205,7 +205,7 @@ function cedric_speech()
     }
 
     if not cedric_speech_index then
-       cedric_speech_index = 1 
+       cedric_speech_index = 1
     end
     mana.being_say(cedric, speech[cedric_speech_index])
     cedric_speech_index = cedric_speech_index + 1

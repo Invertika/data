@@ -24,18 +24,18 @@ end)
 
 function manitu_talk(npc, ch)
     do_message(npc, ch, "Hallo, ich bin der Manitu. Grosses M, kleines anitu. Was kann ich für dich tun?")
-    
-    while true do 
+
+    while true do
         local v = do_choice(npc, ch, "IP Pakete kaufen",
                                      "Merkt ihr euch was ich so tue?",
                                      "Welche Weisheit habt ihr fuer mich?",
                                      "Nichts, danke.")
-                                     
+
         if v == 1 then
             mana.npc_trade(npc, ch, false, { {40002, 10, 50}, {40041, 10, 100} })
         elseif v == 2 then
             do_message(npc, ch, "Nein warum sollte ich mir merken was ihr macht? Ich fuehre keine Protokolle. Schliesslich haben wir doch alle etwas zu verbergen :)")
-        elseif v == 3 then    
+        elseif v == 3 then
                 do_message(npc, ch, invertika.get_random_element("Wenn du einen Urlaub gebucht hast, halte dich von allem gefaehrlichen fern, bevor du im Urlaub bist. Der große Geist mir diese Weisheit beibrachte.",
       "Weisheit... Mmm... Der große Geist sagte mir einen Server kann man immer gut gebrauchen. Was er wohl damit meinte?",
       "Der große Geist sagt: Sei fair zu deinen Geschäftspartnern.",
@@ -48,12 +48,12 @@ end
 
 function sandra_talk(npc, ch)
     do_message(npc, ch, "Hi, ich bin S.A.N.D.R.A.")
-    
-    while true do 
+
+    while true do
         local v = do_choice(npc, ch, "Was bedeutet S.A.N.D.R.A.?",
                                  "Was macht ihr hier eigentlich?",
                                  "Ich wollte nichts fragen. Entschuldigung.")
-                                 
+
         if v == 1 then
             do_message(npc, ch, "S.A.N.D.R.A. steht fuer Serious Awake Nullification Droid for Regard Answers.")
         elseif v == 2 then

@@ -31,7 +31,7 @@ end
 --- Gibt die Warp Map zurück
 function get_nethek_warp_map(ch)
 	local mapID = get_quest_var(ch, "nethek_warp_map")
-	if mapID=="" then 
+	if mapID=="" then
 	   return DEFAULT_MAP
 	else
 	   return mapID
@@ -46,7 +46,7 @@ end
 --- Gibt die Warpposition X in Pixel zurück
 function get_nethek_warp_x(ch)
 	local posX = get_quest_var(ch, "nethek_warp_x")
-	if posX=="" then 
+	if posX=="" then
 	   return DEFAULT_X
 	else
 	   return posX
@@ -61,7 +61,7 @@ end
 --- Gibt die Warpposition Y in Pixel zurück
 function get_nethek_warp_y(ch)
 	local posY = get_quest_var(ch, "nethek_warp_y")
-	if posY=="" then 
+	if posY=="" then
 	   return DEFAULT_Y
 	else
 	   return posY
@@ -86,7 +86,7 @@ function immolate_money(npc, ch, money)
 	
 	if PlayerMoney >= money then
 		mana.chr_money_change(ch, -money)
-		local acc_bal = get_oblation_money(ch) 
+		local acc_bal = get_oblation_money(ch)
 		mana.chr_set_quest(ch, "nethek_oblation_money", acc_bal+money)
 		do_message(npc, ch, "Dein Opfer wurde angenommen!")
 	else
@@ -99,11 +99,11 @@ end
 function netheksaeule_talk(npc, ch) --- NPC für die Netheksäule
 	do_message(npc, ch, "Was moechtest du?")
 	
-	while true do 
+	while true do
 		local v = do_choice(npc, ch, "Deinen Segen.",
 								     "Geld opfern.",
 								     "Nichts. Danke.")
-								   
+								
 		if v == 1 then
 		    local x = mana.posX(npc)
 			local y = mana.posY(npc) + 64

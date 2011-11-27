@@ -29,13 +29,13 @@ function tresor_talk(npc, ch)
     -- quest get/set functions
     function get_qstatus() return invertika.get_quest_status(ch, "selphi_timlet_flat03_safe") end
     function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_flat03_safe", x) end
-  
+
     if get_qstatus()==0 then
       do_message(npc, ch, "Hinter dem Bild befindet sich etwas. Mal schauen. Oh das ist ein Tresor. Mmm da schaue ich mal hinein. Bloß wie bekomme ich ihn auf?")
-    
-      while true do 
+
+      while true do
             local v = do_choice(npc, ch, "Dynamit benutzen", "Nett anklopfen", "Zweimal links, einmal rechts, dreimal diagonal...", "42", "Die Zahlenkombination auf der Rückseite des Bildes benutzen")
-                                   
+
           if v == 1 then
             local countDynamite = mana.chr_inv_count(ch, 40025)
             if countDynamite == 0 then
@@ -46,7 +46,7 @@ function tresor_talk(npc, ch)
               mana.being_damage(ch, 200, 100, 100, 0, 0)
               set_qstatus(2)
             end
-            
+
             break
           elseif v == 2 then
             do_message(npc, ch, "Nein, bin gerade beschäftigt. Inventur. Bitte kommen sie während unserer Servicezeiten nochmal.")
@@ -68,7 +68,7 @@ function tresor_talk(npc, ch)
     elseif get_qstatus()==2 then
       do_message(npc, ch, "Der Tresor ist durch die Explosion verzogen und lässt sich nicht mehr öffnen.")
     end
-    
+
     do_npc_close(npc, ch)
 end
 
@@ -141,7 +141,7 @@ function ceech_talk(npc, ch)
         do_message(npc, ch, invertika.get_random_element("Lass mich arbeiten!",
         "Ich habe zu tun.",
         "Jetzt nicht.",
-        "Schhhhh.", 
+        "Schhhhh.",
         "Hör auf zu stören!"))
     end
     do_npc_close(npc, ch)

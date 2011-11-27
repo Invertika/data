@@ -25,11 +25,11 @@ function averin_talk(npc, ch)
         invertika.init_quest_status(ch, "selphi_timlet_royal_pass")
     if (invertika.get_quest_status(ch, "selphi_timlet_royal_pass") == 0) then ---Keine Questvar gesetzt
       do_message(npc, ch, "Hallo, was ist dein Begehr?")
-      while true do 
+      while true do
           local v = do_choice(npc, ch, "Wer bist du?",
                           "Ich suche einen königlichen Passierschein.",
                           "Nichts. Danke.")
-                                    
+
           if v == 1 then
               do_message(npc, ch, invertika.get_random_element("Ich bin Averin, Chef der königlichen Palastwache.",
               "Mein Name ist Averin. Mir untersteht die königliche Palastwache.",
@@ -53,8 +53,8 @@ function averin_talk(npc, ch)
       "Was machst du noch hier? Schnell, der Brief ist wichtig.",
       "Du bist ja immer noch hier? Müsstest du nicht längst auf dem Weg nach Roststock sein?"))
     elseif (invertika.get_quest_status(ch, "selphi_timlet_royal_pass")==2) then
-      local count = mana.chr_inv_count(ch, 40012) 
-    
+      local count = mana.chr_inv_count(ch, 40012)
+
       if count > 0 then
           invertika.add_items(ch, 40012, -1, "Brief von der Botschaft in Roststock an Averin")
           invertika.add_items(ch, 40009, 1, "königlicher Passierschein")
