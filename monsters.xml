@@ -1,0 +1,1729 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+monsters.xml parameters explanation:
+This file is used to describe the monsters the players will see all around the world.
+It can be used by both client and server, but some parameters are specific.
+
+id [integer]:      It is the id of the monster. This parameter has to be unique for each monster.
+                   The system will use the monster id to refer on it in many ways.
+name [string]:     Tells the monster name. (Used to ease configuration ease on server.)
+                   but displayed to players on the client side.
+sprite [xml file]: Tells the xml file used to display the monster sprites. (Client only).
+sound <TAG>:       This tag is used by the client to know which sound to play at what event.
+  event [string]:  Tells the event at which the corresponding sound should be played. ('die', 'miss', 'hit', 'strike' are some examples.)
+  <INNER>[string]: The ogg file to be played
+drop <TAG>:        Tells what kind of item the monster can drop. See items.xml to get the id correspondence.
+  item [integer]:  Tells the drop item Id.
+  percent[float]:  Tells the chance (8.0 = 8%) to see the drop after monster's death.
+attributes <TAG>:  Tells all the monsters attribute. These attribute, as for items, should not be left
+                   in players hands.
+  hp [integer]:    The monster hit points.
+  size[integer]:   The monster maximal amplitude in pixels. Used to compute player's hit area.
+  speed[float]:    The monster's speed in tiles per second.
+                       (A tile is the smallest square map unit: by default, a tile is 32 pixel long.)
+  attack-min[integer]: The minimal attack strength of the monster. If your hasn't got any armor,
+                          there are the minimal hit points he will lose when hit by the monster.
+  attack-delta[integer]:  The amplitude between minimal and maximal damages the monster can do.
+  attack-magic[integer]:  The magical attacks are removing hp when hit but are computed against magical defense instead.
+  mutation[integer]:      The mutation indicates the amplitude in percent where attributes get modified with.
+                          For instance, with a mutation of 50, each attribute can be altered to become 100% to 149% of what they are.
+vulnerability<TAG>:       Tells the monster specific vulnerability to an element.
+  element[string]:        Tells to which element the weakness is. ('fire', 'earth', 'ice', 'metal' are some examples.)
+  factor[float]:          Tells the defense against an element is reduced in percent. (A value of 0.7 indicates that the defense is lowered by 30%).
+exp<TAG>:                 Tells how much experience point a monster is giving upon victory.
+-->
+<monsters>
+    <!-- Invertika Monster ID's > 0-->
+    <monster id="1" name="Killermade" targetCursor="small">
+        <sprite>monsters/maggot.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <attributes
+            hp="100000"
+            size="4"
+            speed="3.0"
+            attack-min="45000"
+            attack-delta="5000"
+            attack-magic="0"
+            hit="1000"
+            evade="5"
+            physical-defence="50"
+            magical-defence="50"
+            mutation="5"
+            />
+        <exp>50000</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="true"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="15"
+            range="32"
+            animation="attack"
+            />
+    </monster>
+
+    <monster id="2" name="Made" targetCursor="small">
+        <sprite>monsters/maggot.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="30001" percent="15"/>
+        <drop item="40005" percent="40"/>
+        <drop item="30011" percent="15"/>
+        <drop item="40028" percent="0.01"/>
+        <attributes
+            hp="20"
+            size="4"
+            speed="1.0"
+            attack-min="10"
+            attack-delta="2"
+            attack-magic="0"
+            hit="100"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <vulnerability element="fire" factor="1.5"/>
+        <vulnerability element="earth" factor="0.7"/>
+        <exp>5</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="32"
+            animation="attack"
+            />
+    </monster>
+
+    <monster id="3" name="Skorpion">
+        <sprite>monsters/scorpion.xml|#4d422d,826242,d8c282,ffffff</sprite>
+        <sound event="hit">monsters/scorpion/scorpion-hit1.ogg</sound>
+        <sound event="hit">monsters/scorpion/scorpion-hit2.ogg</sound>
+        <sound event="hit">monsters/scorpion/scorpion-hit3.ogg</sound>
+        <sound event="hit">monsters/scorpion/scorpion-hit4.ogg</sound>
+        <sound event="miss">monsters/scorpion/scorpion-miss1.ogg</sound>
+        <drop item="40004" percent="20"/>
+        <drop item="40028" percent="0.01"/>
+        <exp>10</exp>
+        <attributes
+            hp="50"
+            size="8"
+            speed="2.0"
+            attack-min="13"
+            attack-delta="2"
+            attack-magic="0"
+            hit="200"
+            evade="10"
+            physical-defence="5"
+            magical-defence="0"
+            />
+        <!-- doesn't move much, but attacks when you are comming too close. -->
+        <behavior
+            aggressive="true"
+            cowardly="false"
+            track-range="2"
+            stroll-range="10"
+            attack-distance="64"
+            />
+        <!-- slow, strong, long-range tail attack-->
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="5"
+            aft-delay="15"
+            damage-factor="3"
+            range="64"
+            particle-effect="graphics/particles/attack.particle.xml"
+            action="special1"
+            />
+        <!-- fast, weak, short-range scissor attack -->
+        <attack id="2"
+            priority="4"
+            type="physical"
+            pre-delay="3"
+            aft-delay="3"
+            damage-factor="1"
+            range="32"
+            />
+    </monster>
+
+    <!-- Schwache Made für das Vacare -->
+    <monster id="4" name="Weiße Made" targetCursor="small">
+        <sprite>monsters/maggot.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="30001" percent="20"/>
+        <drop item="40028" percent="0.01"/>
+        <drop item="40005" percent="20"/>
+        <attributes
+            hp="10"
+            size="4"
+            speed="1.0"
+            attack-min="10"
+            attack-delta="2"
+            attack-magic="0"
+            hit="10"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <vulnerability element="fire" factor="1.5"/>
+        <vulnerability element="earth" factor="0.7"/>
+        <exp>0</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+    </monster>
+
+    <monster id="5" name="Riesenmade" targetCursor="large">
+        <sprite>monsters/maggot-giant.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="30001" percent="9"/>
+        <drop item="30002" percent="1"/>
+        <drop item="30004" percent="7.5"/>
+        <drop item="40028" percent="0.01"/>
+        <exp>75</exp>
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attributes
+            hp="250"
+            size="4"
+            speed="1.0"
+            attack-min="25"
+            attack-delta="5"
+            attack-magic="0"
+            hit="200"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+    </monster>
+
+    <monster id="6" name="Roter Skorpion">
+        <sprite>monsters/scorpion.xml|#791d0a,cd5d27,f28d54,ffffff</sprite>
+        <sound event="hit">monsters/scorpion/scorpion-hit1.ogg</sound>
+        <sound event="hit">monsters/scorpion/scorpion-hit2.ogg</sound>
+        <sound event="hit">monsters/scorpion/scorpion-hit3.ogg</sound>
+        <sound event="hit">monsters/scorpion/scorpion-hit4.ogg</sound>
+        <sound event="miss">monsters/scorpion/scorpion-miss1.ogg</sound>
+        <drop item="30006" percent="20"/>
+        <drop item="30004" percent="1"/>
+        <drop item="30005" percent="5"/>
+        <drop item="40028" percent="0.01"/>
+        <exp>10</exp>
+        <attributes
+            hp="100"
+            size="8"
+            speed="2.0"
+            attack-min="20"
+            attack-delta="10"
+            attack-magic="0"
+            hit="250"
+            evade="50"
+            physical-defence="5"
+            magical-defence="0"
+            />
+        <!-- also quite lazy when unprovoked but much more territorial
+        than the normal one-->
+        <behavior
+            aggressive="true"
+            cowardly="false"
+            track-range="6"
+            stroll-range="10"
+            attack-distance="64"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            element="fire"
+            pre-delay="5"
+            aft-delay="10"
+            damage-factor="1"
+            range="64"
+            />
+    </monster>
+
+    <monster id="7" name="Schwarzer Skorpion">
+        <sprite>monsters/scorpion.xml|#0d1313,435a5a,879999,ffffff</sprite>
+        <sound event="hit">monsters/scorpion/scorpion-hit1.ogg</sound>
+        <sound event="hit">monsters/scorpion/scorpion-hit2.ogg</sound>
+        <sound event="hit">monsters/scorpion/scorpion-hit3.ogg</sound>
+        <sound event="hit">monsters/scorpion/scorpion-hit4.ogg</sound>
+        <sound event="miss">monsters/scorpion/scorpion-miss1.ogg</sound>
+        <drop item="30003" percent="15"/>
+        <drop item="30009" percent="10"/>
+        <drop item="30010" percent="8"/>
+        <exp>100</exp>
+        <attributes
+            hp="300"
+            size="4"
+            speed="2.0"
+            attack-min="30"
+            attack-delta="10"
+            attack-magic="8"
+            hit="400"
+            evade="5"
+            physical-defence="30"
+            magical-defence="0"
+            mutation="50"
+            />           
+        <behavior
+            aggressive="true"
+            cowardly="false"
+            track-range="10"
+            stroll-range="10"
+            attack-distance="64"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            element="fire"
+            pre-delay="5"
+            aft-delay="10"
+            damage-factor="1"
+            range="64"
+            />
+    </monster>
+
+    <monster id="8" name="Fledermaus">
+        <sprite>monsters/bat.xml</sprite>
+        <sound event="die">monsters/bat/bat-dying1.ogg</sound>
+        <sound event="hit">monsters/bat/bat-hit1.ogg</sound>
+        <drop item="30010" percent="1.5"/>
+        <drop item="30013" percent="4"/>
+        <drop item="30012" percent="1.5"/>
+        <drop item="40028" percent="0.01"/>
+        <drop item="40006" percent="0.7"/>
+        <exp>80</exp>
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attributes
+            hp="250"
+            size="4"
+            speed="2.0"
+            attack-min="20"
+            attack-delta="4"
+            attack-magic="0"
+            hit="300"
+            evade="10"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+    </monster>
+    
+    <monster id="9" name="Eidechse" targetCursor="large">
+        <sprite>monsters/lizard.xml</sprite>
+        <!-- noch nicht implementiert
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>-->
+        <drop item="20005" percent="1"/>
+        <exp>500</exp>
+        <behavior
+            aggressive="true"
+            cowardly="false"
+            track-range="10"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attributes
+            hp="800"
+            size="10"
+            speed="5.0"
+            attack-min="80"
+            attack-delta="20"
+            attack-magic="0"
+            hit="300"
+            evade="5"
+            physical-defence="30"
+            magical-defence="9"
+            mutation="90"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="5"
+            aft-delay="15"
+            damage-factor="3"
+            range="64"
+            particle-effect="graphics/particles/attack.particle.xml"
+            action="special1"
+            />
+    </monster>
+
+    <monster id="10" name="Kellerskorpion">
+        <sprite>monsters/scorpion.xml|#4C4C4C,7F7F7F,CCCCCC,ffffff</sprite>
+        <sound event="hit">monsters/scorpion/scorpion-hit1.ogg</sound>
+        <sound event="hit">monsters/scorpion/scorpion-hit2.ogg</sound>
+        <sound event="hit">monsters/scorpion/scorpion-hit3.ogg</sound>
+        <sound event="hit">monsters/scorpion/scorpion-hit4.ogg</sound>
+        <sound event="miss">monsters/scorpion/scorpion-miss1.ogg</sound>
+        <drop item="40016" percent="50"/>
+        <drop item="40028" percent="0.01"/>
+        <exp>15</exp>
+        <attributes
+            hp="200"
+            size="8"
+            speed="1.0"
+            attack-min="13"
+            attack-delta="2"
+            attack-magic="0"
+            hit="100"
+            evade="10"
+            physical-defence="5"
+            magical-defence="0"
+            />
+        <!-- doesn't move much, but attacks when you are comming too close. -->
+        <behavior
+            aggressive="true"
+            cowardly="false"
+            track-range="2"
+            stroll-range="1"
+            attack-distance="64"
+            />
+        <!-- slow, strong, long-range tail attack-->
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="5"
+            aft-delay="15"
+            damage-factor="3"
+            range="64"
+            particle-effect="graphics/particles/attack.particle.xml"
+            action="special1"
+            />
+        <!-- fast, weak, short-range scissor attack -->
+        <attack id="2"
+            priority="4"
+            type="physical"
+            pre-delay="3"
+            aft-delay="3"
+            damage-factor="1"
+            range="32"
+            />
+    </monster>
+
+    <monster id="11" name="Zombie">
+        <sprite>monsters/zombie.xml</sprite>
+        <sound event="hit">monsters/zombie/zombie-hit1.ogg</sound>
+        <sound event="hit">monsters/zombie/zombie-hit2.ogg</sound>
+        <sound event="miss">monsters/zombie/zombie-miss1.ogg</sound>
+        <sound event="die">monsters/zombie/zombie-dying1.ogg</sound>
+        <sound event="move">monsters/zombie/zombie-move1.ogg</sound>
+        <sound event="move">monsters/zombie/zombie-move2.ogg</sound>
+        <drop item="20021" percent="2"/>
+        <drop item="40028" percent="0.01"/>
+        <exp>1000</exp>
+        <behavior
+            aggressive="true"
+            cowardly="false"
+            track-range="5"
+            stroll-range="4"
+            attack-distance="32"
+            />
+        <attributes
+            hp="1000"
+            size="55"
+            speed="1.0"
+            attack-min="150"
+            attack-delta="25"
+            attack-magic="0"
+            hit="300"
+            evade="5"
+            physical-defence="30"
+            magical-defence="9"
+            mutation="50"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="5"
+            aft-delay="20"
+            damage-factor="1"
+            range="64"
+            particle-effect="graphics/particles/attack.particle.xml"
+            action="attack"
+            />
+    </monster>
+
+    <monster id="12" name="Ameisenlöwe">
+        <sprite>monsters/antlion.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="40028" percent="0.01"/>
+        <drop item="30026" percent="25" />
+        <exp>250</exp>
+        <behavior
+            aggressive="true"
+            cowardly="false"
+            track-range="10"
+            stroll-range="5"
+            attack-distance="32"
+            />
+        <attributes
+            hp="500"
+            size="16"
+            speed="7.0"
+            attack-min="40"
+            attack-delta="25"
+            attack-magic="0"
+            hit="200"
+            evade="5"
+            physical-defence="50"
+            magical-defence="50"
+            mutation="30"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="5"
+            aft-delay="10"
+            damage-factor="1"
+            range="32"
+            particle-effect="graphics/particles/attack.particle.xml"
+            action="attack"
+            />
+    </monster>
+
+    <monster id="13" name="Schlange">
+        <sprite>monsters/snake.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="40028" percent="0.01"/>
+        <drop item="30025" percent="3"/>
+        <exp>200</exp>
+        <behavior
+            aggressive="true"
+            cowardly="false"
+            track-range="3"
+            stroll-range="4"
+            attack-distance="32"
+            />
+        <attributes
+            hp="500"
+            size="16"
+            speed="2.0"
+            attack-min="45"
+            attack-delta="20"
+            attack-magic="0"
+            hit="200"
+            evade="5"
+            physical-defence="3"
+            magical-defence="0"
+            mutation="50"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="0"
+            damage-factor="1"
+            range="64"
+            particle-effect="graphics/particles/attack.particle.xml"
+            action="attack"
+            />
+    </monster>
+
+    <monster id="14" name="Sandwurm">
+        <sprite>monsters/desertworm.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="40028" percent="0.01"/>
+        <drop item="30004" percent="10"/>
+        <drop item="30005" percent="5"/>
+        <drop item="40048" percent="1"/>
+        <exp>500</exp>
+        <behavior
+            aggressive="true"
+            cowardly="false"
+            track-range="5"
+            stroll-range="7"
+            attack-distance="96"
+            />
+        <attributes
+            hp="1000"
+            size="64"
+            speed="2.0"
+            attack-min="35"
+            attack-delta="90"
+            attack-magic="0"
+            hit="300"
+            evade="5"
+            physical-defence="26"
+            magical-defence="17"
+            mutation="50"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="20"
+            aft-delay="5"
+            damage-factor="1"
+            range="100"
+            particle-effect="graphics/particles/attack.particle.xml"
+            action="attack"
+            />
+    </monster>
+
+    <monster id="15" name="Mammut" targetCursor="large">      
+        <sprite>monsters/mammoth.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="40028" percent="0.01"/>
+        <attributes
+            hp="10000"
+            size="200"
+            speed="3.0"
+            attack-min="500"
+            attack-delta="10"
+            attack-magic="0"
+            hit="2000"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="30"
+            />
+        <exp>2500</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="10"
+            stroll-range="10"
+            attack-distance="50"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="64"
+            animation="attack"
+            />
+    </monster>
+    
+    <monster id="16" name="Sandkriecher" targetCursor="large">
+        <sprite>monsters/dust.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="40028" percent="0.01"/>
+        <drop item="40043" percent="20"/>
+        <attributes
+            hp="2000"
+            size="320"
+            speed="15.0"
+            attack-min="100"
+            attack-delta="30"
+            attack-magic="0"
+            hit="500"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <exp>600</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="10"
+            stroll-range="5"
+            attack-distance="50"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="64"
+            animation="attack"
+            />
+    </monster>
+
+        <monster id="17" name="Fluffy" targetCursor="small">
+        <sprite>monsters/fluffy.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="30018" percent="15"/>
+        <drop item="40007" percent="25"/>
+        <drop item="40028" percent="0.01"/>
+        <drop item="30013" percent="5"/>
+        <attributes
+            hp="50"
+            size="4"
+            speed="2.0"
+            attack-min="20"
+            attack-delta="10"
+            attack-magic="0"
+            hit="200"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <vulnerability element="fire" factor="1.5"/>
+        <vulnerability element="earth" factor="0.7"/>
+        <exp>25</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="32"
+            animation="attack"
+            />
+    </monster>
+
+    <monster id="18" name="Eichhörnchen" targetCursor="small">
+        <sprite>monsters/squirrel.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="40017" percent="1"/>
+        <drop item="40028" percent="0.01"/>
+        <drop item="30012" percent="25"/>
+        <drop item="30002" percent="5"/>
+        <attributes
+            hp="75"
+            size="4"
+            speed="2.0"
+            attack-min="20"
+            attack-delta="10"
+            attack-magic="0"
+            hit="100"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <vulnerability element="fire" factor="1.5"/>
+        <vulnerability element="earth" factor="0.7"/>
+        <exp>100</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="32"
+            animation="attack"
+            />
+    </monster>
+
+    <monster id="19" name="Eisameisenlöwe">
+        <sprite>monsters/antlion-ice.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="40028" percent="0.01"/>
+        <exp>450</exp>
+        <behavior
+            aggressive="true"
+            cowardly="false"
+            track-range="10"
+            stroll-range="5"
+            attack-distance="32"
+            />
+        <attributes
+            hp="750"
+            size="16"
+            speed="7.0"
+            attack-min="150"
+            attack-delta="50"
+            attack-magic="0"
+            hit="300"
+            evade="5"
+            physical-defence="50"
+            magical-defence="50"
+            mutation="30"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="5"
+            aft-delay="10"
+            damage-factor="1"
+            range="32"
+            particle-effect="graphics/particles/attack.particle.xml"
+            action="attack"
+            />
+    </monster>
+
+    <monster id="20" name="Terranite">
+        <sprite>monsters/terranite-mask.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="40028" percent="0.01"/>
+        <drop item="40045" percent="0.1" />
+        <exp>1200</exp>
+        <behavior
+            aggressive="true"
+            cowardly="false"
+            track-range="10"
+            stroll-range="5"
+            attack-distance="32"
+            />
+        <attributes
+            hp="1050"
+            size="16"
+            speed="3.5"
+            attack-min="175"
+            attack-delta="30"
+            attack-magic="0"
+            hit="1000"
+            evade="5"
+            physical-defence="50"
+            magical-defence="50"
+            mutation="30"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="5"
+            aft-delay="10"
+            damage-factor="1"
+            range="32"
+            particle-effect="graphics/particles/attack.particle.xml"
+            action="attack"
+            />
+    </monster>
+
+    <monster id="21" name="Weihnachtsschleim">
+        <sprite>monsters/slime-santa.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="40013" percent="15"/>
+        <drop item="40014" percent="40"/>
+        <drop item="40015" percent="15"/>
+        <drop item="40028" percent="0.01"/>
+        <exp>10</exp>
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="10"
+            stroll-range="5"
+            attack-distance="32"
+            />
+        <attributes
+            hp="100"
+            size="16"
+            speed="3.5"
+            attack-min="10"
+            attack-delta="4"
+            attack-magic="0"
+            hit="100"
+            evade="5"
+            physical-defence="0"
+            magical-defence="0"
+            mutation="30"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="5"
+            aft-delay="10"
+            damage-factor="1"
+            range="32"
+            particle-effect="graphics/particles/attack.particle.xml"
+            action="attack"
+            />
+    </monster>
+    
+    <monster id="22" name="Geist">
+        <sprite>monsters/ghost.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="10010" percent="100"/>
+        <drop item="40028" percent="0.01"/>
+        <exp>2000</exp>
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="10"
+            stroll-range="5"
+            attack-distance="32"
+            />
+        <attributes
+            hp="1050"
+            size="16"
+            speed="3.0"
+            attack-min="400"
+            attack-delta="100"
+            attack-magic="0"
+            hit="500"
+            evade="5"
+            physical-defence="50"
+            magical-defence="50"
+            mutation="30"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="5"
+            aft-delay="10"
+            damage-factor="1"
+            range="32"
+            particle-effect="graphics/particles/attack.particle.xml"
+            action="attack"
+            />
+    </monster>
+
+    <monster id="23" name="Zombiegeist">
+        <sprite>monsters/ghost.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="10010" percent="0.02"/>
+        <drop item="40028" percent="0.01"/>
+        <exp>2000</exp>
+        <behavior
+            aggressive="true"
+            cowardly="false"
+            track-range="10"
+            stroll-range="5"
+            attack-distance="32"
+            />
+        <attributes
+            hp="1050"
+            size="16"
+            speed="3.0"
+            attack-min="400"
+            attack-delta="100"
+            attack-magic="0"
+            hit="500"
+            evade="5"
+            physical-defence="50"
+            magical-defence="50"
+            mutation="30"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="5"
+            aft-delay="10"
+            damage-factor="1"
+            range="32"
+            particle-effect="graphics/particles/attack.particle.xml"
+            action="attack"
+            />
+    </monster>
+
+    <monster id="24" name="Schmetterling" targetCursor="small">
+        <sprite>monsters/butterfly.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="40028" percent="0.01"/>
+        <attributes
+            hp="55"
+            size="4"
+            speed="2.0"
+            attack-min="15"
+            attack-delta="10"
+            attack-magic="0"
+            hit="100"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <exp>50</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="32"
+            animation="attack"
+            />
+    </monster>
+
+     <monster id="25" name="Baummonster" targetCursor="small">
+        <sprite>monsters/logmonster.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="40028" percent="0.01"/>
+        <drop item="10009" percent="5" />
+        <drop item="40040" percent="5" />
+        <attributes
+            hp="5500"
+            size="4"
+            speed="2.0"
+            attack-min="1500"
+            attack-delta="10"
+            attack-magic="0"
+            hit="100"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <exp>5000</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="true"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="32"
+            animation="attack"
+            />
+    </monster>
+
+    <monster id="26" name="Feuergoblin" targetCursor="small">
+        <sprite>monsters/goblin-fire.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="40017" percent="1"/>
+        <drop item="40028" percent="0.01"/>
+        <drop item="30012" percent="25"/>
+        <drop item="30002" percent="5"/>
+        <attributes
+            hp="750"
+            size="4"
+            speed="2.0"
+            attack-min="200"
+            attack-delta="10"
+            attack-magic="0"
+            hit="100"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <vulnerability element="fire" factor="0.5"/>
+        <vulnerability element="ice" factor="2.0"/>
+        <exp>1000</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="true"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="32"
+            animation="attack"
+            />
+    </monster>
+
+    <monster id="27" name="Eisgoblin" targetCursor="small">
+        <sprite>monsters/goblin-ice.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="40017" percent="1"/>
+        <drop item="40028" percent="0.01"/>
+        <drop item="30012" percent="25"/>
+        <drop item="30002" percent="5"/>
+        <attributes
+            hp="750"
+            size="4"
+            speed="2.0"
+            attack-min="200"
+            attack-delta="10"
+            attack-magic="0"
+            hit="100"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <vulnerability element="fire" factor="2.0"/>
+        <vulnerability element="ice" factor="0.5"/>
+        <exp>1000</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="true"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="32"
+            animation="attack"
+            />
+    </monster>
+
+    <monster id="28" name="Spinne" targetCursor="small">
+        <sprite>monsters/spider.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="40028" percent="0.01"/>
+        <drop item="30002" percent="1" />
+        <drop item="30003" percent="0.5" />
+        <attributes
+            hp="500"
+            size="4"
+            speed="2.0"
+            attack-min="200"
+            attack-delta="10"
+            attack-magic="0"
+            hit="100"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <vulnerability element="fire" factor="2.0"/>
+        <vulnerability element="ice" factor="2.0"/>
+        <vulnerability element="earth" factor="2.0"/>
+        <exp>750</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="32"
+            animation="attack"
+            />
+    </monster>
+
+    <monster id="29" name="Hemlockspinne" targetCursor="small">
+        <sprite>monsters/spider.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="40028" percent="0.01"/>
+        <drop item="30002" percent="5" />
+        <drop item="30003" percent="5" />
+        <attributes
+            hp="2500"
+            size="4"
+            speed="2.0"
+            attack-min="900"
+            attack-delta="10"
+            attack-magic="0"
+            hit="100"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <vulnerability element="fire" factor="3.0"/>
+        <vulnerability element="ice" factor="3.0"/>
+        <vulnerability element="earth" factor="3.0"/>
+        <exp>2500</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="32"
+            animation="attack"
+            />
+    </monster>
+
+    <monster id="30" name="Nogatchspinne" targetCursor="small">
+        <sprite>monsters/spider.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="40028" percent="0.01"/>
+        <drop item="30002" percent="50" />
+        <drop item="30003" percent="50" />
+        <attributes
+            hp="8500"
+            size="4"
+            speed="2.0"
+            attack-min="2200"
+            attack-delta="10"
+            attack-magic="0"
+            hit="100"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <vulnerability element="fire" factor="4.0"/>
+        <vulnerability element="ice" factor="4.0"/>
+        <vulnerability element="earth" factor="4.0"/>
+        <exp>7000</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="true"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="32"
+            animation="attack"
+            />
+    </monster>
+
+    <monster id="31" name="Seraphim Nex" targetCursor="small">
+        <sprite>monsters/reaper.xml</sprite>
+        <sound event="hit">monsters/reaper/reaper-hurt.ogg</sound>
+        <sound event="hit">monsters/reaper/reaper-hurt.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="10012" percent="0.1" />
+        <attributes
+            hp="50000"
+            size="4"
+            speed="2.0"
+            attack-min="25000"
+            attack-delta="5000"
+            attack-magic="0"
+            hit="100"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <exp>15000</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="true"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="32"
+            animation="attack"
+            />
+    </monster>
+
+        <monster id="32" name="Vampirfledermaus">
+        <sprite>monsters/bat-vampire.xml</sprite>
+        <sound event="die">monsters/bat/bat-dying1.ogg</sound>
+        <sound event="hit">monsters/bat/bat-hit1.ogg</sound>
+        <drop item="10001" percent="1.5"/>
+        <drop item="30005" percent="4"/>
+        <drop item="30011" percent="1.5"/>
+        <drop item="30024" percent="0.7"/>
+        <exp>100</exp>
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+         />
+        <attributes
+            hp="500"
+            size="4"
+            speed="2.0"
+            attack-min="20"
+            attack-delta="4"
+            attack-magic="0"
+            hit="300"
+            evade="10"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+    </monster>
+
+        <monster id="33" name="Seidenraupe" targetCursor="small">
+        <sprite>monsters/silkworm.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="40044" percent="30"/>
+        <drop item="40017" percent="10"/>
+        <drop item="40030" percent="2"/>
+        <attributes
+            hp="200"
+            size="4"
+            speed="1.0"
+            attack-min="20"
+            attack-delta="2"
+            attack-magic="0"
+            hit="100"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <vulnerability element="fire" factor="1.5"/>
+        <vulnerability element="earth" factor="0.7"/>
+        <exp>50</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="32"
+            animation="attack"
+            />
+    </monster>
+
+    <monster id="34" name="Blob" targetCursor="small">
+        <sprite>monsters/slime.xml</sprite>
+        <sound event="hit">monsters/slime/slime-hit1.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="30027" percent="15"/>
+        <drop item="40003" percent="4"/>
+        <drop item="30020" percent="4"/>
+        <drop item="30012" percent="4"/>
+        <attributes
+            hp="50"
+            size="4"
+            speed="1.0"
+            attack-min="30"
+            attack-delta="2"
+            attack-magic="0"
+            hit="100"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <vulnerability element="fire" factor="1.5"/>
+        <vulnerability element="earth" factor="0.7"/>
+        <exp>50</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="32"
+            animation="attack"
+            />
+    </monster>
+
+    <monster id="35" name="Schnecke" targetCursor="small">
+        <sprite>monsters/snail.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <attributes
+            hp="500"
+            size="4"
+            speed="1.0"
+            attack-min="50"
+            attack-delta="2"
+            attack-magic="0"
+            hit="100"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <vulnerability element="fire" factor="1.5"/>
+        <vulnerability element="earth" factor="0.7"/>
+        <exp>230</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="32"
+            animation="attack"
+            />
+    </monster>
+
+    <monster id="36" name="Reinholder" targetCursor="small">
+        <sprite>monsters/yeti.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="30006" percent="15"/>
+        <drop item="30007" percent="15"/>
+        <drop item="30008" percent="15"/>
+        <drop item="30009" percent="15"/>
+        <attributes
+            hp="2500"
+            size="4"
+            speed="1.0"
+            attack-min="500"
+            attack-delta="250"
+            attack-magic="0"
+            hit="100"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <vulnerability element="fire" factor="1.5"/>
+        <vulnerability element="earth" factor="0.7"/>
+        <exp>2300</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="32"
+            animation="attack"
+            />
+    </monster>
+
+    <monster id="37" name="Mork" targetCursor="small">
+        <sprite>monsters/mouboo.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="30011" percent="15"/>
+        <drop item="20013" percent="15"/>
+        <drop item="20015" percent="15"/>
+        <drop item="20017" percent="15"/>
+        <drop item="20004" percent="5"/>
+        <drop item="20018" percent="15"/>
+        <attributes
+            hp="700"
+            size="4"
+            speed="1.0"
+            attack-min="320"
+            attack-delta="130"
+            attack-magic="0"
+            hit="80"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <vulnerability element="fire" factor="1.5"/>
+        <vulnerability element="earth" factor="0.7"/>
+        <exp>1500</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="32"
+            animation="attack"
+            />
+    </monster>
+
+    <monster id="38" name="Werbug" targetCursor="small">
+        <sprite>monsters/moggun.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <attributes
+            hp="1000"
+            size="4"
+            speed="1.0"
+            attack-min="50"
+            attack-delta="0"
+            attack-magic="0"
+            hit="80"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <exp>1000</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="32"
+            animation="attack"
+            />
+        <script>werbug.lua</script> <!-- only Proof of Concept-->
+    </monster>
+    
+   <monster id="39" name="Guffer" targetCursor="small">
+        <sprite>monsters/minotaur.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <drop item="40047" percent="100"/>
+        <attributes
+            hp="5000"
+            size="4"
+            speed="1.0"
+            attack-min="5000"
+            attack-delta="2500"
+            attack-magic="0"
+            hit="80"
+            evade="5"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <exp>5000</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"
+            />
+        <attack id="1"
+            priority="1"
+            type="physical"
+            pre-delay="10"
+            aft-delay="5"
+            damage-factor="1"
+            range="32"
+            animation="attack"
+            />
+    </monster>
+
+    <!-- Pflanzen IDs >= 10001 - 20000 -->
+    <monster id="10001" name="Baum" targetCursor="small">
+        <drop item="40040" percent="100" />
+        <sprite>monsters/tree.xml</sprite>
+        <sound event="hit">monsters/maggot/maggot-hit1.ogg</sound>
+        <sound event="hit">monsters/maggot/maggot-hit2.ogg</sound>
+        <sound event="miss">monsters/maggot/maggot-miss1.ogg</sound>
+        <sound event="die">monsters/maggot/maggot-dying1.ogg</sound>
+        <attributes
+            hp="2500"
+            size="4"
+            speed="0.0"
+            attack-min="0"
+            attack-delta="0"
+            attack-magic="0"
+            hit="100"
+            evade="200"
+            physical-defence="5"
+            magical-defence="0"
+            mutation="50"
+            />
+        <vulnerability element="metal" factor="5.0"/>
+        <exp>100</exp>
+        <!-- average stroll- and track range-->
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="0"
+            stroll-range="0"
+            attack-distance="0"
+            />
+    </monster>
+    
+    <!-- Invertika Testmonster IDs 50001 - 60000-->
+    <monster id="50001" name="Ipsum">
+        <sprite>monsters/ufo.xml</sprite>
+        <exp>99999999</exp>
+        <attributes
+            hp="50"
+            size="550"
+            speed="14.0"
+            attack-min="10"
+            attack-delta="2"
+            attack-magic="0"
+            hit="10"
+            evade="5"
+            physical-defence="50"
+            magical-defence="50"
+            mutation="50"
+            />
+        <behavior
+            aggressive="false"
+            cowardly="false"
+            track-range="5"
+            stroll-range="2"
+            attack-distance="32"/>
+    </monster>
+</monsters>
