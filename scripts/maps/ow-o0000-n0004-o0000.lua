@@ -40,7 +40,7 @@ atinit(function()
       "Edelste Waren aus dem Norden!"})
     
     --TODO Change Sprite ID
-    create_npc("Onurn", 2, 91 * TILESIZE + 16, 98 * TILESIZE + 16, onurn_talk, onurn_update)
+    create_npc("Onurn", 2, 91 * TILESIZE + 16, 98 * TILESIZE + 16, onurn_talk)
 end)
 
 function egroe_talk(npc, ch)
@@ -75,8 +75,4 @@ function onurn_talk(npc, ch)
       "Ich belausche die in dem Haus da.",
       "Irgenetwas ist komisch mit denen da drin..",
       "Manchmal.. Ach, vergiss es."))
-end
-
-function onurn_update(npc)
-    npclib.walkaround_small(npc)
 end
