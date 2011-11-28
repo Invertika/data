@@ -71,8 +71,8 @@ end
 
 function onurn_talk(npc, ch)
     do_message(npc, ch, invertika.get_random_element("Psst",
-      "Leisse!",
+      "Leise!",
       "Ich belausche die in dem Haus da.",
-      "Irgenetwas ist komisch mit denen da drin..",
+      "Irgendetwas ist komisch mit denen da drin..",
       "Manchmal.. Ach, vergiss es."))
 end
