@@ -62,7 +62,7 @@ function holzbein_talk(npc, ch)
       "Um Pirat zu werden, musst du schon mehr machen als CDs brennen!",
       "Der Tisch ist neidisch auf mein Holzbein.",
       "Wo ist meine Brille?",
-          "Nicht zu fassen. Überall diese Dingsbums.",
+      "Nicht zu fassen. Überall diese Dingsbums.",
       "Was hat das zu bedeuten?"))
       do_npc_close(npc, ch)
 end
