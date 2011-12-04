@@ -82,7 +82,7 @@ function irac_talk(npc, ch)
             elseif w == 2 then
                 do_message(npc, ch, "Einst war hier alles mal grün und fruchtbar.")
                 do_message(npc, ch, "Der Fluss im Norden unserer Stadt war voll mit frischen Wasser.")
-                do_message(npc, ch, "Woher das kamm, weiß ich nicht.")
+                do_message(npc, ch, "Woher das kam, weiß ich nicht.")
                 do_message(npc, ch, "Ist aber auch egal.")
                 do_message(npc, ch, "Auf jedenfall, war er nach einer stürmischen Nacht ausgetrocknet.")
                 do_message(npc, ch, "Mehr weiß ich auch nicht.")
