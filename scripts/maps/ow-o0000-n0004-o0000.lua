@@ -46,7 +46,8 @@ end)
 function egroe_talk(npc, ch)
     --TODO mehr Auswahl
     mana.npc_trade(npc, ch, false, {
-      {10001, 20, 620}
+      {10001, 20, 620},
+      {30037, 5, 2500}
     })
     do_npc_close(npc, ch)
 end
