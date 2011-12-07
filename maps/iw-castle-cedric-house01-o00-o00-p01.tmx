@@ -26,35 +26,35 @@
  </tileset>
  <layer name="Ground" width="90" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3UMRHAIAAEQYo0aIjeSEEbNvAAk3kYtlgDV1yvpXQAAAAAAAAAAIANvc850q1WfAdJt/qjc9tQutWK9Atu+Ua63S2dAQAAAAAAYMYAzbpFJFBGAAA=
+   H4sIAAAAAAAAC+3UMRHAIAAEQYo0aIjeSEEbNvAAk3kYtlgDV1yvpXQAAAAAAAAAAIANvc850q1WfAdJt/qjc9tQutWK9Atu+Ua63S2dAQAAAAAAYMYAzbpFJFBGAAA=
   </data>
  </layer>
  <layer name="Ground" width="90" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3SOwrCQAAE0AUtbAR7K7X2AoKFNuIZLDyBFxB772Hl5yJ+LuUqERZRIYhGyXswMARCNpOEAAAAAAAAAADwHZVaCNUsv97/WSuev52lk/TWg754cH2S9H7Se3f3NpM+Tfo864sXz731fzaI5x9m+fVeJvWSvW8RRo0Qujl3XvouV6ucO1x2Hjc+c5ay2MYNdzHrmM2T/Wf+z7cd44anmH3MwZ4AAAAAAABQuDPSHA7XUEYAAA==
+   H4sIAAAAAAAAC+3SOwrCQAAE0AUtbAR7K7X2AoKFNuIZLDyBFxB772Hl5yJ+LuUqERZRIYhGyXswMARCNpOEAAAAAAAAAADwHZVaCNUsv97/WSuev52lk/TWg754cH2S9H7Se3f3NpM+Tfo864sXz731fzaI5x9m+fVeJvWSvW8RRo0Qujl3XvouV6ucO1x2Hjc+c5ay2MYNdzHrmM2T/Wf+z7cd44anmH3MwZ4AAAAAAABQuDPSHA7XUEYAAA==
   </data>
  </layer>
  <layer name="Ground" width="90" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3QQQ0AIAwAsT2nGwUomUY88NgSaBVcLgIAAAAAAAAAAOANO6cL/lA+t1g+AwAAAAAAAHDhAFiQ6nZQRgAA
+   H4sIAAAAAAAAC+3QQQ0AIAwAsT2nGwUomUY88NgSaBVcLgIAAAAAAAAAAOANO6cL/lA+t1g+AwAAAAAAAHDhAFiQ6nZQRgAA
   </data>
  </layer>
  <layer name="Fringe" width="90" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3UwQqDMAwAUEGHF+2K4P7Hbf7/Ly2wi2KV4Wkb70Fo0oYeckhVAQAAAAAAAAAAfLc6resU9TUip3J/E/eXxduUt/kjzmfEnLc98/COpfuwH7+ui1n1O7MEKBljZ9wO9kbbffZPaT8f5SX/vJ8BAAAAAADgjBdovbe2UEYAAA==
+   H4sIAAAAAAAAC+3UwQqDMAwAUEGHF+2K4P7Hbf7/Ly2wi2KV4Wkb70Fo0oYeckhVAQAAAAAAAAAAfLc6resU9TUip3J/E/eXxduUt/kjzmfEnLc98/COpfuwH7+ui1n1O7MEKBljZ9wO9kbbffZPaT8f5SX/vJ8BAAAAAADgjBdovbe2UEYAAA==
   </data>
  </layer>
  <layer name="Over" width="90" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3OyQkAIBAEwXlu6B5Ju1EoSBX0vxMAAAAAAAAAAADgplXJ7kY36/UNAAAAAAAAAD85CD6Cg1BGAAA=
+   H4sIAAAAAAAAC+3OyQkAIBAEwXlu6B5Ju1EoSBX0vxMAAAAAAAAAAADgplXJ7kY36/UNAAAAAAAAAD85CD6Cg1BGAAA=
   </data>
  </layer>
  <layer name="Collision" width="90" height="50" visible="0">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3Q0QqAIAwF0OH/f3RPQQ9mjqRFncEBmaLztohoAAAAAAAAAACQFC+YgX851qgfnb3Rul30e2/2ZqvOZ3XGo8qcXV3VGT2V8f7XqqrOaVXGM/nL+X7eZ73ZDDLrszsy8wEAAAAAAMDXbf/DIblQRgAA
+   H4sIAAAAAAAAC+3Q0QqAIAwF0OH/f3RPQQ9mjqRFncEBmaLztohoAAAAAAAAAACQFC+YgX851qgfnb3Rul30e2/2ZqvOZ3XGo8qcXV3VGT2V8f7XqqrOaVXGM/nL+X7eZ73ZDDLrszsy8wEAAAAAAMDXbf/DIblQRgAA
   </data>
  </layer>
- <objectgroup name="Object" width="90" height="50" visible="0">
+ <objectgroup name="Object" width="90" height="50">
   <object name="Warp to hous01-o0-o0-o0" type="WARP" x="1995" y="865" width="21" height="62">
    <properties>
     <property name="DEST_MAP" value="iw-castle-cedric-house01-o00-o00-o00"/>
@@ -62,5 +62,11 @@
     <property name="DEST_Y" value="912"/>
    </properties>
   </object>
+  <object name="External Map Events" type="SCRIPT" x="14" y="20" width="27" height="25">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/iw-castle-cedric-house01-o00-o00-p01.lua"/>
+   </properties>
+  </object>
+  <object x="31" y="30" height="1"/>
  </objectgroup>
 </map>
