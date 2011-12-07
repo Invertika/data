@@ -31,7 +31,7 @@ atinit(function()
     --TODO Change Sprite IDs
     egroe = create_npc("Egroe", 2, 119 * TILESIZE + 16, 153 * TILESIZE + 16, egroe_talk, egroe_update)
     invertika.create_npc_talk_random(egroe,
-      {"Quallitätswaren zum billigsten Preis.",
+      {"Qualitätswaren zum billigsten Preis.",
       "Wasser nur 2500 Aki pro Liter!"})
     thinaima = create_npc("Thinaima", 2, 64 * TILESIZE + 16, 112 * TILESIZE + 16, thinaima_talk, thinaima_update)
     invertika.create_npc_talk_random(thinaima,
