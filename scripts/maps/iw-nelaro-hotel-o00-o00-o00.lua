@@ -22,6 +22,6 @@ atinit(function()
     create_npc("Rezeptionist", 20, 24 * TILESIZE + 16, 37 * TILESIZE + 16, rezeptionist_talk, nil)
 end)
 function rezeptionist_talk(npc, ch)
-   do_message(npc, ch, "Bald werden wir das erste Höhlngutel Invertikas eröffnen!")
+   do_message(npc, ch, "Bald werden wir das erste HÃ¶hlnhotel Invertikas erÃ¶ffnen!")
    do_close(npc, ch)
 end

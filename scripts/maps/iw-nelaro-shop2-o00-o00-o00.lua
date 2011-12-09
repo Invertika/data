@@ -19,7 +19,7 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
-    create_npc("Enla", 4, 33 * TILESIZE + 16, 36 * TILESIZE + 16, enla_Talk, nil)
+    create_npc("Enla", 4, 33 * TILESIZE + 16, 36 * TILESIZE + 16, enla_talk, nil)
 end)
 
 function enla_talk(npc, ch)
