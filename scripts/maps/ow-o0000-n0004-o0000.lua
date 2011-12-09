@@ -55,7 +55,7 @@ function egroe_talk(npc, ch)
       {20002, 30, 250},
       {20011, 30, 250},
       {20012, 30, 250},
-      {20013, 30, 250},
+      {20013, 30, 250}
     })
     do_npc_close(npc, ch)
 end
@@ -68,7 +68,7 @@ end
 function thinaima_talk(npc, ch)
     --TODO mehr Auswahl
     mana.npc_trade(npc, ch, false, {
-      {10001, 20, 620}
+      {10001, 20, 620},
       {10013, 30, 140},
       {10002, 30, 1000},
       {10009, 30, 1690},
@@ -78,7 +78,6 @@ function thinaima_talk(npc, ch)
       {20017, 30, 250},
       {20018, 30, 250},
       {20009, 30, 500} 
-      
     })
     do_npc_close(npc, ch)
 end

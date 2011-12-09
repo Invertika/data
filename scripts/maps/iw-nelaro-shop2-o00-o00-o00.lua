@@ -70,5 +70,6 @@ function enla_talk(npc, ch)
               "Ciao"))
               break
         end
-        do_npc_close(npc, ch)
+    end
+    do_npc_close(npc, ch)
 end
