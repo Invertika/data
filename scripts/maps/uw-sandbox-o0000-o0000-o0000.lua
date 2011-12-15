@@ -62,6 +62,12 @@ game:registerEventNextPlayer(function(my_player)
 end)
 game:registerEventPlayerExit(function(my_player)
   mana.being_say(poker_dealer_npc, string.format("%s verlässt das Spiel.", mana.being_get_name(my_player:getCh())))
+
+  myguard = create_npc("Guard", 200, 100 * TILESIZE, 100 * TILESIZE, function(npc, ch)
+      do_message(npc, ch, "bla!")
+      do_npc_close(npc, ch)
+  end, nil)
+  guard.create_player_hunter(myguard, 500, 32, 5 * TILESIZE, 1000, 10, 9999, DAMAGE_PHYSICAL, 1)
 end)
 
 
