@@ -16,7 +16,7 @@ require "scripts/libs/invertika"
 guards = {}
 
 function create_guard(npc, filter, reaction_radius, fight_radius, max_stray,
-                      damage, damage_delta, damage_accuracy. damage_type,
+                      damage, damage_delta, damage_accuracy, damage_type,
                       update_delay)
     guards[npc] = {}
     guards[npc].old_x = mana.posX(npc)
