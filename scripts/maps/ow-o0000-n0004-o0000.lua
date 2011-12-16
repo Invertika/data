@@ -29,18 +29,23 @@ atinit(function()
     sign.create_sign(69, 110, sign_descr) --- Schild Stadtmitte
     
     --TODO Change Sprite IDs
-    egroe = create_npc("Egroe", 34, 119 * TILESIZE + 16, 153 * TILESIZE + 16, egroe_talk)
+    egroe = create_npc("Egroe", 34, 119 * TILESIZE + 16, 153 * TILESIZE + 16, egroe_talk, invertika.npc_talk_random)
     invertika.create_npc_talk_random(egroe,
       {"Qualitätswaren zum billigsten Preis.",
       "Wasser nur 2500 Aki pro Liter!"})
-    thinaima = create_npc("Thinaima", 18, 64 * TILESIZE + 16, 112 * TILESIZE + 16, thinaima_talk)
+    thinaima = create_npc("Thinaima", 18, 64 * TILESIZE + 16, 112 * TILESIZE + 16, thinaima_talk, invertika.npc_talk_random)
     invertika.create_npc_talk_random(thinaima,
       {"Waffen, handgefertigte Waffen!",
       "Wasser zum billigsten Preis in der Region!",
       "Edelste Waren aus dem Norden!"})
     
     --TODO Change Sprite ID
-    create_npc("Onurn", 2, 91 * TILESIZE + 16, 98 * TILESIZE + 16, onurn_talk, nil)
+    onurn = create_npc("Onurn", 2, 91 * TILESIZE + 16, 98 * TILESIZE + 16, onurn_talk, invertika.npc_talk_random)
+    invertika.create_npc_talk_random(onurn,
+      {"Wasser ist zum Waschen da, auch die Feuerwehr, braucht das Wasser sehr.",
+      "Wasser ist zum Waschen da, auch zum Zähneputzen, kann man es benutzen.",
+      "Die Fleischlackiererei ist auf der anderen Seite.",
+      "˙ɟǝıɥɔs ʇsı ɹǝp 'ʇsǝıl sɐp ɹǝʍ"})
 end)
 
 function egroe_talk(npc, ch)
@@ -78,9 +83,5 @@ function thinaima_talk(npc, ch)
 end
 
 function onurn_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Psst",
-      "Leise!",
-      "Ich belausche die in dem Haus da.",
-      "Irgendetwas ist komisch mit denen da drin..",
-      "Manchmal.. Ach, vergiss es."))
+    do_message(npc, ch, "...")
 end
