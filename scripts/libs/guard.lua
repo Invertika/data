@@ -57,7 +57,7 @@ function update(npc)
     local closestX, closestY, closestBeing = -1
     for _, b in pairs(beings) do
         if (closestX == -1 or
-                closestDistance > invertika.get_distance(x, y,s
+                closestDistance > invertika.get_distance(x, y,
                                                 mana.posX(b), mana.posY(b))) and
                 guards[npc].filter(b) then
             closestX = mana.posX(b)
