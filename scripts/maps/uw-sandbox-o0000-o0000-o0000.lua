@@ -19,6 +19,7 @@ require "scripts/libs/invertika"
 require "scripts/libs/scorpionrace"
 require "scripts/libs/poker"
 require "scripts/libs/postmen"
+require "scripts/libs/guard"
 ---require "scripts/libs/trap"
 
 dofile("data/scripts/libs/warp.lua")
