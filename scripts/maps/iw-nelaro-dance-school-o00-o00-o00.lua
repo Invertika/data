@@ -19,4 +19,5 @@ require "scripts/lua/npclib"
 
 
 atinit(function()
+    create_npc("Irucia", 79, 33 * TILESIZE + 16, 37 * TILESIZE + 16, nil, nil)
 end)
