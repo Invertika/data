@@ -1,4 +1,4 @@
-require("data/scripts/libs/invertika")
+require("scripts/libs/invertika")
 
 --- Class PokerSpade
 PokerSpade = {}
