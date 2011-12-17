@@ -20,5 +20,14 @@ require "scripts/libs/invertika"
 
 atinit(function()
     --TODO Change Sprite ID
-    create_npc("Hobel", 2, 33 * TILESIZE + 16, 36 * TILESIZE + 16, nil, nil)
+    hobal = create_npc("Hobel", 2, 33 * TILESIZE + 16, 36 * TILESIZE + 16, hobel_talk, invertika.npc_talk_random)
+    invertika.create_npc_talk_random(hobel,
+      {"Hilfe! Hilfe! Ein Geist!!",
+      "Ich hab ein Brett vorm Kopf.",
+      "Kann man das trinken oder ist das Strom?"})
 end)
+
+function hobel_talk(npc, ch)
+    do_message(npc, ch, "...")
+    do_npc_close(npc, ch)
+end

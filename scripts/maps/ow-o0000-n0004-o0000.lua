@@ -84,4 +84,24 @@ end
 
 function onurn_talk(npc, ch)
     do_message(npc, ch, "...")
+    while true      
+        local v = do_choice(npc, ch, 
+                    "Wie ist das Wetter?",
+                    "Wie viel Uhr ist es?",
+                    "Tschüß")
+        if v == 1
+            do_message(npc, ch, invertika.get_random_element(
+              "Es ist sonnig.",
+              "Es ist stürmisch.",
+              "Dort oben ist eine Wolke. Vielleicht fängt es ja an zu regnen"))
+            break
+        else if v == 2
+            do_message(npc, ch, "Es ist")
+            break
+        else
+            do_message(npc, ch, "...")
+            break
+        end
+    end
+    do_npc_close(npc, ch)
 end
