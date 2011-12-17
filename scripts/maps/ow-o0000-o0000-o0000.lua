@@ -14,7 +14,8 @@ require "scripts/libs/nethek"
 require "scripts/libs/seller"
 require "scripts/libs/sign"
 
-dofile("data/scripts/libs/warp.lua")
+--dofile("data/scripts/libs/warp.lua")
+require "scripts/libs/warp"
 
 atinit(function()
  create_inter_map_warp_trigger(62, 72, 56, 6) --- Intermap warp
