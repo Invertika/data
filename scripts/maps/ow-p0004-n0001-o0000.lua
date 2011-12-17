@@ -19,7 +19,7 @@ require "scripts/libs/invertika"
 require "scripts/libs/nethek"
 require "scripts/libs/seller"
 
-dofile("data/scripts/libs/warp.lua")
+require "scripts/libs/warp"
 
 -- Grabstein XY Position in Tiles, und Grabstein-Text
 local gravestone_data =

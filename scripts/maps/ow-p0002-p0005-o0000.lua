@@ -17,7 +17,7 @@
 require "scripts/lua/npclib"
 require "scripts/libs/nethek"
 
-dofile("data/scripts/libs/warp.lua")
+require "scripts/libs/warp"
 
 atinit(function()
  create_inter_map_warp_trigger(nil, 99, 87, 77) --- Intermap warp

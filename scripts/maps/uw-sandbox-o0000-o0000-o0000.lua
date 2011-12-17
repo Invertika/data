@@ -22,7 +22,7 @@ require "scripts/libs/postmen"
 require "scripts/libs/guard"
 ---require "scripts/libs/trap"
 
-dofile("data/scripts/libs/warp.lua")
+require "scripts/libs/warp"
 
 atinit(function()
  create_inter_map_warp_trigger(19003, 19003, 19003, 19003) --- Intermap warp

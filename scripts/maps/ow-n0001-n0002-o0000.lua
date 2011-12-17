@@ -17,7 +17,7 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-dofile("data/scripts/libs/warp.lua")
+require "scripts/libs/warp"
 
 atinit(function()
  create_inter_map_warp_trigger(1, 57, 3, 13) --- Intermap warp

@@ -14,7 +14,6 @@ require "scripts/libs/nethek"
 require "scripts/libs/seller"
 require "scripts/libs/sign"
 
---dofile("data/scripts/libs/warp.lua")
 require "scripts/libs/warp"
 
 atinit(function()

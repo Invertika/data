@@ -20,7 +20,7 @@ require "scripts/libs/invertika"
 require "scripts/libs/nethek"
 require "scripts/libs/sign"
 
-dofile("data/scripts/libs/warp.lua")
+require "scripts/libs/warp"
 
 atinit(function()
  create_inter_map_warp_trigger(70, 82, nil, 60) --- Intermap warp

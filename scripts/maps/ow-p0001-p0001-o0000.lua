@@ -18,7 +18,7 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 require "scripts/libs/nethek"
 
-dofile("data/scripts/libs/warp.lua")
+require "scripts/libs/warp"
 
 atinit(function()
  create_npc("Grabstein", 1, 70 * TILESIZE + 16, 39 * TILESIZE + 16, grabstein_talk, nil) --- Grabstein
