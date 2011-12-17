@@ -88,15 +88,15 @@ function onurn_talk(npc, ch)
         local v = do_choice(npc, ch, 
                     "Wie ist das Wetter?",
                     "Wie viel Uhr ist es?",
-                    "Tschüß")
+                    "Tschüß.")
         if v == 1
             do_message(npc, ch, invertika.get_random_element(
               "Es ist sonnig.",
               "Es ist stürmisch.",
-              "Dort oben ist eine Wolke. Vielleicht fängt es ja an zu regnen"))
+              "Dort oben ist eine Wolke. Vielleicht fängt es ja zu regnen an."))
             break
         else if v == 2
-            do_message(npc, ch, "Es ist")
+            do_message(npc, ch, "Es ist") --Uhrzeit Ausgeben
             break
         else
             do_message(npc, ch, "...")
