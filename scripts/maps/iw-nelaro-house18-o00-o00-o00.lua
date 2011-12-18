@@ -28,20 +28,21 @@ atinit(function()
 end)
 
 function hobel_talk(npc, ch)
+    local queststring = "nelaro_water_quest"
     --Init Quest
-    invertika.init_quest_status(ch, "nelaro_water_quest")
+    invertika.init_quest_status(ch, queststring)
     --Get Quest
-    local quest_var = invertika.get_quest_status(ch, "nelaro_water_quest")
+    local quest_var = invertika.get_quest_status(ch, queststring)
     
-    if (quest_var == 0)
+    if (quest_var == 0) then
         do_message(npc, ch, "...")
-    else if (quest_var == 1)
+    else if (quest_var == 1) then
     {
         do_message(npc, ch, "Irac hat dich geschickt?")
         local v =  do_choice(npc, ch, 
                     "Ja", 
                     "Nein")
-        if (v == 1)
+        if (v == 1) then
             do_message(npc, ch, "Gut, der ist einer der wenigen, denen ich vertraue.")
             do_message(npc, ch, "Der einzigster Wasserlieferant der Stadt ist die Familie in der Mitte.")
             do_message(npc, ch, "Sie können daher die Preise bestimmen, leider.")
@@ -50,10 +51,10 @@ function hobel_talk(npc, ch)
             local x = do_choice(npc, ch,
               "Ja",
               "Nein")
-            if (x == 1)
+            if (x == 1) then
                 do_message(npc, ch, "Komme danach so schnll wie es geht zurück.")
                 --Set Quest
-                invertika.chr_set_quest(ch, "nelaro_water_quest", 2)
+                invertika.chr_set_quest(ch, queststring, 2)
             else
                 do_message(npc, ch, "Auf Wiedersehen.")
                 end
@@ -61,42 +62,42 @@ function hobel_talk(npc, ch)
             do_message(npc, ch, "...")
         end
     }
-    else if (quest_var == 2)
+    else if (quest_var == 2) then
         do_message(npc, ch, "Was stehst du hier so Faul rum? Du sollst zum Onurn gehen!")
-    else if (quest_var == 3)
+    else if (quest_var == 3) then
         do_message(npc, ch, "Was sagte er?")
         local c = do_choice(npc, ch,
                               "Dass die in der Mitte das Wasser aus dem Norden von einem Lieferanten bekommen.",
                               "Dass mit denen alles in Ordnung sei.")
-        if (c == 1)
+        if (c == 1) then
             do_message(npc, ch, "Ok, das hatte ich bereits vermutet.")
             do_message(npc, ch, "Kannst du rüber zum Wüstenlager, und dort 5 Wasserflaschen kaufen?")
             local a = do_choice(npc, ch,
                                   "Ja",
                                   "Nein")
-            if (a == 1)
+            if (a == 1) then
                 do_message(npc, ch, "OK, ich gebe dir Geld.")
                 do_message(npc, ch, "Komme nicht ohne Wasser wieder!")
                 invertika.add_money(ch, 200)
                 --Set Quest
-                invertika.chr_set_quest(ch, "nelaro_water_quest", 4)
-            else if (a == 2)
+                invertika.chr_set_quest(ch, queststring, 4)
+            else if (a == 2) then
                 do_message(npc, ch, "Blöd.")
             end
-        else if (c == 2)
+        else if (c == 2) then
             do_message(npc, ch, "Hmm.")
             do_message(npc, ch, "RAUS.")
         end
-    else if (quest_var == 4 && if mana.chr_inv_count(ch, 30037) == 0)
+    else if (quest_var == 4 && if mana.chr_inv_count(ch, 30037) == 0) then
         do_message(npc, ch, "Wasser!")
-    else if (quest_var == 4 && if mana.chr_inv_count(ch, 30037) >= 5)
+    else if (quest_var == 4 && if mana.chr_inv_count(ch, 30037) >= 5) then
         do_message(npc, ch, "Danke")
         do_message(npc, ch, "Eine kleines Dankeschön.")
         invertika.add_money(ch, 500)
         invertika.add_items(ch, 30037, -5, "Wasserflasche")
         --Set Quest
-        invertika.chr_set_quest(ch, "nelaro_water_quest", 5)
-    else if (quest_var == 5)
+        invertika.chr_set_quest(ch, queststring, 5)
+    else if (quest_var == 5) then
         do_message(npc, ch, "Hallo")
     end
     do_npc_close(npc, ch)

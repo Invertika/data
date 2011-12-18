@@ -39,8 +39,9 @@ atinit(function()
 end)
 
 function irac_talk(npc, ch)
+    local queststring = "nelaro_water_quest"
     --Init Quest
-    invertika.init_quest_status(ch, "nelaro_water_quest")
+    invertika.init_quest_status(ch, queststring)
     
     do_message(npc, ch, invertika.get_random_element("Hi, was kann ich für sie tuen?",
       "Hi, was gibt es?",
@@ -83,7 +84,7 @@ function irac_talk(npc, ch)
                 do_message(npc, ch, "Frage dazu bitte den Hobel, der weiß mehr darüber")
                 
                 --Set Quest
-                invertika.chr_set_quest(ch, "nelaro_water_quest", 1)
+                invertika.chr_set_quest(ch, queststring, 1)
                 break
             elseif w == 2 then
                 do_message(npc, ch, "Einst war hier alles mal grün und fruchtbar.")

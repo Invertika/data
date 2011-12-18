@@ -83,10 +83,11 @@ function thinaima_talk(npc, ch)
 end
 
 function onurn_talk(npc, ch)
+    local queststring = "nelaro_water_quest"
     --Init Quest
-    invertika.init_quest_status(ch, "nelaro_water_quest")
+    invertika.init_quest_status(ch, queststring)
     --Get Quest
-    local quest_var = invertika.get_quest_status(ch, "nelaro_water_quest")
+    local quest_var = invertika.get_quest_status(ch, queststring)
     
     do_message(npc, ch, "...")
     while true      
@@ -94,17 +95,17 @@ function onurn_talk(npc, ch)
                     "Wie ist das Wetter?",
                     "Wie viel Uhr ist es?",
                     "Tschüß.")
-        if v == 1 && quest_var == 2
+        if v == 1 && quest_var == 2 then
             do_message(npc, ch, "Die bekommen das Wasser von einem Lieferantem aus dem Norden.")
             --Set Quest
-            invertika.chr_set_quest(ch, "nelaro_water_quest", 3)
-        else if v == 1 && quest_var ~= 2
+            invertika.chr_set_quest(ch, queststring, 3)
+        else if v == 1 && quest_var ~= 2 then
             do_message(npc, ch, invertika.get_random_element(
               "Es ist sonnig.",
               "Es ist stürmisch.",
               "Dort oben ist eine Wolke. Vielleicht fängt es ja zu regnen an."))
             break
-        else if v == 2
+        else if v == 2 then
             do_message(npc, ch, "Es ist") --Uhrzeit Ausgeben
             break
         else
