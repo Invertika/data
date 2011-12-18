@@ -95,7 +95,7 @@ function onurn_talk(npc, ch)
                     "Wie ist das Wetter?",
                     "Wie viel Uhr ist es?",
                     "Tschüß.")
-        if v == 1 && quest_var == 2 then
+        if v == 1 and quest_var == 2 then
             do_message(npc, ch, "Die bekommen das Wasser von einem Lieferantem aus dem Norden.")
             --Set Quest
             invertika.chr_set_quest(ch, queststring, 3)
