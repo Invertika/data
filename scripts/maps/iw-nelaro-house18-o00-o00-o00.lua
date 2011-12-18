@@ -68,7 +68,7 @@ function hobel_talk(npc, ch)
                               "Dass mit denen alles in Ordnung sei.")
         if (c == 1)
             do_message(npc, ch, "Ok, das hatte ich bereits vermutet.")
-            do_message(npc, ch, "Kannst du rüber zum Wüstenlager, und dort Wasser kaufen?")
+            do_message(npc, ch, "Kannst du rüber zum Wüstenlager, und dort 5 Wasserflaschen kaufen?")
             local a = do_choice(npc, ch,
                                   "Ja",
                                   "Nein")
@@ -87,10 +87,11 @@ function hobel_talk(npc, ch)
         end
     else if (quest_var == 4 && if mana.chr_inv_count(ch, 30037) == 0)
         do_message(npc, ch, "Wasser!")
-    else if (quest_var == 4 && if mana.chr_inv_count(ch, 30037) > 0)
+    else if (quest_var == 4 && if mana.chr_inv_count(ch, 30037) >= 5)
         do_message(npc, ch, "Danke")
         do_message(npc, ch, "Eine kleines Dankeschön.")
         invertika.add_money(ch, 500)
+        invertika.add_items(ch, 30037, -5, "Wasserflasche")
         --Set Quest
         invertika.chr_set_quest(ch, "nelaro_water_quest", "5")
     else if (quest_var == 5)
