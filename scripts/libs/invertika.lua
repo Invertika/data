@@ -99,6 +99,7 @@ local ITEM_REMOVE_TEXT = "Du hast %sx %s weniger!"
 -- @param amount Anzahl der Arfahrungspunkte die gegeben werden sollen.
 -- @param optimalLevel optimalLevel.
 function add_exp(character, attribute, amount, optimalLevel)
+    if amount == 0 then return end -- prevent spamming the player
     mana.chr_give_exp(character, attribute, amount, optimalLevel)
     mana.chatmessage(character, "Du hast " + amount + "Erfahrungspunkte erhalten!")
 end
@@ -107,6 +108,7 @@ end
 -- @param ch Der Spieler dem Geld gegeben werden soll.
 -- @param amount Menge des Geldes.
 function add_money(ch, amount)
+    if amount == 0 then return end -- prevent spamming the player
     local current_money = mana.chr_money(ch)
     if current_money + amount < 0 then
         error("add_money failed: money would be less than 0")
@@ -126,6 +128,7 @@ end
 -- @param number Anzahl der Items.
 -- @param name Name des Items (sollte auf Itemnamen gesetzt werden)
 function add_items(ch, id, number, name)
+    if number == 0 then return end -- prevent spamming the player
     local success = mana.chr_inv_change(ch, id, number)
     if success then
         if number > 0 then
