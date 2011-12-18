@@ -151,6 +151,7 @@ tr_timer_next = {}
 tr_messages = {}
 
 function create_npc_talk_random(npc,  messages)
+    assert(npc, "create_npc_talk_random called without a npc")
     tr_messages[npc] = messages
 end
 
