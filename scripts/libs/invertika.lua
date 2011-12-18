@@ -157,7 +157,7 @@ function create_npc_talk_random(npc,  messages)
 end
 
 function npc_talk_random(npc, messages)
-    local text = messages[math.random(1, #messages[npc])]
+    local text = messages[math.random(1, #messages)]
     mana.being_say(npc, text)
     schedule_in(math.random(20, 30), function() npc_talk_random(npc, messages) end)
 end
