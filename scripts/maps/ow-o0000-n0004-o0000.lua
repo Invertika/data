@@ -105,7 +105,7 @@ function onurn_talk(npc, ch)
               "Es ist stürmisch.",
               "Dort oben ist eine Wolke. Vielleicht fängt es ja zu regnen an."))
             break
-        else if v == 2 then
+        elseif v == 2 then
             do_message(npc, ch, "Es ist") --Uhrzeit Ausgeben
             break
         else
