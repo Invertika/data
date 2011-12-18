@@ -83,13 +83,20 @@ function thinaima_talk(npc, ch)
 end
 
 function onurn_talk(npc, ch)
+    -Get Quest
+    local quest_var = invertika.get_quest_status(ch, "nelaro_water_quest")
+    
     do_message(npc, ch, "...")
     while true      
         local v = do_choice(npc, ch, 
                     "Wie ist das Wetter?",
                     "Wie viel Uhr ist es?",
                     "Tschüß.")
-        if v == 1
+        if v == 1 && quest_var == 2
+            do_message(npc, ch, "Die bekommen das Wasser von einem Lieferantem aus dem Norden.")
+            --Set Quest
+            invertika.chr_set_quest(ch, "nelaro_water_quest", "3")
+        else if v == 1 && quest_var < 2
             do_message(npc, ch, invertika.get_random_element(
               "Es ist sonnig.",
               "Es ist stürmisch.",

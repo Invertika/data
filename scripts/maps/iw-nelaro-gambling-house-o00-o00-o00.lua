@@ -39,6 +39,9 @@ atinit(function()
 end)
 
 function irac_talk(npc, ch)
+    --Init Quest
+    invertika.init_quest_status(ch, "nelaro_water_quest")
+    
     do_message(npc, ch, invertika.get_random_element("Hi, was kann ich für sie tuen?",
       "Hi, was gibt es?",
       "Hi, wie kann ich ihnen helfen?",
@@ -78,6 +81,9 @@ function irac_talk(npc, ch)
                 do_message(npc, ch, "Sie leben halt sehr zurückgeschieden und lassen kaum einen an sie heran.")
                 do_message(npc, ch, "Es gehen aber Gerüchte um...")
                 do_message(npc, ch, "Frage dazu bitte den Hobel, der weiß mehr darüber")
+                
+                --Set Quest
+                invertika.chr_set_quest(ch, "nelaro_water_quest", "1")
                 break
             elseif w == 2 then
                 do_message(npc, ch, "Einst war hier alles mal grün und fruchtbar.")
