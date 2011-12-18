@@ -28,6 +28,8 @@ atinit(function()
 end)
 
 function hobel_talk(npc, ch)
+    --Init Quest
+    invertika.init_quest_status(ch, "nelaro_water_quest")
     --Get Quest
     local quest_var = invertika.get_quest_status(ch, "nelaro_water_quest")
     

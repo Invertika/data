@@ -83,7 +83,9 @@ function thinaima_talk(npc, ch)
 end
 
 function onurn_talk(npc, ch)
-    -Get Quest
+    --Init Quest
+    invertika.init_quest_status(ch, "nelaro_water_quest")
+    --Get Quest
     local quest_var = invertika.get_quest_status(ch, "nelaro_water_quest")
     
     do_message(npc, ch, "...")
