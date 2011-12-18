@@ -90,7 +90,7 @@ function onurn_talk(npc, ch)
     local quest_var = invertika.get_quest_status(ch, queststring)
     
     do_message(npc, ch, "...")
-    while true      
+    while true do   
         local v = do_choice(npc, ch, 
                     "Wie ist das Wetter?",
                     "Wie viel Uhr ist es?",

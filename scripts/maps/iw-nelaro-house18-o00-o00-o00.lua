@@ -37,7 +37,6 @@ function hobel_talk(npc, ch)
     if (quest_var == 0) then
         do_message(npc, ch, "...")
     else if (quest_var == 1) then
-    {
         do_message(npc, ch, "Irac hat dich geschickt?")
         local v =  do_choice(npc, ch, 
                     "Ja", 
@@ -61,7 +60,6 @@ function hobel_talk(npc, ch)
         else
             do_message(npc, ch, "...")
         end
-    }
     else if (quest_var == 2) then
         do_message(npc, ch, "Was stehst du hier so Faul rum? Du sollst zum Onurn gehen!")
     else if (quest_var == 3) then
