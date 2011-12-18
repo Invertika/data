@@ -83,7 +83,7 @@ function irac_talk(npc, ch)
                 do_message(npc, ch, "Frage dazu bitte den Hobel, der weiß mehr darüber")
                 
                 --Set Quest
-                invertika.chr_set_quest(ch, "nelaro_water_quest", "1")
+                invertika.chr_set_quest(ch, "nelaro_water_quest", 1)
                 break
             elseif w == 2 then
                 do_message(npc, ch, "Einst war hier alles mal grün und fruchtbar.")

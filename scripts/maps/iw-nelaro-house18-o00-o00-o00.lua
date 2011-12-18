@@ -51,7 +51,7 @@ function hobel_talk(npc, ch)
             if (x == 1)
                 do_message(npc, ch, "Komme danach so schnll wie es geht zurück.")
                 --Set Quest
-                invertika.chr_set_quest(ch, "nelaro_water_quest", "2")
+                invertika.chr_set_quest(ch, "nelaro_water_quest", 2)
             else
                 do_message(npc, ch, "Auf Wiedersehen.")
                 end
@@ -77,7 +77,7 @@ function hobel_talk(npc, ch)
                 do_message(npc, ch, "Komme nicht ohne Wasser wieder!")
                 invertika.add_money(ch, 200)
                 --Set Quest
-                invertika.chr_set_quest(ch, "nelaro_water_quest", "4")
+                invertika.chr_set_quest(ch, "nelaro_water_quest", 4)
             else if (a == 2)
                 do_message(npc, ch, "Blöd.")
             end
@@ -93,7 +93,7 @@ function hobel_talk(npc, ch)
         invertika.add_money(ch, 500)
         invertika.add_items(ch, 30037, -5, "Wasserflasche")
         --Set Quest
-        invertika.chr_set_quest(ch, "nelaro_water_quest", "5")
+        invertika.chr_set_quest(ch, "nelaro_water_quest", 5)
     else if (quest_var == 5)
         do_message(npc, ch, "Hallo")
     end
