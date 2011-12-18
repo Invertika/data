@@ -146,27 +146,17 @@ function kill_being(being)
     mana.being_damage(being, 999999, 0, 99999, DAMAGE_PHYSICAL, ELEMET_NEUTRAL)
 end
 
-tr_timer = {}
-tr_timer_next = {}
 tr_messages = {}
 
 function create_npc_talk_random(npc,  messages)
     assert(npc, "create_npc_talk_random called without a npc")
-    tr_messages[npc] = messages
+    schedule_in(30, function() npc_talk_random(npc, messages) end)
 end
 
-function npc_talk_random(npc)
-    if not tr_timer[npc] then
-        tr_timer[npc] = 1 
-        tr_timer_next[npc] = math.random(200, 300)
-    end 
-    tr_timer[npc] = tr_timer[npc] + 1 
-    if tr_timer[npc] == tr_timer_next[npc] then
-        local text = get_random_element(tr_messages[npc][ math.random(1, #tr_messages[npc])])
-        mana.being_say(npc, text)
-        tr_timer[npc] = 1
-        tr_timer_next[npc] = math.random(200, 300)
-    end 
+function npc_talk_random(npc, messages)
+    local text = messages[math.random(1, #messages[npc])]
+    mana.being_say(npc, text)
+    schedule_in(math.random(20, 30), function() npc_talk_random(npc, messages) end)
 end
 
 tg_timer = {}
