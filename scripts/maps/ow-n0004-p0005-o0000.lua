@@ -31,7 +31,7 @@ atinit(function()
 
     mana.trigger_create(101 * TILESIZE, 170 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "wache_trigger", 1, true)
 
-    diem = create_npc("Diem", 139, 60 * TILESIZE + 16, 160 * TILESIZE + 16, diem_talk, diem_update)
+    diem = create_npc("Diem", 139, 60 * TILESIZE + 16, 160 * TILESIZE + 16, diem_talk, npclib.walkaround_wide)
     invertika.create_npc_talk_random(diem,
       {"Kauft Leute! Kauft!",
       "Beste Waren! Hergestellt in den königlichen Schmieden!",
@@ -82,11 +82,6 @@ function diem_talk(npc, ch)
       {20009, 30, 500}
     })
     do_npc_close(npc, ch)
-end
-
-function diem_update(npc)
-    npclib.walkaround_wide(npc)
-    invertika.npc_talk_random(npc)
 end
 
 function chris_talk(npc, ch)

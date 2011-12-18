@@ -29,7 +29,7 @@ atinit(function()
     sign.create_sign(95, 47, sign_entrance) --- Schild Ortseingang
 
     create_npc("Awond", 120, 159 * TILESIZE, 40 * TILESIZE, awond_talk, nil)
-    mordyno = create_npc("Mordyno", 147, 101 * TILESIZE + 16, 109 * TILESIZE + 16, mordyno_talk, mordyno_update)
+    mordyno = create_npc("Mordyno", 147, 101 * TILESIZE + 16, 109 * TILESIZE + 16, mordyno_talk, npclib.walkaround_wide)
     invertika.create_npc_talk_random(mordyno,
           {"Kauft Leute! Kauft!", 
           "Hier gibt es nur beste Ware!",
@@ -72,11 +72,6 @@ function mordyno_talk(npc, ch)
       {20018, 30, 250},
       {20009, 30, 500} })
     do_npc_close(npc, ch)
-end
-
-function mordyno_update(npc)
-    npclib.walkaround_wide(npc)
-    invertika.npc_talk_random(npc)
 end
 
 function bache_talk(npc, ch)

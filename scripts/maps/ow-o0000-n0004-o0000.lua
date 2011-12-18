@@ -29,18 +29,18 @@ atinit(function()
     sign.create_sign(69, 110, sign_descr) --- Schild Stadtmitte
     
     --TODO Change Sprite IDs
-    egroe = create_npc("Egroe", 34, 119 * TILESIZE + 16, 153 * TILESIZE + 16, egroe_talk, invertika.npc_talk_random)
+    egroe = create_npc("Egroe", 34, 119 * TILESIZE + 16, 153 * TILESIZE + 16, egroe_talk, nil)
     invertika.create_npc_talk_random(egroe,
       {"Qualitätswaren zum billigsten Preis.",
       "Wasser nur 2500 Aki pro Liter!"})
-    thinaima = create_npc("Thinaima", 18, 64 * TILESIZE + 16, 112 * TILESIZE + 16, thinaima_talk, invertika.npc_talk_random)
+    thinaima = create_npc("Thinaima", 18, 64 * TILESIZE + 16, 112 * TILESIZE + 16, thinaima_talk, nil)
     invertika.create_npc_talk_random(thinaima,
       {"Waffen, handgefertigte Waffen!",
       "Wasser zum billigsten Preis in der Region!",
       "Edelste Waren aus dem Norden!"})
     
     --TODO Change Sprite ID
-    onurn = create_npc("Onurn", 2, 91 * TILESIZE + 16, 98 * TILESIZE + 16, onurn_talk, invertika.npc_talk_random)
+    onurn = create_npc("Onurn", 2, 91 * TILESIZE + 16, 98 * TILESIZE + 16, onurn_talk, nil)
     invertika.create_npc_talk_random(onurn,
       {"Wasser ist zum Waschen da, auch die Feuerwehr, braucht das Wasser sehr.",
       "Wasser ist zum Waschen da, auch zum Zähneputzen, kann man es benutzen.",
