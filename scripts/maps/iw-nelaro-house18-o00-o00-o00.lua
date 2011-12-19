@@ -43,7 +43,7 @@ function hobel_talk(npc, ch)
                     "Nein")
         if v == 1 then
             do_message(npc, ch, "Gut, der ist einer der wenigen, denen ich vertraue.")
-            do_message(npc, ch, "Der einzigster Wasserlieferant der Stadt ist die Familie in der Mitte.")
+            do_message(npc, ch, "Der einzigste Wasserlieferant der Stadt ist die Familie in der Mitte.")
             do_message(npc, ch, "Sie können daher die Preise bestimmen, leider.")
             do_message(npc, ch, "Ich habe Onurn gesagt, dass er die belauschen soll.")
             do_message(npc, ch, "Kannst du ihn für mich nach dem Wetter fragen?")
@@ -51,7 +51,7 @@ function hobel_talk(npc, ch)
               "Ja",
               "Nein")
             if x == 1 then
-                do_message(npc, ch, "Komme danach so schnll wie es geht zurück.")
+                do_message(npc, ch, "Komme danach so schnell wie es geht zurück.")
                 --Set Quest
                 invertika.chr_set_quest(ch, queststring, 2)
             else
@@ -61,7 +61,7 @@ function hobel_talk(npc, ch)
             do_message(npc, ch, "...")
         end
     elseif quest_var == 2 then
-        do_message(npc, ch, "Was stehst du hier so Faul rum? Du sollst zum Onurn gehen!")
+        do_message(npc, ch, "Was stehst du hier so faul rum? Du sollst zum Onurn gehen!")
     elseif quest_var == 3 then
         do_message(npc, ch, "Was sagte er?")
         local c = do_choice(npc, ch,
