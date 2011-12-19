@@ -79,7 +79,7 @@ function irac_talk(npc, ch)
               "Über nichts")
             if w == 1 then
                 do_message(npc, ch, "Soviel weiß hier keiner über die in der Mitte.")
-                do_message(npc, ch, "Sie leben halt sehr zurückgeschieden und lassen kaum einen an sie heran.")
+                do_message(npc, ch, "Sie leben halt sehr zurückgeschieden und lassen kaum einen an sich heran.")
                 do_message(npc, ch, "Es gehen aber Gerüchte um...")
                 do_message(npc, ch, "Frage dazu bitte den Hobel, der weiß mehr darüber")
                 
@@ -88,7 +88,7 @@ function irac_talk(npc, ch)
                 break
             elseif w == 2 then
                 do_message(npc, ch, "Einst war hier alles mal grün und fruchtbar.")
-                do_message(npc, ch, "Der Fluss im Norden unserer Stadt war voll mit frischen Wasser.")
+                do_message(npc, ch, "Der Fluss im Norden unserer Stadt war voll mit frischem Wasser.")
                 do_message(npc, ch, "Woher das kam, weiß ich nicht.")
                 do_message(npc, ch, "Ist aber auch egal.")
                 do_message(npc, ch, "Auf jedenfall, war er nach einer stürmischen Nacht ausgetrocknet.")
