@@ -177,7 +177,7 @@ function fireworker_talk(npc, ch)
     "Möchtest du dir ein kleines Feuerwerk anschauen?",
     "Möchtest du dir ein wenig Feuerwerk anschauen?",
     "Willst du ein kleines Feuerwerk betrachten?",
-    "Auf deinen Wunsch hin, beschwöre ich den Gott des Feuerwerkes, und dieser wird mächtig krachen lassen!"))
+    "Auf deinen Wunsch hin, beschwöre ich den Gott des Feuerwerkes, und dieser wird es mächtig krachen lassen!"))
   local answer = do_choice(npc, ch, "Juhuu! Feuerwerk!", "Nee, danke.")
   if answer == 1 then
     local x = mana.posX(npc)
