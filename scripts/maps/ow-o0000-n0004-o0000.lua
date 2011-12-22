@@ -98,7 +98,7 @@ function onurn_talk(npc, ch)
         if v == 1 and quest_var == 2 then
             do_message(npc, ch, "Die bekommen das Wasser von einem Lieferanten aus dem Norden.")
             --Set Quest
-            invertika.chr_set_quest(ch, queststring, 3)
+            invertika.invertika.set_quest_status(ch, queststring, 3)
         elseif v == 1 or quest_var ~= 2 then
             do_message(npc, ch, invertika.get_random_element(
               "Es ist sonnig.",
