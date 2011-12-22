@@ -169,7 +169,15 @@ end
 
 -- Silvester
 function fireworker_talk(npc, ch)
-  do_message(npc, ch, "Willst du ein wenig Feuerwerk sehen?")
+  do_message(npc, ch, invertika.get_random_element(
+    "Willst du ein wenig Feuerwerk sehen?",
+    "Willst du ein kleines Feuerwerk sehen?",
+    "Möchtest du ein kleines Feuerwerk sehen?",
+    "Möchtest du ein wenig Feuerwerk sehen?",
+    "Möchtest du dir ein kleines Feuerwerk anschauen?",
+    "Möchtest du dir ein wenig Feuerwerk anschauen?",
+    "Willst du ein kleines Feuerwerk betrachten?",
+    "Auf deinen Wunsch hin, beschwöre ich den Gott des Feuerwerkes, und dieser wird mächtig krachen lassen!"))
   local answer = do_choice(npc, ch, "Juhuu! Feuerwerk!", "Nee, danke.")
   if answer == 1 then
     local x = mana.posX(npc)

@@ -72,45 +72,50 @@ function irac_talk(npc, ch)
         elseif v == 2 then
             do_message(npc, ch, invertika.get_random_element("Über was wollen wa den reden?",
               "Über was wollen wir reden?"))
-            local w = do_choice(npc, ch, 
-              "Über die Familie in der Mitte",
-              "Über die Wassernot",
-              "Über den Raum nebenan",
-              "Über nichts")
-            if w == 1 then
-                do_message(npc, ch, "Soviel weiß hier keiner über die in der Mitte.")
-                do_message(npc, ch, "Sie leben halt sehr zurückgeschieden und lassen kaum einen an sich heran.")
-                do_message(npc, ch, "Es gehen aber Gerüchte um...")
-                do_message(npc, ch, "Frage dazu bitte den Hobel, der weiß mehr darüber")
+            while true do
+                local w = do_choice(npc, ch, 
+                  "Über die Familie in der Mitte",
+                  "Über die Wassernot",
+                  "Über den Raum nebenan",
+                  "Über nichts")
+                if w == 1 then
+                    do_message(npc, ch, "Soviel weiß hier keiner über die in der Mitte.")
+                    do_message(npc, ch, "Sie leben halt sehr zurückgeschieden und lassen kaum einen an sich heran.")
+                    do_message(npc, ch, "Es gehen aber Gerüchte um...")
+                    do_message(npc, ch, "Frage dazu bitte den Hobel, der weiß mehr darüber")
                 
-                --Set Quest
-                invertika.chr_set_quest(ch, queststring, 1)
-                break
-            elseif w == 2 then
-                do_message(npc, ch, "Einst war hier alles mal grün und fruchtbar.")
-                do_message(npc, ch, "Der Fluss im Norden unserer Stadt war voll mit frischem Wasser.")
-                do_message(npc, ch, "Woher das kam, weiß ich nicht.")
-                do_message(npc, ch, "Ist aber auch egal.")
-                do_message(npc, ch, "Auf jedenfall, war er nach einer stürmischen Nacht ausgetrocknet.")
-                do_message(npc, ch, "Mehr weiß ich auch nicht.")
-                break
-            elseif w == 3 then
-                do_message(npc, ch, "Das war vom Vorbesitzer des Laden noch ein Lagerraum.")
-                do_message(npc, ch, "Nichts besonderes also.")
-                local x = do_choice(npc, ch,
-                  "Und wieso ist dann dort eine Klappe nach unten?",
-                  "Okay")
-                if x == 1 then
-                    do_message(npc, ch, "Ich weiß selbst nicht, wohin die führt.")
-                    do_message(npc, ch, "Und nein, ich werde es dich auch nicht ausprobieren lassen.")
+                    --Set Quest
+                    invertika.set_quest_status(ch, queststring, 1)
                     break
-                elseif x == 2 then
+                elseif w == 2 then
+                    do_message(npc, ch, "Einst war hier alles mal grün und fruchtbar.")
+                    do_message(npc, ch, "Der Fluss im Norden unserer Stadt war voll mit frischem Wasser.")
+                    do_message(npc, ch, "Woher das kam, weiß ich nicht.")
+                    do_message(npc, ch, "Ist aber auch egal.")
+                    do_message(npc, ch, "Auf jedenfall, war er nach einer stürmischen Nacht ausgetrocknet.")
+                    do_message(npc, ch, "Mehr weiß ich auch nicht.")
+                    break
+                elseif w == 3 then
+                    do_message(npc, ch, "Das war vom Vorbesitzer des Laden noch ein Lagerraum.")
+                    do_message(npc, ch, "Nichts besonderes also.")
+                    while true do
+                        local x = do_choice(npc, ch,
+                          "Und wieso ist dann dort eine Klappe nach unten?",
+                          "Okay")
+                        if x == 1 then
+                            do_message(npc, ch, "Ich weiß selbst nicht, wohin die führt.")
+                            do_message(npc, ch, "Und nein, ich werde es dich auch nicht ausprobieren lassen.")
+                            break
+                        elseif x == 2 then
+                            break
+                        end
+                    end
+                    break
+                elseif w == 4  then
                     break
                 end
-            elseif w == 4  then
-                break
             end
-            break
+            break;
         elseif v == 3 then
             do_message(npc, ch, invertika.get_random_element("Tschüß",
               "Tschau",
