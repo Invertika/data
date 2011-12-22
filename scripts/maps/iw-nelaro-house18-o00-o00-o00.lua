@@ -45,15 +45,15 @@ function hobel_talk(npc, ch)
             if v == 1 then
                 do_message(npc, ch, "Gut, der ist einer der wenigen, denen ich vertraue.")
                 do_message(npc, ch, "Der einzigste Wasserlieferant der Stadt ist die Familie in der Mitte.")
-                do_message(npc, ch, "Sie können daher die Preise bestimmen, leider.")
+                do_message(npc, ch, "Sie kÃ¶nnen daher die Preise bestimmen, leider.")
                 do_message(npc, ch, "Ich habe Onurn gesagt, dass er die belauschen soll.")
-                do_message(npc, ch, "Kannst du ihn für mich nach dem Wetter fragen?")
+                do_message(npc, ch, "Kannst du ihn fÃ¼r mich nach dem Wetter fragen?")
                 while true do
                     local x = do_choice(npc, ch,
                       "Ja",
                       "Nein")
                     if x == 1 then
-                        do_message(npc, ch, "Komme danach so schnell wie es geht zurück.")
+                        do_message(npc, ch, "Komme danach so schnell wie es geht zurÃ¼ck.")
                         --Set Quest
                         invertika.set_quest_status(ch, queststring, 2)
                         break
@@ -78,7 +78,7 @@ function hobel_talk(npc, ch)
                               "Dass mit denen alles in Ordnung sei.")
             if c == 1 then
                 do_message(npc, ch, "Ok, das hatte ich bereits vermutet.")
-                do_message(npc, ch, "Kannst du rüber zum Wüstenlager, und dort 5 Wasserflaschen kaufen?")
+                do_message(npc, ch, "Kannst du rÃ¼ber zum WÃ¼stenlager, und dort 5 Wasserflaschen kaufen?")
                 while true do
                     local a = do_choice(npc, ch,
                                       "Ja",
@@ -91,7 +91,7 @@ function hobel_talk(npc, ch)
                         invertika.set_quest_status(ch, queststring, 4)
                         break
                     elseif a == 2 then
-                        do_message(npc, ch, "Blöd.")
+                        do_message(npc, ch, "BlÃ¶d.")
                         break
                     end
                 end
@@ -106,7 +106,7 @@ function hobel_talk(npc, ch)
         do_message(npc, ch, "Wasser!")
     elseif quest_var == 4 or mana.chr_inv_count(ch, 30037) >= 5 then
         do_message(npc, ch, "Danke")
-        do_message(npc, ch, "Eine kleines Dankeschön.")
+        do_message(npc, ch, "Eine kleines DankeschÃ¶n.")
         invertika.add_money(ch, 500)
         invertika.add_items(ch, 30037, -5, "Wasserflasche")
         --Set Quest
