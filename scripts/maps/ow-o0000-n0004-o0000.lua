@@ -28,7 +28,6 @@ atinit(function()
     sign_descr = "Nelaro"
     sign.create_sign(69, 110, sign_descr) --- Schild Stadtmitte
     
-    --TODO Change Sprite IDs
     egroe = create_npc("Egroe", 34, 119 * TILESIZE + 16, 153 * TILESIZE + 16, egroe_talk, nil)
     invertika.create_npc_talk_random(egroe,
       {"Qualitätswaren zum billigsten Preis.",
@@ -46,7 +45,39 @@ atinit(function()
       "Wasser ist zum Waschen da, auch zum Zähneputzen, kann man es benutzen.",
       "Die Fleischlackiererei ist auf der anderen Seite.",
       "˙ɟǝıɥɔs ʇsı ɹǝp 'ʇsǝıl sɐp ɹǝʍ"})
+      
+    ---Neujahr
+    ---create_npc("Feuerwerker", 83, 177 * TILESIZE + 16, 185 * TILESIZE + 16, fireworker_talk, npclib.walkaround_small)
 end)
+
+-- Silvester
+function fireworker_talk(npc, ch)
+    do_message(npc, ch, invertika.get_random_element(
+      "Willst du ein wenig Feuerwerk sehen?",
+      "Willst du ein kleines Feuerwerk sehen?",
+      "Möchtest du ein kleines Feuerwerk sehen?",
+      "Möchtest du ein wenig Feuerwerk sehen?",
+      "Möchtest du dir ein kleines Feuerwerk anschauen?",
+      "Möchtest du dir ein wenig Feuerwerk anschauen?",
+      "Willst du ein kleines Feuerwerk betrachten?",
+      "Auf deinen Wunsch hin, beschwöre ich den Gott des Feuerwerkes, und dieser wird mächtig krachen lassen!"))
+    local answer = do_choice(npc, ch, "Juhuu! Feuerwerk!", "Nee, danke.")
+    if answer == 1 then
+        local x = mana.posX(npc)
+        local y = mana.posY(npc)
+        for c = 0, 25 do
+            schedule_in (c, function()
+            mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+            mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+            mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+            mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+            mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+            mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+            end)
+        end
+    end
+    do_npc_close(npc, ch)
+end
 
 function egroe_talk(npc, ch)
     --TODO mehr Auswahl
