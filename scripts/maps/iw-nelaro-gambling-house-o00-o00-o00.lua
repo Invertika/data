@@ -110,10 +110,12 @@ function irac_talk(npc, ch)
                             break
                         end
                     end
+                    break
                 elseif w == 4  then
                     break
                 end
             end
+            break;
         elseif v == 3 then
             do_message(npc, ch, invertika.get_random_element("Tschüß",
               "Tschau",
