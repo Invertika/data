@@ -23,5 +23,5 @@ atinit(function()
 end)
 function rezeptionist_talk(npc, ch)
    do_message(npc, ch, "Bald werden wir das erste Höhlnhotel Invertikas eröffnen!")
-   do_close(npc, ch)
+   do_npc_close(npc, ch)
 end
