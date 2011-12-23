@@ -82,9 +82,9 @@ end
 function egroe_talk(npc, ch)
     --TODO mehr Auswahl
     mana.npc_trade(npc, ch, false, {
-      {10001, 20, 620},
+      {10001, 20, 19},
       {30037, 5, 2500},
-      {10013, 30, 140},
+      {10013, 30, 159},
       {10002, 30, 1000},
       {10009, 30, 1690},
       {20001, 30, 250},
@@ -99,7 +99,7 @@ end
 function thinaima_talk(npc, ch)
     --TODO mehr Auswahl
     mana.npc_trade(npc, ch, false, {
-      {10001, 20, 620},
+      {10001, 20, 19},
       {10013, 30, 140},
       {10002, 30, 1000},
       {10009, 30, 1690},
