@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="20" height="20" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="AutoMappingRadius" value="10"/>
+  <property name="DeleteTiles" value="1"/>
+  <property name="music" value="inside2.ogg"/>
+ </properties>
+ <tileset firstgid="1" name="collision1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="1025" name="misc1_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/misc1_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="1537" name="automapping_set_cave_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/automapping_set_cave_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="2561" name="cave1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3585" name="cave1_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/cave1_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="4097" name="cave2_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave2_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="5121" name="cave3_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave3_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="6145" name="cave4_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave4_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="7169" name="indoor1_32_96" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/indoor1_32_96.png" width="1024" height="960"/>
+ </tileset>
+ <layer name="Ground" width="20" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+WTyQ3CMBBFIyF3kAbASSFsgTbYIi5ADaziApRJG3xLsTSKxnZmcuTwbsmTZ55d5FlWKBiBBZg1LJUe75qAAziCE9j3dK3BC7zBBzwVroq4LuBLsApfHXANhPO5fQ/Bg3F1PZv3uPm2YAzmjMsxTfStiMfNdwMrsAv4Nom+NfH4+c7gHvBdE31De4oR22HJtDNMU9PRR/+3TZt2C8t8J7nDtEX7vhmBz7ehLTRvIdamj6/MZS2lPslb/Qd+JhRKEkAGAAA=
+  </data>
+ </layer>
+ <layer name="Ground" width="20" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgGAXEglciEPq1COVmUcMMGHhFRbNOieDnkwo00fR7kmEetcKK2HB6RsXwpATAwp6a8TvYwUjy63AAAFA0XcBABgAA
+  </data>
+ </layer>
+ <layer name="Over" width="20" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgGAWkAjURBgZOkYF2xSggB4DiTh2INUQwxdHFcAEOItUSqw6mVh1HukJOb6SYSSzgGMbpmdK8CosXdTzxM5IBAFyRQP9ABgAA
+  </data>
+ </layer>
+ <layer name="Collision" width="20" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NiYGBgGsaYgQbmUctMWphFDfNoZRa55jEw4DaPFDNJAeTEHTb9pLiRGPOQ1RFrLrFuobZ5QznN0cptww0DAFQsLxhABgAA
+  </data>
+ </layer>
+ <objectgroup name="Object" width="20" height="20">
+  <object name="Fledermaus" type="SPAWN" x="273" y="80" width="331" height="348">
+   <properties>
+    <property name="MAX_BEINGS" value="7"/>
+    <property name="MONSTER_ID" value="8"/>
+    <property name="SPAWN_RATE" value="20"/>
+   </properties>
+  </object>
+  <object name="External Map Events" type="SCRIPT" x="0" y="0">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/iw-bolero-cave-o00-o00-o00.lua"/>
+   </properties>
+  </object>
+  <object name="Warp to iw-ipsum-house01-o00-o00-n01" type="WARP" x="513" y="68" width="28" height="24">
+   <properties>
+    <property name="DEST_MAP" value="iw-ipsum-house01-o00-o00-n01"/>
+    <property name="DEST_X" value="720"/>
+    <property name="DEST_Y" value="2288"/>
+   </properties>
+  </object>
+  <object name="Warp to ow-n0004-p0001-o0000" type="WARP" x="320" y="512" width="48" height="31">
+   <properties>
+    <property name="DEST_MAP" value="ow-n0004-p0001-o0000"/>
+    <property name="DEST_X" value="1616"/>
+    <property name="DEST_Y" value="1872"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
