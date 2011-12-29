@@ -21,5 +21,5 @@ require "scripts/libs/warp"
 
 atinit(function()
  create_inter_map_warp_trigger(41, 29, 39, 51) --- Intermap warp
- create_npc("Pirat", 42, 26 * TILESIZE + 16, 59 * TILESIZE + 16, nil, nil)
+ create_npc("Mikel", 42, 26 * TILESIZE + 16, 59 * TILESIZE + 16, nil, nil)
 end)
