@@ -106,7 +106,7 @@ function hobel_talk(npc, ch)
         do_message(npc, ch, "Wasser!")
     elseif quest_var == 4 or mana.chr_inv_count(ch, 30037) >= 5 then
         do_message(npc, ch, "Danke")
-        do_message(npc, ch, "Eine kleines Dankeschön.")
+        do_message(npc, ch, "Ein kleines Dankeschön.")
         invertika.add_money(ch, 500)
         invertika.add_items(ch, 30037, -5, "Wasserflasche")
         --Set Quest
