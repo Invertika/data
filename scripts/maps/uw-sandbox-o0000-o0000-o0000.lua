@@ -715,5 +715,5 @@ function debugger_talk(npc, ch)
         local id = do_ask_integer(npc, ch, 0, 9999, 0)
         mana.effect_create(id, ch)
     end
-
+    do_npc_close(npc, ch)
 end
