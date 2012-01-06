@@ -26,6 +26,7 @@ require "scripts/libs/warp"
 
 atinit(function()
  create_inter_map_warp_trigger(19003, 19003, 19003, 19003) --- Intermap warp
+ create_npc("Debugger", 58, 133 * TILESIZE + 16. 21 * TILESIZE + 16, debugger_talk, nil) -- Debugger
  create_npc("Zelan", 58, 132 * TILESIZE + 16, 21 * TILESIZE + 16, zelan_talk, nil) --- Zelan
  mana.trigger_create(20 * TILESIZE, 20 * TILESIZE, 22 * TILESIZE, 22 * TILESIZE, "trap_trigger_skorpions", 0, true) --- Trigger Trap
  create_npc("Aliria", 2, 15 * TILESIZE + 16, 15 * TILESIZE + 16, alaria_talk, nil) --- Alaria Handels Test NPC
@@ -704,4 +705,15 @@ function healer_talk(npc, ch)
     end
     
     do_npc_close(npc, ch)
+end
+
+function debugger_talk(npc, ch)
+    do_message(npc, ch, "Was soll debuggt werden?")
+    local c = do_choice(npc, ch, "Nix.", "Effekte.")
+    if c == 2 then
+        do_message(npc, ch, "Effektid?")
+        local id = do_ask_integer(npc, ch, 0, 9999, 0)
+        mana.effect_create(id, ch)
+    end
+
 end
