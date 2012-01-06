@@ -7,7 +7,8 @@ function use(user)
 	  "Die Frage ist so simpel...",
 	  "Wuuuuuuuuuuuuuush",
 	  "Wo ist mein Bademantel?",
-	  "Wieviel ist sieben mal sechs?"))
+	  "Wieviel ist sieben mal sechs?",
+      "Morgen schwebe ich!"))
 	  
 	  local x = mana.posX(user) + 128
 	  local y = mana.posY(user)
