@@ -19,5 +19,11 @@ require "scripts/lua/npclib"
 
 
 atinit(function()
-    create_npc("Irucia", 79, 33 * TILESIZE + 16, 37 * TILESIZE + 16, nil, nil)
+    create_npc("Irucia", 79, 33 * TILESIZE + 16, 37 * TILESIZE + 16, irucia_talk, nil)
 end)
+
+function irucia_talk(npc, ch)
+    --TODO: Irgendetwas besseres hier einbauen
+    do_message(npc, ch, "Die Tanzschule hat noch geschlossen.")
+    do_npc_close(npc, ch)
+end
