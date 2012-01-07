@@ -76,7 +76,6 @@ function irac_talk(npc, ch)
                 local w = do_choice(npc, ch, 
                   "Über die Familie in der Mitte",
                   "Über die Wassernot",
-                  "Über den Raum nebenan",
                   "Über nichts")
                 if w == 1 then
                     do_message(npc, ch, "Soviel weiß hier keiner über die in der Mitte.")
@@ -95,23 +94,7 @@ function irac_talk(npc, ch)
                     do_message(npc, ch, "Auf jedenfall, war er nach einer stürmischen Nacht ausgetrocknet.")
                     do_message(npc, ch, "Mehr weiß ich auch nicht.")
                     break
-                elseif w == 3 then
-                    do_message(npc, ch, "Das war vom Vorbesitzer des Laden noch ein Lagerraum.")
-                    do_message(npc, ch, "Nichts besonderes also.")
-                    while true do
-                        local x = do_choice(npc, ch,
-                          "Und wieso ist dann dort eine Klappe nach unten?",
-                          "Okay")
-                        if x == 1 then
-                            do_message(npc, ch, "Ich weiß selbst nicht, wohin die führt.")
-                            do_message(npc, ch, "Und nein, ich werde es dich auch nicht ausprobieren lassen.")
-                            break
-                        elseif x == 2 then
-                            break
-                        end
-                    end
-                    break
-                elseif w == 4  then
+                elseif w == 3  then
                     break
                 end
             end
