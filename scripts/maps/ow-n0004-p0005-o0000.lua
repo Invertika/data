@@ -86,13 +86,13 @@ end
 
 function chris_talk(npc, ch)
     --TODO bessere Texte
-    do_message(npc, ch, "Guten Tag der Herr.")
+    do_message(npc, ch, "Guten Tag.")
     do_npc_close(npc, ch)
 end
 
 function estjdian_talk(npc, ch)
-    --TODO zu einem Händler machen keine Getränke, Lebensmittel
-    do_message(npc, ch, "Tag der Herr")
+    --TODO zu einem Händler machen (keine Getränke & Lebensmittel)
+    do_message(npc, ch, "Tag der")
     do_npc_close(npc, ch)
 end
 
