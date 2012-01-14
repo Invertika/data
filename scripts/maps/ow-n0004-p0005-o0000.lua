@@ -24,10 +24,10 @@ require "scripts/libs/warp"
 
 atinit(function()
     create_inter_map_warp_trigger(nil, 33, 43, 55) --- Intermap warp
-    nethek.create_netheksaeule(103 * TILESIZE, 107 * TILESIZE + 16) ---Netheksäule
+    nethek.create_netheksaeule(103 * TILESIZE, 110 * TILESIZE + 16) ---Netheksäule
 
     sign_entrance = "Burg Cedric"
-    sign.create_sign(106, 182, sign_entrance) --- Schild Burgeingang
+    sign.create_sign(104, 185, sign_entrance) --- Schild Burgeingang
 
     mana.trigger_create(101 * TILESIZE, 170 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "wache_trigger", 1, true)
 
@@ -49,8 +49,8 @@ atinit(function()
     create_npc("Wache", 26, 153 * TILESIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
     create_npc("Wache", 26, 52 * TILESIZE + 16, 149 * TILESIZE + 16, wache_casino_talk, nil)
 
-    wache_unten_links = create_npc("Wache", 26, 100 * TILESIZE + 16, 174 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
-    wache_unten_rechts = create_npc("Wache", 26, 104 * TILESIZE + 16, 174 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
+    wache_unten_links = create_npc("Wache", 26, 101 * TILESIZE + 16, 179 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
+    wache_unten_rechts = create_npc("Wache", 26, 103 * TILESIZE + 16, 179 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
     create_npc("Wache", 26, 100 * TILESIZE + 16, 140 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
     create_npc("Wache", 26, 104 * TILESIZE + 16, 140 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
 
