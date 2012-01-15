@@ -29,7 +29,7 @@ atinit(function()
     sign_entrance = "Burg Cedric"
     sign.create_sign(104, 185, sign_entrance) --- Schild Burgeingang
 
-    mana.trigger_create(101 * TILESIZE, 170 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "wache_trigger", 1, true)
+    mana.trigger_create(101 * TILESIZE, 176 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "wache_trigger", 1, true)
 
     diem = create_npc("Diem", 139, 60 * TILESIZE + 16, 160 * TILESIZE + 16, diem_talk, npclib.walkaround_wide)
     invertika.create_npc_talk_random(diem,
@@ -40,7 +40,7 @@ atinit(function()
 
     create_npc("Chris", 141, 50 * TILESIZE + 16, 118 * TILESIZE + 16, chris_talk, npclib.walkaround_wide)
 
-    create_npc("Estjdian", 120, 141 * TILESIZE + 16, 154 * TILESIZE + 16, estjdian_talk, nil)
+    create_npc("Estjdian", 120, 156 * TILESIZE + 16, 160 * TILESIZE + 16, estjdian_talk, nil)
 
     create_npc("Palastwache", 26, 58 * TILESIZE + 16, 100 * TILESIZE + 16, palastwache_talk, nil)
     create_npc("Palastwache", 26, 61 * TILESIZE + 16, 100 * TILESIZE + 16, palastwache_talk, nil)
@@ -51,8 +51,8 @@ atinit(function()
 
     wache_unten_links = create_npc("Wache", 26, 101 * TILESIZE + 16, 179 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
     wache_unten_rechts = create_npc("Wache", 26, 103 * TILESIZE + 16, 179 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
-    create_npc("Wache", 26, 100 * TILESIZE + 16, 140 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
-    create_npc("Wache", 26, 104 * TILESIZE + 16, 140 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
+    create_npc("Wache", 26, 100 * TILESIZE + 16, 137 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
+    create_npc("Wache", 26, 104 * TILESIZE + 16, 137 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
 
     cedric = create_npc("Cedric", 39, 81 * TILESIZE + 16, 97 * TILESIZE + 16, cedric_talk, nil)
 
