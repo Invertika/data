@@ -35,7 +35,7 @@ end
 function fohon_talk(npc, ch)
     do_message(npc, ch, invertika.get_random_element(
       "Was kann ich für sie tuen?",
-      "Was möchten sie?")
+      "Was möchten sie?"))
     while true do
         local v = do_choice(npc, ch,
           "Kaufen.",
