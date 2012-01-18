@@ -45,12 +45,18 @@ atinit(function()
     create_npc("Palastwache", 26, 58 * TILESIZE + 16, 100 * TILESIZE + 16, palastwache_talk, nil)
     create_npc("Palastwache", 26, 61 * TILESIZE + 16, 100 * TILESIZE + 16, palastwache_talk, nil)
 
-    create_npc("Wache", 26, 150 * TILESIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
-    create_npc("Wache", 26, 153 * TILESIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
+    --Bankwachen
+    create_npc("Wache", 26, 146 * TILESIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
+    create_npc("Wache", 26, 149 * TILESIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
+    
+    --Casinowache
     create_npc("Wache", 26, 52 * TILESIZE + 16, 149 * TILESIZE + 16, wache_casino_talk, nil)
 
+    --Außenwachen
     wache_unten_links = create_npc("Wache", 26, 101 * TILESIZE + 16, 179 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
     wache_unten_rechts = create_npc("Wache", 26, 103 * TILESIZE + 16, 179 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
+    
+    --Innentorwachen
     create_npc("Wache", 26, 100 * TILESIZE + 16, 137 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
     create_npc("Wache", 26, 104 * TILESIZE + 16, 137 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
 
