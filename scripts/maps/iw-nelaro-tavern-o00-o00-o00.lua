@@ -56,7 +56,7 @@ function fohon_talk(npc, ch)
         elseif v == 2 then
             do_message(npc, ch, invertika.get_random_element(
               "Einen guten Tag noch.",
-              "Einen schönen Tag noch.")
+              "Einen schönen Tag noch."))
             break
         end
     end
