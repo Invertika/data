@@ -36,8 +36,7 @@ function vodel_talk(npc, ch)
         do_message(npc, ch, invertika.get_random_element(
           "Wasser..",
           "Mein Mund besteht aus Staub.",
-          "Ich verdurste."
-          ))
+          "Ich verdurste." ))
     end
     
     if quest_var_vodel == 3 then
@@ -48,7 +47,7 @@ function vodel_talk(npc, ch)
             if x == 1 then
                 do_message(npc, ch, "Gut")
                 --Set Quest
-                invertika.invertika.set_quest_status(ch, queststring_vodel, 4) --Es wurde mit Vodel geredet, die Quest angenommen, und die erste Runde wird gestartet.
+                invertika.set_quest_status(ch, queststring_vodel, 4) --Es wurde mit Vodel geredet, die Quest angenommen, und die erste Runde wird gestartet.
                 break
             elseif x == 2 then
                 do_message(npc, ch, "Lass dir ruig soviel Zeit, wie du brauchst.")
@@ -63,16 +62,16 @@ function vodel_talk(npc, ch)
                           hour=0, min=00, sec=0}
         if os.difftime(os.time(), start) > 0 then
             --Set Quest
-            invertika.invertika.set_quest_status(ch, queststring_vodel, 4) --Es wurde mit Vodel geredet, die Quest angenommen, und die erste Runde wird gestartet.
+            invertika.set_quest_status(ch, queststring_vodel, 4) --Es wurde mit Vodel geredet, die Quest angenommen, und die erste Runde wird gestartet.
             do_message(npc, ch, "Du konntest Lange genug über die Frage grübeln, du darfst es erneut versuchen.")
         else
             do_message(npc, ch, "Wiege dich in Geduld.")
         end
     end
     
-    if quest_var_water >= 5 && quest_var_vodel == 0 then
+    if quest_var_water >= 5 and quest_var_vodel == 0 then
     
-        do_message(npc, ch, "ahh, danke f�rs Wasser.")
+        do_message(npc, ch, "ahh, danke fürs Wasser.")
         do_message(npc, ch, "...")
         do_message(npc, ch, "...")
         do_message(npc, ch, "Ahrg.")
@@ -91,7 +90,7 @@ function vodel_talk(npc, ch)
               "Nein, ich möchte nicht.")
             if a == 1 then
                 --Set Quest
-                invertika.invertika.set_quest_status(ch, queststring_vodel, 2) --Es wurde schon mit dem Vodel geraedet und die quest angenommen.
+                invertika.set_quest_status(ch, queststring_vodel, 2) --Es wurde schon mit dem Vodel geraedet und die quest angenommen.
                 
                 do_message(npc, ch, "Danke.")
                 do_message(npc, ch, "Wollen wir sofort beginnen, oder hast du noch etwas zu erledigen?")
@@ -101,12 +100,12 @@ function vodel_talk(npc, ch)
                     if v == 1 then
                         do_message(npc, ch, "ok, danke.")
                         -- Set Quest
-                        invertika.invertika.set_quest_status(ch, queststring_vodel, 4) --Es wurde mit Vodel geredet, die Quest angenommen, und die erste Runde wird gestartet.
+                        invertika.set_quest_status(ch, queststring_vodel, 4) --Es wurde mit Vodel geredet, die Quest angenommen, und die erste Runde wird gestartet.
                         break
                     elseif v == 2 then
                         do_message(npc, ch, "Ok, ich will dich ja auch nicht hetzen.")
                         --Set Quest
-                        invertika.invertika.set_quest_status(ch, queststring_vodel, 3) --Es wurde mit Vodel geredet, die Quest angenommen, die erste Runde sit aber noch nciht gestartet.
+                        invertika.set_quest_status(ch, queststring_vodel, 3) --Es wurde mit Vodel geredet, die Quest angenommen, die erste Runde sit aber noch nciht gestartet.
                         break
                     end
                 end
@@ -114,11 +113,10 @@ function vodel_talk(npc, ch)
                 do_message(npc, ch, "Schade, aber ich kann dihch ja nicht zu deinem Glück zwingen.")
                 do_message(npc, ch, "Du kannst natarlich gerne wiederkommen, falls du es dir anders überlegst.")
                 --Set Quest
-                invertika.invertika.set_quest_status(ch, queststring_vodel, 1) --Es wurde schon mit dem Vodel geraedet, aber noch nicht angenommen.
+                invertika.set_quest_status(ch, queststring_vodel, 1) --Es wurde schon mit dem Vodel geraedet, aber noch nicht angenommen.
                 break
             end
         end
-    do_npc_close(npc, ch) 
     end    
 
     if quest_var_vodel == 4 then
@@ -142,7 +140,7 @@ function vodel_talk(npc, ch)
         do_message(npc, ch, "...")
         do_message(npc, ch, "Wo liegt Selphi Timlet von uns aus?")
         while true do
-            local s = do_choice(npc, ch, "östlich",
+            local s = do_choice(npc, ch, "Östlich",
             "Nordöstlich",
             "Nördlich")
             if s == 3 then
@@ -172,14 +170,14 @@ function vodel_talk(npc, ch)
         if right_counter == 3 then
             do_message(npc, ch, "Die erste Runde ist beendet.")
             --Set Quest
-            invertika.invertika.set_quest_status(ch, queststring_vodel, 6) --Es wurde schon mit dem Vodel geraedet, die Quest angenommen, und die erste Runde geschafft.
+            invertika.set_quest_status(ch, queststring_vodel, 6) --Es wurde schon mit dem Vodel geraedet, die Quest angenommen, und die erste Runde geschafft.
             do_message(npc, ch, "Hier eine kleiner Preis..")
             invertika.add_money(ch, 100)
         else
             do_message(npc, ch, "Hmm..")
             do_message(npc, ch, "Du kannst später noch einmal dein Glück probieren.")
             --Set Quest
-            invertika.invertika.set_quest_status(ch, queststring_vodel, 5) --Es wurde schon mit dem Vodel geraedet, die Quest angenommen, und die erste Runde noch nicht geschafft.
+            invertika.set_quest_status(ch, queststring_vodel, 5) --Es wurde schon mit dem Vodel geraedet, die Quest angenommen, und die erste Runde noch nicht geschafft.
         end
     end
 
@@ -187,7 +185,7 @@ function vodel_talk(npc, ch)
         do_message(npc, ch, "Ich will die Antwort auf Blubb wissen.")
         do_message(npc, ch, "Suche dazu Bolum auf.")
         --Set Quest
-        invertika.invertika.set_quest_status(ch, queststring_vodel, 7) --Es wurde schon mit dem Vodel geraedet, die Quest angenommen, und die zweite Runde ist begonnen.
+        invertika.set_quest_status(ch, queststring_vodel, 7) --Es wurde schon mit dem Vodel geraedet, die Quest angenommen, und die zweite Runde ist begonnen.
     end
     
     if quest_var_vodel == 7 then
@@ -203,10 +201,11 @@ function vodel_talk(npc, ch)
         do_message(npc, ch, "Hier ein kleiner Preis..")
         invertika.add_money(ch, 200)
         --Set Quest
-        invertika.invertika.set_quest_status(ch, queststring_vodel, 9) --Es wurde schon mit dem Vodel geraedet, die Quest angenommen, und die zweite Runde ist beendet.
+        invertika.set_quest_status(ch, queststring_vodel, 9) --Es wurde schon mit dem Vodel geraedet, die Quest angenommen, und die zweite Runde ist beendet.
     end
     
     if quest_var_vodel == 9 then
         do_message(npc, ch, "Später werde ich dir ein neues Rätsel stellen, jetzt ist es noch zu früh.")
     end
+    do_npc_close(npc, ch) 
 end
