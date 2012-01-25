@@ -109,6 +109,7 @@ function vodel_talk(npc, ch)
                         break
                     end
                 end
+                break
             elseif a == 2 then
                 do_message(npc, ch, "Schade, aber ich kann dihch ja nicht zu deinem Glück zwingen.")
                 do_message(npc, ch, "Du kannst natarlich gerne wiederkommen, falls du es dir anders überlegst.")
