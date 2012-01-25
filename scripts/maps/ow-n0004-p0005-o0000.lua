@@ -173,7 +173,7 @@ function firework_round()
 
     local d = os.date("*t")
     local start = os.time{year=d.year, month=d.month, day=d.day,
-                          hour=24, min=01, sec=0}
+                          hour=18, min=00, sec=0}
     if os.difftime(os.time(), start) < 15 * 60 then
         schedule_in(1, firework_round)
     end
