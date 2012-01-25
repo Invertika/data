@@ -46,11 +46,11 @@ function vodel_talk(npc, ch)
             local x = do_choice(npc, ch, "ja",
               "Nein")
             if x == 1 then
-                do_message(npc, ch, "Gut");
+                do_message(npc, ch, "Gut")
                 --Set Quest
                 invertika.invertika.set_quest_status(ch, queststring_vodel, 4) --Es wurde mit Vodel geredet, die Quest angenommen, und die erste Runde wird gestartet.
                 break
-            elseif x == 2
+            elseif x == 2 then
                 do_message(npc, ch, "Lass dir ruig soviel Zeit, wie du brauchst.")
                 break
             end
@@ -76,20 +76,20 @@ function vodel_talk(npc, ch)
         do_message(npc, ch, "...")
         do_message(npc, ch, "...")
         do_message(npc, ch, "Ahrg.")
-        do_message(npc, ch, "Wie unhˆfflich von mir.")
+        do_message(npc, ch, "Wie unh√∂fflich von mir.")
         do_message(npc, ch, "Wenn ich mich vorstellen darf, mein Name ist Vodel.")
-        do_message(npc, ch, "Ich gehˆre zu einem der wenigen Personen, die die alte, leider aussterbende Kunst, des R‰tselns noch beherscht.")
+        do_message(npc, ch, "Ich geh√∂re zu einem der wenigen Personen, die die alte, leider aussterbende Kunst, des R√§tselns noch beherscht.")
         do_message(npc, ch, "Ach, das waren noch Zeiten.")
-        do_message(npc, ch, "Als jedentag ein Turnier stattfand und wir unsere R‰tselk¸nste massen")
+        do_message(npc, ch, "Als jedentag ein Turnier stattfand und wir unsere R√§tselk√ºnste massen")
         do_message(npc, ch, "Aber ich schweife ab.")
-        do_message(npc, ch, "Ich w¸rde dir gerne ein paar R‰tsel stellen.")
-        do_message(npc, ch, "Nat¸rlich nur, wenn du damit Einverstanden bsit.")
+        do_message(npc, ch, "Ich w√ºrde dir gerne ein paar R√§tsel stellen.")
+        do_message(npc, ch, "Nat√ºrlich nur, wenn du damit Einverstanden bsit.")
         do_message(npc, ch, "Und, wie sieht's aus?")
         while true do
             local a = do_choice(npc, ch, 
-              "Ja, ich mˆchte.",
-              "Nein, ich mˆchte nicht.")
-            if a == 1
+              "Ja, ich m√∂chte.",
+              "Nein, ich m√∂chte nicht.")
+            if a == 1 then
                 --Set Quest
                 invertika.invertika.set_quest_status(ch, queststring_vodel, 2) --Es wurde schon mit dem Vodel geraedet und die quest angenommen.
                 
@@ -98,21 +98,21 @@ function vodel_talk(npc, ch)
                 while true do
                     local v = do_choice(npc, ch, "Lass uns beginnen.",
                       "Ich warte lieber nochmal ein bisschen")
-                    if v == 1
+                    if v == 1 then
                         do_message(npc, ch, "ok, danke.")
                         -- Set Quest
                         invertika.invertika.set_quest_status(ch, queststring_vodel, 4) --Es wurde mit Vodel geredet, die Quest angenommen, und die erste Runde wird gestartet.
                         break
-                    elseif v == 2
+                    elseif v == 2 then
                         do_message(npc, ch, "Ok, ich will dich ja auch nicht hetzen.")
                         --Set Quest
                         invertika.invertika.set_quest_status(ch, queststring_vodel, 3) --Es wurde mit Vodel geredet, die Quest angenommen, die erste Runde sit aber noch nciht gestartet.
                         break
                     end
                 end
-            elseif a == 2
-                do_message(npc, ch, "Schade, aber ich kann dihch ja nicht zu deinem Gl¸ck zwingen.")
-                do_message(npc, ch, "Du kannst nat¸rlich gerne wiederkommen, falls du es dir anders ¸berlegst.")
+            elseif a == 2 then
+                do_message(npc, ch, "Schade, aber ich kann dihch ja nicht zu deinem Gl√ºck zwingen.")
+                do_message(npc, ch, "Du kannst natarlich gerne wiederkommen, falls du es dir anders √ºberlegst.")
                 --Set Quest
                 invertika.invertika.set_quest_status(ch, queststring_vodel, 1) --Es wurde schon mit dem Vodel geraedet, aber noch nicht angenommen.
                 break
@@ -134,12 +134,12 @@ function vodel_talk(npc, ch)
             if s == 2 then
                 right_counter++
                 break
-            elseif s > 0
+            elseif s > 0 then
                 break
             end
         end
         
-        do_message(npc, ch, "...");
+        do_message(npc, ch, "...")
         do_message(npc, ch, "Wo liegt Selphi Timlet von uns aus?")
         do while true
             local s = do_choice(npc, ch, "√∂stlich",
@@ -148,7 +148,7 @@ function vodel_talk(npc, ch)
             if s == 3 then
                 right_counter++
                 break
-            elseif s > 0
+            elseif s > 0 then
                 break
             end
         end
@@ -163,7 +163,7 @@ function vodel_talk(npc, ch)
             if s == 1 then
                 right_counter++
                 break
-            elseif s > 0
+            elseif s > 0 then
                 break
             end
         end
@@ -173,7 +173,7 @@ function vodel_talk(npc, ch)
             do_message(npc, ch, "Die erste Runde ist beendet.")
             --Set Quest
             invertika.invertika.set_quest_status(ch, queststring_vodel, 6) --Es wurde schon mit dem Vodel geraedet, die Quest angenommen, und die erste Runde geschafft.
-            do_message(npc, ch, "Hier eine kleiner Preis..");
+            do_message(npc, ch, "Hier eine kleiner Preis..")
             invertika.add_money(ch, 100)
         else
             do_message(npc, ch, "Hmm..")
@@ -198,7 +198,7 @@ function vodel_talk(npc, ch)
     
     if quest_var_vodel == 8 then
         do_message(npc, ch, "Ah, du bist zur√ºck.")
-        do_message(npc, ch, "...");
+        do_message(npc, ch, "...")
         do_message(npc, ch, "Blubb ist also die Antwort.")
         do_message(npc, ch, "Hier ein kleiner Preis..")
         invertika.add_money(ch, 200)
