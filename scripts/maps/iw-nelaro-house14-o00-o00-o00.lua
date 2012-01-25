@@ -42,7 +42,7 @@ function vodel_talk(npc, ch)
     
     if quest_var_vodel == 3 then
         do_message(npc, ch, "Hast du alles erledigt, was dich noch blockierte?")
-        do while true
+        while true do
             local x = do_choice(npc, ch, "ja",
               "Nein")
             if x == 1 then
@@ -127,7 +127,7 @@ function vodel_talk(npc, ch)
         do_message(npc, ch, "Wir beginnen jetzt mit der ersten Runde.")
         do_message(npc, ch, "Kommen wir zur ersten, noch recht einfachen Frage..")
         do_message(npc, ch, "Wie heißt unsere Gottheit?")
-        do while true
+        while true do
             local s = do_choice(npc, ch, "Egam",
               "Invertika",
               "Kahress")
@@ -141,7 +141,7 @@ function vodel_talk(npc, ch)
         
         do_message(npc, ch, "...")
         do_message(npc, ch, "Wo liegt Selphi Timlet von uns aus?")
-        do while true
+        while true do
             local s = do_choice(npc, ch, "östlich",
             "Nordöstlich",
             "Nördlich")
@@ -156,7 +156,7 @@ function vodel_talk(npc, ch)
         do_message(npc, ch, "...")
         do_message(npc, ch, "Eine Riesenmade braucht 5 Minuten für 100 Meter, ein Mamut braucht für dieselbe Strecke 1.5 Minuten.")
         do_message(npc, ch, "Wie oft kann das Mammut eine Srecke von 200 Metern komplett laufen, bevor die Riesenmade dieselbe Strecke geschafft hat?")
-        do while true
+        while true do
             local s = do_choice(npc, ch, "3 mal",
               "4 mal",
               "3,34 mal")
