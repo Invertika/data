@@ -130,7 +130,7 @@ function vodel_talk(npc, ch)
               "Invertika",
               "Kahress")
             if s == 2 then
-                right_counter++
+                right_counter = right_counter + 1
                 break
             elseif s > 0 then
                 break
@@ -144,7 +144,7 @@ function vodel_talk(npc, ch)
             "Nordöstlich",
             "Nördlich")
             if s == 3 then
-                right_counter++
+                right_counter = right_counter + 1
                 break
             elseif s > 0 then
                 break
@@ -159,7 +159,7 @@ function vodel_talk(npc, ch)
               "4 mal",
               "3,34 mal")
             if s == 1 then
-                right_counter++
+                right_counter = right_counter + 1
                 break
             elseif s > 0 then
                 break
