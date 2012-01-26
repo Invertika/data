@@ -137,7 +137,7 @@ function chris_talk(npc, ch)
         if os.difftime(os.time(), start) > 0 then
             do_message(npc, ch, "Du!")
             do_message(npc, ch, "Los, hol mir ein Eis.")
-            do_message(npc, ch, "Wenn du mir schon diese Schwerstarbeit aufbrocksts, kannst du wenigstens für mein leibliches Wohl sorgen.")
+            do_message(npc, ch, "Wenn du mir schon diese Schwerstarbeit aufbrockst, kannst du wenigstens für mein leibliches Wohl sorgen.")
             do_message(npc, ch, "Und, machst du's?")
             while true do
                 local s = do_choice(npc, ch, "Ja",
@@ -158,7 +158,7 @@ function chris_talk(npc, ch)
     
     if queststring_ice == 1 then
         if and mana.chr_inv_count(ch, 30029) then
-            do_message(npc, ch, "Ich bin dir dankend.")
+            do_message(npc, ch, "Ich bin dir sehr dankbar.")
             invertika.add_money(ch, 400)
             invertika.add_items(ch, 30029, -5, "Eis")
             invertika.set_quest_status(ch, queststring_ice, 2)
@@ -184,15 +184,15 @@ function estjdian_talk(npc, ch)
 
     if quest_var == 0 then
     
-        do_message(npc, ch, "Wo steckt dieser Faule Bengel schon wieder..")
+        do_message(npc, ch, "Wo steckt dieser faule Bengel schon wieder...")
         do_message(npc, ch, "Er sollte schon vor einer halben Stunde zur Arbeit antreten.")
-        do_message(npc, ch, "Von wem ich eigentlich spreche, willst du Wissen?")
+        do_message(npc, ch, "Von wem ich eigentlich spreche, willst du wissen?")
         do_message(npc, ch, "Ich spreche von Chris.")
         do_message(npc, ch, "Er kam früher bereits unpünktlich.")
         do_message(npc, ch, "Würdest du ihn bitte suchen?")
         while true do
             local s = do_choice(npc, ch, "Ja, na klar.",
-              "nein, leider nicht.")
+              "Nein, leider nicht.")
             if s == 1 then
                 do_message(npc, ch, "Danke")
                 --Set Quest
@@ -200,7 +200,7 @@ function estjdian_talk(npc, ch)
                 break
             elseif s == 2 then
                 do_message(npc, ch, "Hmm, ok.")
-                do_message(npc, ch, "Mache ich mich eben selbst auf den Weg.")
+                do_message(npc, ch, "Dann mache ich mich eben selbst auf den Weg.")
                 invertika.set_quest_status(ch, queststring, 2) -- Quest nicht angenommen
                 break
             end
@@ -210,10 +210,10 @@ function estjdian_talk(npc, ch)
     if quest_var == 2 then
         do_message(npc, ch, "Ah, du hast es dir anders überlegt?")
         while true do
-            local a = do_choice(npc, ch, "jap",
+            local a = do_choice(npc, ch, "Jap",
               "nö")
             if a == 1 then
-                do_message(npc, ch, "ok, danke.")
+                do_message(npc, ch, "OK, danke.")
                 do_message(npc, ch, "Besser spät als nie.")
                 --Set Quest
                 invertika.set_quest_status(ch, queststring, 1) -- Quest angenommen
@@ -227,7 +227,7 @@ function estjdian_talk(npc, ch)
     
     if quest_var == 3 then
         do_message(npc, ch, "Ich danke dir dafür, dass du diesen Nichtsnutz gefunden hast.")
-        do_message(npc, ch, "Hier eine kleine Behlonung für deine Mühen.")
+        do_message(npc, ch, "Hier eine kleine Belohnung für deine Mühen.")
         invertika.add_money(ch, 250)
         --Set Quest
         invertika.set_quest_status(ch, queststring, 4) -- Quest angenommen und Behlonung vom Estjdian kassiert
@@ -249,7 +249,7 @@ function wache_casino_talk(npc, ch)
     --TODO bessere Texte
     do_message(npc, ch, invertika.get_random_element("Ich bewache das Kasino.",
       "Glücksspiel kann süchtig machen.",
-      "Ohne uns Wachen, würde die Stadt im Chaos versinken!"))
+      "Ohne uns Wachen würde die Stadt im Chaos versinken!"))
     do_npc_close(npc, ch)
 end
 
@@ -263,11 +263,11 @@ function wache_talk(npc, ch)
         do_message(npc, ch, "Woher ich das weiß?")
         do_message(npc, ch, "Das gehört sich für einen MacGuffin einfach so!")
         do_message(npc, ch, "Und deshalb lasse ich dich auch nicht in die Stadt, bevor du ihn mir wiedergebracht hast.")
-        do_message(npc, ch, "Obwohl.. so wie DU aussiehst, wird das wohl eh nix..")
+        do_message(npc, ch, "Obwohl... so, wie DU aussiehst, wird das wohl eh nix...")
         invertika.set_quest_status(ch, quest_string, 1)
     elseif q_status == 1 then
         if mana.chr_inv_count(ch, 40047) > 0 then
-            do_message(npc, ch, "Ah Danke für den MacGuffin. " ..
+            do_message(npc, ch, "Ah, danke für den MacGuffin." ..
                                 "Nun darfst du die Stadt betreten")
             invertika.add_items(ch, 40047, -1, "MacGuffin")
             invertika.set_quest_status(ch, quest_string, 2)
@@ -324,21 +324,21 @@ end
 
 function cedric_talk(npc, ch)
     do_message(npc, ch, invertika.get_random_element("Ich bin Graf Cedric.",
-      "Fühle dich, in meiner Burg, wie zu Hause."))
+      "Fühle dich in meiner Burg wie zu Hause."))
     do_npc_close(npc, ch)
 end
 
 function cedric_speech()
     local speech = {
       "Heute haben wir uns versammelt, um den Wiederaufbau der Burg Cedric zu feiern.",
-      "Vor nicht allzu langer Zeit, wurde unser gemeinsames Heim von einer Flutwelle überschwemmt.",
+      "Vor nicht allzu langer Zeit wurde unser gemeinsames Heim von einer Flutwelle überschwemmt.",
       "Wir mussten fliehen, um nicht zu ertrinken.",
       "Wir lebten in der Zeit als Bettler, Schnorrer und Diebe.",
       "Einige von uns sind gestorben oder wurden getötet.",
       "Sie werden uns aber immer in Erinnerung bleiben.",
       "Als wir hörten, dass sich das Wasser zurückzog, kamen wir hierhin zurück.",
       "Wir sahen, dass nur noch die Mauern der Burg standen.",
-      "Aber durch unseren starken Gemeinschaftssinn, konnten wir die Burg noch prächtiger und schöner wiederaufbauen, als sie jemals war.",
+      "Aber durch unseren starken Gemeinschaftssinn konnten wir die Burg noch prächtiger und schöner wiederaufbauen, als sie jemals war.",
       "Ich danke euch, genießt das Feuerwerk."
     }
 
