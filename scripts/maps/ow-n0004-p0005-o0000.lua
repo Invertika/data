@@ -166,7 +166,7 @@ end
 
 function firework_round()
     local c = 1
-    while c < 100 do
+    while c < 50 do
         spawn_effect()
         c = c + 1
     end
@@ -181,8 +181,8 @@ end
 
 function spawn_effect()
     mana.effect_create(math.random(0, 25),
-                       math.random(10 * TILESIZE, 190 * TILESIZE),
-                       math.random(10 * TILESIZE, 190 * TILESIZE))
+                       math.random(44 * TILESIZE, 159 * TILESIZE),
+                       math.random(77 * TILESIZE, 133 * TILESIZE))
 end
 
 function cedric_talk(npc, ch)
