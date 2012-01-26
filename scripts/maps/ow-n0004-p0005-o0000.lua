@@ -74,7 +74,7 @@ function create_chris()
     local curr_time = os.date("*t")
     local create_chris_on_fields_time = os.time{year=d.year, month=d.month, 12,
                           hour=0, min=00, sec=0}
-    if os.difftime(os.time(), start) > 0
+    if os.difftime(os.time(), start) > 0 then
         create_npc("Chris", 141, 156 * TILESIZE + 16, 148 * TILESIZE + 16, chris_talk, npclib.walkaround_wide)
     else
         create_npc("Chris", 141, 50 * TILESIZE + 16, 118 * TILESIZE + 16, chris_talk, npclib.walkaround_map)
@@ -113,11 +113,11 @@ function chris_talk(npc, ch)
     local quest_var_lazy = invertika.get_quest_status(ch, queststring_lazy)
     local quest_var_ice = invertika.get_quest_status(ch, queststring_ice)
     
-    if quest_var_lazy == 0
+    if quest_var_lazy == 0 then
         do_message(npc, ch, "psst")
     end
     
-    if quest_var_lazy == 1
+    if quest_var_lazy == 1 then
         do_message(npc, ch, "Ahrg, garnicht mehr dran gedacht.")
         do_message(npc, ch, "Habe aber auch keine Lust drauf.")
         do_message(npc, ch, "Sage ihm, das ich gleich komme.")
@@ -126,15 +126,15 @@ function chris_talk(npc, ch)
         invertika.set_quest_status(ch, queststring_lazy, 3) -- Quest angenommen und es wurde mit Chris geredet
     end
     
-    if quest_var_lazy == 3
+    if quest_var_lazy == 3 then
         do_message(npc, ch, "Hetz mich nicht so, bin ja schon aufm Weg.")
     end
     
-    if quest_var_lazy == 4
+    if quest_var_lazy == 4 then
         local curr_time = os.date("*t")
         local create_chris_on_fields_time = os.time{year=d.year, month=d.month, 12,
                                                 hour=0, min=00, sec=0}
-        if os.difftime(os.time(), start) > 0
+        if os.difftime(os.time(), start) > 0 then
             do_message(npc, ch, "Du!")
             do_message(npc, ch, "Los, hol mir ein Eis.")
             do_message(npc, ch, "Wenn du mir schon diese Schwerstarbeit aufbrocksts, kannst du wenigstens für mein leibliches Wohl sorgen.")
@@ -142,13 +142,13 @@ function chris_talk(npc, ch)
             while true do
                 local s = do_choice(npc, ch, "Ja",
                   "Nein")
-                if s == 1
+                if s == 1 then
                     do_message(npc, ch, "Danke.")
                     --Set Quests
                     invertika.set_quest_status(ch, queststring_ice, 1) --Eishol Quest anfangen
                     invertika.set_quest_status(ch, queststring_lazy, 5) -- Weg mit der unnützen Quest :D
                     break
-                elseif s == 2
+                elseif s == 2 then
                     do_message(npc, ch, "ok.")
                     break
                 end
@@ -156,8 +156,8 @@ function chris_talk(npc, ch)
         end
     end
     
-    if queststring_ice == 1
-        if and mana.chr_inv_count(ch, 30029)
+    if queststring_ice == 1 then
+        if and mana.chr_inv_count(ch, 30029) then
             do_message(npc, ch, "Ich bin dir dankend.")
             invertika.add_money(ch, 400)
             invertika.add_items(ch, 30029, -5, "Eis")
@@ -167,7 +167,7 @@ function chris_talk(npc, ch)
         end
     end
     
-    if queststring_ice == 2
+    if queststring_ice == 2 then
         do_message(npc, ch, "Hi.")
     end
     
@@ -182,7 +182,7 @@ function estjdian_talk(npc, ch)
     --Get Quest
     local quest_var = invertika.get_quest_status(ch, queststring)
 
-    if quest_var == 0
+    if quest_var == 0 then
     
         do_message(npc, ch, "Wo steckt dieser Faule Bengel schon wieder..")
         do_message(npc, ch, "Er sollte schon vor einer halben Stunde zur Arbeit antreten.")
@@ -193,12 +193,12 @@ function estjdian_talk(npc, ch)
         while true do
             local s = do_choice(npc, ch, "Ja, na klar.",
               "nein, leider nicht.")
-            if s == 1
+            if s == 1 then
                 do_message(npc, ch, "Danke")
                 --Set Quest
                 invertika.set_quest_status(ch, queststring, 1) -- Quest angenommen
                 break
-            elseif s == 2
+            elseif s == 2 then
                 do_message(npc, ch, "Hmm, ok.")
                 do_message(npc, ch, "Mache ich mich eben selbst auf den Weg.")
                 invertika.set_quest_status(ch, queststring, 2) -- Quest nicht angenommen
@@ -207,25 +207,25 @@ function estjdian_talk(npc, ch)
         end
     end
     
-    if quest_var == 2
+    if quest_var == 2 then
         do_message(npc, ch, "Ah, du hast es dir anders überlegt?")
         while true do
             local a = do_choice(npc, ch, "jap",
               "nö")
-            if a == 1
+            if a == 1 then
                 do_message(npc, ch, "ok, danke.")
                 do_message(npc, ch, "Besser spät als nie.")
                 --Set Quest
                 invertika.set_quest_status(ch, queststring, 1) -- Quest angenommen
                 break
-            elseif a == 2
+            elseif a == 2 then
                 do_message(npc, ch, "Hmmm, ok")
                 break
             end
         end
     end
     
-    if quest_var == 3
+    if quest_var == 3 then
         do_message(npc, ch, "Ich danke dir dafür, dass du diesen Nichtsnutz gefunden hast.")
         do_message(npc, ch, "Hier eine kleine Behlonung für deine Mühen.")
         invertika.add_money(ch, 250)
@@ -233,7 +233,7 @@ function estjdian_talk(npc, ch)
         invertika.set_quest_status(ch, queststring, 4) -- Quest angenommen und Behlonung vom Estjdian kassiert
     end
     
-    if quest_var == 4 or quest_var == 5
+    if quest_var == 4 or quest_var == 5 then
         do_message(npc, ch, "Hoffentlich bessert er sich.")
     end
     do_npc_close(npc, ch)
