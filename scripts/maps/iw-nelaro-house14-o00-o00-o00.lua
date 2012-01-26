@@ -69,7 +69,7 @@ function vodel_talk(npc, ch)
         end
     end
     
-    if quest_var_water >= 5 and quest_var_vodel == 0 then
+    if quest_var_water >= 5 and quest_var_vodel == 0 or quest_var_water >= 5 and quest_var_vodel == 2 then
     
         do_message(npc, ch, "ahh, danke fürs Wasser.")
         do_message(npc, ch, "...")
