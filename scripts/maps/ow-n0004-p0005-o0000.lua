@@ -157,7 +157,7 @@ function chris_talk(npc, ch)
     end
     
     if queststring_ice == 1 then
-        if and mana.chr_inv_count(ch, 30029) then
+        if mana.chr_inv_count(ch, 30029) then
             do_message(npc, ch, "Ich bin dir sehr dankbar.")
             invertika.add_money(ch, 400)
             invertika.add_items(ch, 30029, -5, "Eis")
