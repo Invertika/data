@@ -110,7 +110,7 @@ function hobel_talk(npc, ch)
         invertika.add_money(ch, 500)
         invertika.add_items(ch, 30037, -5, "Wasserflasche")
         --Set Quest
-        invertika.invertika.set_quest_status(ch, queststring, 5)
+        invertika.set_quest_status(ch, queststring, 5)
     elseif quest_var == 5 then
         do_message(npc, ch, "Hallo")
     end
