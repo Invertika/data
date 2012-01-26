@@ -37,8 +37,9 @@ atinit(function()
       "Beste Waren! Hergestellt in den königlichen Schmieden!",
       "Sehen Sie! Dieses Schwert ist unzerbrechlich! ZACK. Oh...",
       "Kommen Sie meine Herren. Diese Waffen sind die Besten."})
-
-    create_npc("Chris", 141, 50 * TILESIZE + 16, 118 * TILESIZE + 16, chris_talk, npclib.walkaround_wide)
+      
+    
+    create_chris()
 
     create_npc("Estjdian", 120, 156 * TILESIZE + 16, 160 * TILESIZE + 16, estjdian_talk, nil)
 
@@ -69,6 +70,17 @@ atinit(function()
     --invertika.schedule_every_day(18, 00, 00, firework_round)
 end)
 
+function create_chris()
+    local curr_time = os.date("*t")
+    local create_chris_on_fields_time = os.time{year=d.year, month=d.month, 12,
+                          hour=0, min=00, sec=0}
+    if os.difftime(os.time(), start) > 0
+        create_npc("Chris", 141, 156 * TILESIZE + 16, 148 * TILESIZE + 16, chris_talk, npclib.walkaround_wide)
+    else
+        create_npc("Chris", 141, 50 * TILESIZE + 16, 118 * TILESIZE + 16, chris_talk, npclib.walkaround_map)
+    end
+end
+
 function diem_talk(npc, ch)
     mana.npc_trade(npc, ch, false, {
       {10001, 30, 50},
@@ -91,14 +103,139 @@ function diem_talk(npc, ch)
 end
 
 function chris_talk(npc, ch)
-    --TODO bessere Texte
-    do_message(npc, ch, "Guten Tag.")
+
+    local queststring_lazy = "castle_cedric_lazy_chris_quest"
+    local queststring_ice = "castle_cedric_chris_ice_quest"
+    --Init Quests
+    invertika.init_quest_status(ch, queststring_lazy)
+    invertika.get_quest_status(ch, queststring_ice)
+    --Get Quests
+    local quest_var_lazy = invertika.get_quest_status(ch, queststring_lazy)
+    local quest_var_ice = invertika.get_quest_status(ch, queststring_ice)
+    
+    if quest_var_lazy == 0
+        do_message(npc, ch, "psst")
+    end
+    
+    if quest_var_lazy == 1
+        do_message(npc, ch, "Ahrg, garnicht mehr dran gedacht.")
+        do_message(npc, ch, "Habe aber auch keine Lust drauf.")
+        do_message(npc, ch, "Sage ihm, das ich gleich komme.")
+        do_message(npc, ch, "Danke")
+        --Set Quest
+        invertika.set_quest_status(ch, queststring_lazy, 3) -- Quest angenommen und es wurde mit Chris geredet
+    end
+    
+    if quest_var_lazy == 3
+        do_message(npc, ch, "Hetz mich nicht so, bin ja schon aufm Weg.")
+    end
+    
+    if quest_var_lazy == 4
+        local curr_time = os.date("*t")
+        local create_chris_on_fields_time = os.time{year=d.year, month=d.month, 12,
+                                                hour=0, min=00, sec=0}
+        if os.difftime(os.time(), start) > 0
+            do_message(npc, ch, "Du!")
+            do_message(npc, ch, "Los, hol mir ein Eis.")
+            do_message(npc, ch, "Wenn du mir schon diese Schwerstarbeit aufbrocksts, kannst du wenigstens für mein leibliches Wohl sorgen.")
+            do_message(npc, ch, "Und, machst du's?")
+            while true do
+                local s = do_choice(npc, ch, "Ja",
+                  "Nein")
+                if s == 1
+                    do_message(npc, ch, "Danke.")
+                    --Set Quests
+                    invertika.set_quest_status(ch, queststring_ice, 1) --Eishol Quest anfangen
+                    invertika.set_quest_status(ch, queststring_lazy, 5) -- Weg mit der unnützen Quest :D
+                    break
+                elseif s == 2
+                    do_message(npc, ch, "ok.")
+                    break
+                end
+            end
+        end
+    end
+    
+    if queststring_ice == 1
+        if and mana.chr_inv_count(ch, 30029)
+            do_message(npc, ch, "Ich bin dir dankend.")
+            invertika.add_money(ch, 400)
+            invertika.add_items(ch, 30029, -5, "Eis")
+            invertika.set_quest_status(ch, queststring_ice, 2)
+        else
+            do_mesage(npc, ch, "Eis.")
+        end
+    end
+    
+    if queststring_ice == 2
+        do_message(npc, ch, "Hi.")
+    end
+    
     do_npc_close(npc, ch)
 end
 
 function estjdian_talk(npc, ch)
-    --TODO zu einem Händler machen (keine Getränke & Lebensmittel)
-    do_message(npc, ch, "Tag der")
+
+    local queststring = "castle_cedric_lazy_chris_quest"
+    --Init Quest
+    invertika.init_quest_status(ch, queststring)
+    --Get Quest
+    local quest_var = invertika.get_quest_status(ch, queststring)
+
+    if quest_var == 0
+    
+        do_message(npc, ch, "Wo steckt dieser Faule Bengel schon wieder..")
+        do_message(npc, ch, "Er sollte schon vor einer halben Stunde zur Arbeit antreten.")
+        do_message(npc, ch, "Von wem ich eigentlich spreche, willst du Wissen?")
+        do_message(npc, ch, "Ich spreche von Chris.")
+        do_message(npc, ch, "Er kam früher bereits unpünktlich.")
+        do_message(npc, ch, "Würdest du ihn bitte suchen?")
+        while true do
+            local s = do_choice(npc, ch, "Ja, na klar.",
+              "nein, leider nicht.")
+            if s == 1
+                do_message(npc, ch, "Danke")
+                --Set Quest
+                invertika.set_quest_status(ch, queststring, 1) -- Quest angenommen
+                break
+            elseif s == 2
+                do_message(npc, ch, "Hmm, ok.")
+                do_message(npc, ch, "Mache ich mich eben selbst auf den Weg.")
+                invertika.set_quest_status(ch, queststring, 2) -- Quest nicht angenommen
+                break
+            end
+        end
+    end
+    
+    if quest_var == 2
+        do_message(npc, ch, "Ah, du hast es dir anders überlegt?")
+        while true do
+            local a = do_choice(npc, ch, "jap",
+              "nö")
+            if a == 1
+                do_message(npc, ch, "ok, danke.")
+                do_message(npc, ch, "Besser spät als nie.")
+                --Set Quest
+                invertika.set_quest_status(ch, queststring, 1) -- Quest angenommen
+                break
+            elseif a == 2
+                do_message(npc, ch, "Hmmm, ok")
+                break
+            end
+        end
+    end
+    
+    if quest_var == 3
+        do_message(npc, ch, "Ich danke dir dafür, dass du diesen Nichtsnutz gefunden hast.")
+        do_message(npc, ch, "Hier eine kleine Behlonung für deine Mühen.")
+        invertika.add_money(ch, 250)
+        --Set Quest
+        invertika.set_quest_status(ch, queststring, 4) -- Quest angenommen und Behlonung vom Estjdian kassiert
+    end
+    
+    if quest_var == 4 or quest_var == 5
+        do_message(npc, ch, "Hoffentlich bessert er sich.")
+    end
     do_npc_close(npc, ch)
 end
 
