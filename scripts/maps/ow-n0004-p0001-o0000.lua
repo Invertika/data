@@ -47,7 +47,7 @@ function mikel_talk(npc, ch)
         invertika.set_quest_status(ch, queststring_vodel, 7) --Es wurde schon mit dem Vodel geraedet, die Quest angenommen, die zweite Runde ist begonnen und es wurde mit Bolum geredet.
     end
     
-    if quest_var > 7
+    if quest_var > 7 then
         do_message(npc, ch, "Hi.")
     end
     do_npc_close(npc, ch)
