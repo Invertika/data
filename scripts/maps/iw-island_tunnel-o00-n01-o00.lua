@@ -5,7 +5,7 @@
 -- andere Dinge.                                                               --
 --                                                                              --
 ----------------------------------------------------------------------------------
---  Copyright 2010 The Invertika Development Team                               --
+--  Copyright 2012 The Invertika Development Team                               --
 --                                                                              --
 --  This file is part of Invertika.                                             --
 --                                                                              --
