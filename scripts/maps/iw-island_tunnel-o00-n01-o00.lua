@@ -2,7 +2,7 @@
 -- Map File                                                                     --
 --                                                                              --
 -- In dieser Datei stehen die entsprechenden externen NPC's, Trigger und        --
--- anderer Dinge.                                                               --
+-- andere Dinge.                                                               --
 --                                                                              --
 ----------------------------------------------------------------------------------
 --  Copyright 2010 The Invertika Development Team                               --
