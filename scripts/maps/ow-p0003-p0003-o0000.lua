@@ -47,7 +47,7 @@ function oughad_talk(npc, ch)
         do_message(npc, ch, "...")
         do_message(npc, ch, "Seit wann stehst denn du hier?")
         do_message(npc, ch, "Egal, jetzt, wo du schon einmal hier bist, kanst du mir ja auch bei meinem Problem helfen.")
-        do while true
+        while true do
             local v = do_choice(npc, ch, "Und, hilfst du?")
             if v == 1 then
                 do_message(npc, ch, "danke")
@@ -82,6 +82,7 @@ function oughad_talk(npc, ch)
             --Set Quests
             invertika.set_quest_status(ch, quest_string_var, 1)
             invertika.set_quest_status(ch, quest_string_number, number_of_jobs)
+        end
     end
     do_npc_close(npc, ch)
 end
