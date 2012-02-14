@@ -53,7 +53,7 @@ function oughad_talk(npc, ch)
                 do_message(npc, ch, "danke")
                 --Set Quest Var
                 invertika.set_quest_status(ch, quest_string_var, 1)
-            else id v == 2 then
+            else if v == 2 then
                 do_message(npc, ch, "ok")
             end
         end
