@@ -72,7 +72,7 @@ end)
 
 function create_chris()
     local d = os.date("*t")
-    local create_chris_on_fields_time = os.time{year=d.year, month=d.month, 12,
+    local create_chris_on_fields_time = os.time{year=d.year, month=d.month, day=12,
                           hour=0, min=00, sec=0}
     if os.difftime(os.time(), create_chris_on_fields_time) > 0 then
         create_npc("Chris", 141, 156 * TILESIZE + 16, 148 * TILESIZE + 16, chris_talk, npclib.walkaround_wide) -- Auf den Getreidefeldern
@@ -132,7 +132,7 @@ function chris_talk(npc, ch)
     
     if quest_var_lazy == 4 then
         local d = os.date("*t")
-        local create_chris_on_fields_time = os.time{year=d.year, month=d.month, 12,
+        local create_chris_on_fields_time = os.time{year=d.year, month=d.month, day=12,
                                                 hour=0, min=00, sec=0}
         if os.difftime(os.time(), create_chris_on_fields_time) > 0 then
             do_message(npc, ch, "Du!")
