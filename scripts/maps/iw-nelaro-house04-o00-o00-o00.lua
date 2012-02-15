@@ -20,9 +20,9 @@ require "scripts/libs/invertika"
 
 atinit(function()
     --TODO: bessere Namen
-    create_npc("Koch", 52, 33 * TILESZIE + 16, 38 * TILESIZE + 16, nil, nil);
-    create_npc("Ghang", 60, 20 * TILESZIE + 16, 37 * TILESZIE + 16, nil, nil)
-    create_npc("Estform", 117, 2 * TILESZIE + 16, 31 * TILESIZE + 16, nil, nil)
-    create_npc("Ingawu", 17, 19 * TILESZIE + 16, 29 * TILESZIE + 16, nil, nil)
-    cretae_npc("Ackona", 4, 32 * TILESZIE + 16, 30 * TILESZIE + 16, nil, nil)
+    create_npc("Koch", 52, 33 * TILESIZE + 16, 38 * TILESIZE + 16, nil, nil);
+    create_npc("Ghang", 60, 20 * TILESIZE + 16, 37 * TILESIZE + 16, nil, nil)
+    create_npc("Estform", 117, 2 * TILESIZE + 16, 31 * TILESIZE + 16, nil, nil)
+    create_npc("Ingawu", 17, 19 * TILESIZE + 16, 29 * TILESIZE + 16, nil, nil)
+    cretae_npc("Ackona", 4, 32 * TILESIZE + 16, 30 * TILESIZE + 16, nil, nil)
 end)
