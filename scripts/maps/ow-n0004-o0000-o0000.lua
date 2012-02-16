@@ -17,7 +17,15 @@
 require "scripts/lua/npclib"
 
 require "scripts/libs/warp"
+require "scripts/libs/sign"
+require "scripts/libs/invertika"
 
 atinit(function()
  create_inter_map_warp_trigger(40, 28, 34, 50) --- Intermap warp
+ local sign_buttom = "Roststock"
+ sign.create_sign(75, 90, sign_buttom)
+ local sign_top = "Teralsiedlung"
+ sign.create_sign(75, 81, sign_top)
+ local sign_right = "Qakari"
+ sign.create_sign(78, 81, sign_right)
 end)
