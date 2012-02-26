@@ -32,7 +32,7 @@ function mikel_talk(npc, ch)
     --Get Quest
     local quest_var = invertika.get_quest_status(ch, queststring)
     
-    if quest_var == 0 then
+    if quest_var > 0 and quest_var < 7 then
         do_message(npc, ch, "..")
     end
     
