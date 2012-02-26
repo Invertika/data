@@ -24,7 +24,7 @@ require "scripts/libs/warp"
 atinit(function()
     create_inter_map_warp_trigger(88, 98, 86, 76) --- Intermap warp
 
-    nethek.create_netheksaeule(103 * TILESIZE, 107 * TILESIZE + 16) ---Netheksäule
+    nethek.create_netheksaeule(127 * TILESIZE, 113 * TILESIZE + 16) ---Netheksäule
     
     sign_entrance = "Lauria"
     sign.create_sign(184, 92, sign_entrance) --- Schild Ortseingang
