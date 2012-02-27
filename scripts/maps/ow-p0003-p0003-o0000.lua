@@ -31,6 +31,7 @@ function oughad_talk(npc, ch)
     local quest_string_kills = "more_mountains_maggot_kill_quest_kills" --Die anzahl der Kills an Maden, die der Spieler haben soll
     local quest_string_var = "more_mountains_maggot_kill_quest_var" --Die allgemeine Questvar
     local quest_string_number = "more_mountains_maggot_kill_quest_number" --Anzahl der erledigten Aufträge
+    local quest_string_maggot = "more_mountains_maggot_start" --Start Anzahl der Maden
     
     --Init Quests
     invertika.init_quest_status(ch, quest_string_kills)
@@ -66,25 +67,30 @@ function oughad_talk(npc, ch)
     
     if quest_var == 1 then
         local number_of_kills = (number_of_jobs + 1) * 5 * math.random(1, 20)
-        do_message(npc, ch, string.format("Töte bitte mindestens %s Maden"), number_of_kills)
+        do_message(npc, ch, string.format("Töte bitte mindestens %s Maden", number_of_kills))
 
         --Set Quest
         invertika.set_quest_status(ch, quest_string_var, 2)
         invertika.set_quest_status(ch, quest_string_kills, number_of_kills)
+        invertika.set_quest_status(ch, quest_string_maggot, mana.chr_get_kill_count)
     end
     
+    --Get Quests
     local required_kills = invertika.get_quest_status(ch, quest_string_kills)
+    local start_kills = invertika.get_quest_status(ch, quest_string_maggot)
     
     if quest_var == 2 then
         local kills = mana.chr_get_kill_count(ch, 2)
-        if kills >= required_kills then
+        if kills - start_kills >= required_kills then
             number_of_jobs = number_of_jobs + 1
             do_message(npc, ch, "Danke. Das sollte meiner Ernte helfen.")
             invertika.add_money(ch, number_of_jobs * 25)
             
             --Set Quests
             invertika.set_quest_status(ch, quest_string_var, 1)
-            invertika.set_quest_status(ch, quest_string_number, number_of_jobs)
+            invertika.set_quest_status(ch, quest_string_number, number_of_jobs)           
+        else
+            do_message(npc, ch, string.format("Du woltest mehr Maden töten. Töte bitte noch %s Maden.", required_kills - (kills - start_kills)))
         end
     end
     do_npc_close(npc, ch)
