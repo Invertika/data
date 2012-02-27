@@ -65,7 +65,7 @@ function oughad_talk(npc, ch)
     
     if quest_var == 1 then
         local number_of_kills = (number_of_jobs + 1) * 5 * math.random(1, 20)
-        do_message(npc, ch, "Töte bitte mindestens %s Maden", number_of_kills)
+        do_message(npc, ch, string.format("Töte bitte mindestens %s Maden", number_of_kills))
 
         --Set Quest
         invertika.set_quest_status(ch, quest_string_var, 2)
