@@ -28,9 +28,9 @@ atinit(function()
 end)
 
 function oughad_talk(npc, ch)
-    local quest_string_kills = "more_mountains_maden_kill_quest_kills" --Die anzahl der Kills an Maden, die der Spieler haben soll
-    local quest_string_var = "more_mountains_maden_kill_quest_var" --Die allgemeine Questvar
-    local quest_string_number = "more_mountains_maden_kill_quest_number" --Anzahl der erledigten Aufträge
+    local quest_string_kills = "more_mountains_maggot_kill_quest_kills" --Die anzahl der Kills an Maden, die der Spieler haben soll
+    local quest_string_var = "more_mountains_maggot_kill_quest_var" --Die allgemeine Questvar
+    local quest_string_number = "more_mountains_maggot_kill_quest_number" --Anzahl der erledigten Aufträge
     
     --Init Quests
     invertika.init_quest_status(ch, quest_string_kills)
@@ -65,7 +65,7 @@ function oughad_talk(npc, ch)
     
     if quest_var == 1 then
         local number_of_kills = (number_of_jobs + 1) * 5 * math.random(1, 20)
-        do_message(npc, ch, string.format("Töte bitte mindestens %s Maden"), number_of_kills))
+        do_message(npc, ch, string.format("Töte bitte mindestens %s Maden"), number_of_kills)
 
         --Set Quest
         invertika.set_quest_status(ch, quest_string_var, 2)
