@@ -38,7 +38,7 @@ function oughad_talk(npc, ch)
     
     --Get Quest
     local quest_var = invertika.get_quest_status(ch, quest_string_var)
-    local number_of_jobs = imvertika.get_quest_status(ch, quest_string_number)
+    local number_of_jobs = invertika.get_quest_status(ch, quest_string_number)
     
     if quest_var == 0 then
         do_message(npc, ch, "Ahrg.")
