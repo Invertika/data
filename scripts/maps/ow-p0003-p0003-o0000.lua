@@ -74,7 +74,7 @@ function oughad_talk(npc, ch)
         --Set Quest
         invertika.set_quest_status(ch, quest_string_var, 2)
         invertika.set_quest_status(ch, quest_string_kills, number_of_kills)
-        invertika.set_quest_status(ch, quest_string_maggot, mana.chr_get_kill_count)
+        invertika.set_quest_status(ch, quest_string_maggot, mana.chr_get_kill_count(ch, 2))
     end
     
     --Get Quests
