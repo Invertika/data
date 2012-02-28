@@ -36,6 +36,8 @@ function oughad_talk(npc, ch)
     --Init Quests
     invertika.init_quest_status(ch, quest_string_kills)
     invertika.init_quest_status(ch, quest_string_var)
+    invertika.init_quest_status(ch, quest_string_number)
+    invertika.init_quest_status(ch, quest_string_maggot)
     
     --Get Quest
     local quest_var = invertika.get_quest_status(ch, quest_string_var)
