@@ -15,9 +15,12 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
+require "scripts/libs/sign"
 
 require "scripts/libs/warp"
 
 atinit(function()
  create_inter_map_warp_trigger(17, 1, 13, 23) --- Intermap warp
+ sign_entrance = "Missusarena"
+ sign.create_sign(104, 185, sign_entrance) --- Schild Arenaeingang
 end)
