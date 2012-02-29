@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="20" height="20" tilewidth="32" tileheight="32">
+<map version="1.0" orientation="orthogonal" width="60" height="60" tilewidth="32" tileheight="32">
  <properties>
   <property name="AutoMappingRadius" value="10"/>
   <property name="DeleteTiles" value="1"/>
@@ -32,52 +32,52 @@
  <tileset firstgid="7169" name="indoor1_32_96" tilewidth="32" tileheight="96">
   <image source="../graphics/tiles/indoor1_32_96.png" width="1024" height="960"/>
  </tileset>
- <layer name="Ground" width="20" height="20">
+ <layer name="Ground" width="60" height="60">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+WTyQ3CMBBFIyF3kAbASSFsgTbYIi5ADaziApRJG3xLsTSKxnZmcuTwbsmTZ55d5FlWKBiBBZg1LJUe75qAAziCE9j3dK3BC7zBBzwVroq4LuBLsApfHXANhPO5fQ/Bg3F1PZv3uPm2YAzmjMsxTfStiMfNdwMrsAv4Nom+NfH4+c7gHvBdE31De4oR22HJtDNMU9PRR/+3TZt2C8t8J7nDtEX7vhmBz7ehLTRvIdamj6/MZS2lPslb/Qd+JhRKEkAGAAA=
+   H4sIAAAAAAAAC+3Wua0CMQBFUSREB9MAWyHstMEqEqAGVpEAZdIGzxIW1shDNAjb3OAkXwS+wn78VlaptAAAAAAAAAB81JCR9F/GAZzpm61dWctGtrIK4FzfbJ3KVW5yl0sAZyvb0Gndy8PRDOB8ZVsWtFYDOFtZzP3tS13OntZUvlvbae7vXDoy8LQavSzufbbv1HSa+3uUiSwKemdZ3Pts36nptPd3J6eC3kMW9z4XvdNPYn7DbafDbm8t11fN/S3mXrfPdJjtym9V0/O5X5+5DHa73K3K/97WEuq12+VuVSptPr7tSrnX3a5/7E3pf2UAAAAAAAAAwNsT5SMWPUA4AAA=
   </data>
  </layer>
- <layer name="Ground" width="20" height="20">
+ <layer name="Ground" width="60" height="60">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC2NgGAXEglciEPq1COVmUcMMGHhFRbNOieDnkwo00fR7kmEetcKK2HB6RsXwpATAwp6a8TvYwUjy63AAAFA0XcBABgAA
+   H4sIAAAAAAAAC+3UsQ2AMAwEwAzhJRiF1RmEIlmCAqWhQFQg7LvGSue3YrcGAAAAAEA1Pc464ts+3lAh49QLZd3i/p3Ncsm3JsxbZVef7uleZB7ZzdtU6T6Tm78MAAAAAAD/cwDT+v8LQDgAAA==
   </data>
  </layer>
- <layer name="Over" width="20" height="20">
+ <layer name="Over" width="60" height="60">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC2NgGAWkAjURBgZOkYF2xSggB4DiTh2INUQwxdHFcAEOItUSqw6mVh1HukJOb6SYSSzgGMbpmdK8CosXdTzxM5IBAFyRQP9ABgAA
+   H4sIAAAAAAAAC+3WQQqAIBAF0Fna3jNk9z9hBQVREe5CfQ/cDC4chD8TAQAAAADAqOYcMeW/XwEwlj17y3aW/Kzfa61Klb3U3mtBOv71ba5e521PPddK9g0a1fuufOZW+cgvAAAAAADatwI+FWp4QDgAAA==
   </data>
  </layer>
- <layer name="Fringe" width="20" height="20">
+ <layer name="Fringe" width="60" height="60">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC2NgGAWjYBSMglEwCkgHADV9EcVABgAA
+   H4sIAAAAAAAAC+3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAAAAAAADwZkvEChtAOAAA
   </data>
  </layer>
- <layer name="Collision" width="20" height="20">
+ <layer name="Collision" width="60" height="60">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC2NiYGBgGsaYgQbmUctMWphFDfOoaRY1zGPAYRapZpICyIk7bPpJcSMx5mFTNxDpjdrm4fIrpWZR2zxqhd1wwQDj+nCdQAYAAA==
+   H4sIAAAAAAAAC+3VQQrEIBBFQZn7HzoXMKhDL37aKshCgsJDY8YAAAAAgHv8ip90es/7busdk3GqytbOvW9rpKts1Zvn9A5erZGu6l/69d7Z+9m8t3Gq3XO8upM79O7secf76sbe3TnpTltXc9JV7m2X3n++8VR6e/cCAAAAQKUHCoY9V0A4AAA=
   </data>
  </layer>
- <objectgroup name="Object" width="20" height="20">
-  <object name="Fledermaus" type="SPAWN" x="273" y="80" width="331" height="348">
+ <objectgroup name="Object" width="60" height="60">
+  <object name="Fledermaus" type="SPAWN" x="913" y="720" width="331" height="348">
    <properties>
     <property name="MAX_BEINGS" value="7"/>
     <property name="MONSTER_ID" value="8"/>
-    <property name="SPAWN_RATE" value="20"/>
+    <property name="SPAWN_RATE" value="15"/>
    </properties>
   </object>
-  <object name="External Map Events" type="SCRIPT" x="0" y="0">
+  <object name="External Map Events" type="SCRIPT" x="640" y="640">
    <properties>
     <property name="FILENAME" value="scripts/maps/iw-island_tunnel-o00-n01-o00.lua"/>
    </properties>
   </object>
-  <object name="Warp to iw-island_tunnel-o00-o00-n01" type="WARP" x="513" y="68" width="28" height="24">
+  <object name="Warp to iw-island_tunnel-o00-o00-n01" type="WARP" x="1153" y="708" width="28" height="24">
    <properties>
     <property name="DEST_MAP" value="iw-island_tunnel-o00-o00-n01"/>
     <property name="DEST_X" value="704"/>
     <property name="DEST_Y" value="2288"/>
    </properties>
   </object>
-  <object name="Warp to ow-n0004-p0001-o0000" type="WARP" x="320" y="512" width="48" height="31">
+  <object name="Warp to ow-n0004-p0001-o0000" type="WARP" x="960" y="1152" width="48" height="31">
    <properties>
     <property name="DEST_MAP" value="ow-n0004-p0001-o0000"/>
     <property name="DEST_X" value="1616"/>
