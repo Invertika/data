@@ -291,7 +291,7 @@ function wache_trigger(ch, id)
     if mana.being_type(ch) ~= TYPE_MONSTER then
         if mana.chr_inv_count(ch, 40047) == 0 then
             local x = mana.posX(ch)
-            mana.chr_warp(ch, nil, x, 176 * TILESIZE + 16)
+            mana.chr_warp(ch, nil, x, 180 * TILESIZE + 16)
             if x < 102 * TILESIZE + 16 then
                 mana.being_say(wache_unten_links, "Bevor ich meinen MacGuffin nicht wiederhabe, kommst du hier nicht durch!")
             else
