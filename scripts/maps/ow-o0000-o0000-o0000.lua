@@ -20,8 +20,8 @@ atinit(function()
  create_inter_map_warp_trigger(62, 72, 56, 6) --- Intermap warp
  nethek.create_netheksaeule(181 * TILESIZE, 125 * TILESIZE + 16) --- Netheksäule
  mana.trigger_create(41 * TILESIZE + 8, 105 * TILESIZE + 8, 1.5 * TILESIZE, 1.5 * TILESIZE, "warp_escape_tunnel", 0, true) --- Warp zum Fluchttunnel
- mana.trigger_create(113 * TILESIZE, 141 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "waypoint_archway_1", 0, true) --- Rundenzähler Torbögen (Waypoint 1)
- mana.trigger_create(112 * TILESIZE, 180 * TILESIZE, 5 * TILESIZE, 4 * TILESIZE, "waypoint_archway_2", 0, true) --- Rundenzähler Torbögen (Waypoint 2)
+ --mana.trigger_create(113 * TILESIZE, 141 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "waypoint_archway_1", 0, true) --- Rundenzähler Torbögen (Waypoint 1)
+ --mana.trigger_create(112 * TILESIZE, 180 * TILESIZE, 5 * TILESIZE, 4 * TILESIZE, "waypoint_archway_2", 0, true) --- Rundenzähler Torbögen (Waypoint 2)
 
  --Schilder
  sign.create_sign(113, 84, "Frisörsalon Umet\
