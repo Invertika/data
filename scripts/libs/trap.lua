@@ -19,21 +19,21 @@ require "scripts/libs/invertika"
 
 module("trap", package.seeall)
 
--- EXPERIMENTAL FUNCTION. MAY CAUSE SERVER SEGFAULTS
--- see: http://bugs.manasource.org/view.php?id=205
+-- Experimentele Funktion. MAY CAUSE SERVER SEGFAULTS
+-- siehe: http://bugs.manasource.org/view.php?id=205
 --
--- Usage:
+-- Benutzung:
 -- ------------
 -- trap_activate(ch, chance, radius, monster_ids)
 --
--- Parameters:
+-- Parameter:
 -- ------------
--- ch: character handle
--- chance: 0-100, probability of the trap
--- radius: radius in which the monsters spawn
--- monster_ids: array of monster ids
+-- ch: Carachter
+-- chance: 0-100, Wahrscheinlichkeit der Falle
+-- radius: Radius, in welchem Monster Spawnen
+-- monster_ids: Array mit MonsterIds
 --
--- Example:
+-- Beispiel:
 -- ------------
 -- monster_ids={4,10,10,4,10,10}
 -- trap.trap_activate(ch, 25, 4*TILESIZE, monster_ids)
