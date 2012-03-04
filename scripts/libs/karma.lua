@@ -25,7 +25,7 @@ KARMA_NEUTRAL = 0
 KARMA_GOOD = 250
 KARMA_ANGEL = 666
 
---- Karma Score abfragen
+--- Karma Wert abfragen
 function get_karma_score(ch)	
 	local karma_score = get_quest_var(ch, "karma_score")
 	
