@@ -31,6 +31,7 @@ function brecht_talk(npc, ch)
         do_message(npc, ch, "Lass es dir schmecken.")
     else
         do_message(npc, ch, "Beehre uns bald wieder.")
+    end
     do_npc_close(npc, ch)
 end
 
