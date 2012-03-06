@@ -26,8 +26,11 @@ end)
 
 function brecht_talk(npc, ch)
     do_message(npc, ch, "Ich sehe schon du bist durstig. Was möchtest du?")
-    mana.npc_trade(npc, ch, false, { {30006, 10, 25}, {30007, 10, 60}, {30008, 10, 450} })
-    do_message(npc, ch, "Lass es dir schmecken.")
+    local x = mana.npc_trade(npc, ch, false, { {30006, 10, 25}, {30007, 10, 60}, {30008, 10, 450} })
+    if x == 0 then
+        do_message(npc, ch, "Lass es dir schmecken.")
+    else
+        do_message(npc, ch, "Beehre uns bald wieder.")
     do_npc_close(npc, ch)
 end
 
