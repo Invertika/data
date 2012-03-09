@@ -15,6 +15,7 @@
 ----------------------------------------------------------------------------------
 
 require "scripts/lua/npclib"
+require "scripts/libs/invertika"
 
 require "scripts/libs/warp"
 
@@ -22,7 +23,7 @@ atinit(function()
  create_inter_map_warp_trigger(43, 31, 41, 53) --- Intermap warp
 
  --TODO Change Sprite ID
- create_npc("Betirambo", 2, 101 * TILESIZE + 16, 145 * TILESIZE + 16, betirambo_talk, betirambo_update)
+ create_npc("Betirambo", 21, 101 * TILESIZE + 16, 145 * TILESIZE + 16, betirambo_talk, betirambo_update)
 end)
 
 function betirambo_talk(npc, ch)
