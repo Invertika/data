@@ -58,7 +58,7 @@ function vodel_talk(npc, ch)
     
     if quest_var_vodel == 5 then
         local curr_time = os.date("*t")
-        local next_round1_try = os.time{year=d.year, month=d.month, 15,
+        local next_round1_try = os.time{year=d.year, month=d.month, day=15,
                           hour=0, min=00, sec=0}
         if os.difftime(os.time(), start) > 0 then
             --Set Quest
