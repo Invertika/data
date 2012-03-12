@@ -67,8 +67,8 @@ function issen_talk(npc, ch)
               "Ja")
             if v == 1 then
                 do_message(npc, ch, "ok, dann suche ich alleine")
-            elseif v == 2
-                do_essage(npc, ch, "Ich danke dir.")
+            elseif v == 2 then
+                do_message(npc, ch, "Ich danke dir.")
                 do_message(npc, ch, "Beeile dich bitte, ich habe noch die Heizung in der Wohnung eingeschaltet.")
                 do_message(npc, ch, "Ich will nicht, dass es zu heiß da drinne wird.")
                 do_message(npc, ch, "In etwa 2 Minuten dürfte dies der Fall sein.")
@@ -91,7 +91,7 @@ function issen_talk(npc, ch)
         elseif rest_time >= 0 and mana.chr_inv_count(ch, 40052) == 0 then
             do_message(npc, ch, string.format("Du hast noch %d Zeit.", rest_time))
         elseif rest_time < 0 and mana.chr_inv_count(ch, 40052) == 0 then
-            do_message(npc, ch, "Jetzt brauche ich den Schlüssel auch nciht mehr, bei der Hitze, die da drinne sein wird.")
+            do_message(npc, ch, "Jetzt brauche ich den Schlüssel auch nicht mehr, bei der Hitze, die da drinne sein wird.")
         elseif rest_time < 0 and mana.chr_inv_count(ch, 40052) > 0 then
             mana.being_damage(ch, 50, 50, 1, DAMAGE_PHYSICAL, ELEMENT_NEUTRAL)
             mana.chatmessage(ch, "Issen hat dich geohrfeigt.")
