@@ -31,7 +31,7 @@ atinit(function()
     sign.create_sign(99, 61, sign_entrance) --- Schild Ortseingang
     sign.create_sign(49, 133, sign_entrance) --- Schild Ortseingang
     
-    mana.trigger_create(34 * TILESZE, 99 * TILESIZE, 1 * TILESIZE, 32 * TILESIZE, key_trigger, 0, true)
+    mana.trigger_create(34 * TILESIZE, 99 * TILESIZE, 1 * TILESIZE, 32 * TILESIZE, key_trigger, 0, true)
     
     create_npc("Robert", 64, 64 * TILESIZE, 117 * TILESIZE + 16, robert_talk, nil) --- Robert
     create_npc("Issen", 146, 139 * TILESIZE + 16, 113 * TILESIZE + 16, issen_talk, nil) --- Issen
