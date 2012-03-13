@@ -112,6 +112,7 @@ end
 
 function key_trigger(ch, id)
     if mana.being_type(ch) ~= TYPE_MONSTER then
+        local queststring = "lauria_losed_key_quest"
         --Init Quest
         invertika.inti_quest_status(ch, queststring)
         --Get Quests
