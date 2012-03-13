@@ -24,24 +24,46 @@
  <tileset firstgid="4417" name="indoor2_32_96" tilewidth="32" tileheight="96">
   <image source="../graphics/tiles/indoor2_32_96.png" width="1024" height="960"/>
  </tileset>
+ <tileset firstgid="4737" name="crypt1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/crypt1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="5761" name="crypt1_32_96" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/crypt1_32_96.png" width="1024" height="960"/>
+ </tileset>
+ <tileset firstgid="6081" name="wood1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/wood1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="7105" name="town1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/town1_32_32.png" width="1024" height="1024"/>
+ </tileset>
  <layer name="Ground" width="80" height="55">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3QMQrCQBRF0REmINmClbvQLan7zjZMYSVMGd58corTX+62tLYBAAAAwElc1hrSn0buaw3pTyO3aw3pT/75N6P0F//8qyD9yT//ZpT+4p9/FaQ/+effjNJf/POvgvQn/47/9+qtvX8+Pf+swr9/j/3bs+c7AAAAAACA8/gCvcNt3sBEAAA=
+   H4sIAAAAAAAAC+3QsQ2AMBAEwQ9MQupmoP9i3IaLQNbr0ASTr3ZdVQsAAAAAAH5g3t9093fzzz//cvnnn3+5/PPPv1z++edfLv/88y+Xf+c8o+od/R0AAAAAAECuDXgkWoTARAAA
   </data>
  </layer>
  <layer name="Ground" width="80" height="55">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3VzwnCMByG4RzqodYhnEP04C7WSdQ9/DuBC6gzCHrwoG6gCAoe/IEVqhaNbWmT+j7wEXJIST5KohQAAAAAAAAApK/m3MdGMFaDse7ksx8TNMvZxq3EWwdM3ed531NqoJmhl8+eTbJ86W8mncw1s6C/t/620slOM3v6e+svrqt8ZyVZSzbu97nJDrK/o2ZOKfZ3llxCfX2a4z+0Skr5Qdql7NfbriNn7gbpxTi/7voi3X9hWfZXxPsvq/6Kiv6Sob94Hu9m9yX+j0m6Pio2vOOdiLObEhv+45HscWxoJhb0BwAAAAAAAAAAAHvdAB+KYtnARAAA
+   H4sIAAAAAAAAC+3DQQ0AIAwEsHlgTpCCFPwniBi/a5NWAQAAAAD8s3o23e7ZdKdn092eBQAAAAAAAAAAAAAyPT/ABJTARAAA
   </data>
  </layer>
  <layer name="Ground" width="80" height="55">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3QwQmAMBAEwNOXklRi/+1oJxGFRIgv8anMwLJ734sAAAAAAHhvnSO2LjwbcsSY6y7nz/YupQX4vynVXtL9vhoAAAAAAAAAAAAAvuYAbeg3xMBEAAA=
+   H4sIAAAAAAAAC+3TzQnCQBCG4dGzUS+75JJUYKKFmGghal/qQTvRFrQBLcEJBnYJXvzBJfo+8ME3YGAZRhEAAAAAAAAA+JzIivQ1A+vmodf3xvWd13GX6S5yzdi6eVLPVT8a1w9e97/5Z4XuoNTMrJvn9Vz1q3H94nX/G+AdPb2rSNM3oV/STiPdW6bJG/s7JSLnJMyb2mSqeys0ZWN/nVSkm4Z5U5ssdG9LzYr/L75sE4usH2QbP/cb4BXcH0Li/hAS94eQuD8AAAAAAAAAAAD8qhsbmZxlwEQAAA==
+  </data>
+ </layer>
+ <layer name="Ground" width="80" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3DMQ0AAAgDsJnAEP5FcWBiR5s0AQAAAAAAgF47HwAAAAAAAAAAAIBOB+wyw0TARAAA
   </data>
  </layer>
  <layer name="Fringe" width="80" height="55">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3YzQqCQBQG0Au1FMNq28+r5KZ6/xdqoIZChhZaWXkOXD5G7wzDICJGAAAAAAAwtlkVMa/es/YurbtPtUm1LWS+n3MKjk3E+Van5jp+zH91WIy9AwCYlkOP74o8p5urOmJd3/NZL2VNOrdlPfYuPqft8TzkOd0c2sv0vPL9N7QXgN/TFv5hla4BAAAAAADwXS6wA2pDwEQAAA==
+   H4sIAAAAAAAAC+3BMQEAAADCoPVPbQdvoAAAAAAAAAAAAAAAAAAAAAAAPgOgSzqvwEQAAA==
+  </data>
+ </layer>
+ <layer name="Over" width="80" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3BMQEAAADCoPVPbQdvoAAAAAAAAAAAAAAAAAAAAAAAPgOgSzqvwEQAAA==
   </data>
  </layer>
  <layer name="Over" width="80" height="55">
@@ -51,20 +73,20 @@
  </layer>
  <layer name="Collision" width="80" height="55">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3SywrEIBBFQcn/f/Tsg5k0Il4N1VBkkfehr9baBQAAAADAMu3lXGWq76hce4pTJt2pshOVf0hNutOM/btfv3LX053026/f6Ix8Y7pTovfTfKnfKZPuNLPh9efY25veceSdO5o9leeOfGO604r9q97zpX6nTLpTav9GdvXpOTs6ZdKd9NNvR6dMutNbv17LnfqmO430BAAAAAAAWOEHKZpeycBEAAA=
+   H4sIAAAAAAAAC+3QMQoAIQxFweD9D72VIBYLKhID82HAwiK8FhENAAAAAACAI33je2XZ92f76zf/0U+/W/12l31/Nv30068u/fTTry799NOvLv30e5VGAAAAAADAqQ8QHxifwEQAAA==
   </data>
  </layer>
- <objectgroup name="Object" width="0" height="0">
+ <objectgroup name="Object" width="80" height="55">
   <object name="External Map Events" type="SCRIPT" x="0" y="0">
    <properties>
-    <property name="FILENAME" value="scripts/maps/iw-wood-rda-headquarter.lua"/>
+    <property name="FILENAME" value="scripts/maps/iw-castle-cedric-church-o00-o00-o00.lua"/>
    </properties>
   </object>
-  <object name="Warp to n2-p3" type="WARP" x="768" y="1121" width="64" height="28">
+  <object name="Warp to city" type="WARP" x="1153" y="1120" width="64" height="33">
    <properties>
-    <property name="DEST_MAP" value="ow-n0002-p0003-o0000"/>
-    <property name="DEST_X" value="3504"/>
-    <property name="DEST_Y" value="2096"/>
+    <property name="DEST_MAP" value="ow-n0004-p0005-o0000"/>
+    <property name="DEST_X" value="4736"/>
+    <property name="DEST_Y" value="2976"/>
    </properties>
   </object>
  </objectgroup>

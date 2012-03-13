@@ -57,7 +57,8 @@ atinit(function()
   postmen.create_postman_npc("sandbox2", "A2", 27, 77 * TILESIZE + 16, 151 * TILESIZE + 16, {{id="sandbox1", distance=1}, {id="sandbox3", distance=1}, {id="sandbox4", distance=1}}, 40002)
   postmen.create_postman_npc("sandbox3", "A3", 27, 75 * TILESIZE + 16, 153 * TILESIZE + 16, {{id="sandbox1", distance=1}, {id="sandbox2", distance=1}, {id="sandbox4", distance=1}}, 40003)
   postmen.create_postman_npc("sandbox4", "A4", 27, 77 * TILESIZE + 16, 153 * TILESIZE + 16, {{id="sandbox1", distance=1}, {id="sandbox2", distance=1}, {id="sandbox3", distance=1}}, 40007)
-
+  create_npc("Speedy", 19, 150 * TILESIZE + 16, 175 * TILESIZE + 16, speedy_talk, nil)
+  
 game = poker.PokerGame:new(200)
 game:registerEventNextPlayer(function(my_player)
   mana.being_say(poker_dealer_npc, string.format("%s ist an der Reihe.", mana.being_get_name(my_player:getCh())))
@@ -714,6 +715,23 @@ function debugger_talk(npc, ch)
         do_message(npc, ch, "Effektid?")
         local id = do_ask_integer(npc, ch, 0, 9999, 0)
         mana.effect_create(id, ch)
+    end
+    do_npc_close(npc, ch)
+end
+
+function speedy_talk(npc, ch)
+    while true do
+        do_message(npc, ch, "Möchtest du schneller laufen?")
+        local v = do_choice(npc, ch, "Ja", "Nein")
+        if v == 1 then
+            local speed = mana.being_get_speed(ch) * mana.being_get_speed(ch)
+            mana.being_set_speed(ch, speed)
+            do_message(npc, ch, "Du bist nun schneller.")
+            break
+        elseif v == 2 then
+            do_message(npc, ch, "Blubb")
+            break
+        end
     end
     do_npc_close(npc, ch)
 end

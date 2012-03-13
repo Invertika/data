@@ -268,13 +268,13 @@ function wache_talk(npc, ch)
     elseif q_status == 1 then
         if mana.chr_inv_count(ch, 40047) > 0 then
             do_message(npc, ch, "Ah, danke für den MacGuffin." ..
-                                "Nun darfst du die Stadt betreten")
+                                "Nun darfst du die Stadt betreten.")
             invertika.add_items(ch, 40047, -1, "MacGuffin")
             invertika.set_quest_status(ch, quest_string, 2)
         else
             do_message(npc, ch, invertika.get_random_element(
-              "Wenn du mir keinen MacGuffin bringst kommst du nicht rein!",
-              "Bringe mir einen MacGuffin. Dann lasse ich dich rein!",
+              "Wenn du mir keinen MacGuffin bringst, kommst du nicht rein!",
+              "Bringe mir einen MacGuffin, dann lasse ich dich rein!",
               "Du findest einen MacGuffin in der Bolero Höhle. " ..
                 "Bringe mir einen davon"))
         end
@@ -291,7 +291,7 @@ function wache_trigger(ch, id)
     if mana.being_type(ch) ~= TYPE_MONSTER then
         if mana.chr_inv_count(ch, 40047) == 0 then
             local x = mana.posX(ch)
-            mana.chr_warp(ch, nil, x, 176 * TILESIZE + 16)
+            mana.chr_warp(ch, nil, x, 180 * TILESIZE + 16)
             if x < 102 * TILESIZE + 16 then
                 mana.being_say(wache_unten_links, "Bevor ich meinen MacGuffin nicht wiederhabe, kommst du hier nicht durch!")
             else
