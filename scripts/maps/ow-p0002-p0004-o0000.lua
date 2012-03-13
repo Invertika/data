@@ -50,8 +50,8 @@ function issen_talk(npc, ch)
     local queststring_time = "lauria_losed_key_quest_time"
     
     --Init Quests
-    invertika.inti_quest_status(ch, queststring)
-    invertika.inti_quest_status(ch, queststring_time)
+    invertika.init_quest_status(ch, queststring)
+    invertika.init_quest_status(ch, queststring_time)
     
     --Get Quests
     local quest_var = invertika.get_quest_status(ch, queststring)
@@ -116,7 +116,7 @@ function key_trigger(ch, id)
     if mana.being_type(ch) ~= TYPE_MONSTER then
         local queststring = "lauria_losed_key_quest"
         --Init Quest
-        invertika.inti_quest_status(ch, queststring)
+        invertika.init_quest_status(ch, queststring)
         --Get Quests
         local quest_var = invertika.get_quest_status(ch, queststring)
         
