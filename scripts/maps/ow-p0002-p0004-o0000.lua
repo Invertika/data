@@ -54,8 +54,8 @@ function issen_talk(npc, ch)
     invertika.inti_quest_status(ch, queststring_time)
     
     --Get Quests
-    local quest_var = invertika.get_quest_var(ch, queststring)
-    local quest_var_time = invertika.get_quest_var(ch, queststring_time)
+    local quest_var = invertika.get_quest_status(ch, queststring)
+    local quest_var_time = invertika.get_quest_status(ch, queststring_time)
     
     if quest_var == 0 then
         do_message(npc, ch, "Boah, wie das nervt.")
@@ -115,7 +115,7 @@ function key_trigger(ch, id)
         --Init Quest
         invertika.inti_quest_status(ch, queststring)
         --Get Quests
-        local quest_var = invertika.get_quest_var(ch, queststring)
+        local quest_var = invertika.get_quest_status(ch, queststring)
         
         if quest_var == 1 then
             if (mana.chr_inv_count(ch, 40052) == 0) then
