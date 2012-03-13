@@ -67,6 +67,7 @@ function issen_talk(npc, ch)
               "Ja")
             if v == 1 then
                 do_message(npc, ch, "ok, dann suche ich alleine")
+                break
             elseif v == 2 then
                 do_message(npc, ch, "Ich danke dir.")
                 do_message(npc, ch, "Beeile dich bitte, ich habe noch die Heizung in der Wohnung eingeschaltet.")
@@ -76,6 +77,7 @@ function issen_talk(npc, ch)
                 --Set Quests
                 invertika.set_quest_status(ch, queststring, 1)
                 invertika.set_quest_status(ch, queststring_time, datetime.get_current_time())
+                break
             end
         end
     end
