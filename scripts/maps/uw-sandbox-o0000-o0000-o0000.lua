@@ -728,7 +728,7 @@ function speedy_talk(npc, ch)
             mana.being_set_speed(ch, speed)
             do_message(npc, ch, "Du bist nun schneller.")
             break
-        elseif v == 2
+        elseif v == 2 then
             do_message(npc, ch, "Blubb")
             break
         end
