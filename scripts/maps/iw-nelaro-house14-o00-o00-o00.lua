@@ -75,14 +75,14 @@ function vodel_talk(npc, ch)
         do_message(npc, ch, "...")
         do_message(npc, ch, "...")
         do_message(npc, ch, "Ahrg.")
-        do_message(npc, ch, "Wie unhöfflich von mir.")
+        do_message(npc, ch, "Wie unhöflich von mir.")
         do_message(npc, ch, "Wenn ich mich vorstellen darf, mein Name ist Vodel.")
-        do_message(npc, ch, "Ich gehöre zu einem der wenigen Personen, die die alte, leider aussterbende Kunst, des Rätselns noch beherscht.")
+        do_message(npc, ch, "Ich gehöre zu einem der wenigen Personen, die die alte, leider aussterbende Kunst, des Rätselns noch beherrscht.")
         do_message(npc, ch, "Ach, das waren noch Zeiten.")
-        do_message(npc, ch, "Als jedentag ein Turnier stattfand und wir unsere Rätselkünste massen")
+        do_message(npc, ch, "Als jeden Tag ein Turnier stattfand und wir unsere Rätselkünste massen")
         do_message(npc, ch, "Aber ich schweife ab.")
         do_message(npc, ch, "Ich würde dir gerne ein paar Rätsel stellen.")
-        do_message(npc, ch, "Natürlich nur, wenn du damit Einverstanden bsit.")
+        do_message(npc, ch, "Natürlich nur, wenn du damit Einverstanden bist.")
         do_message(npc, ch, "Und, wie sieht's aus?")
         while true do
             local a = do_choice(npc, ch, 
@@ -111,8 +111,8 @@ function vodel_talk(npc, ch)
                 end
                 break
             elseif a == 2 then
-                do_message(npc, ch, "Schade, aber ich kann dihch ja nicht zu deinem Glück zwingen.")
-                do_message(npc, ch, "Du kannst natarlich gerne wiederkommen, falls du es dir anders überlegst.")
+                do_message(npc, ch, "Schade, aber ich kann dich ja nicht zu deinem Glück zwingen.")
+                do_message(npc, ch, "Du kannst natürlich gerne wiederkommen, falls du es dir anders überlegst.")
                 --Set Quest
                 invertika.set_quest_status(ch, queststring_vodel, 1) --Es wurde schon mit dem Vodel geraedet, aber noch nicht angenommen.
                 break
@@ -153,7 +153,7 @@ function vodel_talk(npc, ch)
         end
         
         do_message(npc, ch, "...")
-        do_message(npc, ch, "Eine Riesenmade braucht 5 Minuten für 100 Meter, ein Mamut braucht für dieselbe Strecke 1.5 Minuten.")
+        do_message(npc, ch, "Eine Riesenmade braucht 5 Minuten für 100 Meter, ein Mammut braucht für dieselbe Strecke 1.5 Minuten.")
         do_message(npc, ch, "Wie oft kann das Mammut eine Srecke von 200 Metern komplett laufen, bevor die Riesenmade dieselbe Strecke geschafft hat?")
         while true do
             local s = do_choice(npc, ch, "3 mal",
@@ -172,7 +172,7 @@ function vodel_talk(npc, ch)
             do_message(npc, ch, "Die erste Runde ist beendet.")
             --Set Quest
             invertika.set_quest_status(ch, queststring_vodel, 6) --Es wurde schon mit dem Vodel geraedet, die Quest angenommen, und die erste Runde geschafft.
-            do_message(npc, ch, "Hier eine kleiner Preis..")
+            do_message(npc, ch, "Hier ein kleiner Preis..")
             invertika.add_money(ch, 100)
         else
             do_message(npc, ch, "Hmm..")
@@ -191,7 +191,7 @@ function vodel_talk(npc, ch)
     
     if quest_var_vodel == 7 then
         do_message(npc, ch, "Du bist ja schon wieder zurück.")
-        do_message(npc, ch, "Die heutigen Generationen sind ja nur noch am hetzten.")
+        do_message(npc, ch, "Die heutigen Generationen sind ja nur noch am hetzen.")
         do_message(npc, ch, "Verstehen, was sie sehen und tuen, das können sie nicht.")
     end
     
