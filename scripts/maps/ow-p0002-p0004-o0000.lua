@@ -83,7 +83,7 @@ function issen_talk(npc, ch)
     end
     
     if quest_var == 1 then
-        local rest_time = os.time(t) - queststring_time
+        local rest_time = queststring_time - os.time(t)
         if rest_time >= 0 and rest_time <= 2000 and mana.chr_inv_count(ch, 40052) > 0 then
             do_message(npc, ch, "Danke")
             mana.chr_inv_change(ch, 40052, -1)
@@ -94,6 +94,8 @@ function issen_talk(npc, ch)
             do_message(npc, ch, string.format("Du hast noch %d Zeit.", rest_time))
         elseif rest_time < 0 and mana.chr_inv_count(ch, 40052) == 0 then
             do_message(npc, ch, "Jetzt brauche ich den Schlüssel auch nicht mehr, bei der Hitze, die da drinne sein wird.")
+            --Set Quest
+            invertika.set_quest_status(ch, queststring, 2)
         elseif rest_time < 0 and mana.chr_inv_count(ch, 40052) > 0 then
             mana.being_damage(ch, 50, 50, 1, DAMAGE_PHYSICAL, ELEMENT_NEUTRAL)
             mana.chatmessage(ch, "Issen hat dich geohrfeigt.")
