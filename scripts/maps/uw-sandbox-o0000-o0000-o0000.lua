@@ -58,6 +58,7 @@ atinit(function()
   postmen.create_postman_npc("sandbox3", "A3", 27, 75 * TILESIZE + 16, 153 * TILESIZE + 16, {{id="sandbox1", distance=1}, {id="sandbox2", distance=1}, {id="sandbox4", distance=1}}, 40003)
   postmen.create_postman_npc("sandbox4", "A4", 27, 77 * TILESIZE + 16, 153 * TILESIZE + 16, {{id="sandbox1", distance=1}, {id="sandbox2", distance=1}, {id="sandbox3", distance=1}}, 40007)
   create_npc("Speedy", 19, 150 * TILESIZE + 16, 175 * TILESIZE + 16, speedy_talk, nil)
+  create_npc("Timel", 145, 152 * TILESIZE + 16, 177 * TILESIZE + 16, timel_talk, nil)
   
 game = poker.PokerGame:new(200)
 game:registerEventNextPlayer(function(my_player)
@@ -733,5 +734,16 @@ function speedy_talk(npc, ch)
             break
         end
     end
+    do_npc_close(npc, ch)
+end
+
+function timel_talk(npc, ch)
+    time1 = os.time("t")
+    do_message(npc, ch, "Nehme 2. Zeit.")
+    time2 = os.time("t")
+    diff = time1 - time2
+    do_message(npc, ch, string.format("1. Zeit %d", time1)
+    do_message(npc, ch, string.format("2. Zeit %d", time2)
+    do_message(npc, ch, string.format("Differenz %d", diff)
     do_npc_close(npc, ch)
 end
