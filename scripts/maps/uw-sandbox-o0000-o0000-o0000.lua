@@ -738,9 +738,9 @@ function speedy_talk(npc, ch)
 end
 
 function timel_talk(npc, ch)
-    time1 = os.time("t")
+    time1 = os.time(t)
     do_message(npc, ch, "Nehme 2. Zeit.")
-    time2 = os.time("t")
+    time2 = os.time(t)
     diff = time1 - time2
     do_message(npc, ch, string.format("1. Zeit %d", time1))
     do_message(npc, ch, string.format("2. Zeit %d", time2))
