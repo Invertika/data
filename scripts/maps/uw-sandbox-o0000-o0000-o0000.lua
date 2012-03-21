@@ -742,8 +742,8 @@ function timel_talk(npc, ch)
     do_message(npc, ch, "Nehme 2. Zeit.")
     time2 = os.time("t")
     diff = time1 - time2
-    do_message(npc, ch, string.format("1. Zeit %d", time1)
-    do_message(npc, ch, string.format("2. Zeit %d", time2)
-    do_message(npc, ch, string.format("Differenz %d", diff)
+    do_message(npc, ch, string.format("1. Zeit %d", time1))
+    do_message(npc, ch, string.format("2. Zeit %d", time2))
+    do_message(npc, ch, string.format("Differenz %d", diff))
     do_npc_close(npc, ch)
 end
