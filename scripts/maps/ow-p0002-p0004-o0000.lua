@@ -83,7 +83,7 @@ function issen_talk(npc, ch)
     end
     
     if quest_var == 1 then
-        local rest_time = os.time(t) - queststring_time
+        local rest_time = os.time(t) - quest_var_time
         if rest_time >= 0 and rest_time <= 120 and mana.chr_inv_count(ch, 40052) > 0 then
             do_message(npc, ch, "Danke")
             mana.chr_inv_change(ch, 40052, -1)
