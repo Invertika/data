@@ -39,8 +39,9 @@ function betirambo_talk(npc, ch)
           "Nö",
           "Zu kalt für Eis"))
         if v == 1 then
-            mana.npc_trade(npc, ch, false,
-              30029, 1, 675)
+            mana.npc_trade(npc, ch, false, {
+              {30029, 1, 675}
+              })
             break
         elseif v == 2 then
             break
