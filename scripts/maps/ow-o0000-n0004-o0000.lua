@@ -18,6 +18,7 @@ require "scripts/lua/npclib"
 require "scripts/libs/nethek"
 require "scripts/libs/sign"
 require "scripts/libs/invertika"
+require "scripts/libs/datetime"
 
 require "scripts/libs/warp"
 
