@@ -19,5 +19,24 @@ require "scripts/lua/npclib"
 
 
 atinit(function()
-    
+    create_npc("Naltiae", 22, 27 * TILESIZE + 16, 36 * TILESIZE + 16, naltia_talk, nil)
 end)
+
+function naltia_talk(npc, ch)
+    do_message(npc, ch, "Möchtest du Medizin kaufen?")
+    while true do
+        local v = do_choice(npc, ch, "Ja",
+          "Nein")
+        if v == 1 then
+            mana.npc_trade(npc, ch, true, {
+              {30002, 999, 115},
+              {30003, 999, 530},
+              {30013, 999, 380}
+              })
+            break
+        else if v == 2 then
+            break
+        end
+    end
+    do_message(npc, ch, "Tschüß");
+end
