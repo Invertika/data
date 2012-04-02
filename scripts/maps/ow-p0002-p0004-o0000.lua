@@ -50,8 +50,8 @@ function issen_talk(npc, ch)
     local queststring_time = "lauria_losed_key_quest_time"
     
     --Init Quests
-    invertika.inti_quest_status(ch, queststring)
-    invertika.inti_quest_status(ch, queststring_time)
+    invertika.init_quest_status(ch, queststring)
+    invertika.init_quest_status(ch, queststring_time)
     
     --Get Quests
     local quest_var = invertika.get_quest_status(ch, queststring)
@@ -76,25 +76,27 @@ function issen_talk(npc, ch)
                 
                 --Set Quests
                 invertika.set_quest_status(ch, queststring, 1)
-                invertika.set_quest_status(ch, queststring_time, datetime.get_current_time())
+                invertika.set_quest_status(ch, queststring_time, os.time(t))
                 break
             end
         end
     end
     
     if quest_var == 1 then
-        local rest_time = datatime.get_curent_time() - queststring_time
-        if rest_time >= 0 and mana.chr_inv_count(ch, 40052) > 0 then
+        local rest_time = os.time(t) - quest_var_time
+        if rest_time >= 0 and rest_time <= 120 and mana.chr_inv_count(ch, 40052) > 0 then
             do_message(npc, ch, "Danke")
             mana.chr_inv_change(ch, 40052, -1)
             mana.chr_money_change(chr, 300)
             --Set Quests
             invertika.set_quest_status(ch, queststring, 2)
-        elseif rest_time >= 0 and mana.chr_inv_count(ch, 40052) == 0 then
+        elseif rest_time >= 0 and rest_time <= 120 and mana.chr_inv_count(ch, 40052) == 0 then
             do_message(npc, ch, string.format("Du hast noch %d Zeit.", rest_time))
-        elseif rest_time < 0 and mana.chr_inv_count(ch, 40052) == 0 then
+        elseif rest_time > 120 and mana.chr_inv_count(ch, 40052) == 0 then
             do_message(npc, ch, "Jetzt brauche ich den Schlüssel auch nicht mehr, bei der Hitze, die da drinne sein wird.")
-        elseif rest_time < 0 and mana.chr_inv_count(ch, 40052) > 0 then
+            --Set Quest
+            invertika.set_quest_status(ch, queststring, 2)
+        elseif rest_time > 120 and mana.chr_inv_count(ch, 40052) > 0 then
             mana.being_damage(ch, 50, 50, 1, DAMAGE_PHYSICAL, ELEMENT_NEUTRAL)
             mana.chatmessage(ch, "Issen hat dich geohrfeigt.")
             do_message(npc, ch, "Sei nächstes mal schneller.")
@@ -116,7 +118,7 @@ function key_trigger(ch, id)
     if mana.being_type(ch) ~= TYPE_MONSTER then
         local queststring = "lauria_losed_key_quest"
         --Init Quest
-        invertika.inti_quest_status(ch, queststring)
+        invertika.init_quest_status(ch, queststring)
         --Get Quests
         local quest_var = invertika.get_quest_status(ch, queststring)
         
