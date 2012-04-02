@@ -19,8 +19,7 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
-    --TODO Change Sprite ID
-    create_npc("Rhosor", 2, 26 * 32 + 16, 38 * TILESIZE + 16, rhosor_talk, nil)
+    create_npc("Rhosor", 133, 26 * 32 + 16, 38 * TILESIZE + 16, rhosor_talk, nil)
 end)
 
 function rhosor_talk(npc, ch)
