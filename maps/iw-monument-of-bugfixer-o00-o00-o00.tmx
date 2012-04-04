@@ -1,35 +1,65 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<map version="1.0" orientation="orthogonal" width="30" height="30" tilewidth="32" tileheight="32">
-  <properties>
-    <property name="AutoMappingRadius" value="3" />
-    <property name="DeleteTiles" value="1" />
-  </properties>
-  <tileset firstgid="1" name="cave1_32_32" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/cave1_32_32.png" />
-  </tileset>
-  <tileset firstgid="1025" name="cave1_32_64" tilewidth="32" tileheight="64">
-    <image source="../graphics/tiles/cave1_32_64.png" />
-  </tileset>
-  <tileset firstgid="1537" name="cave2_32_32" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/cave2_32_32.png" />
-  </tileset>
-  <tileset firstgid="2561" name="cave3_32_32" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/cave3_32_32.png" />
-  </tileset>
-  <tileset firstgid="3585" name="cave4_32_32" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/cave4_32_32.png" />
-  </tileset>
-  <tileset firstgid="4609" name="automapping_set_cave_32_32" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/automapping_set_cave_32_32.png" />
-  </tileset>
-  <layer name="set" width="30" height="30">
-    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAOy9B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6NHz0/en70/Oj50fOj50fPj54fPT96fvT86PnR8/Py+X8CAAD//3tuXJcQDgAA</data>
-  </layer>
-  <objectgroup name="Object" width="30" height="30" x="0" y="0">
-    <object name="External Map Events" type="SCRIPT" x="0" y="0" width="0" height="0">
-      <properties>
-        <property name="FILENAME" value="scripts/maps/iw-monument-of-bugfixer-o00-o00-o00.lua" />
-      </properties>
-    </object>
-  </objectgroup>
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="70" height="70" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="AutoMappingRadius" value="3"/>
+  <property name="DeleteTiles" value="1"/>
+ </properties>
+ <tileset firstgid="1" name="cave1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="1025" name="cave1_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/cave1_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="1537" name="cave2_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave2_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="2561" name="cave3_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave3_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3585" name="cave4_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave4_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="4609" name="automapping_set_cave_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/automapping_set_cave_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="5633" name="collision1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <layer name="Ground" width="70" height="70">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+2aTW4UMRCFI42y8S0g4SCQEHGNEIhyjUAT5TBEHAQUjsEKuAIuqUtdqZTtctkzNt1evN1M2/3Nqz97Tt3R0enQ0NDQ0NDQ6vTS63zWiw720wuLN14fZr3eKB/kQVm895pmXRI+W2DDeVAWn7x+zbolfIDNuw72XksXbokRFOdBWUi6ndncGNbq1WfXbokRlJYHZ3NvWKvXGLxzS4ygcnhQnRjW6jUGX2W8945879jARVpLG4M9ctmx70CeeFuJC7I5c33lGw0X/r6QJz5W5AK6cn31RKG9co+goIaDV75U5vLZPe+Jzme1yD2hvUrvCEyghkteCXHkkvISjynKB9Qi92i5IBOo4RavWPmAIPe0jivOAr2MTKQarvUKfZ6Ut2O5p5e8c+Gez0WlTOjzpFiM5Z5eZrFrF56LcuKHzlr0eVIsavNOqz4Qa06q7015hXok5LfYc6Uc1KIPxLkuVHMsTLSzlvS8WB+YmsVqxw7+tiGfa3jQuCn1XKhu5da/EuFcF3qXmnGjzdchNofkEutHa8ZNDpMQmx645DCxek0SPcfi/c4huYQ8i7MuiNZHTS6x8EDRcyxeBzRcaB8JKul7JM/grAu6IWumckkJExA9x+J1QNM30T4SVNL3SFxw1gXdO10uKWWCPVROTEpzy+Seng2W9D2xme7M7SeXUOEMEuqh0Cs8TlJzS42+J8TmKsGE5iNrPOMMwmOH8pbipMbcYoknjKlUr0bP3nLZxGYQ6hMpTjRzRo06ljojob8j/Sw9e9PmOs0McuJ0PUFsn6VMtGxidwQ5M15qBtkVMqnhlVg/FWMfugfR5LrYDLJzSy5u6ZNYP5Vib51lUr025uJWTDDvTU7upzTrHGd+PnQfRZneZTKpmUtSfYNlBtZ4JXQfBcKarz0PrsmD7i+W92qvh31Z6D4KhDU/dk62j71xL3Ov1l5T+u+V9M4PXt/cUvOt52Q1vGK5W81lIv33ir8zMPnh9X1m08In1CuWHJvjEd6jhvLob6+vXo9ePxsx2ZdXpHjJqbPA5o/X3wOzoIIaWMsr1Bs8Xiw9aismIN5TWfbAeWjipWcmlEtNHlYWrRjEuGjzCZ2favDoiUWJ6Pw0eDztTycjj7WxAMX6063wQCaa/nQLLDgTS71dIw/OpNWZR0/K/Y/GVphY5pi18gDRM+Upg0lOL/g/ynKmvGafoFc0/zHcCg/qlVZnpz1LOnvZOhOQdJ+1ZR5DQ0NDQ0Ot9Q9jncIakEwAAA==
+  </data>
+ </layer>
+ <layer name="Ground" width="70" height="70">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3WyREAIAgEMN6WbqlWYQG+vSCpAGY4NgIAAAAAAPYa7XYFkIudAgB+ILNwi9mDlb0AAF7Ti+UTeQzgvAq3t0KPALzLHwIAAMhpAgG/aYGQTAAA
+  </data>
+ </layer>
+ <layer name="Fringe" width="70" height="70">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAK8Gfpd2NZBMAAA=
+  </data>
+ </layer>
+ <layer name="Over" width="70" height="70">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3bWw6CMBCFYR6RhVT3v0JjlNhys8C0cyr/l/iKzenMtJjYdQAAAAAA2AtD190/n8fgvRp/Yx43ssCKuGeok+NCRn49c2lV38jc7qN+uR/snZxauRoyQa5StRIamUFLrDNp/V5gfffdel4r57pljeTmq56NdSZ7nqWajUUmLc+PEvvCu/gcd765kpl45G3RS/9aJ8rzn1mlaU/NBNH6mrLq75xsxu8q3XutzKyavX42E++5VOpeeDaTWnu3lf00G6/6V6xnz3O+ds8ceQeuuV+130m9Z9YvrZxTNXnOLtW9UF5bbQq/banth8J6FNYQ816PwtkT94p3z3hTmBtLat7BYgr1qUK1NrxQG1/URoraSJHHnPfdSw01ghzUSYo83qbvcVfP44UzJkWvLP8/4Mp5AADg7QlvxVpSkEwAAA==
+  </data>
+ </layer>
+ <layer name="Collision" width="70" height="70" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3SQQ7EIAwDwKqP2P8/dU+9VCwLqROb4kg+Ftwh5+c4TsdxHMdxHMdxmrmG3UMhvWF3U/PY0SYy7M4qOxFxWckyugcIF2UbtouqTbSnXTAmI/vJtmC6rOYT/R/ke6xqhOz8Fhd055lh//tM9yyLrP1c0aRqR7NcGL5KNtkmT89R8GCbtM5TcGHtmpJL67+qvn2rS6bJqi5ZJq1hmPT6tDpl9356PuOtRu1QHVR2rXdub7LeJdq5otuIVcWuzvRDm0R2A9UDbVLlgtz9bBO0R8Tlic3oPQom9x6z36D92R6Iu9AuTI9fHbLve+JS0e1+P+POGRdWP7ZLb6q6MXYlOiyTzLtXsKjeFZtgPJgmV28FC6ZBtsvqFuz9YPdV8mB3VbLYwWPGhd3RHroWO3nYJG7C7qhospOLPWIm7I4qJuxe7Njkvwm7j+M4juPsnC83ysVvkEwAAA==
+  </data>
+ </layer>
+ <objectgroup name="Object" width="70" height="70">
+  <object name="External Map Events" type="SCRIPT" x="0" y="0">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/iw-monument-of-bugfixer-o00-o00-o00.lua"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="DA_set" width="70" height="70" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3WMQLDIAwDwJIn5P+P7dIhA0mxsS0RNGgsFhc3bTs/n6YoiqIoiqIoSjfHL+geDDkegu7G5rGjzajH22wi7u1xYbeM2IMIFzYbJhcmm4h3hVxiTEZm7+yygk/EfbKfFfq+jCYruER1tvwWstpEd7UaMPpUmmTvaLYLwpfJJttk9hwGD7RJ7zwGF9SuMbn07lX1WcS5FR2qTFhcRrq83cRqk9179vzqZzX7n6TiXhXv/+u5TyaRHTznZXcanfNvhzJ21dov671kmZXlMmtS5RK5+9YzGD1GZnl7efax2sS6J3efjZrH4DFrcj0jYiaDx+x3IfpZMFj0+iFmspuwu1R1Q+wK+55U7soKFtW7IpMYD6RJS5q/mkG2y+oW6P1A92XyQHdlstjBw+KC7igPXoudPGTiN0F3ZDTZyUUePhN0RxYTdC90ZHJv0k55KIqiKAo6X7CvmreQTAAA
+  </data>
+ </layer>
 </map>
