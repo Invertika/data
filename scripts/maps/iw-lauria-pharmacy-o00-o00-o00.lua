@@ -34,7 +34,7 @@ function naltia_talk(npc, ch)
               {30013, 999, 380}
               })
             break
-        else if v == 2 then
+        elseif v == 2 then
             break
         end
     end
