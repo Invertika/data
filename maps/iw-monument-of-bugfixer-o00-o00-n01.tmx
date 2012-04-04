@@ -1,35 +1,83 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<map version="1.0" orientation="orthogonal" width="30" height="30" tilewidth="32" tileheight="32">
-  <properties>
-    <property name="AutoMappingRadius" value="3" />
-    <property name="DeleteTiles" value="1" />
-  </properties>
-  <tileset firstgid="1" name="cave1_32_32" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/cave1_32_32.png" />
-  </tileset>
-  <tileset firstgid="1025" name="cave1_32_64" tilewidth="32" tileheight="64">
-    <image source="../graphics/tiles/cave1_32_64.png" />
-  </tileset>
-  <tileset firstgid="1537" name="cave2_32_32" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/cave2_32_32.png" />
-  </tileset>
-  <tileset firstgid="2561" name="cave3_32_32" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/cave3_32_32.png" />
-  </tileset>
-  <tileset firstgid="3585" name="cave4_32_32" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/cave4_32_32.png" />
-  </tileset>
-  <tileset firstgid="4609" name="automapping_set_cave_32_32" tilewidth="32" tileheight="32">
-    <image source="../graphics/tiles/automapping_set_cave_32_32.png" />
-  </tileset>
-  <layer name="set" width="30" height="30">
-    <data encoding="base64" compression="gzip">H4sIAAAAAAAEAOy9B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/In6NHz0/en70/Oj50fOj50fPj54fPT96fvT86PnR8/Py+X8CAAD//3tuXJcQDgAA</data>
-  </layer>
-  <objectgroup name="Object" width="30" height="30" x="0" y="0">
-    <object name="External Map Events" type="SCRIPT" x="0" y="0" width="0" height="0">
-      <properties>
-        <property name="FILENAME" value="scripts/maps/iw-monument-of-bugfixer-o00-o00-n01.lua" />
-      </properties>
-    </object>
-  </objectgroup>
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="70" height="50" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="AutoMappingRadius" value="3"/>
+  <property name="DeleteTiles" value="1"/>
+ </properties>
+ <tileset firstgid="1" name="cave1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="1025" name="cave1_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/cave1_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="1537" name="cave2_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave2_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="2561" name="cave3_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave3_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3585" name="cave4_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/cave4_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="4609" name="automapping_set_cave_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/automapping_set_cave_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="5633" name="wood1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/wood1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="6657" name="collision1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="7681" name="house1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/house1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="8705" name="path1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/path1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="9729" name="wood3_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/wood3_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="10753" name="snow1_32_96" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/snow1_32_96.png" width="1024" height="960"/>
+ </tileset>
+ <tileset firstgid="11073" name="town1_32_96" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/town1_32_96.png" width="1024" height="960"/>
+ </tileset>
+ <tileset firstgid="11393" name="crypt1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/crypt1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="12417" name="wood1_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/wood1_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <layer name="Ground" width="70" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+2ZXUpDMRCFC+JLdmHVhaituA21ittQr+JirK5EXIZP4hZMsANDvJPJ3yS5P4XzGLjz9ZyThCwW86/vd6RmzZo1di21VowOGvhOibn65oN1p1obRicDY7P0nMueD6+70uoYXQ6IzfluNp+57PnwugetL0b3A2Jzu5vNZy57vtB1Q2FjcrCOmA3mi1nXOhvohpvI2VLVIhvcKU+VuNhsVg3w4Tplj1i3L8hmo+p6h+sUiokkH8OmU/VyxXWKDxOj48xcanYOMKE6xZeJJJfSbHDP9uUnhIk0l5JsXD0byqQEF5vNhQAT4xWqZ2OYlOKC2dwJcDFeoXr2sHEuwOZM5fUM7MmpPVuTi9G1yucZ6NrcXqnB5VH9eSZHB0PX2l5J8UktLuCZ1A6mzrQ5mIAk7gScZ1I6mMpPTia1PAMdHJMnKj8pfdKKZ2LzVCI/tdmE5om6E0oyqcXG5OklgElMflzvI745rtE13FyuO6HLKz7vPiH3ttKe4bhQd0KOic+7T+idtiQbjstzDxPXOpy5jliLc9wqG45LX7b7vGLyBrmx/bXVetN6HxCbUC5UfkzeIDe2R761XrU+iW/wYYP7ey3MxGePtblQHE3eXLn5cHCx2azU/7d73N9Sb1ISZw5uL+W4YDYbxAdnE/o695uU5BksBxdg0yE+VDbxPKl9I3GHyc3F5kNl0/6PQ9mUOKdLcGlhphJczJ70MyEevlym5JESXIbKAyvnOXQMPHKzGRuTVDZj5ZHKRvJ81ZJ82EzBI7NmTV2/ODD9sbA2AAA=
+  </data>
+ </layer>
+ <layer name="Ground" width="70" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+2YSUoEQRBFY116iFj1Qj2J000UnEXPoOIseoZGHHqjZ1CvZBRVgUF2ZKElUmbmf/AXTWdC1YfOF9lEAAAAAAAAAJAGRyOik9HQT/H/GEsn920vVUU0YzJbDftsf8UGE21KdtpsSbYlB5JDbtbYXuakh3mThUx7OWWiM8llm3PJheRWcsfNmhJ7eWCiR8mkzZPkWfIieeVmTYm9hNQdrEmOTdZNL4vSw5LJciG9vMn7vwdZNb2AL8boxaXEXtTT6mf1dczT3t49yS7HPZ8i6mn1s/o65mlv77XkiuOeTxH1tPpZfR3ztLd3wt2eT5muM+Qn50tuZ5E3t9j5JfadtzanXry55bup55sV8/kjo15+Q26/nS7sPbt2sPp3n6cdHPbiuT91byv2nl07WP17w9MODnvx3J+6t5XYPTt0eE3Yi+f+XLwd0sfjJfz/2aeXEs7jPvNNbrOMR9/5BrMMAAAAAAAAAAAAwPB8AhJchgGwNgAA
+  </data>
+ </layer>
+ <layer name="Ground" width="70" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3Q2Q2CABRE0VcRPSpKH+LShyz2IaJ1OD34QUzOSe7/ZKoAAAD+y66p2qc2HdIxdc3Wq7Z3ygd9OqdLuqabX+qeD4Y0pinN6eGXeuaDJb3Smt7p4xcAAAAAAAAAAAB+9AXVvaehsDYAAA==
+  </data>
+ </layer>
+ <layer name="Fringe" width="70" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3Wuw2AMAwFwDAFO1BlEUZhGP6MCzVKESR+gjsplYs4T5biEAAAAAD+q6ie7gAA4Bj7C2cyT/APdfl0B+/UyAVONccQlnj9PfaX9xu2ORh3Z4r59a+SS5pc0uSS1m5v7Hanj/n1L7vrHwYAgFwrwaUBhbA2AAA=
+  </data>
+ </layer>
+ <layer name="Over" width="70" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+2Yu3LCMBBFtwR3gSqkUQVpE9KEfEUCFfz/f7CeQYORF7Cjh6XVPTO3As+YO9IeCSIAAAAAAABASl4M0YKz5Hxd8spZcd7MdO8Vi3VDtBHy3tx+78MQfXK2nMMl35wd58ekfefYtJ3MG/mzmdPPryH64+zNtZc2R87JxH/XVDzqpFbQSR900ged9PHtxMfT0rNaPN/1tM1QT0uOz8HzIfaP9fTWyRBP33O8Rs+XjD3LYtZeCeWemXAnKBX4OA2P1oyPg91nY3o71lq5142Pg133x/J27P0jdePjYMn98HYaUs3akvyU2j8ldZOa3LuZ8qySazc1nN9q+I1jGHO3s//Rb0Y8Uxra7rr29+Q4b6aiOwP+M4vXCveANBfd/f4sWrpo0TYHQgB33lL6Ggl9Di29jy6hutG4Z3y60bRGJHK92+XA0G40nq+eMeSsVUsXANTMGb9iy/GwNgAA
+  </data>
+ </layer>
+ <layer name="Collision" width="70" height="50" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+2TMQ7DMAwDgzyj/39opy5Fg8iULIopBdxWW+TFPV/HcRpjjDHGgNwNO9+uXlf9VobdcZeT737IsLvuclIx7M5TvUx3s5r3H9xkckZ+q+gmmw/1UrW/ywt6/s7b6ig7QfpOd1OVYfcoOunw0uWmem/XKL2Vz30ZdyuZVd7KE71U34k4iWSp/o4dTqLdo34io+KksnO3m91esm6Q8wpOGO9GxQm6E+md7fQEL7/uyvRiOFndfTeRMypOop2rBs3D8tLlRs1JlxuV/w/iBvWH7Ge72Plu2F2muWHnn+qGnX2SG3ZWY4wxxhhjjFHjDVBIRMiwNgAA
+  </data>
+ </layer>
+ <objectgroup name="Object" width="70" height="50"/>
 </map>
