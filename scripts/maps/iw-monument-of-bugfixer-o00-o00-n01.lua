@@ -53,13 +53,11 @@ function maedchen_talk(npc, ch)
         end
     
     elseif quest_var == 1 then
-        --TODO: Auf die richtige Id der BLume ändern, ist jetzt nur testweise so.
-        if mana.chr_inv_count(ch, 20031) > 0 then
+        if mana.chr_inv_count(ch, 40053) > 0 then
             do_message(npc, ch, "Ich danke dir.")
             --Set Quest
             invertika.set_quet_status(ch, queststring, 2)
-            --TODO: Behlonung ??
-        elseif mana.chr_inv_count(ch, 20031) == 0 then
+        elseif mana.chr_inv_count(ch, 40053) == 0 then
             do_message(npc, ch, "Bitte, bringe mir die Blume.")
         end
     elseif quest_var == 2 then
