@@ -9,7 +9,9 @@
 
 
 require "scripts/lua/npclib"
-
+require "scripts/libs/invertika"
+require "scripts/libs/nethek"
 
 atinit(function()
+    nehtek.create_netheksaeule(47 * TILESIZE, 8 * TILESIZE + 16)
 end)
