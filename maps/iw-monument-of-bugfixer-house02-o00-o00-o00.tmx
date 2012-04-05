@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="80" height="55" tilewidth="32" tileheight="32">
+<map version="1.0" orientation="orthogonal" width="30" height="40" tilewidth="32" tileheight="32">
  <properties>
   <property name="music" value="inside2.ogg"/>
  </properties>
@@ -12,48 +12,46 @@
  <tileset firstgid="2049" name="indoor2_32_32" tilewidth="32" tileheight="32">
   <image source="../graphics/tiles/indoor2_32_32.png" width="1024" height="1024"/>
  </tileset>
- <tileset firstgid="3073" name="indoor1_32_64" tilewidth="32" tileheight="64">
-  <image source="../graphics/tiles/indoor1_32_64.png" width="1024" height="1024"/>
- </tileset>
- <tileset firstgid="3585" name="indoor1_32_96" tilewidth="32" tileheight="96">
-  <image source="../graphics/tiles/indoor1_32_96.png" width="1024" height="960"/>
- </tileset>
- <tileset firstgid="3905" name="indoor2_32_64" tilewidth="32" tileheight="64">
+ <tileset firstgid="3073" name="indoor2_32_64" tilewidth="32" tileheight="64">
   <image source="../graphics/tiles/indoor2_32_64.png" width="1024" height="1024"/>
  </tileset>
- <tileset firstgid="4417" name="indoor2_32_96" tilewidth="32" tileheight="96">
+ <tileset firstgid="3585" name="indoor2_32_96" tilewidth="32" tileheight="96">
   <image source="../graphics/tiles/indoor2_32_96.png" width="1024" height="960"/>
  </tileset>
- <layer name="Ground" width="80" height="55">
+ <layer name="Ground" width="30" height="40">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3QvQ3CQAyA0RS5nWAcwk8BjAFsAqtlDVykQCkCBdH5pFc8+eTiZH1j6boRAAAAAOAHu74NtTvpt16/Iez7/7/nuyXf/qzdaanfIeYxqVPJ3+8W857UQz/99NNPv5T0008//fTLST/99NNvzX7PktergX7D5Bwuk+vHvrbM/eY2ceu2oXsBAAAAAID2vQE8OheRwEQAAA==
+   H4sIAAAAAAAAC+3NsREAEBAAMAU7MY7pfw0arZJzUqROlJQCAIBv9Lzn9b70LnUe7cADwB0DV9WJB8ASAAA=
   </data>
  </layer>
- <layer name="Ground" width="80" height="55">
+ <layer name="Ground" width="30" height="40">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3DQQkAMAwEsD5OyaTMv6i5GD1IIDMAAAAANEk6bnXScaubjgAAAAAAAAAAAAAAwD8PCAI7vcBEAAA=
+   H4sIAAAAAAAAC+3N4QkAIAiEUSNpj9qk9h8qAwMXEIK+Bwd3f1QEAADgb0VF1FNDP2ma97fb7eGJ/e4s024vT+x3AwAAvGYDwCwczMASAAA=
   </data>
  </layer>
- <layer name="Fringe" width="80" height="55">
+ <layer name="Ground" width="30" height="40">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3BMQEAAADCoPVPbQdvoAAAAAAAAAAAAAAAAAAAAAAAPgOgSzqvwEQAAA==
+   H4sIAAAAAAAAC+3PsQmAMBCF4SsCQiLaO4I4h5vZ6Bw2OoU6ibqIr7DQkNLjCt8HByGE/JwIEREREVnJvEjl3nedS7/9So//h0ejvc+jcnfC/7NyI6VAszToWvHYNY/2XYLIitmCXrdGs4m6O3oH5lTsEhHRP1wJoE5QwBIAAA==
   </data>
  </layer>
- <layer name="Over" width="80" height="55">
+ <layer name="Ground" width="30" height="40">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3BMQEAAADCoPVPbQdvoAAAAAAAAAAAAAAAAAAAAAAAPgOgSzqvwEQAAA==
+   H4sIAAAAAAAAC+3OMQ0AAAgDsP1Iw78fPPCQkFZBEwAA4Luu6wEA7A0n+uNHwBIAAA==
   </data>
  </layer>
- <layer name="Collision" width="80" height="55">
+ <layer name="Fringe" width="30" height="40">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3QwQkAMQACwZD+i74uTiUjzF/2nnMuAAAAAACUW1m6k376NVpZupN++jVaWbqTfvo1Wlm6k376NVpZupN++jVaWbqTfv/2TP8AAAAAAADe8QEw0pFFwEQAAA==
+   H4sIAAAAAAAAC+3PsQ0AMAgDQdJRsP+8KbIDSORO+tpyBAAAPzv1mtreKhd/A4BuF0LR5e/AEgAA
   </data>
  </layer>
- <objectgroup name="Object" width="80" height="55">
-  <object name="External Map Events" type="SCRIPT" x="0" y="0">
-   <properties>
-    <property name="FILENAME" value="scripts/maps/iw-monument-of-bugfixer-house02-o00-o00-o00.lua"/>
-   </properties>
-  </object>
- </objectgroup>
+ <layer name="Over" width="30" height="40">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3OwQkAIAwEwfun/wKMjWoVSmAG9r8JAADwwqqkb7t+nwDALAcfscDRwBIAAA==
+  </data>
+ </layer>
+ <layer name="Collision" width="30" height="40" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3RIQ4AMAgEQcL/H11VQ2p7mLlkDGYFXVUNAAAhd/OW6s6le7+7r/7Gf7e6ySYAOQd+AchTwBIAAA==
+  </data>
+ </layer>
+ <objectgroup name="Object" width="30" height="40"/>
 </map>
