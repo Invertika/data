@@ -44,8 +44,10 @@ function maedchen_talk(npc, ch)
                 do_message(npc, ch, "Ich danke dir.")
                 --Set Quest
                 invertika.set_quest_status(ch, queststring, 1)
+                break
             elseif c == 2 then
                 do_message(npc, ch, "ok")
+                break
             end
         end
     
