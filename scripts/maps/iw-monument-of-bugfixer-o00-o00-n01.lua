@@ -17,6 +17,7 @@ atinit(function()
     
     --TODO: bessere Namen
     create_npc("kleines Mädchen", 1, 48 * TILESIZE + 16, 16 * TILESIZE + 16, maedchen_talk, nil)
+    
 end)
 
 function maedchen_talk(npc, ch)
@@ -64,5 +65,5 @@ function maedchen_talk(npc, ch)
     elseif quest_var == 2 then
         do_message(npc, ch, "Sieht die Statue nicht schön aus mit der Blume?")
     end
-    do_np_close(npc, ch)
+    do_npc_close(npc, ch)
 end
