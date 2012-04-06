@@ -676,10 +676,12 @@ function elmes_talk(npc, ch)
       "Man erzählt sich von einem Schatz in der Wüste, verborgen in einer Höhle welche tief unter die Erde führt. Oder war die Höhle in der grünen Ebene? Ich weiß es nicht mehr genau.",
       "Das letze mal als es regnete versank ich im Sand. Ich konnte mich erst nach 4 Stunden befreien.",
       "Sei vorsichtig wenn du dich durch die große Wüste begibst."))
-      -- Hinweis auf Torbögen => Quest freischalten
-      invertika.init_quest_status(ch, "selphi_timlet_archway_quest")
-      invertika.set_quest_status(ch, "selphi_timlet_archway_quest", -1)
-      do_npc_close(npc, ch)
+    -- Hinweis auf Torbögen => Quest freischalten
+    invertika.init_quest_status(ch, "selphi_timlet_archway_quest")
+    if (invertika.get_quest_status(ch, "selphi_timlet_archway_quest") == 0) then
+        invertika.set_quest_status(ch, "selphi_timlet_archway_quest", -1)
+    end
+    do_npc_close(npc, ch)
 end
 
 function nepuret_talk(npc, ch)
@@ -961,7 +963,7 @@ function waypoint_archway_1(obj, arg)
         invertika.init_quest_status(obj, "selphi_timlet_archway_quest")
         local archway_quest = invertika.get_quest_status(obj, "selphi_timlet_archway_quest")
         if (archway_quest == 0) then return false end
-        if (archay_quest == -1) then archay_quest = 0 end
+        if (archway_quest == -1) then arwchay_quest = 0 end
         mana.being_say(obj, "Ich habe den Wegpunkt passiert")
         mana.being_say(obj, archway_quest)
         if(archway_quest % 2 == 1) then
@@ -985,7 +987,7 @@ function waypoint_archway_2(obj, arg)
         invertika.init_quest_status(obj, "selphi_timlet_archway_quest")
         local archway_quest = invertika.get_quest_status(obj, "selphi_timlet_archway_quest")
         if (archway_quest == 0) then return false end
-        if (archay_quest == -1) then archay_quest = 0 end
+        if (arwchay_quest == -1) then arwchay_quest = 0 end
         mana.being_say(obj, "Ich habe den Wegpunkt passiert")
         mana.being_say(obj, archway_quest)
         if(archway_quest % 2 == 0) then
