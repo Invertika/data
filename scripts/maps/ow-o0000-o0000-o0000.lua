@@ -963,7 +963,7 @@ function waypoint_archway_1(obj, arg)
         invertika.init_quest_status(obj, "selphi_timlet_archway_quest")
         local archway_quest = invertika.get_quest_status(obj, "selphi_timlet_archway_quest")
         if (archway_quest == 0) then return false end
-        if (archway_quest == -1) then arwchay_quest = 0 end
+        if (archway_quest == -1) then archway_quest = 0 end
         mana.being_say(obj, "Ich habe den Wegpunkt passiert")
         mana.being_say(obj, archway_quest)
         if(archway_quest % 2 == 1) then
@@ -987,7 +987,7 @@ function waypoint_archway_2(obj, arg)
         invertika.init_quest_status(obj, "selphi_timlet_archway_quest")
         local archway_quest = invertika.get_quest_status(obj, "selphi_timlet_archway_quest")
         if (archway_quest == 0) then return false end
-        if (arwchay_quest == -1) then arwchay_quest = 0 end
+        if (arwchay_quest == -1) then archway_quest = 0 end
         mana.being_say(obj, "Ich habe den Wegpunkt passiert")
         mana.being_say(obj, archway_quest)
         if(archway_quest % 2 == 0) then
