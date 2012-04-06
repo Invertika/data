@@ -30,11 +30,11 @@ function maedchen_talk(npc, ch)
     local quest_var = invertika.get_quest_status(ch, queststring)
     
     if quest_var == 0 then
-        do_message(npc, ch, "Das da hinter uns ist der Große Felerbeheber.")
-        do_message(npc, ch, "Wie gerne würde ich seine Statue mit einer Blum dekorieren.")
+        do_message(npc, ch, "Das da hinter uns ist der Große Fehlerbeheber.")
+        do_message(npc, ch, "Wie gerne würde ich seine Statue mit einer Blume dekorieren.")
         do_message(npc, ch, "Leider wachsen bei uns keine.")
         do_message(npc, ch, "Und einfach rausgehen ist nicht.")
-        do_message(npc, ch, "Unsere Augen ahben sich zu stark an die hier unten herschende Dunkelheit gewhönt, sagt zumindest jeder..")
+        do_message(npc, ch, "Unsere Augen haben sich zu stark an die hier unten herrschende Dunkelheit gewöhnt, sagt zumindest jeder..")
         do_message(npc, ch, "Du siehst aus wie jemand, der von weit herkommt.")
         do_message(npc, ch, "Würdest du mir bitte eine bringen?")
     
