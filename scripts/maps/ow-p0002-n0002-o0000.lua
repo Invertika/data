@@ -24,7 +24,7 @@ atinit(function()
   create_inter_map_warp_trigger(78, 90, 80, 68) --- Intermap warp
   sign.create_sign(147, 79, "Denkmal des großen Fehlerbehebers")
   
-  mana.trigger_create(36 * TILESIZE, 97 * TILESIZE, 2 * TILESIZE, 2 * TILEISZE, "statue_trigger", true);
+  mana.trigger_create(36 * TILESIZE, 97 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "statue_trigger", true);
   
   create_npc("Statue", 1, 36 * TILESIZE + 16, 93 * TILESIZE + 16, statue_talk, nil)
 end)
