@@ -63,7 +63,7 @@ function statue_talk(npc, ch)
     
     if quest_var == 1 then
         do_message(npc, ch, "Gut")
-        local needed_kills = math.random(1, 10) * mana.chr_get_kill_count(ch, 14) / 10 -- Sandwürmer müssen gekillt werden. Hier sollte eigentlich mit dem level gerechnet werden. Ich (Postremus) fand aber keine Funktion, die genau dies anbietet.
+        local needed_kills = math.random(1, 10) * ( mana.chr_get_kill_count(ch, 14) + ) / 10 -- Sandwürmer müssen gekillt werden. Hier sollte eigentlich mit dem level gerechnet werden. Ich (Postremus) fand aber keine Funktion, die genau dies anbietet.
         do_message(npc, ch, string.format("Töte bitte %d Sandwürmer", needed_kills))
         -- Set Quest
         invertika.set_quest_status(ch, queststring, 2)
@@ -80,7 +80,7 @@ function statue_talk(npc, ch)
     
     if quest_var == 2 and curr_kills < quest_var_needed then
         do_message(npc, ch, string.format("Was wagst du es, hier zu stehen, obwohl dir noch %d Sandwürmer fehlen?", quest_var_needed - curr_kills))
-    elseif quest_var == 2 and curr_kills > quest_var_needed then
+    elseif quest_var == 2 and curr_kills >= quest_var_needed then
         -- Set Quest
         invertika.set_quest_status(ch, queststring, 3)
         do_message(npc, ch, "Du hast genügend Sandwürmer getötet.")
