@@ -93,6 +93,7 @@ function statue_talk(npc, ch)
         do_message(npc, ch, "Du darfst passieren.")
         mana.chr_warp(ch, nil, 38 * TILESIZE + 16, mana.posY(ch))
     end
+    do_npc_close(npc, ch)
 end
 
 function statue_trigger(ch, id)
