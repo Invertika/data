@@ -65,3 +65,4 @@ function maedchen_talk(npc, ch)
     end
     do_npc_close(npc, ch)
 end
+
