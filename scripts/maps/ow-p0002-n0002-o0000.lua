@@ -91,21 +91,13 @@ function statue_talk(npc, ch)
     
     if quest_var == 3 then
         do_message(npc, ch, "Du darfst passieren.")
+        mana.chr_warp(ch, nil, 38 * TILESIZE + 16, mana.posY(ch))
     end
 end
 
 function statue_trigger(ch, id)
-    
-    queststring = "monument-of-bugfixer-entry-statue-quest"
-    --Init Quest
-    invertika.init_quest_status(ch, queststring)
-    --Get Quest
-    local quest_var = invertika.get_quest_status(ch, queststring)
-    
-    if quest_var < 3 then
-        mana.chatmessage(ch, "Ab hier beginnt das Denkmal des großen Fehlerbehebers.")
-        mana.chatmessage(ch, "Du darfst erst passieren, sobald du dich als würdig erwiesen hast!")
-        mana.chatmessage(ch, "Rede mit mir.")
-        mana.chr_warp(ch, nil, 33 * TILESIZE + 16, mana.posY(ch))
-    end
+    mana.chatmessage(ch, "Ab hier beginnt das Denkmal des großen Fehlerbehebers.")
+    mana.chatmessage(ch, "Du darfst erst passieren, sobald du dich als würdig erwiesen hast!")
+    mana.chatmessage(ch, "Rede mit der Statue.")
+    mana.chr_warp(ch, nil, 33 * TILESIZE + 16, mana.posY(ch))
 end
