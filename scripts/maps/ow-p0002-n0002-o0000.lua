@@ -78,9 +78,9 @@ function statue_talk(npc, ch)
     local curr_kills = mana.chr_get_kill_count(ch, 14) - quest_var_killed
     
     
-    if quest_var == 2 and curr_kills < quest_var_needed
+    if quest_var == 2 and curr_kills < quest_var_needed then
         do_message(npc, ch, string.format("Was wagst du es, hier zu stehen, obwohl dir noch %d Sandwürmer fehlen?", quest_var_needed - curr_kills))
-    elseif quest_var == 2 and curr_kills > quest_var_needed
+    elseif quest_var == 2 and curr_kills > quest_var_needed then
         -- Set Quest
         invertika.set_quest_status(ch, queststring, 3)
         do_message(npc, ch, "Du hast genügend Sandwürmer getötet.")
