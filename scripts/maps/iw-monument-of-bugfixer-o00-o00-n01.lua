@@ -16,7 +16,7 @@ atinit(function()
     nethek.create_netheksaeule(47 * TILESIZE, 8 * TILESIZE + 16)
     
     --TODO: bessere Namen
-    create_npc("kleines Mädchen", 1, 48 * TILESIZE + 16, 16 * TILESIZE + 16, maedchen_talk, nil)
+    create_npc("Priscilla", 18, 48 * TILESIZE + 16, 16 * TILESIZE + 16, maedchen_talk, nil)
     
 end)
 
