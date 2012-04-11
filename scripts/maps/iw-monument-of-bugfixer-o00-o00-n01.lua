@@ -16,11 +16,11 @@ atinit(function()
     nethek.create_netheksaeule(47 * TILESIZE, 8 * TILESIZE + 16)
     
     --TODO: bessere Namen
-    create_npc("Priscilla", 18, 48 * TILESIZE + 16, 16 * TILESIZE + 16, maedchen_talk, nil)
+    create_npc("Priscilla", 18, 48 * TILESIZE + 16, 16 * TILESIZE + 16, priscilla_talk, nil)
     
 end)
 
-function maedchen_talk(npc, ch)
+function priscilla_talk(npc, ch)
     local queststring = "monument_of_bugfixer_flower_quest"
     
     --Init Quest
