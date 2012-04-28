@@ -66,7 +66,6 @@ function enla_talk(npc, ch)
               "Bis Bald",
               "Beehren sie uns bald wieder",
               "Bis irgendwann.",
-              "Verschwinde!",
               "Ciao"))
               break
         end

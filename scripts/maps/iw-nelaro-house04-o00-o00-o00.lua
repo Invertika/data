@@ -29,7 +29,7 @@ end)
 
 function koch_talk(npc, ch)
     do_message(npc, ch, invertika.get_random_element(
-      "Ein Ei + noch  ein Ei + Brattpfanne = Spiegelei",
+      "Ein Ei + noch ein Ei + Brattpfanne = Spiegelei",
       "Bei der Hitze hier kommt man leicht ins schwitzen. Musst viel trinken."))
     do_npc_close(npc, ch)
     end
