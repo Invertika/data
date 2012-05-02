@@ -156,7 +156,7 @@ function chris_talk(npc, ch)
         end
     end
     
-    if queststring_ice == 1 then
+    if quest_var_ice == 1 then
         if mana.chr_inv_count(ch, 30029) then
             do_message(npc, ch, "Ich bin dir sehr dankbar.")
             invertika.add_money(ch, 400)
@@ -167,7 +167,7 @@ function chris_talk(npc, ch)
         end
     end
     
-    if queststring_ice == 2 then
+    if quest_var_ice == 2 then
         do_message(npc, ch, "Hi.")
     end
     
@@ -233,7 +233,7 @@ function estjdian_talk(npc, ch)
         invertika.set_quest_status(ch, queststring, 4) -- Quest angenommen und Behlonung vom Estjdian kassiert
     end
     
-    if quest_var == 4 or quest_var == 5 then
+    if quest_var >= 4 then
         do_message(npc, ch, "Hoffentlich bessert er sich.")
     end
     do_npc_close(npc, ch)
