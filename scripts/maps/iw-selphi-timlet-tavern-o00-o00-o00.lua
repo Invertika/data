@@ -58,7 +58,7 @@ function chodar_talk(npc, ch)
                             do_message(npc, ch, "Ahw. Komm wieder wenn du einen kennst!")
                             break
                         elseif v2 == 2 then
-                            do_message(npc, ch, "Du? Was solls. Hier ist ein Brief. Gib ihm den König. Und Wehe dir! Ich weiß ob du ihn abgeliefert hast!")
+                            do_message(npc, ch, "Du? Was solls. Hier ist ein Brief. Gib ihn den König. Und Wehe dir! Ich weiß ob du ihn abgeliefert hast!")
                             invertika.add_items(ch, 40027, 1, "Brief an den König")
                             set_qstatus(3)
                             break
