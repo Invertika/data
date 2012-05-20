@@ -10,5 +10,4 @@ function use(user)
       "Wieviel ist sieben mal sechs?",
       "Morgen schwebe ich!"))
     mana.effect_create(2, user)
-	mana.bein_walk(user, math.random(-3 * TILESIZE, 3 * TILESIZE), math.random(-3 * TILESIZE, 3 * TILESIZE), 6);
 end
