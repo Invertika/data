@@ -181,7 +181,7 @@ function valaia_talk(npc, ch)
     
     do_message(npc, ch, "Gut du hast genug gehandelt. Neben dem NPC Handel gibt es noch den Handel mit anderen Spielern. Um mit einem Spieler zu handeln klicke mit der rechten Maustaste auf ihn und wähle Handeln aus dem Menü aus.")
     
-    do_message(npc, ch, "Daraufhin öffnet sich ein Fenster. Zusätzlich solltest du das Inventarfenster öffnen. Wähle nun ein Item aus und drücke im Handelsfenster auf Hinzufügen. Dadurch wird das Item dem Handel hinzugefügt. Wenn du denn Handel beenden möchtest so klicke auf Vorschlagen und dann auf Bestätigen. Der Handel ist damit abgeschlossen.")
+    do_message(npc, ch, "Daraufhin öffnet sich ein Fenster. Zusätzlich solltest du das Inventarfenster öffnen. Wähle nun ein Item aus und drücke im Handelsfenster auf Hinzufügen. Dadurch wird das Item dem Handel hinzugefügt. Wenn du den Handel beenden möchtest so klicke auf Vorschlagen und dann auf Bestätigen. Der Handel ist damit abgeschlossen.")
     
     do_message(npc, ch, "Ja das wars auch schon zum Thema Handel.")
     do_npc_close(npc, ch)
