@@ -171,9 +171,9 @@ function valaia_talk(npc, ch)
                                      "Nichts danke.")
                                    
         if v == 1 then
-            mana.npc_trade(npc, ch, false, { {10001, 10, 20} })
+            mana.npc_trade(npc, ch, false, { {10001, 10, 20}, {30001, 999, 300}, {40028, 999, 500}, {40005, 999, 30} })
         elseif v == 2 then
-            mana.npc_trade(npc, ch, true, { {10001, 10, 20} })
+            mana.npc_trade(npc, ch, true, { {10001, 10, 20}, {30001, 999, 30}, {40028, 999, 50}, {40005, 999, 30} })
         elseif v == 3 then
             break
         end
