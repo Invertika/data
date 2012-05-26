@@ -288,8 +288,12 @@ function wache_talk(npc, ch)
 end
 
 function wache_trigger(ch, id)
+    local quest_string = "burg_cedric_guard_macguffin"
+    invertika.init_quest_status(ch, quest_string)
+    local q_status = invertika.get_quest_status(ch, quest_string)
+    
     if mana.being_type(ch) ~= TYPE_MONSTER then
-        if mana.chr_inv_count(ch, 40047) == 0 then
+        if mana.chr_inv_count(ch, 40047) == 0 and q_status <= 1 then
             local x = mana.posX(ch)
             mana.chr_warp(ch, nil, x, 180 * TILESIZE + 16)
             if x < 102 * TILESIZE + 16 then
