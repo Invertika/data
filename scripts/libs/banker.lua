@@ -77,7 +77,7 @@ function bank_pay_money_to_account_dlg(npc, ch, money)
 		mana.chr_money_change(ch, -money)
 		local acc_bal = bank_get_account_balance(ch) 
 		mana.chr_set_quest(ch, "bank_account_balance", acc_bal+money)
-		do_message(npc, ch, string.format("Das Geld (%d aki) wurde auf dein Konto eingezahlt!"), money)
+		do_message(npc, ch, string.format("Es wurden %d aki auf dein Konto eingezahlt!"), money)
 	else
 		do_message(npc, ch, "Soviel Geld hast du nicht!")	
 	end
@@ -95,7 +95,7 @@ function bank_get_money_from_account_dlg(npc, ch, money)
 		mana.chr_money_change(ch, money)
 		local new_money=acc_bal-money
 		mana.chr_set_quest(ch, "bank_account_balance",  new_money)
-		do_message(npc, ch, "Das Geld wurde dir ausgezahlt!")
+		do_message(npc, ch, string.format("Es wurden dir %d aki ausgezahlt!"), money)
 	else
 		do_message(npc, ch, "Soviel Guthaben hast du nicht!")
 	end
