@@ -96,6 +96,7 @@ function delegan_talk(npc, ch)
       "Ach herje... wo war noch gleich der eingebaute Geheimraum?!",
       "Muh, Muh, Muh, macht die Kuh, Mäh, Mäh, Mäh, macht das Schaf, Wuff, Wuff, Wuff, macht der Enzyan... dieses doofe Lied... will mir nicht aus dem Kopf...",
       "Gut, Dann kommt der Berg eben dort hin. Kein Problem. Wird sofort erledigt.",
+	  "Wenn ich mich recht entsinne sagte er... *murmel* Binäre Relation, n-äre Relation Komposition von Relation, die leere Menge ist ein Element der leeren Menge wenn sie voll ist.... verwirrend wenn schlau=falsch, falsch=wahr und wa(h)r nicht existent...",
       "Brauchen sie einen Urwald mit kurzen Lieferzeiten und für wenig Geld?  Nicht verzagen, Mapper fragen."))
     do_npc_close(npc, ch)
 end
