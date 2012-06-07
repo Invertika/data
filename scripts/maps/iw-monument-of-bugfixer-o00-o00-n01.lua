@@ -17,7 +17,7 @@ atinit(function()
     
     --TODO: bessere Namen
     create_npc("Priscilla", 148, 48 * TILESIZE + 16, 16 * TILESIZE + 16, priscilla_talk, nil)
-    
+    create_npc("burgermeister")
 end)
 
 function priscilla_talk(npc, ch)
@@ -66,3 +66,12 @@ function priscilla_talk(npc, ch)
     do_npc_close(npc, ch)
 end
 
+function burgermeister_talk(npc, ch)
+    local queststring = "monument_of_bugfixer_flower_quest"
+    
+    --Init Quest
+    invertika.init_quest_status(ch, queststring)
+    
+    --Get Quest
+    local quest_var_flower = invertika.get_quest_status(ch, queststring)
+end
