@@ -18,27 +18,26 @@ end)
 function umach_talk(npc, ch)
     local queststring = "monument_of_bugfixer_flower_quest"
     local queststring_kill = "monument_of_bugfixer_kill_quest"
-    local queststring_kill_needed = "monument_of_bugfixer_kill_quest_needed"
-    local queststring_curr_kills = "monument_of_bugfixer_kill_quest_current"
+    local queststring_curr_kills_bat = "monument_of_bugfixer_kill_quest_current_bat"
+    local queststring_curr_kills_vampire_bat = "monument_of_bugfixer_kill_quest_current_vampire_bat"
     
     --Init Quest
     invertika.init_quest_status(ch, queststring)
     invertika.init_quest_status(ch, queststring_kill)
-    invertika.init_quest_status(ch, queststring_kill_needed)
     invertika.init_quest_status(ch, queststring_curr_kills)
-    
+    invertika.init_quest_status(ch, queststring_curr_kills_vampire_bat);
     
     --Get Quest
     local quest_var_flower = invertika.get_quest_status(ch, queststring)
     local quest_var_kill = invertika.get_quest_status(ch, queststring_kill)
-    local quest_var_kill_need = invertika.get_quest_status(ch, queststring_kill_needed)
-    local quest_var_curr_kills = invertika.get_quest_stauts(ch, queststring_curr_kills)
+    local quest_var_curr_kills_bat = invertika.get_quest_stauts(ch, queststring_curr_kills_bat)
+    local quest_var_curr_kills_vampire_bat = invertika.qet_quest_status(ch, queststring_curr_kills_vampire_bat)
     
     if quest_var_flower == 0 then
         do_message(npc, ch, "Fremde hatten wir hier lange nicht mehr.")
         do_message(npc, ch, "Deshalb können wir dir nicht vertrauen.")
-        do_message(npc, ch, "Wenn du aber jemanden heir findest, der dir vertraut, rede ich mti dir.")
-    elseif quest_var_flower == 1 then
+        do_message(npc, ch, "Wenn du aber jemanden hier findest, der dir vertraut, rede ich mit dir.")
+    elseif quest_var_flower == 1 and quest_var_kill == 0 then
         do_message(npc, ch, "Ah, du hast anscheinend eine Verbündete gefunden..")
         do_message(npc, ch, "Und dabei rein zufällig meine Tochter erwischt.")
         do_message(npc, ch, "Wir sind hier nie herausgegangen, da unsere Vorfahren den Fehlerbeheber einen Eid geleistet haben.")
@@ -48,9 +47,23 @@ function umach_talk(npc, ch)
         do_message(npc, ch, "Monster haben die äußere Höhle in ihren Besitz genohmen.")
         do_message(npc, ch, "Du siehst aus wie ein Kämpfer, bitte töte ein paar der Bestien.")
         do_message(npc, ch, "Um die 10 von jeder Sorte dürfte reichen..")
-        do_message(npc, ch, "Gehe bitte zu unserem Bürgermeister, er dürfte etwas mit dir zu bereden haben.")
+    
         --Set Quest
-        invertika.set_quest_status()
+        invertika.set_quest_status(ch, queststring_kill, 1)
+        invertika.set_quest_status(ch, queststring_curr_kills_bat, mana.chr_get_kill_count(ch, 8))
+        invertika.set_quest_status(ch, queststring_curr_kills_vampire_bat, mana.chr_get_kill_count(ch, 32))
+    elseif quest_var_kill == 1 then
+        local killed = (mana.chr_get_kill_count(ch, 8) - quest_var_curr_kills_bat) + (mana.chr_get_kill_count(ch, 32) - quest_var_curr_kills_vampire_bat)
+        if killed >= 20 then
+            do_message(npc, ch, "Ah, du hast es geschafft!");
+            do_message(npc, ch, "Gehe bitte zu unserem Bürgermeister, er dürfte etwas mit dir zu bereden haben.")
+            ---Set Quest
+            invertika.set_quest_status(ch, queststring_kill, 2)
+        else killed < 20 then
+            do_message(npc, ch, "Nur noch ein paar, bitte")
+        end
+    elseif quest_var_kill == 2 then
+        do_message(npc, ch, "Gehe zum Bürgermeister!")
     end
     do_npc_close(npc, ch)
 end
