@@ -59,7 +59,7 @@ function umach_talk(npc, ch)
             do_message(npc, ch, "Gehe bitte zu unserem Bürgermeister, er dürfte etwas mit dir zu bereden haben.")
             ---Set Quest
             invertika.set_quest_status(ch, queststring_kill, 2)
-        else killed < 20 then
+        else
             do_message(npc, ch, "Nur noch ein paar, bitte")
         end
     elseif quest_var_kill == 2 then
