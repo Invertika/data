@@ -30,6 +30,7 @@ atinit(function()
     sign.create_sign(104, 185, sign_entrance) --- Schild Burgeingang
 
     mana.trigger_create(101 * TILESIZE, 176 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "wache_trigger", 1, true)
+    mana.trigger_create(101 * TILESIZE, 183 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, invertika.init_quest_status(ch, "burg_cedric_guard_macguffin"), 1, true)
 
     diem = create_npc("Diem", 139, 60 * TILESIZE + 16, 160 * TILESIZE + 16, diem_talk, npclib.walkaround_wide)
     invertika.create_npc_talk_random(diem,
@@ -292,7 +293,7 @@ function wache_trigger(ch, id)
     invertika.init_quest_status(ch, quest_string)
     local q_status = invertika.get_quest_status(ch, quest_string)
     
-    if mana.being_type(ch) ~= TYPE_MONSTER then
+    if mana.being_type(ch) == TYPE_CHARACTER then
         if mana.chr_inv_count(ch, 40047) == 0 and q_status <= 1 then
             local x = mana.posX(ch)
             mana.chr_warp(ch, nil, x, 180 * TILESIZE + 16)
