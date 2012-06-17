@@ -91,7 +91,7 @@ function statue_talk(npc, ch)
     
     if quest_var == 3 then
         do_message(npc, ch, "Du darfst passieren.")
-        mana.chr_warp(ch, nil, 38 * TILESIZE + 16, mana.posY(ch))
+        mana.chr_warp(ch, nil, 38 * TILESIZE + 16, 97 * TILESIZE + 16)
     end
     do_npc_close(npc, ch)
 end
