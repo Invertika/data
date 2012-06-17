@@ -58,9 +58,9 @@ function vodel_talk(npc, ch)
     
     if quest_var_vodel == 5 then
         local curr_time = os.date("*t")
-        local next_round1_try = os.time{year=d.year, month=d.month, day=15,
+        local next_round1_try = os.time{year=curr_time.year, month=curr_time.month, day=15,
                           hour=0, min=00, sec=0}
-        if os.difftime(os.time(), start) > 0 then
+        if os.difftime(os.time(), next_round1_try) > 0 then
             --Set Quest
             invertika.set_quest_status(ch, queststring_vodel, 4) --Es wurde mit Vodel geredet, die Quest angenommen, und die erste Runde wird gestartet.
             do_message(npc, ch, "Du konntest Lange genug über die Frage grübeln, du darfst es erneut versuchen.")
