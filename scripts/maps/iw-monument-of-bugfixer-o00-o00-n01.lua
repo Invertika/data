@@ -17,7 +17,7 @@ atinit(function()
     
     --TODO: bessere Namen
     create_npc("Priscilla", 148, 48 * TILESIZE + 16, 16 * TILESIZE + 16, priscilla_talk, nil)
-    create_npc("burgermeister")
+    --create_npc("burgermeister")
 end)
 
 function priscilla_talk(npc, ch)
