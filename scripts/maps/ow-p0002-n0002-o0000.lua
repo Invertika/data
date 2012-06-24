@@ -97,8 +97,10 @@ function statue_talk(npc, ch)
 end
 
 function statue_trigger(ch, id)
-    mana.chatmessage(ch, "Ab hier beginnt das Denkmal des großen Fehlerbehebers.")
-    mana.chatmessage(ch, "Du darfst erst passieren, sobald du dich als würdig erwiesen hast!")
-    mana.chatmessage(ch, "Rede mit der Statue.")
-    mana.chr_warp(ch, nil, 33 * TILESIZE + 16, mana.posY(ch))
+    if mana.being_type(ch) == TYPE_CHARACTER then
+        mana.chatmessage(ch, "Ab hier beginnt das Denkmal des großen Fehlerbehebers.")
+        mana.chatmessage(ch, "Du darfst erst passieren, sobald du dich als würdig erwiesen hast!")
+        mana.chatmessage(ch, "Rede mit der Statue.")
+        mana.chr_warp(ch, nil, 33 * TILESIZE + 16, mana.posY(ch))
+    end
 end
