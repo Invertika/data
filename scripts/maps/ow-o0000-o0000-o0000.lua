@@ -210,7 +210,6 @@ end
 
      if count == 0 then
        local x = mana.posX(ch)
-       local y = mana.posY(ch)
        mana.chr_warp(ch, mana.get_map_id(), x, 70 * TILESIZE)
 
        if (id == 1) then
