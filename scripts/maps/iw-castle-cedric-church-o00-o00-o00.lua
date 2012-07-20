@@ -19,6 +19,6 @@ function echver_talk(npc, ch)
     do_message(npc, ch, invertika.get_random_element(
       "Ich bin der Priester dieser Stadt.",
       "Geheiligt sei Invertika, Amoneus und die Bewohner dieses Planeten."
-      "Leider besuchen die Jungen Leute die Kirchen des Landes nicht mehr. Nur noch bei wichtigen Festen sind sie anwesend.");
+      "Leider besuchen die Jungen Leute die Kirchen des Landes nicht mehr. Nur noch bei wichtigen Festen sind sie anwesend."));
     do_npc_close(npc, ch)
 end
