@@ -24,7 +24,7 @@ atinit(function()
     create_npc("Ghang", 60, 20 * TILESIZE + 16, 37 * TILESIZE + 16, ghang_talk, nil)
     create_npc("Estform", 117, 2 * TILESIZE + 16, 31 * TILESIZE + 16, estform_talk, nil)
     create_npc("Ingawu", 17, 19 * TILESIZE + 16, 29 * TILESIZE + 16, ingawu_talk, nil)
-    create_npc("Ackona", 4, 32 * TILESIZE + 16, 30 * TILESIZE + 16, nil, nil)
+    create_npc("Ackona", 4, 32 * TILESIZE + 16, 30 * TILESIZE + 16, ackona_talk, nil)
 end)
 
 function koch_talk(npc, ch)
@@ -52,5 +52,12 @@ function ingawu_talk(npc, ch)
     do_message(npc, ch, invertika.get_random_element(
       "Willkommen in unserem bescheidenen Heim, hast Du schon mit den anderen gesprochen?",
       "Manchmal schmeiss ich den Riemen auf die Orgel, dann gehts aber sowas von ab hier!"))
+    do_npc_close(npc, ch)
+end
+
+function ackona_talk(npc, ch)
+    do_message(npc, ch, invertika.get_random_element(
+      "Hi, wenn Dir auch so warm ist hier drinnen hilft es vielleicht, z.B. Deine Waffe abzulegen.",
+      "Der Kamin ist selbstverständlich gerade nicht in Betrieb, es ist ja schließlich warm genug hier drinnen."))
     do_npc_close(npc, ch)
 end
