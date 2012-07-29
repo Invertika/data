@@ -12,7 +12,7 @@ require "scripts/lua/npclib"
 
 
 atinit(function()
-    npc_create("Echver", 57, 40 * TILESIZE + 16, 22 * TILESIZE + 16, echver_talk, nil)
+    create_npc("Echver", 57, 40 * TILESIZE + 16, 22 * TILESIZE + 16, echver_talk, nil)
 end)
 
 function echver_talk(npc, ch)
