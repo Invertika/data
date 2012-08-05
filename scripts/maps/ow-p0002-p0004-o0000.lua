@@ -87,7 +87,7 @@ function issen_talk(npc, ch)
         if rest_time >= 0 and rest_time <= 120 and mana.chr_inv_count(ch, 40052) > 0 then
             do_message(npc, ch, "Danke")
             invertika.add_items(ch, 40052, -1, "Schlüssel")
-            mana.chr_money_change(chr, 300)
+            invertika.add_money(ch, 300)
             --Set Quests
             invertika.set_quest_status(ch, queststring, 2)
         elseif rest_time >= 0 and rest_time <= 120 and mana.chr_inv_count(ch, 40052) == 0 then
