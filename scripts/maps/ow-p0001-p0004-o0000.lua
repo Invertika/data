@@ -18,6 +18,7 @@ require "scripts/lua/npclib"
 require "scripts/libs/nethek"
 require "scripts/libs/sign"
 require "scripts/libs/warp"
+require "scripts/libs/invertika"
 
 atinit(function()
  create_inter_map_warp_trigger(77, 87, 75, 65) --- Intermap warp
@@ -77,7 +78,7 @@ function ausgang_trigger(ch, id)
     if mana.being_type(ch) == TYPE_CHARACTER then
         if id == 1 then
             if mana.chr_inv_count(ch, 40049) > 0 then
-                mana.chr_inv_change(ch, 40049, -1)
+                invertika.add_items(ch, 40049, -1, "Ticket für den Greganyzoo");
             end
             mana.being_say(wache_ausgang, "Tschüß.")
         elseif id == 2 then

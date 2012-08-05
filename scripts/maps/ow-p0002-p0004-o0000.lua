@@ -86,7 +86,7 @@ function issen_talk(npc, ch)
         local rest_time = os.time(t) - quest_var_time
         if rest_time >= 0 and rest_time <= 120 and mana.chr_inv_count(ch, 40052) > 0 then
             do_message(npc, ch, "Danke")
-            mana.chr_inv_change(ch, 40052, -1)
+            invertika.add_items(ch, 40052, -1, "Schlüssel")
             mana.chr_money_change(chr, 300)
             --Set Quests
             invertika.set_quest_status(ch, queststring, 2)
@@ -100,8 +100,7 @@ function issen_talk(npc, ch)
             mana.being_damage(ch, 50, 50, 1, DAMAGE_PHYSICAL, ELEMENT_NEUTRAL)
             mana.chatmessage(ch, "Issen hat dich geohrfeigt.")
             do_message(npc, ch, "Sei nächstes mal schneller.")
-            mana.chr_inv_change(ch, 40052, -1)
-            
+            invertika.add_items(ch, 40052, -1, "Schlüssel")
             --Set Quests
             invertika.set_quest_status(ch, queststring, 2)
         end
@@ -115,7 +114,7 @@ function issen_talk(npc, ch)
 end
 
 function key_trigger(ch, id)
-    if mana.being_type(ch) ~= TYPE_MONSTER then
+    if mana.being_type(ch) == TYPE_CHARACTER then
         local queststring = "lauria_losed_key_quest"
         --Init Quest
         invertika.init_quest_status(ch, queststring)
@@ -124,7 +123,7 @@ function key_trigger(ch, id)
         
         if quest_var == 1 then
             if (mana.chr_inv_count(ch, 40052) == 0) then
-                mana.chr_inv_change(ch, 40052, 1)
+                invertika.add_items(ch, 40052, 1, "Schlüssel")
             end
         end
     end
