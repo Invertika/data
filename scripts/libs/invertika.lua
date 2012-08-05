@@ -122,19 +122,19 @@ function add_money(ch, amount)
     end
 end
 
---- Fügt Charakter ch number Items der ID id hinzu
+--- Fügt Charakter ch amount Items der ID id hinzu
 -- @param ch Der Spieler dem das Item gegeben werden soll.
 -- @param id Id des Items.
--- @param number Anzahl der Items.
+-- @param amount Anzahl der Items.
 -- @param name Name des Items (sollte auf Itemnamen gesetzt werden)
-function add_items(ch, id, number, name)
-    if number == 0 then return end -- prevent spamming the player
-    local success = mana.chr_inv_change(ch, id, number)
+function add_items(ch, id, amount, name)
+    if amount == 0 then return end -- prevent spamming the player
+    local success = mana.chr_inv_change(ch, id, amount)
     if success then
-        if number > 0 then
-            mana.chatmessage(ch, string.format(ITEM_ADD_TEXT, number, name))
-        elseif number < 0 then
-            mana.chatmessage(ch, string.format(ITEM_REMOVE_TEXT, -number, name))
+        if amount > 0 then
+            mana.chatmessage(ch, string.format(ITEM_ADD_TEXT, amount, name))
+        elseif amount < 0 then
+            mana.chatmessage(ch, string.format(ITEM_REMOVE_TEXT, -amount, name))
         else
             -- 0 Items werden hinzugefügt/geändert
             -- Aber wer sollte so etwas tun?
