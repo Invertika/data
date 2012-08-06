@@ -627,7 +627,7 @@ function axetrainer_talk(npc, ch)
   if answer == 1 then
     local newexp = mana.chr_get_exp(ch, SKILL_WEAPON_AXE) + 100
     local nextlevel = mana.exp_for_level(mana.being_get_attribute(ch, SKILL_WEAPON_AXE) + 1)
-    mana.chr_give_exp(ch, SKILL_WEAPON_AXE, 100)
+    invertika.add_exp(ch, SKILL_WEAPON_AXE, 100, 0)
     local message = "I gave you 100 axe exp."
     if newexp > nextlevel then
       message = message.." This should be enough to reach the next level."

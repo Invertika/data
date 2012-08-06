@@ -281,7 +281,7 @@ function bruce_talk(npc, ch)
   elseif get_qstatus()==3 and mana.chr_inv_count(ch, 40005) >= 20 then
     do_message(npc, ch, "Fabelhaft, du hast 20 Madenschleim gesammelt! Danke für deine Hilfe.")
     invertika.add_items(ch, 40005, -20, "Madenschleim")
-    mana.chr_give_exp(ch, 100, 750)
+    invertika.add_exp(ch, 100, 750, 0)
     mana.chatmessage(ch, "Du hast 750 Exp im unbewaffneten Kampf erhalten!")
     set_qstatus(4)
   elseif get_qstatus()==4 then
