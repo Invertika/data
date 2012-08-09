@@ -9,7 +9,7 @@
 
 
 require "scripts/lua/npclib"
-
+require "scripts/libs/invertika"
 
 atinit(function()
     create_npc("Echver", 57, 40 * TILESIZE + 16, 22 * TILESIZE + 16, echver_talk, nil)
