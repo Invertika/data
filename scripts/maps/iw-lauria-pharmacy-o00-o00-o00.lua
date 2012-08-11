@@ -38,5 +38,6 @@ function naltia_talk(npc, ch)
             break
         end
     end
-    do_message(npc, ch, "Tschüß");
+    do_message(npc, ch, "Tschüß")
+    do_npc_close(npc, ch)
 end
