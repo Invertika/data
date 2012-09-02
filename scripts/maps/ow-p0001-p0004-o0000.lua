@@ -40,7 +40,7 @@ atinit(function()
 end)
 
 function wache_talk(npc, ch)
-    if mana.chr_inv_count(ch, 40049) > 0 then
+    if mana.chr_inv_count(ch, 40049) == 0 then
         do_message(npc, ch, "Um den Zoo zu betreten, brauchst du eine Eintrittskarte.")
 	else
 	    do_message(npc, ch, "Viel Spaß.")
