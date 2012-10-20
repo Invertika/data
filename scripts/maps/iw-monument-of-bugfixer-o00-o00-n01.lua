@@ -57,8 +57,12 @@ function priscilla_talk(npc, ch)
             do_message(npc, ch, "Ich danke dir.")
             --Set Quest
             invertika.set_quet_status(ch, queststring, 2)
+			invertika.add_items(ch, 40053, -1, "Blume")
         elseif mana.chr_inv_count(ch, 40053) == 0 then
-            do_message(npc, ch, "Bitte, bringe mir die Blume.")
+            do_message(npc, ch, invertika.get_random_element(
+			  "Bitte, bringe mir die Blume.",
+			  "Ich würde in einer Art 'Garten' nach einer Blume fragen."
+			  ))
         end
     elseif quest_var == 2 then
         do_message(npc, ch, "Sieht die Statue nicht schön aus mit der Blume?")
