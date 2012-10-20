@@ -41,6 +41,22 @@ function hans_talk(npc, ch)
       "Da drüben haben wir ein kleines Problem mit dieser Blume. Schrecklich.",
       "Jetzt steht diese Blume dort schon seit 5 Tagen und wir haben noch kein Mittel gegen sie gefunden.",
       "Das mit der Blume hätte nicht passieren dürfen."))
+	
+	local queststring = "monument_of_bugfixer_flower_quest"
+    
+    --Init Quest
+    invertika.init_quest_status(ch, queststring)
+    
+    --Get Quest
+    local quest_var = invertika.get_quest_status(ch, queststring)
+	
+	if (quest_var == 1)
+	{
+		do_message(npc, ch, "Wie,du brauchst eine Blume?")
+		do_message(npc, ch, "Hier, die schenke ich dir.")
+		invertika.add_items(ch, 40053, 1, "Blume");
+	}
+	
     do_npc_close(npc, ch)
 end
 
