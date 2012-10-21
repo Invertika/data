@@ -52,7 +52,7 @@ function hans_talk(npc, ch)
 	
 	if (quest_var == 1)
 	{
-		do_message(npc, ch, "Wie,du brauchst eine Blume?")
+		do_message(npc, ch, "Wie, du brauchst eine Blume?")
 		do_message(npc, ch, "Hier, die schenke ich dir.")
 		invertika.add_items(ch, 40053, 1, "Blume");
 	}
