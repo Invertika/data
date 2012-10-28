@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="80" height="55" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="music" value="inside2.ogg"/>
+ </properties>
+ <tileset firstgid="1" name="collision1_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/collision1_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="1025" name="indoor3_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/indoor3_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="2049" name="indoor2_32_32" tilewidth="32" tileheight="32">
+  <image source="../graphics/tiles/indoor2_32_32.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3073" name="indoor1_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/indoor1_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="3585" name="indoor1_32_96" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/indoor1_32_96.png" width="1024" height="960"/>
+ </tileset>
+ <tileset firstgid="3905" name="indoor2_32_64" tilewidth="32" tileheight="64">
+  <image source="../graphics/tiles/indoor2_32_64.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="4417" name="indoor2_32_96" tilewidth="32" tileheight="96">
+  <image source="../graphics/tiles/indoor2_32_96.png" width="1024" height="960"/>
+ </tileset>
+ <layer name="Ground" width="80" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3TsQmAQBBEUQNN7EI70U60WysRu9AW7hBuxBe8cGH4sOfQdScAAAAAAAAA8Kqtr9N6d4rSbtNzMwfsTlHab3lu1oDdKfyvfvp9V22/I2B7gtp+V8D2BP5Xv9b2sf0GAAAAAADgv27z2GckwEQAAA==
+  </data>
+ </layer>
+ <layer name="Ground" width="80" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3DMQ0AMAwDsB5BMijjD2pHGfTrZEuuAgAAAAAAAPhTMks7maXdzAIAAAAAAAAAAGzzAAlUaP3ARAAA
+  </data>
+ </layer>
+ <layer name="Ground" width="80" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3QsQ2AMBAEwQ/sFOi/CVwJUAlQAp/QgBMLMSNdftoIAAAAAAAAAAAA+J+1RLQy+sU3bdltzx36dTmz25W79esy1Yg5t9TRTwAAAAAAAHg9e9wXdMBEAAA=
+  </data>
+ </layer>
+ <layer name="Fringe" width="80" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3QQQkAIAAEwatgJF9q/0IKmkBfwgxsgU0AAAAAAAAAAP7RSjJWfVVP3PHvjX8AAAAAAAAAANsEc2opaMBEAAA=
+  </data>
+ </layer>
+ <layer name="Over" width="80" height="55">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3BMQEAAADCoPVPbQdvoAAAAAAAAAAAAAAAAAAAAAAAPgOgSzqvwEQAAA==
+  </data>
+ </layer>
+ <layer name="Collision" width="80" height="55" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3QwQkAQRACwWHzD/qiOFQoof7S7+4eAAAAAAC/W1m6k376NVpZupN++jVaWbqTfvo1Wlm6k376NVpZupN++jVaWbqTfvotWPsLAAAAAADs+wDXdkt9wEQAAA==
+  </data>
+ </layer>
+ <objectgroup name="Object" width="80" height="55">
+  <object name="External Map Events" type="SCRIPT" x="0" y="0">
+   <properties>
+    <property name="FILENAME" value="scripts/maps/iw-more-mountains-farm-o00-o00-o00.lua"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
