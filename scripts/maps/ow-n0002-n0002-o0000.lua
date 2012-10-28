@@ -50,10 +50,10 @@ function hans_talk(npc, ch)
     --Get Quest
     local quest_var = invertika.get_quest_status(ch, queststring)
 	
-	if (quest_var == 1)
+	if quest_var == 1 then
 		do_message(npc, ch, "Wie, du brauchst eine Blume?")
 		do_message(npc, ch, "Hier, die schenke ich dir.")
-		invertika.add_items(ch, 40053, 1, "Blume");
+		invertika.add_items(ch, 40053, 1, "Blume")
 	end
 	
     do_npc_close(npc, ch)
