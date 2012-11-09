@@ -37,8 +37,8 @@ function bolum_talk(npc, ch)
     end
     
     if quest_var == 7 then
-        do_message(npc, ch, "ah, der alte Vodel hat dich geschickt.")
-        do_message(npc, ch, "Du wilst wahrscheinlich die Antwort auf Blubb wissen")
+        do_message(npc, ch, "Ah, der alte Vodel hat dich geschickt.")
+        do_message(npc, ch, "Du willst wahrscheinlich die Antwort auf Blubb wissen")
         do_message(npc, ch, "Sie lautet blubb")
         do_message(npc, ch, "Richte ihm bitte schöne Grüße von mir aus.")
         
