@@ -21,10 +21,10 @@ require "scripts/libs/warp"
 
 atinit(function()
  create_inter_map_warp_trigger(41, 29, 39, 51) --- Intermap warp
- create_npc("Bolum", 42, 26 * TILESIZE + 16, 59 * TILESIZE + 16, nil, nil)
+ create_npc("Bolum", 42, 26 * TILESIZE + 16, 59 * TILESIZE + 16, bolum_talk, nil)
 end)
 
-function mikel_talk(npc, ch)
+function bolum_talk(npc, ch)
     local queststring = "nelaro_vodel_quests"
     
     --Init Quest
@@ -40,7 +40,7 @@ function mikel_talk(npc, ch)
         do_message(npc, ch, "ah, der alte Vodel hat dich geschickt.")
         do_message(npc, ch, "Du wilst wahrscheinlich die Antwort auf Blubb wissen")
         do_message(npc, ch, "Sie lautet blubb")
-        do_message(npc, ch, "Richte ihm bitte schöne Grüße aus.")
+        do_message(npc, ch, "Richte ihm bitte schöne Grüße von mir aus.")
         
         --Set Quest
         --Set Quest
