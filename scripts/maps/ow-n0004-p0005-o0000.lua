@@ -30,7 +30,7 @@ atinit(function()
     sign.create_sign(104, 185, sign_entrance) --- Schild Burgeingang
 
     mana.trigger_create(101 * TILESIZE, 176 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "wache_trigger", 1, true)
-    mana.trigger_create(101 * TILESIZE, 183 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "wache_cache_trigger", 1, true)
+    ---mana.trigger_create(101 * TILESIZE, 183 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "wache_cache_trigger", 1, true)
 
     diem = create_npc("Diem", 139, 60 * TILESIZE + 16, 160 * TILESIZE + 16, diem_talk, npclib.walkaround_wide)
     invertika.create_npc_talk_random(diem,
