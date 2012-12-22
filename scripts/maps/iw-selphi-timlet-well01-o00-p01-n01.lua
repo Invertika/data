@@ -36,13 +36,13 @@ atinit(function()
     tano[11] = create_npc("Kahlan", 100, 22 * TILESIZE + 16, 29 * TILESIZE + 16, tano11_talk, nil) --- Ta No 11 (Normal f)
 	
     --- Blickrichtungen
-    schedule_in(1, function()
-        mana.being_set_direction(tano[7], DIRECTION_RIGHT)
-        mana.being_set_direction(tano[8], DIRECTION_LEFT)
-        mana.being_set_direction(tano[9], DIRECTION_DOWN)
-        mana.being_set_direction(tano[10], DIRECTION_RIGHT)
-        mana.being_set_direction(tano[11], DIRECTION_LEFT)
-    end)
+    --- schedule_in(1, function()
+    ---     mana.being_set_direction(tano[7], DIRECTION_RIGHT)
+    ---     mana.being_set_direction(tano[8], DIRECTION_LEFT)
+    ---     mana.being_set_direction(tano[9], DIRECTION_DOWN)
+    ---     mana.being_set_direction(tano[10], DIRECTION_RIGHT)
+    ---     mana.being_set_direction(tano[11], DIRECTION_LEFT)
+    --- end)
 	
     --- Waypoints
     --- Ta No 5 (Köchin)
