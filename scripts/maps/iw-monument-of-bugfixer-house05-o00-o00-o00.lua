@@ -24,7 +24,7 @@ function umach_talk(npc, ch)
     --Init Quest
     invertika.init_quest_status(ch, queststring)
     invertika.init_quest_status(ch, queststring_kill)
-    invertika.init_quest_status(ch, queststring_curr_kills)
+    invertika.init_quest_status(ch, queststring_curr_kills_bat)
     invertika.init_quest_status(ch, queststring_curr_kills_vampire_bat)
     
     --Get Quest
