@@ -25,7 +25,7 @@ function umach_talk(npc, ch)
     invertika.init_quest_status(ch, queststring)
     invertika.init_quest_status(ch, queststring_kill)
     invertika.init_quest_status(ch, queststring_curr_kills)
-    invertika.init_quest_status(ch, queststring_curr_kills_vampire_bat);
+    invertika.init_quest_status(ch, queststring_curr_kills_vampire_bat)
     
     --Get Quest
     local quest_var_flower = invertika.get_quest_status(ch, queststring)
