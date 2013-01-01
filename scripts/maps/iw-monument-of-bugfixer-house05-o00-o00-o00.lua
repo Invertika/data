@@ -55,7 +55,7 @@ function umach_talk(npc, ch)
     elseif quest_var_kill == 1 then
         local killed = (mana.chr_get_kill_count(ch, 8) - quest_var_curr_kills_bat) + (mana.chr_get_kill_count(ch, 32) - quest_var_curr_kills_vampire_bat)
         if killed >= 20 then
-            do_message(npc, ch, "Ah, du hast es geschafft!");
+            do_message(npc, ch, "Ah, du hast es geschafft!")
             do_message(npc, ch, "Gehe bitte zu unserem Bürgermeister, er dürfte etwas mit dir zu bereden haben.")
             ---Set Quest
             invertika.set_quest_status(ch, queststring_kill, 2)
