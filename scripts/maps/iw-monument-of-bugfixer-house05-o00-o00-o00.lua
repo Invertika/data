@@ -32,7 +32,9 @@ function umach_talk(npc, ch)
     local quest_var_kill = invertika.get_quest_status(ch, queststring_kill)
     local quest_var_curr_kills_bat = invertika.get_quest_stauts(ch, queststring_curr_kills_bat)
     local quest_var_curr_kills_vampire_bat = invertika.qet_quest_status(ch, queststring_curr_kills_vampire_bat)
-    
+    do_message(npc, ch, "quest_var_flower: "..quest_var_flower)
+    do_message(npc, ch, "quest_var_kill: "..quest_var_kill)
+	
     if quest_var_flower == 0 then
         do_message(npc, ch, "Fremde hatten wir hier lange nicht mehr.")
         do_message(npc, ch, "Deshalb können wir dir nicht vertrauen.")
