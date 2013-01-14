@@ -59,7 +59,7 @@ function get_quest_var_name(secretindex)
 end
 
 function distribute_reward(being, secretindex)
-    chatmessage(being, "Du hast ein Geheimnis gefunden!")
+    chat_message(being, "Du hast ein Geheimnis gefunden!")
     if (secrets[secretindex][3] ~= nil) and (secrets[secretindex][2] ~= 0) then
         invertika.add_money(being, secrets[secretindex][3])
     end

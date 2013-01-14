@@ -59,12 +59,12 @@ end)
      ---local first = get_quest_var(ch, "vacare_first_start")
         
      ---if first=="" then
-     ---chatmessage(ch, "ch id:."..tostring(ch))
-     chatmessage(ch, "Willkommen bei Invertika.")
-     chatmessage(ch, "Zum Bewegen benutze bitte die Cursortasten.")
-     chatmessage(ch, "Um mit NPCs zu reden, klicke mit der rechten Maustaste auf sie.") 
-         chatmessage(ch, "Das Spiel kann auch mit der Maus gesteuert werden.") 
-         chatmessage(ch, "Folge dem Weg und du wirst das Vacare finden.") 
+     ---chat_message(ch, "ch id:."..tostring(ch))
+     chat_message(ch, "Willkommen bei Invertika.")
+     chat_message(ch, "Zum Bewegen benutze bitte die Cursortasten.")
+     chat_message(ch, "Um mit NPCs zu reden, klicke mit der rechten Maustaste auf sie.") 
+         chat_message(ch, "Das Spiel kann auch mit der Maus gesteuert werden.") 
+         chat_message(ch, "Folge dem Weg und du wirst das Vacare finden.") 
          ---chr_set_quest(ch, "vacare_first_start", 1)
      ---end
  end

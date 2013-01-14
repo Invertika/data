@@ -27,7 +27,7 @@ function on_craft(ch, recipe)
     -- uncomment one (but not both!) of the following three lines to enable the
     -- example crafting systems
     
-    chatmessage(ch, "There is no crafting in this game world.")
+    chat_message(ch, "There is no crafting in this game world.")
     --craft_strict(ch, recipe)
     --craft_lax(ch, recipe)
 end
@@ -53,10 +53,10 @@ function craft_strict(ch, recipe)
             8, -2, --take away the iron
             9, -1, --take away the wood
             5, 1 ) -- give a sword
-        chatmessage(ch, "You've crafted a sword")
+        chat_message(ch, "You've crafted a sword")
         return
     end
-    chatmessage(ch, "This wouldn't create anything useful")
+    chat_message(ch, "This wouldn't create anything useful")
 end
 
 -- a primitive example crafting system which doesn't care about item order
@@ -71,10 +71,10 @@ function craft_lax(ch, recipe)
             8, -2, --take away the iron
             9, -1, --take away the wood
             5, 1 ) -- give a sword
-        chatmessage(ch, "You've crafted a sword")
+        chat_message(ch, "You've crafted a sword")
         return
     end
-    chatmessage(ch, "This wouldn't create anything useful")
+    chat_message(ch, "This wouldn't create anything useful")
 end
 
 -- this turns multiple occurences of the same item into one by adding up

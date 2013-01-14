@@ -97,7 +97,7 @@ function issen_talk(npc, ch)
             invertika.set_quest_status(ch, queststring, 2)
         elseif rest_time > 120 and chr_inv_count(ch, 40052) > 0 then
             being_damage(ch, 50, 50, 1, DAMAGE_PHYSICAL, ELEMENT_NEUTRAL)
-            chatmessage(ch, "Issen hat dich geohrfeigt.")
+            chat_message(ch, "Issen hat dich geohrfeigt.")
             npc_message(npc, ch, "Sei nächstes mal schneller.")
             invertika.add_items(ch, 40052, -1, "Schlüssel")
             --Set Quests

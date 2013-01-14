@@ -101,7 +101,7 @@ local ITEM_REMOVE_TEXT = "Du hast %sx %s weniger!"
 function add_exp(character, attribute, amount, optimalLevel)
     if amount == 0 then return end -- prevent spamming the player
     chr_give_exp(character, attribute, amount, optimalLevel)
-    chatmessage(character, "Du hast " + amount + "Erfahrungspunkte erhalten!")
+    chat_message(character, "Du hast " + amount + "Erfahrungspunkte erhalten!")
 end
 
 --- Fügt Character ch amount Aki hinzu (bei negativen Werten wird abgezogen)
@@ -115,9 +115,9 @@ function add_money(ch, amount)
     else
         chr_money_change(ch, amount)
         if amount > 0 then
-            chatmessage(ch, string.format(MONEY_ADD_TEXT, amount))
+            chat_message(ch, string.format(MONEY_ADD_TEXT, amount))
         else
-            chatmessage(ch, string.format(MONEY_REMOVE_TEXT, amount*-1))
+            chat_message(ch, string.format(MONEY_REMOVE_TEXT, amount*-1))
         end
     end
 end
@@ -132,9 +132,9 @@ function add_items(ch, id, amount, name)
     local success = chr_inv_change(ch, id, amount)
     if success then
         if amount > 0 then
-            chatmessage(ch, string.format(ITEM_ADD_TEXT, amount, name))
+            chat_message(ch, string.format(ITEM_ADD_TEXT, amount, name))
         elseif amount < 0 then
-            chatmessage(ch, string.format(ITEM_REMOVE_TEXT, -amount, name))
+            chat_message(ch, string.format(ITEM_REMOVE_TEXT, -amount, name))
         else
             -- 0 Items werden hinzugefügt/geändert
             -- Aber wer sollte so etwas tun?

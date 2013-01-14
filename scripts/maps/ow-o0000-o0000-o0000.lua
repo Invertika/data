@@ -275,7 +275,7 @@ function bruce_talk(npc, ch)
     npc_message(npc, ch, "Fabelhaft, du hast 20 Madenschleim gesammelt! Danke für deine Hilfe.")
     invertika.add_items(ch, 40005, -20, "Madenschleim")
     invertika.add_exp(ch, 100, 750, 0)
-    chatmessage(ch, "Du hast 750 Exp im unbewaffneten Kampf erhalten!")
+    chat_message(ch, "Du hast 750 Exp im unbewaffneten Kampf erhalten!")
     set_qstatus(4)
   elseif get_qstatus()==4 then
     npc_message(npc, ch, "In der Spielothek findet Danielas Geburtstagsparty statt. Bist du so nett, und bringst ihr mein Geschenk? Ich habe dort Hausverbot, weil ich meine Spielschulden nicht bezahlt habe.")
@@ -937,7 +937,7 @@ function waypoint_archway_1(obj, arg)
             -- eigentlich sollte hier eine 17 stehen, sind nur zu testzwecken lediglich 2 runden
             if(rounds % 2 == 0) then
                 being_say(obj, "Jetzt bin ich reich!!! (debug)")
-                chatmessage(obj, "Vor lauter Langeweile wegen dem ganzen Torbögen-Durchlaufen, findest du ein paar Aki auf der Erde, die du zuvor wahrscheinlich übersehen hast!")
+                chat_message(obj, "Vor lauter Langeweile wegen dem ganzen Torbögen-Durchlaufen, findest du ein paar Aki auf der Erde, die du zuvor wahrscheinlich übersehen hast!")
                 invertika.add_money(obj, math.random(1, 500)) --- Wenn man davon ausgeht, dass man in 17 Runden wahrscheinlich etwa 50 Maden mit HDW von über 5 = 250 Aki minimum verdienen kann, sind 250 Aki Durchschnittsgewinn beim Durchlaufen der Torbögen OK
             end
         end

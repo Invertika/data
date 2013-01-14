@@ -40,7 +40,7 @@ module("trap", package.seeall)
 --
 function trap_activate(ch, chance, radius, monster_ids)
  if (being_type(ch) ~= TYPE_MONSTER) and math.random(1, 100) <= chance then -- Player activates trap by chance
-   chatmessage(ch, "Du bist in einen Hinterhalt geraten!")
+   chat_message(ch, "Du bist in einen Hinterhalt geraten!")
    local num, phi, x, y, dx, dy, i
    x = posX(ch)
    y = posY(ch)

@@ -8,7 +8,7 @@ plotOsterspaziergang.Julia=0
 
 -- Talkfunktion
 plotOsterspaziergang.npc_talk = function(npc, ch)
-  chatmessage(ch, "Schauspieler reden nicht mit dem Publikum.")
+  chat_message(ch, "Schauspieler reden nicht mit dem Publikum.")
 end
 
 -- Konstuktor

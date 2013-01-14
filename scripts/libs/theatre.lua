@@ -23,7 +23,7 @@ Theatre.Monologa=0
 
 -- talk
 Theatre.monologa_talk = function()
-  chatmessage(ch, "Theatre.monologa_talk")
+  chat_message(ch, "Theatre.monologa_talk")
 end
 
 --Stücke

@@ -355,10 +355,10 @@ end
 function patrol_waypoint(obj, id)
     if (being_type(obj) ~= TYPE_MONSTER) then
         if (id == 1) then
-            chatmessage(obj, "you've reached patrol point 1")
+            chat_message(obj, "you've reached patrol point 1")
             being_say(obj, "I have reached patrol point 1")
         elseif (id == 2) then
-            chatmessage(obj, "you've reached patrol point 2")
+            chat_message(obj, "you've reached patrol point 2")
             being_say(obj, "I have reached patrol point 2")
         end
     end

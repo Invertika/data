@@ -97,9 +97,9 @@ end
 
 function statue_trigger(ch, id)
     if being_type(ch) == TYPE_CHARACTER then
-        chatmessage(ch, "Ab hier beginnt das Denkmal des großen Fehlerbehebers.")
-        chatmessage(ch, "Du darfst erst passieren, sobald du dich als würdig erwiesen hast!")
-        chatmessage(ch, "Rede mit der Statue.")
+        chat_message(ch, "Ab hier beginnt das Denkmal des großen Fehlerbehebers.")
+        chat_message(ch, "Du darfst erst passieren, sobald du dich als würdig erwiesen hast!")
+        chat_message(ch, "Rede mit der Statue.")
         chr_warp(ch, nil, 33 * TILESIZE + 16, posY(ch))
     end
 end
