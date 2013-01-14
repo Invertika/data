@@ -97,7 +97,7 @@ end
 -- Called by the game for creating NPCs embedded into maps.
 -- Delays the creation until map initialization is performed.
 -- Note: Assumes that the "npc_handler" global field contains the NPC handler.
-local function npc_create_delayed(name, id, GENDER_UNSPECIFIED, gender, x, y)
+local function create_npc_delayed(name, id, GENDER_UNSPECIFIED, gender, x, y)
   -- Bind the name to a local variable first, as it will be reused.
   local h = npc_handler
   atinit(function() npc_create(name, id, gender, x, y, h) end)
