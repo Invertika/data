@@ -101,3 +101,18 @@ function talk(f, ...)
         f(npc, ch, a)
     end
 end
+
+--- Allows NPC that only say one thing
+function auto_talk(...)
+    local a = {...}
+    return function(npc, ch)
+        _talk(npc, ch, a)
+    end
+end
+
+function _talk(npc, ch, messages)
+    for i, v in ipairs(messages) do
+        npc_message(npc, ch, v)
+    end
+end
+
