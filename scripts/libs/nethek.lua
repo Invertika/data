@@ -100,7 +100,7 @@ function netheksaeule_talk(npc, ch) --- NPC für die Netheksäule
 	npc_message(npc, ch, "Was moechtest du?")
 	
 	while true do
-		local v = do_choice(npc, ch, "Deinen Segen.",
+		local v = npc_choice(npc, ch, "Deinen Segen.",
 								     "Geld opfern.",
 								     "Nichts. Danke.")
 								
@@ -116,7 +116,7 @@ function netheksaeule_talk(npc, ch) --- NPC für die Netheksäule
 			
 			break;
 		elseif v == 2 then
-			local v2 = do_choice(npc, ch, "500", "1000", "2000", "5000", "10000", "25000", "50000","Nichts opfern")
+			local v2 = npc_choice(npc, ch, "500", "1000", "2000", "5000", "10000", "25000", "50000","Nichts opfern")
 					if v2 == 1 then --- 500
 						immolate_money(npc, ch, 500)
 					elseif v2 == 2 then --- 1000

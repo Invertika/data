@@ -56,7 +56,7 @@ function vektor_talk(npc, ch)
         npc_message(npc, ch, "Ich rege mich schon wieder zu sehr auf")
         npc_message(npc, ch, "*Beruhigungstabletten schluck*")
         while true do
-            local v = do_choice(npc, ch, "Wirst du Felix nun helfen?", "Tschüß!")
+            local v = npc_choice(npc, ch, "Wirst du Felix nun helfen?", "Tschüß!")
             if v == 1 then
                 npc_message(npc, ch, "Ja. Natürlich! Ich mache mich gleich auf den Weg.")
                 invertika.set_quest_status(ch, "selphi_timlet_felix_quest", 2)

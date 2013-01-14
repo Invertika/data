@@ -34,7 +34,7 @@ function tresor_talk(npc, ch)
       npc_message(npc, ch, "Hinter dem Bild befindet sich etwas. Mal schauen. Oh das ist ein Tresor. Mmm da schaue ich mal hinein. Bloß wie bekomme ich ihn auf?")
 
       while true do
-            local v = do_choice(npc, ch, "Dynamit benutzen", "Nett anklopfen", "Zweimal links, einmal rechts, dreimal diagonal...", "42", "Die Zahlenkombination auf der Rückseite des Bildes benutzen")
+            local v = npc_choice(npc, ch, "Dynamit benutzen", "Nett anklopfen", "Zweimal links, einmal rechts, dreimal diagonal...", "42", "Die Zahlenkombination auf der Rückseite des Bildes benutzen")
 
           if v == 1 then
             local countDynamite = chr_inv_count(ch, 40025)
@@ -75,7 +75,7 @@ function ceech_talk(npc, ch)
     if invertika.get_quest_status(ch, "roststock_icero_quest") == 4 then
         npc_message(npc, ch, "Du siehst du aus als wolltest du etwas fragen?")
         while true do
-            local v = do_choice(npc, ch, "Icero braucht einen Psychiater.", "Nein. Nix.")
+            local v = npc_choice(npc, ch, "Icero braucht einen Psychiater.", "Nein. Nix.")
             if v == 1 then
                 npc_message(npc, ch, "Icero? Dieser interessante Fall in Roststock?")
                 npc_message(npc, ch, "Ich arbeite gerne mit Leuten die einen an der Klatsche haben.")
@@ -99,7 +99,7 @@ function ceech_talk(npc, ch)
         npc_message(npc, ch, "Hu. Ich war so in meine Arbeiten vertieft, dass ich dich nicht kommen sehen habe.")
         npc_message(npc, ch, "Hättest du Lust diese Klageschrift zur Rezeption im Hotel zu bringen? Ich kann es nicht zulassen, dass die einfach die Kokusnüsse ungesichert von den Bäumen fallen lassen! Es könnte sich jemand ernsthaft verletzen.")
         while true do
-            local v = do_choice(npc, ch, "Ja.", "Nein.")
+            local v = npc_choice(npc, ch, "Ja.", "Nein.")
             if v == 1 then
                 set_qstatus(1)
                 invertika.add_items(ch, 40035, 1, "Brief an die Rezeption")
@@ -117,7 +117,7 @@ function ceech_talk(npc, ch)
         if chr_inv_count(ch, 40035) == 0 then
             npc_message(npc, ch, "Hast du den Brief abgegeben?")
             while true do
-                local v = do_choice(npc, ch, "Ja.", "Nein. Ich habe ihn verloren.")
+                local v = npc_choice(npc, ch, "Ja.", "Nein. Ich habe ihn verloren.")
                 if v == 2 then
                     npc_message(npc, ch, "Du hast ihn verloren? Unzuverlässiger Bengel!")
                     set_qstatus(-1)

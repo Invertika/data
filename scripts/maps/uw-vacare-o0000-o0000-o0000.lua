@@ -77,7 +77,7 @@ function jack_talk(npc, ch)
     npc_message(npc, ch, "Ich bin Jack und verkaufe Zeitungen. Möchtest du eine?")
     
     while true do 
-      local v = do_choice(npc, ch, "Ja.", "Nein.")
+      local v = npc_choice(npc, ch, "Ja.", "Nein.")
                                    
       if v == 1 then
         npc_message(npc, ch, "Du hast leider kein Geld dabei. Tut mir leid.")
@@ -96,7 +96,7 @@ function ancoise_talk(npc, ch)
       npc_message(npc, ch, "Na soll ich dir über den Zaun helfen?")
     
       while true do 
-          local v = do_choice(npc, ch, "Ja.", 
+          local v = npc_choice(npc, ch, "Ja.", 
                                        "Nein.")
                                    
           if v == 1 then
@@ -162,7 +162,7 @@ function valaia_talk(npc, ch)
     npc_message(npc, ch, "Also fangen wir am besten mit dem Handel zwischen dir und einem NPC an. Du kannst bei einem NPC Dinge kaufen und auch verkaufen. Was du kaufen kannst und was nicht legt der NPC fest. Was möchtest du tun?")
     
     while true do 
-        local v = do_choice(npc, ch, "Kaufen",
+        local v = npc_choice(npc, ch, "Kaufen",
                                      "Verkaufen",
                                      "Nichts danke.")
                                    
@@ -208,7 +208,7 @@ function vacaria_talk(npc, ch)
     npc_message(npc, ch, "Bist du bereit für das große Abenteuer?")
     
     while true do 
-        local v = do_choice(npc, ch, "Ja.",
+        local v = npc_choice(npc, ch, "Ja.",
                                      "Nein.")
                                    
         if v == 1 then

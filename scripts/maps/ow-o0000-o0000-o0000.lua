@@ -108,7 +108,7 @@ function weihnachtsmann_talk(npc, ch)
       npc_message(npc, ch, "Ho Ho Ho. Ich bin der Weihnachtsmann. Meine Geschenke sind schon wieder überall verteilt. Diese Weihnachtsschleime rauben mir den letzten Nerv. Magst du mir helfen sie wieder einzusammeln?")
 
       while true do
-            local v = do_choice(npc, ch, "Ja.", "Nein.")
+            local v = npc_choice(npc, ch, "Ja.", "Nein.")
 
           if v == 1 then
             npc_message(npc, ch, "Das ist super ich denke so 25 Stück sollten mir reichen. Ich warte dann hier auf dich.")
@@ -176,7 +176,7 @@ function fireworker_talk(npc, ch)
     "Möchtest du dir ein wenig Feuerwerk anschauen?",
     "Willst du ein kleines Feuerwerk betrachten?",
     "Auf deinen Wunsch hin, beschwöre ich den Gott des Feuerwerkes, und dieser wird es mächtig krachen lassen!"))
-  local answer = do_choice(npc, ch, "Juhuu! Feuerwerk!", "Nee, danke.")
+  local answer = npc_choice(npc, ch, "Juhuu! Feuerwerk!", "Nee, danke.")
   if answer == 1 then
     local x = posX(npc)
     local y = posY(npc)
@@ -230,7 +230,7 @@ function julia_talk(npc, ch)
     npc_message(npc, ch, "Hi, was kann ich für dich tun?")
 
     while true do
-        local v = do_choice(npc, ch, "Kaufen.",
+        local v = npc_choice(npc, ch, "Kaufen.",
                          "Verkaufen.",
                          "Nichts. Danke.")
 
@@ -264,7 +264,7 @@ function bruce_talk(npc, ch)
         npc_message(npc, ch, "Ahhh ich verstehe, du bist neu hier. Hier ein paar Münzen fuer den Anfang...")
     elseif get_qstatus()==1 then
     npc_message(npc, ch, "Siehst du die Maden auf den Straßen? Die reinste Plage! Dieses gefräßige Ungeziefer vernichtet das letzte bisschen Vegetation in der Stadt! Willst du uns helfen, unsere schöne Stadt von diesen ekelhaften Würmern zu befreien?")
-    set_qstatus(do_choice(npc, ch, "Nein.","Ja."))
+    set_qstatus(npc_choice(npc, ch, "Nein.","Ja."))
   end
   if get_qstatus()==2 then
     npc_message(npc, ch, "Bring mir 20 Madenschleim als Beleg für deine Arbeit, dann werde ich dich belohnen.")
@@ -279,7 +279,7 @@ function bruce_talk(npc, ch)
     set_qstatus(4)
   elseif get_qstatus()==4 then
     npc_message(npc, ch, "In der Spielothek findet Danielas Geburtstagsparty statt. Bist du so nett, und bringst ihr mein Geschenk? Ich habe dort Hausverbot, weil ich meine Spielschulden nicht bezahlt habe.")
-    set_qstatus(do_choice(npc, ch, "Nein.","Ja.")+3)
+    set_qstatus(npc_choice(npc, ch, "Nein.","Ja.")+3)
     if get_qstatus()==5 then
       invertika.add_items(ch, 40015, 1, "Geschenk")
       npc_message(npc, ch, "Sehr nett von dir. Die Spielothek ist im süd-westlichen Teil der Stadt. Gib Daniela das Geschenk.")
@@ -318,7 +318,7 @@ function bruce_talk(npc, ch)
         npc_message(npc, ch, "Du hast die Tabletten gegen meinen Husten.")
         npc_message(npc, ch, "Gibst du sie mir?")
         while true do
-            local v = do_choice(npc, ch, "Ja.", "Nein.")
+            local v = npc_choice(npc, ch, "Ja.", "Nein.")
             if v == 1 then
                 if invertika.add_items(ch, 30018, -3, "Energetia") then
                     set_qstatus(11)
@@ -354,7 +354,7 @@ function felix_talk(npc, ch)
         npc_message(npc, ch, invertika.get_random_element("Hallo Reisender.", "Guten Tag.", "Hallo.", "Schönes Wetter nicht?"))
         npc_message(npc, ch, "Hättest du Lust für mich etwas zu erledigen?")
         while true do
-            local v = do_choice(npc, ch, "Ja.", "Nein.")
+            local v = npc_choice(npc, ch, "Ja.", "Nein.")
             if v == 1 then
                 npc_message(npc, ch, "Ich habe einen alten Freund. Er ist Statiker in Alexia und berechnet Häuser. Sein Name ist Vektor.")
                 npc_message(npc, ch, "Er ist zwar nicht der beste aber andere kann ich nicht bezahlen. Er soll das Haus meines Bruders berechnen.")
@@ -423,7 +423,7 @@ function nobur_talk(npc, ch)
       npc_message(npc, ch, "Ich sehe du hast ein paar Stachel. Magst du sie mir geben?")
 
           while true do
-        local v = do_choice(npc, ch, "Ja",
+        local v = npc_choice(npc, ch, "Ja",
                                      "Nein")
 
         if v == 1 then
@@ -500,11 +500,11 @@ function inard_talk(npc, ch)
     if get_qstatus() == 0 then
         npc_message(npc, ch, "Ahhh. Was ein herrlicher Tag und ich hänge hier im Innenhof rum! Wie gerne würde ich mal wieder eine Stunde trainieren!")
         while true do
-            local v = do_choice(npc, ch, "Ich könnte mit dir trainieren.", "Auf Wiedersehen")
+            local v = npc_choice(npc, ch, "Ich könnte mit dir trainieren.", "Auf Wiedersehen")
             if v == 1 then
                 npc_message(npc, ch, "Du? Dich kenne ich doch kaum. Aber du könntest zu Ortana laufen und ihn fragen wann er mal Zeit hat.")
                 while true do
-                    v2 = do_choice(npc, ch, "Mach ich!", "Da habe ich grade keine Zeit für.")
+                    v2 = npc_choice(npc, ch, "Mach ich!", "Da habe ich grade keine Zeit für.")
                     if v2 == 1 then
                         npc_message(npc, ch, "Danke. Du findest ihn bei der Arena.")
                         set_qstatus(1)
@@ -530,7 +530,7 @@ function inard_talk(npc, ch)
     elseif get_qstatus() == 4 then
         npc_message(npc, ch, "Und wann hat er Zeit?")
         while true do
-            local v = do_choice(npc, ch, "Um 10 Uhr.", "Um 15 Uhr.", "Um 20 Uhr.")
+            local v = npc_choice(npc, ch, "Um 10 Uhr.", "Um 15 Uhr.", "Um 20 Uhr.")
             if v == get_feierabend() then
                 npc_message(npc, ch, "Ok. Danke. Hier nimm diesen Ring als Dank.")
                 invertika.add_items(ch, 20005, 1, "Ring der Stärke")
@@ -562,7 +562,7 @@ function imangi_talk(npc, ch)
         if chr_inv_count(ch, 20019) > 0 then
             npc_message(npc, ch, "Möchtest du mir etwas sagen?")
             while true do
-                local v = do_choice(npc, ch, "Ich habe hier einen Ring für dich.", "Nein. nichts.")
+                local v = npc_choice(npc, ch, "Ich habe hier einen Ring für dich.", "Nein. nichts.")
                 if v == 1 then
                     invertika.set_quest_status(ch, "twin_house_quest", 4)
                     invertika.add_items(ch, 20019, -1, "Imangis's Verlobungsring")
@@ -608,7 +608,7 @@ function ortana_talk(npc, ch)
     elseif get_qstatus() == 3 then
         npc_message(npc, ch, "Und was meinte er wann ich gehen dürfte?")
         while true do
-            local v = do_choice(npc, ch, "Um 10 Uhr.", "Um 15 Uhr.", "Um 20 Uhr.")
+            local v = npc_choice(npc, ch, "Um 10 Uhr.", "Um 15 Uhr.", "Um 20 Uhr.")
             if v == get_feierabend() then
                 npc_message(npc, ch, "Danke. Sag Inard das ich komme.")
                 set_qstatus(4)
@@ -783,7 +783,7 @@ function bernie_talk(npc, ch)
     npc_message(npc, ch, "Hey du, du brauchst ihn doch bestimmt, den Niedermetzler 3000. Das ist genau das richtige für dich, da kannst du garnicht widerstehen. Komm schon für nur 99999 Aki gehört er dir? Oder eine Sonnenbrille? Neuste Mode? 12500 Aki! Ein besonderes Modell!")
 
     while true do
-        local v = do_choice(npc, ch, "Her mit dem Niedermetzler!",
+        local v = npc_choice(npc, ch, "Her mit dem Niedermetzler!",
                                      "Ich will die Sonnenbrille!",
                                      "Lieber nicht...")
 
@@ -830,7 +830,7 @@ function valeria_talk(npc, ch)
     npc_message(npc, ch, "Soll ich dich heilen?")
 
     while true do
-        local v = do_choice(npc, ch, "Alles heilen (1000 Aki)", "Nur 1000 HP (kostenlos)", "Nein ich brauche keine Heilung")
+        local v = npc_choice(npc, ch, "Alles heilen (1000 Aki)", "Nur 1000 HP (kostenlos)", "Nein ich brauche keine Heilung")
 
         if v == 1 then
             local PlayerMoney=chr_money(ch)
@@ -892,7 +892,7 @@ function lidi_talk(npc, ch)
         if chr_inv_count(ch, 20023) > 0 then
             npc_message(npc, ch, "Oh Gott du hast SIE. Ich brauche diese Brille, gibst du sie mir?")
             while true do
-                local v = do_choice(npc, ch, "Ja.", "Nein.")
+                local v = npc_choice(npc, ch, "Ja.", "Nein.")
                 if v == 1 then
                     invertika.add_items(ch, 20023, -1, "Sonnenbrille")
                     invertika.add_items(ch, invertika.get_random_element(40030, 40031, 40032, 40033), 1, "Garn")

@@ -26,7 +26,7 @@ function slotmachine_talk(npc, ch)
   npc_message(npc, ch, "Eine Slotmaschine. Wie viel Geld möchtest du setzen?")
   
  while true do 
-	local v = do_choice(npc, ch, "5 Aki",
+	local v = npc_choice(npc, ch, "5 Aki",
 							   "10 Aki",
 							   "50 Aki",
 							   "100 Aki",

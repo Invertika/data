@@ -15,7 +15,7 @@ function post_talk(npc, ch)
   local strength = being_get_attribute(ch, ATTR_STRENGTH)
   npc_message(npc, ch, "You have " .. tostring(strength) .. " strength")
   npc_message(npc, ch, "What would you like to do?")
-  local answer = do_choice(npc, ch, "View Mail", "Send Mail", "Nothing")
+  local answer = npc_choice(npc, ch, "View Mail", "Send Mail", "Nothing")
   if answer == 1 then
     local sender, post = getpost(ch)
     if sender == "" then

@@ -110,7 +110,7 @@ function barber1_talk(npc, ch, data)
     -- Repeat until the user selects nothing
     repeat
         if (result == 1) then -- Do styles
-            result = do_choice(npc, ch, "Bald", styles, "Supprise me", "Never mind")
+            result = npc_choice(npc, ch, "Bald", styles, "Supprise me", "Never mind")
 
             result = result -1
 
@@ -132,7 +132,7 @@ function barber1_talk(npc, ch, data)
                 result = 3
             end
         elseif (result == 2) then -- Do colors
-            result = do_choice(npc, ch, colors, "Supprise me", "Never mind")
+            result = npc_choice(npc, ch, colors, "Supprise me", "Never mind")
 
             --Random
             if (result == #colors + 1) then
@@ -149,7 +149,7 @@ function barber1_talk(npc, ch, data)
 
         -- If we have both styles and colors, show the main menu
         if #styles > 0 and #colors > 0 then
-            result = do_choice(npc, ch, "Change my style", "Change my color", "Never mind")
+            result = npc_choice(npc, ch, "Change my style", "Change my color", "Never mind")
         end
     until result >= 3 --While they've choosen a valid option that isn't "Never mind"
 
@@ -161,11 +161,11 @@ end
 function barber2_talk(npc, ch)
     npc_message(npc, ch, "Guten Tag da drüben! Was darfs sein? Neuen Haarschnitt? Oder nur die Farbe ändern?")
     while true do
-        local v = do_choice(npc, ch, "Neuen Haarschnitt bitte!", "Einmal Färben!", "Nein danke.")
+        local v = npc_choice(npc, ch, "Neuen Haarschnitt bitte!", "Einmal Färben!", "Nein danke.")
         if v == 1 then
             npc_message(npc, ch, "Welcher Schnitt darf es denn sein?")
             while true do
-                local v2 = do_choice(npc, ch, "Kurzer Zopf", "Pilzkopf", "Kurzhaar", "Emo", "Irokese", "Schmalzlocke",
+                local v2 = npc_choice(npc, ch, "Kurzer Zopf", "Pilzkopf", "Kurzhaar", "Emo", "Irokese", "Schmalzlocke",
                                               "Scheitel", "lang und glatt", "kurze Locken", "Zöpfe",
                                               "lange Locken", "Schulterlang", "Zopf", "Wellen", "Mähne", "Dutt")
                            
@@ -207,7 +207,7 @@ function barber2_talk(npc, ch)
                 if costs ~= 0 then
                     npc_message(npc, ch, string.format("Das würde %s Aki kosten! Soll ich dir deine Haare nun schneiden?", costs))
                     while true do
-                        local v3 = do_choice(npc, ch, "Ja", "Nein")
+                        local v3 = npc_choice(npc, ch, "Ja", "Nein")
                         if v3 == 1 then
                             if chr_money(ch) >= costs then
                                 chr_money_change(ch, -costs)
@@ -229,13 +229,13 @@ function barber2_talk(npc, ch)
         elseif v == 2 then
             npc_message(npc, ch, "Welche Farbe willst du?")
             while true do
-                local v2 = do_choice(npc, ch, "Blond", "Grün", "Rot", "Violett", "Grau", "Gelb", "Blau", "Braun",
+                local v2 = npc_choice(npc, ch, "Blond", "Grün", "Rot", "Violett", "Grau", "Gelb", "Blau", "Braun",
                                                "hell Blau", "dunkel Violett", "Schwarz")
                 
                 if v2 >= 1 or v2 <= 11 then
                     npc_message(npc, ch, "Das Färben kostet 100 Aki!")
                     while true do
-                        local v3 = do_choice(npc, ch, "Ok. Fang an!", "Nee, dann doch nicht")
+                        local v3 = npc_choice(npc, ch, "Ok. Fang an!", "Nee, dann doch nicht")
                         if v3 == 1 then
                             if chr_money(ch) >= 100 then
                                 chr_money_change(ch, -100)

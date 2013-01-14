@@ -26,7 +26,7 @@ function toffi_talk(npc, ch)
     npc_message(npc, ch, "Tag, Was gibt es?")
     
     while true do
-        local v = do_choice(npc, ch,
+        local v = npc_choice(npc, ch,
           "Kaufen.",
           "Verkaufen.",
           "Nichts. Danke.")

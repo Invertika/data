@@ -42,7 +42,7 @@ function icero_talk(npc, ch)
         if chr_inv_count(ch, 30015) > 0 then
             npc_message(npc, ch, "Gib mir dein Inspirin! Bitte!")
             while true do
-                local v = do_choice(npc, ch,
+                local v = npc_choice(npc, ch,
                   "Hier. Nimm.",
                   "Ich hab keine.")
                 if v == 1 then
@@ -62,7 +62,7 @@ function icero_talk(npc, ch)
         npc_message(npc, ch, "Hast du mal ein Bier?")
         if chr_inv_count(ch, 30006) > 0 then
             while true do
-                local v = do_choice(npc, ch,
+                local v = npc_choice(npc, ch,
                   "Ihm ein Bier geben.",
                   "Das Bier behalten.")
                 if v == 1 then
@@ -81,7 +81,7 @@ function icero_talk(npc, ch)
         npc_message(npc, ch, "Im Moment fühle ich mich besser.")
         npc_message(npc, ch, "Ich muss dringend mal wieder zum Psychiater.")
         while true do
-            local v = do_choice(npc, ch, 
+            local v = npc_choice(npc, ch, 
               "Soll ich einen für dich suchen?",
               "Aha. Dann mal auf Wiedersehen...")
             if v == 1 then

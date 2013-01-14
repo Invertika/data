@@ -25,11 +25,11 @@ function veritas_talk(npc, ch)
     npc_message(npc, ch, "Sei gegrüßt Reisender. Bist du gekommen um eine grausame Wahrheit des Lebens zu erfahren?")
     
         while true do
-            local v = do_choice(npc, ch, "Ja.", "Nein.")
+            local v = npc_choice(npc, ch, "Ja.", "Nein.")
             if v == 1 then
                 npc_message(npc, ch, "Wie du willst. Doch eine solche Wahrheit ist nicht umsonst. Bist du bereit 15000 Aki dafür zu zahlen?")
                 while true do
-                    local vMoney = do_choice(npc, ch, "Ja.", "Nein.")
+                    local vMoney = npc_choice(npc, ch, "Ja.", "Nein.")
                     
                     if vMoney == 1 then
                         local PlayerMoney=chr_money(ch)

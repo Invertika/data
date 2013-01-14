@@ -33,7 +33,7 @@ function rocer_talk(npc, ch)
         npc_message(npc, ch, "Oh ich habe so einen grossen Kummer. Mein Bruder hat mich verraten und dann ...")
         npc_message(npc, ch, "Ich bin so traurig, wegen meinem Bruder kann ich nicht weg. Ich muss auf das Haus aufpassen! Dabei will ich doch um die Hand von Imangi anhalten")
         while true do
-            local v = do_choice(npc, ch, "Kann ich irgendwie helfen?", "Auf Wiedersehen!")
+            local v = npc_choice(npc, ch, "Kann ich irgendwie helfen?", "Auf Wiedersehen!")
             if v == 1 then
                 npc_message(npc, ch, "Hm...")
                 npc_message(npc, ch, "Komm mal näher. Mein Bruder darf das nich hören.")
@@ -47,7 +47,7 @@ function rocer_talk(npc, ch)
                 npc_message(npc, ch, "Doch ich habe in aller Heimlichkeit einen Ring schmieden lassen.")
                 npc_message(npc, ch, "Ich will ihn ihr schenken. Allerdings weiß ich nicht wie ich ihn ihr unbemerkt von meinem Bruder geben soll.")
                 while true do
-                    local v2 = do_choice(npc, ch, "Hm...", "Ich könnte ihn zu ihr bringen, wenn ihr ihn mir anvertraut.")
+                    local v2 = npc_choice(npc, ch, "Hm...", "Ich könnte ihn zu ihr bringen, wenn ihr ihn mir anvertraut.")
                     if v2 == 1 then
                         npc_message(npc, ch, "Ich belästige dich hier nur mit meinen Problemen...")
                         break

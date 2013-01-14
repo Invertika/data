@@ -61,7 +61,7 @@ function issen_talk(npc, ch)
         npc_message(npc, ch, "ich habe jetzt schon zum vierten mal in dieser Woche meinen Schlüssel irgendwo verloren.")
         while true do
             npc_message(npc, ch, "Hilfst du mir ihn zu suchen?")
-            local v = do_choice(npc, ch, 
+            local v = npc_choice(npc, ch, 
               "Nein",
               "Ja")
             if v == 1 then

@@ -55,7 +55,7 @@ function irac_talk(npc, ch)
       "Moin",
       "Was wollen sie hier?!"))
     while true do
-        local v = do_choice(npc, ch,
+        local v = npc_choice(npc, ch,
           "Kaufen",
         invertika.get_random_element("Quasseln",
           "Reden",
@@ -73,7 +73,7 @@ function irac_talk(npc, ch)
             npc_message(npc, ch, invertika.get_random_element("Über was wollen wa den reden?",
               "Über was wollen wir reden?"))
             while true do
-                local w = do_choice(npc, ch, 
+                local w = npc_choice(npc, ch, 
                   "Über die Familie in der Mitte",
                   "Über die Wassernot",
                   "Über nichts")

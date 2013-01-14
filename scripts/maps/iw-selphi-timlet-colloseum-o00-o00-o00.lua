@@ -154,7 +154,7 @@ end
     -- if pvm_fight == nil then -- Kein Kampf
         -- npc_message(npc, ch, "Willst du in der Arena kämpfen?")
         -- while true do
-            -- local v = do_choice(npc, ch, "Ja.", "Nein.")
+            -- local v = npc_choice(npc, ch, "Ja.", "Nein.")
             -- if v == 1 then
                 -- if pvm_fight == nil then
                     -- npc_message(npc, ch, "DEBUG: Erstelle Kampf...")

@@ -42,7 +42,7 @@ function vodel_talk(npc, ch)
     if quest_var_vodel == 3 then
         npc_message(npc, ch, "Hast du alles erledigt, was dich noch blockierte?")
         while true do
-            local x = do_choice(npc, ch, "ja",
+            local x = npc_choice(npc, ch, "ja",
               "Nein")
             if x == 1 then
                 npc_message(npc, ch, "Gut")
@@ -85,7 +85,7 @@ function vodel_talk(npc, ch)
         npc_message(npc, ch, "Natürlich nur, wenn du damit Einverstanden bist.")
         npc_message(npc, ch, "Und, wie sieht's aus?")
         while true do
-            local a = do_choice(npc, ch, 
+            local a = npc_choice(npc, ch, 
               "Ja, ich möchte.",
               "Nein, ich möchte nicht.")
             if a == 1 then
@@ -95,7 +95,7 @@ function vodel_talk(npc, ch)
                 npc_message(npc, ch, "Danke.")
                 npc_message(npc, ch, "Wollen wir sofort beginnen, oder hast du noch etwas zu erledigen?")
                 while true do
-                    local v = do_choice(npc, ch, "Lass uns beginnen.",
+                    local v = npc_choice(npc, ch, "Lass uns beginnen.",
                       "Ich warte lieber nochmal ein bisschen")
                     if v == 1 then
                         npc_message(npc, ch, "ok, danke.")
@@ -127,7 +127,7 @@ function vodel_talk(npc, ch)
         npc_message(npc, ch, "Kommen wir zur ersten, noch recht einfachen Frage..")
         npc_message(npc, ch, "Wie heißt unsere Gottheit?")
         while true do
-            local s = do_choice(npc, ch, "Egam",
+            local s = npc_choice(npc, ch, "Egam",
               "Invertika",
               "Kahress")
             if s == 2 then
@@ -141,7 +141,7 @@ function vodel_talk(npc, ch)
         npc_message(npc, ch, "...")
         npc_message(npc, ch, "Wo liegt Selphi Timlet von uns aus?")
         while true do
-            local s = do_choice(npc, ch, "Östlich",
+            local s = npc_choice(npc, ch, "Östlich",
             "Nordöstlich",
             "Nördlich")
             if s == 3 then
@@ -156,7 +156,7 @@ function vodel_talk(npc, ch)
         npc_message(npc, ch, "Eine Riesenmade braucht 5 Minuten für 100 Meter, ein Mammut braucht für dieselbe Strecke 1.5 Minuten.")
         npc_message(npc, ch, "Wie oft kann das Mammut eine Srecke von 200 Metern komplett laufen, bevor die Riesenmade dieselbe Strecke geschafft hat?")
         while true do
-            local s = do_choice(npc, ch, "3 mal",
+            local s = npc_choice(npc, ch, "3 mal",
               "4 mal",
               "3,34 mal")
             if s == 1 then

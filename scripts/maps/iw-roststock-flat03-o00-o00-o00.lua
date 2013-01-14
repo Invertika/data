@@ -33,7 +33,7 @@ function marle_talk(npc, ch)
             npc_message(npc, ch, "Diese Teller haben unschätzbaren Wert!")
             npc_message(npc, ch, "Gibst du mir diese Koststücke?")
             while true do
-                local v = do_choice(npc, ch, "Ja.", "Nein.")
+                local v = npc_choice(npc, ch, "Ja.", "Nein.")
                 if v == 1 then
                     invertika.add_items(ch, 40039, -count, "Teller aus Porzellan")
                     invertika.add_items(ch, 40028, math.ceil(count / 2), "antike Münze")

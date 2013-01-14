@@ -38,7 +38,7 @@ function hobel_talk(npc, ch)
     elseif quest_var == 1 then
         npc_message(npc, ch, "Irac hat dich geschickt?")
         while true do 
-            local v =  do_choice(npc, ch, 
+            local v =  npc_choice(npc, ch, 
                         "Ja", 
                         "Nein")
             if v == 1 then
@@ -48,7 +48,7 @@ function hobel_talk(npc, ch)
                 npc_message(npc, ch, "Ich habe Onurn gesagt, dass er die belauschen soll.")
                 npc_message(npc, ch, "Kannst du ihn für mich nach dem Wetter fragen?")
                 while true do
-                    local x = do_choice(npc, ch,
+                    local x = npc_choice(npc, ch,
                       "Ja",
                       "Nein")
                     if x == 1 then
@@ -72,14 +72,14 @@ function hobel_talk(npc, ch)
     elseif quest_var == 3 then
         npc_message(npc, ch, "Was sagte er?")
         while true do
-            local c = do_choice(npc, ch,
+            local c = npc_choice(npc, ch,
                               "Dass die in der Mitte das Wasser aus dem Norden von einem Lieferanten bekommen.",
                               "Dass mit denen alles in Ordnung sei.")
             if c == 1 then
                 npc_message(npc, ch, "Ok, das hatte ich bereits vermutet.")
                 npc_message(npc, ch, "Kannst du rüber zum Wüstenlager, und dort 5 Wasserflaschen kaufen?")
                 while true do
-                    local a = do_choice(npc, ch,
+                    local a = npc_choice(npc, ch,
                                       "Ja",
                                       "Nein")
                     if a == 1 then

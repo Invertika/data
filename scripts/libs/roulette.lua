@@ -35,7 +35,7 @@ function roulette_talk(npc, ch)
   npc_message(npc, ch, "Ein Roulettespiel. Wie viel Geld möchtest du setzen?")
 	
 	while true do
-		local v = do_choice(npc, ch, "5 Aki",
+		local v = npc_choice(npc, ch, "5 Aki",
 										 "10 Aki",
 										 "50 Aki",
 										 "100 Aki",
@@ -64,15 +64,15 @@ function roulette_talk(npc, ch)
 		end
 
     npc_message(npc, ch, "Auf was möchtest du setzen?")
-    local v = do_choice(npc, ch,"Farbe",
+    local v = npc_choice(npc, ch,"Farbe",
                                 "Gleich/Ungleich",
                                 "Hoch/Tief",
                                 "Zahl")
     local w = 0
-    if v == 1 then w = do_choice(npc, ch,"Rot","Schwarz")
-    elseif v == 2 then w = do_choice(npc, ch,"Gleich","Ungleich")
-    elseif v == 3 then w = do_choice(npc, ch,"Hoch","Tief")
-    elseif v == 4 then w = do_choice(npc, ch,
+    if v == 1 then w = npc_choice(npc, ch,"Rot","Schwarz")
+    elseif v == 2 then w = npc_choice(npc, ch,"Gleich","Ungleich")
+    elseif v == 3 then w = npc_choice(npc, ch,"Hoch","Tief")
+    elseif v == 4 then w = npc_choice(npc, ch,
       "0","1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12",
       "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24",
       "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36")

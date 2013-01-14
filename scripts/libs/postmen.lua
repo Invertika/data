@@ -143,7 +143,7 @@ function postman_talk(npc, ch)
               string.format("Ein Paket von der Poststelle %s... Das kommt auf diesen Stapel.", get_by_npc(start_npc).name)))
             npc_message(npc, ch, "Paket abgeben?")
             while true do
-                local v = do_choice(npc, ch, "Ja.", "Nein.")
+                local v = npc_choice(npc, ch, "Ja.", "Nein.")
                 if v == 1 then
                     npc_message(string.format("%s_order_done", postman[start_npc].id))
                     invertika.add_items(ch, npc.item, -1, string.format("Paket für Poststelle %s", data.name))
@@ -173,7 +173,7 @@ function postman_talk(npc, ch)
         npc_message(npc, ch, "5")
         npc_message(npc, ch, string.format("Würdest du für mich ein Paket zur Poststelle %s bringen?", get_name_by_id(order_designation)))
         while true do
-            local v = do_choice(npc, ch, "Ja.", "Nein.")
+            local v = npc_choice(npc, ch, "Ja.", "Nein.")
             if v == 1 then
                 invertika.set_quest_status_string(ch, string.format("%s_order_designation", data.id), order_designation)
                 invertika.add_items(ch, get_desired_itemid(order_designation), 1, string.format("Paket für Poststelle %s", get_name_by_id(order_designation)))

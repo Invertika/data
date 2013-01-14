@@ -43,7 +43,7 @@ function samos_talk(npc, ch)
           "Ich hab doch nichts getan!"))
         npc_message(npc, ch, "Vielleicht kannst du mir ein wenig Schokolode bringen? Mein Vater hat mich hier eingesperrt, aber mit Schokolade könnte ich es hier drin aushalten.")
         while true do
-            local v = do_choice(npc, ch, "Na gut", "Nein, nix da. Schokolade ist schlecht für die Zähne und macht dick.")
+            local v = npc_choice(npc, ch, "Na gut", "Nein, nix da. Schokolade ist schlecht für die Zähne und macht dick.")
             if v == 1 then
                 npc_message(npc, ch, "Bring mir aber mindestens 5 Tafeln! Schliesslich weiß ich nicht, wann ich wieder was kriege.")
                 invertika.set_quest_status(ch, quest_string, 1)
@@ -70,7 +70,7 @@ function samos_talk(npc, ch)
     elseif get_qstatus() == 4 then
         npc_message(npc, ch, "Denk nicht mal dran, mir das Ding wegzunehmen! Ich mag meine Sonnenbrille. Die hat mir Papa zum Geburtstag geschenkt.")
         while true do
-            local v = do_choice(npc, ch, "Na gut", "Ich hab dir die Schokolade besorgt, also gehört das mir *grabsch*")
+            local v = npc_choice(npc, ch, "Na gut", "Ich hab dir die Schokolade besorgt, also gehört das mir *grabsch*")
             if v == 2 then
                 npc_message(npc, ch, "HEY! PAAAPAAAA! WÄÄÄÄH!")
                 invertika.add_items(ch, 20023, 1, "Sonnebrille")

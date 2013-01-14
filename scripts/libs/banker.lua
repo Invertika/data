@@ -106,7 +106,7 @@ function banker_talk(npc, ch)
   npc_message(npc, ch, "Willkommen bei der Zentralbank von Amoneus. Was kann ich für dich tun?")
   
  while true do 
-	local v = do_choice(npc, ch, "Kontostand abfragen.",
+	local v = npc_choice(npc, ch, "Kontostand abfragen.",
                                  "Geld auf das Konto einzahlen.",
                                  "Geld vom Konto abheben.",
                                  "Einen Kredit aufnehmen.",
@@ -120,7 +120,7 @@ function banker_talk(npc, ch)
 	if v == 1 then --- Kontostand abfragen
 		bank_get_account_balance_dlg(npc, ch)
 	elseif v == 2 then --- Geld auf Konto einzahlen  
-		local v2 = do_choice(npc, ch, "Nichts", "500", "1000", "2000", "5000", "10000", "25000", "50000", "Anderen Wert", "Alles")
+		local v2 = npc_choice(npc, ch, "Nichts", "500", "1000", "2000", "5000", "10000", "25000", "50000", "Anderen Wert", "Alles")
 		if v2 == 2 then --- 500
 			bank_pay_money_to_account_dlg(npc, ch, 500)
 		elseif v2 == 3 then --- 1000
@@ -141,7 +141,7 @@ function banker_talk(npc, ch)
 			bank_pay_money_to_account_dlg(npc, ch, chr_money(ch))
 		end
 	elseif v == 3 then --- Geld von Konto abheben
-		local v2 = do_choice(npc, ch, "Nichts", "500", "1000", "2000", "5000", "10000", "25000", "50000", "Anderen Wert.", "Alles")
+		local v2 = npc_choice(npc, ch, "Nichts", "500", "1000", "2000", "5000", "10000", "25000", "50000", "Anderen Wert.", "Alles")
 		if v2 == 2 then --- 500
 			bank_get_money_from_account_dlg(npc, ch, 500)
 		elseif v2 == 3 then --- 1000
@@ -167,7 +167,7 @@ function banker_talk(npc, ch)
 		npc_message(npc, ch, "Du hast keinen Kredit!")
 	elseif v == 6 then --- Scheck einlösen
 		npc_message(npc, ch, "Scheck mit welchem Wert einlösen?")
-		local v2 = do_choice(npc, ch, "500", "1000", "2000", "5000", "10000", "25000", "50000","Abbrechen")
+		local v2 = npc_choice(npc, ch, "500", "1000", "2000", "5000", "10000", "25000", "50000","Abbrechen")
     local acc_bal = bank_get_account_balance(ch)
     if v2 == 1 then --- 500
       if chr_inv_count(ch, 40017) >= 1 then
@@ -230,7 +230,7 @@ function banker_talk(npc, ch)
 		end
 	elseif v == 7 then --- Scheck ausstellen
 		npc_message(npc, ch, "Scheck mit welchem Wert ausstellen?")
-		local v2 = do_choice(npc, ch, "500", "1000", "2000", "5000", "10000", "25000", "50000", "Abbrechen")
+		local v2 = npc_choice(npc, ch, "500", "1000", "2000", "5000", "10000", "25000", "50000", "Abbrechen")
     local acc_bal = bank_get_account_balance(ch)
     if v2 == 1 then --- 500
       if acc_bal >= 500 then

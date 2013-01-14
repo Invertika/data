@@ -63,7 +63,7 @@ function npc_message(npc, ch, msg)
 end
 
 -- Sends an NPC question to a player and waits for its answer.
-function do_choice(npc, ch, ...)
+function npc_choice(npc, ch, ...)
   -- Wait for the arrival of a pending acknowledgment, if any.
   coroutine.yield(0)
   npc_choice(npc, ch, ...)

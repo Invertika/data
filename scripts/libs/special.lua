@@ -25,7 +25,7 @@ function elevator_selphi_timlet_ipsum_house_talk(npc, ch) --- NPC für die Nethe
 	DEFAULT_Y_POS = 25 * TILESIZE
 	
 	while true do
-		local v = do_choice(npc, ch, "00",
+		local v = npc_choice(npc, ch, "00",
 								     "01",
 								     "02",
 									 "03",

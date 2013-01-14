@@ -42,7 +42,7 @@ function tetse_talk(npc, ch)
         if chr_inv_count(ch, 10008) > 0 then
             npc_message(npc, ch, "Du hast mein Schwert! Ich suche es seit Jahren! Ich habe es einst in einer großen Schlacht verloren. Gibst du es mir wieder?")
             while true do
-                local v = do_choice(npc, ch,
+                local v = npc_choice(npc, ch,
                   "Hier ist es.",
                   "Nein. Dies ist mein Schwert!")
                 if v == 1 then

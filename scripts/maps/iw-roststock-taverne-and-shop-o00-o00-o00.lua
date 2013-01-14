@@ -37,13 +37,13 @@ function rodhonu_talk(npc, ch)
     if chr_inv_count(ch, 20021) > 0 then
         npc_message(npc, ch, "Kann ich etwas für dich tun?")
         while true do
-            local v = do_choice(npc, ch, "Ich habe hier ein zerbrochenes Kettenhemd. Kannst du das reparieren?", "Nein. Danke.")
+            local v = npc_choice(npc, ch, "Ich habe hier ein zerbrochenes Kettenhemd. Kannst du das reparieren?", "Nein. Danke.")
             if v == 1 then
                 npc_message(npc, ch, "Hm... Lass mal sehen.")
                 npc_message(npc, ch, "Das sieht komplizierter aus als es ist.")
                 npc_message(npc, ch, "Für 500 Aki kann ich dir das reparieren.")
                 while true do
-                    local v2 = do_choice(npc, ch, "Hier hast du 500 Aki.", "Hm. Vielleicht später.")
+                    local v2 = npc_choice(npc, ch, "Hier hast du 500 Aki.", "Hm. Vielleicht später.")
                     if v2 == 1 then
                         if chr_money(ch) >= 500 then
                             invertika.add_money(ch, -500)

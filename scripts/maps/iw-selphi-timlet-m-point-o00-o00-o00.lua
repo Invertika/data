@@ -26,7 +26,7 @@ function manitu_talk(npc, ch)
     npc_message(npc, ch, "Hallo, ich bin der Manitu. Grosses M, kleines anitu. Was kann ich für dich tun?")
 
     while true do
-        local v = do_choice(npc, ch, "IP Pakete kaufen",
+        local v = npc_choice(npc, ch, "IP Pakete kaufen",
                                      "Merkt ihr euch was ich so tue?",
                                      "Welche Weisheit habt ihr fuer mich?",
                                      "Nichts, danke.")
@@ -49,7 +49,7 @@ function sandra_talk(npc, ch)
     npc_message(npc, ch, "Hi, ich bin S.A.N.D.R.A.")
 
     while true do
-        local v = do_choice(npc, ch, "Was bedeutet S.A.N.D.R.A.?",
+        local v = npc_choice(npc, ch, "Was bedeutet S.A.N.D.R.A.?",
                                  "Was macht ihr hier eigentlich?",
                                  "Ich wollte nichts fragen. Entschuldigung.")
 

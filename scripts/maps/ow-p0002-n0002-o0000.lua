@@ -46,7 +46,7 @@ function statue_talk(npc, ch)
     if quest_var == 0 then
         npc_message(npc, ch, "Du willst dich also als würdig erweisen, dass Denkmal zu betreten?")
         while true do
-            local v = do_choice(npc, ch, "Ja",
+            local v = npc_choice(npc, ch, "Ja",
               "Nein")
             if v == 1 then
                 --Set Quest

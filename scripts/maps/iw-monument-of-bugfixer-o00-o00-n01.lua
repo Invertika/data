@@ -39,7 +39,7 @@ function priscilla_talk(npc, ch)
         npc_message(npc, ch, "Würdest du mir bitte eine bringen?")
     
         while true do
-            local c = do_choice(npc, ch, "Ja, natürlich.",
+            local c = npc_choice(npc, ch, "Ja, natürlich.",
               "Nein, sorry")
             if c == 1 then
                 npc_message(npc, ch, "Ich danke dir.")

@@ -140,7 +140,7 @@ function chris_talk(npc, ch)
             npc_message(npc, ch, "Wenn du mir schon diese Schwerstarbeit aufbrockst, kannst du wenigstens für mein leibliches Wohl sorgen.")
             npc_message(npc, ch, "Und, machst du's?")
             while true do
-                local s = do_choice(npc, ch, "Ja",
+                local s = npc_choice(npc, ch, "Ja",
                   "Nein")
                 if s == 1 then
                     npc_message(npc, ch, "Danke.")
@@ -190,7 +190,7 @@ function estjdian_talk(npc, ch)
         npc_message(npc, ch, "Er kam früher bereits unpünktlich.")
         npc_message(npc, ch, "Würdest du ihn bitte suchen?")
         while true do
-            local s = do_choice(npc, ch, "Ja, na klar.",
+            local s = npc_choice(npc, ch, "Ja, na klar.",
               "Nein, leider nicht.")
             if s == 1 then
                 npc_message(npc, ch, "Danke")
@@ -209,7 +209,7 @@ function estjdian_talk(npc, ch)
     if quest_var == 2 then
         npc_message(npc, ch, "Ah, du hast es dir anders überlegt?")
         while true do
-            local a = do_choice(npc, ch, "Jap",
+            local a = npc_choice(npc, ch, "Jap",
               "nö")
             if a == 1 then
                 npc_message(npc, ch, "OK, danke.")

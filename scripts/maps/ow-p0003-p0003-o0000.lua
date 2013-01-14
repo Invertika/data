@@ -52,7 +52,7 @@ function oughad_talk(npc, ch)
         npc_message(npc, ch, "Egal, jetzt, wo du schon einmal hier bist, kanst du mir ja auch bei meinem Problem helfen.")
         while true do
             npc_message(npc, ch, "Und, hilfst du?")
-            local v = do_choice(npc, ch, "Ja", "Nein")
+            local v = npc_choice(npc, ch, "Ja", "Nein")
             if v == 1 then
                 npc_message(npc, ch, "danke")
                 --Set Quest Var

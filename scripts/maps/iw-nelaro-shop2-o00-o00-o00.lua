@@ -36,7 +36,7 @@ function enla_talk(npc, ch)
       "Was wollen sie hier?!"))
       
     while true do
-        local v = do_choice(npc, ch, "Kaufen.",
+        local v = npc_choice(npc, ch, "Kaufen.",
           "Verkaufen.",
           "Nichts, Danke.")
         

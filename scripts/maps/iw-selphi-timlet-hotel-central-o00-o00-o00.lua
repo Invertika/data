@@ -45,7 +45,7 @@ function rezeptionist_talk(npc, ch)
 
   if get_qstatus() == 0 then
     npc_message(npc, ch, "Willkommen im Hotel. Was kann ich für dich tun?")
-      local v = do_choice(npc, ch, "Hast du Arbeit für mich?","Nichts, danke")
+      local v = npc_choice(npc, ch, "Hast du Arbeit für mich?","Nichts, danke")
         if v == 1 then
       npc_message(npc, ch, "In der Tat, es gibt da ein paar Dinge, die du für mich erledigen kannst. Mein WLAN Kabel ist undicht, deshalb brauche ich neue IP Pakete. Für die Unkosten gebe ich dir einen Scheck.")
       invertika.add_items(ch, 40017, 1, "500 Aki Scheck")
@@ -64,7 +64,7 @@ function rezeptionist_talk(npc, ch)
         end
   elseif get_qstatus() == 2 then
         npc_message(npc, ch, "Kannst du mir helfen, die Maden- und Skorpione hier in der Gegend zu töten? Die vertreiben mir die Kundschaft! Als Beweis für deine Dienste hätte ich gerne 10x Skorpionstachel und 10x Madenschleim!")
-      local v = do_choice(npc, ch, "Vergiss es, das ist Tierquälerei!","Hier gibt es Maden?! Ich... muss weg!","Klar, mach ich!")
+      local v = npc_choice(npc, ch, "Vergiss es, das ist Tierquälerei!","Hier gibt es Maden?! Ich... muss weg!","Klar, mach ich!")
         if v == 3 then
             npc_message(npc, ch, "Viel Erfolg bei der Jagd!")
             set_qstatus(3)

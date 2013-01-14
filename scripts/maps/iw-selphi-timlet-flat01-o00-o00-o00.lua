@@ -57,11 +57,11 @@ function goron_talk(npc, ch)
         if count_green_twine > 0 or count_yellow_twine > 0 or count_red_twine > 0 or count_blue_twine > 0 then
             npc_message(npc, ch, "Willkommen. Willkommen. Treten Sie ein. Was kann ich für Sie tun?")
             while true do
-                local v = do_choice(npc, ch, "Ich hätte gerne eine Robe.", "Nein. Danke.")
+                local v = npc_choice(npc, ch, "Ich hätte gerne eine Robe.", "Nein. Danke.")
                 if v == 1 then
                     npc_message(npc, ch, "Hmm. Eine Robe. Welche Farbe wird denn gewünscht?")
                     while true do
-                        local v1 = do_choice(npc, ch, "Grün.", "Gelb.", "Rot.", "Blau.")
+                        local v1 = npc_choice(npc, ch, "Grün.", "Gelb.", "Rot.", "Blau.")
                         if v1 >= 1 and v1 <= 4 then -- Grün
                             if (v1 == 1 and count_green_twine > 0) or
                             (v1 == 2 and count_yellow_twine > 0) or
@@ -69,7 +69,7 @@ function goron_talk(npc, ch)
                             (v1 == 4 and count_blue_twine > 0) then
                                 npc_message(npc, ch, "Das macht dann 1200 Aki.")
                                 while true do
-                                    local v2 = do_choice(npc, ch, "Bezahlen.", "Nein. Dann doch nicht.")
+                                    local v2 = npc_choice(npc, ch, "Bezahlen.", "Nein. Dann doch nicht.")
                                     if v2 == 1 then
                                         if chr_money(ch) >= 1200 then
                                             invertika.add_money(ch, -1200)

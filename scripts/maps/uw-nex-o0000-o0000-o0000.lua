@@ -114,7 +114,7 @@ function nethek_talk(npc, ch)
     npc_message(npc, ch, "Du moechtest den Nex verlassen?")
     
     while true do 
-        local v = do_choice(npc, ch, "Ja.", "Nein.")
+        local v = npc_choice(npc, ch, "Ja.", "Nein.")
                                    
         if v == 1 then
             local mapID = nethek.get_nethek_warp_map(ch)

@@ -29,7 +29,7 @@ function worrany_talk(npc, ch)
     npc_message(npc, ch, "Was kann ich für sie tun?")
     
     while true do
-        local v = do_choice(npc, ch, "Kaufen.",
+        local v = npc_choice(npc, ch, "Kaufen.",
                              "Verkaufen.",
                              "Nichts. Danke.")
                          

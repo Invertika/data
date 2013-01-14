@@ -36,7 +36,7 @@ function blyther_talk(npc, ch)
         npc_message(npc, ch, "Dieses Schwert gehört Tetse. Er benutzte es in einer großen Schlacht. Dann verlor er es.")
         npc_message(npc, ch, "Ich habe es gefunden und für ihn aufbewahrt. Würdest du es zu ihm bringen?")
         while true do
-            local v = do_choice(npc, ch, "Mach ich!", "Nein.")
+            local v = npc_choice(npc, ch, "Mach ich!", "Nein.")
             if v == 1 then
                 invertika.add_items(ch, 10008, 1, "Tetses Schwert")
                 set_qstatus(1)

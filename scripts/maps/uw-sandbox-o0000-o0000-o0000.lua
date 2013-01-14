@@ -177,7 +177,7 @@ function poker_dealer_talk(npc, ch)
                     end
                 end
                 while true do
-                    local v = do_choice(npc, ch, choices)
+                    local v = npc_choice(npc, ch, choices)
                     if (v >= 1) or (v <= table.getn(choices)) then
                         if possibilities[v] == poker.PokerConstants.POSSIBILITY_FOLD then
                             game:chActionFold(ch)
@@ -204,7 +204,7 @@ function poker_dealer_talk(npc, ch)
                             npc_message(npc, ch, "Wähle eine Karte aus, die du tauschen möchtest.")
                             npc_message(npc, ch, text)
                             while true do
-                                local v1 = do_choice(npc, ch, numbers)
+                                local v1 = npc_choice(npc, ch, numbers)
                                 if cards[i] ~= nil then
                                     game:chActionSwapCard(player, i)
                                     being_say(npc, string.format("%s tauscht eine Karte", being_get_name(ch)))
@@ -223,7 +223,7 @@ function poker_dealer_talk(npc, ch)
             print("Poker: Spiel läuft nicht.")
             npc_message(npc, ch, "Spiel starten?")
             while true do
-                local v = do_choice(npc, ch, "Ja.", "Nein.")
+                local v = npc_choice(npc, ch, "Ja.", "Nein.")
                 if v == 1 then
                     game:startGame()
                     being_say(npc, "Das Spiel wurde gestartet.")
@@ -240,7 +240,7 @@ function poker_dealer_talk(npc, ch)
         -- Dem Spieler die Möglichkeit geben ins Spiel einzusteigen.
         npc_message(npc, ch, "Möchtest du mitspielen?")
         while true do
-            local v = do_choice(npc, ch, "Ja.", "Nein.")
+            local v = npc_choice(npc, ch, "Ja.", "Nein.")
             if v == 1 then
                 game:addPlayer(ch)
                 npc_message(npc, ch, "Viel Glück!")
@@ -318,7 +318,7 @@ function emote_talk(npc, ch)
     state = "happy"
   end
   npc_message(npc, ch, string.format("The emotional palm seems %s.", state))
-  v = do_choice(npc, ch,
+  v = npc_choice(npc, ch,
     "Stupid palm, you are ugly and everyone hates you!",
     "You are such a nice palm, let me give you a hug.",
     "Are you a cocos nucifera or a syagrus romanzoffiana?")
@@ -384,7 +384,7 @@ function npc1_talk(npc, ch)
     npc_message(npc, ch, "...aren't you supposed to be banned??")
   end
 
-  local v = do_choice(npc, ch, "Guns! Lots of guns!",
+  local v = npc_choice(npc, ch, "Guns! Lots of guns!",
                                "A Christmas party!",
                                "To buy.",
                                "To sell only the items you want to buy.",
@@ -400,7 +400,7 @@ function npc1_talk(npc, ch)
       npc_message(npc, ch, "Yeah right...")
     else
       npc_message(npc, ch, "I can't help you with the party. But I see you have a fancy hat. I could change it into Santa's hat. Not much of a party, but it would get you going.")
-      v = do_choice(npc, ch, "Please do.", "No way! Fancy hats are classier.")
+      v = npc_choice(npc, ch, "Please do.", "No way! Fancy hats are classier.")
       if v == 1 then
         -- invertika.add_items(ch, 524, -1, 511, 1) Nicht vorhanden.
       end
@@ -489,10 +489,10 @@ end
 
 function npc4_talk(npc, ch)
   npc_message(npc, ch, "You are currently on map "..get_map_id()..". Where do you want to go?")
-  local v = do_choice(npc, ch, "Map 1", "Map 3","Map 3, but a warpable place.")
+  local v = npc_choice(npc, ch, "Map 1", "Map 3","Map 3, but a warpable place.")
   if v >= 1 and v <= 3 then
     npc_message(npc, ch, "Are you really sure?")
-    local w = do_choice(npc, ch, "Yes, I am.", "I still have a few things to do around here.")
+    local w = npc_choice(npc, ch, "Yes, I am.", "I still have a few things to do around here.")
     if w == 1 then
       if v == 1 then
         chr_warp(ch, nil, 60 * TILESIZE, 50 * TILESIZE)
@@ -507,7 +507,7 @@ end
 
 function npc5_talk(npc, ch)
   npc_message(npc, ch, "I am the scorpion tamer. Do you want me to spawn some scorpions?")
-  local answer = do_choice(npc, ch, "Yes", "No")
+  local answer = npc_choice(npc, ch, "Yes", "No")
   if answer == 1 then
     local x = posX(npc)
     local y = posY(npc)
@@ -578,7 +578,7 @@ function post_talk(npc, ch)
   local strength = being_get_attribute(ch, ATTR_STRENGTH)
   npc_message(npc, ch, "You have " .. tostring(strength) .. " strength")
   npc_message(npc, ch, "What would you like to do?")
-  local answer = do_choice(npc, ch, "View Mail", "Send Mail", "Nothing")
+  local answer = npc_choice(npc, ch, "View Mail", "Send Mail", "Nothing")
   if answer == 1 then
     local sender, post = getpost(ch)
     if sender == "" then
@@ -594,7 +594,7 @@ end
 
 function fireworker_talk(npc, ch)
   npc_message(npc, ch, "Do you want some fireworks?")
-  local answer = do_choice(npc, ch, "Wheee! Fireworks", "Nah, thanks.")
+  local answer = npc_choice(npc, ch, "Wheee! Fireworks", "Nah, thanks.")
   if answer == 1 then
     local x = posX(npc)
     local y = posY(npc)
@@ -608,7 +608,7 @@ end
 
 function axetrainer_talk(npc, ch)
   npc_message(npc, ch, "I am the axe trainer. Do you want to get better at using axes?")
-  local answer = do_choice(npc, ch, "Please train me, master.", "I am good enough with axes.")
+  local answer = npc_choice(npc, ch, "Please train me, master.", "I am good enough with axes.")
   if answer == 1 then
     local newexp = chr_get_exp(ch, SKILL_WEAPON_AXE) + 100
     local nextlevel = exp_for_level(being_get_attribute(ch, SKILL_WEAPON_AXE) + 1)
@@ -681,7 +681,7 @@ end
 
 function healer_talk(npc, ch)
     npc_message(npc, ch, "Do you need healing?")
-    local c = do_choice(npc, ch, "Heal me fully", "Heal 100 HP", "Don't heal me")
+    local c = npc_choice(npc, ch, "Heal me fully", "Heal 100 HP", "Don't heal me")
     if c == 1 then
         being_heal(ch)
     elseif c == 2 then
@@ -692,7 +692,7 @@ end
 
 function debugger_talk(npc, ch)
     npc_message(npc, ch, "Was soll debuggt werden?")
-    local c = do_choice(npc, ch, "Nix.", "Effekte.")
+    local c = npc_choice(npc, ch, "Nix.", "Effekte.")
     if c == 2 then
         npc_message(npc, ch, "Effektid?")
         local id = do_ask_integer(npc, ch, 0, 9999, 0)
@@ -703,7 +703,7 @@ end
 function speedy_talk(npc, ch)
     while true do
         npc_message(npc, ch, "Möchtest du schneller laufen?")
-        local v = do_choice(npc, ch, "Ja", "Nein")
+        local v = npc_choice(npc, ch, "Ja", "Nein")
         if v == 1 then
             local speed = being_get_speed(ch) * being_get_speed(ch)
             being_set_speed(ch, speed)

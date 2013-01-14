@@ -24,7 +24,7 @@ end)
 function haitan_talk(npc, ch)
     if (invertika.get_quest_status(ch, "selphi_timlet_haitan_scorpions") == nil) then
         npc_message(npc, ch, "Die Skorpione im Keller nehmen inzwischen überhand. Könntest du die Plage für mich vielleicht ein wenig eindämmen?")
-        local v = do_choice(npc, ch, "Aber natürlich!", "Die sind doch bestimmt gefährlich, nein!", "Aber ich bin Sternbild Skorpion! Die zu töten bringt mir Unglück!")
+        local v = npc_choice(npc, ch, "Aber natürlich!", "Die sind doch bestimmt gefährlich, nein!", "Aber ich bin Sternbild Skorpion! Die zu töten bringt mir Unglück!")
         if v == 1 then
             --- Questvariable anpassen
             invertika.set_quest_status(ch, "selphi_timlet_haitan_scorpions", "1")

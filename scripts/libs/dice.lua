@@ -24,7 +24,7 @@ function dicemanager_talk(npc, ch)
         return
     end
     while true do
-        local v = do_choice(npc, ch, "Würfeln.", "Tschüss.")
+        local v = npc_choice(npc, ch, "Würfeln.", "Tschüss.")
         if v == 1 then
             being_say(npc, string.format("%s würfelt %d Augen", being_get_name(ch), get_new_dice_value()))
             break

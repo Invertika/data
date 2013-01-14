@@ -142,14 +142,14 @@ function race_manager_talk(npc, ch)
         answer_choices[2] = "Gewinn abholen."
     end
     while true do
-        local v = do_choice(npc, ch, answer_choices)
+        local v = npc_choice(npc, ch, answer_choices)
         if v == 1 then
             local answer_choices2 = {}
             for i,scorpion in ipairs(scorpions) do
                 answer_choices2[i] = scorpion[SCORPION_NAME]
             end
             while true do
-                local v2 = do_choice(npc, ch, answer_choices2)
+                local v2 = npc_choice(npc, ch, answer_choices2)
                 if scorpions[v2] ~= nil then
                     local betrag = do_ask_integer(npc, ch, 0, 50000, 100)
                 if betrag <= 0 then break end -- Prüfen ob Ein Wert über Null angegeben wurde.

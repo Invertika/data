@@ -36,7 +36,7 @@ function fohon_talk(npc, ch)
       "Was kann ich für sie tuen?",
       "Was möchten sie?"))
     while true do
-        local v = do_choice(npc, ch,
+        local v = npc_choice(npc, ch,
           "Kaufen.",
           "Nichts. Danke.")
         if v == 1 then

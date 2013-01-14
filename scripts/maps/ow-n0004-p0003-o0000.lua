@@ -30,7 +30,7 @@ function betirambo_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Willst du ein Eis haben?",
       "Ein Eis?"))
     while true do
-        local v = do_choice(npc, ch,
+        local v = npc_choice(npc, ch,
           invertika.get_random_element("Jep",
           "Jap",
           "Jo",

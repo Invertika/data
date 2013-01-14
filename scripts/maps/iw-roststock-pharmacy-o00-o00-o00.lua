@@ -71,7 +71,7 @@ function nijeta_talk(npc, ch)
     end
     
     while true do
-        local v = do_choice(npc, ch,
+        local v = npc_choice(npc, ch,
           "Kaufen.",
           "Verkaufen.",
           "Ich suche Arbeit.",
@@ -97,7 +97,7 @@ function nijeta_talk(npc, ch)
                 npc_message(npc, ch, "Du könntest mir ein paar mehr oder weniger seltene Sachen besorgen, die ich für meine Medikamente brauche.")
                 npc_message(npc, ch, "Lust?")
                 while true do
-                    local v2 = do_choice(npc, ch, 
+                    local v2 = npc_choice(npc, ch, 
                       "OK. Was soll ich denn besorgen?",
                       "Nein danke, besser nicht.")
                     if v2 == 1 then

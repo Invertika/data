@@ -24,7 +24,7 @@ function vertox_talk(npc, ch)
     npc_message(npc, ch, "Du benötigst Sprengstoff? Da bist du hier genau richtig!")
     
     while true do 
-        local v = do_choice(npc, ch, "Kaufen.",
+        local v = npc_choice(npc, ch, "Kaufen.",
                          "Verkaufen.",
                          "Nichts. Danke.")
                                    

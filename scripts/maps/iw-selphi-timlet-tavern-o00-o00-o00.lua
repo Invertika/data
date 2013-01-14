@@ -44,7 +44,7 @@ function chodar_talk(npc, ch)
         if count >= 1 then
             npc_message(npc, ch, "Endlich! Da ist ja das Bier! Stell es da hin!")
             while true do
-                v = do_choice(npc, ch, "Das Bier auf den Tisch stellen.", "Das Bier behalten.")
+                v = npc_choice(npc, ch, "Das Bier auf den Tisch stellen.", "Das Bier behalten.")
                 if v == 1 then
                     invertika.add_items(ch, 30006, -1, "Bier")
                     npc_message(npc, ch, "Ah. Endlich! Hier hast du deine 25 Aki.")
@@ -52,7 +52,7 @@ function chodar_talk(npc, ch)
                     set_qstatus(2)
                     npc_message(npc, ch, "Kannst du mir nen zuverlässigen Burschen empfehlen, der Zugang zum Palast hat? Dieser komische Kauz Nepuret wollte mir nicht diesen Brief geben...")
                     while true do
-                        v2 = do_choice(npc, ch, "Hm. Ich kenne keinen.", "Ich habe Zugang zum Palast!")
+                        v2 = npc_choice(npc, ch, "Hm. Ich kenne keinen.", "Ich habe Zugang zum Palast!")
                         if v2 == 1 then
                             npc_message(npc, ch, "Ahw. Komm wieder wenn du einen kennst!")
                             break
@@ -76,7 +76,7 @@ function chodar_talk(npc, ch)
     elseif get_qstatus() == 2 then
         npc_message(npc, ch, "Kannst du mir inzwischen einen zuverlässigen Burschen empfehlen, der Zugang zum Palast hat? Dieser komische Kauz Nepuret wollte mir nicht diesen Brief geben...")
         while true do
-            v = do_choice(npc, ch, "Hm. Nein. Immer noch nicht.", "Ich habe Zugang zum Palast!")
+            v = npc_choice(npc, ch, "Hm. Nein. Immer noch nicht.", "Ich habe Zugang zum Palast!")
             if v == 1 then
                 npc_message(npc, ch, "Ah okay. Komm wieder wenn du einen kennst!")
                 break

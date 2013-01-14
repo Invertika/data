@@ -83,7 +83,7 @@ function bache_talk(npc, ch)
         npc_message(npc, ch, "Leider ist das Palmenholz hier nicht zu gebrauchen...")
         npc_message(npc, ch, "Ich muss mich wohl auf eine weitere Reise machen.")
         while true do
-            local v = do_choice(npc, ch, "Soll ich Holz für dich besorgen?", "Viel Glück bei der Reise.")
+            local v = npc_choice(npc, ch, "Soll ich Holz für dich besorgen?", "Viel Glück bei der Reise.")
             if v == 1 then
                 set_qstatus(1)
                 npc_message(npc, ch, "Das würdest du tun? Hm... Ich kann dir aber nicht viel als Belohnung geben...")
@@ -99,7 +99,7 @@ function bache_talk(npc, ch)
             npc_message(npc, ch, "Du hast Holz!")
             npc_message(npc, ch, "Würdest du mir es überlassen?")
             while true do
-                local v = do_choice(npc, ch, "Nimm es dir.", "Nein. Das brauch ich selber.")
+                local v = npc_choice(npc, ch, "Nimm es dir.", "Nein. Das brauch ich selber.")
                 if v == 1 then
                     local count = chr_inv_count(ch, 40040)
                     if count == 0 then break end

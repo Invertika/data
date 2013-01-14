@@ -25,7 +25,7 @@ end)
 function naltia_talk(npc, ch)
     npc_message(npc, ch, "Möchtest du Medizin kaufen?")
     while true do
-        local v = do_choice(npc, ch, "Ja",
+        local v = npc_choice(npc, ch, "Ja",
           "Nein")
         if v == 1 then
             npc_trade(npc, ch, true, {

@@ -45,7 +45,7 @@ function nalaf_talk(npc, ch)
     if get_qstatus() == 0 then
         npc_message(npc, ch, "Willkommen in unserem Labor. Fass bitte nichts an.")
         while true do
-            local v = do_choice(npc, ch, "Kann ich irgendwie helfen?", "Auf Wiedersehen.")
+            local v = npc_choice(npc, ch, "Kann ich irgendwie helfen?", "Auf Wiedersehen.")
             if v == 1 then
                 npc_message(npc, ch, "Hm...")
                 npc_message(npc, ch, "Wo du so fragst. Wir forschen an einem neuen Mittel. Alles höchst legal. Du brauchst keine Sorgen zu haben.")
@@ -53,7 +53,7 @@ function nalaf_talk(npc, ch)
                 npc_message(npc, ch, "Die Überreste dieser Kreatur sind allerdings schwer zu bekommen, da sie nur relativ selten auftritt.")
                 npc_message(npc, ch, "Wenn du dir ein paar Münzen dazu verdienen willst kannst du ein paar dieser Körper besorgen.")
                 while true do
-                    local v2 = do_choice(npc, ch, "Mach ich.", "Jetzt nicht.")
+                    local v2 = npc_choice(npc, ch, "Mach ich.", "Jetzt nicht.")
                     if v2 == 1 then
                         set_qstatus(1)
                         npc_message(npc, ch, "Gut. Viel Glück bei der Jagd. Diese Viecher sind ziemlich schnell.")
@@ -72,7 +72,7 @@ function nalaf_talk(npc, ch)
         if count > 0 then
             npc_message(npc, ch, "Ah. Du hast Sandkriecherüberreste... Überlässt du sie uns für 200 Aki das Stück?")
             while true do
-                local v = do_choice(npc, ch, "Verkaufen.", "Behalten.")
+                local v = npc_choice(npc, ch, "Verkaufen.", "Behalten.")
                 if v == 1 then
                     -- Verkauf der Items in letzter Sekunde unterbinden
                     count = chr_inv_count(ch, 40043)

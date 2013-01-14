@@ -62,7 +62,7 @@ function fireworker_talk(npc, ch)
       "Möchtest du dir ein wenig Feuerwerk anschauen?",
       "Willst du ein kleines Feuerwerk betrachten?",
       "Auf deinen Wunsch hin, beschwöre ich den Gott des Feuerwerkes, und dieser wird es mächtig krachen lassen!"))
-    local answer = do_choice(npc, ch, "Juhuu! Feuerwerk!", "Nee, danke.")
+    local answer = npc_choice(npc, ch, "Juhuu! Feuerwerk!", "Nee, danke.")
     if answer == 1 then
         local x = posX(npc)
         local y = posY(npc)
@@ -120,7 +120,7 @@ function onurn_talk(npc, ch)
     
     npc_message(npc, ch, "...")
     while true do   
-        local v = do_choice(npc, ch, 
+        local v = npc_choice(npc, ch, 
                     "Wie ist das Wetter?",
                     "Wie viel Uhr ist es?",
                     "Tschüß.")
