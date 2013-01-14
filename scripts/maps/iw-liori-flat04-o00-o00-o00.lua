@@ -22,7 +22,7 @@ atinit(function()
 end)
 
 function metatron_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element(
+    npc_message(npc, ch, invertika.get_random_element(
       "Ich bin die Stimme...",
       "Durch mich spricht sie...",
       "So höre mir zu..."))

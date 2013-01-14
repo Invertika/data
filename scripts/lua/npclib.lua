@@ -111,7 +111,7 @@ end
 
 function _talk(npc, ch, messages)
     for i, v in ipairs(messages) do
-        do_message(npc, ch, v)
+        npc_message(npc, ch, v)
     end
     do_npc_close(npc, ch)
 end

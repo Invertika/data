@@ -25,7 +25,7 @@ atinit(function()
 end)
 
 function dache_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element(
+    npc_message(npc, ch, invertika.get_random_element(
       "Noch ein Drink und dann wars das.",
       "So langsam sehe ich alles doppelt.",
       "Mmmm also ich weiß ja nicht."))
@@ -33,7 +33,7 @@ function dache_talk(npc, ch)
 end
 
 function fohon_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element(
+    npc_message(npc, ch, invertika.get_random_element(
       "Was kann ich für sie tuen?",
       "Was möchten sie?"))
     while true do
@@ -54,7 +54,7 @@ function fohon_talk(npc, ch)
               {30007, 300, 200}})
             break
         elseif v == 2 then
-            do_message(npc, ch, invertika.get_random_element(
+            npc_message(npc, ch, invertika.get_random_element(
               "Einen guten Tag noch.",
               "Einen schönen Tag noch."))
             break

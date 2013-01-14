@@ -22,6 +22,6 @@ atinit(function()
 end)
 
 function ormylt_talk(npc, ch)
-    do_message(npc, ch, "Ich bin die Frau von Graf Cedric")
+    npc_message(npc, ch, "Ich bin die Frau von Graf Cedric")
     do_npc_close(npc, ch)
 end

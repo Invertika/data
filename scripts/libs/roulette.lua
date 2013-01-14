@@ -32,7 +32,7 @@ end
 
 --- NPC Talk Funktion
 function roulette_talk(npc, ch)
-  do_message(npc, ch, "Ein Roulettespiel. Wie viel Geld möchtest du setzen?")
+  npc_message(npc, ch, "Ein Roulettespiel. Wie viel Geld möchtest du setzen?")
 	
 	while true do
 		local v = do_choice(npc, ch, "5 Aki",
@@ -57,13 +57,13 @@ function roulette_talk(npc, ch)
 		
 		local PlayerMoney=chr_money(ch)
 		if PlayerMoney < money then
-			do_message(npc, ch, "Soviel Geld hast du leider nicht.")
+			npc_message(npc, ch, "Soviel Geld hast du leider nicht.")
       break
     else
       chr_money_change(ch, -money)
 		end
 
-    do_message(npc, ch, "Auf was möchtest du setzen?")
+    npc_message(npc, ch, "Auf was möchtest du setzen?")
     local v = do_choice(npc, ch,"Farbe",
                                 "Gleich/Ungleich",
                                 "Hoch/Tief",
@@ -84,52 +84,52 @@ function roulette_talk(npc, ch)
     local text_loose =  "Die Zahl ist: " .. tostring(random_number) .. ". Du hast verloren!"
     if v == 1 and w == 1 then ---Farbe rot
       if roulette_is_red(random_number) then
-        do_message(npc, ch, text_win .. tostring(1*money) .. " Aki gewonnen")
+        npc_message(npc, ch, text_win .. tostring(1*money) .. " Aki gewonnen")
         chr_money_change(ch, 2*money)
       else
-        do_message(npc, ch, text_loose)
+        npc_message(npc, ch, text_loose)
       end
     elseif v == 1 and w == 2 then ---Farbe schwarz
       if roulette_is_red(random_number) == false and not random_number == 0 then
-        do_message(npc, ch, text_win .. tostring(1*money) .. " Aki gewonnen")
+        npc_message(npc, ch, text_win .. tostring(1*money) .. " Aki gewonnen")
         chr_money_change(ch, 2*money)
       else
-        do_message(npc, ch, text_loose)
+        npc_message(npc, ch, text_loose)
       end
     elseif v == 2 and w == 1 then ---Zahl gleich
       if random_number%2 == 0  and not random_number == 0 then
-        do_message(npc, ch, text_win .. tostring(1*money) .. " Aki gewonnen")
+        npc_message(npc, ch, text_win .. tostring(1*money) .. " Aki gewonnen")
         chr_money_change(ch, 2*money)
       else
-        do_message(npc, ch, text_loose)
+        npc_message(npc, ch, text_loose)
       end
     elseif v == 2 and w == 2 then ---Zahl ungleich
       if random_number%2 == 1 then
-        do_message(npc, ch, text_win .. tostring(1*money) .. " Aki gewonnen")
+        npc_message(npc, ch, text_win .. tostring(1*money) .. " Aki gewonnen")
         chr_money_change(ch, 2*money)
       else
-        do_message(npc, ch, text_loose)
+        npc_message(npc, ch, text_loose)
       end
     elseif v == 3 and w == 1 then ---Zahl hoch
       if random_number >= 19  and random_number <= 36 then
-        do_message(npc, ch, text_win .. tostring(1*money) .. " Aki gewonnen")
+        npc_message(npc, ch, text_win .. tostring(1*money) .. " Aki gewonnen")
         chr_money_change(ch, 2*money)
       else
-        do_message(npc, ch, text_loose)
+        npc_message(npc, ch, text_loose)
       end
     elseif v == 3 and w == 2 then ---Zahl tief
       if random_number >= 1  and random_number <= 18 then
-        do_message(npc, ch, text_win .. tostring(1*money) .. " Aki gewonnen")
+        npc_message(npc, ch, text_win .. tostring(1*money) .. " Aki gewonnen")
         chr_money_change(ch, 2*money)
       else
-        do_message(npc, ch, text_loose)
+        npc_message(npc, ch, text_loose)
       end
     elseif v == 4 then  ---Zahl gleich Zufallszahl
       if w == random_number then
-        do_message(npc, ch, text_win .. tostring(36*money) .. " Aki gewonnen")
+        npc_message(npc, ch, text_win .. tostring(36*money) .. " Aki gewonnen")
         chr_money_change(ch, 37*money)
       else
-        do_message(npc, ch, text_loose)
+        npc_message(npc, ch, text_loose)
       end
     end
 

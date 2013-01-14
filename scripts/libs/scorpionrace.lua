@@ -135,7 +135,7 @@ function start_race()
 end
 
 function race_manager_talk(npc, ch)
-    do_message(npc, ch, "Willkommen beim Skorpionrennen! Hier kannst du auf ein Skorpion bieten und bekommst, wenn du richtig liegst den Gewinn.")
+    npc_message(npc, ch, "Willkommen beim Skorpionrennen! Hier kannst du auf ein Skorpion bieten und bekommst, wenn du richtig liegst den Gewinn.")
     local answer_choices = {}
     answer_choices[1] = "Auf Skorpion bieten."
     if (winnings[ch] ~= nil) and (winnings[ch] > 0) then
@@ -164,10 +164,10 @@ function race_manager_talk(npc, ch)
                             end
                             event_scorpion_bet_accepted(v2, ch, betrag)
                         else
-                            do_message(npc, ch, "Du hast nicht genügen Geld!")
+                            npc_message(npc, ch, "Du hast nicht genügen Geld!")
                         end
                     else
-                        do_message(npc, ch, "Zur Zeit nehme ich keine Gebote an!")
+                        npc_message(npc, ch, "Zur Zeit nehme ich keine Gebote an!")
                     end
                     break
                 end
@@ -175,12 +175,12 @@ function race_manager_talk(npc, ch)
             break
         elseif v == 2 then
             if winnings == nil then -- Keiner hat auf den Sieger gesetzt.
-                do_message(npc, ch, "Du hast nichts gewonnen a")
+                npc_message(npc, ch, "Du hast nichts gewonnen a")
             elseif winnings[ch] == nil then -- Spieler hat nicht auf den Sieger gesetzt.
-                do_message(npc, ch, "Du hast nichts gewonnen b")
+                npc_message(npc, ch, "Du hast nichts gewonnen b")
             elseif winnings[ch] > 0 then -- Gewonnen
                 winnings[ch] = winnings[ch] * winning_factor
-                do_message(npc, ch, string.format(
+                npc_message(npc, ch, string.format(
                   "Herzlichen Glückwunsch! Hier hast du deine %s Aki.", winnings[ch]))
                 invertika.add_money(ch, winnings[ch])
                 winnings[ch] = 0

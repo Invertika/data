@@ -32,7 +32,7 @@ atinit(function()
 end)
 
 function regret_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Verdammt, was mache ich hier? Ich bin im falschen Spiel!",
+    npc_message(npc, ch, invertika.get_random_element("Verdammt, was mache ich hier? Ich bin im falschen Spiel!",
       "Ich muss doch nach Leo. Wo bin ich? In Alexia? Gibt es auf unserem Kontinent nicht.",
       "Ich muss jetzt echt los sonst komme ich zu spät zu der Fortsetzung meiner Spielereihe.",
       "Wenn ich den kriege der mir das hier eingebrockt hat."))
@@ -40,7 +40,7 @@ function regret_talk(npc, ch)
 end
 
 function holbert_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Immer diese Entwickler... berücksichtigen die elementaren Grundlagen der Physik nicht. Und was haben wir nun davon? Dieses Haus.",
+    npc_message(npc, ch, invertika.get_random_element("Immer diese Entwickler... berücksichtigen die elementaren Grundlagen der Physik nicht. Und was haben wir nun davon? Dieses Haus.",
       "Von wegen optische Täuschung, das haben die wirklich so gebaut!",
       "Nichts ist unmöglich... Invertika *mir Werbemusik dazu denke*",
       "Möchte mal wissen wer die Baugenehmigung dafür ausgestellt hat."))
@@ -49,28 +49,28 @@ end
 
 function vektor_talk(npc, ch)
     if invertika.get_quest_status(ch, "selphi_timlet_felix_quest") == 1 then
-        do_message(npc, ch, "Ein Felix aus Selphi Timlet fragt ob ich für ihn Statiken berechnen kann?")
-        do_message(npc, ch, "Den kenne ich nicht...")
-        do_message(npc, ch, "Aber Selphi Timlet hat keine vernünftigen Statiker!")
-        do_message(npc, ch, "Schau dir mal den Palast an! Ein FLACHDACH!")
-        do_message(npc, ch, "Statik ist kompliziert. Da kann man nicht einfach irgendeinen dranlassen!")
-        do_message(npc, ch, "Wer schonmal Kartenhäuser gebaut hat weiß dies. Wenn man sich in der dritten Etage auch nur leicht bei einer einzigen Karte verrechnet! Es könnte gravierende Schwierigkeiten bedeuten die 63. Etage zu bauen!")
-        do_message(npc, ch, "Ich rege mich schon wieder zu sehr auf")
-        do_message(npc, ch, "*Beruhigungstabletten schluck*")
+        npc_message(npc, ch, "Ein Felix aus Selphi Timlet fragt ob ich für ihn Statiken berechnen kann?")
+        npc_message(npc, ch, "Den kenne ich nicht...")
+        npc_message(npc, ch, "Aber Selphi Timlet hat keine vernünftigen Statiker!")
+        npc_message(npc, ch, "Schau dir mal den Palast an! Ein FLACHDACH!")
+        npc_message(npc, ch, "Statik ist kompliziert. Da kann man nicht einfach irgendeinen dranlassen!")
+        npc_message(npc, ch, "Wer schonmal Kartenhäuser gebaut hat weiß dies. Wenn man sich in der dritten Etage auch nur leicht bei einer einzigen Karte verrechnet! Es könnte gravierende Schwierigkeiten bedeuten die 63. Etage zu bauen!")
+        npc_message(npc, ch, "Ich rege mich schon wieder zu sehr auf")
+        npc_message(npc, ch, "*Beruhigungstabletten schluck*")
         while true do
             local v = do_choice(npc, ch, "Wirst du Felix nun helfen?", "Tschüß!")
             if v == 1 then
-                do_message(npc, ch, "Ja. Natürlich! Ich mache mich gleich auf den Weg.")
+                npc_message(npc, ch, "Ja. Natürlich! Ich mache mich gleich auf den Weg.")
                 invertika.set_quest_status(ch, "selphi_timlet_felix_quest", 2)
                 break
             elseif v == 2 then
-                do_message(npc, ch, "Was? Du gehst schon?")
+                npc_message(npc, ch, "Was? Du gehst schon?")
                 invertika.set_quest_status(ch, "selphi_timlet_felix_quest", -1)
                 break
             end
         end
     else
-        do_message(npc, ch, invertika.get_random_element("Ich war früher mal ein Superschurke.",
+        npc_message(npc, ch, invertika.get_random_element("Ich war früher mal ein Superschurke.",
             "Ich bin Statiker, aber damit habe ich nichts, aber auch wirklich garnichts zu tun.",
             "Eigentlich müsste dieses Haus in sich zusammenfallen. Oder das Universum. Blöderweise passiert nichts von beidem.",
             "Wir könnten auch einfach so tun, als ob da gar kein Haus steht."))

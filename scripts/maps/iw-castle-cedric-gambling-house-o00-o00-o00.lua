@@ -34,7 +34,7 @@ atinit(function()
 end)
 
 function daniel_talk(npc, ch)
-    do_message(npc, ch, "Moin. Was wollen sie?")
+    npc_message(npc, ch, "Moin. Was wollen sie?")
     while true do
         local v = do_choice(npc, ch,
           "Kaufen.",
@@ -46,7 +46,7 @@ function daniel_talk(npc, ch)
               {30007, 300, 200}})
             break
         elseif v == 2 then
-            do_message(npc, ch, "Tschüß.")
+            npc_message(npc, ch, "Tschüß.")
             break
         end
     end

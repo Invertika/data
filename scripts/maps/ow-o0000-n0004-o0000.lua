@@ -53,7 +53,7 @@ end)
 
 -- Silvester
 function fireworker_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element(
+    npc_message(npc, ch, invertika.get_random_element(
       "Willst du ein wenig Feuerwerk sehen?",
       "Willst du ein kleines Feuerwerk sehen?",
       "Möchtest du ein kleines Feuerwerk sehen?",
@@ -121,27 +121,27 @@ function onurn_talk(npc, ch)
     --Get Quest
     local quest_var = invertika.get_quest_status(ch, queststring)
     
-    do_message(npc, ch, "...")
+    npc_message(npc, ch, "...")
     while true do   
         local v = do_choice(npc, ch, 
                     "Wie ist das Wetter?",
                     "Wie viel Uhr ist es?",
                     "Tschüß.")
         if v == 1 and quest_var == 2 then
-            do_message(npc, ch, "Die bekommen das Wasser von einem Lieferanten aus dem Norden.")
+            npc_message(npc, ch, "Die bekommen das Wasser von einem Lieferanten aus dem Norden.")
             --Set Quest
             invertika.set_quest_status(ch, queststring, 3)
         elseif v == 1 and quest_var ~= 2 then
-            do_message(npc, ch, invertika.get_random_element(
+            npc_message(npc, ch, invertika.get_random_element(
               "Es ist sonnig.",
               "Es ist stürmisch.",
               "Dort oben ist eine Wolke. Vielleicht fängt es ja zu regnen an."))
             break
         elseif v == 2 then
-            do_message(npc, ch, string.format("Es ist %s Uhr.", datetime.get_current_time())) --Uhrzeit Ausgeben
+            npc_message(npc, ch, string.format("Es ist %s Uhr.", datetime.get_current_time())) --Uhrzeit Ausgeben
             break
         else
-            do_message(npc, ch, "...")
+            npc_message(npc, ch, "...")
             break
         end
     end

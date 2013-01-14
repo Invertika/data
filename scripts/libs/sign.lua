@@ -28,6 +28,6 @@ function create_sign(xpos, ypos, text)
 end
 
 function sign_read(npc, ch)
-  do_message(npc, ch, signtext[npc])
+  npc_message(npc, ch, signtext[npc])
   do_npc_close(npc, ch)
 end

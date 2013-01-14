@@ -33,14 +33,14 @@ function bolum_talk(npc, ch)
     local quest_var = invertika.get_quest_status(ch, queststring)
     
     if quest_var > 0 and quest_var < 7 then
-        do_message(npc, ch, "..")
+        npc_message(npc, ch, "..")
     end
     
     if quest_var == 7 then
-        do_message(npc, ch, "Ah, der alte Vodel hat dich geschickt.")
-        do_message(npc, ch, "Du willst wahrscheinlich die Antwort auf Blubb wissen")
-        do_message(npc, ch, "Sie lautet blubb")
-        do_message(npc, ch, "Richte ihm bitte schöne Grüße von mir aus.")
+        npc_message(npc, ch, "Ah, der alte Vodel hat dich geschickt.")
+        npc_message(npc, ch, "Du willst wahrscheinlich die Antwort auf Blubb wissen")
+        npc_message(npc, ch, "Sie lautet blubb")
+        npc_message(npc, ch, "Richte ihm bitte schöne Grüße von mir aus.")
         
         --Set Quest
         --Set Quest
@@ -48,7 +48,7 @@ function bolum_talk(npc, ch)
     end
     
     if quest_var > 7 then
-        do_message(npc, ch, "Hi.")
+        npc_message(npc, ch, "Hi.")
     end
     do_npc_close(npc, ch)
 end

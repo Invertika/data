@@ -23,7 +23,7 @@ atinit(function()
 end)
 
 function hatsuli_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element(
+    npc_message(npc, ch, invertika.get_random_element(
       "Immer muss ich das gleiche sagen.",
       "Niemand fragt mich warum. Alle denken das muss so.",
       "Ja und das nur wegen diesem Spinat."))
@@ -31,7 +31,7 @@ function hatsuli_talk(npc, ch)
 end
 
 function eldachi_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element(
+    npc_message(npc, ch, invertika.get_random_element(
       "Früher wollte ich immer eines von diesen Telefonen haben.",
       "Ach hätte ich doch nur ein Klavier.",
       "Irgendwoher kenne ich dich..."))

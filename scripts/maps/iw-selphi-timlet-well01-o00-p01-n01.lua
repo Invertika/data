@@ -64,7 +64,7 @@ atinit(function()
 end)
 
 function tano1_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Geh doch mal zu Samos, der hat bestimmt einen Auftrag für dich.",
+    npc_message(npc, ch, invertika.get_random_element("Geh doch mal zu Samos, der hat bestimmt einen Auftrag für dich.",
       "Im Laden kannst du erst etwas kaufen, wenn du dir Reputation bei uns erworben hast.",
       "Was das hier ist? Natürlich das Hauptquartier der Ta No!",
       "Unsere Ziele? Die sind geheim!"))
@@ -72,7 +72,7 @@ function tano1_talk(npc, ch)
 end
 
 function tano2_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Ich passe auf, dass niemand so ohne weiteres in die Schatzkammer geht.",
+    npc_message(npc, ch, invertika.get_random_element("Ich passe auf, dass niemand so ohne weiteres in die Schatzkammer geht.",
       "Versuche gar nich erst, etwas zu stehlen!",
       "Über der Schatzkammer hängt ein Schutzzauber.",
       "NEIN, du darfst NICHT in die Schatzkammer."))
@@ -80,17 +80,17 @@ function tano2_talk(npc, ch)
 end
 
 function tano3_talk(npc, ch)
-    do_message(npc, ch, "Ich werde irgendwann mal Waffen und Ausrüstung verkaufen und so.")
+    npc_message(npc, ch, "Ich werde irgendwann mal Waffen und Ausrüstung verkaufen und so.")
     do_npc_close(npc, ch)
 end
 
 function tano4_talk(npc, ch)
-    do_message(npc, ch, "Ich soll irgendwann mal Quests vergeben, mit denen die Reputation bei den Ta No gesteigert werden kann.")
+    npc_message(npc, ch, "Ich soll irgendwann mal Quests vergeben, mit denen die Reputation bei den Ta No gesteigert werden kann.")
     do_npc_close(npc, ch)
 end
 
 function tano5_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Ich koche hier für die anderen Sektenmitglieder.",
+    npc_message(npc, ch, invertika.get_random_element("Ich koche hier für die anderen Sektenmitglieder.",
       "Pah, die sollen sich bloß nicht schon wieder über das Essen beschweren! Verwöhntes Pack...",
       "Hmm, noch ein bisschen hiervon, und ein wenig hiervon, und probieren ... Arghh, schon wieder zu viel Salz!",
       "Aus der blöden Spüle kommt schon wieder nur rostiges Wasser!"))
@@ -98,7 +98,7 @@ function tano5_talk(npc, ch)
 end
 
 function tano6_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Ich hasse Küchendienst... Aber naja, immer noch besser als Abort saubermachen.",
+    npc_message(npc, ch, invertika.get_random_element("Ich hasse Küchendienst... Aber naja, immer noch besser als Abort saubermachen.",
       "Die Spülmaschine ist schon wieder kaputt und jetzt muss ich alles von Hand waschen...",
       "Eigentlich hatte ich mir das Leben als Ta No irgendwie spannender vorgestellt, und jetzt stehe ich den ganzen Tag bloss hier in der Küche.",
       "\"Enlelm, hol dies! Enlelm, hol das!\" - Arghh! Wie ich es hasse!",
@@ -107,27 +107,27 @@ function tano6_talk(npc, ch)
 end
 
 function tano7_talk(npc, ch)
-    do_message(npc, ch, "Hier könnte ihre Werbung stehen")
+    npc_message(npc, ch, "Hier könnte ihre Werbung stehen")
     do_npc_close(npc, ch)
 end
 
 function tano8_talk(npc, ch)
-    do_message(npc, ch, "Hier könnte ihre Werbung stehen")
+    npc_message(npc, ch, "Hier könnte ihre Werbung stehen")
     do_npc_close(npc, ch)
 end
 
 function tano9_talk(npc, ch)
-    do_message(npc, ch, "Hier könnte ihre Werbung stehen")
+    npc_message(npc, ch, "Hier könnte ihre Werbung stehen")
     do_npc_close(npc, ch)
 end
 
 function tano10_talk(npc, ch)
-    do_message(npc, ch, "Hier könnte ihre Werbung stehen")
+    npc_message(npc, ch, "Hier könnte ihre Werbung stehen")
     do_npc_close(npc, ch)
 end
 
 function tano11_talk(npc, ch)
-    do_message(npc, ch, "Hier könnte ihre Werbung stehen")
+    npc_message(npc, ch, "Hier könnte ihre Werbung stehen")
     being_set_direction(npc, DIRECTION_LEFT)
     do_npc_close(npc, ch)
 end

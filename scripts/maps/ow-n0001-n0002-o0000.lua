@@ -38,7 +38,7 @@ atinit(function()
 end)
 
 function jurkan_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Irgendwie ist mir zu heiß hier...",
+    npc_message(npc, ch, invertika.get_random_element("Irgendwie ist mir zu heiß hier...",
       "Glaub mir, das hier war nicht geplant.",
       "Das habe ich nun davon, seeseekey geholfen zu haben. Wer das ist? Der da drüben!",
       "ICH habe euch geschaffen, das mit Invertika ist alles Quatsch!!!!!",
@@ -56,7 +56,7 @@ function jurkan_talk(npc, ch)
 end
 
 function holzbein_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Wo ist mein Kamel?",
+    npc_message(npc, ch, invertika.get_random_element("Wo ist mein Kamel?",
       "Lieber Arm dran, als Arm ab.",
       "Steck den Spaltenvektor in die Vektorspalte.",
       "Um Pirat zu werden, musst du schon mehr machen als CDs brennen!",
@@ -68,7 +68,7 @@ function holzbein_talk(npc, ch)
 end
 
 function seeseekey_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Da sind meine Sprüche schon wieder weg...",
+    npc_message(npc, ch, invertika.get_random_element("Da sind meine Sprüche schon wieder weg...",
       "Ich hasse Schleichwerbung! Und nun geh bitte ich muss mit meinem Android Telefon auf seeseekey.net gehen.",
       "Mmm wenn ich das so Skripte müsste das alles zusammenpassen. PENG!",
       "Anne wo bist du?",
@@ -87,7 +87,7 @@ function seeseekey_talk(npc, ch)
 end
 
 function delegan_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Zu eckig, zu pixelig, zu virtuell! Neubauen!",
+    npc_message(npc, ch, invertika.get_random_element("Zu eckig, zu pixelig, zu virtuell! Neubauen!",
       "Ob jeder so einfach Berge, Täler, Seen und Flüsse aus dem nichts erschaffen kann?",
       "Sonne, Mond und Sterne, ich bau mir eine Taverne.",
       "Mauszeiger hier, Mauszeiger dort und alles ist hin fort.",
@@ -102,7 +102,7 @@ function delegan_talk(npc, ch)
 end
 
 function bulldog98_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Wenn du aufhören willst zu rauchen, höre auch auf Windows zu nutzen. Es wird dir dabei helfen.",
+    npc_message(npc, ch, invertika.get_random_element("Wenn du aufhören willst zu rauchen, höre auch auf Windows zu nutzen. Es wird dir dabei helfen.",
       "(Linux...) Hält, was andere versprechen.",
       "Die große Welt paßt nicht durch kleine Fenster - Linux!",
       "Freie Software für eine freie Welt.",
@@ -116,14 +116,14 @@ function bulldog98_talk(npc, ch)
 end
 
 function saturn_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("What is music? Music is the emotion of sound and the sound of emotion.",
+    npc_message(npc, ch, invertika.get_random_element("What is music? Music is the emotion of sound and the sound of emotion.",
       "What is sound? Sound is any audible vibration.",
       "What is emotion? Now that is a tough one."))
     do_npc_close(npc, ch)
 end
 
 function subnet_zero_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Reboot tut gut!",
+    npc_message(npc, ch, invertika.get_random_element("Reboot tut gut!",
       "Never change a running system!",
       "If the helpdesk thinks your question is stupid, we will set you on fire.",
       "Termine sind nicht verbindlich.",
@@ -143,18 +143,18 @@ function subnet_zero_talk(npc, ch)
 end
 
 function djh2o2_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Die Kunst der Komposition ist es, sich an eine Melodie zu erinnern, die es noch nicht gibt."))
+    npc_message(npc, ch, invertika.get_random_element("Die Kunst der Komposition ist es, sich an eine Melodie zu erinnern, die es noch nicht gibt."))
     do_npc_close(npc, ch)
 end
  
 function darkmage_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Why not to use GPS for finding players. I think this scientist can make satellite for it.",
+    npc_message(npc, ch, invertika.get_random_element("Why not to use GPS for finding players. I think this scientist can make satellite for it.",
       "One day, one of the best painters met drunk man on the street. This painter didn't like to put on new clothes, so he put on old hat. Man asked: Erm, is this thing on your head is called hat? Painter answered: Is this thing under your hat called head?"))
     do_npc_close(npc, ch)
 end
 
 function ablu_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Pffff.",
+    npc_message(npc, ch, invertika.get_random_element("Pffff.",
       "Du kannst hier ruhigen Gewissens einen Scheck liegen lassen. Ich passe schon darauf auf.",
       "Hüte dich vor dem Schneemann!",
       "Nein. Ich spawne keine Killermaden. Dafür ist der Typ da oben rechts verantwortlich.",
@@ -163,13 +163,13 @@ function ablu_talk(npc, ch)
 end
 
 function cmur2_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("*meepmeep*",
+    npc_message(npc, ch, invertika.get_random_element("*meepmeep*",
       "Nicht mal vernünftige Klamotten gibt's hier!"))
     do_npc_close(npc, ch)
 end
 
 function kizu_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Moin",
+    npc_message(npc, ch, invertika.get_random_element("Moin",
     "Wird alles Überbewertet",
     "Einstein sagte: 'Fantasie ist wichtiger als Wissen, denn Wissen ist begrenzt'. Dem kann ich nur zustimmen, denn sonst gäbe es diese Welt hier nicht.",
     "Ordnung ist das halbe Leben. Ich lebe aber nunmal auf der anderen Seite",
@@ -179,7 +179,7 @@ function kizu_talk(npc, ch)
 end
 
 function postremus_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Interessant",
+    npc_message(npc, ch, invertika.get_random_element("Interessant",
       "Faszinierend",
       "Das alles hier hat keinen, hohen, künstlerischen Wert.",
       "Ja, Jim. Es sind schon wieder die Klingonen...",

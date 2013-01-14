@@ -38,19 +38,19 @@ function daniela_talk(npc, ch)
   function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_bruce_quest", x) end
   
   if get_qstatus() < 5 then
-    do_message(npc, ch, invertika.get_random_element("Stehst du auf der Gästeliste?",
+    npc_message(npc, ch, invertika.get_random_element("Stehst du auf der Gästeliste?",
                                                     "Party! Party!",
                                                     "Was willst du?",
                                                     "Kennen wir uns?"))
   elseif get_qstatus() == 5 and chr_inv_count(ch, 40015) >= 1 then
-    do_message(npc, ch, "Ein Geschenk von Bruce? Herzlichen Dank!")
+    npc_message(npc, ch, "Ein Geschenk von Bruce? Herzlichen Dank!")
     invertika.add_items(ch, 40015, -1, "Geschenk")
     set_qstatus(6)
   elseif get_qstatus() > 5 then
-    do_message(npc, ch, invertika.get_random_element("Lust auf Poker?",
+    npc_message(npc, ch, invertika.get_random_element("Lust auf Poker?",
                                                       "Danke, dass ihr mir mein Geschenk gebracht habt!"))
   else
-    do_message(npc, ch, invertika.get_random_element("Lust auf Poker?",
+    npc_message(npc, ch, invertika.get_random_element("Lust auf Poker?",
                                                       "Ich hab ne Glückssträhne!"))
   end
     do_npc_close(npc, ch)

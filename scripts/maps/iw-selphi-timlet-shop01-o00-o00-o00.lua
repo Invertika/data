@@ -21,7 +21,7 @@ atinit(function()
 end)
 
 function vertox_talk(npc, ch)
-    do_message(npc, ch, "Du benötigst Sprengstoff? Da bist du hier genau richtig!")
+    npc_message(npc, ch, "Du benötigst Sprengstoff? Da bist du hier genau richtig!")
     
     while true do 
         local v = do_choice(npc, ch, "Kaufen.",
@@ -35,7 +35,7 @@ function vertox_talk(npc, ch)
             npc_trade(npc, ch, true)
             break
         elseif v == 3 then
-            do_message(npc, ch, "Bis zum nächsten Mal!")
+            npc_message(npc, ch, "Bis zum nächsten Mal!")
             break
         end
     end

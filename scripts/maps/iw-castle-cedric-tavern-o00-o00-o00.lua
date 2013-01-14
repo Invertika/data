@@ -22,7 +22,7 @@ atinit(function()
 end)
 
 function egam_talk(npc, ch)
-    do_message(npc, ch, "Was kann ich für sie tuen?")
+    npc_message(npc, ch, "Was kann ich für sie tuen?")
     while true do
         local v = do_choice(npc, ch,
           "Kaufen.",
@@ -41,7 +41,7 @@ function egam_talk(npc, ch)
               {30007, 300, 200}})
             break
         elseif v == 2 then
-            do_message(npc, ch, "Einen guten Tag noch.")
+            npc_message(npc, ch, "Einen guten Tag noch.")
             break
         end
     end

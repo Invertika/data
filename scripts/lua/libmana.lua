@@ -54,7 +54,7 @@ end
 
 -- Sends an npc message to a player.
 -- Note: Does not wait for the player to acknowledge the message.
-function do_message(npc, ch, msg)
+function npc_message(npc, ch, msg)
   -- Wait for the arrival of a pending acknowledgment, if any.
   coroutine.yield(0)
   npc_message(npc, ch, msg)

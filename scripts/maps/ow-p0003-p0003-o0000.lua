@@ -44,22 +44,22 @@ function oughad_talk(npc, ch)
     local number_of_jobs = invertika.get_quest_status(ch, quest_string_number)
     
     if quest_var == 0 then
-        do_message(npc, ch, "Ahrg.")
-        do_message(npc, ch, "Immer verderben diese bistigen Maden meine Ernte.")
-        do_message(npc, ch, "Und das bei den Saat Preisen..")
-        do_message(npc, ch, "...")
-        do_message(npc, ch, "Seit wann stehst denn du hier?")
-        do_message(npc, ch, "Egal, jetzt, wo du schon einmal hier bist, kanst du mir ja auch bei meinem Problem helfen.")
+        npc_message(npc, ch, "Ahrg.")
+        npc_message(npc, ch, "Immer verderben diese bistigen Maden meine Ernte.")
+        npc_message(npc, ch, "Und das bei den Saat Preisen..")
+        npc_message(npc, ch, "...")
+        npc_message(npc, ch, "Seit wann stehst denn du hier?")
+        npc_message(npc, ch, "Egal, jetzt, wo du schon einmal hier bist, kanst du mir ja auch bei meinem Problem helfen.")
         while true do
-            do_message(npc, ch, "Und, hilfst du?")
+            npc_message(npc, ch, "Und, hilfst du?")
             local v = do_choice(npc, ch, "Ja", "Nein")
             if v == 1 then
-                do_message(npc, ch, "danke")
+                npc_message(npc, ch, "danke")
                 --Set Quest Var
                 invertika.set_quest_status(ch, quest_string_var, 1)
                 break
             elseif v == 2 then
-                do_message(npc, ch, "ok")
+                npc_message(npc, ch, "ok")
                 break
             end
         end
@@ -69,7 +69,7 @@ function oughad_talk(npc, ch)
     
     if quest_var == 1 then
         local number_of_kills = (number_of_jobs + 1) * 5 * math.random(1, 20)
-        do_message(npc, ch, string.format("Töte bitte mindestens %s Maden", number_of_kills))
+        npc_message(npc, ch, string.format("Töte bitte mindestens %s Maden", number_of_kills))
 
         --Set Quest
         invertika.set_quest_status(ch, quest_string_var, 2)
@@ -85,14 +85,14 @@ function oughad_talk(npc, ch)
         local kills = chr_get_kill_count(ch, 2)
         if kills - start_kills >= required_kills then
             number_of_jobs = number_of_jobs + 1
-            do_message(npc, ch, "Danke. Das sollte meiner Ernte helfen.")
+            npc_message(npc, ch, "Danke. Das sollte meiner Ernte helfen.")
             invertika.add_money(ch, number_of_jobs * 25)
             
             --Set Quests
             invertika.set_quest_status(ch, quest_string_var, 1)
             invertika.set_quest_status(ch, quest_string_number, number_of_jobs)           
         else
-            do_message(npc, ch, string.format("Du woltest mehr Maden töten. Töte bitte noch %s Maden.", required_kills - (kills - start_kills)))
+            npc_message(npc, ch, string.format("Du woltest mehr Maden töten. Töte bitte noch %s Maden.", required_kills - (kills - start_kills)))
         end
     end
     do_npc_close(npc, ch)

@@ -25,9 +25,9 @@ atinit(function()
 end)
 
 function brecht_talk(npc, ch)
-    do_message(npc, ch, "Ich sehe schon du bist durstig. Was möchtest du?")
+    npc_message(npc, ch, "Ich sehe schon du bist durstig. Was möchtest du?")
     npc_trade(npc, ch, false, { {30006, 999, 25}, {30007, 999, 60}, {30008, 999, 450} })
-    do_message(npc, ch, "Lass es dir schmecken.")
+    npc_message(npc, ch, "Lass es dir schmecken.")
     do_npc_close(npc, ch)
 end
 
@@ -38,27 +38,27 @@ function chodar_talk(npc, ch)
     function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_vipcard", x) end
 
     if get_qstatus() == 0 then
-        do_message(npc, ch, "Hey! Du! Steht nicht so dumm rum! Bring mir mein Bier!")
+        npc_message(npc, ch, "Hey! Du! Steht nicht so dumm rum! Bring mir mein Bier!")
         set_qstatus(1)
     elseif get_qstatus() == 1 then
         count = chr_inv_count(ch, 30006)
         if count >= 1 then
-            do_message(npc, ch, "Endlich! Da ist ja das Bier! Stell es da hin!")
+            npc_message(npc, ch, "Endlich! Da ist ja das Bier! Stell es da hin!")
             while true do
                 v = do_choice(npc, ch, "Das Bier auf den Tisch stellen.", "Das Bier behalten.")
                 if v == 1 then
                     invertika.add_items(ch, 30006, -1, "Bier")
-                    do_message(npc, ch, "Ah. Endlich! Hier hast du deine 25 Aki.")
+                    npc_message(npc, ch, "Ah. Endlich! Hier hast du deine 25 Aki.")
                     invertika.add_money(ch, 25)
                     set_qstatus(2)
-                    do_message(npc, ch, "Kannst du mir nen zuverlässigen Burschen empfehlen, der Zugang zum Palast hat? Dieser komische Kauz Nepuret wollte mir nicht diesen Brief geben...")
+                    npc_message(npc, ch, "Kannst du mir nen zuverlässigen Burschen empfehlen, der Zugang zum Palast hat? Dieser komische Kauz Nepuret wollte mir nicht diesen Brief geben...")
                     while true do
                         v2 = do_choice(npc, ch, "Hm. Ich kenne keinen.", "Ich habe Zugang zum Palast!")
                         if v2 == 1 then
-                            do_message(npc, ch, "Ahw. Komm wieder wenn du einen kennst!")
+                            npc_message(npc, ch, "Ahw. Komm wieder wenn du einen kennst!")
                             break
                         elseif v2 == 2 then
-                            do_message(npc, ch, "Du? Was solls. Hier ist ein Brief. Gib ihn den König. Und Wehe dir! Ich weiß ob du ihn abgeliefert hast!")
+                            npc_message(npc, ch, "Du? Was solls. Hier ist ein Brief. Gib ihn den König. Und Wehe dir! Ich weiß ob du ihn abgeliefert hast!")
                             invertika.add_items(ch, 40027, 1, "Brief an den König")
                             set_qstatus(3)
                             break
@@ -67,36 +67,36 @@ function chodar_talk(npc, ch)
 
                     break
                 elseif v == 2 then
-                    do_message(npc, ch, "Scher dich zum Teufel und schick mir die Bedienung!")
+                    npc_message(npc, ch, "Scher dich zum Teufel und schick mir die Bedienung!")
                     break
                 end
             end
         else
-            do_message(npc, ch, "Jetzt stehst du schon wieder da! Ich will mich nicht unterhalten! Ich will mein Bier!")
+            npc_message(npc, ch, "Jetzt stehst du schon wieder da! Ich will mich nicht unterhalten! Ich will mein Bier!")
         end
     elseif get_qstatus() == 2 then
-        do_message(npc, ch, "Kannst du mir inzwischen einen zuverlässigen Burschen empfehlen, der Zugang zum Palast hat? Dieser komische Kauz Nepuret wollte mir nicht diesen Brief geben...")
+        npc_message(npc, ch, "Kannst du mir inzwischen einen zuverlässigen Burschen empfehlen, der Zugang zum Palast hat? Dieser komische Kauz Nepuret wollte mir nicht diesen Brief geben...")
         while true do
             v = do_choice(npc, ch, "Hm. Nein. Immer noch nicht.", "Ich habe Zugang zum Palast!")
             if v == 1 then
-                do_message(npc, ch, "Ah okay. Komm wieder wenn du einen kennst!")
+                npc_message(npc, ch, "Ah okay. Komm wieder wenn du einen kennst!")
                 break
             elseif v == 2 then
-                do_message(npc, ch, "Du? Naja, egal. Hier ist ein Brief. Gib ihm den König. Und wehe dir! Ich weiß ob du ihn abgeliefert hast!")
+                npc_message(npc, ch, "Du? Naja, egal. Hier ist ein Brief. Gib ihm den König. Und wehe dir! Ich weiß ob du ihn abgeliefert hast!")
                 invertika.add_items(ch, 40027, 1, "Brief an den König")
                 set_qstatus(3)
                 break
             end
         end
     elseif get_qstatus() == 3 then
-        do_message(npc, ch, "Los. Lauf zum König. Worauf wartest du?")
+        npc_message(npc, ch, "Los. Lauf zum König. Worauf wartest du?")
     elseif get_qstatus() == 4 then
-        do_message(npc, ch, "Du warst da? Ja natürlich war er erschüttert!")
-        do_message(npc, ch, "Komm ich schmeiß ne Runde! PROST!")
+        npc_message(npc, ch, "Du warst da? Ja natürlich war er erschüttert!")
+        npc_message(npc, ch, "Komm ich schmeiß ne Runde! PROST!")
         invertika.add_items(ch, 30006, 1, "Bier")
         set_qstatus(5)
     elseif get_qstatus() == 5 then
-        do_message(npc, ch, invertika.get_random_element("Auf den König!",
+        npc_message(npc, ch, invertika.get_random_element("Auf den König!",
                                                          "PROST!",
                                                          "Auf bessere Zeiten!"))
     end

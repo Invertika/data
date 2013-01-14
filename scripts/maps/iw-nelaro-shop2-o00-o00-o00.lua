@@ -23,7 +23,7 @@ atinit(function()
 end)
 
 function enla_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Hi, was kann ich für sie tuen?",
+    npc_message(npc, ch, invertika.get_random_element("Hi, was kann ich für sie tuen?",
       "Hi, was gibt es?",
       "Hi, wie kann ich ihnen helfen?",
       "Hallo, was kann ich für sie tuen?",
@@ -61,7 +61,7 @@ function enla_talk(npc, ch)
             npc_trade(npc, ch, true)
             break
         elseif v == 3 then
-            do_message(npc, ch, invertika.get_random_element("Tschüß",
+            npc_message(npc, ch, invertika.get_random_element("Tschüß",
               "Tschau",
               "Bis Bald",
               "Beehren sie uns bald wieder",

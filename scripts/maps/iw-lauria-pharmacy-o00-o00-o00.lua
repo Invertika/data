@@ -23,7 +23,7 @@ atinit(function()
 end)
 
 function naltia_talk(npc, ch)
-    do_message(npc, ch, "Möchtest du Medizin kaufen?")
+    npc_message(npc, ch, "Möchtest du Medizin kaufen?")
     while true do
         local v = do_choice(npc, ch, "Ja",
           "Nein")
@@ -38,6 +38,6 @@ function naltia_talk(npc, ch)
             break
         end
     end
-    do_message(npc, ch, "Tschüß")
+    npc_message(npc, ch, "Tschüß")
     do_npc_close(npc, ch)
 end

@@ -68,7 +68,7 @@ game:registerEventPlayerExit(function(my_player)
   being_say(poker_dealer_npc, string.format("%s verlässt das Spiel.", being_get_name(my_player:getCh())))
 
   myguard = create_npc("Guard", 200, 100 * TILESIZE, 100 * TILESIZE, function(npc, ch)
-      do_message(npc, ch, "bla!")
+      npc_message(npc, ch, "bla!")
       do_npc_close(npc, ch)
   end, nil)
   guard.create_player_hunter(myguard, 500, 32, 5 * TILESIZE, 1000, 10, 9999, DAMAGE_PHYSICAL, 1)
@@ -148,18 +148,18 @@ scorpionrace.initializeRace(scorpions, skorpion_rennen_npc, 2)
 end)
 
 function poker_dealer_talk(npc, ch)
-    do_message(npc, ch, "Hallo.")
+    npc_message(npc, ch, "Hallo.")
     if game == nil then
         game = poker.PokerGame:new(200)
         --game:startGame()
     end
 
     if game:playerIsInGame(ch) then
-        do_message(npc, ch, "Spieler ist im Spiel")
+        npc_message(npc, ch, "Spieler ist im Spiel")
         if game:isRunning() then
-            do_message(npc, ch, "Spiel läuft.")
+            npc_message(npc, ch, "Spiel läuft.")
             if game:playerIsOnTurn(ch) then
-                do_message(npc, ch, "Poker: Spieler ist an der Reihe.")
+                npc_message(npc, ch, "Poker: Spieler ist an der Reihe.")
                 local possibilities =  game:getPossibilities(ch)
                 local choices = {}
                 for i, possibility in ipairs(possibilities) do
@@ -202,8 +202,8 @@ function poker_dealer_talk(npc, ch)
                                 talbe.insert(numbers, i)
                             end
                             text = table.concat(text, ", ")
-                            do_message(npc, ch, "Wähle eine Karte aus, die du tauschen möchtest.")
-                            do_message(npc, ch, text)
+                            npc_message(npc, ch, "Wähle eine Karte aus, die du tauschen möchtest.")
+                            npc_message(npc, ch, text)
                             while true do
                                 local v1 = do_choice(npc, ch, numbers)
                                 if cards[i] ~= nil then
@@ -217,12 +217,12 @@ function poker_dealer_talk(npc, ch)
                     end
                 end
             else
-                do_message(npc, ch, "Du bist nicht dran.")
+                npc_message(npc, ch, "Du bist nicht dran.")
             end
         else
-            do_message(npc, ch, "Spiel läuft nicht.")
+            npc_message(npc, ch, "Spiel läuft nicht.")
             print("Poker: Spiel läuft nicht.")
-            do_message(npc, ch, "Spiel starten?")
+            npc_message(npc, ch, "Spiel starten?")
             while true do
                 local v = do_choice(npc, ch, "Ja.", "Nein.")
                 if v == 1 then
@@ -236,15 +236,15 @@ function poker_dealer_talk(npc, ch)
             end
         end
     else
-        do_message(npc, ch, "Du bist nicht im Spiel")
+        npc_message(npc, ch, "Du bist nicht im Spiel")
         print("Poker: Spieler bist nicht im Spiel")
         -- Dem Spieler die Möglichkeit geben ins Spiel einzusteigen.
-        do_message(npc, ch, "Möchtest du mitspielen?")
+        npc_message(npc, ch, "Möchtest du mitspielen?")
         while true do
             local v = do_choice(npc, ch, "Ja.", "Nein.")
             if v == 1 then
                 game:addPlayer(ch)
-                do_message(npc, ch, "Viel Glück!")
+                npc_message(npc, ch, "Viel Glück!")
                 break
             elseif v == 2 then
                 break
@@ -256,12 +256,12 @@ end
 
 function scorpion_talk(npc, ch)
     schedule_in(5, function() being_say(npc, "BUH!") end)
-    do_message(npc, ch, "Ich werde gewinnen!")
+    npc_message(npc, ch, "Ich werde gewinnen!")
     do_npc_close(npc, ch)
 end
 
 function zelan_talk(npc, ch)
-    do_message(npc, ch, "Wo du bist? Im Vacare. Jeder neue kommt hier her bevor es raus geht in die große Welt. Also pass auf dich auf.")
+    npc_message(npc, ch, "Wo du bist? Im Vacare. Jeder neue kommt hier her bevor es raus geht in die große Welt. Also pass auf dich auf.")
     do_npc_close(npc, ch)
 end
 
@@ -269,11 +269,11 @@ function alaria_talk(npc, ch)
     -- "Example: Let the player sell every item with a 'value' parameter in the server's items.xml file
     local sellcase = npc_trade(npc, ch, true)
     if sellcase == 0 then
-      do_message(npc, ch, "Ok, what do you want to sell:")
+      npc_message(npc, ch, "Ok, what do you want to sell:")
     elseif sellcase == 1 then
-      do_message(npc, ch, "I'm not interested by any of your items.")
+      npc_message(npc, ch, "I'm not interested by any of your items.")
     else
-      do_message(npc, ch, "Hmm, something went wrong... Ask a scripter to fix this!")
+      npc_message(npc, ch, "Hmm, something went wrong... Ask a scripter to fix this!")
     end
     
     do_npc_close(npc, ch)
@@ -322,7 +322,7 @@ function emote_talk(npc, ch)
   elseif emo_state == EMOTE_HAPPY then
     state = "happy"
   end
-  do_message(npc, ch, string.format("The emotional palm seems %s.", state))
+  npc_message(npc, ch, string.format("The emotional palm seems %s.", state))
   v = do_choice(npc, ch,
     "Stupid palm, you are ugly and everyone hates you!",
     "You are such a nice palm, let me give you a hug.",
@@ -347,16 +347,16 @@ function emote_update(npc)
 end
 
 function int_test_talk(npc, ch)
-    do_message(npc, ch, "Enter a number (50-100)")
+    npc_message(npc, ch, "Enter a number (50-100)")
     number = do_ask_integer(npc, ch, 50, 100, 75)
-    do_message(npc, ch, string.format("You have entered %d ", number))
+    npc_message(npc, ch, string.format("You have entered %d ", number))
     do_npc_close(npc, ch)
 end
 
 function string_test_talk(npc, ch)
-    do_message(npc, ch, "Enter a string")
+    npc_message(npc, ch, "Enter a string")
     input = do_ask_string(npc, ch)
-    do_message(npc, ch, string.format("You have entered '%s' Nice choice ! ", input))
+    npc_message(npc, ch, string.format("You have entered '%s' Nice choice ! ", input))
     do_npc_close(npc, ch)
 end
 
@@ -375,21 +375,21 @@ end
 
 function npc1_talk(npc, ch)
   on_remove(ch, function() print "Player has left the map." end);
-  do_message(npc, ch, "Hello! I am the testing NPC.")
+  npc_message(npc, ch, "Hello! I am the testing NPC.")
   local rights = chr_get_rights(ch);
 
   if (rights >= 128) then
-    do_message(npc, ch, "Oh mighty server administrator, how can I avoid your wrath?")
+    npc_message(npc, ch, "Oh mighty server administrator, how can I avoid your wrath?")
   elseif (rights >= 8) then
-    do_message(npc, ch, "How can I be of assistance, sir gamemaster?")
+    npc_message(npc, ch, "How can I be of assistance, sir gamemaster?")
   elseif (rights >= 4) then
-    do_message(npc, ch, "What feature would you like to debug, developer?")
+    npc_message(npc, ch, "What feature would you like to debug, developer?")
   elseif (rights >= 2) then
-    do_message(npc, ch, "How can I assist you in your testing duties?")
+    npc_message(npc, ch, "How can I assist you in your testing duties?")
   elseif (rights >= 1) then
-    do_message(npc, ch, "What do you want, lowly player?")
+    npc_message(npc, ch, "What do you want, lowly player?")
   else
-    do_message(npc, ch, "...aren't you supposed to be banned??")
+    npc_message(npc, ch, "...aren't you supposed to be banned??")
   end
 
   local v = do_choice(npc, ch, "Guns! Lots of guns!",
@@ -401,13 +401,13 @@ function npc1_talk(npc, ch)
                                "Slowly count from one to ten.",
                                "Tablepush Test")
   if v == 1 then
-    do_message(npc, ch, "Sorry, this is a heroic-fantasy game, I do not have any gun.")
+    npc_message(npc, ch, "Sorry, this is a heroic-fantasy game, I do not have any gun.")
   elseif v == 2 then
     local n1, n2 = chr_inv_count(ch, 524, 511)
     if n1 == 0 or n2 ~= 0 then
-      do_message(npc, ch, "Yeah right...")
+      npc_message(npc, ch, "Yeah right...")
     else
-      do_message(npc, ch, "I can't help you with the party. But I see you have a fancy hat. I could change it into Santa's hat. Not much of a party, but it would get you going.")
+      npc_message(npc, ch, "I can't help you with the party. But I see you have a fancy hat. I could change it into Santa's hat. Not much of a party, but it would get you going.")
       v = do_choice(npc, ch, "Please do.", "No way! Fancy hats are classier.")
       if v == 1 then
         -- invertika.add_items(ch, 524, -1, 511, 1) Nicht vorhanden.
@@ -418,11 +418,11 @@ function npc1_talk(npc, ch)
     -- "To buy."
     local buycase = npc_trade(npc, ch, false, { {10001, 10, 20}, {10002, 10, 30}, {10003, 10, 50} })
     if buycase == 0 then
-      do_message(npc, ch, "What do you want to buy?")
+      npc_message(npc, ch, "What do you want to buy?")
     elseif buycase == 1 then
-      do_message(npc, ch, "I've got no items to sell.")
+      npc_message(npc, ch, "I've got no items to sell.")
     else
-      do_message(npc, ch, "Hmm, something went wrong... Ask a scripter to fix the buying mode!")
+      npc_message(npc, ch, "Hmm, something went wrong... Ask a scripter to fix the buying mode!")
     end
 
   elseif v == 4 then
@@ -430,11 +430,11 @@ function npc1_talk(npc, ch)
     -- "To sell only the items you want to buy."
     local sellcase = npc_trade(npc, ch, true, { {10001, 10, 20}, {10002, 10, 30}, {10003, 10, 200}, {10004, 10, 300}, {10005, 10, 500}, {10006, 10, 25} })
     if sellcase == 0 then
-      do_message(npc, ch, "Here we go:")
+      npc_message(npc, ch, "Here we go:")
     elseif sellcase == 1 then
-      do_message(npc, ch, "I'm not interested by your items.")
+      npc_message(npc, ch, "I'm not interested by your items.")
     else
-      do_message(npc, ch, "Hmm, something went wrong... Ask a scripter to fix me!")
+      npc_message(npc, ch, "Hmm, something went wrong... Ask a scripter to fix me!")
     end
 
   elseif v == 5 then
@@ -442,23 +442,23 @@ function npc1_talk(npc, ch)
     -- "To sell whatever I want."
     local sellcase = npc_trade(npc, ch, true)
     if sellcase == 0 then
-      do_message(npc, ch, "Ok, what do you want to sell:")
+      npc_message(npc, ch, "Ok, what do you want to sell:")
     elseif sellcase == 1 then
-      do_message(npc, ch, "I'm not interested by any of your items.")
+      npc_message(npc, ch, "I'm not interested by any of your items.")
     else
-      do_message(npc, ch, "Hmm, something went wrong... Ask a scripter to fix this!")
+      npc_message(npc, ch, "Hmm, something went wrong... Ask a scripter to fix this!")
     end
 
   elseif v == 6 then
     if invertika.add_money(ch, -100) then
-      do_message(npc, ch, string.format("Thank you for you patronage! You are left with %d gil.", chr_money(ch)))
+      npc_message(npc, ch, string.format("Thank you for you patronage! You are left with %d gil.", chr_money(ch)))
       local g = tonumber(get_quest_var(ch, "test_donation"))
       if not g then g = 0 end
       g = g + 100
       chr_set_quest(ch, "test_donation", g)
-      do_message(npc, ch, string.format("As of today, you have donated %d gil.", g))
+      npc_message(npc, ch, string.format("As of today, you have donated %d gil.", g))
     else
-      do_message(npc, ch, "I would feel bad taking money from someone that poor.")
+      npc_message(npc, ch, "I would feel bad taking money from someone that poor.")
     end
   elseif v == 7 then
     being_say(npc, "As you wish...")
@@ -492,15 +492,15 @@ function npc1_talk(npc, ch)
     printTable (t5)
     print("---------------");
   end
-  do_message(npc, ch, "See you later!")
+  npc_message(npc, ch, "See you later!")
   do_npc_close(npc, ch)
 end
 
 function npc4_talk(npc, ch)
-  do_message(npc, ch, "You are currently on map "..get_map_id()..". Where do you want to go?")
+  npc_message(npc, ch, "You are currently on map "..get_map_id()..". Where do you want to go?")
   local v = do_choice(npc, ch, "Map 1", "Map 3","Map 3, but a warpable place.")
   if v >= 1 and v <= 3 then
-    do_message(npc, ch, "Are you really sure?")
+    npc_message(npc, ch, "Are you really sure?")
     local w = do_choice(npc, ch, "Yes, I am.", "I still have a few things to do around here.")
     if w == 1 then
       if v == 1 then
@@ -516,7 +516,7 @@ function npc4_talk(npc, ch)
 end
 
 function npc5_talk(npc, ch)
-  do_message(npc, ch, "I am the scorpion tamer. Do you want me to spawn some scorpions?")
+  npc_message(npc, ch, "I am the scorpion tamer. Do you want me to spawn some scorpions?")
   local answer = do_choice(npc, ch, "Yes", "No")
   if answer == 1 then
     local x = posX(npc)
@@ -538,7 +538,7 @@ end
 local guard_position = 1
 
 function npc6_talk(npc, ch)
-  do_message(npc, ch, "I'm moving....")
+  npc_message(npc, ch, "I'm moving....")
   do_npc_close(npc, ch)
 
   if guard_position == 1 then
@@ -565,7 +565,7 @@ end
 
 
 function firedemon_talk(npc, ch)
-  do_message(npc, ch, "Burn, puny mortals! BURN! BUUUURN!!!")
+  npc_message(npc, ch, "Burn, puny mortals! BURN! BUUUURN!!!")
   do_npc_close(npc, ch)
 end
 
@@ -587,17 +587,17 @@ function firedemon_update(npc)
 end
 
 function post_talk(npc, ch)
-  do_message(npc, ch, "Hello " .. being_get_name(ch))
+  npc_message(npc, ch, "Hello " .. being_get_name(ch))
   local strength = being_get_attribute(ch, ATTR_STRENGTH)
-  do_message(npc, ch, "You have " .. tostring(strength) .. " strength")
-  do_message(npc, ch, "What would you like to do?")
+  npc_message(npc, ch, "You have " .. tostring(strength) .. " strength")
+  npc_message(npc, ch, "What would you like to do?")
   local answer = do_choice(npc, ch, "View Mail", "Send Mail", "Nothing")
   if answer == 1 then
     local sender, post = getpost(ch)
     if sender == "" then
-      do_message(npc, ch, "No Post right now, sorry")
+      npc_message(npc, ch, "No Post right now, sorry")
     else
-      do_message(npc, ch, tostring(sender) .. " sent you " .. tostring(post))
+      npc_message(npc, ch, tostring(sender) .. " sent you " .. tostring(post))
     end
   end
   if answer == 2 then
@@ -607,7 +607,7 @@ function post_talk(npc, ch)
 end
 
 function fireworker_talk(npc, ch)
-  do_message(npc, ch, "Do you want some fireworks?")
+  npc_message(npc, ch, "Do you want some fireworks?")
   local answer = do_choice(npc, ch, "Wheee! Fireworks", "Nah, thanks.")
   if answer == 1 then
     local x = posX(npc)
@@ -622,7 +622,7 @@ function fireworker_talk(npc, ch)
 end
 
 function axetrainer_talk(npc, ch)
-  do_message(npc, ch, "I am the axe trainer. Do you want to get better at using axes?")
+  npc_message(npc, ch, "I am the axe trainer. Do you want to get better at using axes?")
   local answer = do_choice(npc, ch, "Please train me, master.", "I am good enough with axes.")
   if answer == 1 then
     local newexp = chr_get_exp(ch, SKILL_WEAPON_AXE) + 100
@@ -635,20 +635,20 @@ function axetrainer_talk(npc, ch)
       message = message.." You will still need "..tostring(nextlevel - newexp).." exp to reach the next level."
     end
     message = message.." I should really stop doing this when the server goes live."
-    do_message(npc, ch, message)
+    npc_message(npc, ch, message)
   end
   do_npc_close(npc, ch)
 end
 
 function plague_talk(npc, ch)
-  do_message(npc, ch, "I don't feel so good...")
+  npc_message(npc, ch, "I don't feel so good...")
   do_npc_close(npc, ch)
   being_apply_status(ch, 1, 6000) -- Give plauge for 6000 ticks (I.E. 10 minutes)
 end
 
 function jump_status_talk(npc, ch)
   being_apply_status(ch, 2, 6000) -- Give jumping bug
-  do_message(npc, ch, "Now you have the jumping bug")
+  npc_message(npc, ch, "Now you have the jumping bug")
   do_npc_close(npc, ch)
 end
 
@@ -698,7 +698,7 @@ function spinner_update(npc)
 end
 
 function healer_talk(npc, ch)
-    do_message(npc, ch, "Do you need healing?")
+    npc_message(npc, ch, "Do you need healing?")
     local c = do_choice(npc, ch, "Heal me fully", "Heal 100 HP", "Don't heal me")
     if c == 1 then
         being_heal(ch)
@@ -710,10 +710,10 @@ function healer_talk(npc, ch)
 end
 
 function debugger_talk(npc, ch)
-    do_message(npc, ch, "Was soll debuggt werden?")
+    npc_message(npc, ch, "Was soll debuggt werden?")
     local c = do_choice(npc, ch, "Nix.", "Effekte.")
     if c == 2 then
-        do_message(npc, ch, "Effektid?")
+        npc_message(npc, ch, "Effektid?")
         local id = do_ask_integer(npc, ch, 0, 9999, 0)
         effect_create(id, ch)
     end
@@ -722,15 +722,15 @@ end
 
 function speedy_talk(npc, ch)
     while true do
-        do_message(npc, ch, "Möchtest du schneller laufen?")
+        npc_message(npc, ch, "Möchtest du schneller laufen?")
         local v = do_choice(npc, ch, "Ja", "Nein")
         if v == 1 then
             local speed = being_get_speed(ch) * being_get_speed(ch)
             being_set_speed(ch, speed)
-            do_message(npc, ch, "Du bist nun schneller.")
+            npc_message(npc, ch, "Du bist nun schneller.")
             break
         elseif v == 2 then
-            do_message(npc, ch, "Blubb")
+            npc_message(npc, ch, "Blubb")
             break
         end
     end
@@ -739,11 +739,11 @@ end
 
 function timel_talk(npc, ch)
     time1 = os.time(t)
-    do_message(npc, ch, "Nehme 2. Zeit.")
+    npc_message(npc, ch, "Nehme 2. Zeit.")
     time2 = os.time(t)
     diff = time1 - time2
-    do_message(npc, ch, string.format("1. Zeit %d", time1))
-    do_message(npc, ch, string.format("2. Zeit %d", time2))
-    do_message(npc, ch, string.format("Differenz %d", diff))
+    npc_message(npc, ch, string.format("1. Zeit %d", time1))
+    npc_message(npc, ch, string.format("2. Zeit %d", time2))
+    npc_message(npc, ch, string.format("Differenz %d", diff))
     do_npc_close(npc, ch)
 end

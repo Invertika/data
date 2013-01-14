@@ -23,10 +23,10 @@ function get_by_npc(npc)
 end
 
 function get_by_npc(npc, ch)
-    do_message(npc, ch, "get_by_npc-1")
+    npc_message(npc, ch, "get_by_npc-1")
     for i,v in pairs(postman) do
         if v.npc == npc then
-		    do_message(npc, ch, "get_by_npc-2")
+		    npc_message(npc, ch, "get_by_npc-2")
             return v
         end
     end
@@ -69,9 +69,9 @@ end
 -- @param ch Der Spieler
 -- @return true wenn ja
 function has_package_for_npc(npc, ch)
-    do_message(npc, ch, "has_package_for_npc-1")
+    npc_message(npc, ch, "has_package_for_npc-1")
     local data = get_by_npc(npc, ch)
-    do_message(npc, ch, "has_package_for_npc-2")
+    npc_message(npc, ch, "has_package_for_npc-2")
     return chr_inv_count(ch, data.item) > 0
 end
 
@@ -126,29 +126,29 @@ end
 --- Talk Funktion
 function postman_talk(npc, ch)
     local data = get_by_npc(npc)
-    do_message(npc, ch, "Hallo.")
+    npc_message(npc, ch, "Hallo.")
     -- Quest-Stati initialisieren
     invertika.init_quest_status_string(ch, string.format("%s_order_designation", data.id))
     invertika.init_quest_status(ch, string.format("%s_order_done", data.id))
     
     local designation = get_order_designation(npc, ch)
     
-    do_message(npc, ch, "##")
+    npc_message(npc, ch, "##")
     if has_package_for_npc(npc, ch) then
-        do_message(npc, ch, "1")
+        npc_message(npc, ch, "1")
         local has_order, start_npc = can_do_order(npc, ch)
         if has_order then
-            do_message(npc, ch, "2")
-            do_message(npc, ch, invertika.get_random_element("Schon wieder ein Paket für mich? Gib mal her!",
+            npc_message(npc, ch, "2")
+            npc_message(npc, ch, invertika.get_random_element("Schon wieder ein Paket für mich? Gib mal her!",
               string.format("Ein Paket von der Poststelle %s... Das kommt auf diesen Stapel.", get_by_npc(start_npc).name)))
-            do_message(npc, ch, "Paket abgeben?")
+            npc_message(npc, ch, "Paket abgeben?")
             while true do
                 local v = do_choice(npc, ch, "Ja.", "Nein.")
                 if v == 1 then
-                    do_message(string.format("%s_order_done", postman[start_npc].id))
+                    npc_message(string.format("%s_order_done", postman[start_npc].id))
                     invertika.add_items(ch, npc.item, -1, string.format("Paket für Poststelle %s", data.name))
                     invertika.set_quest_status(ch, string.format("%s_order_done", data.id), 1)
-                    do_message(npc, ch, "Danke.")
+                    npc_message(npc, ch, "Danke.")
                     break
                 elseif v == 2 then
                     break
@@ -156,28 +156,28 @@ function postman_talk(npc, ch)
             end
         end
     elseif designation ~= "" then
-        do_message(npc, ch, "3")
+        npc_message(npc, ch, "3")
         if invertika.get_quest_status(ch, string.format("%s_order_done")) == 0 then
-            do_message(npc, ch, string.format("Du musst noch das Paket bei der Poststelle %s abgeben", get_name_by_id(designation)))
+            npc_message(npc, ch, string.format("Du musst noch das Paket bei der Poststelle %s abgeben", get_name_by_id(designation)))
         else
             invertika.set_quest_status(ch, string.format("%s_order_done"), 0)
-            do_message(npc, ch, "Danke, dass du das Paket da abgegeben hast.")
+            npc_message(npc, ch, "Danke, dass du das Paket da abgegeben hast.")
             local gift = invertika.get_random_element(GIFTS)
             local number = get_distance(ch, npc)
-            do_message(npc, ch, "Nimm dies als Dank.")
+            npc_message(npc, ch, "Nimm dies als Dank.")
             invertika.add_items(ch, gift.id, number, gift.name)
         end
     else
-        do_message(npc, ch, "4")
+        npc_message(npc, ch, "4")
         local order_designation = get_new_designation(npc)
-        do_message(npc, ch, "5")
-        do_message(npc, ch, string.format("Würdest du für mich ein Paket zur Poststelle %s bringen?", get_name_by_id(order_designation)))
+        npc_message(npc, ch, "5")
+        npc_message(npc, ch, string.format("Würdest du für mich ein Paket zur Poststelle %s bringen?", get_name_by_id(order_designation)))
         while true do
             local v = do_choice(npc, ch, "Ja.", "Nein.")
             if v == 1 then
                 invertika.set_quest_status_string(ch, string.format("%s_order_designation", data.id), order_designation)
                 invertika.add_items(ch, get_desired_itemid(order_designation), 1, string.format("Paket für Poststelle %s", get_name_by_id(order_designation)))
-                do_message(npc, ch, "Danke.")
+                npc_message(npc, ch, "Danke.")
                 break
             elseif v == 2 then
                 break

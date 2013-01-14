@@ -43,7 +43,7 @@ function irac_talk(npc, ch)
     --Init Quest
     invertika.init_quest_status(ch, queststring)
     
-    do_message(npc, ch, invertika.get_random_element("Hi, was kann ich für sie tuen?",
+    npc_message(npc, ch, invertika.get_random_element("Hi, was kann ich für sie tuen?",
       "Hi, was gibt es?",
       "Hi, wie kann ich ihnen helfen?",
       "Hallo, was kann ich für sie tuen?",
@@ -70,7 +70,7 @@ function irac_talk(npc, ch)
               {30007, 300, 200}})
             break
         elseif v == 2 then
-            do_message(npc, ch, invertika.get_random_element("Über was wollen wa den reden?",
+            npc_message(npc, ch, invertika.get_random_element("Über was wollen wa den reden?",
               "Über was wollen wir reden?"))
             while true do
                 local w = do_choice(npc, ch, 
@@ -78,21 +78,21 @@ function irac_talk(npc, ch)
                   "Über die Wassernot",
                   "Über nichts")
                 if w == 1 then
-                    do_message(npc, ch, "Soviel weiß hier keiner über die in der Mitte.")
-                    do_message(npc, ch, "Sie leben halt sehr zurückgeschieden und lassen kaum einen an sich heran.")
-                    do_message(npc, ch, "Es gehen aber Gerüchte um...")
-                    do_message(npc, ch, "Frage dazu bitte den Hobel, der weiß mehr darüber")
+                    npc_message(npc, ch, "Soviel weiß hier keiner über die in der Mitte.")
+                    npc_message(npc, ch, "Sie leben halt sehr zurückgeschieden und lassen kaum einen an sich heran.")
+                    npc_message(npc, ch, "Es gehen aber Gerüchte um...")
+                    npc_message(npc, ch, "Frage dazu bitte den Hobel, der weiß mehr darüber")
                 
                     --Set Quest
                     invertika.set_quest_status(ch, queststring, 1)
                     break
                 elseif w == 2 then
-                    do_message(npc, ch, "Einst war hier alles mal grün und fruchtbar.")
-                    do_message(npc, ch, "Der Fluss im Norden unserer Stadt war voll mit frischem Wasser.")
-                    do_message(npc, ch, "Woher das kam, weiß ich nicht.")
-                    do_message(npc, ch, "Ist aber auch egal.")
-                    do_message(npc, ch, "Auf jedenfall, war er nach einer stürmischen Nacht ausgetrocknet.")
-                    do_message(npc, ch, "Mehr weiß ich auch nicht.")
+                    npc_message(npc, ch, "Einst war hier alles mal grün und fruchtbar.")
+                    npc_message(npc, ch, "Der Fluss im Norden unserer Stadt war voll mit frischem Wasser.")
+                    npc_message(npc, ch, "Woher das kam, weiß ich nicht.")
+                    npc_message(npc, ch, "Ist aber auch egal.")
+                    npc_message(npc, ch, "Auf jedenfall, war er nach einer stürmischen Nacht ausgetrocknet.")
+                    npc_message(npc, ch, "Mehr weiß ich auch nicht.")
                     break
                 elseif w == 3  then
                     break
@@ -100,7 +100,7 @@ function irac_talk(npc, ch)
             end
             break;
         elseif v == 3 then
-            do_message(npc, ch, invertika.get_random_element("Tschüß",
+            npc_message(npc, ch, invertika.get_random_element("Tschüß",
               "Tschau",
               "Bis Bald",
               "Beehren sie uns bald wieder",

@@ -23,7 +23,7 @@ atinit(function()
 end)
 
 function toffi_talk(npc, ch)
-    do_message(npc, ch, "Tag, Was gibt es?")
+    npc_message(npc, ch, "Tag, Was gibt es?")
     
     while true do
         local v = do_choice(npc, ch,
@@ -50,7 +50,7 @@ function toffi_talk(npc, ch)
               })
             break
         elseif v == 3 then
-            do_message(npc, ch, "Beehren sie uns bald wieder.")
+            npc_message(npc, ch, "Beehren sie uns bald wieder.")
             break
         end
     end

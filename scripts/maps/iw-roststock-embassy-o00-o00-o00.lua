@@ -26,7 +26,7 @@ function botschafter_talk(npc, ch)
     local questname = "selphi_timlet_royal_pass"
     invertika.init_quest_status(ch, questname)
     if (invertika.get_quest_status(ch, "selphi_timlet_royal_pass") == nil) then ---Keine Questvar gesetzt
-        do_message(npc, ch, invertika.get_random_element(
+        npc_message(npc, ch, invertika.get_random_element(
           "Ich bin hier der Botschafter. Ich vertrete Selphi Timlet in Roststock.",
           "Ich bin schon viele Jahre hier.",
           "Kenne ich dich?",
@@ -40,17 +40,17 @@ function botschafter_talk(npc, ch)
             invertika.add_items(ch, 40011, -1, "Brief an die Botschaft in Roststock")
             invertika.add_items(ch, 40012, 1, "Brief von der Botschaft in Roststock an Averin")
             invertika.set_quest_status(ch, "selphi_timlet_royal_pass", 2)
-            do_message(npc, ch, "Oh, ein Brief. Warte einen Moment...")
-            do_message(npc, ch, "Hier, nimm diese Antwort und bringe sie zu Averin.")
+            npc_message(npc, ch, "Oh, ein Brief. Warte einen Moment...")
+            npc_message(npc, ch, "Hier, nimm diese Antwort und bringe sie zu Averin.")
         else
-            do_message(npc, ch, "Ihr seid nicht zufällig der Bote von Averin? Ich erwarte einen wichtigen Brief von ihm!")
+            npc_message(npc, ch, "Ihr seid nicht zufällig der Bote von Averin? Ich erwarte einen wichtigen Brief von ihm!")
         end
     elseif (invertika.get_quest_status(ch, "selphi_timlet_royal_pass") == 2) then
-        do_message(npc, ch, invertika.get_random_element(
+        npc_message(npc, ch, invertika.get_random_element(
           "Schnell, bring Averin den Brief!",
           "Worauf wartest du noch?"))
     elseif (invertika.get_quest_status(ch, "selphi_timlet_royal_pass") >= 3) then
-        do_message(npc, ch, invertika.get_random_element(
+        npc_message(npc, ch, invertika.get_random_element(
           "Danke für deine Hilfe.",
           "Dankeschön.",
           "Nein, es gibt nichts mehr für dich zu tun.",

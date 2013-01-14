@@ -115,20 +115,20 @@ function chris_talk(npc, ch)
     local quest_var_ice = invertika.get_quest_status(ch, queststring_ice)
     
     if quest_var_lazy == 0 then
-        do_message(npc, ch, "psst")
+        npc_message(npc, ch, "psst")
     end
     
     if quest_var_lazy == 1 then
-        do_message(npc, ch, "Ahrg, garnicht mehr dran gedacht.")
-        do_message(npc, ch, "Habe aber auch keine Lust drauf.")
-        do_message(npc, ch, "Sage ihm, das ich gleich komme.")
-        do_message(npc, ch, "Danke")
+        npc_message(npc, ch, "Ahrg, garnicht mehr dran gedacht.")
+        npc_message(npc, ch, "Habe aber auch keine Lust drauf.")
+        npc_message(npc, ch, "Sage ihm, das ich gleich komme.")
+        npc_message(npc, ch, "Danke")
         --Set Quest
         invertika.set_quest_status(ch, queststring_lazy, 3) -- Quest angenommen und es wurde mit Chris geredet
     end
     
     if quest_var_lazy == 3 then
-        do_message(npc, ch, "Hetz mich nicht so, bin ja schon aufm Weg.")
+        npc_message(npc, ch, "Hetz mich nicht so, bin ja schon aufm Weg.")
     end
     
     if quest_var_lazy == 4 then
@@ -136,21 +136,21 @@ function chris_talk(npc, ch)
         local create_chris_on_fields_time = os.time{year=d.year, month=d.month, day=12,
                                                 hour=0, min=00, sec=0}
         if os.difftime(os.time(), create_chris_on_fields_time) > 0 then
-            do_message(npc, ch, "Du!")
-            do_message(npc, ch, "Los, hol mir ein Eis.")
-            do_message(npc, ch, "Wenn du mir schon diese Schwerstarbeit aufbrockst, kannst du wenigstens für mein leibliches Wohl sorgen.")
-            do_message(npc, ch, "Und, machst du's?")
+            npc_message(npc, ch, "Du!")
+            npc_message(npc, ch, "Los, hol mir ein Eis.")
+            npc_message(npc, ch, "Wenn du mir schon diese Schwerstarbeit aufbrockst, kannst du wenigstens für mein leibliches Wohl sorgen.")
+            npc_message(npc, ch, "Und, machst du's?")
             while true do
                 local s = do_choice(npc, ch, "Ja",
                   "Nein")
                 if s == 1 then
-                    do_message(npc, ch, "Danke.")
+                    npc_message(npc, ch, "Danke.")
                     --Set Quests
                     invertika.set_quest_status(ch, queststring_ice, 1) --Eishol Quest anfangen
                     invertika.set_quest_status(ch, queststring_lazy, 5) -- Weg mit der unnützen Quest :D
                     break
                 elseif s == 2 then
-                    do_message(npc, ch, "ok.")
+                    npc_message(npc, ch, "ok.")
                     break
                 end
             end
@@ -159,7 +159,7 @@ function chris_talk(npc, ch)
     
     if quest_var_ice == 1 then
         if chr_inv_count(ch, 30029) then
-            do_message(npc, ch, "Ich bin dir sehr dankbar.")
+            npc_message(npc, ch, "Ich bin dir sehr dankbar.")
             invertika.add_money(ch, 400)
             invertika.add_items(ch, 30029, -1, "Eis")
             invertika.set_quest_status(ch, queststring_ice, 2)
@@ -169,7 +169,7 @@ function chris_talk(npc, ch)
     end
     
     if quest_var_ice == 2 then
-        do_message(npc, ch, "Hi.")
+        npc_message(npc, ch, "Hi.")
     end
     
     do_npc_close(npc, ch)
@@ -185,23 +185,23 @@ function estjdian_talk(npc, ch)
 
     if quest_var == 0 then
     
-        do_message(npc, ch, "Wo steckt dieser faule Bengel schon wieder...")
-        do_message(npc, ch, "Er sollte schon vor einer halben Stunde zur Arbeit antreten.")
-        do_message(npc, ch, "Von wem ich eigentlich spreche, willst du wissen?")
-        do_message(npc, ch, "Ich spreche von Chris.")
-        do_message(npc, ch, "Er kam früher bereits unpünktlich.")
-        do_message(npc, ch, "Würdest du ihn bitte suchen?")
+        npc_message(npc, ch, "Wo steckt dieser faule Bengel schon wieder...")
+        npc_message(npc, ch, "Er sollte schon vor einer halben Stunde zur Arbeit antreten.")
+        npc_message(npc, ch, "Von wem ich eigentlich spreche, willst du wissen?")
+        npc_message(npc, ch, "Ich spreche von Chris.")
+        npc_message(npc, ch, "Er kam früher bereits unpünktlich.")
+        npc_message(npc, ch, "Würdest du ihn bitte suchen?")
         while true do
             local s = do_choice(npc, ch, "Ja, na klar.",
               "Nein, leider nicht.")
             if s == 1 then
-                do_message(npc, ch, "Danke")
+                npc_message(npc, ch, "Danke")
                 --Set Quest
                 invertika.set_quest_status(ch, queststring, 1) -- Quest angenommen
                 break
             elseif s == 2 then
-                do_message(npc, ch, "Hmm, ok.")
-                do_message(npc, ch, "Dann mache ich mich eben selbst auf den Weg.")
+                npc_message(npc, ch, "Hmm, ok.")
+                npc_message(npc, ch, "Dann mache ich mich eben selbst auf den Weg.")
                 invertika.set_quest_status(ch, queststring, 2) -- Quest nicht angenommen
                 break
             end
@@ -209,46 +209,46 @@ function estjdian_talk(npc, ch)
     end
     
     if quest_var == 2 then
-        do_message(npc, ch, "Ah, du hast es dir anders überlegt?")
+        npc_message(npc, ch, "Ah, du hast es dir anders überlegt?")
         while true do
             local a = do_choice(npc, ch, "Jap",
               "nö")
             if a == 1 then
-                do_message(npc, ch, "OK, danke.")
-                do_message(npc, ch, "Besser spät als nie.")
+                npc_message(npc, ch, "OK, danke.")
+                npc_message(npc, ch, "Besser spät als nie.")
                 --Set Quest
                 invertika.set_quest_status(ch, queststring, 1) -- Quest angenommen
                 break
             elseif a == 2 then
-                do_message(npc, ch, "Hmmm, ok")
+                npc_message(npc, ch, "Hmmm, ok")
                 break
             end
         end
     end
     
     if quest_var == 3 then
-        do_message(npc, ch, "Ich danke dir dafür, dass du diesen Nichtsnutz gefunden hast.")
-        do_message(npc, ch, "Hier eine kleine Belohnung für deine Mühen.")
+        npc_message(npc, ch, "Ich danke dir dafür, dass du diesen Nichtsnutz gefunden hast.")
+        npc_message(npc, ch, "Hier eine kleine Belohnung für deine Mühen.")
         invertika.add_money(ch, 250)
         --Set Quest
         invertika.set_quest_status(ch, queststring, 4) -- Quest angenommen und Behlonung vom Estjdian kassiert
     end
     
     if quest_var >= 4 then
-        do_message(npc, ch, "Hoffentlich bessert er sich.")
+        npc_message(npc, ch, "Hoffentlich bessert er sich.")
     end
     do_npc_close(npc, ch)
 end
 
 function wache_bank_talk(npc, ch)
     --TODO bessere Texte
-    do_message(npc, ch, "Wir bewachen die Bank.")
+    npc_message(npc, ch, "Wir bewachen die Bank.")
     do_npc_close(npc, ch)
 end
 
 function wache_casino_talk(npc, ch)
     --TODO bessere Texte
-    do_message(npc, ch, invertika.get_random_element("Ich bewache das Kasino.",
+    npc_message(npc, ch, invertika.get_random_element("Ich bewache das Kasino.",
       "Glücksspiel kann süchtig machen.",
       "Ohne uns Wachen würde die Stadt im Chaos versinken!"))
     do_npc_close(npc, ch)
@@ -259,28 +259,28 @@ function wache_talk(npc, ch)
     invertika.init_quest_status(ch, quest_string)
     local q_status = invertika.get_quest_status(ch, quest_string)
     if q_status == 0 then
-        do_message(npc, ch, "Ich habe meinen MacGuffin verloren!")
-        do_message(npc, ch, "Er ist bestimmt im Westen, in der Bolero Höhle, ganz sicher!")
-        do_message(npc, ch, "Woher ich das weiß?")
-        do_message(npc, ch, "Das gehört sich für einen MacGuffin einfach so!")
-        do_message(npc, ch, "Und deshalb lasse ich dich auch nicht in die Stadt, bevor du ihn mir wiedergebracht hast.")
-        do_message(npc, ch, "Obwohl... so, wie DU aussiehst, wird das wohl eh nix...")
+        npc_message(npc, ch, "Ich habe meinen MacGuffin verloren!")
+        npc_message(npc, ch, "Er ist bestimmt im Westen, in der Bolero Höhle, ganz sicher!")
+        npc_message(npc, ch, "Woher ich das weiß?")
+        npc_message(npc, ch, "Das gehört sich für einen MacGuffin einfach so!")
+        npc_message(npc, ch, "Und deshalb lasse ich dich auch nicht in die Stadt, bevor du ihn mir wiedergebracht hast.")
+        npc_message(npc, ch, "Obwohl... so, wie DU aussiehst, wird das wohl eh nix...")
         invertika.set_quest_status(ch, quest_string, 1)
     elseif q_status == 1 then
         if chr_inv_count(ch, 40047) > 0 then
-            do_message(npc, ch, "Ah, danke für den MacGuffin." ..
+            npc_message(npc, ch, "Ah, danke für den MacGuffin." ..
                                 "Nun darfst du die Stadt betreten.")
             invertika.add_items(ch, 40047, -1, "MacGuffin")
             invertika.set_quest_status(ch, quest_string, 2)
         else
-            do_message(npc, ch, invertika.get_random_element(
+            npc_message(npc, ch, invertika.get_random_element(
               "Wenn du mir keinen MacGuffin bringst, kommst du nicht rein!",
               "Bringe mir einen MacGuffin, dann lasse ich dich rein!",
               "Du findest einen MacGuffin in der Bolero Höhle. " ..
                 "Bringe mir einen davon"))
         end
     elseif q_status == 2 then
-        do_message(npc, ch, invertika.get_random_element(
+        npc_message(npc, ch, invertika.get_random_element(
           "Wir bewachen die Tore der Stadt",
           "Gehe weiter. Du blockierst die Straße.",
           "Ohne uns Wachen, würde die Stadt im Chaos versinken!"))
@@ -332,7 +332,7 @@ function spawn_effect()
 end
 
 function cedric_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Ich bin Graf Cedric.",
+    npc_message(npc, ch, invertika.get_random_element("Ich bin Graf Cedric.",
       "Fühle dich in meiner Burg wie zu Hause."))
     do_npc_close(npc, ch)
 end
@@ -364,7 +364,7 @@ function cedric_speech()
 end
 
 function palastwache_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Wir bewachen den Palast Cedric´s.",
+    npc_message(npc, ch, invertika.get_random_element("Wir bewachen den Palast Cedric´s.",
       "Im Haus hinter uns wohnt Cedric und seine Frau Ormylt"))
     do_npc_close(npc, ch)
 end

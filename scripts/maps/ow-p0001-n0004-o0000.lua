@@ -29,7 +29,7 @@ atinit(function()
 end)
 
 function asgard_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Noch nie war jemmand in diesem Turm.",
+    npc_message(npc, ch, invertika.get_random_element("Noch nie war jemmand in diesem Turm.",
         "Was sich im inneren des Turmes befinden mag?",
         "Es gibt eine Legende, die besagt das der Turm sich eines Tages öffnen wird.",
         "Viele haben versucht in den Turm einzudringen, aber niemand hat es je geschafft."))

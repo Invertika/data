@@ -20,7 +20,7 @@ DICE_NUMBER_OF_SIDES = 6
 
 function dicemanager_talk(npc, ch)
     if chr_inv_count(ch, DICE_ID) < 1 then
-        do_message(npc, ch, "Du benötigst einen Würfel um mitzuspielen.")
+        npc_message(npc, ch, "Du benötigst einen Würfel um mitzuspielen.")
         do_npc_close(npc, ch)
         return
     end

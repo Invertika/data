@@ -23,7 +23,7 @@ SLOT_MACHINE_FIELDS = { "7", "Kirsche", "Banane", "Pfirsich", "Kiwi", "Schatztru
 
 --- NPC Talk Funktion
 function slotmachine_talk(npc, ch)
-  do_message(npc, ch, "Eine Slotmaschine. Wie viel Geld möchtest du setzen?")
+  npc_message(npc, ch, "Eine Slotmaschine. Wie viel Geld möchtest du setzen?")
   
  while true do 
 	local v = do_choice(npc, ch, "5 Aki",
@@ -56,13 +56,13 @@ function slotmachine_talk(npc, ch)
 	  local r3 = math.random(1, arrayCount)
 	
 	  if(r1 == r2 and r2 == r3) then
-	    do_message(npc, ch, string.format("%s - %s - %s\nOh Gratulation du hast gewonnen :)", SLOT_MACHINE_FIELDS[r1], SLOT_MACHINE_FIELDS[r2], SLOT_MACHINE_FIELDS[r3]))	
+	    npc_message(npc, ch, string.format("%s - %s - %s\nOh Gratulation du hast gewonnen :)", SLOT_MACHINE_FIELDS[r1], SLOT_MACHINE_FIELDS[r2], SLOT_MACHINE_FIELDS[r3]))	
 		chr_money_change(ch, money*10) --- TODO Jackpot Variable
 	  else
-	    do_message(npc, ch, string.format("%s - %s - %s\nMmm du hast leider verloren.", SLOT_MACHINE_FIELDS[r1], SLOT_MACHINE_FIELDS[r2], SLOT_MACHINE_FIELDS[r3]))	
+	    npc_message(npc, ch, string.format("%s - %s - %s\nMmm du hast leider verloren.", SLOT_MACHINE_FIELDS[r1], SLOT_MACHINE_FIELDS[r2], SLOT_MACHINE_FIELDS[r3]))	
 	  end	
 	else
-	  do_message(npc, ch, "Soviel Geld hast du leider nicht.")
+	  npc_message(npc, ch, "Soviel Geld hast du leider nicht.")
 	end
   end ---while true do 
   do_npc_close(npc, ch)

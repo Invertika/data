@@ -37,7 +37,7 @@ atinit(function()
 end)
 
 function wache_talk(npc, ch)
-    do_message(npc, ch, "Hier kommt man nur mit VIP-Karte rein!")
+    npc_message(npc, ch, "Hier kommt man nur mit VIP-Karte rein!")
     do_npc_close(npc, ch)
 end
 
@@ -79,7 +79,7 @@ function estech_talk(npc, ch)
     local count = chr_inv_count(ch, 40026)
     if count > 0 then
         if get_qstatus() == 2 then
-            do_message(npc, ch, "Ortana schickt dich? Er hat wieder vergessen wann er frei hat?")
+            npc_message(npc, ch, "Ortana schickt dich? Er hat wieder vergessen wann er frei hat?")
             set_feierabend(math.random(1, 3))
             local zeit = nil
             if get_feierabend() == 1 then
@@ -89,7 +89,7 @@ function estech_talk(npc, ch)
             else
                 zeit = "20"
             end
-            do_message(npc, ch, string.format("Sag ihm, er darf heute schon um %s Uhr gehen.", zeit))
+            npc_message(npc, ch, string.format("Sag ihm, er darf heute schon um %s Uhr gehen.", zeit))
             set_qstatus(3)
         elseif get_qstatus() == 3 then
             local zeit = nil
@@ -100,14 +100,14 @@ function estech_talk(npc, ch)
             else
                 zeit = "20"
             end
-            do_message(npc, ch, string.format("Ist dein Gehirn schon genauso löcherig wie Ortanas? Sag ihm er darf um %s Uhr Feierabend machen!", zeit))
+            npc_message(npc, ch, string.format("Ist dein Gehirn schon genauso löcherig wie Ortanas? Sag ihm er darf um %s Uhr Feierabend machen!", zeit))
         else
-            do_message(npc, ch, invertika.get_random_element("Ich bin der Chef hier.",
+            npc_message(npc, ch, invertika.get_random_element("Ich bin der Chef hier.",
                                                             "Tut mir leid. Zur Zeit finden hier keine Spektakel statt.",
                                                             "Ich muss mich gerade um andere Sachen kümmern."))
         end
     else
-        do_message(npc, ch, "Komm zu mir rauf wenn du mit mir sprechen willst!")
+        npc_message(npc, ch, "Komm zu mir rauf wenn du mit mir sprechen willst!")
     end
     do_npc_close(npc, ch)
 end
@@ -155,21 +155,21 @@ end
 -- 
 -- function entrance_control_talk(npc, ch)
     -- if pvm_fight == nil then -- Kein Kampf
-        -- do_message(npc, ch, "Willst du in der Arena kämpfen?")
+        -- npc_message(npc, ch, "Willst du in der Arena kämpfen?")
         -- while true do
             -- local v = do_choice(npc, ch, "Ja.", "Nein.")
             -- if v == 1 then
                 -- if pvm_fight == nil then
-                    -- do_message(npc, ch, "DEBUG: Erstelle Kampf...")
+                    -- npc_message(npc, ch, "DEBUG: Erstelle Kampf...")
                     -- pvm_fight = arenafight.ArenaFightPvM:new(ch, 3, 3)
-                    -- do_message(npc, ch, "DEBUG: Registriere Events...")
+                    -- npc_message(npc, ch, "DEBUG: Registriere Events...")
                     -- pvm_fight:registerEventPlayerDied(player_died)
                     -- pvm_fight:registerEventMonsterDied(monster_died)
                     -- pvm_fight:registerEventLastMonsterDied(last_monster_died)
                     -- -- Warp des Spielers in die Arena.
                     -- chr_warp(ch, get_map_id(), 65 * TILESIZE + 16, 80 * TILESIZE + 16)
                 -- else
-                    -- do_message(npc, ch, "Zu langsam. Es findet bereits ein Kampf statt.")
+                    -- npc_message(npc, ch, "Zu langsam. Es findet bereits ein Kampf statt.")
                 -- end
                 -- break
             -- elseif v == 2 then

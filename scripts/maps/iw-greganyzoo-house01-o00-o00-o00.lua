@@ -23,7 +23,7 @@ atinit(function()
 end)
 
 function geban_talk(npc, ch)
-    do_message(npc, ch, "Hallo, was kann ich für sie tuen?")
+    npc_message(npc, ch, "Hallo, was kann ich für sie tuen?")
 
         while true do
         local v = do_choice(npc, ch,
@@ -36,7 +36,7 @@ function geban_talk(npc, ch)
               })
             break
         elseif v == 2 then
-            do_message(npc, ch, "Wiedersehen.")
+            npc_message(npc, ch, "Wiedersehen.")
             break
         end
     end

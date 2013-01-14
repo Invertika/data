@@ -16,7 +16,7 @@ atinit(function()
 end)
 
 function trutim_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element(
+    npc_message(npc, ch, invertika.get_random_element(
       "Endlich kommt mal wieder einer ins Lager.",
       "Hierhin verirrt sich selten eine Person.",
       "Ich bin für die Lagerung von Waren zuständig.",

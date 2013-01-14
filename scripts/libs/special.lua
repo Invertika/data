@@ -19,7 +19,7 @@ require "scripts/lua/npclib"
 
 --- Fahrstuhl für das Ipsum Haus
 function elevator_selphi_timlet_ipsum_house_talk(npc, ch) --- NPC für die Netheksäule
-	do_message(npc, ch, "Bitte Stockwerk auswählen.")
+	npc_message(npc, ch, "Bitte Stockwerk auswählen.")
 	
 	DEFAULT_X_POS = 78 * TILESIZE
 	DEFAULT_Y_POS = 25 * TILESIZE

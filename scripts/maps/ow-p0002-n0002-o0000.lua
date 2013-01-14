@@ -44,7 +44,7 @@ function statue_talk(npc, ch)
     
     
     if quest_var == 0 then
-        do_message(npc, ch, "Du willst dich also als würdig erweisen, dass Denkmal zu betreten?")
+        npc_message(npc, ch, "Du willst dich also als würdig erweisen, dass Denkmal zu betreten?")
         while true do
             local v = do_choice(npc, ch, "Ja",
               "Nein")
@@ -62,9 +62,9 @@ function statue_talk(npc, ch)
     local quest_var = invertika.get_quest_status(ch, queststring)
     
     if quest_var == 1 then
-        do_message(npc, ch, "Gut")
+        npc_message(npc, ch, "Gut")
         local needed_kills = math.random(1, 10) * ( chr_get_kill_count(ch, 14) + 1) / 10 -- Sandwürmer müssen gekillt werden. Hier sollte eigentlich mit dem level gerechnet werden. Ich (Postremus) fand aber keine Funktion, die genau dies anbietet.
-        do_message(npc, ch, string.format("Töte bitte %d Sandwürmer", needed_kills))
+        npc_message(npc, ch, string.format("Töte bitte %d Sandwürmer", needed_kills))
         -- Set Quest
         invertika.set_quest_status(ch, queststring, 2)
         invertika.set_quest_status(ch, queststring_killed, chr_get_kill_count(ch, 14))
@@ -79,18 +79,18 @@ function statue_talk(npc, ch)
     
     
     if quest_var == 2 and curr_kills < quest_var_needed then
-        do_message(npc, ch, string.format("Was wagst du es, hier zu stehen, obwohl dir noch %d Sandwürmer fehlen?", quest_var_needed - curr_kills))
+        npc_message(npc, ch, string.format("Was wagst du es, hier zu stehen, obwohl dir noch %d Sandwürmer fehlen?", quest_var_needed - curr_kills))
     elseif quest_var == 2 and curr_kills >= quest_var_needed then
         -- Set Quest
         invertika.set_quest_status(ch, queststring, 3)
-        do_message(npc, ch, "Du hast genügend Sandwürmer getötet.")
+        npc_message(npc, ch, "Du hast genügend Sandwürmer getötet.")
     end
     
     --Get Quest
     local quest_var = invertika.get_quest_status(ch, queststring)
     
     if quest_var == 3 then
-        do_message(npc, ch, "Du darfst passieren.")
+        npc_message(npc, ch, "Du darfst passieren.")
         chr_warp(ch, nil, 38 * TILESIZE + 16, 97 * TILESIZE + 16)
     end
     do_npc_close(npc, ch)

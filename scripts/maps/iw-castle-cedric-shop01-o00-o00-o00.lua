@@ -25,8 +25,8 @@ atinit(function()
 end)
 
 function worrany_talk(npc, ch)
-    do_message(npc, ch, "Willkommen, in meinem Kräuterladen")
-    do_message(npc, ch, "Was kann ich für sie tun?")
+    npc_message(npc, ch, "Willkommen, in meinem Kräuterladen")
+    npc_message(npc, ch, "Was kann ich für sie tun?")
     
     while true do
         local v = do_choice(npc, ch, "Kaufen.",
@@ -54,7 +54,7 @@ function worrany_talk(npc, ch)
               })
             break
         elseif v == 3 then
-            do_message(npc, ch, "Beehren sie uns bald wieder.")
+            npc_message(npc, ch, "Beehren sie uns bald wieder.")
             break
         end
     end

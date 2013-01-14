@@ -55,11 +55,11 @@ function goron_talk(npc, ch)
         local count_red_twine = chr_inv_count(ch, 40032)
         local count_blue_twine = chr_inv_count(ch, 40033)
         if count_green_twine > 0 or count_yellow_twine > 0 or count_red_twine > 0 or count_blue_twine > 0 then
-            do_message(npc, ch, "Willkommen. Willkommen. Treten Sie ein. Was kann ich für Sie tun?")
+            npc_message(npc, ch, "Willkommen. Willkommen. Treten Sie ein. Was kann ich für Sie tun?")
             while true do
                 local v = do_choice(npc, ch, "Ich hätte gerne eine Robe.", "Nein. Danke.")
                 if v == 1 then
-                    do_message(npc, ch, "Hmm. Eine Robe. Welche Farbe wird denn gewünscht?")
+                    npc_message(npc, ch, "Hmm. Eine Robe. Welche Farbe wird denn gewünscht?")
                     while true do
                         local v1 = do_choice(npc, ch, "Grün.", "Gelb.", "Rot.", "Blau.")
                         if v1 >= 1 and v1 <= 4 then -- Grün
@@ -67,7 +67,7 @@ function goron_talk(npc, ch)
                             (v1 == 2 and count_yellow_twine > 0) or
                             (v1 == 3 and count_red_twine > 0) or
                             (v1 == 4 and count_blue_twine > 0) then
-                                do_message(npc, ch, "Das macht dann 1200 Aki.")
+                                npc_message(npc, ch, "Das macht dann 1200 Aki.")
                                 while true do
                                     local v2 = do_choice(npc, ch, "Bezahlen.", "Nein. Dann doch nicht.")
                                     if v2 == 1 then
@@ -84,9 +84,9 @@ function goron_talk(npc, ch)
                                             end
                                             set_order(v1)
                                             set_order_timestamp(math.random(os.time(t) + 2 * 60 * 60, os.time(t) + 3 * 60 * 60))
-                                            do_message(npc, ch, "Die Bestellung wurde aufgegeben. Sie können sie in 2 - 3 Stunden abholen.")
+                                            npc_message(npc, ch, "Die Bestellung wurde aufgegeben. Sie können sie in 2 - 3 Stunden abholen.")
                                         else
-                                            do_message(npc, ch, "Tut mir Leid. Du hast leider nicht genug Geld dabei.")
+                                            npc_message(npc, ch, "Tut mir Leid. Du hast leider nicht genug Geld dabei.")
                                         end
                                         break
                                     elseif v2 == 2 then
@@ -94,19 +94,19 @@ function goron_talk(npc, ch)
                                     end
                                 end
                             else
-                                do_message(npc, ch, "Tut mir Leid. Du hast nicht die passenden Farben dabei.")
+                                npc_message(npc, ch, "Tut mir Leid. Du hast nicht die passenden Farben dabei.")
                             end
                             break
                         end
                     end
                     break
                 elseif v == 2 then
-                    do_message(npc, ch, "Beehren Sie mich bald wieder!")
+                    npc_message(npc, ch, "Beehren Sie mich bald wieder!")
                     break
                 end
             end
         else
-            do_message(npc, ch, invertika.get_random_element("Ich bin der Schneider hier.",
+            npc_message(npc, ch, invertika.get_random_element("Ich bin der Schneider hier.",
               "Bringe mir etwas Garn und ich werde dir für eine Kleinigkeit wunderschöne Gewänder schneidern.",
                 "Falls du Garn brauchst, frag Lidi. Die spinnt ihn selbst."))
         end
@@ -115,7 +115,7 @@ function goron_talk(npc, ch)
         local order_time = get_order_timestamp()
         if order_time - current_time < 0 then
             -- Bestellung fertig.
-            do_message(npc, ch, "Ihre Bestellung ist fertig. Es wird Ihnen ausgezeichnet stehen.")
+            npc_message(npc, ch, "Ihre Bestellung ist fertig. Es wird Ihnen ausgezeichnet stehen.")
             if get_order() == 1 then
                 invertika.add_items(ch, 20024, 1, "modische grüne Robe")
             elseif get_order() == 2 then
@@ -128,7 +128,7 @@ function goron_talk(npc, ch)
             set_order(0) -- Bestellung löschen.
         else
             -- Bestellungn noch nicht fertig
-            do_message(npc, ch, "Tut mir Leid. Ihre Bestellung ist noch nicht fertig. Kommen Sie später noch einmal vorbei.")
+            npc_message(npc, ch, "Tut mir Leid. Ihre Bestellung ist noch nicht fertig. Kommen Sie später noch einmal vorbei.")
         end
     end
     do_npc_close(npc, ch)

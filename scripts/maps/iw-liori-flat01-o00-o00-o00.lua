@@ -22,7 +22,7 @@ atinit(function()
 end)
 
 function isskel_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element(
+    npc_message(npc, ch, invertika.get_random_element(
       "Blubb",
       "Blubb blubb",
       "Blubb blubb blubb"))

@@ -27,7 +27,7 @@ atinit(function()
 end)
 
 function betirambo_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Willst du ein Eis haben?",
+    npc_message(npc, ch, invertika.get_random_element("Willst du ein Eis haben?",
       "Ein Eis?"))
     while true do
         local v = do_choice(npc, ch,
@@ -47,7 +47,7 @@ function betirambo_talk(npc, ch)
             break
         end
     end
-    do_message(npc, ch, "Bis bald")
+    npc_message(npc, ch, "Bis bald")
     do_npc_close(npc, ch)
 end
 

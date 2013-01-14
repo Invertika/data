@@ -25,7 +25,7 @@ atinit(function()
 end)
 
 function bjoern_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Velera sucht mich? Einen Schluck trinke ich aber noch.",
+    npc_message(npc, ch, invertika.get_random_element("Velera sucht mich? Einen Schluck trinke ich aber noch.",
       "Lustig hier, oder?",
       "Du möchtest auch was trinken, dann ab zum Barmann!",
       "Prost. Wer? Velera? Joah meine Freundin.",
@@ -36,13 +36,13 @@ end
 
 function rodhonu_talk(npc, ch)
     if chr_inv_count(ch, 20021) > 0 then
-        do_message(npc, ch, "Kann ich etwas für dich tun?")
+        npc_message(npc, ch, "Kann ich etwas für dich tun?")
         while true do
             local v = do_choice(npc, ch, "Ich habe hier ein zerbrochenes Kettenhemd. Kannst du das reparieren?", "Nein. Danke.")
             if v == 1 then
-                do_message(npc, ch, "Hm... Lass mal sehen.")
-                do_message(npc, ch, "Das sieht komplizierter aus als es ist.")
-                do_message(npc, ch, "Für 500 Aki kann ich dir das reparieren.")
+                npc_message(npc, ch, "Hm... Lass mal sehen.")
+                npc_message(npc, ch, "Das sieht komplizierter aus als es ist.")
+                npc_message(npc, ch, "Für 500 Aki kann ich dir das reparieren.")
                 while true do
                     local v2 = do_choice(npc, ch, "Hier hast du 500 Aki.", "Hm. Vielleicht später.")
                     if v2 == 1 then
@@ -50,9 +50,9 @@ function rodhonu_talk(npc, ch)
                             invertika.add_money(ch, -500)
                             invertika.add_items(ch, 20021, -1, "zerstörtes Kettenhemd")
                             invertika.add_items(ch, 20020, 1, "Kettenhemd")
-                            do_message(npc, ch, "Bitte sehr.")
+                            npc_message(npc, ch, "Bitte sehr.")
                         else
-                            do_message(npc, ch, "Du hast nicht genügend Geld.")
+                            npc_message(npc, ch, "Du hast nicht genügend Geld.")
                         end
                         break
                     elseif v2 == 2 then
@@ -61,12 +61,12 @@ function rodhonu_talk(npc, ch)
                 end
                 break
             elseif v == 2 then
-                do_message(npc, ch, "Auf Wiedersehen.")
+                npc_message(npc, ch, "Auf Wiedersehen.")
                 break
             end
         end
     else
-        do_message(npc, ch, invertika.get_random_element(
+        npc_message(npc, ch, invertika.get_random_element(
           "Ich wäre gerne mal ein Waffenschmied. Aber keiner will es mir zeigen wie es geht.",
           "Ich kann gut mit Metallen umgehen.",
           "Wenn du eine Waffe haben willst komm später mal vorbei. Dann bin ich Waffenschmied."))
@@ -75,9 +75,9 @@ function rodhonu_talk(npc, ch)
 end
 
 function iaugh_talk(npc, ch)
-        do_message(npc, ch, "Ein Reisender aus dem Sandsturm. Was willst du trinken?")
+        npc_message(npc, ch, "Ein Reisender aus dem Sandsturm. Was willst du trinken?")
         npc_trade(npc, ch, false, { {30006, 10, 25}, {30007, 10, 60}, {30008, 10, 450} })
-        do_message(npc, ch, "Komm bald wieder.")
+        npc_message(npc, ch, "Komm bald wieder.")
         do_npc_close(npc, ch)
 end
 

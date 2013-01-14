@@ -111,7 +111,7 @@ function ShowNextMessageForTherapy()
 end
 
 function nethek_talk(npc, ch)
-    do_message(npc, ch, "Du moechtest den Nex verlassen?")
+    npc_message(npc, ch, "Du moechtest den Nex verlassen?")
     
     while true do 
         local v = do_choice(npc, ch, "Ja.", "Nein.")
@@ -141,21 +141,21 @@ function monty_talk(npc, ch)
     end
     ---Spezielle Abfragen auf bestimmte Werte
     if deathCount == 100 then
-       do_message(npc, ch, "Gratulation du bist zum 100ten Mal gestorben. Das gibt eine Party.")
+       npc_message(npc, ch, "Gratulation du bist zum 100ten Mal gestorben. Das gibt eine Party.")
        do_npc_close(npc, ch)
        return
     elseif deathCount == 1000 then
-       do_message(npc, ch, "Du bist 1000 mal gestorben. Man man ich bin begeistert.")
+       npc_message(npc, ch, "Du bist 1000 mal gestorben. Man man ich bin begeistert.")
        do_npc_close(npc, ch)
        return
     elseif get_qstatus() == 0 and deathCount == 2500 then
-       do_message(npc, ch, "Du bist nun schon ziemlich oft tot gewesen. Vielleicht hilft dir ein bisschen Geld darüber hinweg.")
+       npc_message(npc, ch, "Du bist nun schon ziemlich oft tot gewesen. Vielleicht hilft dir ein bisschen Geld darüber hinweg.")
        invertika.add_money(ch, 50000)
        set_qstatus(1)
        do_npc_close(npc, ch)
        return
     elseif get_qstatus() == 0 and deathCount == 5000 then
-       do_message(npc, ch, "Du stirbst wohl extra wegen dem Geld oder? Naja ich gebs dir, ich brauch kein Geld mehr.")
+       npc_message(npc, ch, "Du stirbst wohl extra wegen dem Geld oder? Naja ich gebs dir, ich brauch kein Geld mehr.")
        invertika.add_money(ch, 150000)
        set_qstatus(1)
        do_npc_close(npc, ch)
@@ -166,18 +166,18 @@ function monty_talk(npc, ch)
 
     ---Normale Abfragen
     if deathCount < 5 then
-       do_message(npc, ch, "Willkommen im Nex, dem Reich des Toten. Wenn du es verlassen möchtest musst du mit Nethek reden. Und rede ab und an mit mir wenn du hier bist...")
+       npc_message(npc, ch, "Willkommen im Nex, dem Reich des Toten. Wenn du es verlassen möchtest musst du mit Nethek reden. Und rede ab und an mit mir wenn du hier bist...")
        do_npc_close(npc, ch)
        return
     elseif deathCount < 50 then
-       do_message(npc, ch, invertika.get_random_element("Erfrische dich ab und zu um deine HP aufzufüllen.",
+       npc_message(npc, ch, invertika.get_random_element("Erfrische dich ab und zu um deine HP aufzufüllen.",
        "Lege ab und zu eine Pause ein, dies füllt deine HP auf.",
        "Lege dich nur mit Gegnern an denen du dich gewachsen fühlst.",
        "Verbünde dich mit anderen Spielern. In einer Gruppe seid ihr stark."))
        do_npc_close(npc, ch)
        return
     else
-       do_message(npc, ch, invertika.get_random_element("Schon wieder gestorben? Das ging ja schnell.",
+       npc_message(npc, ch, invertika.get_random_element("Schon wieder gestorben? Das ging ja schnell.",
        "Oh, schon wieder da? Vermisst du mich so sehr?",
        "Ich merke schon du bist gerne hier...",
        "Oh bringst du mir ein Geschenk?",
@@ -212,7 +212,7 @@ function monty_talk(npc, ch)
 end
 
 function annabell_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("PvP Killing ist ein ernstes Krankheitsbild.",
+    npc_message(npc, ch, invertika.get_random_element("PvP Killing ist ein ernstes Krankheitsbild.",
       "Eine Therapie kann helfen, andere Spieler in Ruhe zu lassen.",
       "Ich bin ausgebildete Therapeutin für PvP Killing.",
       "PvP Killing ist glücklicherweise therapierbar.",
@@ -221,19 +221,19 @@ function annabell_talk(npc, ch)
 end
 
 function herbert_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Ich bin PvP Killing süchtig.",
+    npc_message(npc, ch, invertika.get_random_element("Ich bin PvP Killing süchtig.",
       "Ich hoffe diese Therapie kann mir helfen."))
       do_npc_close(npc, ch)
 end
 
 function miriam_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Früher musste jeder dran glauben der mir über den Weg lief.",
+    npc_message(npc, ch, invertika.get_random_element("Früher musste jeder dran glauben der mir über den Weg lief.",
       "Dank der anonymen PvP Killer Gruppe geht es mir schon viel besser."))
       do_npc_close(npc, ch)
 end
 
 function ben_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Nicht mal hier kann ich meinen Bogen weglegen.",
+    npc_message(npc, ch, invertika.get_random_element("Nicht mal hier kann ich meinen Bogen weglegen.",
       "Ich muss noch hart an mir arbeiten."))
       do_npc_close(npc, ch)
 end

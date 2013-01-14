@@ -88,16 +88,16 @@ function immolate_money(npc, ch, money)
 		chr_money_change(ch, -money)
 		local acc_bal = get_oblation_money(ch)
 		chr_set_quest(ch, "nethek_oblation_money", acc_bal+money)
-		do_message(npc, ch, "Dein Opfer wurde angenommen!")
+		npc_message(npc, ch, "Dein Opfer wurde angenommen!")
 	else
-		do_message(npc, ch, "Soviel Geld hast du nicht!")	
+		npc_message(npc, ch, "Soviel Geld hast du nicht!")	
 	end
 end
 
 
 --- Talkfunktion für die Netheksäuke
 function netheksaeule_talk(npc, ch) --- NPC für die Netheksäule
-	do_message(npc, ch, "Was moechtest du?")
+	npc_message(npc, ch, "Was moechtest du?")
 	
 	while true do
 		local v = do_choice(npc, ch, "Deinen Segen.",
@@ -112,7 +112,7 @@ function netheksaeule_talk(npc, ch) --- NPC für die Netheksäule
 			set_nethek_warp_y(ch, y)
 			set_nethek_warp_map(ch, get_map_id())
 			
-			do_message(npc, ch, "Xenti Taree. Mein Segen.")
+			npc_message(npc, ch, "Xenti Taree. Mein Segen.")
 			
 			break;
 		elseif v == 2 then
@@ -136,7 +136,7 @@ function netheksaeule_talk(npc, ch) --- NPC für die Netheksäule
 					end
 			break;
 		elseif v == 3 then
-			do_message(npc, ch, "Gehe deinen Weg, Wanderer der Äonen.")
+			npc_message(npc, ch, "Gehe deinen Weg, Wanderer der Äonen.")
 			break
 		end
 	end

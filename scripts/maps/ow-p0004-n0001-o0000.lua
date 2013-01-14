@@ -100,7 +100,7 @@ end)
 
 --- Stadtwache Sprechfunktion
 function stadtwache_talk(npc, ch)
- do_message(npc, ch, invertika.get_random_element("Hier darf niemand durch!",
+ npc_message(npc, ch, invertika.get_random_element("Hier darf niemand durch!",
  "Glaub mir, da willst du nicht rein...",
  "Lyet steht unter Quarantäne. Wegen der Seuche.",
  "Meinen Vorgänger hat die Seuche auch schon erwischt... Aber was soll man machen, so viele Städte gibt es nicht zu bewachen.",

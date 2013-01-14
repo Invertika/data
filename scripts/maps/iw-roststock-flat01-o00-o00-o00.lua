@@ -22,7 +22,7 @@ atinit(function()
 end)
 
 function velera_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element(
+    npc_message(npc, ch, invertika.get_random_element(
       "Ja, schon wieder ein Sandsturm. So wie immer...",
       "Warum Roststock Roststock heißt? Also wenn du da nicht selbst draufkommst...",
       "Ich wohne hier seitdem ich denken kann...",

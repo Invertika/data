@@ -39,15 +39,15 @@ end)
 
 function wache_talk(npc, ch)
     if chr_inv_count(ch, 40049) == 0 then
-        do_message(npc, ch, "Um den Zoo zu betreten, brauchst du eine Eintrittskarte.")
+        npc_message(npc, ch, "Um den Zoo zu betreten, brauchst du eine Eintrittskarte.")
 	else
-	    do_message(npc, ch, "Viel Spaß.")
+	    npc_message(npc, ch, "Viel Spaß.")
     end
     do_npc_close(npc, ch)
 end
 
 function wache_ausgang_talk(npc, ch)
-    do_message(npc, ch, "Dies ist der Augang. Bitte benutze den Eingang im Osten.")
+    npc_message(npc, ch, "Dies ist der Augang. Bitte benutze den Eingang im Osten.")
     do_npc_close(npc, ch)
 end
 
