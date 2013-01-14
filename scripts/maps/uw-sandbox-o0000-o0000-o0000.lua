@@ -28,7 +28,7 @@ atinit(function()
  create_inter_map_warp_trigger(19003, 19003, 19003, 19003) --- Intermap warp
  npc_create("Debugger", 58, GENDER_UNSPECIFIED, 133 * TILESIZE + 16, 21 * TILESIZE + 16, debugger_talk, nil) -- Debugger
  npc_create("Zelan", 58, GENDER_UNSPECIFIED, 132 * TILESIZE + 16, 21 * TILESIZE + 16, zelan_talk, nil) --- Zelan
- trigger_create(20 * TILESIZE, 20 * TILESIZE, 22 * TILESIZE, 22 * TILESIZE, "trap_trigger_skorpions", 0, true) --- Trigger Trap
+ trigger_create(20 * TILESIZE, 20 * TILESIZE, 22 * TILESIZE, 22 * TILESIZE, trap_trigger_skorpions, 0, true) --- Trigger Trap
  npc_create("Aliria", 2, GENDER_UNSPECIFIED, 15 * TILESIZE + 16, 15 * TILESIZE + 16, alaria_talk, nil) --- Alaria Handels Test NPC
 
 --Test NPCs
@@ -121,8 +121,8 @@ scorpionrace.initializeRace(scorpions, skorpion_rennen_npc, 2)
 
 
 
-  trigger_create(56 * TILESIZE, 32 * TILESIZE, 64, 64, "patrol_waypoint", 1, true)
-  trigger_create(63 * TILESIZE, 32 * TILESIZE, 64, 64, "patrol_waypoint", 2, true)
+  trigger_create(56 * TILESIZE, 32 * TILESIZE, 64, 64, patrol_waypoint, 1, true)
+  trigger_create(63 * TILESIZE, 32 * TILESIZE, 64, 64, patrol_waypoint, 2, true)
 
   item_drop(58 * TILESIZE, 26 * TILESIZE, 10001, 1);
   item_drop(58 * TILESIZE, 27 * TILESIZE, 10002, 10);

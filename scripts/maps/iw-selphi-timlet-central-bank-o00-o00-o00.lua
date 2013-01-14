@@ -33,7 +33,7 @@ atinit(function()
  npc_create("Mertox", 2, GENDER_UNSPECIFIED, 24 * TILESIZE + 16, 24 * TILESIZE + 16, mertox_talk, nil) --- Mertox
  
   -- Trigger für die Überwachung des Bereiches
- trigger_create(30 * TILESIZE, 84 * TILESIZE, 7 * TILESIZE, 3 * TILESIZE, "wache_trigger", 1, true) --- Trigger
+ trigger_create(30 * TILESIZE, 84 * TILESIZE, 7 * TILESIZE, 3 * TILESIZE, wache_trigger, 1, true) --- Trigger
 end)
 
 function wache_trigger(ch, id)

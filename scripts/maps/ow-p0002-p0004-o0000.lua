@@ -31,7 +31,7 @@ atinit(function()
     sign.create_sign(99, 61, sign_entrance) --- Schild Ortseingang
     sign.create_sign(49, 133, sign_entrance) --- Schild Ortseingang
     
-    trigger_create(34 * TILESIZE, 99 * TILESIZE, 1 * TILESIZE, 1 * TILESIZE, "key_trigger", 0, true)
+    trigger_create(34 * TILESIZE, 99 * TILESIZE, 1 * TILESIZE, 1 * TILESIZE, key_trigger, 0, true)
     
     npc_create("Robert", 64, GENDER_UNSPECIFIED, 64 * TILESIZE, 117 * TILESIZE + 16, robert_talk, nil) --- Robert
     npc_create("Issen", 146, GENDER_UNSPECIFIED, 139 * TILESIZE + 16, 113 * TILESIZE + 16, issen_talk, nil) --- Issen

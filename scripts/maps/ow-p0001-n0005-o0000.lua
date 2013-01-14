@@ -49,7 +49,7 @@ atinit(function()
  npc_create("Wache", 29, GENDER_UNSPECIFIED, 106 * TILESIZE + 16, 96 * TILESIZE + 16, wache_talk, nil) --- Wache
  
  -- Trigger für die Überwachung des Torbereiches
- trigger_create(98 * TILESIZE, 93 * TILESIZE, 7 * TILESIZE, 6 * TILESIZE, "wache_trigger", 1, true) --- Trigger Tor
+ trigger_create(98 * TILESIZE, 93 * TILESIZE, 7 * TILESIZE, 6 * TILESIZE, wache_trigger, 1, true) --- Trigger Tor
  
 end)
 

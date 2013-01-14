@@ -19,9 +19,9 @@ require "scripts/libs/warp"
 atinit(function()
  create_inter_map_warp_trigger(62, 72, 56, 6) --- Intermap warp
  nethek.create_netheksaeule(181 * TILESIZE, 125 * TILESIZE + 16) --- Netheksäule
- trigger_create(41 * TILESIZE + 8, 105 * TILESIZE + 8, 1.5 * TILESIZE, 1.5 * TILESIZE, "warp_escape_tunnel", 0, true) --- Warp zum Fluchttunnel
- --trigger_create(113 * TILESIZE, 141 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "waypoint_archway_1", 0, true) --- Rundenzähler Torbögen (Waypoint 1)
- --trigger_create(112 * TILESIZE, 180 * TILESIZE, 5 * TILESIZE, 4 * TILESIZE, "waypoint_archway_2", 0, true) --- Rundenzähler Torbögen (Waypoint 2)
+ trigger_create(41 * TILESIZE + 8, 105 * TILESIZE + 8, 1.5 * TILESIZE, 1.5 * TILESIZE, warp_escape_tunnel, 0, true) --- Warp zum Fluchttunnel
+ --trigger_create(113 * TILESIZE, 141 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, waypoint_archway_1, 0, true) --- Rundenzähler Torbögen (Waypoint 1)
+ --trigger_create(112 * TILESIZE, 180 * TILESIZE, 5 * TILESIZE, 4 * TILESIZE, waypoint_archway_2, 0, true) --- Rundenzähler Torbögen (Waypoint 2)
 
  --Schilder
  sign.create_sign(113, 84, "Frisörsalon Umet\
@@ -72,20 +72,20 @@ Wir müssen darauf hinweisen, dass bei Diebstahl ein Ladenverbot verhängt wird 
  npc_create("Palastwache", 27, GENDER_UNSPECIFIED, 188 * TILESIZE + 16, 68 * TILESIZE + 16, palastwache_talk, nil) --- Palastwache
 
  --- Trigger für die Überwachung des Torbereiches
- trigger_create(145 * TILESIZE, 17 * TILESIZE, 5 * TILESIZE, 52 * TILESIZE, "wache_trigger", 1, true) --- Trigger Tor 1
- trigger_create(183 * TILESIZE, 17 * TILESIZE, 5 * TILESIZE, 52 * TILESIZE, "wache_trigger", 2, true) --- Trigger Tor 2
+ trigger_create(145 * TILESIZE, 17 * TILESIZE, 5 * TILESIZE, 52 * TILESIZE, wache_trigger, 1, true) --- Trigger Tor 1
+ trigger_create(183 * TILESIZE, 17 * TILESIZE, 5 * TILESIZE, 52 * TILESIZE, wache_trigger, 2, true) --- Trigger Tor 2
 
  --- Trigger für den Amulet-quest.
- trigger_create(54 * TILESIZE, 10 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 1, true)
- trigger_create(104 * TILESIZE, 82 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 2, true)
- trigger_create(43 * TILESIZE, 116 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 3, true)
- trigger_create(9 * TILESIZE, 79 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 4, true)
- trigger_create(7 * TILESIZE, 60 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 5, true)
- trigger_create(61 * TILESIZE, 152 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 6, true)
- trigger_create(49 * TILESIZE, 182 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 7, true)
- trigger_create(191 * TILESIZE, 119 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 8, true)
- trigger_create(102 * TILESIZE, 141 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 9, true)
- trigger_create(87 * TILESIZE, 151 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 10, true)
+ trigger_create(54 * TILESIZE, 10 * TILESIZE, TILESIZE, TILESIZE, amulet_trigger, 1, true)
+ trigger_create(104 * TILESIZE, 82 * TILESIZE, TILESIZE, TILESIZE, amulet_trigger, 2, true)
+ trigger_create(43 * TILESIZE, 116 * TILESIZE, TILESIZE, TILESIZE, amulet_trigger, 3, true)
+ trigger_create(9 * TILESIZE, 79 * TILESIZE, TILESIZE, TILESIZE, amulet_trigger, 4, true)
+ trigger_create(7 * TILESIZE, 60 * TILESIZE, TILESIZE, TILESIZE, amulet_trigger, 5, true)
+ trigger_create(61 * TILESIZE, 152 * TILESIZE, TILESIZE, TILESIZE, amulet_trigger, 6, true)
+ trigger_create(49 * TILESIZE, 182 * TILESIZE, TILESIZE, TILESIZE, amulet_trigger, 7, true)
+ trigger_create(191 * TILESIZE, 119 * TILESIZE, TILESIZE, TILESIZE, amulet_trigger, 8, true)
+ trigger_create(102 * TILESIZE, 141 * TILESIZE, TILESIZE, TILESIZE, amulet_trigger, 9, true)
+ trigger_create(87 * TILESIZE, 151 * TILESIZE, TILESIZE, TILESIZE, amulet_trigger, 10, true)
 
  ---Weihnachten
  --npc_create("Rentier", 74, GENDER_UNSPECIFIED, 177 * TILESIZE + 16, 185 * TILESIZE + 16, rentier_talk, nil) --- Rentier

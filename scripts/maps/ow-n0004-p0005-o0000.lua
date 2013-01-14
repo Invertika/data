@@ -29,8 +29,8 @@ atinit(function()
     sign_entrance = "Burg Cedric"
     sign.create_sign(104, 185, sign_entrance) --- Schild Burgeingang
 
-    trigger_create(101 * TILESIZE, 176 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "wache_trigger", 1, true)
-    ---trigger_create(101 * TILESIZE, 183 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "wache_cache_trigger", 1, true)
+    trigger_create(101 * TILESIZE, 176 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, wache_trigger, 1, true)
+    ---trigger_create(101 * TILESIZE, 183 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, wache_cache_trigger, 1, true)
 
     diem = npc_create("Diem", 139, GENDER_UNSPECIFIED, 60 * TILESIZE + 16, 160 * TILESIZE + 16, diem_talk, npclib.walkaround_wide)
     invertika.create_npc_talk_random(diem,

@@ -15,10 +15,10 @@
 ----------------------------------------------------------------------------------
 
 function create_inter_map_warp_trigger(MapUp, MapRight, MapDown, MapLeft)
- if MapUp ~= nil then trigger_create(0 * TILESIZE, 0 * TILESIZE, 200 * TILESIZE, 2 * TILESIZE, "warp_up", MapUp, true) end ---Obere Warplinie
- if MapRight ~= nil then trigger_create(198 * TILESIZE, 1 * TILESIZE, 2 * TILESIZE, 198 * TILESIZE, "warp_right", MapRight, true) end ---Rechte Warplinie
- if MapDown ~= nil then trigger_create(0 * TILESIZE, 198 * TILESIZE, 200 * TILESIZE, 2 * TILESIZE, "warp_down", MapDown, true) end ---Untere Warplinie
- if MapLeft ~= nil then trigger_create(0 * TILESIZE, 1 * TILESIZE, 2 * TILESIZE, 198 * TILESIZE, "warp_left", MapLeft, true) end ---Linke Warplinie
+ if MapUp ~= nil then trigger_create(0 * TILESIZE, 0 * TILESIZE, 200 * TILESIZE, 2 * TILESIZE, warp_up, MapUp, true) end ---Obere Warplinie
+ if MapRight ~= nil then trigger_create(198 * TILESIZE, 1 * TILESIZE, 2 * TILESIZE, 198 * TILESIZE, warp_right, MapRight, true) end ---Rechte Warplinie
+ if MapDown ~= nil then trigger_create(0 * TILESIZE, 198 * TILESIZE, 200 * TILESIZE, 2 * TILESIZE, warp_down, MapDown, true) end ---Untere Warplinie
+ if MapLeft ~= nil then trigger_create(0 * TILESIZE, 1 * TILESIZE, 2 * TILESIZE, 198 * TILESIZE, warp_left, MapLeft, true) end ---Linke Warplinie
 end
 
 function warp_up(obj, id)

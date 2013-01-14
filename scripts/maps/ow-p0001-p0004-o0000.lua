@@ -25,11 +25,11 @@ atinit(function()
  nethek.create_netheksaeule(187 * TILESIZE, 173 * TILESIZE + 16) ---Netheksäule
  sign.create_sign(153, 178, "Im Haus können Tickets für den Zoo Rundgang gekauft werden.")
  
- trigger_create(138 * TILESIZE, 176 * TILESIZE, 10 * TILESIZE, 3 * TILESIZE, "wache_trigger", 1, true)
- trigger_create(135 * TILESIZE, 186 * TILESIZE, 3 * TILESIZE, 4 * TILESIZE, "wache_trigger", 2, true)
- trigger_create(138 * TILESIZE, 190 * TILESIZE, 13 * TILESIZE, 2 * TILESIZE, "eingang_trigger", 1, true)
- trigger_create(71 * TILESIZE, 189 * TILESIZE, 14 * TILESIZE, 1 * TILESIZE, "ausgang_trigger", 1, true)
- trigger_create(71 * TILESIZE, 191 * TILESIZE, 14 * TILESIZE, 1 * TILESIZE, "ausgang_trigger", 2, true)
+ trigger_create(138 * TILESIZE, 176 * TILESIZE, 10 * TILESIZE, 3 * TILESIZE, wache_trigger, 1, true)
+ trigger_create(135 * TILESIZE, 186 * TILESIZE, 3 * TILESIZE, 4 * TILESIZE, wache_trigger, 2, true)
+ trigger_create(138 * TILESIZE, 190 * TILESIZE, 13 * TILESIZE, 2 * TILESIZE, eingang_trigger, 1, true)
+ trigger_create(71 * TILESIZE, 189 * TILESIZE, 14 * TILESIZE, 1 * TILESIZE, ausgang_trigger, 1, true)
+ trigger_create(71 * TILESIZE, 191 * TILESIZE, 14 * TILESIZE, 1 * TILESIZE, ausgang_trigger, 2, true)
 
  
  wache_oben = npc_create("Wache", 26, GENDER_UNSPECIFIED, 140 * TILESIZE + 16, 180 * TILESIZE + 16, wache_talk, nil)

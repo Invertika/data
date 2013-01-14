@@ -46,21 +46,21 @@ atinit(function()
 	
     --- Waypoints
     --- Ta No 5 (Köchin)
-    --- trigger_create(20 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, "waypoints", 1, true) --- Wegpunkt 1 (Küchenanrichte, ganz links)
-    --- trigger_create(23 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, "waypoints", 2, true) --- Wegpunkt 2 (Küchenanrichte, zweite von rechts)
-    --- trigger_create(24 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, "waypoints", 3, true) --- Wegpunkt 3 (Küchenanrichte, ganz rechts)
+    --- trigger_create(20 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, waypoints, 1, true) --- Wegpunkt 1 (Küchenanrichte, ganz links)
+    --- trigger_create(23 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, waypoints, 2, true) --- Wegpunkt 2 (Küchenanrichte, zweite von rechts)
+    --- trigger_create(24 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, waypoints, 3, true) --- Wegpunkt 3 (Küchenanrichte, ganz rechts)
     --- waypointstate[tano[5]] = 1
 
     --- Ta No 6 (Küchenhilfe)
-    --- trigger_create(19 * TILESIZE + 16, 19 * TILESIZE + 16, 1, 1, "waypoints", 1, true) --- Wegpunkt 1 (Küchenanrichte, links vor dem Ofen)
-    --- trigger_create(9 * TILESIZE + 16, 14 * TILESIZE + 16, 1, 1, "waypoints", 2, true) --- Wegpunkt 2 (Vorratskammer, oben vor dem Regal)
-    --- trigger_create(9 * TILESIZE + 16, 19 * TILESIZE + 16, 1, 1, "waypoints", 3, true) --- Wegpunkt 3 (Vorratskammer, unten vor einer Kiste)
-    --- trigger_create(7 * TILESIZE + 16, 16 * TILESIZE + 16, 1, 1, "waypoints", 4, true) --- Wegpunkt 4 (Vorratskammer, links vor einem Sack)
+    --- trigger_create(19 * TILESIZE + 16, 19 * TILESIZE + 16, 1, 1, waypoints, 1, true) --- Wegpunkt 1 (Küchenanrichte, links vor dem Ofen)
+    --- trigger_create(9 * TILESIZE + 16, 14 * TILESIZE + 16, 1, 1, waypoints, 2, true) --- Wegpunkt 2 (Vorratskammer, oben vor dem Regal)
+    --- trigger_create(9 * TILESIZE + 16, 19 * TILESIZE + 16, 1, 1, waypoints, 3, true) --- Wegpunkt 3 (Vorratskammer, unten vor einer Kiste)
+    --- trigger_create(7 * TILESIZE + 16, 16 * TILESIZE + 16, 1, 1, waypoints, 4, true) --- Wegpunkt 4 (Vorratskammer, links vor einem Sack)
     --- waypointstate[tano[6]] = 1
 	
     --- Schutz der Schatzkammer
-    -- trigger_create(42 * TILESIZE, 36 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "treasure_trap", 0, true)
-    -- trigger_create(39 * TILESIZE, 36 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "treasure_warning", 0, true)
+    -- trigger_create(42 * TILESIZE, 36 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, treasure_trap, 0, true)
+    -- trigger_create(39 * TILESIZE, 36 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, treasure_warning, 0, true)
 end)
 
 function tano1_talk(npc, ch)

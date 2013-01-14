@@ -89,7 +89,7 @@ atinit(function()
  --- Wachen am Tor
  wache = npc_create("Stadtwache", 26, GENDER_UNSPECIFIED, 84 * TILESIZE + 16, 187 * TILESIZE + 16, stadtwache_talk, nil) --- Stadtwache
  npc_create("Stadtwache", 26, GENDER_UNSPECIFIED, 87 * TILESIZE + 16, 187 * TILESIZE + 16, stadtwache_talk, nil) --- Stadtwache
- trigger_create(85 * TILESIZE, 186 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "wache_trigger", 1, true) --- Trigger Tor
+ trigger_create(85 * TILESIZE, 186 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, wache_trigger, 1, true) --- Trigger Tor
  
  -- Grabsteine
  for i, v in ipairs(gravestone_data) do

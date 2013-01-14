@@ -17,7 +17,7 @@
 require "scripts/lua/npclib"
 
 atinit(function()
-    trigger_create(45 * TILESIZE, 23 * TILESIZE, 1 * TILESIZE, 1 * TILESIZE, "warp_escape_tunnel2", 0, true)
+    trigger_create(45 * TILESIZE, 23 * TILESIZE, 1 * TILESIZE, 1 * TILESIZE, warp_escape_tunnel2, 0, true)
 end)
 
 function warp_escape_tunnel2(obj, arg)

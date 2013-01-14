@@ -21,7 +21,7 @@ require "scripts/libs/warp"
 
 atinit(function()
  --- Erster Start
- trigger_create(115 * TILESIZE, 15 * TILESIZE, 50 * TILESIZE, 23 * TILESIZE, "firststart_trigger", 0, true) --- Erste Meldung
+ trigger_create(115 * TILESIZE, 15 * TILESIZE, 50 * TILESIZE, 23 * TILESIZE, firststart_trigger, 0, true) --- Erste Meldung
  
  -- Zelan
  npc_create("Zelan", 58, GENDER_UNSPECIFIED, 132 * TILESIZE + 16, 21 * TILESIZE + 16, zelan_talk, nil) --- Zelan

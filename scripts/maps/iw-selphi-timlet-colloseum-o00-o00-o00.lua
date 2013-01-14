@@ -28,12 +28,12 @@ atinit(function()
  -- commentator[2] = npc_create("Kommentator", 25, GENDER_UNSPECIFIED, 91 * TILESIZE + 16, 35 * TILESIZE + 16, commentator_talk, nil) --- Kommentator bei den billigen Plätzen
  -- commentator[3] = npc_create("Kommentator", 25, GENDER_UNSPECIFIED, 59 * TILESIZE + 16, 83 * TILESIZE + 16, commentator_talk, nil) --- Kommentator unten
 
- trigger_create(79 * TILESIZE, 40 * TILESIZE, 4 * TILESIZE, 4 * TILESIZE, "wache_trigger", 1, true)
- trigger_create(47 * TILESIZE, 40 * TILESIZE, 4 * TILESIZE, 4 * TILESIZE, "wache_trigger", 2, true)
+ trigger_create(79 * TILESIZE, 40 * TILESIZE, 4 * TILESIZE, 4 * TILESIZE, wache_trigger, 1, true)
+ trigger_create(47 * TILESIZE, 40 * TILESIZE, 4 * TILESIZE, 4 * TILESIZE, wache_trigger, 2, true)
 
- -- trigger_create(57 * TILESIZE, 75 * TILESIZE, 17 * TILESIZE, 8 * TILESIZE, "entrance_trigger", 1, true)
- -- trigger_create(57 * TILESIZE, 82 * TILESIZE, 17 * TILESIZE, 9 * TILESIZE, "entrance_trigger", 2, true)
- -- trigger_create(64 * TILESIZE, 68 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "fight_start_trigger", 1, true)
+ -- trigger_create(57 * TILESIZE, 75 * TILESIZE, 17 * TILESIZE, 8 * TILESIZE, entrance_trigger, 1, true)
+ -- trigger_create(57 * TILESIZE, 82 * TILESIZE, 17 * TILESIZE, 9 * TILESIZE, entrance_trigger, 2, true)
+ -- trigger_create(64 * TILESIZE, 68 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, fight_start_trigger, 1, true)
 end)
 
 function wache_talk(npc, ch)

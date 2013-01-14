@@ -32,7 +32,7 @@ local secrets = {}
 -- @param moneyamount Menge des zu erzeugenden Geldes
 function create_secret(xpos, ypos, secretid, itemid, amount, moneyamount)
     local secretindex = #secrets + 1
-    trigger_create(xpos*TILESIZE, ypos*TILESIZE, TILESIZE, TILESIZE, "secret_activate", secretindex, true)
+    trigger_create(xpos*TILESIZE, ypos*TILESIZE, TILESIZE, TILESIZE, secret_activate, secretindex, true)
     secrets[secretindex] = {}
     secrets[secretindex][0] = itemid
     secrets[secretindex][1] = amount
