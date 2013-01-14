@@ -72,7 +72,7 @@ function npc_choice(npc, ch, ...)
 end
 
 -- Sends an NPC integer ask to a player and waits for its answer.
-function do_ask_integer(npc, ch, min_num, max_num, ...)
+function npc_ask_integer(npc, ch, min_num, max_num, ...)
   -- Wait for the arrival of a pending acknowledgment, if any.
   coroutine.yield(0)
   npc_ask_integer(npc, ch, min_num, max_num, ...)
@@ -81,7 +81,7 @@ function do_ask_integer(npc, ch, min_num, max_num, ...)
 end
 
 -- Sends an NPC string ask to a player and waits for its answer.
-function do_ask_string(npc, ch)
+function npc_ask_string(npc, ch)
   -- Wait for the arrival of a pending acknowledgment, if any.
   coroutine.yield(0)
   npc_ask_string(npc, ch)

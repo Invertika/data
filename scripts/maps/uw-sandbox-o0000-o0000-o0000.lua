@@ -188,7 +188,7 @@ function poker_dealer_talk(npc, ch)
                         elseif possibilities[v] == poker.PokerConstants.POSSIBILITY_RAISE then
                             local min = game:getMoneyPlayerHasToRaise(ch)
                             local max = game:getMaxMoneyPlayerCanRaise(ch)
-                            local amount = do_ask_integer(npc, ch, min, max, min)
+                            local amount = npc_ask_integer(npc, ch, min, max, min)
                             game:chActionRaise(ch, amount)
                             being_say(npc, string.format("%s spielt Raise um %s", being_get_name(ch), amount))
                         elseif possibilites[v] == poker.PokerConstants.POSSIBILITY_CHANGE_CARD then
@@ -342,13 +342,13 @@ end
 
 function int_test_talk(npc, ch)
     npc_message(npc, ch, "Enter a number (50-100)")
-    number = do_ask_integer(npc, ch, 50, 100, 75)
+    number = npc_ask_integer(npc, ch, 50, 100, 75)
     npc_message(npc, ch, string.format("You have entered %d ", number))
 end
 
 function string_test_talk(npc, ch)
     npc_message(npc, ch, "Enter a string")
-    input = do_ask_string(npc, ch)
+    input = npc_ask_string(npc, ch)
     npc_message(npc, ch, string.format("You have entered '%s' Nice choice ! ", input))
 end
 
@@ -695,7 +695,7 @@ function debugger_talk(npc, ch)
     local c = npc_choice(npc, ch, "Nix.", "Effekte.")
     if c == 2 then
         npc_message(npc, ch, "Effektid?")
-        local id = do_ask_integer(npc, ch, 0, 9999, 0)
+        local id = npc_ask_integer(npc, ch, 0, 9999, 0)
         effect_create(id, ch)
     end
 end

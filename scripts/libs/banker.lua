@@ -136,7 +136,7 @@ function banker_talk(npc, ch)
 		elseif v2 == 8 then --- 50000
 			bank_pay_money_to_account_dlg(npc, ch, 50000)
         elseif v2 == 9 then --- Auswahl
-            bank_pay_money_to_account_dlg(npc, ch, do_ask_integer(npc, ch, 0, chr_money(ch), 1))
+            bank_pay_money_to_account_dlg(npc, ch, npc_ask_integer(npc, ch, 0, chr_money(ch), 1))
 		elseif v2 == 10 then --- alles
 			bank_pay_money_to_account_dlg(npc, ch, chr_money(ch))
 		end
@@ -157,7 +157,7 @@ function banker_talk(npc, ch)
 		elseif v2 == 8 then --- 50000
 			bank_get_money_from_account_dlg(npc, ch, 50000)
         elseif v2 == 9 then --- Auswahl
-            bank_get_money_from_account_dlg(npc, ch, do_ask_integer(npc, ch, 0, math.floor(bank_get_account_balance(ch)), 1))
+            bank_get_money_from_account_dlg(npc, ch, npc_ask_integer(npc, ch, 0, math.floor(bank_get_account_balance(ch)), 1))
 		elseif v2 == 10 then --- Alles
 			bank_get_money_from_account_dlg(npc, ch, math.floor(bank_get_account_balance(ch)))
 		end
