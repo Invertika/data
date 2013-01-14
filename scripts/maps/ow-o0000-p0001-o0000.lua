@@ -20,11 +20,11 @@ require "scripts/libs/warp"
 
 atinit(function()
  create_inter_map_warp_trigger(63, 73, 61, 7) --- Intermap warp
- mana.trigger_create(36 * TILESIZE + 8, 84 * TILESIZE + 8, 1.5 * TILESIZE, 1.5 * TILESIZE, "warp_escape_tunnel", 0, true) --- Warp zum Fluchttunnel
+ trigger_create(36 * TILESIZE + 8, 84 * TILESIZE + 8, 1.5 * TILESIZE, 1.5 * TILESIZE, "warp_escape_tunnel", 0, true) --- Warp zum Fluchttunnel
 end)
 
 function warp_escape_tunnel(obj, blubb)
-    if(mana.being_type(obj)==TYPE_CHARACTER) then
-        mana.chr_warp(obj, 20182, 976, 112) 
+    if(being_type(obj)==TYPE_CHARACTER) then
+        chr_warp(obj, 20182, 976, 112) 
     end
 end

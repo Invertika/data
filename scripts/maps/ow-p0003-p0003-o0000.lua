@@ -74,7 +74,7 @@ function oughad_talk(npc, ch)
         --Set Quest
         invertika.set_quest_status(ch, quest_string_var, 2)
         invertika.set_quest_status(ch, quest_string_kills, number_of_kills)
-        invertika.set_quest_status(ch, quest_string_maggot, mana.chr_get_kill_count(ch, 2))
+        invertika.set_quest_status(ch, quest_string_maggot, chr_get_kill_count(ch, 2))
     end
     
     --Get Quests
@@ -82,7 +82,7 @@ function oughad_talk(npc, ch)
     local start_kills = invertika.get_quest_status(ch, quest_string_maggot)
     
     if quest_var == 2 then
-        local kills = mana.chr_get_kill_count(ch, 2)
+        local kills = chr_get_kill_count(ch, 2)
         if kills - start_kills >= required_kills then
             number_of_jobs = number_of_jobs + 1
             do_message(npc, ch, "Danke. Das sollte meiner Ernte helfen.")

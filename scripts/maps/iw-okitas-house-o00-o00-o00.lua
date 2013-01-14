@@ -40,7 +40,7 @@ function tetse_talk(npc, ch)
     function set_qstatus(x) invertika.set_quest_status(ch, questname, x) end
 
     if get_qstatus() == 1 then
-        if mana.chr_inv_count(ch, 10008) > 0 then
+        if chr_inv_count(ch, 10008) > 0 then
             do_message(npc, ch, "Du hast mein Schwert! Ich suche es seit Jahren! Ich habe es einst in einer großen Schlacht verloren. Gibst du es mir wieder?")
             while true do
                 local v = do_choice(npc, ch,

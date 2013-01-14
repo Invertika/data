@@ -44,7 +44,7 @@ end
 -- @param questname Der Name des Quests.
 function init_quest_status(ch, questname)
     if tonumber(get_quest_var(ch, questname)) == nil then
-        mana.chr_set_quest(ch, questname, 0)
+        chr_set_quest(ch, questname, 0)
     end
 end
 
@@ -53,7 +53,7 @@ end
 -- @param questname Der Name des Quests.
 -- @param value Der Wert auf den der Quest gesetzt werden soll.
 function set_quest_status(ch, questname, value)
-    mana.chr_set_quest(ch, questname, tonumber(value))
+    chr_set_quest(ch, questname, tonumber(value))
 end
 
 -- Gibt einen Queststatus zurück
@@ -66,7 +66,7 @@ end
 
 function init_quest_status_string(ch, questname)
     if tonumber(get_quest_var(ch, questname)) == nil then
-        mana.chr_set_quest(ch, questname, "")
+        chr_set_quest(ch, questname, "")
     end
 end
 
@@ -75,7 +75,7 @@ end
 -- @param questname Der Name des Quests.
 -- @param value Der Wert auf den der Quest gesetzt werden soll.
 function set_quest_status_string(ch, questname, value)
-    mana.chr_set_quest(ch, questname, value)
+    chr_set_quest(ch, questname, value)
 end
 
 -- Gibt einen Queststatus zurück
@@ -100,8 +100,8 @@ local ITEM_REMOVE_TEXT = "Du hast %sx %s weniger!"
 -- @param optimalLevel optimalLevel.
 function add_exp(character, attribute, amount, optimalLevel)
     if amount == 0 then return end -- prevent spamming the player
-    mana.chr_give_exp(character, attribute, amount, optimalLevel)
-    mana.chatmessage(character, "Du hast " + amount + "Erfahrungspunkte erhalten!")
+    chr_give_exp(character, attribute, amount, optimalLevel)
+    chatmessage(character, "Du hast " + amount + "Erfahrungspunkte erhalten!")
 end
 
 --- Fügt Character ch amount Aki hinzu (bei negativen Werten wird abgezogen)
@@ -109,15 +109,15 @@ end
 -- @param amount Menge des Geldes.
 function add_money(ch, amount)
     if amount == 0 then return end -- prevent spamming the player
-    local current_money = mana.chr_money(ch)
+    local current_money = chr_money(ch)
     if current_money + amount < 0 then
         error("add_money failed: money would be less than 0")
     else
-        mana.chr_money_change(ch, amount)
+        chr_money_change(ch, amount)
         if amount > 0 then
-            mana.chatmessage(ch, string.format(MONEY_ADD_TEXT, amount))
+            chatmessage(ch, string.format(MONEY_ADD_TEXT, amount))
         else
-            mana.chatmessage(ch, string.format(MONEY_REMOVE_TEXT, amount*-1))
+            chatmessage(ch, string.format(MONEY_REMOVE_TEXT, amount*-1))
         end
     end
 end
@@ -129,12 +129,12 @@ end
 -- @param name Name des Items (sollte auf Itemnamen gesetzt werden)
 function add_items(ch, id, amount, name)
     if amount == 0 then return end -- prevent spamming the player
-    local success = mana.chr_inv_change(ch, id, amount)
+    local success = chr_inv_change(ch, id, amount)
     if success then
         if amount > 0 then
-            mana.chatmessage(ch, string.format(ITEM_ADD_TEXT, amount, name))
+            chatmessage(ch, string.format(ITEM_ADD_TEXT, amount, name))
         elseif amount < 0 then
-            mana.chatmessage(ch, string.format(ITEM_REMOVE_TEXT, -amount, name))
+            chatmessage(ch, string.format(ITEM_REMOVE_TEXT, -amount, name))
         else
             -- 0 Items werden hinzugefügt/geändert
             -- Aber wer sollte so etwas tun?
@@ -146,7 +146,7 @@ end
 --- Tötet ein Lebwesen
 -- @param being Das zu tötende Lebewesen
 function kill_being(being)
-    mana.being_damage(being, 999999, 0, 99999, DAMAGE_PHYSICAL, ELEMET_NEUTRAL)
+    being_damage(being, 999999, 0, 99999, DAMAGE_PHYSICAL, ELEMET_NEUTRAL)
 end
 
 tr_messages = {}
@@ -158,7 +158,7 @@ end
 
 function npc_talk_random(npc, messages)
     local text = messages[math.random(1, #messages)]
-    mana.being_say(npc, text)
+    being_say(npc, text)
     schedule_in(math.random(20, 30), function() npc_talk_random(npc, messages) end)
 end
 
@@ -166,13 +166,13 @@ tg_timer = {}
 function npc_greet_random(npc)
     if tg_timer[npc] then
         if tg_timer[npc] > 500 then
-            local beings = mana.get_beings_in_circle(mana.posX(npc), mana.posY(npc), 10 * TILESIZE)
+            local beings = get_beings_in_circle(posX(npc), posY(npc), 10 * TILESIZE)
             for i, v in ipairs(beings) do
-                local type = mana.being_type(v)
+                local type = being_type(v)
                 if (type == TYPE_NPC or type == TYPE_CHARACTER) and v ~= npc and math.random() < 0.3 then
-                    mana.being_say(npc, string.format(
+                    being_say(npc, string.format(
                         get_random_element("Hallo %s!", "Tag %s.",
-                            "Ah. Lange nicht gesehen %s."), mana.being_get_name(v)))
+                            "Ah. Lange nicht gesehen %s."), being_get_name(v)))
                     break
                 end
             end

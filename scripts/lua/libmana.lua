@@ -41,7 +41,7 @@ local timer
 -- Creates an NPC and associates the given handler.
 -- Note: Cannot be called until map initialization has started.
 function create_npc(name, id, x, y, talkfunct, updatefunct)
-  local npc = mana.npc_create(name, id, x, y)
+  local npc = npc_create(name, id, x, y)
   if talkfunct then npc_talk_functs[npc] = talkfunct end
   if updatefunct then npc_update_functs[npc] = updatefunct end
   return npc
@@ -57,7 +57,7 @@ end
 function do_message(npc, ch, msg)
   -- Wait for the arrival of a pending acknowledgment, if any.
   coroutine.yield(0)
-  mana.npc_message(npc, ch, msg)
+  npc_message(npc, ch, msg)
   -- An acknowledgment is pending, but do not wait for its arrival.
   coroutine.yield(1)
 end
@@ -66,7 +66,7 @@ end
 function do_choice(npc, ch, ...)
   -- Wait for the arrival of a pending acknowledgment, if any.
   coroutine.yield(0)
-  mana.npc_choice(npc, ch, ...)
+  npc_choice(npc, ch, ...)
   -- Wait for player choice.
   return coroutine.yield(2)
 end
@@ -75,7 +75,7 @@ end
 function do_ask_integer(npc, ch, min_num, max_num, ...)
   -- Wait for the arrival of a pending acknowledgment, if any.
   coroutine.yield(0)
-  mana.npc_ask_integer(npc, ch, min_num, max_num, ...)
+  npc_ask_integer(npc, ch, min_num, max_num, ...)
   -- Wait for player answer.
   return coroutine.yield(2)
 end
@@ -84,7 +84,7 @@ end
 function do_ask_string(npc, ch)
   -- Wait for the arrival of a pending acknowledgment, if any.
   coroutine.yield(0)
-  mana.npc_ask_string(npc, ch)
+  npc_ask_string(npc, ch)
   -- Wait for player answer.
   return coroutine.yield(2)
 end
@@ -93,7 +93,7 @@ end
 -- send the letter.
 function do_post(npc, ch)
   coroutine.yield(0)
-  mana.npc_post(npc, ch)
+  npc_post(npc, ch)
   return coroutine.yield(1)
 end
 
@@ -102,7 +102,7 @@ end
 -- that lag cannot be perceived by the player.
 function get_quest_var(ch, name)
   -- Query the server and return immediatly if a value is available.
-  local value = mana.chr_get_quest(ch, name)
+  local value = chr_get_quest(ch, name)
   if value then return value end
   -- Wait for database reply.
   return coroutine.yield(3, name)
@@ -110,7 +110,7 @@ end
 
 -- Gets the post for a user.
 function getpost(ch)
-  mana.chr_get_post(ch)
+  chr_get_post(ch)
   return coroutine.yield(3)
 end
 
@@ -184,7 +184,7 @@ function npc_start(npc, ch)
 end
 
 function do_npc_close(npc, ch)
-    mana.npc_end(npc, ch)
+    npc_end(npc, ch)
 end
 
 -- Called by the game whenever a player keeps talking to an NPC.
@@ -387,7 +387,7 @@ function on_death(being, funct)
     ondeath_functs[being] = {}
   end
   table.insert(ondeath_functs[being], funct)
-  mana.being_register(being)
+  being_register(being)
 end
 
 -- requests the gameserver to notify the script engine when the being
@@ -397,7 +397,7 @@ function on_remove(being, funct)
     onremove_functs[being] = {}
   end
   table.insert(onremove_functs[being], funct)
-  mana.being_register(being)
+  being_register(being)
 end
 
 -- called by the engine when a registred being dies.
@@ -424,25 +424,25 @@ end
 
 -- Below are some convenience methods added to the engine API
 
-mana.chr_money_change = function(ch, amount)
-  return mana.chr_inv_change(ch, 0, amount)
+chr_money_change = function(ch, amount)
+  return chr_inv_change(ch, 0, amount)
 end
 
-mana.chr_money = function(ch)
-  return mana.chr_inv_count(ch, 0)
+chr_money = function(ch)
+  return chr_inv_count(ch, 0)
 end
 
 
 
 function cast(ch, arg)
 	if arg == 1 then
-		mana.being_say(ch, "Kaaame...Haaame... HAAAAAA!")
+		being_say(ch, "Kaaame...Haaame... HAAAAAA!")
 	end
 	if arg == 2 then
-		mana.being_say(ch, "HAA-DOKEN!")
+		being_say(ch, "HAA-DOKEN!")
 	end
 	if arg == 3 then
-		mana.being_say(ch, "Sonic BOOM")
+		being_say(ch, "Sonic BOOM")
 	end
 
 end

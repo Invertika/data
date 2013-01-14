@@ -25,7 +25,7 @@ atinit(function()
 end)
 
 function kaler_talk(npc, ch)
-    mana.npc_trade(npc, ch, false, {
+    npc_trade(npc, ch, false, {
       {30037, 5, 40}
     })
     do_npc_close(npc, ch)

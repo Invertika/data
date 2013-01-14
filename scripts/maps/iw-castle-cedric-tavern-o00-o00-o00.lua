@@ -28,7 +28,7 @@ function egam_talk(npc, ch)
           "Kaufen.",
           "Nichts. Danke.")
         if v == 1 then
-            mana.npc_trade(npc, ch, false,
+            npc_trade(npc, ch, false,
               {{30009, 25, 150},
               {30010, 25, 150},
               {30011, 290, 205},

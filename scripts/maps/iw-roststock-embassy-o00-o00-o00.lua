@@ -34,7 +34,7 @@ function botschafter_talk(npc, ch)
           "Im Moment nicht, ich bin beschäftigt!",
           "Ich würde gerne mal zum Meer."))
     elseif (invertika.get_quest_status(ch, "selphi_timlet_royal_pass") == 1) then
-        local count = mana.chr_inv_count(ch, 40011)
+        local count = chr_inv_count(ch, 40011)
 
         if count > 0 then
             invertika.add_items(ch, 40011, -1, "Brief an die Botschaft in Roststock")

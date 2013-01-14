@@ -31,7 +31,7 @@ atinit(function()
     sign.create_sign(99, 61, sign_entrance) --- Schild Ortseingang
     sign.create_sign(49, 133, sign_entrance) --- Schild Ortseingang
     
-    mana.trigger_create(34 * TILESIZE, 99 * TILESIZE, 1 * TILESIZE, 1 * TILESIZE, "key_trigger", 0, true)
+    trigger_create(34 * TILESIZE, 99 * TILESIZE, 1 * TILESIZE, 1 * TILESIZE, "key_trigger", 0, true)
     
     create_npc("Robert", 64, 64 * TILESIZE, 117 * TILESIZE + 16, robert_talk, nil) --- Robert
     create_npc("Issen", 146, 139 * TILESIZE + 16, 113 * TILESIZE + 16, issen_talk, nil) --- Issen
@@ -84,21 +84,21 @@ function issen_talk(npc, ch)
     
     if quest_var == 1 then
         local rest_time = os.time(t) - quest_var_time
-        if rest_time >= 0 and rest_time <= 120 and mana.chr_inv_count(ch, 40052) > 0 then
+        if rest_time >= 0 and rest_time <= 120 and chr_inv_count(ch, 40052) > 0 then
             do_message(npc, ch, "Danke")
             invertika.add_items(ch, 40052, -1, "Schlüssel")
             invertika.add_money(ch, 300)
             --Set Quests
             invertika.set_quest_status(ch, queststring, 2)
-        elseif rest_time >= 0 and rest_time <= 120 and mana.chr_inv_count(ch, 40052) == 0 then
+        elseif rest_time >= 0 and rest_time <= 120 and chr_inv_count(ch, 40052) == 0 then
             do_message(npc, ch, string.format("Du hast noch %d Zeit.", rest_time))
-        elseif rest_time > 120 and mana.chr_inv_count(ch, 40052) == 0 then
+        elseif rest_time > 120 and chr_inv_count(ch, 40052) == 0 then
             do_message(npc, ch, "Jetzt brauche ich den Schlüssel auch nicht mehr, bei der Hitze, die da drinne sein wird.")
             --Set Quest
             invertika.set_quest_status(ch, queststring, 2)
-        elseif rest_time > 120 and mana.chr_inv_count(ch, 40052) > 0 then
-            mana.being_damage(ch, 50, 50, 1, DAMAGE_PHYSICAL, ELEMENT_NEUTRAL)
-            mana.chatmessage(ch, "Issen hat dich geohrfeigt.")
+        elseif rest_time > 120 and chr_inv_count(ch, 40052) > 0 then
+            being_damage(ch, 50, 50, 1, DAMAGE_PHYSICAL, ELEMENT_NEUTRAL)
+            chatmessage(ch, "Issen hat dich geohrfeigt.")
             do_message(npc, ch, "Sei nächstes mal schneller.")
             invertika.add_items(ch, 40052, -1, "Schlüssel")
             --Set Quests
@@ -114,7 +114,7 @@ function issen_talk(npc, ch)
 end
 
 function key_trigger(ch, id)
-    if mana.being_type(ch) == TYPE_CHARACTER then
+    if being_type(ch) == TYPE_CHARACTER then
         local queststring = "lauria_losed_key_quest"
         --Init Quest
         invertika.init_quest_status(ch, queststring)
@@ -122,7 +122,7 @@ function key_trigger(ch, id)
         local quest_var = invertika.get_quest_status(ch, queststring)
         
         if quest_var == 1 then
-            if (mana.chr_inv_count(ch, 40052) == 0) then
+            if (chr_inv_count(ch, 40052) == 0) then
                 invertika.add_items(ch, 40052, 1, "Schlüssel")
             end
         end

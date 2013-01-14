@@ -28,12 +28,12 @@ atinit(function()
  -- commentator[2] = create_npc("Kommentator", 25, 91 * TILESIZE + 16, 35 * TILESIZE + 16, commentator_talk, nil) --- Kommentator bei den billigen Plätzen
  -- commentator[3] = create_npc("Kommentator", 25, 59 * TILESIZE + 16, 83 * TILESIZE + 16, commentator_talk, nil) --- Kommentator unten
 
- mana.trigger_create(79 * TILESIZE, 40 * TILESIZE, 4 * TILESIZE, 4 * TILESIZE, "wache_trigger", 1, true)
- mana.trigger_create(47 * TILESIZE, 40 * TILESIZE, 4 * TILESIZE, 4 * TILESIZE, "wache_trigger", 2, true)
+ trigger_create(79 * TILESIZE, 40 * TILESIZE, 4 * TILESIZE, 4 * TILESIZE, "wache_trigger", 1, true)
+ trigger_create(47 * TILESIZE, 40 * TILESIZE, 4 * TILESIZE, 4 * TILESIZE, "wache_trigger", 2, true)
 
- -- mana.trigger_create(57 * TILESIZE, 75 * TILESIZE, 17 * TILESIZE, 8 * TILESIZE, "entrance_trigger", 1, true)
- -- mana.trigger_create(57 * TILESIZE, 82 * TILESIZE, 17 * TILESIZE, 9 * TILESIZE, "entrance_trigger", 2, true)
- -- mana.trigger_create(64 * TILESIZE, 68 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "fight_start_trigger", 1, true)
+ -- trigger_create(57 * TILESIZE, 75 * TILESIZE, 17 * TILESIZE, 8 * TILESIZE, "entrance_trigger", 1, true)
+ -- trigger_create(57 * TILESIZE, 82 * TILESIZE, 17 * TILESIZE, 9 * TILESIZE, "entrance_trigger", 2, true)
+ -- trigger_create(64 * TILESIZE, 68 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "fight_start_trigger", 1, true)
 end)
 
 function wache_talk(npc, ch)
@@ -49,20 +49,20 @@ function get_wache_say()
  end
 
 function wache_trigger(ch, id)
-    if (mana.being_type(ch) ~= TYPE_MONSTER) then
-        local count = mana.chr_inv_count(ch, 40026)
+    if (being_type(ch) ~= TYPE_MONSTER) then
+        local count = chr_inv_count(ch, 40026)
         if count == 0 then
-            local x = mana.posX(ch)
-            local y = mana.posY(ch)
+            local x = posX(ch)
+            local y = posY(ch)
             local warp_x = nil
             if id == 1 then
                 warp_x = 84
-                mana.being_say(wache_rechts, get_wache_say())
+                being_say(wache_rechts, get_wache_say())
             elseif id == 2 then
                 warp_x = 45
-                mana.being_say(wache_links, get_wache_say())
+                being_say(wache_links, get_wache_say())
             end
-            mana.chr_warp(ch, mana.get_map_id(), warp_x * TILESIZE, y)
+            chr_warp(ch, get_map_id(), warp_x * TILESIZE, y)
         end
     end
 end
@@ -76,7 +76,7 @@ function estech_talk(npc, ch)
     function get_feierabend() return invertika.get_quest_status(ch, "selphi_timlet_orkana_feierabend") end
     function set_feierabend(x) invertika.set_quest_status(ch, "selphi_timlet_orkana_feierabend", tonumber(x)) end
 
-    local count = mana.chr_inv_count(ch, 40026)
+    local count = chr_inv_count(ch, 40026)
     if count > 0 then
         if get_qstatus() == 2 then
             do_message(npc, ch, "Ortana schickt dich? Er hat wieder vergessen wann er frei hat?")
@@ -123,7 +123,7 @@ end
 -- 
 -- function commentator_say(text)
     -- for i,v in commentator do
-        -- mana.being_say(v, text)
+        -- being_say(v, text)
     -- end
 -- end
 -- 
@@ -167,7 +167,7 @@ end
                     -- pvm_fight:registerEventMonsterDied(monster_died)
                     -- pvm_fight:registerEventLastMonsterDied(last_monster_died)
                     -- -- Warp des Spielers in die Arena.
-                    -- mana.chr_warp(ch, mana.get_map_id(), 65 * TILESIZE + 16, 80 * TILESIZE + 16)
+                    -- chr_warp(ch, get_map_id(), 65 * TILESIZE + 16, 80 * TILESIZE + 16)
                 -- else
                     -- do_message(npc, ch, "Zu langsam. Es findet bereits ein Kampf statt.")
                 -- end
@@ -184,18 +184,18 @@ end
 -- 
 -- function entrance_trigger(being, id)
     -- if id == 1 then -- Eintritt in Arena
-        -- if mana.being_type(being) == TYPE_CHARACTER then
+        -- if being_type(being) == TYPE_CHARACTER then
             -- if pvm_fight ~= nil and pvm_fight:getCh() == being then
                 -- -- Darf passieren
             -- else
-                -- mana.chr_warp(being, mana.get_map_id(), 65 * TILESIZE + 16, 86 * TILESIZE + 16)
-                -- mana.being_say(wache_entrance, "HALT. Du bist nicht für ein Spiel angemeldet!")
+                -- chr_warp(being, get_map_id(), 65 * TILESIZE + 16, 86 * TILESIZE + 16)
+                -- being_say(wache_entrance, "HALT. Du bist nicht für ein Spiel angemeldet!")
             -- end
         -- end
     -- elseif id == 2 then -- Austritt aus Arena
-        -- if mana.being_type(being) == TYPE_MONSTER then
+        -- if being_type(being) == TYPE_MONSTER then
             -- pvm_fight:killMonster(being)
-        -- elseif mana.being_type(being) == TYPE_CHARACTER and
+        -- elseif being_type(being) == TYPE_CHARACTER and
           -- pvm_fight ~= nil and
           -- pvm_fight:isStarted() and
           -- pvm_fight:getCh() == being then
@@ -206,14 +206,14 @@ end
 -- end
 -- 
 -- function fight_start_trigger(being, id)
-    -- if mana.being_type(being) == TYPE_CHARACTER then
+    -- if being_type(being) == TYPE_CHARACTER then
         -- if pvm_fight ~= nil and pvm_fight:getCh() == being then
             -- if not pvm_fight:isStarted() then
-                -- mana.being_say(being, "Debug 1")
+                -- being_say(being, "Debug 1")
                 -- pvm_fight:startFight()
-                -- mana.being_say(being, "Debug 2")
+                -- being_say(being, "Debug 2")
                 -- for i=1,pvm_fight:getMonsterNumber() do
-                    -- --pvm_fight:addMonster(mana.monster_create(pvm_fight:getMonsterId(), 61 * TILESIZE, 69 * TILESIZE))
+                    -- --pvm_fight:addMonster(monster_create(pvm_fight:getMonsterId(), 61 * TILESIZE, 69 * TILESIZE))
                 -- end
                 -- fight_started()
             -- end

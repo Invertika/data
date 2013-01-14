@@ -25,7 +25,7 @@ DEFAULT_Y = 4832;
 
 --- Setzt die Warp Map
 function set_nethek_warp_map(ch, mapID)
-	mana.chr_set_quest(ch, "nethek_warp_map", mapID)
+	chr_set_quest(ch, "nethek_warp_map", mapID)
 end
 
 --- Gibt die Warp Map zurück
@@ -40,7 +40,7 @@ end
 
 --- Setzt die Warp Position X in Pixel
 function set_nethek_warp_x(ch, posX)
-	mana.chr_set_quest(ch, "nethek_warp_x", posX)
+	chr_set_quest(ch, "nethek_warp_x", posX)
 end
 
 --- Gibt die Warpposition X in Pixel zurück
@@ -55,7 +55,7 @@ end
 
 --- Setzt die Warp Position Y in Pixel
 function set_nethek_warp_y(ch, posY)
-	mana.chr_set_quest(ch, "nethek_warp_y", posY)
+	chr_set_quest(ch, "nethek_warp_y", posY)
 end
 
 --- Gibt die Warpposition Y in Pixel zurück
@@ -73,7 +73,7 @@ function get_oblation_money(ch)
 	local acc_bal = get_quest_var(ch, "nethek_oblation_money")
 	
 	if acc_bal=="" then
-		mana.chr_set_quest(ch, "nethek_oblation_money", 0)
+		chr_set_quest(ch, "nethek_oblation_money", 0)
 		return 0
 	else
 		return tonumber(acc_bal)
@@ -82,12 +82,12 @@ end
 
 --- Geld opfern
 function immolate_money(npc, ch, money)
-	local PlayerMoney=mana.chr_money(ch)
+	local PlayerMoney=chr_money(ch)
 	
 	if PlayerMoney >= money then
-		mana.chr_money_change(ch, -money)
+		chr_money_change(ch, -money)
 		local acc_bal = get_oblation_money(ch)
-		mana.chr_set_quest(ch, "nethek_oblation_money", acc_bal+money)
+		chr_set_quest(ch, "nethek_oblation_money", acc_bal+money)
 		do_message(npc, ch, "Dein Opfer wurde angenommen!")
 	else
 		do_message(npc, ch, "Soviel Geld hast du nicht!")	
@@ -105,12 +105,12 @@ function netheksaeule_talk(npc, ch) --- NPC für die Netheksäule
 								     "Nichts. Danke.")
 								
 		if v == 1 then
-		    local x = mana.posX(npc)
-			local y = mana.posY(npc) + 64
+		    local x = posX(npc)
+			local y = posY(npc) + 64
 			
 			set_nethek_warp_x(ch, x)
 			set_nethek_warp_y(ch, y)
-			set_nethek_warp_map(ch, mana.get_map_id())
+			set_nethek_warp_map(ch, get_map_id())
 			
 			do_message(npc, ch, "Xenti Taree. Mein Segen.")
 			

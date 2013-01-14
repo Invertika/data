@@ -11,8 +11,8 @@
 ----------------------------------------------------------------------------------
 
 function post_talk(npc, ch)
-  do_message(npc, ch, "Hello " .. mana.being_get_name(ch))
-  local strength = mana.being_get_attribute(ch, ATTR_STRENGTH)
+  do_message(npc, ch, "Hello " .. being_get_name(ch))
+  local strength = being_get_attribute(ch, ATTR_STRENGTH)
   do_message(npc, ch, "You have " .. tostring(strength) .. " strength")
   do_message(npc, ch, "What would you like to do?")
   local answer = do_choice(npc, ch, "View Mail", "Send Mail", "Nothing")

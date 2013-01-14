@@ -77,13 +77,13 @@ function ArenaFightPvM:isStarted()
 end
 
 function ArenaFightPvM:getNextMonsterPosX()
-    return mana.posX(self.ch)
-    --return math.random(mana.posX(self.ch) - MONSTER_SPAWN_SCATTER, mana.posX(self.ch) + MONSTER_SPAWN_SCATTER)
+    return posX(self.ch)
+    --return math.random(posX(self.ch) - MONSTER_SPAWN_SCATTER, posX(self.ch) + MONSTER_SPAWN_SCATTER)
 end
 
 function ArenaFightPvM:getNextMonsterPosY()
-    return mana.posX(self.ch)
-    --return math.random(mana.posY(self.ch) - MONSTER_SPAWN_SCATTER, mana.posY(self.ch) + MONSTER_SPAWN_SCATTER)
+    return posX(self.ch)
+    --return math.random(posY(self.ch) - MONSTER_SPAWN_SCATTER, posY(self.ch) + MONSTER_SPAWN_SCATTER)
 end
 
 function ArenaFightPvM:addMonster(monster)
@@ -104,11 +104,11 @@ function ArenaFightPvM:startFight()
     on_death(self.ch, self:playerDied())
     -- Monster spawnen.
     for i=1,self.monster_number do
-        local monster = mana.monster_create(self.monster_id,
-          math.random(mana.posX(self.ch) - MONSTER_SPAWN_SCATTER,
-            mana.posX(self.ch) + MONSTER_SPAWN_SCATTER),
-          math.random(mana.posY(self.ch) - MONSTER_SPAWN_SCATTER,
-            mana.posY(self.ch) + MONSTER_SPAWN_SCATTER))
+        local monster = monster_create(self.monster_id,
+          math.random(posX(self.ch) - MONSTER_SPAWN_SCATTER,
+            posX(self.ch) + MONSTER_SPAWN_SCATTER),
+          math.random(posY(self.ch) - MONSTER_SPAWN_SCATTER,
+            posY(self.ch) + MONSTER_SPAWN_SCATTER))
         table.insert(self.monsters, monster)
     end
 end

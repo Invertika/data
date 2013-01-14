@@ -29,7 +29,7 @@ function rezeptionist_talk(npc, ch)
   function get_qstatus() return invertika.get_quest_status(ch, quest_name) end
   function set_qstatus(x) invertika.set_quest_status(ch, quest_name, x) end
 
-  if mana.chr_inv_count(ch, 40035) > 0 and invertika.get_quest_status(ch, "selphi_timlet_ceech_quest") == 1 then
+  if chr_inv_count(ch, 40035) > 0 and invertika.get_quest_status(ch, "selphi_timlet_ceech_quest") == 1 then
         do_message(npc, ch, "Schon wieder eine Klageschrift von Ceech?")
         do_message(npc, ch, "Er verklagt alles und jeden. Mich hat er wegen den Kokussnüssen dran gekriegt.")
         do_message(npc, ch, "Es wäre unverantwortlich die Kokusnüsse einfach fallen zu lassen.")
@@ -55,7 +55,7 @@ function rezeptionist_talk(npc, ch)
       do_message(npc, ch, "Wiedersehen")
         end
   elseif get_qstatus() == 1 then
-    if mana.chr_inv_count(ch, 40002) >= 10 then
+    if chr_inv_count(ch, 40002) >= 10 then
             invertika.add_items(ch, 40002, -10, "IP-Pakete")
             do_message(npc, ch, "Danke für die IP Pakete! Hier, eine kleine Belohnung.")
             invertika.add_money(ch, 200)
@@ -73,7 +73,7 @@ function rezeptionist_talk(npc, ch)
             do_message(npc, ch, "Faule Ausreden! Du bist doch nur zu faul zum Arbeiten.")
         end
   elseif get_qstatus() == 3 then
-        if mana.chr_inv_count(ch, 40004) >= 10 and mana.chr_inv_count(ch, 40005) >= 10 then
+        if chr_inv_count(ch, 40004) >= 10 and chr_inv_count(ch, 40005) >= 10 then
             invertika.add_items(ch, 40004, -10, "Skorpionstachel")
             invertika.add_items(ch, 40005, -10, "Madenschleim")
             do_message(npc, ch, "Gut gemacht! Nimm diese Schuhe als Dank!")
@@ -86,7 +86,7 @@ function rezeptionist_talk(npc, ch)
             do_message(npc, ch, "Mein Kühlschrank ist leer. Bring mir 10 Bier und 10 Milch, bitte!")
             set_qstatus(5)
   elseif get_qstatus() == 5 then
-        if mana.chr_inv_count(ch, 30006) >= 10 and mana.chr_inv_count(ch, 30007) >= 10 then
+        if chr_inv_count(ch, 30006) >= 10 and chr_inv_count(ch, 30007) >= 10 then
             invertika.add_items(ch, 30006, -10, "Bier")
             invertika.add_items(ch, 30007, -10, "Milch")
             do_message(npc, ch, "Gut gemacht! Nimm dieses Baumwollshirt und diesen Dolch als Dank!")
@@ -100,7 +100,7 @@ function rezeptionist_talk(npc, ch)
         do_message(npc, ch, "Momentan habe ich keine Arbeit für dich.")
   elseif get_qstatus() == -1 then
         do_message(npc, ch, "RAUS! Du hast Hausverbot!")
-        mana.chr_warp(ch, 61, 76 * TILESIZE, 167 * TILESIZE)
+        chr_warp(ch, 61, 76 * TILESIZE, 167 * TILESIZE)
   end
 
     do_npc_close(npc, ch)

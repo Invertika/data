@@ -19,7 +19,7 @@ DICE_ID = 40042
 DICE_NUMBER_OF_SIDES = 6
 
 function dicemanager_talk(npc, ch)
-    if mana.chr_inv_count(ch, DICE_ID) < 1 then
+    if chr_inv_count(ch, DICE_ID) < 1 then
         do_message(npc, ch, "Du benötigst einen Würfel um mitzuspielen.")
         do_npc_close(npc, ch)
         return
@@ -27,7 +27,7 @@ function dicemanager_talk(npc, ch)
     while true do
         local v = do_choice(npc, ch, "Würfeln.", "Tschüss.")
         if v == 1 then
-            mana.being_say(npc, string.format("%s würfelt %d Augen", mana.being_get_name(ch), get_new_dice_value()))
+            being_say(npc, string.format("%s würfelt %d Augen", being_get_name(ch), get_new_dice_value()))
             break
         elseif v == 2 then
             break

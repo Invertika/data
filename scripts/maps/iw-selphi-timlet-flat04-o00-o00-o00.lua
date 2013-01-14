@@ -38,7 +38,7 @@ function haitan_talk(npc, ch)
                 "Dann muss ich wohl jemand anderen fragen"))
         end
     elseif (invertika.get_quest_status(ch, "selphi_timlet_haitan_scorpions")=="1") then
-        local count = mana.chr_inv_count(ch, 40016)
+        local count = chr_inv_count(ch, 40016)
         if count < 30 then
             --- Noch nicht genug umgebracht
             do_message(npc, ch, invertika.get_random_element("Worauf wartest du? Los, bring die Skorpione um!"))

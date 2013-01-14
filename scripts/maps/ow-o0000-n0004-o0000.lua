@@ -64,16 +64,16 @@ function fireworker_talk(npc, ch)
       "Auf deinen Wunsch hin, beschwöre ich den Gott des Feuerwerkes, und dieser wird es mächtig krachen lassen!"))
     local answer = do_choice(npc, ch, "Juhuu! Feuerwerk!", "Nee, danke.")
     if answer == 1 then
-        local x = mana.posX(npc)
-        local y = mana.posY(npc)
+        local x = posX(npc)
+        local y = posY(npc)
         for c = 0, 25 do
             schedule_in (c, function()
-            mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
-            mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
-            mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
-            mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
-            mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
-            mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+            effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+            effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+            effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+            effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+            effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+            effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
             end)
         end
     end
@@ -82,7 +82,7 @@ end
 
 function egroe_talk(npc, ch)
     --TODO mehr Auswahl
-    mana.npc_trade(npc, ch, false, {
+    npc_trade(npc, ch, false, {
       {10001, 20, 19},
       {30037, 5, 2500},
       {10013, 30, 159},
@@ -99,7 +99,7 @@ end
 
 function thinaima_talk(npc, ch)
     --TODO mehr Auswahl
-    mana.npc_trade(npc, ch, false, {
+    npc_trade(npc, ch, false, {
       {10001, 20, 19},
       {10013, 30, 140},
       {10002, 30, 1000},

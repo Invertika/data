@@ -124,10 +124,10 @@ function barber1_talk(npc, ch, data)
             print("Style ==", result)
 
             if (result == 0) then
-                mana.chr_set_hair_style(ch, 0)
+                chr_set_hair_style(ch, 0)
                 result = 1
             elseif (result <= #styles) then
-                mana.chr_set_hair_style(ch, style_ids[result])
+                chr_set_hair_style(ch, style_ids[result])
                 result = 1
             else --"Never mind"
                 result = 3
@@ -141,7 +141,7 @@ function barber1_talk(npc, ch, data)
             end
 
             if (result <= #colors) then
-                mana.chr_set_hair_color(ch, color_ids[result - 1])
+                chr_set_hair_color(ch, color_ids[result - 1])
                 result = 2
             else --"Never mind"
                 result = 3
@@ -211,9 +211,9 @@ function barber2_talk(npc, ch)
                     while true do
                         local v3 = do_choice(npc, ch, "Ja", "Nein")
                         if v3 == 1 then
-                            if mana.chr_money(ch) >= costs then
-                                mana.chr_money_change(ch, -costs)
-                                mana.chr_set_hair_style(ch, v2)
+                            if chr_money(ch) >= costs then
+                                chr_money_change(ch, -costs)
+                                chr_set_hair_style(ch, v2)
                                 do_message(npc, ch, "Der neue Schnitt steht dir gut!")
                             else
                                 do_message(npc, ch, "Du hast nicht genug Geld bei dir!")
@@ -239,9 +239,9 @@ function barber2_talk(npc, ch)
                     while true do
                         local v3 = do_choice(npc, ch, "Ok. Fang an!", "Nee, dann doch nicht")
                         if v3 == 1 then
-                            if mana.chr_money(ch) >= 100 then
-                                mana.chr_money_change(ch, -100)
-                                mana.chr_set_hair_color(ch, v2 - 1)
+                            if chr_money(ch) >= 100 then
+                                chr_money_change(ch, -100)
+                                chr_set_hair_color(ch, v2 - 1)
                             else
                                 do_message(npc, ch, "Du hast nicht genug Geld dabei!")
                             end

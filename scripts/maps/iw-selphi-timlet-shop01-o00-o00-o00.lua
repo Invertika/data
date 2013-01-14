@@ -29,10 +29,10 @@ function vertox_talk(npc, ch)
                          "Nichts. Danke.")
                                    
         if v == 1 then
-            mana.npc_trade(npc, ch, false, { {40025, 20, 650}})
+            npc_trade(npc, ch, false, { {40025, 20, 650}})
             break
         elseif v == 2 then
-            mana.npc_trade(npc, ch, true)
+            npc_trade(npc, ch, true)
             break
         elseif v == 3 then
             do_message(npc, ch, "Bis zum nächsten Mal!")

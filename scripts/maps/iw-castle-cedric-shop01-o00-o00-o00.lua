@@ -34,7 +34,7 @@ function worrany_talk(npc, ch)
                              "Nichts. Danke.")
                          
         if v == 1 then
-            mana.npc_trade(npc, ch, false,
+            npc_trade(npc, ch, false,
               {{30015, 12, 250}, 
               {30016, 12, 500}, 
               {30017, 12, 750}, 
@@ -44,7 +44,7 @@ function worrany_talk(npc, ch)
               })
             break
         elseif v == 2 then
-            mana.npc_trade(npc, ch, true,
+            npc_trade(npc, ch, true,
               {{30015, 12, 25}, 
               {30016, 12, 50}, 
               {30017, 12, 75}, 
@@ -62,11 +62,11 @@ function worrany_talk(npc, ch)
 end
 
 function worrany_walkleft()
-    mana.being_walk(npc, 18 * 32 + 16, 880, 2)
+    being_walk(npc, 18 * 32 + 16, 880, 2)
     schedule_in(20, worrany_walkright)
 end
 
 function worrany_walkright()
-    mana.being_walk(npc,  27 * 32 + 16, 880, 2)
+    being_walk(npc,  27 * 32 + 16, 880, 2)
     schedule_in(20, worrany_walkleft)
 end

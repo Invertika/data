@@ -55,7 +55,7 @@ function samos_talk(npc, ch)
             end
         end
     elseif get_qstatus() == 1 then
-        if mana.chr_inv_count(ch, 30009) > 4 then
+        if chr_inv_count(ch, 30009) > 4 then
             invertika.add_items(ch, 30009, -5, "Schokoladentafel")
             do_message(npc, ch, "Super! Danke! *mampf*")
             invertika.set_quest_status(ch, quest_string, 2)

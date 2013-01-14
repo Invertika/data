@@ -33,7 +33,7 @@ atinit(function()
 end)
 
 function explosion()
-    mana.effect_create(5, 41 * TILESIZE + 16, 37 * TILESIZE + 16)
+    effect_create(5, 41 * TILESIZE + 16, 37 * TILESIZE + 16)
 end
 
 function nalaf_talk(npc, ch)
@@ -68,14 +68,14 @@ function nalaf_talk(npc, ch)
             end
         end
     elseif get_qstatus() == 1 then
-        local count = mana.chr_inv_count(ch, 40043)
+        local count = chr_inv_count(ch, 40043)
         if count > 0 then
             do_message(npc, ch, "Ah. Du hast Sandkriecherüberreste... Überlässt du sie uns für 200 Aki das Stück?")
             while true do
                 local v = do_choice(npc, ch, "Verkaufen.", "Behalten.")
                 if v == 1 then
                     -- Verkauf der Items in letzter Sekunde unterbinden
-                    count = mana.chr_inv_count(ch, 40043)
+                    count = chr_inv_count(ch, 40043)
                     set_qstatus(2)
                     invertika.add_items(ch, 40043, -count, "Überreste eines Sandkriechers")
                     invertika.add_money(ch, count * 200)

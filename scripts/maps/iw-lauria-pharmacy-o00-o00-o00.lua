@@ -28,7 +28,7 @@ function naltia_talk(npc, ch)
         local v = do_choice(npc, ch, "Ja",
           "Nein")
         if v == 1 then
-            mana.npc_trade(npc, ch, true, {
+            npc_trade(npc, ch, true, {
               {30002, 999, 115},
               {30003, 999, 530},
               {30013, 999, 380}

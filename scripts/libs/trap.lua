@@ -39,17 +39,17 @@ module("trap", package.seeall)
 -- trap.trap_activate(ch, 25, 4*TILESIZE, monster_ids)
 --
 function trap_activate(ch, chance, radius, monster_ids)
- if (mana.being_type(ch) ~= TYPE_MONSTER) and math.random(1, 100) <= chance then -- Player activates trap by chance
-   mana.chatmessage(ch, "Du bist in einen Hinterhalt geraten!")
+ if (being_type(ch) ~= TYPE_MONSTER) and math.random(1, 100) <= chance then -- Player activates trap by chance
+   chatmessage(ch, "Du bist in einen Hinterhalt geraten!")
    local num, phi, x, y, dx, dy, i
-   x = mana.posX(ch)
-   y = mana.posY(ch)
+   x = posX(ch)
+   y = posY(ch)
    num=table.getn(monster_ids)
    phi=2.0*math.pi/num
    for i = 1,num,1 do  --- circle of monsters
      dx = radius*math.cos(i*phi)
      dy = radius*math.sin(i*phi)
-     mana.monster_create(monster_ids[i], x+dx, y+dy)
+     monster_create(monster_ids[i], x+dx, y+dy)
    end
  end
 end

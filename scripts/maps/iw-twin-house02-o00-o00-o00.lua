@@ -73,11 +73,11 @@ function rocer_talk(npc, ch)
         do_message(npc, ch, "Die Wände sind dünn hier! Ich habe gehört was du mit meinem Zwillingsbruder besprochen hast!")
         do_message(npc, ch, "Verlasse dieses Haus! Ich will dich hier nicht mehr sehen!")
     elseif get_qstatus() == 3 then -- Quest beim zweiten Zwilling angenommen.
-        if mana.chr_inv_count(ch, 20019) > 0 then
+        if chr_inv_count(ch, 20019) > 0 then
             do_message(npc, ch, "Bringe ihr den Ring!")
         else
             do_message(npc, ch, "DU VERLOGENES SCHWEIN! DU SOLLTEST DEN RING MEINER VERLIEBTEN BRINGEN!")
-            mana.being_damage(ch, 100000, 1, 999999, DAMAGE_PHYSICAL, ELEMENT_NEUTRAL)
+            being_damage(ch, 100000, 1, 999999, DAMAGE_PHYSICAL, ELEMENT_NEUTRAL)
         end
     elseif get_qstatus() == 4 then -- Quest beim zeiten Zwilling ausgeführt.
         do_message(npc, ch, "Vielen Dank, dass du ihr den Ring gebracht hast. Ich werde bald einmal in die Stadt gehen und sie besuchen.")

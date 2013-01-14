@@ -34,10 +34,10 @@ function gerhard_talk(npc, ch)
                                      "Verkaufen.",
                                      "Nichts. Danke.")
         if v == 1 then
-            mana.npc_trade(npc, ch, false, { {30025, 10, 2000}, {30003, 10, 300}, {20023, 10, 12490} })
+            npc_trade(npc, ch, false, { {30025, 10, 2000}, {30003, 10, 300}, {20023, 10, 12490} })
             break
         elseif v == 2 then
-            mana.npc_trade(npc, ch, true)
+            npc_trade(npc, ch, true)
             break
         elseif v == 3 then
             do_message(npc, ch, "Wenn die Stadtwache wegen dir von mir erfährt, kannst du dir gleich schonmal deinen Grabstein aussuchen!")

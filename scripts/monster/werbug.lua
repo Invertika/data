@@ -13,7 +13,7 @@ require "scripts/libs/invertika"
 function update(mob)
   local r = math.random(0, 200);
   if r == 0 then
-    mana.being_say(mob, invertika.get_random_element(
+    being_say(mob, invertika.get_random_element(
       "Schlangeneier beim Großmarkthändler Fritz, ganz günstig nur jetzt.",
       "Extrasalat, Extrasalat nur jetzt für 99 Aki.",
       "Bezahlen sie heute, erhalten sie ihre Ware später, nur jetzt!",
@@ -27,10 +27,10 @@ end
 
 function strike(mob, victim, hit)
   if hit > 0 then
-    mana.being_say(mob, "Nimm dies! "..hit.." HP verloren!")
-    mana.being_say(victim, "Neeeiiiiiiiiiin!")
+    being_say(mob, "Nimm dies! "..hit.." HP verloren!")
+    being_say(victim, "Neeeiiiiiiiiiin!")
   else
-    mana.being_say(mob, "Mist, daneben.")
-    mana.being_say(victim, "Mhhhhh...")
+    being_say(mob, "Mist, daneben.")
+    being_say(victim, "Mhhhhh...")
   end
 end

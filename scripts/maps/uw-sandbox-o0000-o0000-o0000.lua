@@ -28,7 +28,7 @@ atinit(function()
  create_inter_map_warp_trigger(19003, 19003, 19003, 19003) --- Intermap warp
  create_npc("Debugger", 58, 133 * TILESIZE + 16, 21 * TILESIZE + 16, debugger_talk, nil) -- Debugger
  create_npc("Zelan", 58, 132 * TILESIZE + 16, 21 * TILESIZE + 16, zelan_talk, nil) --- Zelan
- mana.trigger_create(20 * TILESIZE, 20 * TILESIZE, 22 * TILESIZE, 22 * TILESIZE, "trap_trigger_skorpions", 0, true) --- Trigger Trap
+ trigger_create(20 * TILESIZE, 20 * TILESIZE, 22 * TILESIZE, 22 * TILESIZE, "trap_trigger_skorpions", 0, true) --- Trigger Trap
  create_npc("Aliria", 2, 15 * TILESIZE + 16, 15 * TILESIZE + 16, alaria_talk, nil) --- Alaria Handels Test NPC
 
 --Test NPCs
@@ -62,10 +62,10 @@ atinit(function()
   
 game = poker.PokerGame:new(200)
 game:registerEventNextPlayer(function(my_player)
-  mana.being_say(poker_dealer_npc, string.format("%s ist an der Reihe.", mana.being_get_name(my_player:getCh())))
+  being_say(poker_dealer_npc, string.format("%s ist an der Reihe.", being_get_name(my_player:getCh())))
 end)
 game:registerEventPlayerExit(function(my_player)
-  mana.being_say(poker_dealer_npc, string.format("%s verlässt das Spiel.", mana.being_get_name(my_player:getCh())))
+  being_say(poker_dealer_npc, string.format("%s verlässt das Spiel.", being_get_name(my_player:getCh())))
 
   myguard = create_npc("Guard", 200, 100 * TILESIZE, 100 * TILESIZE, function(npc, ch)
       do_message(npc, ch, "bla!")
@@ -122,12 +122,12 @@ scorpionrace.initializeRace(scorpions, skorpion_rennen_npc, 2)
 
 
 
-  mana.trigger_create(56 * TILESIZE, 32 * TILESIZE, 64, 64, "patrol_waypoint", 1, true)
-  mana.trigger_create(63 * TILESIZE, 32 * TILESIZE, 64, 64, "patrol_waypoint", 2, true)
+  trigger_create(56 * TILESIZE, 32 * TILESIZE, 64, 64, "patrol_waypoint", 1, true)
+  trigger_create(63 * TILESIZE, 32 * TILESIZE, 64, 64, "patrol_waypoint", 2, true)
 
-  mana.item_drop(58 * TILESIZE, 26 * TILESIZE, 10001, 1);
-  mana.item_drop(58 * TILESIZE, 27 * TILESIZE, 10002, 10);
-  mana.item_drop(58 * TILESIZE, 27 * TILESIZE, 10003, 1);
+  item_drop(58 * TILESIZE, 26 * TILESIZE, 10001, 1);
+  item_drop(58 * TILESIZE, 27 * TILESIZE, 10002, 10);
+  item_drop(58 * TILESIZE, 27 * TILESIZE, 10003, 1);
 
   schedule_every(1 * HOURS + 30 * MINUTES, function()
     print("One and a half hour has passed on map 1-1")
@@ -135,10 +135,10 @@ scorpionrace.initializeRace(scorpions, skorpion_rennen_npc, 2)
 
 
   scorpions_bet_accepted = function(scorpionId, player, money)
-    mana.being_say(skorpion_rennen_npc, string.format("%s hat %s Aki auf Skorpion Nummer %s geboten!", mana.being_get_name(player), money, scorpionId))
-    mana.being_say(skorpion_rennen_npc, "Das Rennen beginnt in einer Minute.")
+    being_say(skorpion_rennen_npc, string.format("%s hat %s Aki auf Skorpion Nummer %s geboten!", being_get_name(player), money, scorpionId))
+    being_say(skorpion_rennen_npc, "Das Rennen beginnt in einer Minute.")
     schedule_in(60, function()
-        mana.being_say(skorpion_rennen_npc, "GO!")
+        being_say(skorpion_rennen_npc, "GO!")
         scorpionrace.start_race()
     end)
   end
@@ -182,16 +182,16 @@ function poker_dealer_talk(npc, ch)
                     if (v >= 1) or (v <= table.getn(choices)) then
                         if possibilities[v] == poker.PokerConstants.POSSIBILITY_FOLD then
                             game:chActionFold(ch)
-                            mana.being_say(npc, string.format("%s spielt Fold", mana.being_get_name(ch)))
+                            being_say(npc, string.format("%s spielt Fold", being_get_name(ch)))
                         elseif possibilities[v] == poker.PokerConstants.POSSIBILITY_CALL then
                             game:chActionCall(ch)
-                            mana.being_say(npc, string.format("%s spielt Call", mana.being_get_name(ch)))
+                            being_say(npc, string.format("%s spielt Call", being_get_name(ch)))
                         elseif possibilities[v] == poker.PokerConstants.POSSIBILITY_RAISE then
                             local min = game:getMoneyPlayerHasToRaise(ch)
                             local max = game:getMaxMoneyPlayerCanRaise(ch)
                             local amount = do_ask_integer(npc, ch, min, max, min)
                             game:chActionRaise(ch, amount)
-                            mana.being_say(npc, string.format("%s spielt Raise um %s", mana.being_get_name(ch), amount))
+                            being_say(npc, string.format("%s spielt Raise um %s", being_get_name(ch), amount))
                         elseif possibilites[v] == poker.PokerConstants.POSSIBILITY_CHANGE_CARD then
                             local player = game:getPlayerFromCh(ch)
                             local cards = player:getSpade():getCards()
@@ -208,7 +208,7 @@ function poker_dealer_talk(npc, ch)
                                 local v1 = do_choice(npc, ch, numbers)
                                 if cards[i] ~= nil then
                                     game:chActionSwapCard(player, i)
-                                    mana.being_say(npc, string.format("%s tauscht eine Karte", mana.being_get_name(ch)))
+                                    being_say(npc, string.format("%s tauscht eine Karte", being_get_name(ch)))
                                     -- TODO: Testen ob Karte getauscht werden kann.
                                 end
                             end
@@ -227,7 +227,7 @@ function poker_dealer_talk(npc, ch)
                 local v = do_choice(npc, ch, "Ja.", "Nein.")
                 if v == 1 then
                     game:startGame()
-                    mana.being_say(npc, "Das Spiel wurde gestartet.")
+                    being_say(npc, "Das Spiel wurde gestartet.")
                     print("Poker: Spiel wurde gestartet.")
                     break
                 elseif v == 2 then
@@ -255,7 +255,7 @@ function poker_dealer_talk(npc, ch)
 end
 
 function scorpion_talk(npc, ch)
-    schedule_in(5, function() mana.being_say(npc, "BUH!") end)
+    schedule_in(5, function() being_say(npc, "BUH!") end)
     do_message(npc, ch, "Ich werde gewinnen!")
     do_npc_close(npc, ch)
 end
@@ -267,7 +267,7 @@ end
 
 function alaria_talk(npc, ch)
     -- "Example: Let the player sell every item with a 'value' parameter in the server's items.xml file
-    local sellcase = mana.npc_trade(npc, ch, true)
+    local sellcase = npc_trade(npc, ch, true)
     if sellcase == 0 then
       do_message(npc, ch, "Ok, what do you want to sell:")
     elseif sellcase == 1 then
@@ -286,7 +286,7 @@ end
 
 --- Bibliotheksfunktion
 function trap(ch, x, y, width, height, monsterid)
-  if (mana.being_type(ch) == TYPE_CHARACTER) then --- Nur Player löst Falle aus
+  if (being_type(ch) == TYPE_CHARACTER) then --- Nur Player löst Falle aus
    local x1 = x - width/2
    local y1 = y - height/2
    local x2 = x + width/2
@@ -295,12 +295,12 @@ function trap(ch, x, y, width, height, monsterid)
    local lastTime = get_quest_var(ch, "trap_last_activated")
 
    if (lastTime == nil) or (lastTime == "") then
-     mana.chr_set_quest(ch, "trap_last_activated", currentTime)      
+     chr_set_quest(ch, "trap_last_activated", currentTime)      
      print("trap case1: trap triggered for first time")
    elseif math.floor(currentTime-lastTime) > 20 then
-     mana.chr_set_quest(ch, "trap_last_activated", currentTime)      
-     --local spawned_monster = mana.monster_create(monsterid, x, y)
-     --mana.being_say(spawned_monster,"Du bist in einen Hinterhalt geraten!")
+     chr_set_quest(ch, "trap_last_activated", currentTime)      
+     --local spawned_monster = monster_create(monsterid, x, y)
+     --being_say(spawned_monster,"Du bist in einen Hinterhalt geraten!")
      print("trap case2: create monster")
    else
      print("trap case3: be patient")
@@ -342,7 +342,7 @@ function emote_update(npc)
   emo_count = emo_count + 1
   if emo_count > 50 then
     emo_count = 0
-    mana.effect_create(emo_state, npc)
+    effect_create(emo_state, npc)
   end
 end
 
@@ -361,13 +361,13 @@ function string_test_talk(npc, ch)
 end
 
 function patrol_waypoint(obj, id)
-    if (mana.being_type(obj) ~= TYPE_MONSTER) then
+    if (being_type(obj) ~= TYPE_MONSTER) then
         if (id == 1) then
-            mana.chatmessage(obj, "you've reached patrol point 1")
-            mana.being_say(obj, "I have reached patrol point 1")
+            chatmessage(obj, "you've reached patrol point 1")
+            being_say(obj, "I have reached patrol point 1")
         elseif (id == 2) then
-            mana.chatmessage(obj, "you've reached patrol point 2")
-            mana.being_say(obj, "I have reached patrol point 2")
+            chatmessage(obj, "you've reached patrol point 2")
+            being_say(obj, "I have reached patrol point 2")
         end
     end
 end
@@ -376,7 +376,7 @@ end
 function npc1_talk(npc, ch)
   on_remove(ch, function() print "Player has left the map." end);
   do_message(npc, ch, "Hello! I am the testing NPC.")
-  local rights = mana.chr_get_rights(ch);
+  local rights = chr_get_rights(ch);
 
   if (rights >= 128) then
     do_message(npc, ch, "Oh mighty server administrator, how can I avoid your wrath?")
@@ -403,7 +403,7 @@ function npc1_talk(npc, ch)
   if v == 1 then
     do_message(npc, ch, "Sorry, this is a heroic-fantasy game, I do not have any gun.")
   elseif v == 2 then
-    local n1, n2 = mana.chr_inv_count(ch, 524, 511)
+    local n1, n2 = chr_inv_count(ch, 524, 511)
     if n1 == 0 or n2 ~= 0 then
       do_message(npc, ch, "Yeah right...")
     else
@@ -416,7 +416,7 @@ function npc1_talk(npc, ch)
   elseif v == 3 then
 
     -- "To buy."
-    local buycase = mana.npc_trade(npc, ch, false, { {10001, 10, 20}, {10002, 10, 30}, {10003, 10, 50} })
+    local buycase = npc_trade(npc, ch, false, { {10001, 10, 20}, {10002, 10, 30}, {10003, 10, 50} })
     if buycase == 0 then
       do_message(npc, ch, "What do you want to buy?")
     elseif buycase == 1 then
@@ -428,7 +428,7 @@ function npc1_talk(npc, ch)
   elseif v == 4 then
 
     -- "To sell only the items you want to buy."
-    local sellcase = mana.npc_trade(npc, ch, true, { {10001, 10, 20}, {10002, 10, 30}, {10003, 10, 200}, {10004, 10, 300}, {10005, 10, 500}, {10006, 10, 25} })
+    local sellcase = npc_trade(npc, ch, true, { {10001, 10, 20}, {10002, 10, 30}, {10003, 10, 200}, {10004, 10, 300}, {10005, 10, 500}, {10006, 10, 25} })
     if sellcase == 0 then
       do_message(npc, ch, "Here we go:")
     elseif sellcase == 1 then
@@ -440,7 +440,7 @@ function npc1_talk(npc, ch)
   elseif v == 5 then
 
     -- "To sell whatever I want."
-    local sellcase = mana.npc_trade(npc, ch, true)
+    local sellcase = npc_trade(npc, ch, true)
     if sellcase == 0 then
       do_message(npc, ch, "Ok, what do you want to sell:")
     elseif sellcase == 1 then
@@ -451,34 +451,34 @@ function npc1_talk(npc, ch)
 
   elseif v == 6 then
     if invertika.add_money(ch, -100) then
-      do_message(npc, ch, string.format("Thank you for you patronage! You are left with %d gil.", mana.chr_money(ch)))
+      do_message(npc, ch, string.format("Thank you for you patronage! You are left with %d gil.", chr_money(ch)))
       local g = tonumber(get_quest_var(ch, "test_donation"))
       if not g then g = 0 end
       g = g + 100
-      mana.chr_set_quest(ch, "test_donation", g)
+      chr_set_quest(ch, "test_donation", g)
       do_message(npc, ch, string.format("As of today, you have donated %d gil.", g))
     else
       do_message(npc, ch, "I would feel bad taking money from someone that poor.")
     end
   elseif v == 7 then
-    mana.being_say(npc, "As you wish...")
-    schedule_in(2, function() mana.being_say(npc, "One") end)
-    schedule_in(4, function() mana.being_say(npc, "Two") end)
-    schedule_in(6, function() mana.being_say(npc, "Three") end)
-    schedule_in(8, function() mana.being_say(npc, "Four") end)
-    schedule_in(10, function() mana.being_say(npc, "Five") end)
-    schedule_in(12, function() mana.being_say(npc, "Six") end)
-    schedule_in(14, function() mana.being_say(npc, "Seven") end)
-    schedule_in(16, function() mana.being_say(npc, "Eight") end)
-    schedule_in(18, function() mana.being_say(npc, "Nine") end)
-    schedule_in(20, function() mana.being_say(npc, "Ten") end)
+    being_say(npc, "As you wish...")
+    schedule_in(2, function() being_say(npc, "One") end)
+    schedule_in(4, function() being_say(npc, "Two") end)
+    schedule_in(6, function() being_say(npc, "Three") end)
+    schedule_in(8, function() being_say(npc, "Four") end)
+    schedule_in(10, function() being_say(npc, "Five") end)
+    schedule_in(12, function() being_say(npc, "Six") end)
+    schedule_in(14, function() being_say(npc, "Seven") end)
+    schedule_in(16, function() being_say(npc, "Eight") end)
+    schedule_in(18, function() being_say(npc, "Nine") end)
+    schedule_in(20, function() being_say(npc, "Ten") end)
   elseif v == 8 then
     function printTable (t)
       for k,v in pairs(t) do
         print (k, ":", v)
       end
     end
-    local t1, t2, t3, t4, t5 = mana.test_tableget();
+    local t1, t2, t3, t4, t5 = test_tableget();
     print("---------------");
     print ("Table 1:");
     printTable (t1)
@@ -497,18 +497,18 @@ function npc1_talk(npc, ch)
 end
 
 function npc4_talk(npc, ch)
-  do_message(npc, ch, "You are currently on map "..mana.get_map_id()..". Where do you want to go?")
+  do_message(npc, ch, "You are currently on map "..get_map_id()..". Where do you want to go?")
   local v = do_choice(npc, ch, "Map 1", "Map 3","Map 3, but a warpable place.")
   if v >= 1 and v <= 3 then
     do_message(npc, ch, "Are you really sure?")
     local w = do_choice(npc, ch, "Yes, I am.", "I still have a few things to do around here.")
     if w == 1 then
       if v == 1 then
-        mana.chr_warp(ch, nil, 60 * TILESIZE, 50 * TILESIZE)
+        chr_warp(ch, nil, 60 * TILESIZE, 50 * TILESIZE)
       elseif v == 2 then
-        mana.chr_warp(ch, 3, 25 * TILESIZE, 25 * TILESIZE)
+        chr_warp(ch, 3, 25 * TILESIZE, 25 * TILESIZE)
       else
-        mana.chr_warp(ch, 3, 70 * TILESIZE, 60 * TILESIZE)
+        chr_warp(ch, 3, 70 * TILESIZE, 60 * TILESIZE)
       end
     end
   end
@@ -519,18 +519,18 @@ function npc5_talk(npc, ch)
   do_message(npc, ch, "I am the scorpion tamer. Do you want me to spawn some scorpions?")
   local answer = do_choice(npc, ch, "Yes", "No")
   if answer == 1 then
-    local x = mana.posX(npc)
-    local y = mana.posY(npc)
-    m1 = mana.monster_create(10, x + TILESIZE, y + TILESIZE)
-    m2 = mana.monster_create(10, x - TILESIZE, y + TILESIZE)
-    m3 = mana.monster_create(10, x + TILESIZE, y - TILESIZE)
-    m4 = mana.monster_create(10, x - TILESIZE, y - TILESIZE)
+    local x = posX(npc)
+    local y = posY(npc)
+    m1 = monster_create(10, x + TILESIZE, y + TILESIZE)
+    m2 = monster_create(10, x - TILESIZE, y + TILESIZE)
+    m3 = monster_create(10, x + TILESIZE, y - TILESIZE)
+    m4 = monster_create(10, x - TILESIZE, y - TILESIZE)
 
-    on_death(m1, function() mana.being_say(npc, "NOOO!") end)
-    on_death(m2, function() mana.being_say(npc, "Please stop this violence!") end)
-    on_death(m3, function() mana.being_say(npc, "Stop slaughtering my scorpions!") end)
-    on_death(m4, function() mana.being_say(npc, "Leave my scorpions alone!") end)
-    on_death(m4, function() mana.being_say(m4, "AAARGH!") end)
+    on_death(m1, function() being_say(npc, "NOOO!") end)
+    on_death(m2, function() being_say(npc, "Please stop this violence!") end)
+    on_death(m3, function() being_say(npc, "Stop slaughtering my scorpions!") end)
+    on_death(m4, function() being_say(npc, "Leave my scorpions alone!") end)
+    on_death(m4, function() being_say(m4, "AAARGH!") end)
   end
   do_npc_close(npc, ch)
 end
@@ -542,10 +542,10 @@ function npc6_talk(npc, ch)
   do_npc_close(npc, ch)
 
   if guard_position == 1 then
-    mana.being_walk(npc, 61 * TILESIZE + 16, 15 * TILESIZE + 16, 2.5)
+    being_walk(npc, 61 * TILESIZE + 16, 15 * TILESIZE + 16, 2.5)
     guard_position = 2
   else
-    mana.being_walk(npc, 55 * TILESIZE + 16, 15 * TILESIZE + 16, 2.5)
+    being_walk(npc, 55 * TILESIZE + 16, 15 * TILESIZE + 16, 2.5)
     guard_position = 1
   end
 end
@@ -553,13 +553,13 @@ end
 function npc6_update(npc)
   local r = math.random(0, 100)
   if (r == 0) then
-    mana.being_say(npc, "*humhumhum*")
+    being_say(npc, "*humhumhum*")
   end
   if (r == 1) then
-    mana.being_say(npc, "guarding the city gate is so much fun *sigh*")
+    being_say(npc, "guarding the city gate is so much fun *sigh*")
   end
   if (r == 2) then
-    mana.being_say(npc, "can't someone order me to walk to the other side of the gate?")
+    being_say(npc, "can't someone order me to walk to the other side of the gate?")
   end
 end
 
@@ -575,10 +575,10 @@ function firedemon_update(npc)
     firedemon_timer = firedemon_timer + 1
     if (firedemon_timer == 5) then
       firedemon_timer = 0
-      local victims = mana.get_beings_in_circle(mana.posX(npc), mana.posY(npc), 64)
+      local victims = get_beings_in_circle(posX(npc), posY(npc), 64)
       local i = 1;
       while (victims[i]) do
-        mana.being_damage(victims[i], 20, 10, 32000, DAMAGE_MAGICAL, ELEMENT_FIRE)
+        being_damage(victims[i], 20, 10, 32000, DAMAGE_MAGICAL, ELEMENT_FIRE)
         i = i + 1
       end
     end
@@ -587,8 +587,8 @@ function firedemon_update(npc)
 end
 
 function post_talk(npc, ch)
-  do_message(npc, ch, "Hello " .. mana.being_get_name(ch))
-  local strength = mana.being_get_attribute(ch, ATTR_STRENGTH)
+  do_message(npc, ch, "Hello " .. being_get_name(ch))
+  local strength = being_get_attribute(ch, ATTR_STRENGTH)
   do_message(npc, ch, "You have " .. tostring(strength) .. " strength")
   do_message(npc, ch, "What would you like to do?")
   local answer = do_choice(npc, ch, "View Mail", "Send Mail", "Nothing")
@@ -610,11 +610,11 @@ function fireworker_talk(npc, ch)
   do_message(npc, ch, "Do you want some fireworks?")
   local answer = do_choice(npc, ch, "Wheee! Fireworks", "Nah, thanks.")
   if answer == 1 then
-    local x = mana.posX(npc)
-    local y = mana.posY(npc)
+    local x = posX(npc)
+    local y = posY(npc)
       for c = 0, 25 do
         schedule_in (c, function()
-          mana.effect_create(c, x + math.random(-200, 200), y + math.random(-200, 200))
+          effect_create(c, x + math.random(-200, 200), y + math.random(-200, 200))
         end)
       end
   end
@@ -625,8 +625,8 @@ function axetrainer_talk(npc, ch)
   do_message(npc, ch, "I am the axe trainer. Do you want to get better at using axes?")
   local answer = do_choice(npc, ch, "Please train me, master.", "I am good enough with axes.")
   if answer == 1 then
-    local newexp = mana.chr_get_exp(ch, SKILL_WEAPON_AXE) + 100
-    local nextlevel = mana.exp_for_level(mana.being_get_attribute(ch, SKILL_WEAPON_AXE) + 1)
+    local newexp = chr_get_exp(ch, SKILL_WEAPON_AXE) + 100
+    local nextlevel = exp_for_level(being_get_attribute(ch, SKILL_WEAPON_AXE) + 1)
     invertika.add_exp(ch, SKILL_WEAPON_AXE, 100, 0)
     local message = "I gave you 100 axe exp."
     if newexp > nextlevel then
@@ -643,30 +643,30 @@ end
 function plague_talk(npc, ch)
   do_message(npc, ch, "I don't feel so good...")
   do_npc_close(npc, ch)
-  mana.being_apply_status(ch, 1, 6000) -- Give plauge for 6000 ticks (I.E. 10 minutes)
+  being_apply_status(ch, 1, 6000) -- Give plauge for 6000 ticks (I.E. 10 minutes)
 end
 
 function jump_status_talk(npc, ch)
-  mana.being_apply_status(ch, 2, 6000) -- Give jumping bug
+  being_apply_status(ch, 2, 6000) -- Give jumping bug
   do_message(npc, ch, "Now you have the jumping bug")
   do_npc_close(npc, ch)
 end
 
 function monster_spawn_talk(npc, ch)
-  local x = mana.posX(npc)
-  local y = mana.posY(npc)
-  monster = mana.monster_create(5, x + TILESIZE, y + TILESIZE)
-  --mana.monster_load_script(monster, "testmonster.lua")
+  local x = posX(npc)
+  local y = posY(npc)
+  monster = monster_create(5, x + TILESIZE, y + TILESIZE)
+  --monster_load_script(monster, "testmonster.lua")
 end
 
 function sitter_update(npc)
-  if mana.being_get_action(npc) == ACTION_SIT then
+  if being_get_action(npc) == ACTION_SIT then
     if math.random(30) == 1 then
-      mana.being_set_action(npc, ACTION_STAND)
+      being_set_action(npc, ACTION_STAND)
     end
   else -- walking or standing
     if math.random(60) == 1 then
-      mana.being_set_action(npc, ACTION_SIT)
+      being_set_action(npc, ACTION_SIT)
     else
       npclib.walkaround_small(npc)
     end
@@ -680,7 +680,7 @@ function spinner_update(npc)
   if spinner_timer == 10 then
     spinner_timer = 0
 
-    direction = mana.being_get_direction(npc)
+    direction = being_get_direction(npc)
     if direction == DIRECTION_UP then
       direction = DIRECTION_RIGHT
     elseif direction == DIRECTION_DOWN then
@@ -693,7 +693,7 @@ function spinner_update(npc)
       direction = DIRECTION_DOWN -- set inital direction
     end
 
-    mana.being_set_direction(npc, direction)
+    being_set_direction(npc, direction)
   end
 end
 
@@ -701,9 +701,9 @@ function healer_talk(npc, ch)
     do_message(npc, ch, "Do you need healing?")
     local c = do_choice(npc, ch, "Heal me fully", "Heal 100 HP", "Don't heal me")
     if c == 1 then
-        mana.being_heal(ch)
+        being_heal(ch)
     elseif c == 2 then
-        mana.being_heal(ch, 100)
+        being_heal(ch, 100)
     end
     
     do_npc_close(npc, ch)
@@ -715,7 +715,7 @@ function debugger_talk(npc, ch)
     if c == 2 then
         do_message(npc, ch, "Effektid?")
         local id = do_ask_integer(npc, ch, 0, 9999, 0)
-        mana.effect_create(id, ch)
+        effect_create(id, ch)
     end
     do_npc_close(npc, ch)
 end
@@ -725,8 +725,8 @@ function speedy_talk(npc, ch)
         do_message(npc, ch, "Möchtest du schneller laufen?")
         local v = do_choice(npc, ch, "Ja", "Nein")
         if v == 1 then
-            local speed = mana.being_get_speed(ch) * mana.being_get_speed(ch)
-            mana.being_set_speed(ch, speed)
+            local speed = being_get_speed(ch) * being_get_speed(ch)
+            being_set_speed(ch, speed)
             do_message(npc, ch, "Du bist nun schneller.")
             break
         elseif v == 2 then

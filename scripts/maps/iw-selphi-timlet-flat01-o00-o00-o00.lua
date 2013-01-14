@@ -50,10 +50,10 @@ function goron_talk(npc, ch)
     end
 
     if get_order() == 0 then
-        local count_green_twine = mana.chr_inv_count(ch, 40030)
-        local count_yellow_twine = mana.chr_inv_count(ch, 40031)
-        local count_red_twine = mana.chr_inv_count(ch, 40032)
-        local count_blue_twine = mana.chr_inv_count(ch, 40033)
+        local count_green_twine = chr_inv_count(ch, 40030)
+        local count_yellow_twine = chr_inv_count(ch, 40031)
+        local count_red_twine = chr_inv_count(ch, 40032)
+        local count_blue_twine = chr_inv_count(ch, 40033)
         if count_green_twine > 0 or count_yellow_twine > 0 or count_red_twine > 0 or count_blue_twine > 0 then
             do_message(npc, ch, "Willkommen. Willkommen. Treten Sie ein. Was kann ich für Sie tun?")
             while true do
@@ -71,7 +71,7 @@ function goron_talk(npc, ch)
                                 while true do
                                     local v2 = do_choice(npc, ch, "Bezahlen.", "Nein. Dann doch nicht.")
                                     if v2 == 1 then
-                                        if mana.chr_money(ch) >= 1200 then
+                                        if chr_money(ch) >= 1200 then
                                             invertika.add_money(ch, -1200)
                                             if v1 == 1 then
                                                 invertika.add_items(ch, 40030, -1, "grüner Garn")

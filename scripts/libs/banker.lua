@@ -14,7 +14,7 @@ function bank_get_account_balance(ch)
 	local acc_bal = get_quest_var(ch, "bank_account_balance")
 	
 	if acc_bal=="" then
-		mana.chr_set_quest(ch, "bank_account_balance", 0)
+		chr_set_quest(ch, "bank_account_balance", 0)
 		return 0
 	else
 		return tonumber(acc_bal)
@@ -39,12 +39,12 @@ function bank_calc_interest(ch)
 		  
 	      acc_bal = acc_bal * (percents^yearLength); -- Betrag mit Zinseszins berechnen
 		  
-	      mana.chr_set_quest(ch, "bank_account_balance", acc_bal)		  
+	      chr_set_quest(ch, "bank_account_balance", acc_bal)		  
 	   end
 	 end
  end
  
- mana.chr_set_quest(ch, "bank_last_visit",  currentTime)
+ chr_set_quest(ch, "bank_last_visit",  currentTime)
 end
 
 -- Diese Funktion liefert einen Dialog mit dem momentanen Guthaben zurück.
@@ -71,12 +71,12 @@ end
 -- @param money Geldsumme welche eingezahlt werden soll
 function bank_pay_money_to_account_dlg(npc, ch, money)
 	bank_calc_interest(ch)
-	local PlayerMoney=mana.chr_money(ch)
+	local PlayerMoney=chr_money(ch)
 	
 	if PlayerMoney >= money then
-		mana.chr_money_change(ch, -money)
+		chr_money_change(ch, -money)
 		local acc_bal = bank_get_account_balance(ch) 
-		mana.chr_set_quest(ch, "bank_account_balance", acc_bal+money)
+		chr_set_quest(ch, "bank_account_balance", acc_bal+money)
 		do_message(npc, ch, string.format("Es wurden %d aki auf dein Konto eingezahlt!", money))
 	else
 		do_message(npc, ch, "Soviel Geld hast du nicht!")	
@@ -92,9 +92,9 @@ function bank_get_money_from_account_dlg(npc, ch, money)
 	bank_calc_interest(ch)
 	local acc_bal = bank_get_account_balance(ch)
 	if acc_bal >= money then
-		mana.chr_money_change(ch, money)
+		chr_money_change(ch, money)
 		local new_money=acc_bal-money
-		mana.chr_set_quest(ch, "bank_account_balance",  new_money)
+		chr_set_quest(ch, "bank_account_balance",  new_money)
 		do_message(npc, ch, string.format("Es wurden dir %d aki ausgezahlt!", money))
 	else
 		do_message(npc, ch, "Soviel Guthaben hast du nicht!")
@@ -139,9 +139,9 @@ function banker_talk(npc, ch)
 		elseif v2 == 8 then --- 50000
 			bank_pay_money_to_account_dlg(npc, ch, 50000)
         elseif v2 == 9 then --- Auswahl
-            bank_pay_money_to_account_dlg(npc, ch, do_ask_integer(npc, ch, 0, mana.chr_money(ch), 1))
+            bank_pay_money_to_account_dlg(npc, ch, do_ask_integer(npc, ch, 0, chr_money(ch), 1))
 		elseif v2 == 10 then --- alles
-			bank_pay_money_to_account_dlg(npc, ch, mana.chr_money(ch))
+			bank_pay_money_to_account_dlg(npc, ch, chr_money(ch))
 		end
 	elseif v == 3 then --- Geld von Konto abheben
 		local v2 = do_choice(npc, ch, "Nichts", "500", "1000", "2000", "5000", "10000", "25000", "50000", "Anderen Wert.", "Alles")
@@ -173,57 +173,57 @@ function banker_talk(npc, ch)
 		local v2 = do_choice(npc, ch, "500", "1000", "2000", "5000", "10000", "25000", "50000","Abbrechen")
     local acc_bal = bank_get_account_balance(ch)
     if v2 == 1 then --- 500
-      if mana.chr_inv_count(ch, 40017) >= 1 then
-        mana.chr_set_quest(ch, "bank_account_balance", acc_bal+500)
-        mana.chr_inv_change(ch, 40017, -1)
+      if chr_inv_count(ch, 40017) >= 1 then
+        chr_set_quest(ch, "bank_account_balance", acc_bal+500)
+        chr_inv_change(ch, 40017, -1)
         do_message(npc, ch, "Das Geld befindet sich jetzt auf deinem Konto.")
       else
         do_message(npc, ch, "Du hast keinen solchen Scheck!")
       end
 		elseif v2 == 2 then --- 1000
-      if mana.chr_inv_count(ch, 40018) >= 1 then
-        mana.chr_set_quest(ch, "bank_account_balance", acc_bal+1000)
-        mana.chr_inv_change(ch, 40018, -1)
+      if chr_inv_count(ch, 40018) >= 1 then
+        chr_set_quest(ch, "bank_account_balance", acc_bal+1000)
+        chr_inv_change(ch, 40018, -1)
         do_message(npc, ch, "Das Geld befindet sich jetzt auf deinem Konto.")
       else
         do_message(npc, ch, "Du hast keinen solchen Scheck!")
       end
 		elseif v2 == 3 then --- 2000
-      if mana.chr_inv_count(ch, 40019) >= 1 then
-        mana.chr_set_quest(ch, "bank_account_balance", acc_bal+2000)
-        mana.chr_inv_change(ch, 40019, -1)
+      if chr_inv_count(ch, 40019) >= 1 then
+        chr_set_quest(ch, "bank_account_balance", acc_bal+2000)
+        chr_inv_change(ch, 40019, -1)
         do_message(npc, ch, "Das Geld befindet sich jetzt auf deinem Konto.")
       else
         do_message(npc, ch, "Du hast keinen solchen Scheck!")
       end
 		elseif v2 == 4 then --- 5000
-      if mana.chr_inv_count(ch, 40020) >= 1 then
-        mana.chr_set_quest(ch, "bank_account_balance", acc_bal+5000)
-        mana.chr_inv_change(ch, 40020, -1)
+      if chr_inv_count(ch, 40020) >= 1 then
+        chr_set_quest(ch, "bank_account_balance", acc_bal+5000)
+        chr_inv_change(ch, 40020, -1)
         do_message(npc, ch, "Das Geld befindet sich jetzt auf deinem Konto.")
       else
         do_message(npc, ch, "Du hast keinen solchen Scheck!")
       end
 		elseif v2 == 5 then --- 10000
-      if mana.chr_inv_count(ch, 40021) >= 1 then
-        mana.chr_set_quest(ch, "bank_account_balance", acc_bal+10000)
-        mana.chr_inv_change(ch, 40021, -1)
+      if chr_inv_count(ch, 40021) >= 1 then
+        chr_set_quest(ch, "bank_account_balance", acc_bal+10000)
+        chr_inv_change(ch, 40021, -1)
         do_message(npc, ch, "Das Geld befindet sich jetzt auf deinem Konto.")
       else
         do_message(npc, ch, "Du hast keinen solchen Scheck!")
       end
 		elseif v2 == 6 then --- 25000
-      if mana.chr_inv_count(ch, 40022) >= 1 then
-        mana.chr_set_quest(ch, "bank_account_balance", acc_bal+25000)
-        mana.chr_inv_change(ch, 40022, -1)
+      if chr_inv_count(ch, 40022) >= 1 then
+        chr_set_quest(ch, "bank_account_balance", acc_bal+25000)
+        chr_inv_change(ch, 40022, -1)
         do_message(npc, ch, "Das Geld befindet sich jetzt auf deinem Konto.")
       else
         do_message(npc, ch, "Du hast keinen solchen Scheck!")
       end
 		elseif v2 == 7 then --- 50000
-      if mana.chr_inv_count(ch, 40023) >= 1 then
-        mana.chr_set_quest(ch, "bank_account_balance", acc_bal+50000)
-        mana.chr_inv_change(ch, 40023, -1)
+      if chr_inv_count(ch, 40023) >= 1 then
+        chr_set_quest(ch, "bank_account_balance", acc_bal+50000)
+        chr_inv_change(ch, 40023, -1)
         do_message(npc, ch, "Das Geld befindet sich jetzt auf deinem Konto.")
       else
         do_message(npc, ch, "Du hast keinen solchen Scheck!")
@@ -237,56 +237,56 @@ function banker_talk(npc, ch)
     local acc_bal = bank_get_account_balance(ch)
     if v2 == 1 then --- 500
       if acc_bal >= 500 then
-        mana.chr_set_quest(ch, "bank_account_balance", acc_bal-500)
-        mana.chr_inv_change(ch, 40017, 1)
+        chr_set_quest(ch, "bank_account_balance", acc_bal-500)
+        chr_inv_change(ch, 40017, 1)
         do_message(npc, ch, "Bitte sehr, hier ist dein Scheck.")
       else
         do_message(npc, ch, "Dein Bankguthaben reicht dafür nicht aus!")
       end
     elseif v2 == 2 then
 		  if acc_bal >= 1000 then --- 1000
-        mana.chr_set_quest(ch, "bank_account_balance", acc_bal-1000)
-        mana.chr_inv_change(ch, 40018, 1)
+        chr_set_quest(ch, "bank_account_balance", acc_bal-1000)
+        chr_inv_change(ch, 40018, 1)
         do_message(npc, ch, "Bittesehr, hier ist dein Scheck.")
       else
         do_message(npc, ch, "Dein Bankguthaben reicht dafür nicht aus!")
       end
     elseif v2 == 3 then
 		  if acc_bal >= 2000 then --- 2000
-        mana.chr_set_quest(ch, "bank_account_balance", acc_bal-2000)
-        mana.chr_inv_change(ch, 40019, 1)
+        chr_set_quest(ch, "bank_account_balance", acc_bal-2000)
+        chr_inv_change(ch, 40019, 1)
         do_message(npc, ch, "Bitte sehr, hier ist dein Scheck.")
       else
         do_message(npc, ch, "Dein Bankguthaben reicht dafür nicht aus!")
       end
     elseif v2 == 4 then
 		  if acc_bal >= 5000 then --- 5000
-        mana.chr_set_quest(ch, "bank_account_balance", acc_bal-5000)
-        mana.chr_inv_change(ch, 40020, 1)
+        chr_set_quest(ch, "bank_account_balance", acc_bal-5000)
+        chr_inv_change(ch, 40020, 1)
         do_message(npc, ch, "Bitte sehr, hier ist dein Scheck.")
       else
         do_message(npc, ch, "Dein Bankguthaben reicht dafür nicht aus!")
       end
     elseif v2 == 5 then
 		  if acc_bal >= 10000 then --- 10000
-        mana.chr_set_quest(ch, "bank_account_balance", acc_bal-10000)
-        mana.chr_inv_change(ch, 40021, 1)
+        chr_set_quest(ch, "bank_account_balance", acc_bal-10000)
+        chr_inv_change(ch, 40021, 1)
         do_message(npc, ch, "Bittesehr, hier ist dein Scheck.")
       else
         do_message(npc, ch, "Dein Bankguthaben reicht dafür nicht aus!")
       end
     elseif v2 == 6 then
 		  if acc_bal >= 25000 then --- 25000
-        mana.chr_set_quest(ch, "bank_account_balance", acc_bal-25000)
-        mana.chr_inv_change(ch, 40022, 1)
+        chr_set_quest(ch, "bank_account_balance", acc_bal-25000)
+        chr_inv_change(ch, 40022, 1)
         do_message(npc, ch, "Bitte sehr, hier ist dein Scheck.")
       else
         do_message(npc, ch, "Dein Bankguthaben reicht dafür nicht aus!")
       end
     elseif v2 == 7 then
 		  if acc_bal >= 50000 then --- 50000
-        mana.chr_set_quest(ch, "bank_account_balance", acc_bal-50000)
-        mana.chr_inv_change(ch, 40023, 1)
+        chr_set_quest(ch, "bank_account_balance", acc_bal-50000)
+        chr_inv_change(ch, 40023, 1)
         do_message(npc, ch, "Bitte sehr, hier ist dein Scheck.")
       else
         do_message(npc, ch, "Dein Bankguthaben reicht dafür nicht aus!")

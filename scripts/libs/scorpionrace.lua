@@ -41,13 +41,13 @@ local winning_factor = nil
 
 --- Events
 local event_scorpion_won = function(id)
-  mana.being_say(bet_npc, string.format("Das Skorpion %s hat gewonnen.", scorpions[SCORPION_NAME]))
+  being_say(bet_npc, string.format("Das Skorpion %s hat gewonnen.", scorpions[SCORPION_NAME]))
   end
 local event_scorpions_ready_again = function()
-  mana.being_say(bet_npc, "Die Skorpione sind wieder bereit! Auf in die neue Runde! Wetten können hier abgeschlossen werden.")
+  being_say(bet_npc, "Die Skorpione sind wieder bereit! Auf in die neue Runde! Wetten können hier abgeschlossen werden.")
   end
 local event_scorpion_bet_accepted = function(scorpionId, player, money)
-  mana.being_say(bet_npc, string.format("%s hat %s Aki auf Skorpion Nummer %s geboten!", mana.being_get_name(player), money, scorpionId))
+  being_say(bet_npc, string.format("%s hat %s Aki auf Skorpion Nummer %s geboten!", being_get_name(player), money, scorpionId))
   end
 
 
@@ -67,7 +67,7 @@ end
 
 function create_trigger()
     for i, scorpion in ipairs(scorpions) do
-        mana.trigger_create(
+        trigger_create(
           scorpion[SCORPION_TARGET_X],
           scorpion[SCORPION_TARGET_Y],
           scorpion[SCORPION_TARGET_WIDTH],
@@ -82,7 +82,7 @@ function trigger_race_end(being, id)
         bets = {}
         status = 2
         for i, scorpion in ipairs(scorpions) do
-            mana.being_walk(
+            being_walk(
               scorpion[SCORPION_NPC],
               scorpion[SCORPION_TARGET_X] + scorpion[SCORPION_TARGET_WIDTH] / 2,
               scorpion[SCORPION_TARGET_Y] + scorpion[SCORPION_TARGET_HEIGHT] / 2,
@@ -91,8 +91,8 @@ function trigger_race_end(being, id)
         end
         -- Den Skorpionen Zeit geben zurück zur Startlinie zu kommen.
         local time_till_all_home = invertika.get_distance(
-          mana.posX(scorpion[SCORPION_NPC_START_X]),
-          mana.posY(scorpion[SCORPION_NPC_START_Y]),
+          posX(scorpion[SCORPION_NPC_START_X]),
+          posY(scorpion[SCORPION_NPC_START_Y]),
           scorpion[SCORPION_TARGET_X] + scorpion[SCORPION_TARGET_WIDTH] / 2,
           scorpion[SCORPION_TARGET_Y] + scorpion[SCORPION_TARGET_HEIGHT] / 2) / TILESIZE * 2.5
 
@@ -102,7 +102,7 @@ function trigger_race_end(being, id)
           event_scorpions_ready_again()
           end)
    end 
-   mana.being_walk(scorpion[SCORPION_NPC],
+   being_walk(scorpion[SCORPION_NPC],
      scorpion[SCORPION_START_X],
      scorpion[SCORPION_START_Y],
      1) -- Skorpion zurück zur Startlinie laufen lassen.
@@ -111,8 +111,8 @@ end
 function move_scorpions()
     if status == 1 then -- Rennen läuft.
         for i, scorpion in ipairs(scorpions) do
-            local desired_x = mana.posX(scorpion[SCORPION_NPC])
-            local desired_y = mana.posY(scorpion[SCORPION_NPC])
+            local desired_x = posX(scorpion[SCORPION_NPC])
+            local desired_y = posY(scorpion[SCORPION_NPC])
 
             desired_x = desired_x + math.random(
               -scorpion[SCORPION_STROLL_LEFT], scorpion[SCORPION_STROLL_RIGHT])
@@ -120,8 +120,8 @@ function move_scorpions()
             desired_y = desired_y + math.random(
               -scorpion[SCORPION_STROLL_UP], scorpion[SCORPION_STROLL_DOWN])
 
-            mana.being_walk(scorpion[SCORPION_NPC], desired_x, desired_y, 1)
-            -- mana.being_say(scorpion[SCORPION_NPC], "Hopp.")
+            being_walk(scorpion[SCORPION_NPC], desired_x, desired_y, 1)
+            -- being_say(scorpion[SCORPION_NPC], "Hopp.")
         end
         schedule_in(1, move_scorpions())
     end
@@ -154,7 +154,7 @@ function race_manager_talk(npc, ch)
                     local betrag = do_ask_integer(npc, ch, 0, 50000, 100)
                 if betrag <= 0 then break end -- Prüfen ob Ein Wert über Null angegeben wurde.
                     if status == 0 then --Nur wenn Skorpionen beim Start sind Angebote annehmen.
-                        if mana.chr_money(ch) >= betrag then
+                        if chr_money(ch) >= betrag then
                             invertika.add_money(ch, -betrag)
                             if bets[v2] == nil then bets[v2] = {} end -- ggf. init    ialisie
                             if bets[v2][ch] == nil then

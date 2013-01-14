@@ -89,7 +89,7 @@ atinit(function()
  --- Wachen am Tor
  wache = create_npc("Stadtwache", 26, 84 * TILESIZE + 16, 187 * TILESIZE + 16, stadtwache_talk, nil) --- Stadtwache
  create_npc("Stadtwache", 26, 87 * TILESIZE + 16, 187 * TILESIZE + 16, stadtwache_talk, nil) --- Stadtwache
- mana.trigger_create(85 * TILESIZE, 186 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "wache_trigger", 1, true) --- Trigger Tor
+ trigger_create(85 * TILESIZE, 186 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "wache_trigger", 1, true) --- Trigger Tor
  
  -- Grabsteine
  for i, v in ipairs(gravestone_data) do
@@ -112,9 +112,9 @@ end
 
 --- Stadtwache Trigger
 function wache_trigger(ch, id)
- if (mana.being_type(ch) == TYPE_CHARACTER) then --- Nur Spieler beachten
-  mana.chr_warp(ch, mana.get_map_id(), mana.posX(ch), 190 * TILESIZE) --- Zurückversetzen des Spielers
-  mana.being_say(wache, invertika.get_random_element("Kein Durchgang!",
+ if (being_type(ch) == TYPE_CHARACTER) then --- Nur Spieler beachten
+  chr_warp(ch, get_map_id(), posX(ch), 190 * TILESIZE) --- Zurückversetzen des Spielers
+  being_say(wache, invertika.get_random_element("Kein Durchgang!",
   "Zwing uns nicht dir weh zu tun! Kein Durchgang!",
   "Du darfst hier nicht durch!",
   "Draußen bleiben!",

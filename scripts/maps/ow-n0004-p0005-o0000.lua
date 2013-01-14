@@ -29,8 +29,8 @@ atinit(function()
     sign_entrance = "Burg Cedric"
     sign.create_sign(104, 185, sign_entrance) --- Schild Burgeingang
 
-    mana.trigger_create(101 * TILESIZE, 176 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "wache_trigger", 1, true)
-    ---mana.trigger_create(101 * TILESIZE, 183 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "wache_cache_trigger", 1, true)
+    trigger_create(101 * TILESIZE, 176 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "wache_trigger", 1, true)
+    ---trigger_create(101 * TILESIZE, 183 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "wache_cache_trigger", 1, true)
 
     diem = create_npc("Diem", 139, 60 * TILESIZE + 16, 160 * TILESIZE + 16, diem_talk, npclib.walkaround_wide)
     invertika.create_npc_talk_random(diem,
@@ -83,7 +83,7 @@ function create_chris()
 end
 
 function diem_talk(npc, ch)
-    mana.npc_trade(npc, ch, false, {
+    npc_trade(npc, ch, false, {
       {10001, 30, 50},
       {10013, 30, 140},
       {10002, 30, 1000},
@@ -158,7 +158,7 @@ function chris_talk(npc, ch)
     end
     
     if quest_var_ice == 1 then
-        if mana.chr_inv_count(ch, 30029) then
+        if chr_inv_count(ch, 30029) then
             do_message(npc, ch, "Ich bin dir sehr dankbar.")
             invertika.add_money(ch, 400)
             invertika.add_items(ch, 30029, -1, "Eis")
@@ -267,7 +267,7 @@ function wache_talk(npc, ch)
         do_message(npc, ch, "Obwohl... so, wie DU aussiehst, wird das wohl eh nix...")
         invertika.set_quest_status(ch, quest_string, 1)
     elseif q_status == 1 then
-        if mana.chr_inv_count(ch, 40047) > 0 then
+        if chr_inv_count(ch, 40047) > 0 then
             do_message(npc, ch, "Ah, danke für den MacGuffin." ..
                                 "Nun darfst du die Stadt betreten.")
             invertika.add_items(ch, 40047, -1, "MacGuffin")
@@ -293,14 +293,14 @@ function wache_trigger(ch, id)
     invertika.init_quest_status(ch, quest_string)
     local q_status = invertika.get_quest_status(ch, quest_string)
     
-    if mana.being_type(ch) == TYPE_CHARACTER then
-        if mana.chr_inv_count(ch, 40047) == 0 and q_status <= 1 then
-            local x = mana.posX(ch)
-            mana.chr_warp(ch, nil, x, 180 * TILESIZE + 16)
+    if being_type(ch) == TYPE_CHARACTER then
+        if chr_inv_count(ch, 40047) == 0 and q_status <= 1 then
+            local x = posX(ch)
+            chr_warp(ch, nil, x, 180 * TILESIZE + 16)
             if x < 102 * TILESIZE + 16 then
-                mana.being_say(wache_unten_links, "Bevor ich meinen MacGuffin nicht wiederhabe, kommst du hier nicht durch!")
+                being_say(wache_unten_links, "Bevor ich meinen MacGuffin nicht wiederhabe, kommst du hier nicht durch!")
             else
-                mana.being_say(wache_unten_rechts, "Bevor ich meinen MacGuffin nicht wiederhabe, kommst du hier nicht durch!")
+                being_say(wache_unten_rechts, "Bevor ich meinen MacGuffin nicht wiederhabe, kommst du hier nicht durch!")
             end
         end
     end
@@ -326,7 +326,7 @@ function firework_round()
 end
 
 function spawn_effect()
-    mana.effect_create(math.random(0, 25),
+    effect_create(math.random(0, 25),
                        math.random(44 * TILESIZE, 159 * TILESIZE),
                        math.random(77 * TILESIZE, 133 * TILESIZE))
 end
@@ -354,7 +354,7 @@ function cedric_speech()
     if not cedric_speech_index then
        cedric_speech_index = 1
     end
-    mana.being_say(cedric, speech[cedric_speech_index])
+    being_say(cedric, speech[cedric_speech_index])
     cedric_speech_index = cedric_speech_index + 1
     if cedric_speech_index <= #speech then
         schedule_in(5, cedric_speech)

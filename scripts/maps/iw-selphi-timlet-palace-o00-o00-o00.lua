@@ -29,7 +29,7 @@ function luor_talk(npc, ch)
     function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_vipcard", x) end
 
     if get_qstatus() == 3 then
-        if mana.chr_inv_count(ch, 40027) == 1 then
+        if chr_inv_count(ch, 40027) == 1 then
             do_message(npc, ch, "Ein Brief? Gib her!")
             invertika.add_items(ch, 40027, -1, "Brief an den König")
             do_message(npc, ch, "*Grübel* Das sind schlechte Neuigkeiten...")

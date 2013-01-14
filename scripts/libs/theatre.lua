@@ -23,7 +23,7 @@ Theatre.Monologa=0
 
 -- talk
 Theatre.monologa_talk = function()
-  mana.chatmessage(ch, "Theatre.monologa_talk")
+  chatmessage(ch, "Theatre.monologa_talk")
 end
 
 --Stücke
@@ -53,6 +53,6 @@ function Theatre:NextStep()
     plotOsterspaziergangInst:nextPlotStep()
 
     --Führe nextPlotStep aus
-    mana.being_say(self.Monologa, "Lorem Ipsum sit dolor amet...")
+    being_say(self.Monologa, "Lorem Ipsum sit dolor amet...")
 end
 

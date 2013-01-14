@@ -37,30 +37,30 @@ atinit(function()
 	
     --- Blickrichtungen
     --- schedule_in(1, function()
-    ---     mana.being_set_direction(tano[7], DIRECTION_RIGHT)
-    ---     mana.being_set_direction(tano[8], DIRECTION_LEFT)
-    ---     mana.being_set_direction(tano[9], DIRECTION_DOWN)
-    ---     mana.being_set_direction(tano[10], DIRECTION_RIGHT)
-    ---     mana.being_set_direction(tano[11], DIRECTION_LEFT)
+    ---     being_set_direction(tano[7], DIRECTION_RIGHT)
+    ---     being_set_direction(tano[8], DIRECTION_LEFT)
+    ---     being_set_direction(tano[9], DIRECTION_DOWN)
+    ---     being_set_direction(tano[10], DIRECTION_RIGHT)
+    ---     being_set_direction(tano[11], DIRECTION_LEFT)
     --- end)
 	
     --- Waypoints
     --- Ta No 5 (Köchin)
-    --- mana.trigger_create(20 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, "waypoints", 1, true) --- Wegpunkt 1 (Küchenanrichte, ganz links)
-    --- mana.trigger_create(23 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, "waypoints", 2, true) --- Wegpunkt 2 (Küchenanrichte, zweite von rechts)
-    --- mana.trigger_create(24 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, "waypoints", 3, true) --- Wegpunkt 3 (Küchenanrichte, ganz rechts)
+    --- trigger_create(20 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, "waypoints", 1, true) --- Wegpunkt 1 (Küchenanrichte, ganz links)
+    --- trigger_create(23 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, "waypoints", 2, true) --- Wegpunkt 2 (Küchenanrichte, zweite von rechts)
+    --- trigger_create(24 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, "waypoints", 3, true) --- Wegpunkt 3 (Küchenanrichte, ganz rechts)
     --- waypointstate[tano[5]] = 1
 
     --- Ta No 6 (Küchenhilfe)
-    --- mana.trigger_create(19 * TILESIZE + 16, 19 * TILESIZE + 16, 1, 1, "waypoints", 1, true) --- Wegpunkt 1 (Küchenanrichte, links vor dem Ofen)
-    --- mana.trigger_create(9 * TILESIZE + 16, 14 * TILESIZE + 16, 1, 1, "waypoints", 2, true) --- Wegpunkt 2 (Vorratskammer, oben vor dem Regal)
-    --- mana.trigger_create(9 * TILESIZE + 16, 19 * TILESIZE + 16, 1, 1, "waypoints", 3, true) --- Wegpunkt 3 (Vorratskammer, unten vor einer Kiste)
-    --- mana.trigger_create(7 * TILESIZE + 16, 16 * TILESIZE + 16, 1, 1, "waypoints", 4, true) --- Wegpunkt 4 (Vorratskammer, links vor einem Sack)
+    --- trigger_create(19 * TILESIZE + 16, 19 * TILESIZE + 16, 1, 1, "waypoints", 1, true) --- Wegpunkt 1 (Küchenanrichte, links vor dem Ofen)
+    --- trigger_create(9 * TILESIZE + 16, 14 * TILESIZE + 16, 1, 1, "waypoints", 2, true) --- Wegpunkt 2 (Vorratskammer, oben vor dem Regal)
+    --- trigger_create(9 * TILESIZE + 16, 19 * TILESIZE + 16, 1, 1, "waypoints", 3, true) --- Wegpunkt 3 (Vorratskammer, unten vor einer Kiste)
+    --- trigger_create(7 * TILESIZE + 16, 16 * TILESIZE + 16, 1, 1, "waypoints", 4, true) --- Wegpunkt 4 (Vorratskammer, links vor einem Sack)
     --- waypointstate[tano[6]] = 1
 	
     --- Schutz der Schatzkammer
-    -- mana.trigger_create(42 * TILESIZE, 36 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "treasure_trap", 0, true)
-    -- mana.trigger_create(39 * TILESIZE, 36 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "treasure_warning", 0, true)
+    -- trigger_create(42 * TILESIZE, 36 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "treasure_trap", 0, true)
+    -- trigger_create(39 * TILESIZE, 36 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "treasure_warning", 0, true)
 end)
 
 function tano1_talk(npc, ch)
@@ -128,7 +128,7 @@ end
 
 function tano11_talk(npc, ch)
     do_message(npc, ch, "Hier könnte ihre Werbung stehen")
-    mana.being_set_direction(npc, DIRECTION_LEFT)
+    being_set_direction(npc, DIRECTION_LEFT)
     do_npc_close(npc, ch)
 end
 
@@ -137,28 +137,28 @@ function waypoints(being, num)
         if (num == 1)and(num == waypointstate[being]) then
             --- Wegpunkt 1 (Küchenanrichte, ganz links)
             schedule_in(1, function()
-                    mana.being_set_direction(being, DIRECTION_UP) --- Nach oben schauen
+                    being_set_direction(being, DIRECTION_UP) --- Nach oben schauen
                 end)
             schedule_in(5, function()
-                    mana.being_walk(tano[5], 23 * TILESIZE + 16, 20 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 2
+                    being_walk(tano[5], 23 * TILESIZE + 16, 20 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 2
                 end)
             waypointstate[being] = 2
         elseif (num == 2)and(num == waypointstate[being]) then
             --- Wegpunkt 2 (Küchenanrichte, zweite von rechts)
             schedule_in(1, function()
-                    mana.being_set_direction(being, DIRECTION_UP) --- Nach oben schauen
+                    being_set_direction(being, DIRECTION_UP) --- Nach oben schauen
                 end)
             schedule_in(5, function()
-                    mana.being_walk(tano[5], 24 * TILESIZE + 16, 20 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 3
+                    being_walk(tano[5], 24 * TILESIZE + 16, 20 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 3
                 end)
             waypointstate[being] = 3
         elseif (num == 3)and(num == waypointstate[being]) then
             --- Wegpunkt 3 (Küchenanrichte, ganz rechts)
             schedule_in(1, function()
-                    mana.being_set_direction(being, DIRECTION_UP) --- Nach oben schauen
+                    being_set_direction(being, DIRECTION_UP) --- Nach oben schauen
                 end)
             schedule_in(5, function()
-                    mana.being_walk(tano[5], 20 * TILESIZE + 16, 20 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 1
+                    being_walk(tano[5], 20 * TILESIZE + 16, 20 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 1
                 end)
             waypointstate[being] = 1
         end
@@ -167,54 +167,54 @@ function waypoints(being, num)
             --- Wegpunkt 1
             if (waypointstate[being] == 1) then
                 schedule_in(1, function()
-                    mana.being_set_direction(being, DIRECTION_RIGHT) --- Nach rechts schauen
+                    being_set_direction(being, DIRECTION_RIGHT) --- Nach rechts schauen
                 end)
                 schedule_in(5, function()
-                    mana.being_walk(being, 9 * TILESIZE + 16, 14 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 2
+                    being_walk(being, 9 * TILESIZE + 16, 14 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 2
                 end)
                 waypointstate[being] = 2
             elseif (waypointstate[being] == 3) then
                 schedule_in(1, function()
-                    mana.being_set_direction(being, DIRECTION_RIGHT) --- Nach rechts schauen
+                    being_set_direction(being, DIRECTION_RIGHT) --- Nach rechts schauen
                 end)
                 schedule_in(5, function()
-                    mana.being_walk(being, 9 * TILESIZE + 16, 19 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 3
+                    being_walk(being, 9 * TILESIZE + 16, 19 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 3
                 end)
                 waypointstate[being] = 4
             elseif (waypointstate[being] == 5) then
                 schedule_in(1, function()
-                    mana.being_set_direction(being, DIRECTION_RIGHT) --- Nach rechts schauen
+                    being_set_direction(being, DIRECTION_RIGHT) --- Nach rechts schauen
                 end)
                 schedule_in(5, function()
-                    mana.being_walk(being, 7 * TILESIZE + 16, 16 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 4
+                    being_walk(being, 7 * TILESIZE + 16, 16 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 4
                 end)
                 waypointstate[being] = 6
             end
         elseif (num == 2)and(waypointstate[being] == 2) then
             --- Wegpunkt 2
             schedule_in(1, function()
-                mana.being_set_direction(being, DIRECTION_UP) --- Nach oben schauen
+                being_set_direction(being, DIRECTION_UP) --- Nach oben schauen
             end)
             schedule_in(5, function()
-                mana.being_walk(being, 19 * TILESIZE + 16, 19 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 1
+                being_walk(being, 19 * TILESIZE + 16, 19 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 1
             end)
             waypointstate[being] = 3
         elseif (num == 3)and(waypointstate[being] == 4) then
             --- Wegpunkt 3
             schedule_in(1, function()
-                mana.being_set_direction(being, DIRECTION_UP) --- Nach oben schauen
+                being_set_direction(being, DIRECTION_UP) --- Nach oben schauen
             end)
             schedule_in(5, function()
-                mana.being_walk(being, 19 * TILESIZE + 16, 19 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 1
+                being_walk(being, 19 * TILESIZE + 16, 19 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 1
             end)
             waypointstate[being] = 5
         elseif (num == 4)and(waypointstate[being] == 6) then
             --- Wegpunkt 4
             schedule_in(1, function()
-                mana.being_set_direction(being, DIRECTION_UP) --- Nach oben schauen
+                being_set_direction(being, DIRECTION_UP) --- Nach oben schauen
             end)
             schedule_in(5, function()
-                mana.being_walk(being, 19 * TILESIZE + 16, 19 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 1
+                being_walk(being, 19 * TILESIZE + 16, 19 * TILESIZE + 16, 1) -- Gehe zu Wegpunkt 1
             end)
             waypointstate[being] = 1
         end
@@ -222,22 +222,22 @@ function waypoints(being, num)
 end
 
 function treasure_trap(being)
---  if (mana.being_type(being) == TYPE_CHARACTER) then --- Nur Spieler beachten
---    mana.being_say(tano[2], invertika.get_random_element("Wer nicht hören will muss fühlen.",
+--  if (being_type(being) == TYPE_CHARACTER) then --- Nur Spieler beachten
+--    being_say(tano[2], invertika.get_random_element("Wer nicht hören will muss fühlen.",
 --      "Kein Durchgang!",
 --      "Du darfst hier nicht durch!",
 --      "Draußen bleiben!",
 --      "Zutritt verboten!",
 --      "Hier darf keiner durch!"))
---    mana.chr_warp(being, mana.get_map_id(), 40 * TILESIZE + 16, 37 * TILESIZE + 16)
+--    chr_warp(being, get_map_id(), 40 * TILESIZE + 16, 37 * TILESIZE + 16)
 --    --- Auskommentiert, weil es zum festhängen des Characters führt
---    ---mana.being_damage(being, 50, 40, 100, 1, 0)
+--    ---being_damage(being, 50, 40, 100, 1, 0)
 --  end
 end
 
 function treasure_warning(being)
---  if (mana.being_type(being) == TYPE_CHARACTER) then --- Nur Spieler beachten
---    mana.being_say(tano[2], invertika.get_random_element("Keinen Schritt weiter!",
+--  if (being_type(being) == TYPE_CHARACTER) then --- Nur Spieler beachten
+--    being_say(tano[2], invertika.get_random_element("Keinen Schritt weiter!",
 --      "Stopp! Sonst wird es schmerzhaft.",
 --      "Halt!"))
 --  end

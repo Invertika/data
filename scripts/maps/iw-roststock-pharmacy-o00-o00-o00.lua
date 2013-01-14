@@ -29,7 +29,7 @@ function nijeta_talk(npc, ch)
     function set_qstatus(x) invertika.set_quest_status(ch, "roststock_pharmacy_quest", tonumber(x)) end
 
     if get_qstatus() == 1 then
-        if mana.chr_inv_count(ch, 30025) >= 4 then
+        if chr_inv_count(ch, 30025) >= 4 then
             do_message(npc, ch, "Hey, super, du hast die Schlangeneier gekriegt!")
             invertika.add_items(ch, 30025, -4, "Schlangenei")
             set_qstatus(2)
@@ -40,7 +40,7 @@ function nijeta_talk(npc, ch)
             do_message(npc, ch, "Kann ich noch etwas für dich tun?")
         end
     elseif get_qstatus() == 2 then
-        if mana.chr_inv_count(ch, 30026) >= 10 then        
+        if chr_inv_count(ch, 30026) >= 10 then        
             do_message(npc, ch, "Danke für die Kokosnüsse!")
             invertika.add_items(ch, 30026, -10, "Kokosnuss")
             set_qstatus(3)
@@ -52,7 +52,7 @@ function nijeta_talk(npc, ch)
             do_message(npc, ch, "Kann ich noch etwas für dich tun?")
         end
     elseif get_qstatus() == 3 then
-        if mana.chr_inv_count(ch, 30003) >= 2 then
+        if chr_inv_count(ch, 30003) >= 2 then
             do_message(npc, ch, "Perfekt! Danke für das Nogatch Hemlock.")
             invertika.add_items(ch, 30003, -2, "Nogatch Hemlock")
             set_qstatus(4)
@@ -77,7 +77,7 @@ function nijeta_talk(npc, ch)
           "Ich suche Arbeit.",
           "Nichts. Danke.")
         if v == 1 then
-            mana.npc_trade(npc, ch, false,
+            npc_trade(npc, ch, false,
               {{30002, 50, 70},
               {30015, 50, 150},
               {30016, 50, 450},
@@ -85,7 +85,7 @@ function nijeta_talk(npc, ch)
               {30019, 50, 500}})
             break
         elseif v == 2 then
-            mana.npc_trade(npc, ch, true,
+            npc_trade(npc, ch, true,
               {{30002, 50, 50},
               {30015, 50, 50},
               {30016, 50, 250},

@@ -34,8 +34,8 @@ end
 -- mechanic (for example: warp the character to the respawn location and 
 -- bring HP above zero in some way) 
 function on_chr_death_accept(ch)
-    mana.being_heal(ch)	-- restores to full hp
-    mana.chr_warp(ch, 19001, 3200, 2800) --warp the character to the respawn location (Nex)
+    being_heal(ch)	-- restores to full hp
+    chr_warp(ch, 19001, 3200, 2800) --warp the character to the respawn location (Nex)
 end
 
 -- This function is called after chr_death_accept. The difference is that
@@ -49,11 +49,11 @@ end
 -- first time. This can, for example, be used to give starting equipment
 -- to the character and/or initialize a tutorial quest. 
 function on_chr_birth(ch)
-    mana.chatmessage(ch, "Willkommen bei Invertika.")
-    mana.chatmessage(ch, "Zum Bewegen benutze bitte die Cursortasten.")
-    mana.chatmessage(ch, "Um mit NPCs zu reden, klicke mit der rechten Maustaste auf sie.") 
-    mana.chatmessage(ch, "Das Spiel kann auch mit der Maus gesteuert werden.") 
-    mana.chatmessage(ch, "Folge dem Weg und du wirst das Vacare finden.") 
+    chatmessage(ch, "Willkommen bei Invertika.")
+    chatmessage(ch, "Zum Bewegen benutze bitte die Cursortasten.")
+    chatmessage(ch, "Um mit NPCs zu reden, klicke mit der rechten Maustaste auf sie.") 
+    chatmessage(ch, "Das Spiel kann auch mit der Maus gesteuert werden.") 
+    chatmessage(ch, "Folge dem Weg und du wirst das Vacare finden.") 
 end
 
 -- This function is called when a character logs into the game. This can,

@@ -33,22 +33,22 @@ atinit(function()
  create_npc("Mertox", 2, 24 * TILESIZE + 16, 24 * TILESIZE + 16, mertox_talk, nil) --- Mertox
  
   -- Trigger für die Überwachung des Bereiches
- mana.trigger_create(30 * TILESIZE, 84 * TILESIZE, 7 * TILESIZE, 3 * TILESIZE, "wache_trigger", 1, true) --- Trigger
+ trigger_create(30 * TILESIZE, 84 * TILESIZE, 7 * TILESIZE, 3 * TILESIZE, "wache_trigger", 1, true) --- Trigger
 end)
 
 function wache_trigger(ch, id)
-   if (mana.being_type(ch) ~= TYPE_MONSTER) then --- Nur Player durchlassen
-     local count = mana.chr_inv_count(ch, 40036)
+   if (being_type(ch) ~= TYPE_MONSTER) then --- Nur Player durchlassen
+     local count = chr_inv_count(ch, 40036)
      
      if count == 0 then
-       local x = mana.posX(ch)
-       local y = mana.posY(ch)
-       mana.chr_warp(ch, mana.get_map_id(), x, 90 * TILESIZE) 
+       local x = posX(ch)
+       local y = posY(ch)
+       chr_warp(ch, get_map_id(), x, 90 * TILESIZE) 
        
-       mana.being_say(wache, invertika.get_random_element("Zutritt nur für Mitarbeiter.",
+       being_say(wache, invertika.get_random_element("Zutritt nur für Mitarbeiter.",
       "Sie sind kein Mitarbeiter der Zentralbank."))
      else
-         mana.being_say(wache, invertika.get_random_element("Eine wunderschönen Tag wünsche ich ihnen.",
+         being_say(wache, invertika.get_random_element("Eine wunderschönen Tag wünsche ich ihnen.",
         "Sie heute auch hier?",
         "Ihre ID Karte ist gültig."))
      end

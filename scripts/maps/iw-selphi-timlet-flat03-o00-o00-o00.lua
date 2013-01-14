@@ -37,13 +37,13 @@ function tresor_talk(npc, ch)
             local v = do_choice(npc, ch, "Dynamit benutzen", "Nett anklopfen", "Zweimal links, einmal rechts, dreimal diagonal...", "42", "Die Zahlenkombination auf der Rückseite des Bildes benutzen")
 
           if v == 1 then
-            local countDynamite = mana.chr_inv_count(ch, 40025)
+            local countDynamite = chr_inv_count(ch, 40025)
             if countDynamite == 0 then
               do_message(npc, ch, "Ähm ich habe gar kein Dynamit.")
             else
               invertika.add_items(ch, 40025, -1, "Dynamit")
-              mana.effect_create(151, 68 * TILESIZE + 16, 18 * TILESIZE + 16)
-              mana.being_damage(ch, 200, 100, 100, 0, 0)
+              effect_create(151, 68 * TILESIZE + 16, 18 * TILESIZE + 16)
+              being_damage(ch, 200, 100, 100, 0, 0)
               set_qstatus(2)
             end
 
@@ -116,7 +116,7 @@ function ceech_talk(npc, ch)
     elseif get_qstatus() == 1 then
         do_message(npc, ch, "Du sollst die Klageschrift in das Hotel bringen!")
     elseif get_qstatus() == 2 then
-        if mana.chr_inv_count(ch, 40035) == 0 then
+        if chr_inv_count(ch, 40035) == 0 then
             do_message(npc, ch, "Hast du den Brief abgegeben?")
             while true do
                 local v = do_choice(npc, ch, "Ja.", "Nein. Ich habe ihn verloren.")

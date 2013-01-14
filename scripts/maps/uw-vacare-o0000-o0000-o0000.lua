@@ -21,7 +21,7 @@ require "scripts/libs/warp"
 
 atinit(function()
  --- Erster Start
- mana.trigger_create(115 * TILESIZE, 15 * TILESIZE, 50 * TILESIZE, 23 * TILESIZE, "firststart_trigger", 0, true) --- Erste Meldung
+ trigger_create(115 * TILESIZE, 15 * TILESIZE, 50 * TILESIZE, 23 * TILESIZE, "firststart_trigger", 0, true) --- Erste Meldung
  
  -- Zelan
  create_npc("Zelan", 58, 132 * TILESIZE + 16, 21 * TILESIZE + 16, zelan_talk, nil) --- Zelan
@@ -59,13 +59,13 @@ end)
      ---local first = get_quest_var(ch, "vacare_first_start")
         
      ---if first=="" then
-     ---mana.chatmessage(ch, "ch id:."..tostring(ch))
-     mana.chatmessage(ch, "Willkommen bei Invertika.")
-     mana.chatmessage(ch, "Zum Bewegen benutze bitte die Cursortasten.")
-     mana.chatmessage(ch, "Um mit NPCs zu reden, klicke mit der rechten Maustaste auf sie.") 
-         mana.chatmessage(ch, "Das Spiel kann auch mit der Maus gesteuert werden.") 
-         mana.chatmessage(ch, "Folge dem Weg und du wirst das Vacare finden.") 
-         ---mana.chr_set_quest(ch, "vacare_first_start", 1)
+     ---chatmessage(ch, "ch id:."..tostring(ch))
+     chatmessage(ch, "Willkommen bei Invertika.")
+     chatmessage(ch, "Zum Bewegen benutze bitte die Cursortasten.")
+     chatmessage(ch, "Um mit NPCs zu reden, klicke mit der rechten Maustaste auf sie.") 
+         chatmessage(ch, "Das Spiel kann auch mit der Maus gesteuert werden.") 
+         chatmessage(ch, "Folge dem Weg und du wirst das Vacare finden.") 
+         ---chr_set_quest(ch, "vacare_first_start", 1)
      ---end
  end
 
@@ -103,7 +103,7 @@ function ancoise_talk(npc, ch)
                                    
           if v == 1 then
               invertika.set_quest_status(ch, quest_string, 1)
-              mana.chr_warp(ch,  19002, 141 * TILESIZE, 42 * TILESIZE) 
+              chr_warp(ch,  19002, 141 * TILESIZE, 42 * TILESIZE) 
               do_message(npc, ch, "Bitteschön.")
               break;
           elseif v == 2 then
@@ -172,9 +172,9 @@ function valaia_talk(npc, ch)
                                      "Nichts danke.")
                                    
         if v == 1 then
-            mana.npc_trade(npc, ch, false, { {10001, 10, 20}, {30001, 999, 300}, {40028, 999, 500}, {40005, 999, 30} })
+            npc_trade(npc, ch, false, { {10001, 10, 20}, {30001, 999, 300}, {40028, 999, 500}, {40005, 999, 30} })
         elseif v == 2 then
-            mana.npc_trade(npc, ch, true, { {10001, 10, 20}, {30001, 999, 30}, {40028, 999, 50}, {40005, 999, 30} })
+            npc_trade(npc, ch, true, { {10001, 10, 20}, {30001, 999, 30}, {40028, 999, 50}, {40005, 999, 30} })
         elseif v == 3 then
             break
         end
@@ -220,7 +220,7 @@ function vacaria_talk(npc, ch)
                                      "Nein.")
                                    
         if v == 1 then
-            mana.chr_warp(ch,  61, 179 * TILESIZE, 151 * TILESIZE) 
+            chr_warp(ch,  61, 179 * TILESIZE, 151 * TILESIZE) 
             do_message(npc, ch, "Willkommen in Selphi Timlet. Das Abenteuer beginnt...")
             break;
         elseif v == 2 then

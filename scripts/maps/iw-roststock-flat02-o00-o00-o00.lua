@@ -39,7 +39,7 @@ function icero_talk(npc, ch)
         set_qstatus(1)
     elseif get_qstatus() == 1 then
         do_message(npc, ch, "Inspirin! Inspirin! Bring mir Inspirin!")
-        if mana.chr_inv_count(ch, 30015) > 0 then
+        if chr_inv_count(ch, 30015) > 0 then
             do_message(npc, ch, "Gib mir dein Inspirin! Bitte!")
             while true do
                 local v = do_choice(npc, ch,
@@ -60,7 +60,7 @@ function icero_talk(npc, ch)
         end
     elseif get_qstatus() == 2 then
         do_message(npc, ch, "Hast du mal ein Bier?")
-        if mana.chr_inv_count(ch, 30006) > 0 then
+        if chr_inv_count(ch, 30006) > 0 then
             while true do
                 local v = do_choice(npc, ch,
                   "Ihm ein Bier geben.",

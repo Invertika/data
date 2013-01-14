@@ -26,7 +26,7 @@ end)
 
 function brecht_talk(npc, ch)
     do_message(npc, ch, "Ich sehe schon du bist durstig. Was möchtest du?")
-    mana.npc_trade(npc, ch, false, { {30006, 999, 25}, {30007, 999, 60}, {30008, 999, 450} })
+    npc_trade(npc, ch, false, { {30006, 999, 25}, {30007, 999, 60}, {30008, 999, 450} })
     do_message(npc, ch, "Lass es dir schmecken.")
     do_npc_close(npc, ch)
 end
@@ -41,7 +41,7 @@ function chodar_talk(npc, ch)
         do_message(npc, ch, "Hey! Du! Steht nicht so dumm rum! Bring mir mein Bier!")
         set_qstatus(1)
     elseif get_qstatus() == 1 then
-        count = mana.chr_inv_count(ch, 30006)
+        count = chr_inv_count(ch, 30006)
         if count >= 1 then
             do_message(npc, ch, "Endlich! Da ist ja das Bier! Stell es da hin!")
             while true do

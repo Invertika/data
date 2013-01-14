@@ -101,9 +101,9 @@ function hobel_talk(npc, ch)
                 break
             end
         end
-    elseif quest_var == 4 and mana.chr_inv_count(ch, 30037) == 0 then
+    elseif quest_var == 4 and chr_inv_count(ch, 30037) == 0 then
         do_message(npc, ch, "Wasser!")
-    elseif quest_var == 4 or mana.chr_inv_count(ch, 30037) >= 5 then
+    elseif quest_var == 4 or chr_inv_count(ch, 30037) >= 5 then
         do_message(npc, ch, "Danke")
         do_message(npc, ch, "Ein kleines Dankeschön.")
         invertika.add_money(ch, 500)

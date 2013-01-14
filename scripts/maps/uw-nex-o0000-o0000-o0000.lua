@@ -41,68 +41,68 @@ therapyState=0;
 
 function ShowNextMessageForTherapy()
   if therapyState==0 then
-    mana.being_say(annabell, "Hallo, ich bin Annabell und leite diese Sitzung der anonymen PvP Killer. Am besten wir stellen uns erstmal vor. Fängst du bitte an Herbert?")
+    being_say(annabell, "Hallo, ich bin Annabell und leite diese Sitzung der anonymen PvP Killer. Am besten wir stellen uns erstmal vor. Fängst du bitte an Herbert?")
   elseif therapyState==1 then
-    mana.being_say(herbert, "Ja ich bin der Herbert und PvP Killing süchtig.")
+    being_say(herbert, "Ja ich bin der Herbert und PvP Killing süchtig.")
   elseif therapyState==2 then
-    mana.being_say(annabell, "Hallo Herbert.")
-    mana.being_say(miriam, "Hallo Herbert.")
-    mana.being_say(ben, "Hallo Herbert.")
+    being_say(annabell, "Hallo Herbert.")
+    being_say(miriam, "Hallo Herbert.")
+    being_say(ben, "Hallo Herbert.")
   elseif therapyState==3 then
-    mana.being_say(herbert, "Ich bin jetzt schon seit 40 Tagen clean.")
+    being_say(herbert, "Ich bin jetzt schon seit 40 Tagen clean.")
   elseif therapyState==4 then
-    mana.being_say(annabell, "Super.")
-    mana.being_say(miriam, "Großartig.")
-    mana.being_say(ben, "Toll.")
+    being_say(annabell, "Super.")
+    being_say(miriam, "Großartig.")
+    being_say(ben, "Toll.")
   elseif therapyState==5 then
-    mana.being_say(herbert, "Ja das war es so zu mir.")
+    being_say(herbert, "Ja das war es so zu mir.")
   elseif therapyState==6 then
-    mana.being_say(annabell, "Toll Herbert. Kommen wir nun zu dir Miriam.")
+    being_say(annabell, "Toll Herbert. Kommen wir nun zu dir Miriam.")
   elseif therapyState==7 then
-    mana.being_say(miriam, "Ich bin Miriam und schon seit meiner Kindheit PvP Killer.")
+    being_say(miriam, "Ich bin Miriam und schon seit meiner Kindheit PvP Killer.")
   elseif therapyState==8 then
-    mana.being_say(annabell, "Hallo Miriam.")
-    mana.being_say(herbert, "Hallo Miriam.")
-    mana.being_say(ben, "Hallo Miriam.")
+    being_say(annabell, "Hallo Miriam.")
+    being_say(herbert, "Hallo Miriam.")
+    being_say(ben, "Hallo Miriam.")
   elseif therapyState==9 then
-    mana.being_say(miriam, "Ich bin mittlerweile wieder seit 4 Monaten clean, habe allerdings ab und an mit Rückfällen zu kämpfen.")
+    being_say(miriam, "Ich bin mittlerweile wieder seit 4 Monaten clean, habe allerdings ab und an mit Rückfällen zu kämpfen.")
   elseif therapyState==11 then
-    mana.being_say(annabell, "Rückfälle sind bei PvP Killern nicht selten, man muss einfach lernen damit umzugehen und aus den Rückfällen neue Kraft schöpfen.")
+    being_say(annabell, "Rückfälle sind bei PvP Killern nicht selten, man muss einfach lernen damit umzugehen und aus den Rückfällen neue Kraft schöpfen.")
   elseif therapyState==13 then
-    mana.being_say(miriam, "Ich hoffe meine Sucht eines Tages überwinden zu können.")
+    being_say(miriam, "Ich hoffe meine Sucht eines Tages überwinden zu können.")
   elseif therapyState==14 then
-    mana.being_say(annabell, "Danke Miriam. Neu in unserer heutigen Runde ist Ben.")
+    being_say(annabell, "Danke Miriam. Neu in unserer heutigen Runde ist Ben.")
   elseif therapyState==15 then
-    mana.being_say(ben, "Ja ich bin der Ben und wie gesagt neu hier.")
+    being_say(ben, "Ja ich bin der Ben und wie gesagt neu hier.")
   elseif therapyState==16 then
-    mana.being_say(annabell, "Hallo Ben.")
-    mana.being_say(herbert, "Hallo Ben.")
-    mana.being_say(miriam, "Hallo Ben.")
+    being_say(annabell, "Hallo Ben.")
+    being_say(herbert, "Hallo Ben.")
+    being_say(miriam, "Hallo Ben.")
   elseif therapyState==17 then
-    mana.being_say(ben, "Ich wollte es erst gar nicht wahrhaben das ich PvP Killig süchtig bin. Selbst hier habe ich meinen Bogen mit dabei.")
+    being_say(ben, "Ich wollte es erst gar nicht wahrhaben das ich PvP Killig süchtig bin. Selbst hier habe ich meinen Bogen mit dabei.")
   elseif therapyState==19 then
-    mana.being_say(annabell, "Ja besonders am Anfang braucht man eine Menge Unterstützung und deshalb freue ich mich auch das du den Weg zu uns gefunden hast.")
+    being_say(annabell, "Ja besonders am Anfang braucht man eine Menge Unterstützung und deshalb freue ich mich auch das du den Weg zu uns gefunden hast.")
   elseif therapyState==21 then
-    mana.being_say(ben, "Ja ich hatte die Anzeige an diesem Pinboard gesehen und dachte mir, das ich es ja mal probieren könnte.")
+    being_say(ben, "Ja ich hatte die Anzeige an diesem Pinboard gesehen und dachte mir, das ich es ja mal probieren könnte.")
   elseif therapyState==23 then
-    mana.being_say(miriam, "Wie lange bist du schon clean?")
+    being_say(miriam, "Wie lange bist du schon clean?")
   elseif therapyState==24 then
-    mana.being_say(ben, "Den heutigen Tag mitgerechnet fünf Tage.")
+    being_say(ben, "Den heutigen Tag mitgerechnet fünf Tage.")
   elseif therapyState==25 then
-    mana.being_say(annabell, "Das ist ein sehr guter Anfang. Auch die längste Reise beginnt mit dem ersten Schritt, Ben.")
+    being_say(annabell, "Das ist ein sehr guter Anfang. Auch die längste Reise beginnt mit dem ersten Schritt, Ben.")
   elseif therapyState==27 then
-    mana.being_say(ben, "Früher habe ich auch immer versucht nur stärkere Spieler ins Nex zu bringen doch irgendwann fing ich auch mit schwächeren Spielern an.")
+    being_say(ben, "Früher habe ich auch immer versucht nur stärkere Spieler ins Nex zu bringen doch irgendwann fing ich auch mit schwächeren Spielern an.")
   elseif therapyState==29 then
-    mana.being_say(annabell, "Und da hast du gemerkt das du etwas falsches tust?")
+    being_say(annabell, "Und da hast du gemerkt das du etwas falsches tust?")
   elseif therapyState==30 then
-    mana.being_say(ben, "Ja, da fing es an.")
+    being_say(ben, "Ja, da fing es an.")
   elseif therapyState==31 then
-    mana.being_say(annabell, "Und wie ich sehe hast du begriffen das es so nicht weitergehen kann.")
-    mana.being_say(miriam, "*hust*")
+    being_say(annabell, "Und wie ich sehe hast du begriffen das es so nicht weitergehen kann.")
+    being_say(miriam, "*hust*")
   elseif therapyState==32 then
-    mana.being_say(ben, "Ja und ich hoffe das mir diese Runden hier helfen werden.")
+    being_say(ben, "Ja und ich hoffe das mir diese Runden hier helfen werden.")
   elseif therapyState==33 then
-    mana.being_say(annabell, "Das hoffe ich auch. Nun gut lasst uns eine kleine Pause machen.")
+    being_say(annabell, "Das hoffe ich auch. Nun gut lasst uns eine kleine Pause machen.")
   elseif therapyState > 35 then
     therapyState=-1
   end
@@ -120,7 +120,7 @@ function nethek_talk(npc, ch)
             local mapID = nethek.get_nethek_warp_map(ch)
             local x = nethek.get_nethek_warp_x(ch)
             local y = nethek.get_nethek_warp_y(ch)
-            mana.chr_warp(ch, mapID, x, y) 
+            chr_warp(ch, mapID, x, y) 
             break;
         elseif v == 2 then
             break;

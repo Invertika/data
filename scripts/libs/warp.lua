@@ -15,36 +15,36 @@
 ----------------------------------------------------------------------------------
 
 function create_inter_map_warp_trigger(MapUp, MapRight, MapDown, MapLeft)
- if MapUp ~= nil then mana.trigger_create(0 * TILESIZE, 0 * TILESIZE, 200 * TILESIZE, 2 * TILESIZE, "warp_up", MapUp, true) end ---Obere Warplinie
- if MapRight ~= nil then mana.trigger_create(198 * TILESIZE, 1 * TILESIZE, 2 * TILESIZE, 198 * TILESIZE, "warp_right", MapRight, true) end ---Rechte Warplinie
- if MapDown ~= nil then mana.trigger_create(0 * TILESIZE, 198 * TILESIZE, 200 * TILESIZE, 2 * TILESIZE, "warp_down", MapDown, true) end ---Untere Warplinie
- if MapLeft ~= nil then mana.trigger_create(0 * TILESIZE, 1 * TILESIZE, 2 * TILESIZE, 198 * TILESIZE, "warp_left", MapLeft, true) end ---Linke Warplinie
+ if MapUp ~= nil then trigger_create(0 * TILESIZE, 0 * TILESIZE, 200 * TILESIZE, 2 * TILESIZE, "warp_up", MapUp, true) end ---Obere Warplinie
+ if MapRight ~= nil then trigger_create(198 * TILESIZE, 1 * TILESIZE, 2 * TILESIZE, 198 * TILESIZE, "warp_right", MapRight, true) end ---Rechte Warplinie
+ if MapDown ~= nil then trigger_create(0 * TILESIZE, 198 * TILESIZE, 200 * TILESIZE, 2 * TILESIZE, "warp_down", MapDown, true) end ---Untere Warplinie
+ if MapLeft ~= nil then trigger_create(0 * TILESIZE, 1 * TILESIZE, 2 * TILESIZE, 198 * TILESIZE, "warp_left", MapLeft, true) end ---Linke Warplinie
 end
 
 function warp_up(obj, id)
-    if(mana.being_type(obj)==TYPE_CHARACTER) then
-          local x = mana.posX(obj)
-          mana.chr_warp(obj, id, x, 197 * TILESIZE) 
+    if(being_type(obj)==TYPE_CHARACTER) then
+          local x = posX(obj)
+          chr_warp(obj, id, x, 197 * TILESIZE) 
         end
 end
 
 function warp_right(obj, id)
-    if(mana.being_type(obj)==TYPE_CHARACTER) then
-          local y = mana.posY(obj)
-          mana.chr_warp(obj, id, 2 * TILESIZE, y) 
+    if(being_type(obj)==TYPE_CHARACTER) then
+          local y = posY(obj)
+          chr_warp(obj, id, 2 * TILESIZE, y) 
         end
 end
 
 function warp_down(obj, id)
-    if(mana.being_type(obj)==TYPE_CHARACTER) then
-          local x = mana.posX(obj)
-          mana.chr_warp(obj, id, x, 2 * TILESIZE) 
+    if(being_type(obj)==TYPE_CHARACTER) then
+          local x = posX(obj)
+          chr_warp(obj, id, x, 2 * TILESIZE) 
         end
 end
 
 function warp_left(obj, id)
-    if(mana.being_type(obj)==TYPE_CHARACTER) then
-          local y = mana.posY(obj)
-          mana.chr_warp(obj, id, 197 * TILESIZE, y) 
+    if(being_type(obj)==TYPE_CHARACTER) then
+          local y = posY(obj)
+          chr_warp(obj, id, 197 * TILESIZE, y) 
         end
 end

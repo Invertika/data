@@ -19,9 +19,9 @@ require "scripts/libs/warp"
 atinit(function()
  create_inter_map_warp_trigger(62, 72, 56, 6) --- Intermap warp
  nethek.create_netheksaeule(181 * TILESIZE, 125 * TILESIZE + 16) --- Netheksäule
- mana.trigger_create(41 * TILESIZE + 8, 105 * TILESIZE + 8, 1.5 * TILESIZE, 1.5 * TILESIZE, "warp_escape_tunnel", 0, true) --- Warp zum Fluchttunnel
- --mana.trigger_create(113 * TILESIZE, 141 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "waypoint_archway_1", 0, true) --- Rundenzähler Torbögen (Waypoint 1)
- --mana.trigger_create(112 * TILESIZE, 180 * TILESIZE, 5 * TILESIZE, 4 * TILESIZE, "waypoint_archway_2", 0, true) --- Rundenzähler Torbögen (Waypoint 2)
+ trigger_create(41 * TILESIZE + 8, 105 * TILESIZE + 8, 1.5 * TILESIZE, 1.5 * TILESIZE, "warp_escape_tunnel", 0, true) --- Warp zum Fluchttunnel
+ --trigger_create(113 * TILESIZE, 141 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "waypoint_archway_1", 0, true) --- Rundenzähler Torbögen (Waypoint 1)
+ --trigger_create(112 * TILESIZE, 180 * TILESIZE, 5 * TILESIZE, 4 * TILESIZE, "waypoint_archway_2", 0, true) --- Rundenzähler Torbögen (Waypoint 2)
 
  --Schilder
  sign.create_sign(113, 84, "Frisörsalon Umet\
@@ -72,20 +72,20 @@ Wir müssen darauf hinweisen, dass bei Diebstahl ein Ladenverbot verhängt wird 
  create_npc("Palastwache", 27, 188 * TILESIZE + 16, 68 * TILESIZE + 16, palastwache_talk, nil) --- Palastwache
 
  --- Trigger für die Überwachung des Torbereiches
- mana.trigger_create(145 * TILESIZE, 17 * TILESIZE, 5 * TILESIZE, 52 * TILESIZE, "wache_trigger", 1, true) --- Trigger Tor 1
- mana.trigger_create(183 * TILESIZE, 17 * TILESIZE, 5 * TILESIZE, 52 * TILESIZE, "wache_trigger", 2, true) --- Trigger Tor 2
+ trigger_create(145 * TILESIZE, 17 * TILESIZE, 5 * TILESIZE, 52 * TILESIZE, "wache_trigger", 1, true) --- Trigger Tor 1
+ trigger_create(183 * TILESIZE, 17 * TILESIZE, 5 * TILESIZE, 52 * TILESIZE, "wache_trigger", 2, true) --- Trigger Tor 2
 
  --- Trigger für den Amulet-quest.
- mana.trigger_create(54 * TILESIZE, 10 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 1, true)
- mana.trigger_create(104 * TILESIZE, 82 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 2, true)
- mana.trigger_create(43 * TILESIZE, 116 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 3, true)
- mana.trigger_create(9 * TILESIZE, 79 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 4, true)
- mana.trigger_create(7 * TILESIZE, 60 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 5, true)
- mana.trigger_create(61 * TILESIZE, 152 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 6, true)
- mana.trigger_create(49 * TILESIZE, 182 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 7, true)
- mana.trigger_create(191 * TILESIZE, 119 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 8, true)
- mana.trigger_create(102 * TILESIZE, 141 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 9, true)
- mana.trigger_create(87 * TILESIZE, 151 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 10, true)
+ trigger_create(54 * TILESIZE, 10 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 1, true)
+ trigger_create(104 * TILESIZE, 82 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 2, true)
+ trigger_create(43 * TILESIZE, 116 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 3, true)
+ trigger_create(9 * TILESIZE, 79 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 4, true)
+ trigger_create(7 * TILESIZE, 60 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 5, true)
+ trigger_create(61 * TILESIZE, 152 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 6, true)
+ trigger_create(49 * TILESIZE, 182 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 7, true)
+ trigger_create(191 * TILESIZE, 119 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 8, true)
+ trigger_create(102 * TILESIZE, 141 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 9, true)
+ trigger_create(87 * TILESIZE, 151 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 10, true)
 
  ---Weihnachten
  --create_npc("Rentier", 74, 177 * TILESIZE + 16, 185 * TILESIZE + 16, rentier_talk, nil) --- Rentier
@@ -120,9 +120,9 @@ function weihnachtsmann_talk(npc, ch)
           end
       end
     elseif get_qstatus()==1 then
-      local count13 = mana.chr_inv_count(ch, 40013)
-      local count14 = mana.chr_inv_count(ch, 40014)
-      local count15 = mana.chr_inv_count(ch, 40015)
+      local count13 = chr_inv_count(ch, 40013)
+      local count14 = chr_inv_count(ch, 40014)
+      local count15 = chr_inv_count(ch, 40015)
 
       local countAll=count13+count14+count15;
 
@@ -180,16 +180,16 @@ function fireworker_talk(npc, ch)
     "Auf deinen Wunsch hin, beschwöre ich den Gott des Feuerwerkes, und dieser wird es mächtig krachen lassen!"))
   local answer = do_choice(npc, ch, "Juhuu! Feuerwerk!", "Nee, danke.")
   if answer == 1 then
-    local x = mana.posX(npc)
-    local y = mana.posY(npc)
+    local x = posX(npc)
+    local y = posY(npc)
       for c = 0, 25 do
         schedule_in (c, function()
-          mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
-          mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
-          mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
-          mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
-          mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
-          mana.effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+          effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+          effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+          effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+          effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+          effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
+          effect_create(math.random(0, 25), x + math.random(-200, 200), y + math.random(-200, 200))
         end)
       end
   end
@@ -205,17 +205,17 @@ end
  end
 
  function wache_trigger(ch, id)
-   if (mana.being_type(ch) == TYPE_CHARACTER) then --- Nur Player durchlassen
-     local count = mana.chr_inv_count(ch, 40009)
+   if (being_type(ch) == TYPE_CHARACTER) then --- Nur Player durchlassen
+     local count = chr_inv_count(ch, 40009)
 
      if count == 0 then
-       local x = mana.posX(ch)
-       mana.chr_warp(ch, mana.get_map_id(), x, 70 * TILESIZE)
+       local x = posX(ch)
+       chr_warp(ch, get_map_id(), x, 70 * TILESIZE)
 
        if (id == 1) then
-         mana.being_say(wache1, get_wache_say())
+         being_say(wache1, get_wache_say())
        elseif (id == 2) then
-         mana.being_say(wache2, get_wache_say())
+         being_say(wache2, get_wache_say())
        end
      end
   end
@@ -240,10 +240,10 @@ function julia_talk(npc, ch)
                          "Nichts. Danke.")
 
         if v == 1 then
-            mana.npc_trade(npc, ch, false, { {10001, 10, 19}, {10013, 10, 159}, {10002, 10, 997}, {20001, 10, 30}, {20002, 10, 50}, {20011, 10, 30}, {20012, 10, 30}, {20013, 10, 30}, {20014, 10, 30}, {20015, 10, 50}, {20016, 10, 50}, {20017, 10, 50}, {20018, 10, 50}  })
+            npc_trade(npc, ch, false, { {10001, 10, 19}, {10013, 10, 159}, {10002, 10, 997}, {20001, 10, 30}, {20002, 10, 50}, {20011, 10, 30}, {20012, 10, 30}, {20013, 10, 30}, {20014, 10, 30}, {20015, 10, 50}, {20016, 10, 50}, {20017, 10, 50}, {20018, 10, 50}  })
             break
         elseif v == 2 then
-            mana.npc_trade(npc, ch, true)
+            npc_trade(npc, ch, true)
             break
         elseif v == 3 then
             do_message(npc, ch, "Ich wünsche dir noch viel Spaß!")
@@ -276,13 +276,13 @@ function bruce_talk(npc, ch)
   if get_qstatus()==2 then
     do_message(npc, ch, "Bring mir 20 Madenschleim als Beleg für deine Arbeit, dann werde ich dich belohnen.")
     set_qstatus(3)
-  elseif get_qstatus()==3 and mana.chr_inv_count(ch, 40005) < 20 then
+  elseif get_qstatus()==3 and chr_inv_count(ch, 40005) < 20 then
     do_message(npc, ch, "Bring mir 20 Madenschleim als Beleg für deine Arbeit, dann werde ich dich belohnen.")
-  elseif get_qstatus()==3 and mana.chr_inv_count(ch, 40005) >= 20 then
+  elseif get_qstatus()==3 and chr_inv_count(ch, 40005) >= 20 then
     do_message(npc, ch, "Fabelhaft, du hast 20 Madenschleim gesammelt! Danke für deine Hilfe.")
     invertika.add_items(ch, 40005, -20, "Madenschleim")
     invertika.add_exp(ch, 100, 750, 0)
-    mana.chatmessage(ch, "Du hast 750 Exp im unbewaffneten Kampf erhalten!")
+    chatmessage(ch, "Du hast 750 Exp im unbewaffneten Kampf erhalten!")
     set_qstatus(4)
   elseif get_qstatus()==4 then
     do_message(npc, ch, "In der Spielothek findet Danielas Geburtstagsparty statt. Bist du so nett, und bringst ihr mein Geschenk? Ich habe dort Hausverbot, weil ich meine Spielschulden nicht bezahlt habe.")
@@ -303,7 +303,7 @@ function bruce_talk(npc, ch)
     set_qstatus(8)
     do_message(npc, ch, "Ich brauche 50 Skorpionstachel, um ein Faß Wurzelhans zu brauen. Lass dich nicht stechen.")
   elseif get_qstatus()==8 then
-    if mana.chr_inv_count(ch, 40004) >= 50 then
+    if chr_inv_count(ch, 40004) >= 50 then
       do_message(npc, ch, "Das hast du gut gemacht! Nimm diesen Hut als Dank!")
       invertika.add_items(ch, 40004, -50, "Skorpionstachel")
       invertika.add_items(ch, 20004, 1, "Hut")
@@ -320,7 +320,7 @@ function bruce_talk(npc, ch)
     do_message(npc, ch, "Besorg mir doch bitte ein paar von ihnen.")
     set_qstatus(10)
   elseif get_qstatus() == 10 then
-    local count = mana.chr_inv_count(ch, 30018)
+    local count = chr_inv_count(ch, 30018)
     if count >= 3 then
         do_message(npc, ch, "Du hast die Tabletten gegen meinen Husten.")
         do_message(npc, ch, "Gibst du sie mir?")
@@ -427,7 +427,7 @@ function nobur_talk(npc, ch)
 
     do_message(npc, ch, "Ich brauche Skorpionstachel. Eine ganze Menge, so zwei Dutzend oder drei, vielleicht auch vier Dutzend. Das wird eine leckere Suppe.")
 
-    local count = mana.chr_inv_count(ch, 40004)
+    local count = chr_inv_count(ch, 40004)
 
     if count > 0 then
       do_message(npc, ch, "Ich sehe du hast ein paar Stachel. Magst du sie mir geben?")
@@ -573,7 +573,7 @@ function imangi_talk(npc, ch)
     invertika.init_quest_status(ch, "twin_house_quest")
     local q_status = invertika.get_quest_status(ch, "twin_house_quest")
     if q_status == 3 then
-        if mana.chr_inv_count(ch, 20019) > 0 then
+        if chr_inv_count(ch, 20019) > 0 then
             do_message(npc, ch, "Möchtest du mir etwas sagen?")
             while true do
                 local v = do_choice(npc, ch, "Ich habe hier einen Ring für dich.", "Nein. nichts.")
@@ -745,7 +745,7 @@ function stadtwache_talk(npc, ch)
     local required_kills = invertika.get_quest_status(ch, quest_string_kills)
 
     if required_kills ~= 0 then
-        local kills = mana.chr_get_kill_count(ch, invertika.get_quest_status(ch, quest_string_monsterid))
+        local kills = chr_get_kill_count(ch, invertika.get_quest_status(ch, quest_string_monsterid))
         if kills >= required_kills then
             number_of_jobs = number_of_jobs + 1
             invertika.set_quest_status(ch, quest_string_number, number_of_jobs)
@@ -783,7 +783,7 @@ function stadtwache_talk(npc, ch)
         end
         invertika.set_quest_status(ch, quest_string_monsterid, monster_data.id)
         required_kills = monster_data.factor * (number_of_jobs + 1) + math.random(-2, 2)
-        local kills = mana.chr_get_kill_count(ch, invertika.get_quest_status(ch, quest_string_monsterid))
+        local kills = chr_get_kill_count(ch, invertika.get_quest_status(ch, quest_string_monsterid))
         invertika.set_quest_status(ch, quest_string_kills, required_kills + kills)
         invertika.set_quest_status_string(ch, quest_string_monster_name, monster_data.name)
         do_message(npc, ch, string.format(invertika.get_random_element(
@@ -812,7 +812,7 @@ function bernie_talk(npc, ch)
                                      "Lieber nicht...")
 
         if v == 1 then
-            local PlayerMoney=mana.chr_money(ch)
+            local PlayerMoney=chr_money(ch)
             if PlayerMoney >= 99999 then
             invertika.add_money(ch, -99999)
             invertika.add_items(ch, 10005, 1, "Niedermetzler 3000")
@@ -827,7 +827,7 @@ function bernie_talk(npc, ch)
               break;
             end
         elseif v == 2 then
-            if mana.chr_money(ch) >= 12500 then
+            if chr_money(ch) >= 12500 then
                 invertika.add_money(ch, -12500)
                 invertika.add_items(ch, 20023, 1, "Sonnenbrille")
                 do_message(npc, ch, "Da. Nimm Sie. Willst du auch einen Niedermetzler 3000?")
@@ -858,10 +858,10 @@ function valeria_talk(npc, ch)
         local v = do_choice(npc, ch, "Alles heilen (1000 Aki)", "Nur 1000 HP (kostenlos)", "Nein ich brauche keine Heilung")
 
         if v == 1 then
-            local PlayerMoney=mana.chr_money(ch)
+            local PlayerMoney=chr_money(ch)
             if PlayerMoney >= 1000 then
             invertika.add_money(ch, -1000)
-            mana.being_heal(ch);
+            being_heal(ch);
             do_message(npc, ch, invertika.get_random_element("Du bist vollständig geheilt.",
       "Fertig. Du kannst wieder deines Weges gehen."))
             else
@@ -873,7 +873,7 @@ function valeria_talk(npc, ch)
                 do_message(npc, ch, "Nein. Ich heile dich nicht alle paar Minuten kostenlos. Komm doch später vielleicht nochmal vorbei")
                 break
             else
-                mana.being_heal(ch, 1000)
+                being_heal(ch, 1000)
                 do_message(npc, ch, invertika.get_random_element("Ich habe dir 1000 HP geschenkt.",
           "Du siehst wieder frisch aus."))
                 i = os.time(t)
@@ -890,7 +890,7 @@ function valeria_talk(npc, ch)
 end
 
 function amulet_trigger(ch, args)
-  if (mana.being_type(ch) == TYPE_CHARACTER) then --- Nur Player durchlassen
+  if (being_type(ch) == TYPE_CHARACTER) then --- Nur Player durchlassen
     local quest_string = string.format("selphi_timlet_amulet_quest_%s", args)
     invertika.init_quest_status(ch, quest_string)
 
@@ -915,7 +915,7 @@ function lidi_talk(npc, ch)
     end
 
     if get_qstatus() == 0 then
-        if mana.chr_inv_count(ch, 20023) > 0 then
+        if chr_inv_count(ch, 20023) > 0 then
             do_message(npc, ch, "Oh Gott du hast SIE. Ich brauche diese Brille, gibst du sie mir?")
             while true do
                 local v = do_choice(npc, ch, "Ja.", "Nein.")
@@ -947,24 +947,24 @@ function lidi_talk(npc, ch)
 end
 
 function warp_escape_tunnel(obj, arg)
-    if(mana.being_type(obj)==TYPE_CHARACTER) then
-        mana.chr_warp(obj, 20146, 35 * TILESIZE, 35 * TILESIZE + 16)
+    if(being_type(obj)==TYPE_CHARACTER) then
+        chr_warp(obj, 20146, 35 * TILESIZE, 35 * TILESIZE + 16)
     end
 end
 
 function waypoint_archway_1(obj, arg)
-    if(mana.being_type(obj)==TYPE_CHARACTER) then
-        local archway_quest = mana.chr_get_quest(obj, "selphi_timlet_archway_quest")
+    if(being_type(obj)==TYPE_CHARACTER) then
+        local archway_quest = chr_get_quest(obj, "selphi_timlet_archway_quest")
         if(not archway_quest) then return false end -- Abbrechen, falls Questvar noch nicht gecached
-        mana.being_say(obj, archway_quest)
+        being_say(obj, archway_quest)
         if(archway_quest % 2 == 1) then
             --- halbe Umdrehung wird dazugezählt
             invertika.set_quest_status(obj, "selphi_timlet_archway_quest", archway_quest + 1)
             local rounds = (archway_quest+1)/2
             -- eigentlich sollte hier eine 17 stehen, sind nur zu testzwecken lediglich 2 runden
             if(rounds % 2 == 0) then
-                mana.being_say(obj, "Jetzt bin ich reich!!! (debug)")
-                mana.chatmessage(obj, "Vor lauter Langeweile wegen dem ganzen Torbögen-Durchlaufen, findest du ein paar Aki auf der Erde, die du zuvor wahrscheinlich übersehen hast!")
+                being_say(obj, "Jetzt bin ich reich!!! (debug)")
+                chatmessage(obj, "Vor lauter Langeweile wegen dem ganzen Torbögen-Durchlaufen, findest du ein paar Aki auf der Erde, die du zuvor wahrscheinlich übersehen hast!")
                 invertika.add_money(obj, math.random(1, 500)) --- Wenn man davon ausgeht, dass man in 17 Runden wahrscheinlich etwa 50 Maden mit HDW von über 5 = 250 Aki minimum verdienen kann, sind 250 Aki Durchschnittsgewinn beim Durchlaufen der Torbögen OK
             end
         end
@@ -972,11 +972,11 @@ function waypoint_archway_1(obj, arg)
 end
 
 function waypoint_archway_2(obj, arg)
-    if(mana.being_type(obj)==TYPE_CHARACTER) then
-        local archway_quest = mana.chr_get_quest(obj, "selphi_timlet_archway_quest")
+    if(being_type(obj)==TYPE_CHARACTER) then
+        local archway_quest = chr_get_quest(obj, "selphi_timlet_archway_quest")
         if(not archway_quest) then return false end -- Abbrechen, falls Questvar noch nicht gecached
-        mana.being_say(obj, "Ich habe den Wegpunkt passiert")
-        mana.being_say(obj, archway_quest)
+        being_say(obj, "Ich habe den Wegpunkt passiert")
+        being_say(obj, archway_quest)
         if(archway_quest % 2 == 0) then
             --- halbe Umdrehung wird dazugezählt
             invertika.set_quest_status(obj, "selphi_timlet_archway_quest", archway_quest + 1)

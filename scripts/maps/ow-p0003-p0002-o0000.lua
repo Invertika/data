@@ -55,7 +55,7 @@ function awond_talk(npc, ch)
 end
 
 function mordyno_talk(npc, ch)
-    mana.npc_trade(npc, ch, false, {
+    npc_trade(npc, ch, false, {
       {10001, 30, 50},
       {10013, 30, 140},
       {10002, 30, 1000},
@@ -96,14 +96,14 @@ function bache_talk(npc, ch)
             end
         end
     elseif get_qstatus() == 1 then
-        local count = mana.chr_inv_count(ch, 40040)
+        local count = chr_inv_count(ch, 40040)
         if count > 0 then
             do_message(npc, ch, "Du hast Holz!")
             do_message(npc, ch, "Würdest du mir es überlassen?")
             while true do
                 local v = do_choice(npc, ch, "Nimm es dir.", "Nein. Das brauch ich selber.")
                 if v == 1 then
-                    local count = mana.chr_inv_count(ch, 40040)
+                    local count = chr_inv_count(ch, 40040)
                     if count == 0 then break end
                     set_qstatus(2)
                     invertika.add_items(ch, 40040, -count, "Holz")
@@ -130,7 +130,7 @@ end
 
 function cloina_talk(npc, ch)
     do_message(npc, ch, "Ich verkaufe hier Heilmittel aus meinen selbstangebauten Kräutern.")
-    mana.npc_trade(npc, ch, false,
+    npc_trade(npc, ch, false,
      { {30001, 30, 300},
        {30002, 30, 100},
        {30008, 30, 200},

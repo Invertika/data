@@ -19,12 +19,12 @@ end
 --- Gibt die Anzahl von Casinomünzen zurück.
 -- @return Anzahl der Casionemünzen die der Spieler besitzt.
 function PokerPlayer:getMoney()
-    return mana.chr_inv_count(self.ch, PokerConstants.ID_OF_POKER_CHIPS)
+    return chr_inv_count(self.ch, PokerConstants.ID_OF_POKER_CHIPS)
 end
 
 --- PRIVATE Zieht dem Spieler eine Anzahl von Münzen ab.
 function PokerPlayer:removeMoney(amount)
-    mana.chr_inv_count(self.ch, PokerConstants.ID_OF_POKER_CHIPS, -amount)
+    chr_inv_count(self.ch, PokerConstants.ID_OF_POKER_CHIPS, -amount)
 end
 
 --- Gibt einen Betrag in den Pot.

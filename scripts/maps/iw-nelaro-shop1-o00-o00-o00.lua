@@ -32,7 +32,7 @@ function rhosor_talk(npc, ch)
           "Nichts. Danke.")
                          
         if v == 1 then
-            mana.npc_trade(npc, ch, false,
+            npc_trade(npc, ch, false,
               {{10001, 20, 50},
               {10002, 60, 1000},
               {10009, 60, 1000},
@@ -41,7 +41,7 @@ function rhosor_talk(npc, ch)
               })
             break
         elseif v == 2 then
-            mana.npc_trade(npc, ch, true,
+            npc_trade(npc, ch, true,
               {{10001, 20, 5},
               {10002, 60, 100},
               {10009, 60, 100},

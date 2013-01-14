@@ -41,7 +41,7 @@ function enla_talk(npc, ch)
           "Nichts, Danke.")
         
         if v == 1 then
-            mana.npc_trade(npc, ch, false, {
+            npc_trade(npc, ch, false, {
               {10001, 10, 19}, 
               {10013, 10, 159}, 
               {10002, 10, 997}, 
@@ -58,7 +58,7 @@ function enla_talk(npc, ch)
               })
             break
         elseif v == 2 then
-            mana.npc_trade(npc, ch, true)
+            npc_trade(npc, ch, true)
             break
         elseif v == 3 then
             do_message(npc, ch, invertika.get_random_element("Tschüß",

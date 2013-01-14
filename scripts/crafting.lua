@@ -27,13 +27,13 @@ function on_craft(ch, recipe)
     -- uncomment one (but not both!) of the following three lines to enable the
     -- example crafting systems
     
-    mana.chatmessage(ch, "There is no crafting in this game world.")
+    chatmessage(ch, "There is no crafting in this game world.")
     --craft_strict(ch, recipe)
     --craft_lax(ch, recipe)
 end
 
 function create_give_items_function(ch, item_id, amount)
-    return function() mana.chr_inv_change(ch, item_id, amount) end
+    return function() chr_inv_change(ch, item_id, amount) end
 end
 
 function check_for_items_function(...)
@@ -49,14 +49,14 @@ function craft_strict(ch, recipe)
     if (recipe[1].id == 8 and recipe[1].amount == 2 and -- has two iron
         recipe[2].id == 9 and recipe[2].amount == 1)    -- and one wood
         then
-        mana.chr_inv_change(ch, 
+        chr_inv_change(ch, 
             8, -2, --take away the iron
             9, -1, --take away the wood
             5, 1 ) -- give a sword
-        mana.chatmessage(ch, "You've crafted a sword")
+        chatmessage(ch, "You've crafted a sword")
         return
     end
-    mana.chatmessage(ch, "This wouldn't create anything useful")
+    chatmessage(ch, "This wouldn't create anything useful")
 end
 
 -- a primitive example crafting system which doesn't care about item order
@@ -67,14 +67,14 @@ function craft_lax(ch, recipe)
     if (recipe[1].id == 8 and recipe[1].amount >= 2 and -- has at least two iron
         recipe[2].id == 9 and recipe[2].amount >= 1)    -- and at least one wood
         then
-        mana.chr_inv_change(ch, 
+        chr_inv_change(ch, 
             8, -2, --take away the iron
             9, -1, --take away the wood
             5, 1 ) -- give a sword
-        mana.chatmessage(ch, "You've crafted a sword")
+        chatmessage(ch, "You've crafted a sword")
         return
     end
-    mana.chatmessage(ch, "This wouldn't create anything useful")
+    chatmessage(ch, "This wouldn't create anything useful")
 end
 
 -- this turns multiple occurences of the same item into one by adding up

@@ -24,7 +24,7 @@ atinit(function()
   create_inter_map_warp_trigger(78, 90, 80, 68) --- Intermap warp
   sign.create_sign(147, 79, "Denkmal des großen Fehlerbehebers")
   
-  mana.trigger_create(36 * TILESIZE, 97 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "statue_trigger", 1, true);
+  trigger_create(36 * TILESIZE, 97 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "statue_trigger", 1, true);
   
   create_npc("Statue", 1, 36 * TILESIZE + 16, 93 * TILESIZE + 16, statue_talk, nil)
 end)
@@ -63,11 +63,11 @@ function statue_talk(npc, ch)
     
     if quest_var == 1 then
         do_message(npc, ch, "Gut")
-        local needed_kills = math.random(1, 10) * ( mana.chr_get_kill_count(ch, 14) + 1) / 10 -- Sandwürmer müssen gekillt werden. Hier sollte eigentlich mit dem level gerechnet werden. Ich (Postremus) fand aber keine Funktion, die genau dies anbietet.
+        local needed_kills = math.random(1, 10) * ( chr_get_kill_count(ch, 14) + 1) / 10 -- Sandwürmer müssen gekillt werden. Hier sollte eigentlich mit dem level gerechnet werden. Ich (Postremus) fand aber keine Funktion, die genau dies anbietet.
         do_message(npc, ch, string.format("Töte bitte %d Sandwürmer", needed_kills))
         -- Set Quest
         invertika.set_quest_status(ch, queststring, 2)
-        invertika.set_quest_status(ch, queststring_killed, mana.chr_get_kill_count(ch, 14))
+        invertika.set_quest_status(ch, queststring_killed, chr_get_kill_count(ch, 14))
         invertika.set_quest_status(ch, queststring_needed, needed_kills)
     end
     
@@ -75,7 +75,7 @@ function statue_talk(npc, ch)
     local quest_var_killed = invertika.get_quest_status(ch, queststring_killed)
     local quest_var_needed = invertika.get_quest_status(ch, queststring_needed)
     
-    local curr_kills = mana.chr_get_kill_count(ch, 14) - quest_var_killed
+    local curr_kills = chr_get_kill_count(ch, 14) - quest_var_killed
     
     
     if quest_var == 2 and curr_kills < quest_var_needed then
@@ -91,16 +91,16 @@ function statue_talk(npc, ch)
     
     if quest_var == 3 then
         do_message(npc, ch, "Du darfst passieren.")
-        mana.chr_warp(ch, nil, 38 * TILESIZE + 16, 97 * TILESIZE + 16)
+        chr_warp(ch, nil, 38 * TILESIZE + 16, 97 * TILESIZE + 16)
     end
     do_npc_close(npc, ch)
 end
 
 function statue_trigger(ch, id)
-    if mana.being_type(ch) == TYPE_CHARACTER then
-        mana.chatmessage(ch, "Ab hier beginnt das Denkmal des großen Fehlerbehebers.")
-        mana.chatmessage(ch, "Du darfst erst passieren, sobald du dich als würdig erwiesen hast!")
-        mana.chatmessage(ch, "Rede mit der Statue.")
-        mana.chr_warp(ch, nil, 33 * TILESIZE + 16, mana.posY(ch))
+    if being_type(ch) == TYPE_CHARACTER then
+        chatmessage(ch, "Ab hier beginnt das Denkmal des großen Fehlerbehebers.")
+        chatmessage(ch, "Du darfst erst passieren, sobald du dich als würdig erwiesen hast!")
+        chatmessage(ch, "Rede mit der Statue.")
+        chr_warp(ch, nil, 33 * TILESIZE + 16, posY(ch))
     end
 end
