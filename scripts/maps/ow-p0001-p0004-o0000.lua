@@ -43,12 +43,10 @@ function wache_talk(npc, ch)
 	else
 	    npc_message(npc, ch, "Viel Spaß.")
     end
-    do_npc_close(npc, ch)
 end
 
 function wache_ausgang_talk(npc, ch)
     npc_message(npc, ch, "Dies ist der Augang. Bitte benutze den Eingang im Osten.")
-    do_npc_close(npc, ch)
 end
 
 function wache_trigger(ch, id)

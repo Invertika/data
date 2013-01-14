@@ -57,5 +57,4 @@ function botschafter_talk(npc, ch)
           "Ich muss nun weiterarbeiten."))
     end
 
-    do_npc_close(npc, ch)
 end

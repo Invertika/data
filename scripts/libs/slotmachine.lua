@@ -65,5 +65,4 @@ function slotmachine_talk(npc, ch)
 	  npc_message(npc, ch, "Soviel Geld hast du leider nicht.")
 	end
   end ---while true do 
-  do_npc_close(npc, ch)
 end

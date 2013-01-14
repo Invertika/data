@@ -25,5 +25,4 @@ end)
 function irucia_talk(npc, ch)
     --TODO: Irgendetwas besseres hier einbauen
     npc_message(npc, ch, "Die Tanzschule hat noch geschlossen.")
-    do_npc_close(npc, ch)
 end

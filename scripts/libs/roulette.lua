@@ -134,5 +134,4 @@ function roulette_talk(npc, ch)
     end
 
   end ---while true do
-  do_npc_close(npc, ch)
 end

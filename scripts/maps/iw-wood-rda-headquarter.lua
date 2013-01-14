@@ -30,26 +30,22 @@ function marc_talk(npc, ch)
       "Hallo, ich bin Marc, von der RDA.",
       "Die RDA ist nach ihren Gründern benannt: Richard, Dean und Anderson.",
       "Wir treten für den Umweltschutz ein."))
-      do_npc_close(npc, ch)
 end
 
 function richard_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Es geht um Pflanzen und so.",
       "Diese großen Dinger, du weißt schon, Bäume, findest du auf so ziemlich jedem Planeten, außer auf PX404.",
       "Nimm dir eine Schaufel und dann, ja... geht es los."))
-      do_npc_close(npc, ch)
 end
 
 function dean_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Wir schützen die Tiere und Pflanzen auf Amoneus.",
       "Im Moment arbeiten wir an der Aufforstung des Waldes hier.",
       "Einige Bäume sind schon gepflanzt. Es wird also langsam."))
-      do_npc_close(npc, ch)
 end
 
 function anderson_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Du möchstest uns unterstützen. Mmm da muss ich mir wohl etwas einfallen lassen.",
       "Hilfe ist eigentlich immer gewünscht, da müssen wir einfach mal schauen.",
       "Ja wir benötigen Geld, allerdings müssen wir uns noch eine Spendenkasse besorgen."))
-      do_npc_close(npc, ch)
 end

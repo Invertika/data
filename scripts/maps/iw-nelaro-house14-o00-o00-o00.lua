@@ -208,5 +208,4 @@ function vodel_talk(npc, ch)
     if quest_var_vodel == 9 then
         npc_message(npc, ch, "Später werde ich dir ein neues Rätsel stellen, jetzt ist es noch zu früh.")
     end
-    do_npc_close(npc, ch) 
 end

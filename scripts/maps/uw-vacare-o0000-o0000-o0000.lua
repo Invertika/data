@@ -71,7 +71,6 @@ end)
 
 function zelan_talk(npc, ch)
     npc_message(npc, ch, "Du möchtest wissen wo du bist? Das hier ist das Vacare. Jeder neue kommt hier her bevor es raus geht in die große Welt. Also pass auf dich auf.")
-    do_npc_close(npc, ch)
 end
 
 function jack_talk(npc, ch)
@@ -88,7 +87,6 @@ function jack_talk(npc, ch)
         break;
       end
     end
-    do_npc_close(npc, ch)
 end
  
 function ancoise_talk(npc, ch)
@@ -116,7 +114,6 @@ function ancoise_talk(npc, ch)
     else
      npc_message(npc, ch, "Willkommen auf der anderen Seite.")
     end
-    do_npc_close(npc, ch)
 end
 
 function kolbert_talk(npc, ch)
@@ -141,7 +138,6 @@ function kolbert_talk(npc, ch)
       npc_message(npc, ch, "Noch ein kleiner Tipp. Mit Z kannst du Gegenstände aufheben die ein Gegner verliert.")
     end
     
-    do_npc_close(npc, ch)
 end
 
 function syntyche_talk(npc, ch)
@@ -150,7 +146,6 @@ function syntyche_talk(npc, ch)
     npc_message(npc, ch, "Mit den Charakterpunkten kannst du deine Statuswerte verbessern. Dazu musst du auf Status klicken. Unten stehen deine vorhandene Anzahl an Charakterpunkten und Korrekturpunkten. Nun kannst du diese Punkte auf die Statuswerte verteilen. Wenn du denkst das du bei der Verteilung der Punkte einen Fehler gemacht hast so kannst du die Änderung zurücknehmen, solange du genug Korrekturpunkte hast.")
     
     npc_message(npc, ch, "Also achte darauf, dass du deine Charakterpunkte auf die richtigen Werte verteilst.")
-    do_npc_close(npc, ch)
 end
 
 function valaia_talk(npc, ch)
@@ -185,7 +180,6 @@ function valaia_talk(npc, ch)
     npc_message(npc, ch, "Daraufhin öffnet sich ein Fenster. Zusätzlich solltest du das Inventarfenster öffnen. Wähle nun ein Item aus und drücke im Handelsfenster auf Hinzufügen. Dadurch wird das Item dem Handel hinzugefügt. Wenn du den Handel beenden möchtest so klicke auf Vorschlagen und dann auf Bestätigen. Der Handel ist damit abgeschlossen.")
     
     npc_message(npc, ch, "Ja das wars auch schon zum Thema Handel.")
-    do_npc_close(npc, ch)
 end
 
 function asam_talk(npc, ch)
@@ -198,7 +192,6 @@ function asam_talk(npc, ch)
     npc_message(npc, ch, "Nummero 3: Die Spielsprache ist Deutsch. Dies bezieht sich nur auf den offnen Chat (im Fenster Allgemein). In Gildenchats darf natürlich jede andere Sprache gesprochen werden.")
     
     npc_message(npc, ch, "Wie gesagt sind dies Empfehlungen, aber wer weiß was die anderen Spieler machen wenn sie euch beim Spammen erwischen :) Ich wünsche dir viel Spaß.")
-    do_npc_close(npc, ch)
 end
 
 function corona_talk(npc, ch)
@@ -209,7 +202,6 @@ function corona_talk(npc, ch)
     npc_message(npc, ch, "Also hüte dich und kämpfe keinen ausichtslosen Kampf...")
     
     npc_message(npc, ch, "Eine Sache noch: Wenn du das Reich der Toten verlässt wirst du zu der Netheksäule gebracht, bei welcher du zuletzt um den Segen gebeten hast, also halte Ausschau nach Ihnen.")
-    do_npc_close(npc, ch)
 end
 
 function vacaria_talk(npc, ch)
@@ -228,7 +220,6 @@ function vacaria_talk(npc, ch)
             break;
         end
     end
-    do_npc_close(npc, ch)
 end
 
 function essar_talk(npc, ch)
@@ -248,5 +239,4 @@ function essar_talk(npc, ch)
     npc_message(npc, ch, "Dann kannst du mittels /w <Spielername> <text> einen der Spieler anschreiben.")
     npc_message(npc, ch, "Hilfe über diese und weitere Befehle kannst du über /help jederzeit abrufen.")
     npc_message(npc, ch, "Viel Spaß mit Invertika.")
-    do_npc_close(npc, ch)
 end

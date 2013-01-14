@@ -26,5 +26,4 @@ function mosris_talk(npc, ch)
     npc_message(npc, ch, "Ich sehe, dass du etwas zu trinken kaufen werden willst.")
     npc_trade(npc, ch, false, { {30006, 999, 25}, {30007, 999, 60}, {30008, 999, 450} })
     npc_message(npc, ch, "Trinke es mit Verstand.")
-    do_npc_close(npc, ch)
 end

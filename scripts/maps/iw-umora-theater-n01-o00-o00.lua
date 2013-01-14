@@ -24,5 +24,4 @@ end)
 
 function tom_talk(npc, ch)
     npc_message(npc, ch, "Die Bar hat noch nicht geöffnet.")
-    do_npc_close(npc, ch)
 end

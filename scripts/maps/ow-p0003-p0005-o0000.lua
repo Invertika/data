@@ -36,7 +36,6 @@ function regret_talk(npc, ch)
       "Ich muss doch nach Leo. Wo bin ich? In Alexia? Gibt es auf unserem Kontinent nicht.",
       "Ich muss jetzt echt los sonst komme ich zu spät zu der Fortsetzung meiner Spielereihe.",
       "Wenn ich den kriege der mir das hier eingebrockt hat."))
-    do_npc_close(npc, ch)
 end
 
 function holbert_talk(npc, ch)
@@ -44,7 +43,6 @@ function holbert_talk(npc, ch)
       "Von wegen optische Täuschung, das haben die wirklich so gebaut!",
       "Nichts ist unmöglich... Invertika *mir Werbemusik dazu denke*",
       "Möchte mal wissen wer die Baugenehmigung dafür ausgestellt hat."))
-    do_npc_close(npc, ch)
 end
 
 function vektor_talk(npc, ch)
@@ -75,5 +73,4 @@ function vektor_talk(npc, ch)
             "Eigentlich müsste dieses Haus in sich zusammenfallen. Oder das Universum. Blöderweise passiert nichts von beidem.",
             "Wir könnten auch einfach so tun, als ob da gar kein Haus steht."))
     end
-    do_npc_close(npc, ch)
 end

@@ -23,5 +23,4 @@ end)
 
 function ormylt_talk(npc, ch)
     npc_message(npc, ch, "Ich bin die Frau von Graf Cedric")
-    do_npc_close(npc, ch)
 end

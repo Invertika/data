@@ -33,7 +33,6 @@ function peter_talk(npc, ch)
       "Ich bin hier der mit dem 90 Grad Winkelmaß.",
       "Akkurat muss es geschnitten sein, Akkurat!",
       "Bei uns wird das sehr sehr gewissenhaft gemacht."))
-    do_npc_close(npc, ch)
 end
 
 function hans_talk(npc, ch)
@@ -56,7 +55,6 @@ function hans_talk(npc, ch)
 		invertika.add_items(ch, 40053, 1, "Blume")
 	end
 	
-    do_npc_close(npc, ch)
 end
 
 function siegfried_talk(npc, ch)
@@ -64,5 +62,4 @@ function siegfried_talk(npc, ch)
       "Verdammt, was macht diese Blume hier?",
       "Diese Blume zerstört die Perfektion.",
       "Neeeeeeeeeeeeeeiiiiiiiiiiiiinnnnnnnn, diese Blume darf nicht sein."))
-    do_npc_close(npc, ch)
 end

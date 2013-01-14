@@ -33,5 +33,4 @@ function asgard_talk(npc, ch)
         "Was sich im inneren des Turmes befinden mag?",
         "Es gibt eine Legende, die besagt das der Turm sich eines Tages öffnen wird.",
         "Viele haben versucht in den Turm einzudringen, aber niemand hat es je geschafft."))
-    do_npc_close(npc, ch)
 end

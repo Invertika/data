@@ -30,7 +30,6 @@ function saya_talk(npc, ch)
       "Tetse lernte ich vor sehr langer Zeit kennen.",
       "Wir haben hier alles was wir brauchen.",
       "Okita ist vor einiger Zeit gegangen, er sagte, er müsse einige Dinge klären."))
-    do_npc_close(npc, ch)
 end
 
 function tetse_talk(npc, ch)
@@ -68,5 +67,4 @@ function tetse_talk(npc, ch)
           "Ja der Sandsturm wütet. Das geht schon die ganze Zeit so.",
           "Warst du an ihrem Grab?"))
     end
-    do_npc_close(npc, ch)
 end

@@ -61,5 +61,4 @@ function marle_talk(npc, ch)
           "In den westlichen Gegenden soll es manchmal sogar Schnee geben habe ich gehört.",
           "Früher sammelte ich Porzellanfiguren.")) 
     end
-     do_npc_close(npc, ch)
 end

@@ -88,6 +88,5 @@ function veritas_talk(npc, ch)
             end
         end
         
-    do_npc_close(npc, ch)
 end
 

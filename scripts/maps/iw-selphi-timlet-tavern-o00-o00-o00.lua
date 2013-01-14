@@ -28,7 +28,6 @@ function brecht_talk(npc, ch)
     npc_message(npc, ch, "Ich sehe schon du bist durstig. Was möchtest du?")
     npc_trade(npc, ch, false, { {30006, 999, 25}, {30007, 999, 60}, {30008, 999, 450} })
     npc_message(npc, ch, "Lass es dir schmecken.")
-    do_npc_close(npc, ch)
 end
 
 function chodar_talk(npc, ch)
@@ -100,5 +99,4 @@ function chodar_talk(npc, ch)
                                                          "PROST!",
                                                          "Auf bessere Zeiten!"))
     end
-    do_npc_close(npc, ch)
 end

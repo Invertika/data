@@ -40,7 +40,6 @@ function rezeptionist_talk(npc, ch)
         invertika.set_quest_status(ch, "selphi_timlet_ceech_quest", 2)
         invertika.add_items(ch, 40018, 1, "Scheck über 1000 Aki")
         npc_message(npc, ch, "Hier nimm diesen Scheck. Dafür lass den Brief irgendwo verschwinden.")
-        do_npc_close(npc, ch)
         return
   end
 
@@ -103,6 +102,5 @@ function rezeptionist_talk(npc, ch)
         chr_warp(ch, 61, 76 * TILESIZE, 167 * TILESIZE)
   end
 
-    do_npc_close(npc, ch)
 end
 

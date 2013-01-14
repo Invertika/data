@@ -71,5 +71,4 @@ function averin_talk(npc, ch)
       "Im Moment habe ich nichts für dich."))
     end
 
-    do_npc_close(npc, ch)
 end

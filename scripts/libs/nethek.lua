@@ -141,7 +141,6 @@ function netheksaeule_talk(npc, ch) --- NPC für die Netheksäule
 		end
 	end
 	
-	do_npc_close(npc, ch)
 end
 
 --- Erzeugt einen NPC für die Netheksäule

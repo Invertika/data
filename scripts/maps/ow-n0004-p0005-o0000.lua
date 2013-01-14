@@ -100,7 +100,6 @@ function diem_talk(npc, ch)
       {20018, 30, 250},
       {20009, 30, 500}
     })
-    do_npc_close(npc, ch)
 end
 
 function chris_talk(npc, ch)
@@ -172,7 +171,6 @@ function chris_talk(npc, ch)
         npc_message(npc, ch, "Hi.")
     end
     
-    do_npc_close(npc, ch)
 end
 
 function estjdian_talk(npc, ch)
@@ -237,13 +235,11 @@ function estjdian_talk(npc, ch)
     if quest_var >= 4 then
         npc_message(npc, ch, "Hoffentlich bessert er sich.")
     end
-    do_npc_close(npc, ch)
 end
 
 function wache_bank_talk(npc, ch)
     --TODO bessere Texte
     npc_message(npc, ch, "Wir bewachen die Bank.")
-    do_npc_close(npc, ch)
 end
 
 function wache_casino_talk(npc, ch)
@@ -251,7 +247,6 @@ function wache_casino_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Ich bewache das Kasino.",
       "Glücksspiel kann süchtig machen.",
       "Ohne uns Wachen würde die Stadt im Chaos versinken!"))
-    do_npc_close(npc, ch)
 end
 
 function wache_talk(npc, ch)
@@ -285,7 +280,6 @@ function wache_talk(npc, ch)
           "Gehe weiter. Du blockierst die Straße.",
           "Ohne uns Wachen, würde die Stadt im Chaos versinken!"))
     end
-    do_npc_close(npc, ch)
 end
 
 function wache_trigger(ch, id)
@@ -334,7 +328,6 @@ end
 function cedric_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Ich bin Graf Cedric.",
       "Fühle dich in meiner Burg wie zu Hause."))
-    do_npc_close(npc, ch)
 end
 
 function cedric_speech()
@@ -366,5 +359,4 @@ end
 function palastwache_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Wir bewachen den Palast Cedric´s.",
       "Im Haus hinter uns wohnt Cedric und seine Frau Ormylt"))
-    do_npc_close(npc, ch)
 end

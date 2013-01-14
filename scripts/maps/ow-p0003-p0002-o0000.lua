@@ -51,7 +51,6 @@ function awond_talk(npc, ch)
       "Das war ein harter Tag.",
       "Ich hoffe meine Frau macht schonmal das Abendessen.",
       "Setz dich doch zu mir."))
-    do_npc_close(npc, ch)
 end
 
 function mordyno_talk(npc, ch)
@@ -71,7 +70,6 @@ function mordyno_talk(npc, ch)
       {20017, 30, 250},
       {20018, 30, 250},
       {20009, 30, 500} })
-    do_npc_close(npc, ch)
 end
 
 function bache_talk(npc, ch)
@@ -125,7 +123,6 @@ function bache_talk(npc, ch)
     elseif get_qstatus() == 2 then
         npc_message(npc, ch, "Vielen Dank für das Holz! Ich werde das nie vergessen.")
     end
-    do_npc_close(npc, ch)
 end
 
 function cloina_talk(npc, ch)
@@ -140,7 +137,6 @@ function cloina_talk(npc, ch)
        {30019, 30, 550},
        {30023, 30, 150},
        {30025, 30, 1000} })
-    do_npc_close(npc, ch)
 end
 
 function brielm_talk(npc, ch)
@@ -148,5 +144,4 @@ function brielm_talk(npc, ch)
       "Willkommen in Narva",
       "Wir leben hier vom Handel zwischen den Wüstenbewohnern und denen aus dem Grasland.",
       "Ich hoffe es gefällt dir hier.")) -- TODO: Mehr Auswahl.
-    do_npc_close(npc, ch)
 end

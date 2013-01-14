@@ -53,5 +53,4 @@ function daniela_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Lust auf Poker?",
                                                       "Ich hab ne Glückssträhne!"))
   end
-    do_npc_close(npc, ch)
 end

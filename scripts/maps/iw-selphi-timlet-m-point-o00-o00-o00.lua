@@ -43,7 +43,6 @@ function manitu_talk(npc, ch)
         elseif v == 4 then break
         end
     end
-    do_npc_close(npc, ch)
 end
 
 function sandra_talk(npc, ch)
@@ -61,5 +60,4 @@ function sandra_talk(npc, ch)
         elseif v == 3 then break
         end
     end
-    do_npc_close(npc, ch)
 end

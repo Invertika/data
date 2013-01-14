@@ -67,5 +67,4 @@ function umach_talk(npc, ch)
     elseif quest_var_kill == 2 then
         npc_message(npc, ch, "Gehe zum Bürgermeister!")
     end
-    do_npc_close(npc, ch)
 end

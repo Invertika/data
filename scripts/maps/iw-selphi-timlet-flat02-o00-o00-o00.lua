@@ -29,7 +29,6 @@ function mercol_talk(npc, ch)
       "Selphi Timlet ist eine schöne Stadt.",
       "Ich bin hier aufgewachsen.",
       "Es gab auch schon schwerere Zeiten."))
-    do_npc_close(npc, ch)
 end
 
 function samos_talk(npc, ch)
@@ -89,5 +88,4 @@ function samos_talk(npc, ch)
           "Mit dir rede ich nicht mehr!"))
     end
     
-    do_npc_close(npc, ch)
 end

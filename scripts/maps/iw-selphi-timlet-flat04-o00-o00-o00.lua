@@ -60,5 +60,4 @@ function haitan_talk(npc, ch)
             "Du darfst gerne mehr töten, aber leider kann ich dir nichts mehr dafür geben",
             "Leider sind immer noch Skorpione da unten..."))
     end
-    do_npc_close(npc, ch)
 end

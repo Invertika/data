@@ -26,5 +26,4 @@ function metatron_talk(npc, ch)
       "Ich bin die Stimme...",
       "Durch mich spricht sie...",
       "So höre mir zu..."))
-    do_npc_close(npc, ch)
 end

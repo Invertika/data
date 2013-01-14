@@ -26,5 +26,4 @@ function isskel_talk(npc, ch)
       "Blubb",
       "Blubb blubb",
       "Blubb blubb blubb"))
-    do_npc_close(npc, ch)
 end

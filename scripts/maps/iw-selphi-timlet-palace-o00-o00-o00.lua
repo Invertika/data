@@ -48,7 +48,6 @@ function luor_talk(npc, ch)
     else
         npc_message(npc, ch, "Sei gegrüßt, ich bin Luor, Herscher über Selphi Timlet, Bewahrer des Heiligen Kelches von Rixx. Wie lautet deine Bitte? - Obwohl lieber nicht, im Moment steht es mir nicht nach einer Audienz.")
     end
-    do_npc_close(npc, ch)
 end
 
 function krenel_talk(npc, ch)
@@ -57,5 +56,4 @@ function krenel_talk(npc, ch)
       "Ich täusche Aktivität vor, also schau nicht so und mache das gleiche.",
       "Wenn wir das nicht tun ist alles zu spät.",
       "Das ganze Invertika Team macht das so... aber psssst..."))
-    do_npc_close(npc, ch)
 end

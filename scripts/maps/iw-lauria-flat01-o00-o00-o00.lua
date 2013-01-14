@@ -27,5 +27,4 @@ function ansdan_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Willkommen!",
       "Dies ist mein Bescheidenes Heim.",
       "Möge Invertika euch beschützen."))
-    do_npc_close(npc, ch)
 end

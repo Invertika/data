@@ -50,5 +50,4 @@ function bolum_talk(npc, ch)
     if quest_var > 7 then
         npc_message(npc, ch, "Hi.")
     end
-    do_npc_close(npc, ch)
 end

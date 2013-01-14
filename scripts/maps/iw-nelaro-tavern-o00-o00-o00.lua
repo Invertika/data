@@ -29,7 +29,6 @@ function dache_talk(npc, ch)
       "Noch ein Drink und dann wars das.",
       "So langsam sehe ich alles doppelt.",
       "Mmmm also ich weiß ja nicht."))
-    do_npc_close(npc, ch)
 end
 
 function fohon_talk(npc, ch)
@@ -60,5 +59,4 @@ function fohon_talk(npc, ch)
             break
         end
     end
-    do_npc_close(npc, ch)
 end

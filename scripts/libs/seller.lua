@@ -28,5 +28,4 @@ function seller_talk(npc, ch)
       npc_message(npc, ch, "Hmm irgendetwas stimmt nicht...")
     end
     
-    do_npc_close(npc, ch)
 end

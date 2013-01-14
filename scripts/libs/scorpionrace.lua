@@ -188,5 +188,4 @@ function race_manager_talk(npc, ch)
             break
         end
     end
-    do_npc_close(npc, ch)
 end

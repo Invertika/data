@@ -29,5 +29,4 @@ end)
 
 function grabstein_talk(npc, ch)
     npc_message(npc, ch, "Ayume\n12430-12470\n\nIn Trauer: Saya und Tetse")
-    do_npc_close(npc, ch)
 end

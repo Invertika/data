@@ -56,7 +56,6 @@ function elevator_selphi_timlet_ipsum_house_talk(npc, ch) --- NPC für die Nethe
 		end
 	end
 	
-	do_npc_close(npc, ch)
 end
 
 --- Erzeugt einen NPC für die Netheksäule

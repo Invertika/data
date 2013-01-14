@@ -31,7 +31,6 @@ function bjoern_talk(npc, ch)
       "Prost. Wer? Velera? Joah meine Freundin.",
       "Ja schon wieder ein Sandsturm. Jeden Tag einer...",
       "Willkommen in Roststock. Trink doch was mit.")) 
-     do_npc_close(npc, ch)
 end
 
 function rodhonu_talk(npc, ch)
@@ -71,13 +70,11 @@ function rodhonu_talk(npc, ch)
           "Ich kann gut mit Metallen umgehen.",
           "Wenn du eine Waffe haben willst komm später mal vorbei. Dann bin ich Waffenschmied."))
     end
-    do_npc_close(npc, ch)
 end
 
 function iaugh_talk(npc, ch)
         npc_message(npc, ch, "Ein Reisender aus dem Sandsturm. Was willst du trinken?")
         npc_trade(npc, ch, false, { {30006, 10, 25}, {30007, 10, 60}, {30008, 10, 450} })
         npc_message(npc, ch, "Komm bald wieder.")
-        do_npc_close(npc, ch)
 end
 

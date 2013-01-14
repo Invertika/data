@@ -40,7 +40,6 @@ function sei_talk(npc, ch)
       "Alles was du hier siehst ist streng geheim.",
       "Wir überwachen ganz bestimmte Organisationen.",
       "Ich habe hier das Sagen."))
-    do_npc_close(npc, ch)
 end
 
 function jo_talk(npc, ch)
@@ -50,7 +49,6 @@ function jo_talk(npc, ch)
       "Warten bis zum nächsten Auftrag...",
       "Solltest du nicht für das Essen sorgen...",
       "Ich habe keinen Hunger."))
-    do_npc_close(npc, ch)
 end
 
 function leo_talk(npc, ch)
@@ -60,7 +58,6 @@ function leo_talk(npc, ch)
       "Das schlimme ist, wenn du alles richtig machst merkt es keiner.",
       "Als nächstes müssen die Bandspeicher überprüft werden.",
       "Mist schon wieder abgestürzt."))
-    do_npc_close(npc, ch)
 end
 
 function meg_talk(npc, ch)
@@ -70,7 +67,6 @@ function meg_talk(npc, ch)
       "Jo, wollen wir nach Alexia ein bisschen was einkaufen? Sag mal belauschst du uns etwa?",
       "So Munition verstaut, Waffe geladen und gesäubert. Kann losgehen.",
       "Irgendwie langweilig wenn nichts los ist."))
-    do_npc_close(npc, ch)
 end
 
 function amy_talk(npc, ch)
@@ -80,7 +76,6 @@ function amy_talk(npc, ch)
       "So, noch ein paar Minuten und ich habe alle Daten heruntergeladen.",
       "Dieses Programm könnte uns noch nützlich sein.",
       "Erstaunlich. Wer auch immer das geschrieben hat, hat eine Menge Ahnung."))
-    do_npc_close(npc, ch)
 end
 
 function bert_talk(npc, ch)
@@ -90,7 +85,6 @@ function bert_talk(npc, ch)
       "Server Check für The Mana World wurde vorgenommen, er läuft immer noch auf eAthena.",
       "Webseite von The Mana World unverändert, soweit ich das sehen kann.",
       "Interessante Onlineanzeige."))
-    do_npc_close(npc, ch)
 end
 
 function sascha_talk(npc, ch)
@@ -100,7 +94,6 @@ function sascha_talk(npc, ch)
       "Interessante organische Maps. Das sollten wir auch machen.",
       "Und so füge ich dem Bericht X33/2 die Anmerkung zur genaueren Untersuchung hinzu.",
       "Vielleicht doch nicht so wichtig, aber ich schreibe es mir mal auf."))
-    do_npc_close(npc, ch)
 end
 
 function david_talk(npc, ch)
@@ -110,7 +103,6 @@ function david_talk(npc, ch)
       "Mmmm, der neue Invertika Spot sollte doch längst auf Sendung sein.",
       "Der Darsteller des neusten Manasource basierenden Projektes hat Charisma. Das könnte zu einem Problem werden.",
       "Gut, schauen wir nun mal auf den anderen Kanälen."))
-    do_npc_close(npc, ch)
 end
 
 function jan_talk(npc, ch)
@@ -120,7 +112,6 @@ function jan_talk(npc, ch)
       "Oh, ich sehe, sie haben einige Werbespots.",
       "Aha, eine spezifische Ausrichtung auf ein deutschsprachiges Publikum.",
       "Ziemlich viele Serverausfälle laut dieser Anzeige."))
-    do_npc_close(npc, ch)
 end
 
 function jens_talk(npc, ch)
@@ -130,7 +121,6 @@ function jens_talk(npc, ch)
       "So Punkt 4 und 5 der Checkliste wurden überprüft, auf zu Punkt 6.",
       "Mmm ich kann kein einheitliches System entdecken.",
       "Der Umgang der Community lässt zu wünschen übrig."))
-    do_npc_close(npc, ch)
 end
 
 function lora_talk(npc, ch)
@@ -140,5 +130,4 @@ function lora_talk(npc, ch)
       "Diese Informationen sollten sofort an Sei weitergeleitet werden, das könnte in einem operativen Einsatz münden.",
       "Ah da ist der neue Bericht. Schauen wir mal rein.",
       "Noch 40 Berichte zum lesen. Na dann wollen wir mal..."))
-    do_npc_close(npc, ch)
 end

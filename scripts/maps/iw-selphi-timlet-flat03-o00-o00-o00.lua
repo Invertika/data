@@ -69,7 +69,6 @@ function tresor_talk(npc, ch)
       npc_message(npc, ch, "Der Tresor ist durch die Explosion verzogen und lässt sich nicht mehr öffnen.")
     end
 
-    do_npc_close(npc, ch)
 end
 
 function ceech_talk(npc, ch)
@@ -88,7 +87,6 @@ function ceech_talk(npc, ch)
                 break
             end
         end
-        do_npc_close(npc, ch)
         return
     end
 
@@ -144,5 +142,4 @@ function ceech_talk(npc, ch)
         "Schhhhh.",
         "Hör auf zu stören!"))
     end
-    do_npc_close(npc, ch)
 end

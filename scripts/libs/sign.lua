@@ -29,5 +29,4 @@ end
 
 function sign_read(npc, ch)
   npc_message(npc, ch, signtext[npc])
-  do_npc_close(npc, ch)
 end

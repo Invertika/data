@@ -87,5 +87,4 @@ function wache_trigger(ch, id)
 function wache_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Verschwinden Sie!",
         "Kein Zutritt!"))
-      do_npc_close(npc, ch)
 end

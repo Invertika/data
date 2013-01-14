@@ -77,7 +77,6 @@ function fireworker_talk(npc, ch)
             end)
         end
     end
-    do_npc_close(npc, ch)
 end
 
 function egroe_talk(npc, ch)
@@ -94,7 +93,6 @@ function egroe_talk(npc, ch)
       {20012, 30, 250},
       {20013, 30, 250}
     })
-    do_npc_close(npc, ch)
 end
 
 function thinaima_talk(npc, ch)
@@ -111,7 +109,6 @@ function thinaima_talk(npc, ch)
       {20018, 30, 250},
       {20009, 30, 500} 
     })
-    do_npc_close(npc, ch)
 end
 
 function onurn_talk(npc, ch)
@@ -145,5 +142,4 @@ function onurn_talk(npc, ch)
             break
         end
     end
-    do_npc_close(npc, ch)
 end

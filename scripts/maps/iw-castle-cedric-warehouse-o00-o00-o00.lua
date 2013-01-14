@@ -22,5 +22,4 @@ function trutim_talk(npc, ch)
       "Ich bin für die Lagerung von Waren zuständig.",
       "Nur Personen mit Wohnrecht in Burg Cedric dürfen dieses Lager benutzen."
       ))
-    do_npc_close(npc, ch)
 end

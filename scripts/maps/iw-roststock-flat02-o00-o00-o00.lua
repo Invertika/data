@@ -107,5 +107,4 @@ function icero_talk(npc, ch)
           "Ab und zu nehme ich noch eine Tablette.",
           "Ich versuche mich zu bessern."))
     end
-    do_npc_close(npc, ch)
 end

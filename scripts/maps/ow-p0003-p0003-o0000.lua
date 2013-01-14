@@ -95,5 +95,4 @@ function oughad_talk(npc, ch)
             npc_message(npc, ch, string.format("Du woltest mehr Maden töten. Töte bitte noch %s Maden.", required_kills - (kills - start_kills)))
         end
     end
-    do_npc_close(npc, ch)
 end

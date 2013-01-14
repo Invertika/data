@@ -48,7 +48,6 @@ function betirambo_talk(npc, ch)
         end
     end
     npc_message(npc, ch, "Bis bald")
-    do_npc_close(npc, ch)
 end
 
 function betirambo_update(npc)

@@ -93,7 +93,6 @@ function statue_talk(npc, ch)
         npc_message(npc, ch, "Du darfst passieren.")
         chr_warp(ch, nil, 38 * TILESIZE + 16, 97 * TILESIZE + 16)
     end
-    do_npc_close(npc, ch)
 end
 
 function statue_trigger(ch, id)

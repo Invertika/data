@@ -28,5 +28,4 @@ end)
 
 function schild_talk(npc, ch)
     npc_message(npc, ch, "Bebauen dieser Fläche verboten. Bei Zuwiderhandlung erfolgt Weltuntergang.")
-    do_npc_close(npc, ch)
 end

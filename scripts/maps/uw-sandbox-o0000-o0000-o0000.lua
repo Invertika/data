@@ -69,7 +69,6 @@ game:registerEventPlayerExit(function(my_player)
 
   myguard = create_npc("Guard", 200, 100 * TILESIZE, 100 * TILESIZE, function(npc, ch)
       npc_message(npc, ch, "bla!")
-      do_npc_close(npc, ch)
   end, nil)
   guard.create_player_hunter(myguard, 500, 32, 5 * TILESIZE, 1000, 10, 9999, DAMAGE_PHYSICAL, 1)
 end)
@@ -251,18 +250,15 @@ function poker_dealer_talk(npc, ch)
             end
         end
     end
-    do_npc_close(npc, ch)
 end
 
 function scorpion_talk(npc, ch)
     schedule_in(5, function() being_say(npc, "BUH!") end)
     npc_message(npc, ch, "Ich werde gewinnen!")
-    do_npc_close(npc, ch)
 end
 
 function zelan_talk(npc, ch)
     npc_message(npc, ch, "Wo du bist? Im Vacare. Jeder neue kommt hier her bevor es raus geht in die große Welt. Also pass auf dich auf.")
-    do_npc_close(npc, ch)
 end
 
 function alaria_talk(npc, ch)
@@ -276,7 +272,6 @@ function alaria_talk(npc, ch)
       npc_message(npc, ch, "Hmm, something went wrong... Ask a scripter to fix this!")
     end
     
-    do_npc_close(npc, ch)
 end
 
 --- Falle auslösen
@@ -335,7 +330,6 @@ function emote_talk(npc, ch)
   elseif (v == 3) then
     emo_state = EMOTE_SURPRISE
   end
-  do_npc_close(npc, ch)
 end
 
 function emote_update(npc)
@@ -350,14 +344,12 @@ function int_test_talk(npc, ch)
     npc_message(npc, ch, "Enter a number (50-100)")
     number = do_ask_integer(npc, ch, 50, 100, 75)
     npc_message(npc, ch, string.format("You have entered %d ", number))
-    do_npc_close(npc, ch)
 end
 
 function string_test_talk(npc, ch)
     npc_message(npc, ch, "Enter a string")
     input = do_ask_string(npc, ch)
     npc_message(npc, ch, string.format("You have entered '%s' Nice choice ! ", input))
-    do_npc_close(npc, ch)
 end
 
 function patrol_waypoint(obj, id)
@@ -493,7 +485,6 @@ function npc1_talk(npc, ch)
     print("---------------");
   end
   npc_message(npc, ch, "See you later!")
-  do_npc_close(npc, ch)
 end
 
 function npc4_talk(npc, ch)
@@ -512,7 +503,6 @@ function npc4_talk(npc, ch)
       end
     end
   end
-  do_npc_close(npc, ch)
 end
 
 function npc5_talk(npc, ch)
@@ -532,14 +522,12 @@ function npc5_talk(npc, ch)
     on_death(m4, function() being_say(npc, "Leave my scorpions alone!") end)
     on_death(m4, function() being_say(m4, "AAARGH!") end)
   end
-  do_npc_close(npc, ch)
 end
 
 local guard_position = 1
 
 function npc6_talk(npc, ch)
   npc_message(npc, ch, "I'm moving....")
-  do_npc_close(npc, ch)
 
   if guard_position == 1 then
     being_walk(npc, 61 * TILESIZE + 16, 15 * TILESIZE + 16, 2.5)
@@ -566,7 +554,6 @@ end
 
 function firedemon_talk(npc, ch)
   npc_message(npc, ch, "Burn, puny mortals! BURN! BUUUURN!!!")
-  do_npc_close(npc, ch)
 end
 
 local firedemon_timer = 0;
@@ -603,7 +590,6 @@ function post_talk(npc, ch)
   if answer == 2 then
     do_post(npc, ch)
   end
-  do_npc_close(npc, ch)
 end
 
 function fireworker_talk(npc, ch)
@@ -618,7 +604,6 @@ function fireworker_talk(npc, ch)
         end)
       end
   end
-  do_npc_close(npc, ch)
 end
 
 function axetrainer_talk(npc, ch)
@@ -637,19 +622,16 @@ function axetrainer_talk(npc, ch)
     message = message.." I should really stop doing this when the server goes live."
     npc_message(npc, ch, message)
   end
-  do_npc_close(npc, ch)
 end
 
 function plague_talk(npc, ch)
   npc_message(npc, ch, "I don't feel so good...")
-  do_npc_close(npc, ch)
   being_apply_status(ch, 1, 6000) -- Give plauge for 6000 ticks (I.E. 10 minutes)
 end
 
 function jump_status_talk(npc, ch)
   being_apply_status(ch, 2, 6000) -- Give jumping bug
   npc_message(npc, ch, "Now you have the jumping bug")
-  do_npc_close(npc, ch)
 end
 
 function monster_spawn_talk(npc, ch)
@@ -706,7 +688,6 @@ function healer_talk(npc, ch)
         being_heal(ch, 100)
     end
     
-    do_npc_close(npc, ch)
 end
 
 function debugger_talk(npc, ch)
@@ -717,7 +698,6 @@ function debugger_talk(npc, ch)
         local id = do_ask_integer(npc, ch, 0, 9999, 0)
         effect_create(id, ch)
     end
-    do_npc_close(npc, ch)
 end
 
 function speedy_talk(npc, ch)
@@ -734,7 +714,6 @@ function speedy_talk(npc, ch)
             break
         end
     end
-    do_npc_close(npc, ch)
 end
 
 function timel_talk(npc, ch)
@@ -745,5 +724,4 @@ function timel_talk(npc, ch)
     npc_message(npc, ch, string.format("1. Zeit %d", time1))
     npc_message(npc, ch, string.format("2. Zeit %d", time2))
     npc_message(npc, ch, string.format("Differenz %d", diff))
-    do_npc_close(npc, ch)
 end

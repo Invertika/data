@@ -26,5 +26,4 @@ function vervtia_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Willkommen in unserem bescheidenen Häuschen.",
       "Mein Mann ist gerade draußen.",
       "Die Arbeit ist hart. Aber man kommt über die Runden."))
-    do_npc_close(npc, ch)
 end

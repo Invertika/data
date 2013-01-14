@@ -67,7 +67,6 @@ function priscilla_talk(npc, ch)
     elseif quest_var == 2 then
         npc_message(npc, ch, "Sieht die Statue nicht schön aus mit der Blume?")
     end
-    do_npc_close(npc, ch)
 end
 
 function burgermeister_talk(npc, ch)

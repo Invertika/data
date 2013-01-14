@@ -180,10 +180,8 @@ function npc_start(npc, ch)
     end
   end
   -- coroutine.resume(w)
-  -- do_npc_close(npc, ch)
 end
 
-function do_npc_close(npc, ch)
     npc_end(npc, ch)
 end
 

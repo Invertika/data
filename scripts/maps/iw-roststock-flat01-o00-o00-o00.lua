@@ -29,5 +29,4 @@ function velera_talk(npc, ch)
       "Mein Freund Björn ist schon wieder nicht hier...",
       "Ich bin Velera. Wie bitte? Ja ich bin vergeben.",
       "Heute ist mal wieder einer dieser seltsamen Tage.")) 
-    do_npc_close(npc, ch)
 end

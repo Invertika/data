@@ -38,7 +38,6 @@ end)
 
 function wache_talk(npc, ch)
     npc_message(npc, ch, "Hier kommt man nur mit VIP-Karte rein!")
-    do_npc_close(npc, ch)
 end
 
 function get_wache_say()
@@ -109,7 +108,6 @@ function estech_talk(npc, ch)
     else
         npc_message(npc, ch, "Komm zu mir rauf wenn du mit mir sprechen willst!")
     end
-    do_npc_close(npc, ch)
 end
 
 -- RANK_SURPLUS_AT_KILL = 5
@@ -118,7 +116,6 @@ end
 -- pvm_fight = nil
 -- 
 -- function commentator_talk(npc, ch)
-    -- do_npc_close(npc, ch)
 -- end
 -- 
 -- function commentator_say(text)
@@ -179,7 +176,6 @@ end
     -- else
         -- 
     -- end
-    -- do_npc_close(npc, ch)
 -- end
 -- 
 -- function entrance_trigger(being, id)

@@ -70,5 +70,4 @@ function blyther_talk(npc, ch)
           "Mein Bruder und ich hassen uns.",
           "Wir reden schon ewig nicht mehr miteinader."))
     end
-    do_npc_close(npc, ch)
 end

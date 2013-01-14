@@ -92,7 +92,6 @@ function nalaf_talk(npc, ch)
         npc_message(npc, ch, "Zur Zeit habe ich keine weiteren Aufgaben für dich.")
     end
 
-    do_npc_close(npc, ch)
 end
 
 
@@ -100,5 +99,4 @@ function warves_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
       "Vorsicht mit den Reagenzgläsern!",
       "Wir experimentieren hier mit neuen Mitteln.")) -- TODO: Mehr Varianten
-    do_npc_close(npc, ch)
 end

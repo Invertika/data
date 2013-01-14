@@ -113,5 +113,4 @@ function hobel_talk(npc, ch)
     elseif quest_var == 5 then
         npc_message(npc, ch, "Hallo")
     end
-    do_npc_close(npc, ch)
 end

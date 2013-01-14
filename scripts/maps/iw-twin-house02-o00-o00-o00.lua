@@ -90,5 +90,4 @@ function rocer_talk(npc, ch)
           "Wir hassen uns seit wir auf der Welt sind!",
           "Ich bin als erstes geboren!"))
     end
-    do_npc_close(npc, ch)
 end

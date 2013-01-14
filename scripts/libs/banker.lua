@@ -62,7 +62,6 @@ function bank_get_account_balance_dlg(npc, ch)
 	acc_bal=math.floor( acc_bal * 100) / 100  -- Runden auf zwei Nachkommastellen
 	
 	npc_message(npc, ch, "Dein Guthaben beläuft sich auf "..tostring(acc_bal).." Aki. Seit dem letzten Mal hast du "..tostring(acc_diff).." Aki an Zinsen erhalten.")
-	do_npc_close(npc, ch)
 end
 
 -- Diese Funktion liefert einen Dialog zum Einzahlen von Geld auf das Bankkonto.
@@ -81,7 +80,6 @@ function bank_pay_money_to_account_dlg(npc, ch, money)
 	else
 		npc_message(npc, ch, "Soviel Geld hast du nicht!")	
 	end
-	do_npc_close(npc, ch)
 end
 
 -- Diese Funktion liefert einen Dialog zum Auszahlen von Geld vom Bankkonto.
@@ -99,7 +97,6 @@ function bank_get_money_from_account_dlg(npc, ch, money)
 	else
 		npc_message(npc, ch, "Soviel Guthaben hast du nicht!")
 	end
-	do_npc_close(npc, ch)
 end
 
 -- Diese Funktion liefert einen Dialog plus NPC namens Banker welcher die Bankgeschäfte mit dem Spieler abwickelt.
@@ -301,5 +298,4 @@ function banker_talk(npc, ch)
 		break
 	end
   end
-  do_npc_close(npc, ch)
 end

@@ -36,5 +36,4 @@ function nomo_talk(npc, ch)
         chr_warp(ch,  61, 3936, 3488) 
         npc_message(npc, ch, "Du bist in Besitz des Schlüssels. Willkommen auf der dunklen Seite. Die Kekse liegen im Haus.")
     end
-    do_npc_close(npc, ch)
 end

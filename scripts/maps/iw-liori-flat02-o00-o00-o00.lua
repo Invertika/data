@@ -27,7 +27,6 @@ function hatsuli_talk(npc, ch)
       "Immer muss ich das gleiche sagen.",
       "Niemand fragt mich warum. Alle denken das muss so.",
       "Ja und das nur wegen diesem Spinat."))
-    do_npc_close(npc, ch)
 end
 
 function eldachi_talk(npc, ch)
@@ -35,5 +34,4 @@ function eldachi_talk(npc, ch)
       "Früher wollte ich immer eines von diesen Telefonen haben.",
       "Ach hätte ich doch nur ein Klavier.",
       "Irgendwoher kenne ich dich..."))
-    do_npc_close(npc, ch)
 end

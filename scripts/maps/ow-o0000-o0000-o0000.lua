@@ -156,7 +156,6 @@ function weihnachtsmann_talk(npc, ch)
       "Danke für deine großartige Hilfe."))
     end
 
-    do_npc_close(npc, ch)
 end
 
 function rentier_talk(npc, ch)
@@ -164,7 +163,6 @@ function rentier_talk(npc, ch)
         "Bsssss.",
         "Brrrrrr.",
         "Schnauf."))
-    do_npc_close(npc, ch)
 end
 
 -- Silvester
@@ -193,7 +191,6 @@ function fireworker_talk(npc, ch)
         end)
       end
   end
-  do_npc_close(npc, ch)
 end
 
 -- Normale Events
@@ -223,12 +220,10 @@ end
 
 function elmo_talk(npc, ch)
     npc_message(npc, ch, "Willkommen in Selphi Timlet, der Stadt in der Wüste. Sei nett zu den anderen und habe viel Spaß!")
-    do_npc_close(npc, ch)
 end
 
 function sam_talk(npc, ch)
     npc_message(npc, ch, "Hi ich bin Sam und ich bin auf der Suche nach der Antwort...")
-    do_npc_close(npc, ch)
 end
 
 function julia_talk(npc, ch)
@@ -250,12 +245,10 @@ function julia_talk(npc, ch)
             break
         end
     end
-    do_npc_close(npc, ch)
 end
 
 function jane_talk(npc, ch)
     npc_message(npc, ch, string.format("Wie spät es ist? Ähm es ist %s Uhr. Und bevor du fragst, heute ist der %s im übrigen ist das ein %s.", datetime.get_current_time(), datetime.get_current_date(), datetime.get_current_weekday()))
-    do_npc_close(npc, ch)
 end
 
 function bruce_talk(npc, ch)
@@ -349,7 +342,6 @@ function bruce_talk(npc, ch)
     npc_message(npc, ch, "Ich habe momentan keine Aufgabe für dich.")
   end
 
-  do_npc_close(npc, ch)
 end
 
 function felix_talk(npc, ch)
@@ -409,7 +401,6 @@ function felix_talk(npc, ch)
           "Der Frosch wurde rot, denn er war tot.",
           "Fische füttern fördert den Verstand."))
     end
-      do_npc_close(npc, ch)
 end
 
 function saria_talk(npc, ch)
@@ -419,7 +410,6 @@ function saria_talk(npc, ch)
       "Alle meine Skorpione, sind in der Wüste.",
       "Ich liebe Städte mit Mauern.",
       "Ich würde mal gerne zum Meer."))
-      do_npc_close(npc, ch)
 end
 
 function nobur_talk(npc, ch)
@@ -486,7 +476,6 @@ function nobur_talk(npc, ch)
     end
 
     end
-    do_npc_close(npc, ch)
 end
 
 function alex_talk(npc, ch)
@@ -496,7 +485,6 @@ function alex_talk(npc, ch)
       "Ich halte es nicht mehr aus, aber hier bin ich sicher.",
       "Siehst du ihn? Ich sehe ihn überall, hinter jeder Ecke.",
       "Gehörst du zu ihm? Wenn ja dann verschwinde!"))
-      do_npc_close(npc, ch)
 end
 
 function inard_talk(npc, ch)
@@ -556,7 +544,6 @@ function inard_talk(npc, ch)
     else
         npc_message(npc, ch, invertika.get_random_element("Ach ja... Ich mach erstmal ne Pause.", "Danke für die Hilfe.", "Genug trainiert."))
     end
-    do_npc_close(npc, ch)
 end
 
 function belart_talk(npc, ch)
@@ -566,7 +553,6 @@ function belart_talk(npc, ch)
       "Du siehst aus als wenn du neu hier bist. Willkommen in Selphi Timlet.",
       "Ich kannte mal jemanden der sah fast so aus wie du. Aber das ist lange her.",
       "Mein Name ist Belart und ich komme aus Narva. Und du?"))
-      do_npc_close(npc, ch)
 end
 
 function imangi_talk(npc, ch)
@@ -604,7 +590,6 @@ function imangi_talk(npc, ch)
         "Ich kenne dich nicht, also will ich auch nix mit dir zu tun haben.",
         "Nein, nein, nein und nochmal nein."))
     end
-      do_npc_close(npc, ch)
 end
 
 function ortana_talk(npc, ch)
@@ -655,7 +640,6 @@ function ortana_talk(npc, ch)
            "Das erste Mal sah ich das Colloseum vor 6 Jahren. Das war kurz nachdem es mich nach Selphi Timlet zog."))
     end
 
-    do_npc_close(npc, ch)
 end
 
 function tonver_talk(npc, ch)
@@ -665,7 +649,6 @@ function tonver_talk(npc, ch)
       "Das nächste Mal gewinne ich ganz bestimmt.",
       "Wenn ich 5 Aki setze und gewinne dann habe ich danach ein paar Aki mehr. Glaube ich...",
       "Alles weg... Schon wieder... Aber beim nächsten mal... Da gewinne ich..."))
-      do_npc_close(npc, ch)
 end
 
 function elmes_talk(npc, ch)
@@ -677,7 +660,6 @@ function elmes_talk(npc, ch)
       "Sei vorsichtig wenn du dich durch die große Wüste begibst."))
     -- Hinweis auf Torbögen => Quest freischalten
     invertika.init_quest_status(ch, "selphi_timlet_archway_quest")
-    do_npc_close(npc, ch)
 end
 
 function nepuret_talk(npc, ch)
@@ -687,7 +669,6 @@ function nepuret_talk(npc, ch)
       "Nein, ich stehe hier nicht zum Spaß. Ich achte darauf das niemand gefährliches sich diesem Haus nähert.",
       "Man muss immer achtsam sein, sonst ist man plötzlich weg vom Fenster.",
       "Ich diene bereits seit vielen Jahren als persönliche Wache von Averin."))
-      do_npc_close(npc, ch)
 end
 
 function nero_talk(npc, ch)
@@ -697,7 +678,6 @@ function nero_talk(npc, ch)
       "Averin... la la la - Frag dort!",
       "Ich habe es mit dem Feuer... ich kann nicht von ihm lassen.",
       "Averin ist die Person mit der du reden solltest, nicht ich!"))
-      do_npc_close(npc, ch)
 end
 
 function colloseumwache_talk(npc, ch)
@@ -706,7 +686,6 @@ function colloseumwache_talk(npc, ch)
       "Aergius war ein großer Kämpfer, bis er fort ging.",
       "Achte auf deine Deckung, sonst kann es dich ganz böse erwischen.",
       "Du siehst stark aus, vielleicht könntest du ein Kämpfer werden?"))
-      do_npc_close(npc, ch)
 end
 
 function bankwache_talk(npc, ch)
@@ -715,7 +694,6 @@ function bankwache_talk(npc, ch)
       "Wir passen auf das niemand in die Bank einbricht.",
       "Dank uns gab es noch nie einen Einbruch in der Zentralbank.",
       "Denk immer daran: Wir behalten dich im Auge."))
-      do_npc_close(npc, ch)
 end
 
 function stadtwache_talk(npc, ch)
@@ -793,14 +771,12 @@ function stadtwache_talk(npc, ch)
                                           required_kills, monster_data.name)
                    )
     end
-    do_npc_close(npc, ch)
 end
 
 function palastwache_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Zutritt nur mit königlichen Passierschein!",
       "Du benötigst einen königlichen Passierschein um den Palast zu betreten.",
       "Ohne königlichen Passierschein kein Zutritt!"))
-      do_npc_close(npc, ch)
 end
 
 function bernie_talk(npc, ch)
@@ -844,7 +820,6 @@ function bernie_talk(npc, ch)
             break
         end
     end
-    do_npc_close(npc, ch)
 end
 
 function valeria_talk(npc, ch)
@@ -886,7 +861,6 @@ function valeria_talk(npc, ch)
             break
         end
     end
-    do_npc_close(npc, ch)
 end
 
 function amulet_trigger(ch, args)
@@ -943,7 +917,6 @@ function lidi_talk(npc, ch)
         npc_message(npc, ch, "... sie ist weg. Weeeg! Wie soll ich mich jetzt nur wieder unter die Leute wagen?")
         set_qstatus(0)
     end
-    do_npc_close(npc, ch)
 end
 
 function warp_escape_tunnel(obj, arg)

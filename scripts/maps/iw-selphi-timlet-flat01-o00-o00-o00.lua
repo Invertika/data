@@ -131,5 +131,4 @@ function goron_talk(npc, ch)
             npc_message(npc, ch, "Tut mir Leid. Ihre Bestellung ist noch nicht fertig. Kommen Sie später noch einmal vorbei.")
         end
     end
-    do_npc_close(npc, ch)
 end

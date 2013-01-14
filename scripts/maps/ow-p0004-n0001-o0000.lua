@@ -107,7 +107,6 @@ function stadtwache_talk(npc, ch)
  "Kein Zugang für Minderjährige! Und nein, auch nicht für Volljährige!",
  "Wer eintritt wird eines grausamen und schmerzhaften Todes bestraft. So oder so.",
  "Wieso sollte wer da rein wollen? Sind doch eh schon alle tot..."))
- do_npc_close(npc, ch)
 end
 
 --- Stadtwache Trigger

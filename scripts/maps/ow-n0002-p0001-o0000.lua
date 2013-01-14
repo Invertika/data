@@ -38,18 +38,15 @@ end)
 
 function gabriel_talk(npc, ch)
     npc_message(npc, ch, "Ich bin Totengräber und habe schon lange keine neuen Aufträge mehr bekommen. Warum mussten auch die Untoten über die Stadt kommen. Mir tun sie komischerweise nichts. Vielleicht, weil ich Ihre Gräber schon seit langem pflege? Manchmal habe ich das Gefühl, sie wollen mit mir sprechen, aber wenn ich zu ihnen gehe und versuche ihnen zuzuhören, stammeln sie nur unverständliches Gemurmel.")
-    do_npc_close(npc, ch)
 end
 
 function patrick_talk(npc, ch)
     npc_message(npc, ch, "Hallo Fremder, willkommen in Qakari. Sei aber vorsichtig in der Umgebung dieser Stadt; die Untoten reagieren Fremden gegenüber nicht sehr freundlich. Solltest du den Mut haben in die Stadt zu gehen, sei noch vorsichtiger. Auch wenn sie schon gestorben sind, haben sie etwas dagegen, wenn die Gräber von unbekannten Personen besucht werden.")
-    do_npc_close(npc, ch)
 end
 
 
 function peter_talk(npc, ch)
     npc_message(npc, ch, "Ich erinnere mich noch, als wäre es gestern gewesen, als ich hier mit meinem Bruder aufgewachsen bin. Warum ist er nur so früh gestorben? Seit er untot ist, kann ich mich nicht mehr richtig mit ihm unterhalten.")
-    do_npc_close(npc, ch)
 end
 
 
@@ -57,5 +54,4 @@ function maximilian_talk(npc, ch)
     npc_message(npc, ch, "Ich frage mich schon lange, wie man untot wird. Die Untoten selber wollen oder können es nicht verraten und in meinen Zauberbüchern steht es nicht drin.")
     npc_message(npc, ch, "Hmm...")
     npc_message(npc, ch, "Vielleicht liegt es daran, dass ich die Bücher von einem eigenartigem Mann abgekauft habe, der hier mal vorbeikam. Bisher hat noch kein Zauber daraus geklappt. Aber ich habe auch noch nie einen Beweis gesehen, dass je ein Zauber auf Amoneus funktioniert hat. Erzählen können sich die Leute viel.")
-    do_npc_close(npc, ch)
 end

@@ -42,7 +42,6 @@ function robert_talk(npc, ch)
                                                      "Paragraph 16, königliches Steuergesetz: Milch wird mit 4% des normalen Steuersatzes versteuert.",
                                                      "Das schlimme an Steuergesetzen ist, dass sie keinen Sinn machen...",
                                                      "Ich glaube meine Beratung wird mit 7% versteuert."))
-    do_npc_close(npc, ch)
 end
 
 function issen_talk(npc, ch)
@@ -110,7 +109,6 @@ function issen_talk(npc, ch)
         npc_message(npc, ch, "blubb")
     end
 
-    do_npc_close(npc, ch)
 end
 
 function key_trigger(ch, id)

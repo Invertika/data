@@ -28,5 +28,4 @@ function kaler_talk(npc, ch)
     npc_trade(npc, ch, false, {
       {30037, 5, 40}
     })
-    do_npc_close(npc, ch)
 end

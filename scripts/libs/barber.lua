@@ -67,7 +67,6 @@ function barber1_talk(npc, ch, data)
     -- Nothing to show? Then we can return
     if #color_ids == 0 and #style_ids == 0 then
         return -- Since we haven't shown any windows, we can safely
-               -- return without a do_npc_close
     end
 
     local result = 0
@@ -156,7 +155,6 @@ function barber1_talk(npc, ch, data)
 
     -- Let's close up
     npc_message(npc, ch, "Thank you. Come again!")
-    do_npc_close(npc, ch)
 end
 
 -- Frisörfunktion -> Invertika
@@ -260,5 +258,4 @@ function barber2_talk(npc, ch)
             break
         end
     end
-    do_npc_close(npc, ch)
 end

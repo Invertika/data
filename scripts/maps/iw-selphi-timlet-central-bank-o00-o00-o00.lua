@@ -58,11 +58,9 @@ function wache_trigger(ch, id)
 function wache_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Zutritt nur für Mitarbeiter.",
         "Sie sind kein Mitarbeiter der Zentralbank."))
-      do_npc_close(npc, ch)
 end
 
 function mertox_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Zur Zeit gibt es keine Wirtschaftskenngrößen.",
         "Kommen sie später wieder."))
-      do_npc_close(npc, ch)
 end
