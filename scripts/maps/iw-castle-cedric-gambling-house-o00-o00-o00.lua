@@ -33,7 +33,7 @@ atinit(function()
     npc_create("Roulette", 1, GENDER_UNSPECIFIED, 31 * TILESIZE + 16, 29 * TILESIZE + 16, roulette.roulette_talk, nil)
 end)
 
-function daniel_talk(npc, ch)
+local function daniel_talk(npc, ch)
     npc_message(npc, ch, "Moin. Was wollen sie?")
     while true do
         local v = npc_choice(npc, ch,

@@ -22,7 +22,7 @@ atinit(function()
     npc_create("Naltiae", 22, GENDER_UNSPECIFIED, 27 * TILESIZE + 16, 36 * TILESIZE + 16, naltia_talk, nil)
 end)
 
-function naltia_talk(npc, ch)
+local function naltia_talk(npc, ch)
     npc_message(npc, ch, "Möchtest du Medizin kaufen?")
     while true do
         local v = npc_choice(npc, ch, "Ja",

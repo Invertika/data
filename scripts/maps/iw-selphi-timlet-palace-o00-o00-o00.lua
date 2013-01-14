@@ -22,11 +22,11 @@ atinit(function()
     npc_create("Krenel", 54, GENDER_UNSPECIFIED, 41 * TILESIZE + 16, 56 * TILESIZE + 16, krenel_talk, nil) --- Krenel
 end)
 
-function luor_talk(npc, ch)
+local function luor_talk(npc, ch)
     invertika.init_quest_status(ch, "selphi_timlet_vipcard")
 
-    function get_qstatus() return invertika.get_quest_status(ch, "selphi_timlet_vipcard") end
-    function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_vipcard", x) end
+    local function get_qstatus() return invertika.get_quest_status(ch, "selphi_timlet_vipcard") end
+    local function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_vipcard", x) end
 
     if get_qstatus() == 3 then
         if chr_inv_count(ch, 40027) == 1 then
@@ -50,7 +50,7 @@ function luor_talk(npc, ch)
     end
 end
 
-function krenel_talk(npc, ch)
+local function krenel_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Wir müssen Aktivität vortäuschen...",
       "Aktivität simulieren... Also steh hier nicht rum. Los, hop hop!",
       "Ich täusche Aktivität vor, also schau nicht so und mache das gleiche.",

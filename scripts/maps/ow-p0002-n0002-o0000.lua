@@ -29,7 +29,7 @@ atinit(function()
   npc_create("Statue", 1, GENDER_UNSPECIFIED, 36 * TILESIZE + 16, 93 * TILESIZE + 16, statue_talk, nil)
 end)
 
-function statue_talk(npc, ch)
+local function statue_talk(npc, ch)
     queststring = "monument-of-bugfixer-entry-statue-quest"
     queststring_killed = "monument-of-bugfixer-entry-statue-quest-killed"
     queststring_needed = "monument-of-bugfixer-entry-statue-quest-needed"
@@ -95,7 +95,7 @@ function statue_talk(npc, ch)
     end
 end
 
-function statue_trigger(ch, id)
+local function statue_trigger(ch, id)
     if being_type(ch) == TYPE_CHARACTER then
         chat_message(ch, "Ab hier beginnt das Denkmal des großen Fehlerbehebers.")
         chat_message(ch, "Du darfst erst passieren, sobald du dich als würdig erwiesen hast!")

@@ -71,7 +71,7 @@ atinit(function()
     --invertika.schedule_every_day(18, 00, 00, firework_round)
 end)
 
-function create_chris()
+local function create_chris()
     local d = os.date("*t")
     local create_chris_on_fields_time = os.time{year=d.year, month=d.month, day=12,
                           hour=0, min=00, sec=0}
@@ -82,7 +82,7 @@ function create_chris()
     end
 end
 
-function diem_talk(npc, ch)
+local function diem_talk(npc, ch)
     npc_trade(npc, ch, false, {
       {10001, 30, 50},
       {10013, 30, 140},
@@ -102,7 +102,7 @@ function diem_talk(npc, ch)
     })
 end
 
-function chris_talk(npc, ch)
+local function chris_talk(npc, ch)
 
     local queststring_lazy = "castle_cedric_lazy_chris_quest"
     local queststring_ice = "castle_cedric_chris_ice_quest"
@@ -173,7 +173,7 @@ function chris_talk(npc, ch)
     
 end
 
-function estjdian_talk(npc, ch)
+local function estjdian_talk(npc, ch)
 
     local queststring = "castle_cedric_lazy_chris_quest"
     --Init Quest
@@ -237,19 +237,19 @@ function estjdian_talk(npc, ch)
     end
 end
 
-function wache_bank_talk(npc, ch)
+local function wache_bank_talk(npc, ch)
     --TODO bessere Texte
     npc_message(npc, ch, "Wir bewachen die Bank.")
 end
 
-function wache_casino_talk(npc, ch)
+local function wache_casino_talk(npc, ch)
     --TODO bessere Texte
     npc_message(npc, ch, invertika.get_random_element("Ich bewache das Kasino.",
       "Glücksspiel kann süchtig machen.",
       "Ohne uns Wachen würde die Stadt im Chaos versinken!"))
 end
 
-function wache_talk(npc, ch)
+local function wache_talk(npc, ch)
     local quest_string = "burg_cedric_guard_macguffin"
     invertika.init_quest_status(ch, quest_string)
     local q_status = invertika.get_quest_status(ch, quest_string)
@@ -282,7 +282,7 @@ function wache_talk(npc, ch)
     end
 end
 
-function wache_trigger(ch, id)
+local function wache_trigger(ch, id)
     local quest_string = "burg_cedric_guard_macguffin"
     invertika.init_quest_status(ch, quest_string)
     local q_status = invertika.get_quest_status(ch, quest_string)
@@ -300,11 +300,11 @@ function wache_trigger(ch, id)
     end
 end
 
-function wache_cache_trigger(ch, id)
+local function wache_cache_trigger(ch, id)
     invertika.init_quest_status(ch, "burg_cedric_guard_macguffin")
 end
 
-function firework_round()
+local function firework_round()
     local c = 1
     while c < 50 do
         spawn_effect()
@@ -319,18 +319,18 @@ function firework_round()
     end
 end
 
-function spawn_effect()
+local function spawn_effect()
     effect_create(math.random(0, 25),
                        math.random(44 * TILESIZE, 159 * TILESIZE),
                        math.random(77 * TILESIZE, 133 * TILESIZE))
 end
 
-function cedric_talk(npc, ch)
+local function cedric_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Ich bin Graf Cedric.",
       "Fühle dich in meiner Burg wie zu Hause."))
 end
 
-function cedric_speech()
+local function cedric_speech()
     local speech = {
       "Heute haben wir uns versammelt, um den Wiederaufbau der Burg Cedric zu feiern.",
       "Vor nicht allzu langer Zeit wurde unser gemeinsames Heim von einer Flutwelle überschwemmt.",
@@ -356,7 +356,7 @@ function cedric_speech()
     end
 end
 
-function palastwache_talk(npc, ch)
+local function palastwache_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Wir bewachen den Palast Cedric´s.",
       "Im Haus hinter uns wohnt Cedric und seine Frau Ormylt"))
 end

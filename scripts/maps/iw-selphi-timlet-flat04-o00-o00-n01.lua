@@ -20,7 +20,7 @@ atinit(function()
     trigger_create(45 * TILESIZE, 23 * TILESIZE, 1 * TILESIZE, 1 * TILESIZE, warp_escape_tunnel2, 0, true)
 end)
 
-function warp_escape_tunnel2(obj, arg)
+local function warp_escape_tunnel2(obj, arg)
     if(being_type(obj)==TYPE_CHARACTER) then
         chr_warp(obj, 20188, 8 * TILESIZE + 16, 14 * TILESIZE + 16)
     end

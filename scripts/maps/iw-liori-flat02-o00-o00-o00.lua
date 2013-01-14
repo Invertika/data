@@ -22,14 +22,14 @@ atinit(function()
     npc_create("Eldachi", 142, GENDER_UNSPECIFIED, 13 * TILESIZE + 16, 22 * TILESIZE + 16, eldachi_talk, nil) --- Eldachi
 end)
 
-function hatsuli_talk(npc, ch)
+local function hatsuli_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
       "Immer muss ich das gleiche sagen.",
       "Niemand fragt mich warum. Alle denken das muss so.",
       "Ja und das nur wegen diesem Spinat."))
 end
 
-function eldachi_talk(npc, ch)
+local function eldachi_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
       "Früher wollte ich immer eines von diesen Telefonen haben.",
       "Ach hätte ich doch nur ein Klavier.",

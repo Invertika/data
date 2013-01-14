@@ -26,6 +26,6 @@ atinit(function()
  npc_create("Schild", 1, GENDER_UNSPECIFIED, 88 * TILESIZE + 16, 145 * TILESIZE + 16, schild_talk, nil) --- Schild
 end)
 
-function schild_talk(npc, ch)
+local function schild_talk(npc, ch)
     npc_message(npc, ch, "Bebauen dieser Fläche verboten. Bei Zuwiderhandlung erfolgt Weltuntergang.")
 end

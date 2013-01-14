@@ -32,15 +32,15 @@ atinit(function()
 
 end)
 
-function explosion()
+local function explosion()
     effect_create(5, 41 * TILESIZE + 16, 37 * TILESIZE + 16)
 end
 
-function nalaf_talk(npc, ch)
+local function nalaf_talk(npc, ch)
     local quest_string = "narva_laboratory_nalaf_quest"
     invertika.init_quest_status(ch, quest_string)
-    function get_qstatus() return invertika.get_quest_status(ch, quest_string) end
-    function set_qstatus(x) invertika.set_quest_status(ch, quest_string, x) end
+    local function get_qstatus() return invertika.get_quest_status(ch, quest_string) end
+    local function set_qstatus(x) invertika.set_quest_status(ch, quest_string, x) end
 
     if get_qstatus() == 0 then
         npc_message(npc, ch, "Willkommen in unserem Labor. Fass bitte nichts an.")
@@ -95,7 +95,7 @@ function nalaf_talk(npc, ch)
 end
 
 
-function warves_talk(npc, ch)
+local function warves_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
       "Vorsicht mit den Reagenzgläsern!",
       "Wir experimentieren hier mit neuen Mitteln.")) -- TODO: Mehr Varianten

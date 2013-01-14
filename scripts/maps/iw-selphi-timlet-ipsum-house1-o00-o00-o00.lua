@@ -22,7 +22,7 @@ atinit(function()
  npc_create("Nomo", 20, GENDER_UNSPECIFIED, 48 * TILESIZE + 16, 23 * TILESIZE + 16, nomo_talk, nil) --- Nomo
 end)
 
-function nomo_talk(npc, ch)
+local function nomo_talk(npc, ch)
     local count = chr_inv_count(ch, 40010) 
     
     if count < 1 then

@@ -37,14 +37,14 @@ atinit(function()
     npc_create("Issen", 146, GENDER_UNSPECIFIED, 139 * TILESIZE + 16, 113 * TILESIZE + 16, issen_talk, nil) --- Issen
 end)
 
-function robert_talk(npc, ch)
+local function robert_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Ich bin Steuerberater.",
                                                      "Paragraph 16, königliches Steuergesetz: Milch wird mit 4% des normalen Steuersatzes versteuert.",
                                                      "Das schlimme an Steuergesetzen ist, dass sie keinen Sinn machen...",
                                                      "Ich glaube meine Beratung wird mit 7% versteuert."))
 end
 
-function issen_talk(npc, ch)
+local function issen_talk(npc, ch)
     local queststring = "lauria_losed_key_quest"
     local queststring_time = "lauria_losed_key_quest_time"
     
@@ -111,7 +111,7 @@ function issen_talk(npc, ch)
 
 end
 
-function key_trigger(ch, id)
+local function key_trigger(ch, id)
     if being_type(ch) == TYPE_CHARACTER then
         local queststring = "lauria_losed_key_quest"
         --Init Quest

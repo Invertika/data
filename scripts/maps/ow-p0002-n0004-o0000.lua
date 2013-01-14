@@ -24,7 +24,7 @@ atinit(function()
  npc_create("Kaler", 36, GENDER_UNSPECIFIED, 79 * TILESIZE + 16, 136 * TILESIZE + 16, kaler_talk, nil)
 end)
 
-function kaler_talk(npc, ch)
+local function kaler_talk(npc, ch)
     npc_trade(npc, ch, false, {
       {30037, 5, 40}
     })

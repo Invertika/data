@@ -27,7 +27,7 @@ atinit(function()
  npc_create("Oughad", 46, GENDER_UNSPECIFIED, 73 * TILESIZE + 16, 119 * TILESIZE + 16, oughad_talk, nil)
 end)
 
-function oughad_talk(npc, ch)
+local function oughad_talk(npc, ch)
     local quest_string_kills = "more_mountains_maggot_kill_quest_kills" --Die anzahl der Kills an Maden, die der Spieler haben soll
     local quest_string_var = "more_mountains_maggot_kill_quest_var" --Die allgemeine Questvar
     local quest_string_number = "more_mountains_maggot_kill_quest_number" --Anzahl der erledigten Aufträge

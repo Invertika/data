@@ -55,7 +55,7 @@ atinit(function()
 end)
 
 --- Erster Start
- function firststart_trigger(ch, id)
+ local function firststart_trigger(ch, id)
      ---local first = get_quest_var(ch, "vacare_first_start")
         
      ---if first=="" then
@@ -69,11 +69,11 @@ end)
      ---end
  end
 
-function zelan_talk(npc, ch)
+local function zelan_talk(npc, ch)
     npc_message(npc, ch, "Du möchtest wissen wo du bist? Das hier ist das Vacare. Jeder neue kommt hier her bevor es raus geht in die große Welt. Also pass auf dich auf.")
 end
 
-function jack_talk(npc, ch)
+local function jack_talk(npc, ch)
     npc_message(npc, ch, "Ich bin Jack und verkaufe Zeitungen. Möchtest du eine?")
     
     while true do 
@@ -89,7 +89,7 @@ function jack_talk(npc, ch)
     end
 end
  
-function ancoise_talk(npc, ch)
+local function ancoise_talk(npc, ch)
     local quest_string = "vacare_fence"
     invertika.init_quest_status(ch, quest_string)
     if invertika.get_quest_status(ch, quest_string) == 0 then
@@ -116,7 +116,7 @@ function ancoise_talk(npc, ch)
     end
 end
 
-function kolbert_talk(npc, ch)
+local function kolbert_talk(npc, ch)
     local quest_string = "vacare_first_weapon"
     invertika.init_quest_status(ch, quest_string)
        
@@ -140,7 +140,7 @@ function kolbert_talk(npc, ch)
     
 end
 
-function syntyche_talk(npc, ch)
+local function syntyche_talk(npc, ch)
     npc_message(npc, ch, "Ich sehe du bist fleißig am Kämpfen. Durch das Erlegen von Monstern bekommst du übrigens Erfahrungspunkte. Wenn du genügend Erfahrungspunkte gesammelt hast, steigst du um ein Level auf. Mit jedem Level erhälst du dann sogenannte Charakterpunkte und Korrekturpunkte.")
 
     npc_message(npc, ch, "Mit den Charakterpunkten kannst du deine Statuswerte verbessern. Dazu musst du auf Status klicken. Unten stehen deine vorhandene Anzahl an Charakterpunkten und Korrekturpunkten. Nun kannst du diese Punkte auf die Statuswerte verteilen. Wenn du denkst das du bei der Verteilung der Punkte einen Fehler gemacht hast so kannst du die Änderung zurücknehmen, solange du genug Korrekturpunkte hast.")
@@ -148,7 +148,7 @@ function syntyche_talk(npc, ch)
     npc_message(npc, ch, "Also achte darauf, dass du deine Charakterpunkte auf die richtigen Werte verteilst.")
 end
 
-function valaia_talk(npc, ch)
+local function valaia_talk(npc, ch)
     npc_message(npc, ch, "Du sieht aus wie jemand der Handeln möchte. Mmmh was gibt es denn da zu erzählen. Also es gibt zwei Arten zu handeln, einmal mit NPCs und einmal mit deinen Mitspielern.")
     
     local quest_string = "vacare_first_trade"
@@ -182,7 +182,7 @@ function valaia_talk(npc, ch)
     npc_message(npc, ch, "Ja das wars auch schon zum Thema Handel.")
 end
 
-function asam_talk(npc, ch)
+local function asam_talk(npc, ch)
     npc_message(npc, ch, "Die erste Devise von Invertika ist, das es so wenige Regeln wie möglich geben soll. Ganz einfach aus dem Grund das wir der Meinung sind das jede Regel doch eine gewisse Einschränkung darstellt. Doch gibt es einige Empfehlungen: ")
 
     npc_message(npc, ch, "Nummero 1: Seid nett zueinander.")
@@ -194,7 +194,7 @@ function asam_talk(npc, ch)
     npc_message(npc, ch, "Wie gesagt sind dies Empfehlungen, aber wer weiß was die anderen Spieler machen wenn sie euch beim Spammen erwischen :) Ich wünsche dir viel Spaß.")
 end
 
-function corona_talk(npc, ch)
+local function corona_talk(npc, ch)
     npc_message(npc, ch, "Wo du bist nachdem du gestorben bist? Das kann ich dir sagen. Jeder der stirbt findet sich im Nex wieder. Es ist ein Ort voller Frieden, wie das Vacare. Allerdings gibt es ein paar Dinge zu beachten.")
     
     npc_message(npc, ch, "Jedes Mal wenn du stirbst verlierst du ein Drittel deines Bargeldes. Deshalb darfst du nie zu viel Bargeld mit dir herum schleppen. Du kannst dein überschüssiges Geld aber zur Bank bringen. Dort wird es sogar verzinst. Und wenn du stirbst ist es dort sicher.")
@@ -204,7 +204,7 @@ function corona_talk(npc, ch)
     npc_message(npc, ch, "Eine Sache noch: Wenn du das Reich der Toten verlässt wirst du zu der Netheksäule gebracht, bei welcher du zuletzt um den Segen gebeten hast, also halte Ausschau nach Ihnen.")
 end
 
-function vacaria_talk(npc, ch)
+local function vacaria_talk(npc, ch)
     npc_message(npc, ch, "Bist du bereit für das große Abenteuer?")
     
     while true do 
@@ -222,7 +222,7 @@ function vacaria_talk(npc, ch)
     end
 end
 
-function essar_talk(npc, ch)
+local function essar_talk(npc, ch)
     npc_message(npc, ch, "Ich bin hier um dir zu erklären wie du mit anderen Spielern kommunizieren kannst.")
     npc_message(npc, ch, "Als erstes gibt es den normalen Chat.")
     npc_message(npc, ch, "Wenn du im Spiel Enter drückst erscheint ein Cursor im Chatfenster.")

@@ -27,6 +27,6 @@ atinit(function()
  nethek.create_netheksaeule(140 * TILESIZE, 43 * TILESIZE + 16) --- Netheksäule
 end)
 
-function grabstein_talk(npc, ch)
+local function grabstein_talk(npc, ch)
     npc_message(npc, ch, "Ayume\n12430-12470\n\nIn Trauer: Saya und Tetse")
 end

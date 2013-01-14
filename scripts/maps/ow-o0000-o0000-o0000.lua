@@ -97,12 +97,12 @@ end)
 
 --Zeitabhägige Events
 -- Weihnachten
-function weihnachtsmann_talk(npc, ch)
+local function weihnachtsmann_talk(npc, ch)
     invertika.init_quest_status(ch, "selphi_timlet_santa_clause")
 
     -- quest get/set functions
-    function get_qstatus() return invertika.get_quest_status(ch, "selphi_timlet_santa_clause") end
-    function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_santa_clause", x) end
+    local function get_qstatus() return invertika.get_quest_status(ch, "selphi_timlet_santa_clause") end
+    local function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_santa_clause", x) end
 
     if get_qstatus()==0 then
       npc_message(npc, ch, "Ho Ho Ho. Ich bin der Weihnachtsmann. Meine Geschenke sind schon wieder überall verteilt. Diese Weihnachtsschleime rauben mir den letzten Nerv. Magst du mir helfen sie wieder einzusammeln?")
@@ -158,7 +158,7 @@ function weihnachtsmann_talk(npc, ch)
 
 end
 
-function rentier_talk(npc, ch)
+local function rentier_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Mmmmmpppfh.",
         "Bsssss.",
         "Brrrrrr.",
@@ -166,7 +166,7 @@ function rentier_talk(npc, ch)
 end
 
 -- Silvester
-function fireworker_talk(npc, ch)
+local function fireworker_talk(npc, ch)
   npc_message(npc, ch, invertika.get_random_element(
     "Willst du ein wenig Feuerwerk sehen?",
     "Willst du ein kleines Feuerwerk sehen?",
@@ -194,14 +194,14 @@ function fireworker_talk(npc, ch)
 end
 
 -- Normale Events
- function get_wache_say()
+ local function get_wache_say()
         return invertika.get_random_element("Ohne Passierschein geht es hier nicht durch!",
       "Durchgang nur mit Passierschein!",
       "Du hast keinen Passierschein. Deshalb darfst du den Palast nicht betreten!",
       "Halt, du benötigst einen Passierschein!")
  end
 
- function wache_trigger(ch, id)
+ local function wache_trigger(ch, id)
    if (being_type(ch) == TYPE_CHARACTER) then --- Nur Player durchlassen
      local count = chr_inv_count(ch, 40009)
 
@@ -218,15 +218,15 @@ end
   end
  end
 
-function elmo_talk(npc, ch)
+local function elmo_talk(npc, ch)
     npc_message(npc, ch, "Willkommen in Selphi Timlet, der Stadt in der Wüste. Sei nett zu den anderen und habe viel Spaß!")
 end
 
-function sam_talk(npc, ch)
+local function sam_talk(npc, ch)
     npc_message(npc, ch, "Hi ich bin Sam und ich bin auf der Suche nach der Antwort...")
 end
 
-function julia_talk(npc, ch)
+local function julia_talk(npc, ch)
     npc_message(npc, ch, "Hi, was kann ich für dich tun?")
 
     while true do
@@ -247,16 +247,16 @@ function julia_talk(npc, ch)
     end
 end
 
-function jane_talk(npc, ch)
+local function jane_talk(npc, ch)
     npc_message(npc, ch, string.format("Wie spät es ist? Ähm es ist %s Uhr. Und bevor du fragst, heute ist der %s im übrigen ist das ein %s.", datetime.get_current_time(), datetime.get_current_date(), datetime.get_current_weekday()))
 end
 
-function bruce_talk(npc, ch)
+local function bruce_talk(npc, ch)
   -- quest init
   invertika.init_quest_status(ch, "selphi_timlet_bruce_quest")
   -- quest get/set functions
-  function get_qstatus() return tonumber(invertika.get_quest_status(ch, "selphi_timlet_bruce_quest")) end
-  function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_bruce_quest", tonumber(x)) end
+  local function get_qstatus() return tonumber(invertika.get_quest_status(ch, "selphi_timlet_bruce_quest")) end
+  local function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_bruce_quest", tonumber(x)) end
 
     if get_qstatus()==0 then
         invertika.add_money(ch, 1000)
@@ -344,7 +344,7 @@ function bruce_talk(npc, ch)
 
 end
 
-function felix_talk(npc, ch)
+local function felix_talk(npc, ch)
     local quest_string = "selphi_timlet_felix_quest"
     invertika.init_quest_status(ch, quest_string)
     local get_qstatus = function() return invertika.get_quest_status(ch, quest_string) end
@@ -403,7 +403,7 @@ function felix_talk(npc, ch)
     end
 end
 
-function saria_talk(npc, ch)
+local function saria_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Die Wüste ist riesig, drum bleib ich hier.",
       "Hüte dich vor der Wüste. Dort treiben rote Skorpione ihr Unwesen.",
       "Ey da nicht anfassen, da habe ich einen Sonnenbrand.",
@@ -412,7 +412,7 @@ function saria_talk(npc, ch)
       "Ich würde mal gerne zum Meer."))
 end
 
-function nobur_talk(npc, ch)
+local function nobur_talk(npc, ch)
         invertika.init_quest_status(ch, "selphi_timlet_norbur_scorpion_stingers")
 
     npc_message(npc, ch, "Ich brauche Skorpionstachel. Eine ganze Menge, so zwei Dutzend oder drei, vielleicht auch vier Dutzend. Das wird eine leckere Suppe.")
@@ -478,7 +478,7 @@ function nobur_talk(npc, ch)
     end
 end
 
-function alex_talk(npc, ch)
+local function alex_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Siehst du ihn? Ist er hier irgendwo? Nicht das es mich findet, also pssst!",
       "Was machst du hier? Nicht das du ihn zu mir führst...",
       "Wen ich meine? Na Bahamut.",
@@ -487,15 +487,15 @@ function alex_talk(npc, ch)
       "Gehörst du zu ihm? Wenn ja dann verschwinde!"))
 end
 
-function inard_talk(npc, ch)
+local function inard_talk(npc, ch)
     invertika.init_quest_status(ch, "selphi_timlet_inard_training");
     invertika.init_quest_status(ch, "selphi_timlet_orkana_feierabend");
 
     -- quest get/set functions
-    function get_qstatus() return tonumber(invertika.get_quest_status(ch, "selphi_timlet_inard_training")) end
-    function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_inard_training", tonumber(x)) end
+    local function get_qstatus() return tonumber(invertika.get_quest_status(ch, "selphi_timlet_inard_training")) end
+    local function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_inard_training", tonumber(x)) end
 
-    function get_feierabend() return tonumber(invertika.get_quest_status(ch, "selphi_timlet_orkana_feierabend")) end
+    local function get_feierabend() return tonumber(invertika.get_quest_status(ch, "selphi_timlet_orkana_feierabend")) end
 
     if get_qstatus() == 0 then
         npc_message(npc, ch, "Ahhh. Was ein herrlicher Tag und ich hänge hier im Innenhof rum! Wie gerne würde ich mal wieder eine Stunde trainieren!")
@@ -546,7 +546,7 @@ function inard_talk(npc, ch)
     end
 end
 
-function belart_talk(npc, ch)
+local function belart_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Ich komme aus Narva. Es ist schön dort. Ich vermisse es ein wenig.",
       "Hast du schonmal Unbal getrunken? Es ist köstlich.",
       "Ich hatte mal eine wunderschöne Rüstung. Leider musste ich sie verkaufen.",
@@ -555,7 +555,7 @@ function belart_talk(npc, ch)
       "Mein Name ist Belart und ich komme aus Narva. Und du?"))
 end
 
-function imangi_talk(npc, ch)
+local function imangi_talk(npc, ch)
     invertika.init_quest_status(ch, "twin_house_quest")
     local q_status = invertika.get_quest_status(ch, "twin_house_quest")
     if q_status == 3 then
@@ -592,13 +592,13 @@ function imangi_talk(npc, ch)
     end
 end
 
-function ortana_talk(npc, ch)
+local function ortana_talk(npc, ch)
     invertika.init_quest_status(ch, "selphi_timlet_inard_training");
     invertika.init_quest_status(ch, "selphi_timlet_orkana_feierabend");
 
-    function get_qstatus() return tonumber(invertika.get_quest_status(ch, "selphi_timlet_inard_training")) end
-    function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_inard_training", tonumber(x)) end
-    function get_feierabend() return tonumber(invertika.get_quest_status(ch, "selphi_timlet_orkana_feierabend")) end
+    local function get_qstatus() return tonumber(invertika.get_quest_status(ch, "selphi_timlet_inard_training")) end
+    local function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_inard_training", tonumber(x)) end
+    local function get_feierabend() return tonumber(invertika.get_quest_status(ch, "selphi_timlet_orkana_feierabend")) end
 
     if get_qstatus() == 1 then
         npc_message(npc, ch, "Inard möchte mit mir trainieren? Hm. Sicher hab ich Lust. Ich weiß nur nicht wann ich frei bekomme. Frag doch bitte mal meinen Chef Estech. Du findest ihn in der Arena, vermutlich im VIP-Bereich.")
@@ -642,7 +642,7 @@ function ortana_talk(npc, ch)
 
 end
 
-function tonver_talk(npc, ch)
+local function tonver_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Oh nein, ich habe schon wieder alles verspielt.",
       "Ich lasse viel zu viel Geld in diesem Laden.",
       "Nur noch 47 Aki. Naja das muss reichen.",
@@ -651,7 +651,7 @@ function tonver_talk(npc, ch)
       "Alles weg... Schon wieder... Aber beim nächsten mal... Da gewinne ich..."))
 end
 
-function elmes_talk(npc, ch)
+local function elmes_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Manche Leute rennen im Kreis durch diese Bögen. Warum auch immer sie dies tun.",
       "Ich genieße die Sonne. Deshalb der Hut.",
       "Früher als ich noch jung war, da hatte ich mal einen Kater. Doch er ward eines Tages verschwunden. Er hieß Effendi. Wo er wohl sein wird?",
@@ -662,7 +662,7 @@ function elmes_talk(npc, ch)
     invertika.init_quest_status(ch, "selphi_timlet_archway_quest")
 end
 
-function nepuret_talk(npc, ch)
+local function nepuret_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Ich bin Nepuret.",
       "Das ist das Haus von Averin, dem Chef der königlichen Palastwache.",
       "Ich bewache dieses Haus.",
@@ -671,7 +671,7 @@ function nepuret_talk(npc, ch)
       "Ich diene bereits seit vielen Jahren als persönliche Wache von Averin."))
 end
 
-function nero_talk(npc, ch)
+local function nero_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Wo man den königlichen Passierschein bekommt? Ja das weiss ich *kicher*.",
       "Averin vergibt die königlichen Passierscheine.",
       "Ja, ich habe einen königlichen Passierschein! Ob du ihn bekommst? Nein, besorge dir selber einen!",
@@ -680,7 +680,7 @@ function nero_talk(npc, ch)
       "Averin ist die Person mit der du reden solltest, nicht ich!"))
 end
 
-function colloseumwache_talk(npc, ch)
+local function colloseumwache_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Das ist das Colloseum auch die Arena genannt.",
       "In der Arena finden Kämpfe statt, manchmal zumindestens.",
       "Aergius war ein großer Kämpfer, bis er fort ging.",
@@ -688,7 +688,7 @@ function colloseumwache_talk(npc, ch)
       "Du siehst stark aus, vielleicht könntest du ein Kämpfer werden?"))
 end
 
-function bankwache_talk(npc, ch)
+local function bankwache_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Wir bewachen die Zentralbank.",
       "Dies ist die Zentralbank. Hier wird eine Menge Geld gelagert.",
       "Wir passen auf das niemand in die Bank einbricht.",
@@ -696,7 +696,7 @@ function bankwache_talk(npc, ch)
       "Denk immer daran: Wir behalten dich im Auge."))
 end
 
-function stadtwache_talk(npc, ch)
+local function stadtwache_talk(npc, ch)
     local quest_string_number = "selphi_timlet_guards_hunt_number"
     local quest_string_monsterid = "selphi_timlet_guards_hunt_monsterid"
     local quest_string_monster_name = "selphi_timlet_guards_hunt_monstername"
@@ -773,13 +773,13 @@ function stadtwache_talk(npc, ch)
     end
 end
 
-function palastwache_talk(npc, ch)
+local function palastwache_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Zutritt nur mit königlichen Passierschein!",
       "Du benötigst einen königlichen Passierschein um den Palast zu betreten.",
       "Ohne königlichen Passierschein kein Zutritt!"))
 end
 
-function bernie_talk(npc, ch)
+local function bernie_talk(npc, ch)
     npc_message(npc, ch, "Hey du, du brauchst ihn doch bestimmt, den Niedermetzler 3000. Das ist genau das richtige für dich, da kannst du garnicht widerstehen. Komm schon für nur 99999 Aki gehört er dir? Oder eine Sonnenbrille? Neuste Mode? 12500 Aki! Ein besonderes Modell!")
 
     while true do
@@ -822,7 +822,7 @@ function bernie_talk(npc, ch)
     end
 end
 
-function valeria_talk(npc, ch)
+local function valeria_talk(npc, ch)
 
     invertika.init_quest_status(ch, "selphi_timlet_valeria_letzteHeilung")
     local letzteHeilung = invertika.get_quest_status(ch, "selphi_timlet_valeria_letzteHeilung")
@@ -863,13 +863,13 @@ function valeria_talk(npc, ch)
     end
 end
 
-function amulet_trigger(ch, args)
+local function amulet_trigger(ch, args)
   if (being_type(ch) == TYPE_CHARACTER) then --- Nur Player durchlassen
     local quest_string = string.format("selphi_timlet_amulet_quest_%s", args)
     invertika.init_quest_status(ch, quest_string)
 
-    function get_qstatus() return tonumber(invertika.get_quest_status(ch, quest_string)) end
-    function set_qstatus(x) invertika.set_quest_status(ch, quest_string, tonumber(x)) end
+    local function get_qstatus() return tonumber(invertika.get_quest_status(ch, quest_string)) end
+    local function set_qstatus(x) invertika.set_quest_status(ch, quest_string, tonumber(x)) end
 
     if get_qstatus() == 0 then
         set_qstatus(1)
@@ -878,7 +878,7 @@ function amulet_trigger(ch, args)
   end
 end
 
-function lidi_talk(npc, ch)
+local function lidi_talk(npc, ch)
     local queststring = "selphi_timlet_lidi_sunglasses"
     invertika.init_quest_status(ch, queststring)
     local get_qstatus = function()
@@ -919,13 +919,13 @@ function lidi_talk(npc, ch)
     end
 end
 
-function warp_escape_tunnel(obj, arg)
+local function warp_escape_tunnel(obj, arg)
     if(being_type(obj)==TYPE_CHARACTER) then
         chr_warp(obj, 20146, 35 * TILESIZE, 35 * TILESIZE + 16)
     end
 end
 
-function waypoint_archway_1(obj, arg)
+local function waypoint_archway_1(obj, arg)
     if(being_type(obj)==TYPE_CHARACTER) then
         local archway_quest = chr_get_quest(obj, "selphi_timlet_archway_quest")
         if(not archway_quest) then return false end -- Abbrechen, falls Questvar noch nicht gecached
@@ -944,7 +944,7 @@ function waypoint_archway_1(obj, arg)
     end
 end
 
-function waypoint_archway_2(obj, arg)
+local function waypoint_archway_2(obj, arg)
     if(being_type(obj)==TYPE_CHARACTER) then
         local archway_quest = chr_get_quest(obj, "selphi_timlet_archway_quest")
         if(not archway_quest) then return false end -- Abbrechen, falls Questvar noch nicht gecached

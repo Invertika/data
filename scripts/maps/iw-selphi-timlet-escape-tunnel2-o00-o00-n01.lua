@@ -26,7 +26,7 @@ Deshalb wird hier auch nicht mit illegaler Ware gehandelt.");
     npc_create("Gerhard", 104, GENDER_UNSPECIFIED, 27 * TILESIZE + 16, 5 * TILESIZE + 16, gerhard_talk, nil) --- Gerhard
 end)
 
-function gerhard_talk(npc, ch)
+local function gerhard_talk(npc, ch)
     -- Dieser Händler könnte später mal Speed verkaufen.
     npc_message(npc, ch, "Bist du ein Mitglied der Stadtwache? Nein? Sehr gut, was kann ich für dich tun?")
     while true do

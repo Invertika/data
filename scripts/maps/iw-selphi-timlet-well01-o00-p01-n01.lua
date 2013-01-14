@@ -63,36 +63,36 @@ atinit(function()
     -- trigger_create(39 * TILESIZE, 36 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, treasure_warning, 0, true)
 end)
 
-function tano1_talk(npc, ch)
+local function tano1_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Geh doch mal zu Samos, der hat bestimmt einen Auftrag für dich.",
       "Im Laden kannst du erst etwas kaufen, wenn du dir Reputation bei uns erworben hast.",
       "Was das hier ist? Natürlich das Hauptquartier der Ta No!",
       "Unsere Ziele? Die sind geheim!"))
 end
 
-function tano2_talk(npc, ch)
+local function tano2_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Ich passe auf, dass niemand so ohne weiteres in die Schatzkammer geht.",
       "Versuche gar nich erst, etwas zu stehlen!",
       "Über der Schatzkammer hängt ein Schutzzauber.",
       "NEIN, du darfst NICHT in die Schatzkammer."))
 end
 
-function tano3_talk(npc, ch)
+local function tano3_talk(npc, ch)
     npc_message(npc, ch, "Ich werde irgendwann mal Waffen und Ausrüstung verkaufen und so.")
 end
 
-function tano4_talk(npc, ch)
+local function tano4_talk(npc, ch)
     npc_message(npc, ch, "Ich soll irgendwann mal Quests vergeben, mit denen die Reputation bei den Ta No gesteigert werden kann.")
 end
 
-function tano5_talk(npc, ch)
+local function tano5_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Ich koche hier für die anderen Sektenmitglieder.",
       "Pah, die sollen sich bloß nicht schon wieder über das Essen beschweren! Verwöhntes Pack...",
       "Hmm, noch ein bisschen hiervon, und ein wenig hiervon, und probieren ... Arghh, schon wieder zu viel Salz!",
       "Aus der blöden Spüle kommt schon wieder nur rostiges Wasser!"))
 end
 
-function tano6_talk(npc, ch)
+local function tano6_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Ich hasse Küchendienst... Aber naja, immer noch besser als Abort saubermachen.",
       "Die Spülmaschine ist schon wieder kaputt und jetzt muss ich alles von Hand waschen...",
       "Eigentlich hatte ich mir das Leben als Ta No irgendwie spannender vorgestellt, und jetzt stehe ich den ganzen Tag bloss hier in der Küche.",
@@ -100,28 +100,28 @@ function tano6_talk(npc, ch)
       "Ob ich unzufrieden bei den Ta No bin? Nein, auf keinen Fall! Tritt uns am besten bei und melde dich für den Küchendienst! o0(dann kann ich nämlich hier weg, hehe)"))
 end
 
-function tano7_talk(npc, ch)
+local function tano7_talk(npc, ch)
     npc_message(npc, ch, "Hier könnte ihre Werbung stehen")
 end
 
-function tano8_talk(npc, ch)
+local function tano8_talk(npc, ch)
     npc_message(npc, ch, "Hier könnte ihre Werbung stehen")
 end
 
-function tano9_talk(npc, ch)
+local function tano9_talk(npc, ch)
     npc_message(npc, ch, "Hier könnte ihre Werbung stehen")
 end
 
-function tano10_talk(npc, ch)
+local function tano10_talk(npc, ch)
     npc_message(npc, ch, "Hier könnte ihre Werbung stehen")
 end
 
-function tano11_talk(npc, ch)
+local function tano11_talk(npc, ch)
     npc_message(npc, ch, "Hier könnte ihre Werbung stehen")
     being_set_direction(npc, DIRECTION_LEFT)
 end
 
-function waypoints(being, num)
+local function waypoints(being, num)
     if being == tano[5] then --- Nur Ta No 5 (Koch) beachten
         if (num == 1)and(num == waypointstate[being]) then
             --- Wegpunkt 1 (Küchenanrichte, ganz links)
@@ -210,7 +210,7 @@ function waypoints(being, num)
     end
 end
 
-function treasure_trap(being)
+local function treasure_trap(being)
 --  if (being_type(being) == TYPE_CHARACTER) then --- Nur Spieler beachten
 --    being_say(tano[2], invertika.get_random_element("Wer nicht hören will muss fühlen.",
 --      "Kein Durchgang!",
@@ -224,7 +224,7 @@ function treasure_trap(being)
 --  end
 end
 
-function treasure_warning(being)
+local function treasure_warning(being)
 --  if (being_type(being) == TYPE_CHARACTER) then --- Nur Spieler beachten
 --    being_say(tano[2], invertika.get_random_element("Keinen Schritt weiter!",
 --      "Stopp! Sonst wird es schmerzhaft.",

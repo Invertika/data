@@ -55,7 +55,7 @@ end)
 
 illegalCount=0;
 
-function wache_trigger(ch, id)
+local function wache_trigger(ch, id)
    if (being_type(ch) ~= TYPE_MONSTER) then --- Nur Player durchlassen
      local count = chr_inv_count(ch, 40010)
      
@@ -84,7 +84,7 @@ function wache_trigger(ch, id)
   end
  end
  
-function wache_talk(npc, ch)
+local function wache_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Verschwinden Sie!",
         "Kein Zutritt!"))
 end

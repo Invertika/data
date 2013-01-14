@@ -31,21 +31,21 @@ atinit(function()
     npc_create("Vektor", 11, GENDER_UNSPECIFIED, 134 * TILESIZE + 16, 120 * TILESIZE + 16, vektor_talk, nil) --- Vektor
 end)
 
-function regret_talk(npc, ch)
+local function regret_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Verdammt, was mache ich hier? Ich bin im falschen Spiel!",
       "Ich muss doch nach Leo. Wo bin ich? In Alexia? Gibt es auf unserem Kontinent nicht.",
       "Ich muss jetzt echt los sonst komme ich zu spät zu der Fortsetzung meiner Spielereihe.",
       "Wenn ich den kriege der mir das hier eingebrockt hat."))
 end
 
-function holbert_talk(npc, ch)
+local function holbert_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Immer diese Entwickler... berücksichtigen die elementaren Grundlagen der Physik nicht. Und was haben wir nun davon? Dieses Haus.",
       "Von wegen optische Täuschung, das haben die wirklich so gebaut!",
       "Nichts ist unmöglich... Invertika *mir Werbemusik dazu denke*",
       "Möchte mal wissen wer die Baugenehmigung dafür ausgestellt hat."))
 end
 
-function vektor_talk(npc, ch)
+local function vektor_talk(npc, ch)
     if invertika.get_quest_status(ch, "selphi_timlet_felix_quest") == 1 then
         npc_message(npc, ch, "Ein Felix aus Selphi Timlet fragt ob ich für ihn Statiken berechnen kann?")
         npc_message(npc, ch, "Den kenne ich nicht...")

@@ -99,7 +99,7 @@ end)
 
 
 --- Stadtwache Sprechfunktion
-function stadtwache_talk(npc, ch)
+local function stadtwache_talk(npc, ch)
  npc_message(npc, ch, invertika.get_random_element("Hier darf niemand durch!",
  "Glaub mir, da willst du nicht rein...",
  "Lyet steht unter Quarantäne. Wegen der Seuche.",
@@ -110,7 +110,7 @@ function stadtwache_talk(npc, ch)
 end
 
 --- Stadtwache Trigger
-function wache_trigger(ch, id)
+local function wache_trigger(ch, id)
  if (being_type(ch) == TYPE_CHARACTER) then --- Nur Spieler beachten
   chr_warp(ch, get_map_id(), posX(ch), 190 * TILESIZE) --- Zurückversetzen des Spielers
   being_say(wache, invertika.get_random_element("Kein Durchgang!",

@@ -26,7 +26,7 @@ atinit(function()
       "Kann man das trinken oder ist das Strom?"})
 end)
 
-function hobel_talk(npc, ch)
+local function hobel_talk(npc, ch)
     local queststring = "nelaro_water_quest"
     --Init Quest
     invertika.init_quest_status(ch, queststring)

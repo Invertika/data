@@ -28,7 +28,7 @@ atinit(function()
  npc_create("Asgard", 47, GENDER_UNSPECIFIED, 139 * TILESIZE + 16, 96 * TILESIZE + 16, asgard_talk, nil) --- Asgard
 end)
 
-function asgard_talk(npc, ch)
+local function asgard_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Noch nie war jemmand in diesem Turm.",
         "Was sich im inneren des Turmes befinden mag?",
         "Es gibt eine Legende, die besagt das der Turm sich eines Tages öffnen wird.",

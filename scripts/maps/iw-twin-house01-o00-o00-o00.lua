@@ -23,11 +23,11 @@ atinit(function()
 end)
 
 
-function blyther_talk(npc, ch)
+local function blyther_talk(npc, ch)
     local questname = "twin_house_quest"
     invertika.init_quest_status(ch, questname)
-    function get_qstatus() return invertika.get_quest_status(ch, questname) end
-    function set_qstatus(x) invertika.set_quest_status(ch, questname, x) end
+    local function get_qstatus() return invertika.get_quest_status(ch, questname) end
+    local function set_qstatus(x) invertika.set_quest_status(ch, questname, x) end
 
     if get_qstatus() == 0 then
         npc_message(npc, ch, "Hallo Reisender aus der Wüste.")

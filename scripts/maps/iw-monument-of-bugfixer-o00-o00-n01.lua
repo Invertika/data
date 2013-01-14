@@ -20,7 +20,7 @@ atinit(function()
     --create_npc("burgermeister")
 end)
 
-function priscilla_talk(npc, ch)
+local function priscilla_talk(npc, ch)
     local queststring = "monument_of_bugfixer_flower_quest"
     
     --Init Quest
@@ -69,7 +69,7 @@ function priscilla_talk(npc, ch)
     end
 end
 
-function burgermeister_talk(npc, ch)
+local function burgermeister_talk(npc, ch)
     local queststring = "monument_of_bugfixer_flower_quest"
     
     --Init Quest

@@ -22,7 +22,7 @@ atinit(function()
     npc_create("Vodel", 57, GENDER_UNSPECIFIED, 31 * TILESIZE + 16, 37 * TILESIZE + 16, vodel_talk, nil)
 end)
 
-function vodel_talk(npc, ch)
+local function vodel_talk(npc, ch)
     local queststring_vodel = "nelaro_vodel_quests"
     local queststring_water = "nelaro_water_quest"
     --Init Quests

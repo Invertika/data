@@ -110,7 +110,7 @@ function ShowNextMessageForTherapy()
   therapyState=therapyState+1
 end
 
-function nethek_talk(npc, ch)
+local function nethek_talk(npc, ch)
     npc_message(npc, ch, "Du moechtest den Nex verlassen?")
     
     while true do 
@@ -128,7 +128,7 @@ function nethek_talk(npc, ch)
     end
 end
 
-function monty_talk(npc, ch)
+local function monty_talk(npc, ch)
     local deathCount = death.get_death_counter(ch)
     local quest_string = "nex_monty_spieler_geld"
     invertika.init_quest_status(ch, quest_string)
@@ -203,7 +203,7 @@ function monty_talk(npc, ch)
     end
 end
 
-function annabell_talk(npc, ch)
+local function annabell_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("PvP Killing ist ein ernstes Krankheitsbild.",
       "Eine Therapie kann helfen, andere Spieler in Ruhe zu lassen.",
       "Ich bin ausgebildete Therapeutin für PvP Killing.",
@@ -211,17 +211,17 @@ function annabell_talk(npc, ch)
       "Wir bekommen das hin, die anerkannte MA-NA Methode hilft bei der PvP Killing Therapie."))
 end
 
-function herbert_talk(npc, ch)
+local function herbert_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Ich bin PvP Killing süchtig.",
       "Ich hoffe diese Therapie kann mir helfen."))
 end
 
-function miriam_talk(npc, ch)
+local function miriam_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Früher musste jeder dran glauben der mir über den Weg lief.",
       "Dank der anonymen PvP Killer Gruppe geht es mir schon viel besser."))
 end
 
-function ben_talk(npc, ch)
+local function ben_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Nicht mal hier kann ich meinen Bogen weglegen.",
       "Ich muss noch hart an mir arbeiten."))
 end

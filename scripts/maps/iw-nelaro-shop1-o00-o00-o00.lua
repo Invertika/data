@@ -22,7 +22,7 @@ atinit(function()
     npc_create("Rhosor", 133, GENDER_UNSPECIFIED, 26 * 32 + 16, 38 * TILESIZE + 16, rhosor_talk, nil)
 end)
 
-function rhosor_talk(npc, ch)
+local function rhosor_talk(npc, ch)
     npc_message(npc, ch, "Tag, Was gibt es?")
     
     while true do

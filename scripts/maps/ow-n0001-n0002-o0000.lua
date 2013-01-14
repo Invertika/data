@@ -37,7 +37,7 @@ atinit(function()
  npc_create("Postremus", 38, GENDER_UNSPECIFIED, 77 * TILESIZE + 16, 116 * TILESIZE + 16, postremus_talk, nil) --- Postremus
 end)
 
-function jurkan_talk(npc, ch)
+local function jurkan_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Irgendwie ist mir zu heiß hier...",
       "Glaub mir, das hier war nicht geplant.",
       "Das habe ich nun davon, seeseekey geholfen zu haben. Wer das ist? Der da drüben!",
@@ -54,7 +54,7 @@ function jurkan_talk(npc, ch)
       "Du willst auch hier stehen? Geht ganz einfach, melde dich im #invertika-Channel im Freenode-IRC-Netzwerk für ein Jahr Zwangsarbeit und die Sache ist gebongt!"))
 end
 
-function holzbein_talk(npc, ch)
+local function holzbein_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Wo ist mein Kamel?",
       "Lieber Arm dran, als Arm ab.",
       "Steck den Spaltenvektor in die Vektorspalte.",
@@ -65,7 +65,7 @@ function holzbein_talk(npc, ch)
       "Was hat das zu bedeuten?"))
 end
 
-function seeseekey_talk(npc, ch)
+local function seeseekey_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Da sind meine Sprüche schon wieder weg...",
       "Ich hasse Schleichwerbung! Und nun geh bitte ich muss mit meinem Android Telefon auf seeseekey.net gehen.",
       "Mmm wenn ich das so Skripte müsste das alles zusammenpassen. PENG!",
@@ -83,7 +83,7 @@ function seeseekey_talk(npc, ch)
       "Dwight Schulz ist Republikaner. Murdok vom A-Team ist Republikaner. Reginald Barclay ist Republikaner. Oh Gott die Welt ist so böse..."))
 end
 
-function delegan_talk(npc, ch)
+local function delegan_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Zu eckig, zu pixelig, zu virtuell! Neubauen!",
       "Ob jeder so einfach Berge, Täler, Seen und Flüsse aus dem nichts erschaffen kann?",
       "Sonne, Mond und Sterne, ich bau mir eine Taverne.",
@@ -97,7 +97,7 @@ function delegan_talk(npc, ch)
       "Brauchen sie einen Urwald mit kurzen Lieferzeiten und für wenig Geld?  Nicht verzagen, Mapper fragen."))
 end
 
-function bulldog98_talk(npc, ch)
+local function bulldog98_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Wenn du aufhören willst zu rauchen, höre auch auf Windows zu nutzen. Es wird dir dabei helfen.",
       "(Linux...) Hält, was andere versprechen.",
       "Die große Welt paßt nicht durch kleine Fenster - Linux!",
@@ -110,13 +110,13 @@ function bulldog98_talk(npc, ch)
       "Durch einen schrecklichen Zufall versterben in einer Woche zuerst Linus Torvalds und, drei Tage später, Bill Gates. Als Gates in den Himmel kommt, sagt Gott zu ihm Hallo, Herr Gates, schön sie zu sehen! In Anbetracht ihrer großen Verdienste um die Entwicklung der PCs kriegen sie hier ihr eigenes Häuschen, und, glauben Sie mir, das kriegt hier nicht jeder!\nGott nimmt Gates an die Hand und führt ihn vor einen kleinen Flachdachbungalow. Die Fußmatte an der Tür ist mit dem Windows-Logo versehen und eine kleine ready-for-windows-Fahne weht im Vorgärtchen. Gates denkt sich Joh, ganz nett, dreht sich um.... und traut seinen Augen nicht. Auf der nächsten Wolke, hoch über ihm, steht ein italienischer Palazzo, komplett mit Balustrade und sechs dorischen Säulen. Der Palazzo ist gelb-schwarz gestrichen, über und über mit Pinguin-Symbolen, Graffiti, -Fahnen und -Transparenten, Marmorpinguinen übersät.\nGates wendet sich an Gott und sagt, schwer brüskiert: Was ist DAS denn? Wieso kriegt der Torvalds so'n Palast da hingestellt? Das billig System von dem benutzt doch keiner!! Häh??? Wieso lebt der hier in so nem Haus??? Gott dreht sich um, schaut Gates tief in die Augen und sagt Das ist nicht Torvalds Haus. Das ist meins."))
 end
 
-function saturn_talk(npc, ch)
+local function saturn_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("What is music? Music is the emotion of sound and the sound of emotion.",
       "What is sound? Sound is any audible vibration.",
       "What is emotion? Now that is a tough one."))
 end
 
-function subnet_zero_talk(npc, ch)
+local function subnet_zero_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Reboot tut gut!",
       "Never change a running system!",
       "If the helpdesk thinks your question is stupid, we will set you on fire.",
@@ -135,16 +135,16 @@ function subnet_zero_talk(npc, ch)
       "Verdammte AXT!"))
 end
 
-function djh2o2_talk(npc, ch)
+local function djh2o2_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Die Kunst der Komposition ist es, sich an eine Melodie zu erinnern, die es noch nicht gibt."))
 end
  
-function darkmage_talk(npc, ch)
+local function darkmage_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Why not to use GPS for finding players. I think this scientist can make satellite for it.",
       "One day, one of the best painters met drunk man on the street. This painter didn't like to put on new clothes, so he put on old hat. Man asked: Erm, is this thing on your head is called hat? Painter answered: Is this thing under your hat called head?"))
 end
 
-function ablu_talk(npc, ch)
+local function ablu_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Pffff.",
       "Du kannst hier ruhigen Gewissens einen Scheck liegen lassen. Ich passe schon darauf auf.",
       "Hüte dich vor dem Schneemann!",
@@ -152,12 +152,12 @@ function ablu_talk(npc, ch)
       "Ruhe bitte!"))
 end
 
-function cmur2_talk(npc, ch)
+local function cmur2_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("*meepmeep*",
       "Nicht mal vernünftige Klamotten gibt's hier!"))
 end
 
-function kizu_talk(npc, ch)
+local function kizu_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Moin",
     "Wird alles Überbewertet",
     "Einstein sagte: 'Fantasie ist wichtiger als Wissen, denn Wissen ist begrenzt'. Dem kann ich nur zustimmen, denn sonst gäbe es diese Welt hier nicht.",
@@ -166,7 +166,7 @@ function kizu_talk(npc, ch)
     "Welcher Religion gehörst du an? Linux, Windows oder Mac?"))
 end
 
-function postremus_talk(npc, ch)
+local function postremus_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Interessant",
       "Faszinierend",
       "Das alles hier hat keinen, hohen, künstlerischen Wert.",

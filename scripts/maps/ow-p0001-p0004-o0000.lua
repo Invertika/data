@@ -37,7 +37,7 @@ atinit(function()
  wache_ausgang = npc_create("Wache", 26, GENDER_UNSPECIFIED, 71 * TILESIZE + 16, 192 * TILESIZE + 16, wache_ausgang_talk, nil)
 end)
 
-function wache_talk(npc, ch)
+local function wache_talk(npc, ch)
     if chr_inv_count(ch, 40049) == 0 then
         npc_message(npc, ch, "Um den Zoo zu betreten, brauchst du eine Eintrittskarte.")
 	else
@@ -45,11 +45,11 @@ function wache_talk(npc, ch)
     end
 end
 
-function wache_ausgang_talk(npc, ch)
+local function wache_ausgang_talk(npc, ch)
     npc_message(npc, ch, "Dies ist der Augang. Bitte benutze den Eingang im Osten.")
 end
 
-function wache_trigger(ch, id)
+local function wache_trigger(ch, id)
     if being_type(ch) == TYPE_CHARACTER then
         if chr_inv_count(ch, 40049) == 0 then
             local x = posX(ch)
@@ -70,7 +70,7 @@ function wache_trigger(ch, id)
     end
 end
 
-function ausgang_trigger(ch, id)
+local function ausgang_trigger(ch, id)
     if being_type(ch) == TYPE_CHARACTER then
         if id == 1 then
             if chr_inv_count(ch, 40049) > 0 then
@@ -84,7 +84,7 @@ function ausgang_trigger(ch, id)
     end
 end
 
-function eingang_trigger(ch, id)
+local function eingang_trigger(ch, id)
     if being_type(ch) == TYPE_CHARACTER then
         if chr_inv_count(ch, 40049) > 0 then
             being_say(wache_oben, "Bitte benutze den Ausgang im Westen.")

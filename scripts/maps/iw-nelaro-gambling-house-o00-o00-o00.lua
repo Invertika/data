@@ -38,7 +38,7 @@ atinit(function()
     npc_create("Roulette", 1, GENDER_UNSPECIFIED, 12 * TILESIZE + 16, 39 * TILESIZE + 16, roulette.roulette_talk, nil)
 end)
 
-function irac_talk(npc, ch)
+local function irac_talk(npc, ch)
     local queststring = "nelaro_water_quest"
     --Init Quest
     invertika.init_quest_status(ch, queststring)

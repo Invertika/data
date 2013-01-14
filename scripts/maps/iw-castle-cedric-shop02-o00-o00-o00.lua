@@ -22,7 +22,7 @@ atinit(function()
     npc_create("Toffi", 81, GENDER_UNSPECIFIED, 22 * TILESIZE + 16, 27 * TILESIZE + 16, toffi_talk, nil)
 end)
 
-function toffi_talk(npc, ch)
+local function toffi_talk(npc, ch)
     npc_message(npc, ch, "Tag, Was gibt es?")
     
     while true do

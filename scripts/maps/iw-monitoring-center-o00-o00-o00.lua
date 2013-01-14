@@ -33,7 +33,7 @@ atinit(function()
     npc_create("Lora", 55, GENDER_UNSPECIFIED, 12 * TILESIZE + 16, 21 * TILESIZE + 16, lora_talk, nil) --- Lora
 end)
 
-function sei_talk(npc, ch)
+local function sei_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
       "Willkommen im Überwachungszentrum, hast du etwas zu essen mitgebracht?",
       "Denk daran, alles zu vergessen wenn du uns verlässt.",
@@ -42,7 +42,7 @@ function sei_talk(npc, ch)
       "Ich habe hier das Sagen."))
 end
 
-function jo_talk(npc, ch)
+local function jo_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
       "Wenn du meinst...",
       "Du redest zu viel...",
@@ -51,7 +51,7 @@ function jo_talk(npc, ch)
       "Ich habe keinen Hunger."))
 end
 
-function leo_talk(npc, ch)
+local function leo_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
       "Ich kümmere mich hier um die Technik.",
       "Die Transceiverkerne verbrauchen aus irgendeinem Grund zu viel Strom.",
@@ -60,7 +60,7 @@ function leo_talk(npc, ch)
       "Mist schon wieder abgestürzt."))
 end
 
-function meg_talk(npc, ch)
+local function meg_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
       "Jo, diese mechanischen Gehirne waren doch seltsam oder?",
       "Man habe ich wieder einen Hunger, warum hast du noch nichts gekocht?",
@@ -69,7 +69,7 @@ function meg_talk(npc, ch)
       "Irgendwie langweilig wenn nichts los ist."))
 end
 
-function amy_talk(npc, ch)
+local function amy_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
       "So die Datenverbindung herstellen und schon kann es losgehen.",
       "Mmm, dieser Algorithmus ist ziemlich komplex. Ich sollte ihn rekursiv gestalten.",
@@ -78,7 +78,7 @@ function amy_talk(npc, ch)
       "Erstaunlich. Wer auch immer das geschrieben hat, hat eine Menge Ahnung."))
 end
 
-function bert_talk(npc, ch)
+local function bert_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
       "Schauen wir mal was die Konkurrenz so macht.",
       "Oh bei The Mana World wird eine neue Stadt gebaut, da müssen wir etwas tun.",
@@ -87,7 +87,7 @@ function bert_talk(npc, ch)
       "Interessante Onlineanzeige."))
 end
 
-function sascha_talk(npc, ch)
+local function sascha_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
       "Ich überwache The Alternate World.",
       "Mmm da stimmt irgendwas mit den Grafiken nicht.",
@@ -96,7 +96,7 @@ function sascha_talk(npc, ch)
       "Vielleicht doch nicht so wichtig, aber ich schreibe es mir mal auf."))
 end
 
-function david_talk(npc, ch)
+local function david_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
       "Ich überwache die visuellen Kanäle.",
       "Oh, die haben einen neuen Werbespot geschaltet, das muss ich sofort melden.",
@@ -105,7 +105,7 @@ function david_talk(npc, ch)
       "Gut, schauen wir nun mal auf den anderen Kanälen."))
 end
 
-function jan_talk(npc, ch)
+local function jan_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
       "Ziemlich durcheinander dort, wird alles ziemlich chaotisch.",
       "Interessant, keine Mapper und Grafiker, zumindestens offiziell.",
@@ -114,7 +114,7 @@ function jan_talk(npc, ch)
       "Ziemlich viele Serverausfälle laut dieser Anzeige."))
 end
 
-function jens_talk(npc, ch)
+local function jens_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
       "Schauen wir mal was die Zielgruppenanalyse dazu sagt.",
       "Ziemlich viel übernommen, kaum eigene Maps. Aber einige neue Städte. Interessant...",
@@ -123,7 +123,7 @@ function jens_talk(npc, ch)
       "Der Umgang der Community lässt zu wünschen übrig."))
 end
 
-function lora_talk(npc, ch)
+local function lora_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
       "Da schauen wir doch mal ob wir an diese Information kommen.",
       "Er wird es mir sicherlich gleich verraten. Na da ist die Nachricht ja. Interessant...",

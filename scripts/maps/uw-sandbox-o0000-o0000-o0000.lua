@@ -146,7 +146,7 @@ scorpionrace.initializeRace(scorpions, skorpion_rennen_npc, 2)
 
 end)
 
-function poker_dealer_talk(npc, ch)
+local function poker_dealer_talk(npc, ch)
     npc_message(npc, ch, "Hallo.")
     if game == nil then
         game = poker.PokerGame:new(200)
@@ -252,16 +252,16 @@ function poker_dealer_talk(npc, ch)
     end
 end
 
-function scorpion_talk(npc, ch)
+local function scorpion_talk(npc, ch)
     schedule_in(5, function() being_say(npc, "BUH!") end)
     npc_message(npc, ch, "Ich werde gewinnen!")
 end
 
-function zelan_talk(npc, ch)
+local function zelan_talk(npc, ch)
     npc_message(npc, ch, "Wo du bist? Im Vacare. Jeder neue kommt hier her bevor es raus geht in die große Welt. Also pass auf dich auf.")
 end
 
-function alaria_talk(npc, ch)
+local function alaria_talk(npc, ch)
     -- "Example: Let the player sell every item with a 'value' parameter in the server's items.xml file
     local sellcase = npc_trade(npc, ch, true)
     if sellcase == 0 then
@@ -275,12 +275,12 @@ function alaria_talk(npc, ch)
 end
 
 --- Falle auslösen
-function trap_trigger_skorpions(ch, id)
+local function trap_trigger_skorpions(ch, id)
   trap(ch, 21*TILESIZE, 21*TILESIZE,TILESIZE,TILESIZE,10)--- Bibliotheksfunktion
 end
 
 --- Bibliotheksfunktion
-function trap(ch, x, y, width, height, monsterid)
+local function trap(ch, x, y, width, height, monsterid)
   if (being_type(ch) == TYPE_CHARACTER) then --- Nur Player löst Falle aus
    local x1 = x - width/2
    local y1 = y - height/2
@@ -309,7 +309,7 @@ end
 emo_count = 0
 emo_state = EMOTE_SURPRISE
 
-function emote_talk(npc, ch)
+local function emote_talk(npc, ch)
   if emo_state     == EMOTE_SURPRISE then
     state = "confused"
   elseif emo_state == EMOTE_SAD then
@@ -332,7 +332,7 @@ function emote_talk(npc, ch)
   end
 end
 
-function emote_update(npc)
+local function emote_update(npc)
   emo_count = emo_count + 1
   if emo_count > 50 then
     emo_count = 0
@@ -340,19 +340,19 @@ function emote_update(npc)
   end
 end
 
-function int_test_talk(npc, ch)
+local function int_test_talk(npc, ch)
     npc_message(npc, ch, "Enter a number (50-100)")
     number = npc_ask_integer(npc, ch, 50, 100, 75)
     npc_message(npc, ch, string.format("You have entered %d ", number))
 end
 
-function string_test_talk(npc, ch)
+local function string_test_talk(npc, ch)
     npc_message(npc, ch, "Enter a string")
     input = npc_ask_string(npc, ch)
     npc_message(npc, ch, string.format("You have entered '%s' Nice choice ! ", input))
 end
 
-function patrol_waypoint(obj, id)
+local function patrol_waypoint(obj, id)
     if (being_type(obj) ~= TYPE_MONSTER) then
         if (id == 1) then
             chat_message(obj, "you've reached patrol point 1")
@@ -365,7 +365,7 @@ function patrol_waypoint(obj, id)
 end
 
 
-function npc1_talk(npc, ch)
+local function npc1_talk(npc, ch)
   on_remove(ch, function() print "Player has left the map." end);
   npc_message(npc, ch, "Hello! I am the testing NPC.")
   local rights = chr_get_rights(ch);
@@ -465,7 +465,7 @@ function npc1_talk(npc, ch)
     schedule_in(18, function() being_say(npc, "Nine") end)
     schedule_in(20, function() being_say(npc, "Ten") end)
   elseif v == 8 then
-    function printTable (t)
+    local function printTable (t)
       for k,v in pairs(t) do
         print (k, ":", v)
       end
@@ -487,7 +487,7 @@ function npc1_talk(npc, ch)
   npc_message(npc, ch, "See you later!")
 end
 
-function npc4_talk(npc, ch)
+local function npc4_talk(npc, ch)
   npc_message(npc, ch, "You are currently on map "..get_map_id()..". Where do you want to go?")
   local v = npc_choice(npc, ch, "Map 1", "Map 3","Map 3, but a warpable place.")
   if v >= 1 and v <= 3 then
@@ -505,7 +505,7 @@ function npc4_talk(npc, ch)
   end
 end
 
-function npc5_talk(npc, ch)
+local function npc5_talk(npc, ch)
   npc_message(npc, ch, "I am the scorpion tamer. Do you want me to spawn some scorpions?")
   local answer = npc_choice(npc, ch, "Yes", "No")
   if answer == 1 then
@@ -526,7 +526,7 @@ end
 
 local guard_position = 1
 
-function npc6_talk(npc, ch)
+local function npc6_talk(npc, ch)
   npc_message(npc, ch, "I'm moving....")
 
   if guard_position == 1 then
@@ -538,7 +538,7 @@ function npc6_talk(npc, ch)
   end
 end
 
-function npc6_update(npc)
+local function npc6_update(npc)
   local r = math.random(0, 100)
   if (r == 0) then
     being_say(npc, "*humhumhum*")
@@ -552,13 +552,13 @@ function npc6_update(npc)
 end
 
 
-function firedemon_talk(npc, ch)
+local function firedemon_talk(npc, ch)
   npc_message(npc, ch, "Burn, puny mortals! BURN! BUUUURN!!!")
 end
 
 local firedemon_timer = 0;
 
-function firedemon_update(npc)
+local function firedemon_update(npc)
     firedemon_timer = firedemon_timer + 1
     if (firedemon_timer == 5) then
       firedemon_timer = 0
@@ -573,7 +573,7 @@ function firedemon_update(npc)
     npclib.walkaround_map(npc)
 end
 
-function post_talk(npc, ch)
+local function post_talk(npc, ch)
   npc_message(npc, ch, "Hello " .. being_get_name(ch))
   local strength = being_get_attribute(ch, ATTR_STRENGTH)
   npc_message(npc, ch, "You have " .. tostring(strength) .. " strength")
@@ -592,7 +592,7 @@ function post_talk(npc, ch)
   end
 end
 
-function fireworker_talk(npc, ch)
+local function fireworker_talk(npc, ch)
   npc_message(npc, ch, "Do you want some fireworks?")
   local answer = npc_choice(npc, ch, "Wheee! Fireworks", "Nah, thanks.")
   if answer == 1 then
@@ -606,7 +606,7 @@ function fireworker_talk(npc, ch)
   end
 end
 
-function axetrainer_talk(npc, ch)
+local function axetrainer_talk(npc, ch)
   npc_message(npc, ch, "I am the axe trainer. Do you want to get better at using axes?")
   local answer = npc_choice(npc, ch, "Please train me, master.", "I am good enough with axes.")
   if answer == 1 then
@@ -624,24 +624,24 @@ function axetrainer_talk(npc, ch)
   end
 end
 
-function plague_talk(npc, ch)
+local function plague_talk(npc, ch)
   npc_message(npc, ch, "I don't feel so good...")
   being_apply_status(ch, 1, 6000) -- Give plauge for 6000 ticks (I.E. 10 minutes)
 end
 
-function jump_status_talk(npc, ch)
+local function jump_status_talk(npc, ch)
   being_apply_status(ch, 2, 6000) -- Give jumping bug
   npc_message(npc, ch, "Now you have the jumping bug")
 end
 
-function monster_spawn_talk(npc, ch)
+local function monster_spawn_talk(npc, ch)
   local x = posX(npc)
   local y = posY(npc)
   monster = monster_create(5, x + TILESIZE, y + TILESIZE)
   --monster_load_script(monster, "testmonster.lua")
 end
 
-function sitter_update(npc)
+local function sitter_update(npc)
   if being_get_action(npc) == ACTION_SIT then
     if math.random(30) == 1 then
       being_set_action(npc, ACTION_STAND)
@@ -657,7 +657,7 @@ end
 
 local spinner_timer = 0
 
-function spinner_update(npc)
+local function spinner_update(npc)
   spinner_timer = spinner_timer + 1
   if spinner_timer == 10 then
     spinner_timer = 0
@@ -679,7 +679,7 @@ function spinner_update(npc)
   end
 end
 
-function healer_talk(npc, ch)
+local function healer_talk(npc, ch)
     npc_message(npc, ch, "Do you need healing?")
     local c = npc_choice(npc, ch, "Heal me fully", "Heal 100 HP", "Don't heal me")
     if c == 1 then
@@ -690,7 +690,7 @@ function healer_talk(npc, ch)
     
 end
 
-function debugger_talk(npc, ch)
+local function debugger_talk(npc, ch)
     npc_message(npc, ch, "Was soll debuggt werden?")
     local c = npc_choice(npc, ch, "Nix.", "Effekte.")
     if c == 2 then
@@ -700,7 +700,7 @@ function debugger_talk(npc, ch)
     end
 end
 
-function speedy_talk(npc, ch)
+local function speedy_talk(npc, ch)
     while true do
         npc_message(npc, ch, "Möchtest du schneller laufen?")
         local v = npc_choice(npc, ch, "Ja", "Nein")
@@ -716,7 +716,7 @@ function speedy_talk(npc, ch)
     end
 end
 
-function timel_talk(npc, ch)
+local function timel_talk(npc, ch)
     time1 = os.time(t)
     npc_message(npc, ch, "Nehme 2. Zeit.")
     time2 = os.time(t)

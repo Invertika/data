@@ -46,14 +46,14 @@ atinit(function()
     npc_create("Brielm", 72, GENDER_UNSPECIFIED, 109 * TILESIZE + 16, 102 * TILESIZE + 16, brielm_talk, nil)
 end)
 
-function awond_talk(npc, ch)
+local function awond_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Sei gegrüßt Reisender!",
       "Das war ein harter Tag.",
       "Ich hoffe meine Frau macht schonmal das Abendessen.",
       "Setz dich doch zu mir."))
 end
 
-function mordyno_talk(npc, ch)
+local function mordyno_talk(npc, ch)
     npc_trade(npc, ch, false, {
       {10001, 30, 50},
       {10013, 30, 140},
@@ -72,11 +72,11 @@ function mordyno_talk(npc, ch)
       {20009, 30, 500} })
 end
 
-function bache_talk(npc, ch)
+local function bache_talk(npc, ch)
     local quest_string = "narva_bache_quest"
     invertika.init_quest_status(ch, quest_string)
-    function get_qstatus() return invertika.get_quest_status(ch, quest_string) end
-    function set_qstatus(x) invertika.set_quest_status(ch, quest_string, x) end
+    local function get_qstatus() return invertika.get_quest_status(ch, quest_string) end
+    local function set_qstatus(x) invertika.set_quest_status(ch, quest_string, x) end
     if get_qstatus() == 0 then
         npc_message(npc, ch, "Sei gegrüßt Fremder.")
         npc_message(npc, ch, "Ich bin auf der Suche nach brauchbarem Bauholz")
@@ -125,7 +125,7 @@ function bache_talk(npc, ch)
     end
 end
 
-function cloina_talk(npc, ch)
+local function cloina_talk(npc, ch)
     npc_message(npc, ch, "Ich verkaufe hier Heilmittel aus meinen selbstangebauten Kräutern.")
     npc_trade(npc, ch, false,
      { {30001, 30, 300},
@@ -139,7 +139,7 @@ function cloina_talk(npc, ch)
        {30025, 30, 1000} })
 end
 
-function brielm_talk(npc, ch)
+local function brielm_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
       "Willkommen in Narva",
       "Wir leben hier vom Handel zwischen den Wüstenbewohnern und denen aus dem Grasland.",

@@ -22,7 +22,7 @@ atinit(function()
     npc_create("Geban", 120, GENDER_UNSPECIFIED, 23 * TILESIZE + 16, 27  * TILESIZE + 16, geban_talk, nil)
 end)
 
-function geban_talk(npc, ch)
+local function geban_talk(npc, ch)
     npc_message(npc, ch, "Hallo, was kann ich für sie tuen?")
 
         while true do

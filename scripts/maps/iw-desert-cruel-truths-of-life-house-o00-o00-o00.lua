@@ -21,7 +21,7 @@ atinit(function()
      npc_create("Veritas", 143, GENDER_UNSPECIFIED, 41 * TILESIZE, 20 * TILESIZE + 16, veritas_talk, nil) --- Veritas 
 end)
 
-function veritas_talk(npc, ch)
+local function veritas_talk(npc, ch)
     npc_message(npc, ch, "Sei gegrüßt Reisender. Bist du gekommen um eine grausame Wahrheit des Lebens zu erfahren?")
     
         while true do

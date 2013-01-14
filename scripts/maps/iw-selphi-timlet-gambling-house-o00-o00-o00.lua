@@ -30,12 +30,12 @@ atinit(function()
  npc_create("Würfeltisch", 1, GENDER_UNSPECIFIED, 30 * TILESIZE + 16, 25 * TILESIZE + 16, dice.dicemanager_talk, nil)
 end)
 
-function daniela_talk(npc, ch)
+local function daniela_talk(npc, ch)
   -- quest init
   invertika.init_quest_status(ch, "selphi_timlet_bruce_quest")
   -- quest get/set functions
-  function get_qstatus() return invertika.get_quest_status(ch, "selphi_timlet_bruce_quest") end
-  function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_bruce_quest", x) end
+  local function get_qstatus() return invertika.get_quest_status(ch, "selphi_timlet_bruce_quest") end
+  local function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_bruce_quest", x) end
   
   if get_qstatus() < 5 then
     npc_message(npc, ch, invertika.get_random_element("Stehst du auf der Gästeliste?",

@@ -22,7 +22,7 @@ atinit(function()
     npc_create("Enla", 4, GENDER_UNSPECIFIED, 33 * TILESIZE + 16, 36 * TILESIZE + 16, enla_talk, nil)
 end)
 
-function enla_talk(npc, ch)
+local function enla_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Hi, was kann ich für sie tuen?",
       "Hi, was gibt es?",
       "Hi, wie kann ich ihnen helfen?",

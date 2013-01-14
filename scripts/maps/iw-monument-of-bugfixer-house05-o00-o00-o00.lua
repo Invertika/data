@@ -15,7 +15,7 @@ atinit(function()
   npc_create("Umach", 111, GENDER_UNSPECIFIED, 13 * TILESIZE + 16, 25 * TILESIZE + 16, umach_talk, nil)
 end)
 
-function umach_talk(npc, ch)
+local function umach_talk(npc, ch)
     local queststring = "monument_of_bugfixer_flower_quest"
     local queststring_kill = "monument_of_bugfixer_kill_quest"
     local queststring_curr_kills_bat = "monument_of_bugfixer_kill_quest_current_bat"

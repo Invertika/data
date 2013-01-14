@@ -15,7 +15,7 @@ atinit(function()
     npc_create("Echver", 57, GENDER_UNSPECIFIED, 40 * TILESIZE + 16, 22 * TILESIZE + 16, echver_talk, nil)
 end)
 
-function echver_talk(npc, ch)
+local function echver_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
       "Ich bin der Priester dieser Stadt.",
       "Geheiligt sei Invertika, Amoneus und die Bewohner dieses Planeten.",

@@ -24,7 +24,7 @@ atinit(function()
  npc_create("Bolum", 42, GENDER_UNSPECIFIED, 26 * TILESIZE + 16, 59 * TILESIZE + 16, bolum_talk, nil)
 end)
 
-function bolum_talk(npc, ch)
+local function bolum_talk(npc, ch)
     local queststring = "nelaro_vodel_quests"
     
     --Init Quest

@@ -21,12 +21,12 @@ atinit(function()
     npc_create("Nijeta", 58, GENDER_UNSPECIFIED, 50 * TILESIZE + 16, 33 * TILESIZE + 16, nijeta_talk, nil) --Nijeta
 end)
 
-function nijeta_talk(npc, ch)
+local function nijeta_talk(npc, ch)
     -- quest init
     invertika.init_quest_status(ch, "roststock_pharmacy_quest")
     -- quest get/set functions
-    function get_qstatus() return tonumber(invertika.get_quest_status(ch, "roststock_pharmacy_quest")) end
-    function set_qstatus(x) invertika.set_quest_status(ch, "roststock_pharmacy_quest", tonumber(x)) end
+    local function get_qstatus() return tonumber(invertika.get_quest_status(ch, "roststock_pharmacy_quest")) end
+    local function set_qstatus(x) invertika.set_quest_status(ch, "roststock_pharmacy_quest", tonumber(x)) end
 
     if get_qstatus() == 1 then
         if chr_inv_count(ch, 30025) >= 4 then

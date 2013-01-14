@@ -24,7 +24,7 @@ atinit(function()
     -- schedule_in(10, worrany_walkleft)
 end)
 
-function worrany_talk(npc, ch)
+local function worrany_talk(npc, ch)
     npc_message(npc, ch, "Willkommen, in meinem Kräuterladen")
     npc_message(npc, ch, "Was kann ich für sie tun?")
     
@@ -60,12 +60,12 @@ function worrany_talk(npc, ch)
     end
 end
 
-function worrany_walkleft()
+local function worrany_walkleft()
     being_walk(npc, 18 * 32 + 16, 880, 2)
     schedule_in(20, worrany_walkright)
 end
 
-function worrany_walkright()
+local function worrany_walkright()
     being_walk(npc,  27 * 32 + 16, 880, 2)
     schedule_in(20, worrany_walkleft)
 end

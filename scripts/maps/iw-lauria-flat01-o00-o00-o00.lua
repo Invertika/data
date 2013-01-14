@@ -23,7 +23,7 @@ atinit(function()
     npc_create("Ansdan", 60, GENDER_UNSPECIFIED, 25 * TILESIZE + 16, 39 * TILESIZE + 16, ansdan_talk, nil) --- Ansdan
 end)
 
-function ansdan_talk(npc, ch)
+local function ansdan_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Willkommen!",
       "Dies ist mein Bescheidenes Heim.",
       "Möge Invertika euch beschützen."))

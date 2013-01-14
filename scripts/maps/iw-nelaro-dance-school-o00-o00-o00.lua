@@ -22,7 +22,7 @@ atinit(function()
     npc_create("Irucia", 79, GENDER_UNSPECIFIED, 33 * TILESIZE + 16, 37 * TILESIZE + 16, irucia_talk, nil)
 end)
 
-function irucia_talk(npc, ch)
+local function irucia_talk(npc, ch)
     --TODO: Irgendetwas besseres hier einbauen
     npc_message(npc, ch, "Die Tanzschule hat noch geschlossen.")
 end

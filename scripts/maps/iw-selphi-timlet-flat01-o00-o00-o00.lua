@@ -23,7 +23,7 @@ atinit(function()
 end)
 
 
-function goron_talk(npc, ch)
+local function goron_talk(npc, ch)
     -- 0 = keine Bestellungen.
     -- 1 = grüne Robe.
     -- 2 = gelbe Robe.

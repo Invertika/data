@@ -24,14 +24,14 @@ atinit(function()
      npc_create("Paul", 113, GENDER_UNSPECIFIED, 24 * TILESIZE, 6 * TILESIZE + 16, paul_talk, nil) --- Paul 
 end)
 
-function ingrid_talk(npc, ch)
+local function ingrid_talk(npc, ch)
     npc_message(npc, ch, "Das Theater hat leider noch nicht geöffnet, da wir noch an der Bühne arbeiten.")
 end
 
-function anne_talk(npc, ch)
+local function anne_talk(npc, ch)
     npc_message(npc, ch, "Ja, hier können sie ihre Garderobe abgeben, sobald wir geöffnet haben.")
 end
 
-function paul_talk(npc, ch)
+local function paul_talk(npc, ch)
     npc_message(npc, ch, "Ihre Garderobe können sie erst nach der Eröffnung abgeben.")
 end

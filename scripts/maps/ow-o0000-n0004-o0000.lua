@@ -52,7 +52,7 @@ atinit(function()
 end)
 
 -- Silvester
-function fireworker_talk(npc, ch)
+local function fireworker_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
       "Willst du ein wenig Feuerwerk sehen?",
       "Willst du ein kleines Feuerwerk sehen?",
@@ -79,7 +79,7 @@ function fireworker_talk(npc, ch)
     end
 end
 
-function egroe_talk(npc, ch)
+local function egroe_talk(npc, ch)
     --TODO mehr Auswahl
     npc_trade(npc, ch, false, {
       {10001, 20, 19},
@@ -95,7 +95,7 @@ function egroe_talk(npc, ch)
     })
 end
 
-function thinaima_talk(npc, ch)
+local function thinaima_talk(npc, ch)
     --TODO mehr Auswahl
     npc_trade(npc, ch, false, {
       {10001, 20, 19},
@@ -111,7 +111,7 @@ function thinaima_talk(npc, ch)
     })
 end
 
-function onurn_talk(npc, ch)
+local function onurn_talk(npc, ch)
     local queststring = "nelaro_water_quest"
     --Init Quest
     invertika.init_quest_status(ch, queststring)

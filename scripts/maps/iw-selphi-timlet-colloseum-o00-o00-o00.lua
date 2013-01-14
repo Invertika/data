@@ -36,18 +36,18 @@ atinit(function()
  -- trigger_create(64 * TILESIZE, 68 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, fight_start_trigger, 1, true)
 end)
 
-function wache_talk(npc, ch)
+local function wache_talk(npc, ch)
     npc_message(npc, ch, "Hier kommt man nur mit VIP-Karte rein!")
 end
 
-function get_wache_say()
+local function get_wache_say()
         return invertika.get_random_element("Halt! Du brauchst eine VIP-Karte um hier rein zu kommen.",
       "Ohne VIP Karte geht es hier nicht weiter!",
       "Du hast keinen VIP Ausweis. Tut mir leid.",
       "Da könnte ja jeder kommen! Nur mit VIP Ausweis!")
  end
 
-function wache_trigger(ch, id)
+local function wache_trigger(ch, id)
     if (being_type(ch) ~= TYPE_MONSTER) then
         local count = chr_inv_count(ch, 40026)
         if count == 0 then
@@ -66,14 +66,14 @@ function wache_trigger(ch, id)
     end
 end
 
-function estech_talk(npc, ch)
+local function estech_talk(npc, ch)
     invertika.init_quest_status(ch, "selphi_timlet_inard_training");
     invertika.init_quest_status(ch, "selphi_timlet_orkana_feierabend");
     
-    function get_qstatus() return invertika.get_quest_status(ch, "selphi_timlet_inard_training") end
-    function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_inard_training", tonumber(x)) end
-    function get_feierabend() return invertika.get_quest_status(ch, "selphi_timlet_orkana_feierabend") end
-    function set_feierabend(x) invertika.set_quest_status(ch, "selphi_timlet_orkana_feierabend", tonumber(x)) end
+    local function get_qstatus() return invertika.get_quest_status(ch, "selphi_timlet_inard_training") end
+    local function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_inard_training", tonumber(x)) end
+    local function get_feierabend() return invertika.get_quest_status(ch, "selphi_timlet_orkana_feierabend") end
+    local function set_feierabend(x) invertika.set_quest_status(ch, "selphi_timlet_orkana_feierabend", tonumber(x)) end
 
     local count = chr_inv_count(ch, 40026)
     if count > 0 then
@@ -115,42 +115,42 @@ end
 -- 
 -- pvm_fight = nil
 -- 
--- function commentator_talk(npc, ch)
+-- local function commentator_talk(npc, ch)
 -- end
 -- 
--- function commentator_say(text)
+-- local function commentator_say(text)
     -- for i,v in commentator do
         -- being_say(v, text)
     -- end
 -- end
 -- 
--- function fight_started()
+-- local function fight_started()
     -- commentator_say("Und es geht los!")
 -- end
 -- 
--- function monster_died(monster)
+-- local function monster_died(monster)
     -- -- TODO: er/sie, Texte varieren.
     -- commentator_say("Und ZACK. An der Deckung vorbei trifft er einen tödlichen Schlag")
     -- arenafight.increase_arena_rank(pvm_fight:getCh(), "selphi_timlet", RANK_SURPLUS_AT_KILL)
 -- end
 -- 
--- function last_monster_died(monster)
+-- local function last_monster_died(monster)
     -- commentator_say("Da geht der letzte Gegner zu Boden!")
     -- arenafight.increase_arena_rank(pvm_fight:getCh(), "selphi_timlet", RANK_SURPLUS_AT_KILL)
 -- end
 -- 
--- function player_died()
+-- local function player_died()
     -- commentator_say("Uhhh. Das muss wegetan haben. DER SPIELER GEHT ZU BODEN.... AUS. Ein weiteres Skellett, dass auf dem Boden unserer grandiosen Arena verrottet.")
     -- arenafight.decrease_arena_rank(pvm_fight:getCh(), "selphi_timlet", RANK_LOSS_AT_DEATH)
     -- schedule_in(2, reset_game)
 -- end
 -- 
--- function reset_game()
+-- local function reset_game()
     -- pvm_fight:delete()
     -- pvm_fight = nil
 -- end
 -- 
--- function entrance_control_talk(npc, ch)
+-- local function entrance_control_talk(npc, ch)
     -- if pvm_fight == nil then -- Kein Kampf
         -- npc_message(npc, ch, "Willst du in der Arena kämpfen?")
         -- while true do
@@ -178,7 +178,7 @@ end
     -- end
 -- end
 -- 
--- function entrance_trigger(being, id)
+-- local function entrance_trigger(being, id)
     -- if id == 1 then -- Eintritt in Arena
         -- if being_type(being) == TYPE_CHARACTER then
             -- if pvm_fight ~= nil and pvm_fight:getCh() == being then
@@ -201,7 +201,7 @@ end
     -- end
 -- end
 -- 
--- function fight_start_trigger(being, id)
+-- local function fight_start_trigger(being, id)
     -- if being_type(being) == TYPE_CHARACTER then
         -- if pvm_fight ~= nil and pvm_fight:getCh() == being then
             -- if not pvm_fight:isStarted() then

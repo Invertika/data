@@ -24,14 +24,14 @@ atinit(function()
 
 end)
 
-function mercol_talk(npc, ch)
+local function mercol_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Ich wohne hier.",
       "Selphi Timlet ist eine schöne Stadt.",
       "Ich bin hier aufgewachsen.",
       "Es gab auch schon schwerere Zeiten."))
 end
 
-function samos_talk(npc, ch)
+local function samos_talk(npc, ch)
     local quest_string = "selphi_timlet_samos_quest"
     invertika.init_quest_status(ch, quest_string)
     local get_qstatus = function() return invertika.get_quest_status(ch, quest_string) end

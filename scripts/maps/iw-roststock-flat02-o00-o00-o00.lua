@@ -22,7 +22,7 @@ atinit(function()
     npc_create("Icero", 80, GENDER_UNSPECIFIED, 29 * TILESIZE + 16, 29 * TILESIZE + 16, icero_talk, nil) --- Icero
 end)
 
-function icero_talk(npc, ch)
+local function icero_talk(npc, ch)
     local quest_string = "roststock_icero_quest"
     invertika.init_quest_status(ch, quest_string)
     local get_qstatus = function() return invertika.get_quest_status(ch, quest_string) end

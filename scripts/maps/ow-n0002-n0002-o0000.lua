@@ -27,7 +27,7 @@ atinit(function()
  npc_create("Siegfried", 46, GENDER_UNSPECIFIED, 101 * TILESIZE + 16, 42 * TILESIZE + 16, siegfried_talk, nil) --- Siegfried
 end)
 
-function peter_talk(npc, ch)
+local function peter_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Gerade Kanten und symmetrisch muss es sein.",
       "Wir sorgen dafür das in der Welt von Invertika eine gewisse Gradlinigkeit herrscht.",
       "Ich bin hier der mit dem 90 Grad Winkelmaß.",
@@ -35,7 +35,7 @@ function peter_talk(npc, ch)
       "Bei uns wird das sehr sehr gewissenhaft gemacht."))
 end
 
-function hans_talk(npc, ch)
+local function hans_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Wir sind Landschaftsgärtner. Das muss schließlich alles seine Ordnung haben.",
       "Da drüben haben wir ein kleines Problem mit dieser Blume. Schrecklich.",
       "Jetzt steht diese Blume dort schon seit 5 Tagen und wir haben noch kein Mittel gegen sie gefunden.",
@@ -57,7 +57,7 @@ function hans_talk(npc, ch)
 	
 end
 
-function siegfried_talk(npc, ch)
+local function siegfried_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Wir sorgen für Ordnung und Ordnung und ganz wichtig Ordnung.",
       "Verdammt, was macht diese Blume hier?",
       "Diese Blume zerstört die Perfektion.",

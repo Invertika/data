@@ -22,7 +22,7 @@ atinit(function()
  npc_create("Botschafter", 66, GENDER_UNSPECIFIED, 51 * TILESIZE + 16, 31 * TILESIZE + 16, botschafter_talk, nil)
 end)
 
-function botschafter_talk(npc, ch)
+local function botschafter_talk(npc, ch)
     local questname = "selphi_timlet_royal_pass"
     invertika.init_quest_status(ch, questname)
     if (invertika.get_quest_status(ch, "selphi_timlet_royal_pass") == nil) then ---Keine Questvar gesetzt

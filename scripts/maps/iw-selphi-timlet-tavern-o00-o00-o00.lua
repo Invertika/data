@@ -24,17 +24,17 @@ atinit(function()
  npc_create("Chodar", 40, GENDER_UNSPECIFIED, 38 * TILESIZE + 16, 18 * TILESIZE + 16, chodar_talk, nil) --- Chodar
 end)
 
-function brecht_talk(npc, ch)
+local function brecht_talk(npc, ch)
     npc_message(npc, ch, "Ich sehe schon du bist durstig. Was möchtest du?")
     npc_trade(npc, ch, false, { {30006, 999, 25}, {30007, 999, 60}, {30008, 999, 450} })
     npc_message(npc, ch, "Lass es dir schmecken.")
 end
 
-function chodar_talk(npc, ch)
+local function chodar_talk(npc, ch)
     invertika.init_quest_status(ch, "selphi_timlet_vipcard")
 
-    function get_qstatus() return invertika.get_quest_status(ch, "selphi_timlet_vipcard") end
-    function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_vipcard", x) end
+    local function get_qstatus() return invertika.get_quest_status(ch, "selphi_timlet_vipcard") end
+    local function set_qstatus(x) invertika.set_quest_status(ch, "selphi_timlet_vipcard", x) end
 
     if get_qstatus() == 0 then
         npc_message(npc, ch, "Hey! Du! Steht nicht so dumm rum! Bring mir mein Bier!")

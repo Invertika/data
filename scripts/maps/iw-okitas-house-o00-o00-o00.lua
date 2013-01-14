@@ -24,7 +24,7 @@ atinit(function()
     npc_create("Tetse", 138, GENDER_UNSPECIFIED, 45 * TILESIZE + 16, 23 * TILESIZE + 16, tetse_talk, nil) --- Tetse
 end)
 
-function saya_talk(npc, ch)
+local function saya_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
       "Oh, wir haben Gäste! Tetse, deckst du den Tisch? Ich bin fast fertig.",
       "Tetse lernte ich vor sehr langer Zeit kennen.",
@@ -32,11 +32,11 @@ function saya_talk(npc, ch)
       "Okita ist vor einiger Zeit gegangen, er sagte, er müsse einige Dinge klären."))
 end
 
-function tetse_talk(npc, ch)
+local function tetse_talk(npc, ch)
     local questname = "twin_house_quest"
     invertika.init_quest_status(ch, questname)
-    function get_qstatus() return invertika.get_quest_status(ch, questname) end
-    function set_qstatus(x) invertika.set_quest_status(ch, questname, x) end
+    local function get_qstatus() return invertika.get_quest_status(ch, questname) end
+    local function set_qstatus(x) invertika.set_quest_status(ch, questname, x) end
 
     if get_qstatus() == 1 then
         if chr_inv_count(ch, 10008) > 0 then

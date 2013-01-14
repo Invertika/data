@@ -24,14 +24,14 @@ atinit(function()
     npc_create("Fohon", 5 , GENDER_UNSPECIFIED, 29 * TILESIZE + 16, 36 * TILESIZE + 16, fohon_talk, nil)
 end)
 
-function dache_talk(npc, ch)
+local function dache_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
       "Noch ein Drink und dann wars das.",
       "So langsam sehe ich alles doppelt.",
       "Mmmm also ich weiß ja nicht."))
 end
 
-function fohon_talk(npc, ch)
+local function fohon_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
       "Was kann ich für sie tuen?",
       "Was möchten sie?"))

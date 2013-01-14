@@ -26,7 +26,7 @@ atinit(function()
  npc_create("Betirambo", 21, GENDER_UNSPECIFIED, 101 * TILESIZE + 16, 145 * TILESIZE + 16, betirambo_talk, betirambo_update)
 end)
 
-function betirambo_talk(npc, ch)
+local function betirambo_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Willst du ein Eis haben?",
       "Ein Eis?"))
     while true do
@@ -50,6 +50,6 @@ function betirambo_talk(npc, ch)
     npc_message(npc, ch, "Bis bald")
 end
 
-function betirambo_update(npc)
+local function betirambo_update(npc)
     --walkaround_map(npc)
 end

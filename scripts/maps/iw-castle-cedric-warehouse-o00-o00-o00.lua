@@ -15,7 +15,7 @@ atinit(function()
     npc_create("Trutim", 2, GENDER_UNSPECIFIED, 23 * TILESIZE + 16, 32 * TILESIZE + 16, trutim_talk, nil)
 end)
 
-function trutim_talk(npc, ch)
+local function trutim_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
       "Endlich kommt mal wieder einer ins Lager.",
       "Hierhin verirrt sich selten eine Person.",

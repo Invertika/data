@@ -36,7 +36,7 @@ atinit(function()
  trigger_create(30 * TILESIZE, 84 * TILESIZE, 7 * TILESIZE, 3 * TILESIZE, wache_trigger, 1, true) --- Trigger
 end)
 
-function wache_trigger(ch, id)
+local function wache_trigger(ch, id)
    if (being_type(ch) ~= TYPE_MONSTER) then --- Nur Player durchlassen
      local count = chr_inv_count(ch, 40036)
      
@@ -55,12 +55,12 @@ function wache_trigger(ch, id)
   end
  end
  
-function wache_talk(npc, ch)
+local function wache_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Zutritt nur für Mitarbeiter.",
         "Sie sind kein Mitarbeiter der Zentralbank."))
 end
 
-function mertox_talk(npc, ch)
+local function mertox_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Zur Zeit gibt es keine Wirtschaftskenngrößen.",
         "Kommen sie später wieder."))
 end

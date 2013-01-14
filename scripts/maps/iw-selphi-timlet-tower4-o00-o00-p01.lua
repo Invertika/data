@@ -21,7 +21,7 @@ atinit(function()
  npc_create("Averin", 29, GENDER_UNSPECIFIED, 15 * TILESIZE + 16, 15 * TILESIZE + 16, averin_talk, nil) --- Elmo
 end)
 
-function averin_talk(npc, ch)
+local function averin_talk(npc, ch)
         invertika.init_quest_status(ch, "selphi_timlet_royal_pass")
     if (invertika.get_quest_status(ch, "selphi_timlet_royal_pass") == 0) then ---Keine Questvar gesetzt
       npc_message(npc, ch, "Hallo, was ist dein Begehr?")

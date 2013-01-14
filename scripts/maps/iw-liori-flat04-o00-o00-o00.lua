@@ -21,7 +21,7 @@ atinit(function()
     npc_create("Metatron", 36, GENDER_UNSPECIFIED, 17 * TILESIZE + 16, 21 * TILESIZE + 16, metatron_talk, nil) --- Metatron
 end)
 
-function metatron_talk(npc, ch)
+local function metatron_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
       "Ich bin die Stimme...",
       "Durch mich spricht sie...",

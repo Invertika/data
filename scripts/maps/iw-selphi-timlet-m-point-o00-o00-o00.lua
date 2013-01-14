@@ -22,7 +22,7 @@ atinit(function()
  npc_create("S.A.N.D.R.A.", 44, GENDER_UNSPECIFIED, 30 * TILESIZE + 16, 22 * TILESIZE + 16, sandra_talk, nil) --- S.A.N.D.R.A.
 end)
 
-function manitu_talk(npc, ch)
+local function manitu_talk(npc, ch)
     npc_message(npc, ch, "Hallo, ich bin der Manitu. Grosses M, kleines anitu. Was kann ich für dich tun?")
 
     while true do
@@ -45,7 +45,7 @@ function manitu_talk(npc, ch)
     end
 end
 
-function sandra_talk(npc, ch)
+local function sandra_talk(npc, ch)
     npc_message(npc, ch, "Hi, ich bin S.A.N.D.R.A.")
 
     while true do

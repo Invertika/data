@@ -24,7 +24,7 @@ atinit(function()
 
 end)
 
-function bjoern_talk(npc, ch)
+local function bjoern_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Velera sucht mich? Einen Schluck trinke ich aber noch.",
       "Lustig hier, oder?",
       "Du möchtest auch was trinken, dann ab zum Barmann!",
@@ -33,7 +33,7 @@ function bjoern_talk(npc, ch)
       "Willkommen in Roststock. Trink doch was mit.")) 
 end
 
-function rodhonu_talk(npc, ch)
+local function rodhonu_talk(npc, ch)
     if chr_inv_count(ch, 20021) > 0 then
         npc_message(npc, ch, "Kann ich etwas für dich tun?")
         while true do
@@ -72,7 +72,7 @@ function rodhonu_talk(npc, ch)
     end
 end
 
-function iaugh_talk(npc, ch)
+local function iaugh_talk(npc, ch)
         npc_message(npc, ch, "Ein Reisender aus dem Sandsturm. Was willst du trinken?")
         npc_trade(npc, ch, false, { {30006, 10, 25}, {30007, 10, 60}, {30008, 10, 450} })
         npc_message(npc, ch, "Komm bald wieder.")
