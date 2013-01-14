@@ -19,12 +19,6 @@ require "scripts/libs/invertika"
 
 require "scripts/libs/warp"
 
-atinit(function()
- create_inter_map_warp_trigger(43, 31, 41, 53) --- Intermap warp
-
- --TODO Change Sprite ID
- npc_create("Betirambo", 21, GENDER_UNSPECIFIED, 101 * TILESIZE + 16, 145 * TILESIZE + 16, betirambo_talk, betirambo_update)
-end)
 
 local function betirambo_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Willst du ein Eis haben?",
@@ -53,3 +47,10 @@ end
 local function betirambo_update(npc)
     --walkaround_map(npc)
 end
+
+atinit(function()
+ create_inter_map_warp_trigger(43, 31, 41, 53) --- Intermap warp
+
+ --TODO Change Sprite ID
+ npc_create("Betirambo", 21, GENDER_UNSPECIFIED, 101 * TILESIZE + 16, 145 * TILESIZE + 16, betirambo_talk, betirambo_update)
+end)

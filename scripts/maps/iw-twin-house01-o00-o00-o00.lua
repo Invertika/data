@@ -18,9 +18,6 @@ require "scripts/lua/npclib"
 require "scripts/libs/barber"
 require "scripts/libs/invertika"
 
-atinit(function()
-    npc_create("Blyther", 60, GENDER_UNSPECIFIED, 15 * TILESIZE + 16, 13 * TILESIZE + 16, blyther_talk, nil) --- Blyther (1. Zwilling)
-end)
 
 
 local function blyther_talk(npc, ch)
@@ -71,3 +68,7 @@ local function blyther_talk(npc, ch)
           "Wir reden schon ewig nicht mehr miteinader."))
     end
 end
+
+atinit(function()
+    npc_create("Blyther", 60, GENDER_UNSPECIFIED, 15 * TILESIZE + 16, 13 * TILESIZE + 16, blyther_talk, nil) --- Blyther (1. Zwilling)
+end)

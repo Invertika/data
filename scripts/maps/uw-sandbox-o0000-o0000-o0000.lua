@@ -24,127 +24,6 @@ require "scripts/libs/guard"
 
 require "scripts/libs/warp"
 
-atinit(function()
- create_inter_map_warp_trigger(19003, 19003, 19003, 19003) --- Intermap warp
- npc_create("Debugger", 58, GENDER_UNSPECIFIED, 133 * TILESIZE + 16, 21 * TILESIZE + 16, debugger_talk, nil) -- Debugger
- npc_create("Zelan", 58, GENDER_UNSPECIFIED, 132 * TILESIZE + 16, 21 * TILESIZE + 16, zelan_talk, nil) --- Zelan
- trigger_create(20 * TILESIZE, 20 * TILESIZE, 22 * TILESIZE, 22 * TILESIZE, trap_trigger_skorpions, 0, true) --- Trigger Trap
- npc_create("Aliria", 2, GENDER_UNSPECIFIED, 15 * TILESIZE + 16, 15 * TILESIZE + 16, alaria_talk, nil) --- Alaria Handels Test NPC
-
---Test NPCs
-  npc_create("Test NPC", 200, GENDER_UNSPECIFIED, 50 * TILESIZE + 16, 19 * TILESIZE + 16, npc1_talk, npclib.walkaround_small)
-  npc_create("Teleporter", 201, GENDER_UNSPECIFIED, 51 * TILESIZE + 16, 25 * TILESIZE + 16, npc4_talk, npclib.walkaround_wide)
-  npc_create("Scorpion Tamer", 26, GENDER_UNSPECIFIED, 45 * TILESIZE + 16, 25 * TILESIZE + 16, npc5_talk, nil)
-  npc_create("Guard", 22, GENDER_UNSPECIFIED, 58 * TILESIZE + 16, 15 * TILESIZE + 16, npc6_talk, npc6_update)
-  npc_create("Fire Demon", 202, GENDER_UNSPECIFIED, 58 * TILESIZE + 16, 35 * TILESIZE + 16, firedemon_talk, firedemon_update)
-  npc_create("Post Box", 58, GENDER_UNSPECIFIED, 45 * TILESIZE + 16, 22 * TILESIZE + 16, post_talk)
-  npc_create("Fireworker", 58, GENDER_UNSPECIFIED, 43 * TILESIZE, 23 * TILESIZE, fireworker_talk, npclib.walkaround_small)
-  npc_create("Axe Trainer", 26, GENDER_UNSPECIFIED, 65 * TILESIZE, 18 * TILESIZE, axetrainer_talk, nil)
-  npc_create("Int NPC", 26, GENDER_UNSPECIFIED, 68 * TILESIZE, 20 * TILESIZE, int_test_talk, nil)
-  npc_create("String NPC", 26, GENDER_UNSPECIFIED, 65 * TILESIZE, 20 * TILESIZE, string_test_talk, nil)
--- Auskommentiert, weil die Statuszustände Plage und Jumping Bug im Moment zu Servercrashs führen
---  npc_create("Plague NPC", 26, GENDER_UNSPECIFIED, 70 * TILESIZE, 20 * TILESIZE, plague_talk, nil)
---  npc_create("Jumping Bug NPC", 26, GENDER_UNSPECIFIED, 75 * TILESIZE, 20 * TILESIZE, jump_status_talk, nil)
-  npc_create("Monster spawn", 26, GENDER_UNSPECIFIED, 80 * TILESIZE, 20 * TILESIZE, monster_spawn_talk, nil)
-  npc_create("Emotional Palm", 27, GENDER_UNSPECIFIED, 68 * TILESIZE, 25 * TILESIZE, emote_talk, emote_update)
-  npc_create("Sitter", 201, GENDER_UNSPECIFIED, 51 * TILESIZE + 16, 25 * TILESIZE + 16, nil, sitter_update)
-  npc_create("Spinner", 201, GENDER_UNSPECIFIED, 51 * TILESIZE + 16, 30 * TILESIZE + 16, nil, spinner_update)
-  npc_create("Healer", 19, GENDER_UNSPECIFIED, 54 * TILESIZE + 16, 32 * TILESIZE + 16, healer_talk, nil)
-  skorpion_rennen_npc = npc_create("Skorpion Rennen", 27, GENDER_UNSPECIFIED, 142 * TILESIZE + 16, 72 * TILESIZE +16, scorpionrace.race_manager_talk, nil)
-  poker_dealer_npc = npc_create("Dealer", 27, GENDER_UNSPECIFIED, 82 * TILESIZE + 16, 142 * TILESIZE + 16, poker_dealer_talk, nil)
-  npc_create("Feuerwerker", 139, GENDER_UNSPECIFIED, 177 * TILESIZE + 16, 185 * TILESIZE + 16, fireworker_talk, npclib.walkaround_small)
-  postmen.create_postman_npc("sandbox1", "A1", 27, 75 * TILESIZE + 16, 151 * TILESIZE + 16, {{id="sandbox2", distance=1}, {id="sandbox3", distance=1}, {id="sandbox4", distance=1}}, 40001)
-  postmen.create_postman_npc("sandbox2", "A2", 27, 77 * TILESIZE + 16, 151 * TILESIZE + 16, {{id="sandbox1", distance=1}, {id="sandbox3", distance=1}, {id="sandbox4", distance=1}}, 40002)
-  postmen.create_postman_npc("sandbox3", "A3", 27, 75 * TILESIZE + 16, 153 * TILESIZE + 16, {{id="sandbox1", distance=1}, {id="sandbox2", distance=1}, {id="sandbox4", distance=1}}, 40003)
-  postmen.create_postman_npc("sandbox4", "A4", 27, 77 * TILESIZE + 16, 153 * TILESIZE + 16, {{id="sandbox1", distance=1}, {id="sandbox2", distance=1}, {id="sandbox3", distance=1}}, 40007)
-  npc_create("Speedy", 19, GENDER_UNSPECIFIED, 150 * TILESIZE + 16, 175 * TILESIZE + 16, speedy_talk, nil)
-  npc_create("Timel", 145, GENDER_UNSPECIFIED, 152 * TILESIZE + 16, 177 * TILESIZE + 16, timel_talk, nil)
-  
-game = poker.PokerGame:new(200)
-game:registerEventNextPlayer(function(my_player)
-  being_say(poker_dealer_npc, string.format("%s ist an der Reihe.", being_get_name(my_player:getCh())))
-end)
-game:registerEventPlayerExit(function(my_player)
-  being_say(poker_dealer_npc, string.format("%s verlässt das Spiel.", being_get_name(my_player:getCh())))
-
-  myguard = npc_create("Guard", 200, GENDER_UNSPECIFIED, 100 * TILESIZE, 100 * TILESIZE, function(npc, ch)
-      npc_message(npc, ch, "bla!")
-  end, nil)
-  guard.create_player_hunter(myguard, 500, 32, 5 * TILESIZE, 1000, 10, 9999, DAMAGE_PHYSICAL, 1)
-end)
-
-
-local scorpions = {}
-scorpions[1] = {}
-scorpions[1][scorpionrace.SCORPION_START_X] = 138 * TILESIZE + 16
-scorpions[1][scorpionrace.SCORPION_START_Y] = 70 * TILESIZE + 16
-scorpions[1][scorpionrace.SCORPION_STROLL_UP] = 5 * TILESIZE
-scorpions[1][scorpionrace.SCORPION_STROLL_RIGHT] = 0 * TILESIZE
-scorpions[1][scorpionrace.SCORPION_STROLL_DOWN] = 1
-scorpions[1][scorpionrace.SCORPION_STROLL_LEFT] = 0
-scorpions[1][scorpionrace.SCORPION_TARGET_X] = 138 * TILESIZE
-scorpions[1][scorpionrace.SCORPION_TARGET_Y] = 62 * TILESIZE
-scorpions[1][scorpionrace.SCORPION_TARGET_WIDTH] = TILESIZE
-scorpions[1][scorpionrace.SCORPION_TARGET_HEIGHT] = TILESIZE * 2
-scorpions[1][scorpionrace.SCORPION_NPC] = npc_create("Rennskorpion", 140, GENDER_UNSPECIFIED, 138 * TILESIZE + 16, 70 * TILESIZE + 16, scorpion_talk, nil)
-scorpions[1][scorpionrace.SCORPION_NAME] = "Skorpion 1"
-
-scorpions[2] = {}
-scorpions[2][scorpionrace.SCORPION_START_X] = 140 * TILESIZE + 16
-scorpions[2][scorpionrace.SCORPION_START_Y] = 70 * TILESIZE + 16
-scorpions[2][scorpionrace.SCORPION_STROLL_UP] = 5 * TILESIZE
-scorpions[2][scorpionrace.SCORPION_STROLL_RIGHT] = 0 * TILESIZE
-scorpions[2][scorpionrace.SCORPION_STROLL_DOWN] = 1
-scorpions[2][scorpionrace.SCORPION_STROLL_LEFT] = 0
-scorpions[2][scorpionrace.SCORPION_TARGET_X] = 140 * TILESIZE
-scorpions[2][scorpionrace.SCORPION_TARGET_Y] = 62 * TILESIZE
-scorpions[2][scorpionrace.SCORPION_TARGET_WIDTH] = TILESIZE
-scorpions[2][scorpionrace.SCORPION_TARGET_HEIGHT] = TILESIZE * 2
-scorpions[2][scorpionrace.SCORPION_NPC] = npc_create("Rennskorpion", 140, GENDER_UNSPECIFIED, 140 * TILESIZE + 16, 70 * TILESIZE + 16, scorpion_talk, nil)
-scorpions[2][scorpionrace.SCORPION_NAME] = "Skorpion 2"
-
-scorpions[3] = {}
-scorpions[3][scorpionrace.SCORPION_START_X] = 142 * TILESIZE + 16
-scorpions[3][scorpionrace.SCORPION_START_Y] = 70 * TILESIZE + 16
-scorpions[3][scorpionrace.SCORPION_STROLL_UP] = 5 * TILESIZE
-scorpions[3][scorpionrace.SCORPION_STROLL_RIGHT] = 0 * TILESIZE
-scorpions[3][scorpionrace.SCORPION_STROLL_DOWN] = 1 
-scorpions[3][scorpionrace.SCORPION_STROLL_LEFT] = 0 
-scorpions[3][scorpionrace.SCORPION_TARGET_X] = 142 * TILESIZE
-scorpions[3][scorpionrace.SCORPION_TARGET_Y] = 62 * TILESIZE
-scorpions[3][scorpionrace.SCORPION_TARGET_WIDTH] = TILESIZE
-scorpions[3][scorpionrace.SCORPION_TARGET_HEIGHT] = TILESIZE * 2 
-scorpions[3][scorpionrace.SCORPION_NPC] = npc_create("Rennskorpion", 140, GENDER_UNSPECIFIED, 142 * TILESIZE + 16, 70 * TILESIZE + 16, scorpion_talk, nil)
-scorpions[3][scorpionrace.SCORPION_NAME] = "Skorpion 3"
-
-scorpionrace.initializeRace(scorpions, skorpion_rennen_npc, 2)
-
-
-
-  trigger_create(56 * TILESIZE, 32 * TILESIZE, 64, 64, patrol_waypoint, 1, true)
-  trigger_create(63 * TILESIZE, 32 * TILESIZE, 64, 64, patrol_waypoint, 2, true)
-
-  item_drop(58 * TILESIZE, 26 * TILESIZE, 10001, 1);
-  item_drop(58 * TILESIZE, 27 * TILESIZE, 10002, 10);
-  item_drop(58 * TILESIZE, 27 * TILESIZE, 10003, 1);
-
-  schedule_every(1 * HOURS + 30 * MINUTES, function()
-    print("One and a half hour has passed on map 1-1")
-  end)
-
-
-  scorpions_bet_accepted = function(scorpionId, player, money)
-    being_say(skorpion_rennen_npc, string.format("%s hat %s Aki auf Skorpion Nummer %s geboten!", being_get_name(player), money, scorpionId))
-    being_say(skorpion_rennen_npc, "Das Rennen beginnt in einer Minute.")
-    schedule_in(60, function()
-        being_say(skorpion_rennen_npc, "GO!")
-        scorpionrace.start_race()
-    end)
-  end
-  
-  scorpionrace.set_event_scorpion_bet_accepted(scorpions_bet_accepted)
-
-end)
 
 local function poker_dealer_talk(npc, ch)
     npc_message(npc, ch, "Hallo.")
@@ -725,3 +604,125 @@ local function timel_talk(npc, ch)
     npc_message(npc, ch, string.format("2. Zeit %d", time2))
     npc_message(npc, ch, string.format("Differenz %d", diff))
 end
+
+atinit(function()
+ create_inter_map_warp_trigger(19003, 19003, 19003, 19003) --- Intermap warp
+ npc_create("Debugger", 58, GENDER_UNSPECIFIED, 133 * TILESIZE + 16, 21 * TILESIZE + 16, debugger_talk, nil) -- Debugger
+ npc_create("Zelan", 58, GENDER_UNSPECIFIED, 132 * TILESIZE + 16, 21 * TILESIZE + 16, zelan_talk, nil) --- Zelan
+ trigger_create(20 * TILESIZE, 20 * TILESIZE, 22 * TILESIZE, 22 * TILESIZE, trap_trigger_skorpions, 0, true) --- Trigger Trap
+ npc_create("Aliria", 2, GENDER_UNSPECIFIED, 15 * TILESIZE + 16, 15 * TILESIZE + 16, alaria_talk, nil) --- Alaria Handels Test NPC
+
+--Test NPCs
+  npc_create("Test NPC", 200, GENDER_UNSPECIFIED, 50 * TILESIZE + 16, 19 * TILESIZE + 16, npc1_talk, npclib.walkaround_small)
+  npc_create("Teleporter", 201, GENDER_UNSPECIFIED, 51 * TILESIZE + 16, 25 * TILESIZE + 16, npc4_talk, npclib.walkaround_wide)
+  npc_create("Scorpion Tamer", 26, GENDER_UNSPECIFIED, 45 * TILESIZE + 16, 25 * TILESIZE + 16, npc5_talk, nil)
+  npc_create("Guard", 22, GENDER_UNSPECIFIED, 58 * TILESIZE + 16, 15 * TILESIZE + 16, npc6_talk, npc6_update)
+  npc_create("Fire Demon", 202, GENDER_UNSPECIFIED, 58 * TILESIZE + 16, 35 * TILESIZE + 16, firedemon_talk, firedemon_update)
+  npc_create("Post Box", 58, GENDER_UNSPECIFIED, 45 * TILESIZE + 16, 22 * TILESIZE + 16, post_talk)
+  npc_create("Fireworker", 58, GENDER_UNSPECIFIED, 43 * TILESIZE, 23 * TILESIZE, fireworker_talk, npclib.walkaround_small)
+  npc_create("Axe Trainer", 26, GENDER_UNSPECIFIED, 65 * TILESIZE, 18 * TILESIZE, axetrainer_talk, nil)
+  npc_create("Int NPC", 26, GENDER_UNSPECIFIED, 68 * TILESIZE, 20 * TILESIZE, int_test_talk, nil)
+  npc_create("String NPC", 26, GENDER_UNSPECIFIED, 65 * TILESIZE, 20 * TILESIZE, string_test_talk, nil)
+-- Auskommentiert, weil die Statuszustände Plage und Jumping Bug im Moment zu Servercrashs führen
+--  npc_create("Plague NPC", 26, GENDER_UNSPECIFIED, 70 * TILESIZE, 20 * TILESIZE, plague_talk, nil)
+--  npc_create("Jumping Bug NPC", 26, GENDER_UNSPECIFIED, 75 * TILESIZE, 20 * TILESIZE, jump_status_talk, nil)
+  npc_create("Monster spawn", 26, GENDER_UNSPECIFIED, 80 * TILESIZE, 20 * TILESIZE, monster_spawn_talk, nil)
+  npc_create("Emotional Palm", 27, GENDER_UNSPECIFIED, 68 * TILESIZE, 25 * TILESIZE, emote_talk, emote_update)
+  npc_create("Sitter", 201, GENDER_UNSPECIFIED, 51 * TILESIZE + 16, 25 * TILESIZE + 16, nil, sitter_update)
+  npc_create("Spinner", 201, GENDER_UNSPECIFIED, 51 * TILESIZE + 16, 30 * TILESIZE + 16, nil, spinner_update)
+  npc_create("Healer", 19, GENDER_UNSPECIFIED, 54 * TILESIZE + 16, 32 * TILESIZE + 16, healer_talk, nil)
+  skorpion_rennen_npc = npc_create("Skorpion Rennen", 27, GENDER_UNSPECIFIED, 142 * TILESIZE + 16, 72 * TILESIZE +16, scorpionrace.race_manager_talk, nil)
+  poker_dealer_npc = npc_create("Dealer", 27, GENDER_UNSPECIFIED, 82 * TILESIZE + 16, 142 * TILESIZE + 16, poker_dealer_talk, nil)
+  npc_create("Feuerwerker", 139, GENDER_UNSPECIFIED, 177 * TILESIZE + 16, 185 * TILESIZE + 16, fireworker_talk, npclib.walkaround_small)
+  postmen.create_postman_npc("sandbox1", "A1", 27, 75 * TILESIZE + 16, 151 * TILESIZE + 16, {{id="sandbox2", distance=1}, {id="sandbox3", distance=1}, {id="sandbox4", distance=1}}, 40001)
+  postmen.create_postman_npc("sandbox2", "A2", 27, 77 * TILESIZE + 16, 151 * TILESIZE + 16, {{id="sandbox1", distance=1}, {id="sandbox3", distance=1}, {id="sandbox4", distance=1}}, 40002)
+  postmen.create_postman_npc("sandbox3", "A3", 27, 75 * TILESIZE + 16, 153 * TILESIZE + 16, {{id="sandbox1", distance=1}, {id="sandbox2", distance=1}, {id="sandbox4", distance=1}}, 40003)
+  postmen.create_postman_npc("sandbox4", "A4", 27, 77 * TILESIZE + 16, 153 * TILESIZE + 16, {{id="sandbox1", distance=1}, {id="sandbox2", distance=1}, {id="sandbox3", distance=1}}, 40007)
+  npc_create("Speedy", 19, GENDER_UNSPECIFIED, 150 * TILESIZE + 16, 175 * TILESIZE + 16, speedy_talk, nil)
+  npc_create("Timel", 145, GENDER_UNSPECIFIED, 152 * TILESIZE + 16, 177 * TILESIZE + 16, timel_talk, nil)
+  
+ game = poker.PokerGame:new(200)
+ game:registerEventNextPlayer(function(my_player)
+   being_say(poker_dealer_npc, string.format("%s ist an der Reihe.", being_get_name(my_player:getCh())))
+ end)
+ game:registerEventPlayerExit(function(my_player)
+   being_say(poker_dealer_npc, string.format("%s verlässt das Spiel.", being_get_name(my_player:getCh())))
+ 
+  myguard = npc_create("Guard", 200, GENDER_UNSPECIFIED, 100 * TILESIZE, 100 * TILESIZE, function(npc, ch)
+      npc_message(npc, ch, "bla!")
+  end, nil)
+  guard.create_player_hunter(myguard, 500, 32, 5 * TILESIZE, 1000, 10, 9999, DAMAGE_PHYSICAL, 1)
+ end)
+
+
+local scorpions = {}
+scorpions[1] = {}
+scorpions[1][scorpionrace.SCORPION_START_X] = 138 * TILESIZE + 16
+scorpions[1][scorpionrace.SCORPION_START_Y] = 70 * TILESIZE + 16
+scorpions[1][scorpionrace.SCORPION_STROLL_UP] = 5 * TILESIZE
+scorpions[1][scorpionrace.SCORPION_STROLL_RIGHT] = 0 * TILESIZE
+scorpions[1][scorpionrace.SCORPION_STROLL_DOWN] = 1
+scorpions[1][scorpionrace.SCORPION_STROLL_LEFT] = 0
+scorpions[1][scorpionrace.SCORPION_TARGET_X] = 138 * TILESIZE
+scorpions[1][scorpionrace.SCORPION_TARGET_Y] = 62 * TILESIZE
+scorpions[1][scorpionrace.SCORPION_TARGET_WIDTH] = TILESIZE
+scorpions[1][scorpionrace.SCORPION_TARGET_HEIGHT] = TILESIZE * 2
+scorpions[1][scorpionrace.SCORPION_NPC] = npc_create("Rennskorpion", 140, GENDER_UNSPECIFIED, 138 * TILESIZE + 16, 70 * TILESIZE + 16, scorpion_talk, nil)
+scorpions[1][scorpionrace.SCORPION_NAME] = "Skorpion 1"
+
+scorpions[2] = {}
+scorpions[2][scorpionrace.SCORPION_START_X] = 140 * TILESIZE + 16
+scorpions[2][scorpionrace.SCORPION_START_Y] = 70 * TILESIZE + 16
+scorpions[2][scorpionrace.SCORPION_STROLL_UP] = 5 * TILESIZE
+scorpions[2][scorpionrace.SCORPION_STROLL_RIGHT] = 0 * TILESIZE
+scorpions[2][scorpionrace.SCORPION_STROLL_DOWN] = 1
+scorpions[2][scorpionrace.SCORPION_STROLL_LEFT] = 0
+scorpions[2][scorpionrace.SCORPION_TARGET_X] = 140 * TILESIZE
+scorpions[2][scorpionrace.SCORPION_TARGET_Y] = 62 * TILESIZE
+scorpions[2][scorpionrace.SCORPION_TARGET_WIDTH] = TILESIZE
+scorpions[2][scorpionrace.SCORPION_TARGET_HEIGHT] = TILESIZE * 2
+scorpions[2][scorpionrace.SCORPION_NPC] = npc_create("Rennskorpion", 140, GENDER_UNSPECIFIED, 140 * TILESIZE + 16, 70 * TILESIZE + 16, scorpion_talk, nil)
+scorpions[2][scorpionrace.SCORPION_NAME] = "Skorpion 2"
+
+scorpions[3] = {}
+scorpions[3][scorpionrace.SCORPION_START_X] = 142 * TILESIZE + 16
+scorpions[3][scorpionrace.SCORPION_START_Y] = 70 * TILESIZE + 16
+scorpions[3][scorpionrace.SCORPION_STROLL_UP] = 5 * TILESIZE
+scorpions[3][scorpionrace.SCORPION_STROLL_RIGHT] = 0 * TILESIZE
+scorpions[3][scorpionrace.SCORPION_STROLL_DOWN] = 1 
+scorpions[3][scorpionrace.SCORPION_STROLL_LEFT] = 0 
+scorpions[3][scorpionrace.SCORPION_TARGET_X] = 142 * TILESIZE
+scorpions[3][scorpionrace.SCORPION_TARGET_Y] = 62 * TILESIZE
+scorpions[3][scorpionrace.SCORPION_TARGET_WIDTH] = TILESIZE
+scorpions[3][scorpionrace.SCORPION_TARGET_HEIGHT] = TILESIZE * 2 
+scorpions[3][scorpionrace.SCORPION_NPC] = npc_create("Rennskorpion", 140, GENDER_UNSPECIFIED, 142 * TILESIZE + 16, 70 * TILESIZE + 16, scorpion_talk, nil)
+scorpions[3][scorpionrace.SCORPION_NAME] = "Skorpion 3"
+
+scorpionrace.initializeRace(scorpions, skorpion_rennen_npc, 2)
+
+
+
+  trigger_create(56 * TILESIZE, 32 * TILESIZE, 64, 64, patrol_waypoint, 1, true)
+  trigger_create(63 * TILESIZE, 32 * TILESIZE, 64, 64, patrol_waypoint, 2, true)
+
+  item_drop(58 * TILESIZE, 26 * TILESIZE, 10001, 1);
+  item_drop(58 * TILESIZE, 27 * TILESIZE, 10002, 10);
+  item_drop(58 * TILESIZE, 27 * TILESIZE, 10003, 1);
+
+  schedule_every(1 * HOURS + 30 * MINUTES, function()
+    print("One and a half hour has passed on map 1-1")
+  end)
+
+
+  scorpions_bet_accepted = function(scorpionId, player, money)
+    being_say(skorpion_rennen_npc, string.format("%s hat %s Aki auf Skorpion Nummer %s geboten!", being_get_name(player), money, scorpionId))
+    being_say(skorpion_rennen_npc, "Das Rennen beginnt in einer Minute.")
+    schedule_in(60, function()
+        being_say(skorpion_rennen_npc, "GO!")
+        scorpionrace.start_race()
+    end)
+  end
+  
+  scorpionrace.set_event_scorpion_bet_accepted(scorpions_bet_accepted)
+
+end)

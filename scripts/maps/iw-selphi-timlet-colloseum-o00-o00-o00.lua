@@ -18,23 +18,6 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 require "scripts/libs/arenafightpvm"
 
-atinit(function()
- wache_rechts = npc_create("Wache", 25, GENDER_UNSPECIFIED, 83 * TILESIZE + 16, 44 * TILESIZE + 16, wache_talk, nil) --- Wache rechts
- wache_links = npc_create("Wache", 25, GENDER_UNSPECIFIED, 46 * TILESIZE + 16, 44 * TILESIZE + 16, wache_talk, nil) --- Wache links
- npc_create("Estech", 109, GENDER_UNSPECIFIED, 64 * TILESIZE + 16, 53 * TILESIZE + 16, estech_talk, nil) --- Estech (Chef des Colloseums)
- -- wache_entrance = npc_create("Wache", 25, GENDER_UNSPECIFIED, 66 * TILESIZE + 16, 83 * TILESIZE + 16, entrance_control_talk, nil) --- Wache am Eingang
- -- commentator = {}
- -- commentator[1] = npc_create("Kommentator", 25, GENDER_UNSPECIFIED, 63 * TILESIZE + 16, 53 * TILESIZE + 16, commentator_talk, nil) --- Kommentator VIP-Loge
- -- commentator[2] = npc_create("Kommentator", 25, GENDER_UNSPECIFIED, 91 * TILESIZE + 16, 35 * TILESIZE + 16, commentator_talk, nil) --- Kommentator bei den billigen Plätzen
- -- commentator[3] = npc_create("Kommentator", 25, GENDER_UNSPECIFIED, 59 * TILESIZE + 16, 83 * TILESIZE + 16, commentator_talk, nil) --- Kommentator unten
-
- trigger_create(79 * TILESIZE, 40 * TILESIZE, 4 * TILESIZE, 4 * TILESIZE, wache_trigger, 1, true)
- trigger_create(47 * TILESIZE, 40 * TILESIZE, 4 * TILESIZE, 4 * TILESIZE, wache_trigger, 2, true)
-
- -- trigger_create(57 * TILESIZE, 75 * TILESIZE, 17 * TILESIZE, 8 * TILESIZE, entrance_trigger, 1, true)
- -- trigger_create(57 * TILESIZE, 82 * TILESIZE, 17 * TILESIZE, 9 * TILESIZE, entrance_trigger, 2, true)
- -- trigger_create(64 * TILESIZE, 68 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, fight_start_trigger, 1, true)
-end)
 
 local function wache_talk(npc, ch)
     npc_message(npc, ch, "Hier kommt man nur mit VIP-Karte rein!")
@@ -216,3 +199,21 @@ end
         -- end
     -- end
 -- end
+
+atinit(function()
+ wache_rechts = npc_create("Wache", 25, GENDER_UNSPECIFIED, 83 * TILESIZE + 16, 44 * TILESIZE + 16, wache_talk, nil) --- Wache rechts
+ wache_links = npc_create("Wache", 25, GENDER_UNSPECIFIED, 46 * TILESIZE + 16, 44 * TILESIZE + 16, wache_talk, nil) --- Wache links
+ npc_create("Estech", 109, GENDER_UNSPECIFIED, 64 * TILESIZE + 16, 53 * TILESIZE + 16, estech_talk, nil) --- Estech (Chef des Colloseums)
+ -- wache_entrance = npc_create("Wache", 25, GENDER_UNSPECIFIED, 66 * TILESIZE + 16, 83 * TILESIZE + 16, entrance_control_talk, nil) --- Wache am Eingang
+ -- commentator = {}
+ -- commentator[1] = npc_create("Kommentator", 25, GENDER_UNSPECIFIED, 63 * TILESIZE + 16, 53 * TILESIZE + 16, commentator_talk, nil) --- Kommentator VIP-Loge
+ -- commentator[2] = npc_create("Kommentator", 25, GENDER_UNSPECIFIED, 91 * TILESIZE + 16, 35 * TILESIZE + 16, commentator_talk, nil) --- Kommentator bei den billigen Plätzen
+ -- commentator[3] = npc_create("Kommentator", 25, GENDER_UNSPECIFIED, 59 * TILESIZE + 16, 83 * TILESIZE + 16, commentator_talk, nil) --- Kommentator unten
+
+ trigger_create(79 * TILESIZE, 40 * TILESIZE, 4 * TILESIZE, 4 * TILESIZE, wache_trigger, 1, true)
+ trigger_create(47 * TILESIZE, 40 * TILESIZE, 4 * TILESIZE, 4 * TILESIZE, wache_trigger, 2, true)
+
+ -- trigger_create(57 * TILESIZE, 75 * TILESIZE, 17 * TILESIZE, 8 * TILESIZE, entrance_trigger, 1, true)
+ -- trigger_create(57 * TILESIZE, 82 * TILESIZE, 17 * TILESIZE, 9 * TILESIZE, entrance_trigger, 2, true)
+ -- trigger_create(64 * TILESIZE, 68 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, fight_start_trigger, 1, true)
+end)

@@ -18,13 +18,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/sign"
 
-atinit(function()
-    sign.create_sign(24, 7, "Gerhards ganz gewöhnlicher Gebrauchtwarenladen \
-\
-Ganz bestimmt nicht geheim oder schwer zu finden oder so ^^\
-Deshalb wird hier auch nicht mit illegaler Ware gehandelt.");
-    npc_create("Gerhard", 104, GENDER_UNSPECIFIED, 27 * TILESIZE + 16, 5 * TILESIZE + 16, gerhard_talk, nil) --- Gerhard
-end)
 
 local function gerhard_talk(npc, ch)
     -- Dieser Händler könnte später mal Speed verkaufen.
@@ -45,3 +38,11 @@ local function gerhard_talk(npc, ch)
         end
     end
 end
+
+atinit(function()
+    sign.create_sign(24, 7, "Gerhards ganz gewöhnlicher Gebrauchtwarenladen \
+\
+Ganz bestimmt nicht geheim oder schwer zu finden oder so ^^\
+Deshalb wird hier auch nicht mit illegaler Ware gehandelt.");
+    npc_create("Gerhard", 104, GENDER_UNSPECIFIED, 27 * TILESIZE + 16, 5 * TILESIZE + 16, gerhard_talk, nil) --- Gerhard
+end)

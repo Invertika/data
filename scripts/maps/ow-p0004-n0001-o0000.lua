@@ -79,23 +79,6 @@ local gravestone_npc_name = "Grabstein"
 -- ID des unsichtbaren NPC
 local gravestone_npc_id = 1
 
-atinit(function()
- create_inter_map_warp_trigger(105, 111, 101, 89) --- Intermap warp
- nethek.create_netheksaeule(138 * TILESIZE, 125 * TILESIZE + 16) --- Netheksäule
- 
- --NPCs
-  npc_create("Donovan", 29, GENDER_UNSPECIFIED, 75 * TILESIZE + 16, 76 * TILESIZE + 16, seller.seller_talk, nil) --- Verkäufer
- 
- --- Wachen am Tor
- wache = npc_create("Stadtwache", 26, GENDER_UNSPECIFIED, 84 * TILESIZE + 16, 187 * TILESIZE + 16, stadtwache_talk, nil) --- Stadtwache
- npc_create("Stadtwache", 26, GENDER_UNSPECIFIED, 87 * TILESIZE + 16, 187 * TILESIZE + 16, stadtwache_talk, nil) --- Stadtwache
- trigger_create(85 * TILESIZE, 186 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, wache_trigger, 1, true) --- Trigger Tor
- 
- -- Grabsteine
- for i, v in ipairs(gravestone_data) do
-    npc_create(gravestone_npc_name, gravestone_npc_id, GENDER_UNSPECIFIED, v[1] * 32 + 16, v[2] * 32 + 16, npclib.auto_talk(v[3]))
- end
-end)
 
 
 --- Stadtwache Sprechfunktion
@@ -121,3 +104,21 @@ local function wache_trigger(ch, id)
   "Hier darf keiner durch!"))
  end
 end
+
+atinit(function()
+ create_inter_map_warp_trigger(105, 111, 101, 89) --- Intermap warp
+ nethek.create_netheksaeule(138 * TILESIZE, 125 * TILESIZE + 16) --- Netheksäule
+ 
+ --NPCs
+  npc_create("Donovan", 29, GENDER_UNSPECIFIED, 75 * TILESIZE + 16, 76 * TILESIZE + 16, seller.seller_talk, nil) --- Verkäufer
+ 
+ --- Wachen am Tor
+ wache = npc_create("Stadtwache", 26, GENDER_UNSPECIFIED, 84 * TILESIZE + 16, 187 * TILESIZE + 16, stadtwache_talk, nil) --- Stadtwache
+ npc_create("Stadtwache", 26, GENDER_UNSPECIFIED, 87 * TILESIZE + 16, 187 * TILESIZE + 16, stadtwache_talk, nil) --- Stadtwache
+ trigger_create(85 * TILESIZE, 186 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, wache_trigger, 1, true) --- Trigger Tor
+ 
+ -- Grabsteine
+ for i, v in ipairs(gravestone_data) do
+    npc_create(gravestone_npc_name, gravestone_npc_id, GENDER_UNSPECIFIED, v[1] * 32 + 16, v[2] * 32 + 16, npclib.auto_talk(v[3]))
+ end
+end)

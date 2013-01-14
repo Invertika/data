@@ -17,10 +17,10 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-    npc_create("Ormylt", 12, GENDER_UNSPECIFIED, 44 * TILESIZE + 16, 28 * TILESIZE + 16, ormylt_talk, nil)
-end)
 
 local function ormylt_talk(npc, ch)
     npc_message(npc, ch, "Ich bin die Frau von Graf Cedric")
 end
+atinit(function()
+    npc_create("Ormylt", 12, GENDER_UNSPECIFIED, 44 * TILESIZE + 16, 28 * TILESIZE + 16, ormylt_talk, nil)
+end)

@@ -18,10 +18,10 @@
 require "scripts/lua/npclib"
 
 
-atinit(function()
-     npc_create("Tom", 138, GENDER_UNSPECIFIED, 25 * TILESIZE, 10 * TILESIZE + 16, tom_talk, nil) --- Tom 
-end)
 
 local function tom_talk(npc, ch)
     npc_message(npc, ch, "Die Bar hat noch nicht geöffnet.")
 end
+atinit(function()
+     npc_create("Tom", 138, GENDER_UNSPECIFIED, 25 * TILESIZE, 10 * TILESIZE + 16, tom_talk, nil) --- Tom 
+end)

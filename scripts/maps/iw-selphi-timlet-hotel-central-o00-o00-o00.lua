@@ -17,9 +17,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
- npc_create("Rezeptionist", 20, GENDER_UNSPECIFIED, 44 * TILESIZE + 16, 57 * TILESIZE + 16, rezeptionist_talk, nil) --- Rezeptionist
-end)
 
 local function rezeptionist_talk(npc, ch)
   quest_name="selphi_timlet_rezeptionist_quest"
@@ -104,3 +101,7 @@ local function rezeptionist_talk(npc, ch)
 
 end
 
+
+atinit(function()
+ npc_create("Rezeptionist", 20, GENDER_UNSPECIFIED, 44 * TILESIZE + 16, 57 * TILESIZE + 16, rezeptionist_talk, nil) --- Rezeptionist
+end)

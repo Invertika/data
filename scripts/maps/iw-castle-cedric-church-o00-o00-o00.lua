@@ -11,9 +11,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-    npc_create("Echver", 57, GENDER_UNSPECIFIED, 40 * TILESIZE + 16, 22 * TILESIZE + 16, echver_talk, nil)
-end)
 
 local function echver_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
@@ -21,3 +18,6 @@ local function echver_talk(npc, ch)
       "Geheiligt sei Invertika, Amoneus und die Bewohner dieses Planeten.",
       "Leider besuchen die Jungen Leute die Kirchen des Landes nicht mehr. Nur noch bei wichtigen Festen sind sie anwesend."))
 end
+atinit(function()
+    npc_create("Echver", 57, GENDER_UNSPECIFIED, 40 * TILESIZE + 16, 22 * TILESIZE + 16, echver_talk, nil)
+end)

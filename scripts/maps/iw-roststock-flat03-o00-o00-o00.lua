@@ -17,9 +17,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
- npc_create("Marle", 67, GENDER_UNSPECIFIED, 27 * TILESIZE + 16, 29 * TILESIZE + 16, marle_talk, nil)
-end)
 
 local function marle_talk(npc, ch)
     local quest_string = "roststock_marle_quest"
@@ -62,3 +59,7 @@ local function marle_talk(npc, ch)
           "Früher sammelte ich Porzellanfiguren.")) 
     end
 end
+
+atinit(function()
+ npc_create("Marle", 67, GENDER_UNSPECIFIED, 27 * TILESIZE + 16, 29 * TILESIZE + 16, marle_talk, nil)
+end)

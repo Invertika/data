@@ -19,16 +19,6 @@ require "scripts/libs/slotmachine"
 require "scripts/libs/invertika"
 require "scripts/libs/dice"
 
-atinit(function() 
- npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 25 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
- npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 27 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
- npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 29 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
- npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 31 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
- npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 33 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
- npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 35 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
- npc_create("Daniela", 10, GENDER_UNSPECIFIED, 25 * TILESIZE + 16, 27 * TILESIZE + 16, daniela_talk, nil)
- npc_create("Würfeltisch", 1, GENDER_UNSPECIFIED, 30 * TILESIZE + 16, 25 * TILESIZE + 16, dice.dicemanager_talk, nil)
-end)
 
 local function daniela_talk(npc, ch)
   -- quest init
@@ -54,3 +44,14 @@ local function daniela_talk(npc, ch)
                                                       "Ich hab ne Glückssträhne!"))
   end
 end
+
+atinit(function() 
+ npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 25 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+ npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 27 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+ npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 29 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+ npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 31 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+ npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 33 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+ npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 35 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+ npc_create("Daniela", 10, GENDER_UNSPECIFIED, 25 * TILESIZE + 16, 27 * TILESIZE + 16, daniela_talk, nil)
+ npc_create("Würfeltisch", 1, GENDER_UNSPECIFIED, 30 * TILESIZE + 16, 25 * TILESIZE + 16, dice.dicemanager_talk, nil)
+end)

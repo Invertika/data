@@ -18,9 +18,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-    npc_create("Enla", 4, GENDER_UNSPECIFIED, 33 * TILESIZE + 16, 36 * TILESIZE + 16, enla_talk, nil)
-end)
 
 local function enla_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Hi, was kann ich für sie tuen?",
@@ -71,3 +68,6 @@ local function enla_talk(npc, ch)
         end
     end
 end
+atinit(function()
+    npc_create("Enla", 4, GENDER_UNSPECIFIED, 33 * TILESIZE + 16, 36 * TILESIZE + 16, enla_talk, nil)
+end)

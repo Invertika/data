@@ -19,40 +19,6 @@ require "scripts/libs/invertika"
 
 require "scripts/libs/warp"
 
-atinit(function()
- --- Erster Start
- trigger_create(115 * TILESIZE, 15 * TILESIZE, 50 * TILESIZE, 23 * TILESIZE, firststart_trigger, 0, true) --- Erste Meldung
- 
- -- Zelan
- npc_create("Zelan", 58, GENDER_UNSPECIFIED, 132 * TILESIZE + 16, 21 * TILESIZE + 16, zelan_talk, nil) --- Zelan
- 
- -- Zeitungsjunge
- npc_create("Jack", 34, GENDER_UNSPECIFIED, 159 * TILESIZE + 16, 31 * TILESIZE + 16, jack_talk, nil) --- Jack
- 
- -- Zaun NPC 
- npc_create("Ancoise", 25, GENDER_UNSPECIFIED, 137 * TILESIZE + 16, 41 * TILESIZE + 16, ancoise_talk, nil) --- Ancoise
-
- -- Kampf NPC
- npc_create("Kolbert", 30, GENDER_UNSPECIFIED, 156 * TILESIZE + 16, 66 * TILESIZE + 16, kolbert_talk, nil) --- Kolbert
- 
- -- Levelup NPC
- npc_create("Syntyche", 25, GENDER_UNSPECIFIED, 142 * TILESIZE + 16, 110 * TILESIZE + 16, syntyche_talk, nil) --- Syntyche
- 
- -- Handel Valaia 
- npc_create("Valaia", 60, GENDER_UNSPECIFIED, 102 * TILESIZE + 16, 83 * TILESIZE + 16, valaia_talk, nil) --- Valaia
- 
- -- Regeln Asam 
- npc_create("Asam", 72, GENDER_UNSPECIFIED, 66 * TILESIZE + 16, 130 * TILESIZE + 16, asam_talk, nil) --- Asam
- 
- -- Kommunikation mit Spielern Essar
- npc_create("Essar", 21, GENDER_UNSPECIFIED, 68 * TILESIZE + 16, 124 * TILESIZE + 16, essar_talk, nil)
- 
- -- Leben und Sterben Corona  
- npc_create("Corona", 12, GENDER_UNSPECIFIED, 89 * TILESIZE + 16, 135 * TILESIZE + 16, corona_talk, nil) --- Corona 
- 
- -- Verlassen des Vacare
- npc_create("Vacaria", 1, GENDER_UNSPECIFIED, 103 * TILESIZE, 139 * TILESIZE + 16, vacaria_talk, nil) --- Vacaria
-end)
 
 --- Erster Start
  local function firststart_trigger(ch, id)
@@ -240,3 +206,38 @@ local function essar_talk(npc, ch)
     npc_message(npc, ch, "Hilfe über diese und weitere Befehle kannst du über /help jederzeit abrufen.")
     npc_message(npc, ch, "Viel Spaß mit Invertika.")
 end
+
+atinit(function()
+ --- Erster Start
+ trigger_create(115 * TILESIZE, 15 * TILESIZE, 50 * TILESIZE, 23 * TILESIZE, firststart_trigger, 0, true) --- Erste Meldung
+ 
+ -- Zelan
+ npc_create("Zelan", 58, GENDER_UNSPECIFIED, 132 * TILESIZE + 16, 21 * TILESIZE + 16, zelan_talk, nil) --- Zelan
+ 
+ -- Zeitungsjunge
+ npc_create("Jack", 34, GENDER_UNSPECIFIED, 159 * TILESIZE + 16, 31 * TILESIZE + 16, jack_talk, nil) --- Jack
+ 
+ -- Zaun NPC 
+ npc_create("Ancoise", 25, GENDER_UNSPECIFIED, 137 * TILESIZE + 16, 41 * TILESIZE + 16, ancoise_talk, nil) --- Ancoise
+
+ -- Kampf NPC
+ npc_create("Kolbert", 30, GENDER_UNSPECIFIED, 156 * TILESIZE + 16, 66 * TILESIZE + 16, kolbert_talk, nil) --- Kolbert
+ 
+ -- Levelup NPC
+ npc_create("Syntyche", 25, GENDER_UNSPECIFIED, 142 * TILESIZE + 16, 110 * TILESIZE + 16, syntyche_talk, nil) --- Syntyche
+ 
+ -- Handel Valaia 
+ npc_create("Valaia", 60, GENDER_UNSPECIFIED, 102 * TILESIZE + 16, 83 * TILESIZE + 16, valaia_talk, nil) --- Valaia
+ 
+ -- Regeln Asam 
+ npc_create("Asam", 72, GENDER_UNSPECIFIED, 66 * TILESIZE + 16, 130 * TILESIZE + 16, asam_talk, nil) --- Asam
+ 
+ -- Kommunikation mit Spielern Essar
+ npc_create("Essar", 21, GENDER_UNSPECIFIED, 68 * TILESIZE + 16, 124 * TILESIZE + 16, essar_talk, nil)
+ 
+ -- Leben und Sterben Corona  
+ npc_create("Corona", 12, GENDER_UNSPECIFIED, 89 * TILESIZE + 16, 135 * TILESIZE + 16, corona_talk, nil) --- Corona 
+ 
+ -- Verlassen des Vacare
+ npc_create("Vacaria", 1, GENDER_UNSPECIFIED, 103 * TILESIZE, 139 * TILESIZE + 16, vacaria_talk, nil) --- Vacaria
+end)

@@ -19,23 +19,6 @@ require "scripts/libs/invertika"
 
 require "scripts/libs/warp"
 
-atinit(function()
- create_inter_map_warp_trigger(1, 57, 3, 13) --- Intermap warp
-
- npc_create("Jurkan", 33, GENDER_UNSPECIFIED, 80 * TILESIZE + 16, 115 * TILESIZE + 16, jurkan_talk, nil) --- Jurkan
- npc_create("Holzbein", 42, GENDER_UNSPECIFIED, 83 * TILESIZE + 16, 115 * TILESIZE + 16, holzbein_talk, nil) --- Holzbein
- npc_create("seeseekey", 24, GENDER_UNSPECIFIED, 93 * TILESIZE + 16, 118 * TILESIZE + 16, seeseekey_talk, nil) --- seeseekey
- npc_create("Delegan", 87, GENDER_UNSPECIFIED, 81 * TILESIZE + 16, 122 * TILESIZE + 16, delegan_talk, nil) --- Delegan
- npc_create("bulldog98", 53, GENDER_UNSPECIFIED, 87 * TILESIZE + 16, 122 * TILESIZE + 16, bulldog98_talk, nil) --- bulldog98
- npc_create("Saturn", 3, GENDER_UNSPECIFIED, 89 * TILESIZE + 16, 114 * TILESIZE + 16, saturn_talk, nil) --- Saturn
- npc_create("subnet_zero", 19 , GENDER_UNSPECIFIED, 77 * TILESIZE + 16, 118 * TILESIZE + 16, subnet_zero_talk, nil) --- subnet_zero
- npc_create("DJh2o2", 54, GENDER_UNSPECIFIED, 86 * TILESIZE + 16, 114 * TILESIZE + 16, djh2o2_talk, nil) --- DJh2o2
- npc_create("Dark Mage", 72, GENDER_UNSPECIFIED, 84 * TILESIZE + 16, 122 * TILESIZE + 16, darkmage_talk, nil) --- DJh2o2
- npc_create("Ablu", 82, GENDER_UNSPECIFIED, 90 * TILESIZE + 16, 122 * TILESIZE + 16, ablu_talk, nil) --- Ablu
- npc_create("cmur2", 59, GENDER_UNSPECIFIED, 78 * TILESIZE + 16, 122 * TILESIZE + 16, cmur2_talk, nil) --- cmur2
- npc_create("Kizu", 120, GENDER_UNSPECIFIED, 77 * TILESIZE + 16, 120 * TILESIZE + 16, kizu_talk, nil) --- kizu
- npc_create("Postremus", 38, GENDER_UNSPECIFIED, 77 * TILESIZE + 16, 116 * TILESIZE + 16, postremus_talk, nil) --- Postremus
-end)
 
 local function jurkan_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Irgendwie ist mir zu heiß hier...",
@@ -174,3 +157,20 @@ local function postremus_talk(npc, ch)
       "Jim, lange hält die Enterprise diese Geschwindigkeit nicht mehr aus!"
       ))
 end
+atinit(function()
+ create_inter_map_warp_trigger(1, 57, 3, 13) --- Intermap warp
+
+ npc_create("Jurkan", 33, GENDER_UNSPECIFIED, 80 * TILESIZE + 16, 115 * TILESIZE + 16, jurkan_talk, nil) --- Jurkan
+ npc_create("Holzbein", 42, GENDER_UNSPECIFIED, 83 * TILESIZE + 16, 115 * TILESIZE + 16, holzbein_talk, nil) --- Holzbein
+ npc_create("seeseekey", 24, GENDER_UNSPECIFIED, 93 * TILESIZE + 16, 118 * TILESIZE + 16, seeseekey_talk, nil) --- seeseekey
+ npc_create("Delegan", 87, GENDER_UNSPECIFIED, 81 * TILESIZE + 16, 122 * TILESIZE + 16, delegan_talk, nil) --- Delegan
+ npc_create("bulldog98", 53, GENDER_UNSPECIFIED, 87 * TILESIZE + 16, 122 * TILESIZE + 16, bulldog98_talk, nil) --- bulldog98
+ npc_create("Saturn", 3, GENDER_UNSPECIFIED, 89 * TILESIZE + 16, 114 * TILESIZE + 16, saturn_talk, nil) --- Saturn
+ npc_create("subnet_zero", 19 , GENDER_UNSPECIFIED, 77 * TILESIZE + 16, 118 * TILESIZE + 16, subnet_zero_talk, nil) --- subnet_zero
+ npc_create("DJh2o2", 54, GENDER_UNSPECIFIED, 86 * TILESIZE + 16, 114 * TILESIZE + 16, djh2o2_talk, nil) --- DJh2o2
+ npc_create("Dark Mage", 72, GENDER_UNSPECIFIED, 84 * TILESIZE + 16, 122 * TILESIZE + 16, darkmage_talk, nil) --- DJh2o2
+ npc_create("Ablu", 82, GENDER_UNSPECIFIED, 90 * TILESIZE + 16, 122 * TILESIZE + 16, ablu_talk, nil) --- Ablu
+ npc_create("cmur2", 59, GENDER_UNSPECIFIED, 78 * TILESIZE + 16, 122 * TILESIZE + 16, cmur2_talk, nil) --- cmur2
+ npc_create("Kizu", 120, GENDER_UNSPECIFIED, 77 * TILESIZE + 16, 120 * TILESIZE + 16, kizu_talk, nil) --- kizu
+ npc_create("Postremus", 38, GENDER_UNSPECIFIED, 77 * TILESIZE + 16, 116 * TILESIZE + 16, postremus_talk, nil) --- Postremus
+end)

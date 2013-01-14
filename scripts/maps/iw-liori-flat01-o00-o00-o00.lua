@@ -17,9 +17,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-    npc_create("Isskel", 36, GENDER_UNSPECIFIED, 17 * TILESIZE + 16, 21 * TILESIZE + 16, isskel_talk, nil) --- Isskel
-end)
 
 local function isskel_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
@@ -27,3 +24,7 @@ local function isskel_talk(npc, ch)
       "Blubb blubb",
       "Blubb blubb blubb"))
 end
+
+atinit(function()
+    npc_create("Isskel", 36, GENDER_UNSPECIFIED, 17 * TILESIZE + 16, 21 * TILESIZE + 16, isskel_talk, nil) --- Isskel
+end)

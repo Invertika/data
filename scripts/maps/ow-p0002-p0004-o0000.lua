@@ -21,21 +21,6 @@ require "scripts/libs/nethek"
 
 require "scripts/libs/warp"
 
-atinit(function()
-    create_inter_map_warp_trigger(88, 98, 86, 76) --- Intermap warp
-
-    nethek.create_netheksaeule(127 * TILESIZE, 113 * TILESIZE + 16) ---Netheksäule
-    
-    sign_entrance = "Lauria"
-    sign.create_sign(184, 92, sign_entrance) --- Schild Ortseingang
-    sign.create_sign(99, 61, sign_entrance) --- Schild Ortseingang
-    sign.create_sign(49, 133, sign_entrance) --- Schild Ortseingang
-    
-    trigger_create(34 * TILESIZE, 99 * TILESIZE, 1 * TILESIZE, 1 * TILESIZE, key_trigger, 0, true)
-    
-    npc_create("Robert", 64, GENDER_UNSPECIFIED, 64 * TILESIZE, 117 * TILESIZE + 16, robert_talk, nil) --- Robert
-    npc_create("Issen", 146, GENDER_UNSPECIFIED, 139 * TILESIZE + 16, 113 * TILESIZE + 16, issen_talk, nil) --- Issen
-end)
 
 local function robert_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Ich bin Steuerberater.",
@@ -126,3 +111,18 @@ local function key_trigger(ch, id)
         end
     end
 end
+atinit(function()
+    create_inter_map_warp_trigger(88, 98, 86, 76) --- Intermap warp
+
+    nethek.create_netheksaeule(127 * TILESIZE, 113 * TILESIZE + 16) ---Netheksäule
+    
+    sign_entrance = "Lauria"
+    sign.create_sign(184, 92, sign_entrance) --- Schild Ortseingang
+    sign.create_sign(99, 61, sign_entrance) --- Schild Ortseingang
+    sign.create_sign(49, 133, sign_entrance) --- Schild Ortseingang
+    
+    trigger_create(34 * TILESIZE, 99 * TILESIZE, 1 * TILESIZE, 1 * TILESIZE, key_trigger, 0, true)
+    
+    npc_create("Robert", 64, GENDER_UNSPECIFIED, 64 * TILESIZE, 117 * TILESIZE + 16, robert_talk, nil) --- Robert
+    npc_create("Issen", 146, GENDER_UNSPECIFIED, 139 * TILESIZE + 16, 113 * TILESIZE + 16, issen_talk, nil) --- Issen
+end)

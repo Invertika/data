@@ -17,10 +17,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
- npc_create("Manitu", 47, GENDER_UNSPECIFIED, 55 * TILESIZE + 16, 23 * TILESIZE + 16, manitu_talk, nil) --- Der grosse Manitu
- npc_create("S.A.N.D.R.A.", 44, GENDER_UNSPECIFIED, 30 * TILESIZE + 16, 22 * TILESIZE + 16, sandra_talk, nil) --- S.A.N.D.R.A.
-end)
 
 local function manitu_talk(npc, ch)
     npc_message(npc, ch, "Hallo, ich bin der Manitu. Grosses M, kleines anitu. Was kann ich für dich tun?")
@@ -61,3 +57,8 @@ local function sandra_talk(npc, ch)
         end
     end
 end
+
+atinit(function()
+ npc_create("Manitu", 47, GENDER_UNSPECIFIED, 55 * TILESIZE + 16, 23 * TILESIZE + 16, manitu_talk, nil) --- Der grosse Manitu
+ npc_create("S.A.N.D.R.A.", 44, GENDER_UNSPECIFIED, 30 * TILESIZE + 16, 22 * TILESIZE + 16, sandra_talk, nil) --- S.A.N.D.R.A.
+end)

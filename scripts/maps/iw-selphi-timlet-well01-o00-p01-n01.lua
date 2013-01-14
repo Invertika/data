@@ -21,47 +21,6 @@ require "scripts/libs/invertika"
 local tano = {}
 local waypointstate = {}
 
-atinit(function()
-    --- NPCs
-    tano[1] = npc_create("Irdath", 89, GENDER_UNSPECIFIED, 35 * TILESIZE + 16, 44 * TILESIZE + 16, tano1_talk, npclib.walkaround_small) --- Ta No 1 (Ta No am Eingang)
-    tano[2] = npc_create("Rhaor", 91, GENDER_UNSPECIFIED, 42 * TILESIZE + 16, 36 * TILESIZE + 16, tano2_talk, nil) --- Ta No 2 (Schatzkammer Wächter)
-    tano[3] = npc_create("Karl", 92, GENDER_UNSPECIFIED, 25 * TILESIZE + 16, 41 * TILESIZE + 16, tano3_talk, nil) --- Ta No 3 (Verkäufer)
-    tano[4] = npc_create("Samos", 93, GENDER_UNSPECIFIED, 67 * TILESIZE + 16, 14 * TILESIZE + 16, tano4_talk, nil) --- Ta No 4 (Sektenführer)
-    tano[5] = npc_create("Ceria", 94, GENDER_UNSPECIFIED, 20 * TILESIZE + 16, 20 * TILESIZE + 16, tano5_talk, nil) --- Ta No 5 (Köchin)
-    tano[6] = npc_create("Enlelm", 95, GENDER_UNSPECIFIED, 19 * TILESIZE + 16, 19 * TILESIZE + 16, tano6_talk, nil) --- Ta No 6 (Küchenhilfe)
-    tano[7] = npc_create("Byler", 96, GENDER_UNSPECIFIED, 17 * TILESIZE + 16, 24 * TILESIZE + 16, tano7_talk, nil) --- Ta No 7 (Normal m)
-    tano[8] = npc_create("Lyril", 97, GENDER_UNSPECIFIED, 21 * TILESIZE + 16, 24 * TILESIZE + 16, tano8_talk, nil) --- Ta No 8 (Normal f)
-    tano[9] = npc_create("Iawar", 98, GENDER_UNSPECIFIED, 26 * TILESIZE + 16, 24 * TILESIZE + 16, tano9_talk, nil) --- Ta No 9 (Normal m)
-    tano[10] = npc_create("Isskel", 99, GENDER_UNSPECIFIED, 18 * TILESIZE + 16, 29 * TILESIZE + 16, tano10_talk, nil) --- Ta No 10 (Normal m)
-    tano[11] = npc_create("Kahlan", 100, GENDER_UNSPECIFIED, 22 * TILESIZE + 16, 29 * TILESIZE + 16, tano11_talk, nil) --- Ta No 11 (Normal f)
-	
-    --- Blickrichtungen
-    --- schedule_in(1, function()
-    ---     being_set_direction(tano[7], DIRECTION_RIGHT)
-    ---     being_set_direction(tano[8], DIRECTION_LEFT)
-    ---     being_set_direction(tano[9], DIRECTION_DOWN)
-    ---     being_set_direction(tano[10], DIRECTION_RIGHT)
-    ---     being_set_direction(tano[11], DIRECTION_LEFT)
-    --- end)
-	
-    --- Waypoints
-    --- Ta No 5 (Köchin)
-    --- trigger_create(20 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, waypoints, 1, true) --- Wegpunkt 1 (Küchenanrichte, ganz links)
-    --- trigger_create(23 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, waypoints, 2, true) --- Wegpunkt 2 (Küchenanrichte, zweite von rechts)
-    --- trigger_create(24 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, waypoints, 3, true) --- Wegpunkt 3 (Küchenanrichte, ganz rechts)
-    --- waypointstate[tano[5]] = 1
-
-    --- Ta No 6 (Küchenhilfe)
-    --- trigger_create(19 * TILESIZE + 16, 19 * TILESIZE + 16, 1, 1, waypoints, 1, true) --- Wegpunkt 1 (Küchenanrichte, links vor dem Ofen)
-    --- trigger_create(9 * TILESIZE + 16, 14 * TILESIZE + 16, 1, 1, waypoints, 2, true) --- Wegpunkt 2 (Vorratskammer, oben vor dem Regal)
-    --- trigger_create(9 * TILESIZE + 16, 19 * TILESIZE + 16, 1, 1, waypoints, 3, true) --- Wegpunkt 3 (Vorratskammer, unten vor einer Kiste)
-    --- trigger_create(7 * TILESIZE + 16, 16 * TILESIZE + 16, 1, 1, waypoints, 4, true) --- Wegpunkt 4 (Vorratskammer, links vor einem Sack)
-    --- waypointstate[tano[6]] = 1
-	
-    --- Schutz der Schatzkammer
-    -- trigger_create(42 * TILESIZE, 36 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, treasure_trap, 0, true)
-    -- trigger_create(39 * TILESIZE, 36 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, treasure_warning, 0, true)
-end)
 
 local function tano1_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Geh doch mal zu Samos, der hat bestimmt einen Auftrag für dich.",
@@ -231,3 +190,44 @@ local function treasure_warning(being)
 --      "Halt!"))
 --  end
 end
+atinit(function()
+    --- NPCs
+    tano[1] = npc_create("Irdath", 89, GENDER_UNSPECIFIED, 35 * TILESIZE + 16, 44 * TILESIZE + 16, tano1_talk, npclib.walkaround_small) --- Ta No 1 (Ta No am Eingang)
+    tano[2] = npc_create("Rhaor", 91, GENDER_UNSPECIFIED, 42 * TILESIZE + 16, 36 * TILESIZE + 16, tano2_talk, nil) --- Ta No 2 (Schatzkammer Wächter)
+    tano[3] = npc_create("Karl", 92, GENDER_UNSPECIFIED, 25 * TILESIZE + 16, 41 * TILESIZE + 16, tano3_talk, nil) --- Ta No 3 (Verkäufer)
+    tano[4] = npc_create("Samos", 93, GENDER_UNSPECIFIED, 67 * TILESIZE + 16, 14 * TILESIZE + 16, tano4_talk, nil) --- Ta No 4 (Sektenführer)
+    tano[5] = npc_create("Ceria", 94, GENDER_UNSPECIFIED, 20 * TILESIZE + 16, 20 * TILESIZE + 16, tano5_talk, nil) --- Ta No 5 (Köchin)
+    tano[6] = npc_create("Enlelm", 95, GENDER_UNSPECIFIED, 19 * TILESIZE + 16, 19 * TILESIZE + 16, tano6_talk, nil) --- Ta No 6 (Küchenhilfe)
+    tano[7] = npc_create("Byler", 96, GENDER_UNSPECIFIED, 17 * TILESIZE + 16, 24 * TILESIZE + 16, tano7_talk, nil) --- Ta No 7 (Normal m)
+    tano[8] = npc_create("Lyril", 97, GENDER_UNSPECIFIED, 21 * TILESIZE + 16, 24 * TILESIZE + 16, tano8_talk, nil) --- Ta No 8 (Normal f)
+    tano[9] = npc_create("Iawar", 98, GENDER_UNSPECIFIED, 26 * TILESIZE + 16, 24 * TILESIZE + 16, tano9_talk, nil) --- Ta No 9 (Normal m)
+    tano[10] = npc_create("Isskel", 99, GENDER_UNSPECIFIED, 18 * TILESIZE + 16, 29 * TILESIZE + 16, tano10_talk, nil) --- Ta No 10 (Normal m)
+    tano[11] = npc_create("Kahlan", 100, GENDER_UNSPECIFIED, 22 * TILESIZE + 16, 29 * TILESIZE + 16, tano11_talk, nil) --- Ta No 11 (Normal f)
+	
+    --- Blickrichtungen
+    --- schedule_in(1, function()
+    ---     being_set_direction(tano[7], DIRECTION_RIGHT)
+    ---     being_set_direction(tano[8], DIRECTION_LEFT)
+    ---     being_set_direction(tano[9], DIRECTION_DOWN)
+    ---     being_set_direction(tano[10], DIRECTION_RIGHT)
+    ---     being_set_direction(tano[11], DIRECTION_LEFT)
+    --- end)
+	
+    --- Waypoints
+    --- Ta No 5 (Köchin)
+    --- trigger_create(20 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, waypoints, 1, true) --- Wegpunkt 1 (Küchenanrichte, ganz links)
+    --- trigger_create(23 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, waypoints, 2, true) --- Wegpunkt 2 (Küchenanrichte, zweite von rechts)
+    --- trigger_create(24 * TILESIZE + 16, 20 * TILESIZE + 16, 1, 1, waypoints, 3, true) --- Wegpunkt 3 (Küchenanrichte, ganz rechts)
+    --- waypointstate[tano[5]] = 1
+
+    --- Ta No 6 (Küchenhilfe)
+    --- trigger_create(19 * TILESIZE + 16, 19 * TILESIZE + 16, 1, 1, waypoints, 1, true) --- Wegpunkt 1 (Küchenanrichte, links vor dem Ofen)
+    --- trigger_create(9 * TILESIZE + 16, 14 * TILESIZE + 16, 1, 1, waypoints, 2, true) --- Wegpunkt 2 (Vorratskammer, oben vor dem Regal)
+    --- trigger_create(9 * TILESIZE + 16, 19 * TILESIZE + 16, 1, 1, waypoints, 3, true) --- Wegpunkt 3 (Vorratskammer, unten vor einer Kiste)
+    --- trigger_create(7 * TILESIZE + 16, 16 * TILESIZE + 16, 1, 1, waypoints, 4, true) --- Wegpunkt 4 (Vorratskammer, links vor einem Sack)
+    --- waypointstate[tano[6]] = 1
+	
+    --- Schutz der Schatzkammer
+    -- trigger_create(42 * TILESIZE, 36 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, treasure_trap, 0, true)
+    -- trigger_create(39 * TILESIZE, 36 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, treasure_warning, 0, true)
+end)

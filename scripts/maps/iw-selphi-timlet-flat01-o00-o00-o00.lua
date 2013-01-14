@@ -17,10 +17,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
- ---npc_create("Banker", 11, GENDER_UNSPECIFIED, 180 * TILESIZE + 16, 160 * TILESIZE + 16, banker.banker_talk, nil) --- Banker (Debug)
- npc_create("Goron", 11, GENDER_UNSPECIFIED, 77 * TILESIZE + 16, 24 * TILESIZE + 16, goron_talk, nil) -- Goron (Schneider)
-end)
 
 
 local function goron_talk(npc, ch)
@@ -132,3 +128,8 @@ local function goron_talk(npc, ch)
         end
     end
 end
+
+atinit(function()
+ ---npc_create("Banker", 11, GENDER_UNSPECIFIED, 180 * TILESIZE + 16, 160 * TILESIZE + 16, banker.banker_talk, nil) --- Banker (Debug)
+ npc_create("Goron", 11, GENDER_UNSPECIFIED, 77 * TILESIZE + 16, 24 * TILESIZE + 16, goron_talk, nil) -- Goron (Schneider)
+end)

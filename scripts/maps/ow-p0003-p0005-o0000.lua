@@ -20,16 +20,6 @@ require "scripts/libs/sign"
 
 require "scripts/libs/warp"
 
-atinit(function()
-    create_inter_map_warp_trigger(nil, 110, 98, 88) --- Intermap warp
-
-    sign_entrance = "Alexia"
-    sign.create_sign(84, 132, sign_entrance) --- Schild Ortseingang
-
-    npc_create("Regret", 8, GENDER_UNSPECIFIED, 55 * TILESIZE + 16, 173 * TILESIZE + 16, regret_talk, nil) --- Regret 
-    npc_create("Holbert", 63, GENDER_UNSPECIFIED, 129 * TILESIZE + 16, 120 * TILESIZE + 16, holbert_talk, nil) --- Holbert
-    npc_create("Vektor", 11, GENDER_UNSPECIFIED, 134 * TILESIZE + 16, 120 * TILESIZE + 16, vektor_talk, nil) --- Vektor
-end)
 
 local function regret_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Verdammt, was mache ich hier? Ich bin im falschen Spiel!",
@@ -74,3 +64,14 @@ local function vektor_talk(npc, ch)
             "Wir könnten auch einfach so tun, als ob da gar kein Haus steht."))
     end
 end
+
+atinit(function()
+    create_inter_map_warp_trigger(nil, 110, 98, 88) --- Intermap warp
+
+    sign_entrance = "Alexia"
+    sign.create_sign(84, 132, sign_entrance) --- Schild Ortseingang
+
+    npc_create("Regret", 8, GENDER_UNSPECIFIED, 55 * TILESIZE + 16, 173 * TILESIZE + 16, regret_talk, nil) --- Regret 
+    npc_create("Holbert", 63, GENDER_UNSPECIFIED, 129 * TILESIZE + 16, 120 * TILESIZE + 16, holbert_talk, nil) --- Holbert
+    npc_create("Vektor", 11, GENDER_UNSPECIFIED, 134 * TILESIZE + 16, 120 * TILESIZE + 16, vektor_talk, nil) --- Vektor
+end)

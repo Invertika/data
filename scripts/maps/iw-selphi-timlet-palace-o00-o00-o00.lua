@@ -17,10 +17,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-    npc_create("Luor", 20, GENDER_UNSPECIFIED, 34 * TILESIZE + 16, 24 * TILESIZE + 16, luor_talk, nil) --- Luor
-    npc_create("Krenel", 54, GENDER_UNSPECIFIED, 41 * TILESIZE + 16, 56 * TILESIZE + 16, krenel_talk, nil) --- Krenel
-end)
 
 local function luor_talk(npc, ch)
     invertika.init_quest_status(ch, "selphi_timlet_vipcard")
@@ -57,3 +53,8 @@ local function krenel_talk(npc, ch)
       "Wenn wir das nicht tun ist alles zu spät.",
       "Das ganze Invertika Team macht das so... aber psssst..."))
 end
+
+atinit(function()
+    npc_create("Luor", 20, GENDER_UNSPECIFIED, 34 * TILESIZE + 16, 24 * TILESIZE + 16, luor_talk, nil) --- Luor
+    npc_create("Krenel", 54, GENDER_UNSPECIFIED, 41 * TILESIZE + 16, 56 * TILESIZE + 16, krenel_talk, nil) --- Krenel
+end)

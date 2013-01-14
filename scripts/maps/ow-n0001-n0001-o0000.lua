@@ -19,6 +19,7 @@ require "scripts/libs/sign"
 
 require "scripts/libs/warp"
 
+
 atinit(function()
   create_inter_map_warp_trigger(6, 56, 2, 12) --- Intermap warp
   sign_horiz = "<-- Roststock 300 Amoti\nSelphie Timlet 100 Amoti -->"

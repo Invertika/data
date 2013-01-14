@@ -17,9 +17,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
- npc_create("Haitan", 67, GENDER_UNSPECIFIED, 62 * TILESIZE + 16, 29 * TILESIZE + 16, haitan_talk, nil) --- Haitan
-end)
 
 local function haitan_talk(npc, ch)
     if (invertika.get_quest_status(ch, "selphi_timlet_haitan_scorpions") == nil) then
@@ -61,3 +58,7 @@ local function haitan_talk(npc, ch)
             "Leider sind immer noch Skorpione da unten..."))
     end
 end
+
+atinit(function()
+ npc_create("Haitan", 67, GENDER_UNSPECIFIED, 62 * TILESIZE + 16, 29 * TILESIZE + 16, haitan_talk, nil) --- Haitan
+end)

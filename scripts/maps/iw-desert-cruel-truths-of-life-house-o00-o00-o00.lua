@@ -17,9 +17,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-     npc_create("Veritas", 143, GENDER_UNSPECIFIED, 41 * TILESIZE, 20 * TILESIZE + 16, veritas_talk, nil) --- Veritas 
-end)
 
 local function veritas_talk(npc, ch)
     npc_message(npc, ch, "Sei gegrüßt Reisender. Bist du gekommen um eine grausame Wahrheit des Lebens zu erfahren?")
@@ -90,3 +87,7 @@ local function veritas_talk(npc, ch)
         
 end
 
+
+atinit(function()
+     npc_create("Veritas", 143, GENDER_UNSPECIFIED, 41 * TILESIZE, 20 * TILESIZE + 16, veritas_talk, nil) --- Veritas 
+end)

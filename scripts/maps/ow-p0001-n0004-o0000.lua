@@ -20,13 +20,6 @@ require "scripts/libs/invertika"
 
 require "scripts/libs/warp"
 
-atinit(function()
- create_inter_map_warp_trigger(69, 81, 71, 59) --- Intermap warp
- nethek.create_netheksaeule(97 * TILESIZE, 127 * TILESIZE + 16) ---Netheksäule
- 
-  -- NPCs
- npc_create("Asgard", 47, GENDER_UNSPECIFIED, 139 * TILESIZE + 16, 96 * TILESIZE + 16, asgard_talk, nil) --- Asgard
-end)
 
 local function asgard_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Noch nie war jemmand in diesem Turm.",
@@ -34,3 +27,10 @@ local function asgard_talk(npc, ch)
         "Es gibt eine Legende, die besagt das der Turm sich eines Tages öffnen wird.",
         "Viele haben versucht in den Turm einzudringen, aber niemand hat es je geschafft."))
 end
+atinit(function()
+ create_inter_map_warp_trigger(69, 81, 71, 59) --- Intermap warp
+ nethek.create_netheksaeule(97 * TILESIZE, 127 * TILESIZE + 16) ---Netheksäule
+ 
+  -- NPCs
+ npc_create("Asgard", 47, GENDER_UNSPECIFIED, 139 * TILESIZE + 16, 96 * TILESIZE + 16, asgard_talk, nil) --- Asgard
+end)

@@ -22,34 +22,6 @@ require "scripts/libs/datetime"
 
 require "scripts/libs/warp"
 
-atinit(function()
-    create_inter_map_warp_trigger(58, 70, 60, 4) --- Intermap warp
-    nethek.create_netheksaeule(130 * TILESIZE, 151 * TILESIZE + 16) --- Netheksäule
-
-    sign_descr = "Nelaro"
-    sign.create_sign(69, 110, sign_descr) --- Schild Stadtmitte
-    
-    egroe = npc_create("Egroe", 34, GENDER_UNSPECIFIED, 119 * TILESIZE + 16, 153 * TILESIZE + 16, egroe_talk, nil)
-    invertika.create_npc_talk_random(egroe,
-      {"Qualitätswaren zum billigsten Preis.",
-      "Wasser nur 2500 Aki pro Liter!"})
-    thinaima = npc_create("Thinaima", 18, GENDER_UNSPECIFIED, 64 * TILESIZE + 16, 112 * TILESIZE + 16, thinaima_talk, nil)
-    invertika.create_npc_talk_random(thinaima,
-      {"Waffen, handgefertigte Waffen!",
-      "Wasser zum billigsten Preis in der Region!",
-      "Edelste Waren aus dem Norden!"})
-    
-    --TODO Change Sprite ID
-    onurn = npc_create("Onurn", 2, GENDER_UNSPECIFIED, 91 * TILESIZE + 16, 98 * TILESIZE + 16, onurn_talk, nil)
-    invertika.create_npc_talk_random(onurn,
-      {"Wasser ist zum Waschen da, auch die Feuerwehr, braucht das Wasser sehr.",
-      "Wasser ist zum Waschen da, auch zum Zähneputzen, kann man es benutzen.",
-      "Die Fleischlackiererei ist auf der anderen Seite.",
-      "˙ɟǝıɥɔs ʇsı ɹǝp 'ʇsǝıl sɐp ɹǝʍ"})
-      
-    ---Neujahr
-    ---npc_create("Feuerwerker", 83, GENDER_UNSPECIFIED, 177 * TILESIZE + 16, 185 * TILESIZE + 16, fireworker_talk, npclib.walkaround_small)
-end)
 
 -- Silvester
 local function fireworker_talk(npc, ch)
@@ -143,3 +115,32 @@ local function onurn_talk(npc, ch)
         end
     end
 end
+
+atinit(function()
+    create_inter_map_warp_trigger(58, 70, 60, 4) --- Intermap warp
+    nethek.create_netheksaeule(130 * TILESIZE, 151 * TILESIZE + 16) --- Netheksäule
+
+    sign_descr = "Nelaro"
+    sign.create_sign(69, 110, sign_descr) --- Schild Stadtmitte
+    
+    egroe = npc_create("Egroe", 34, GENDER_UNSPECIFIED, 119 * TILESIZE + 16, 153 * TILESIZE + 16, egroe_talk, nil)
+    invertika.create_npc_talk_random(egroe,
+      {"Qualitätswaren zum billigsten Preis.",
+      "Wasser nur 2500 Aki pro Liter!"})
+    thinaima = npc_create("Thinaima", 18, GENDER_UNSPECIFIED, 64 * TILESIZE + 16, 112 * TILESIZE + 16, thinaima_talk, nil)
+    invertika.create_npc_talk_random(thinaima,
+      {"Waffen, handgefertigte Waffen!",
+      "Wasser zum billigsten Preis in der Region!",
+      "Edelste Waren aus dem Norden!"})
+    
+    --TODO Change Sprite ID
+    onurn = npc_create("Onurn", 2, GENDER_UNSPECIFIED, 91 * TILESIZE + 16, 98 * TILESIZE + 16, onurn_talk, nil)
+    invertika.create_npc_talk_random(onurn,
+      {"Wasser ist zum Waschen da, auch die Feuerwehr, braucht das Wasser sehr.",
+      "Wasser ist zum Waschen da, auch zum Zähneputzen, kann man es benutzen.",
+      "Die Fleischlackiererei ist auf der anderen Seite.",
+      "˙ɟǝıɥɔs ʇsı ɹǝp 'ʇsǝıl sɐp ɹǝʍ"})
+      
+    ---Neujahr
+    ---npc_create("Feuerwerker", 83, GENDER_UNSPECIFIED, 177 * TILESIZE + 16, 185 * TILESIZE + 16, fireworker_talk, npclib.walkaround_small)
+end)

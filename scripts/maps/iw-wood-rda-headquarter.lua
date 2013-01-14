@@ -17,13 +17,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-  npc_create("Marc", 61, GENDER_UNSPECIFIED, 24 * TILESIZE + 16, 22 * TILESIZE + 16, marc_talk, nil) --- Marc
-  
-  npc_create("Richard", 25, GENDER_UNSPECIFIED, 36 * TILESIZE + 16, 19 * TILESIZE + 16, richard_talk, nil) --- Richard
-  npc_create("Dean", 28, GENDER_UNSPECIFIED, 53 * TILESIZE + 16, 18 * TILESIZE + 16, dean_talk, nil) --- Dean
-  npc_create("Anderson", 46, GENDER_UNSPECIFIED, 58 * TILESIZE + 16, 24 * TILESIZE + 16, anderson_talk, nil) --- Anderson
-end)
 
 local function marc_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Willkommen bei der RDA.",
@@ -49,3 +42,10 @@ local function anderson_talk(npc, ch)
       "Hilfe ist eigentlich immer gewünscht, da müssen wir einfach mal schauen.",
       "Ja wir benötigen Geld, allerdings müssen wir uns noch eine Spendenkasse besorgen."))
 end
+atinit(function()
+  npc_create("Marc", 61, GENDER_UNSPECIFIED, 24 * TILESIZE + 16, 22 * TILESIZE + 16, marc_talk, nil) --- Marc
+  
+  npc_create("Richard", 25, GENDER_UNSPECIFIED, 36 * TILESIZE + 16, 19 * TILESIZE + 16, richard_talk, nil) --- Richard
+  npc_create("Dean", 28, GENDER_UNSPECIFIED, 53 * TILESIZE + 16, 18 * TILESIZE + 16, dean_talk, nil) --- Dean
+  npc_create("Anderson", 46, GENDER_UNSPECIFIED, 58 * TILESIZE + 16, 24 * TILESIZE + 16, anderson_talk, nil) --- Anderson
+end)

@@ -11,9 +11,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-  npc_create("Umach", 111, GENDER_UNSPECIFIED, 13 * TILESIZE + 16, 25 * TILESIZE + 16, umach_talk, nil)
-end)
 
 local function umach_talk(npc, ch)
     local queststring = "monument_of_bugfixer_flower_quest"
@@ -68,3 +65,7 @@ local function umach_talk(npc, ch)
         npc_message(npc, ch, "Gehe zum Bürgermeister!")
     end
 end
+
+atinit(function()
+  npc_create("Umach", 111, GENDER_UNSPECIFIED, 13 * TILESIZE + 16, 25 * TILESIZE + 16, umach_talk, nil)
+end)

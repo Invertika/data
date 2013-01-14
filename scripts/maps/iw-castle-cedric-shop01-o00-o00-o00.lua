@@ -17,12 +17,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-    worrany = npc_create("Worrany", 69, GENDER_UNSPECIFIED, 22 * TILESIZE + 16, 27 * TILESIZE + 16, worrany_talk, nil)
-
-    -- CRASHT DEN SERVER! Erst auskommentieren sobald der Bug gefixt ist.
-    -- schedule_in(10, worrany_walkleft)
-end)
 
 local function worrany_talk(npc, ch)
     npc_message(npc, ch, "Willkommen, in meinem Kräuterladen")
@@ -69,3 +63,10 @@ local function worrany_walkright()
     being_walk(npc,  27 * 32 + 16, 880, 2)
     schedule_in(20, worrany_walkleft)
 end
+
+atinit(function()
+    worrany = npc_create("Worrany", 69, GENDER_UNSPECIFIED, 22 * TILESIZE + 16, 27 * TILESIZE + 16, worrany_talk, nil)
+
+    -- CRASHT DEN SERVER! Erst auskommentieren sobald der Bug gefixt ist.
+    -- schedule_in(10, worrany_walkleft)
+end)

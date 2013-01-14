@@ -21,22 +21,6 @@ require "scripts/libs/dice"
 require "scripts/libs/slotmachine"
 require "scripts/libs/roulette"
 
-atinit(function()
-    npc_create("Irac", 16, GENDER_UNSPECIFIED, 30 * TILESIZE + 16, 37 * TILESIZE + 16, irac_talk, nil)
-    
-    npc_create("Würfeltisch", 1, GENDER_UNSPECIFIED, 13 * TILESIZE + 16, 35 * TILESIZE + 16, dice.dicemanager_talk, nil)
-    npc_create("Würfeltisch", 1, GENDER_UNSPECIFIED, 20 * TILESIZE + 16, 35 * TILESIZE + 16, dice.dicemanager_talk, nil)
-    npc_create("Würfeltisch", 1, GENDER_UNSPECIFIED, 20 * TILESIZE + 16, 39 * TILESIZE + 16, dice.dicemanager_talk, nil)
-    
-    npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 3 * TILESIZE + 16, 35 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
-    npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 16 * TILESIZE + 16, 35 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
-    npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 17 * TILESIZE + 16, 35 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
-    npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 3 * TILESIZE + 16, 40 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
-    
-    npc_create("Roulette", 1, GENDER_UNSPECIFIED, 5 * TILESIZE + 16, 35 * TILESIZE + 16, roulette.roulette_talk, nil)
-    npc_create("Roulette", 1, GENDER_UNSPECIFIED, 5 * TILESIZE + 16, 39 * TILESIZE + 16, roulette.roulette_talk, nil)
-    npc_create("Roulette", 1, GENDER_UNSPECIFIED, 12 * TILESIZE + 16, 39 * TILESIZE + 16, roulette.roulette_talk, nil)
-end)
 
 local function irac_talk(npc, ch)
     local queststring = "nelaro_water_quest"
@@ -111,3 +95,20 @@ local function irac_talk(npc, ch)
         end
     end
 end
+
+atinit(function()
+    npc_create("Irac", 16, GENDER_UNSPECIFIED, 30 * TILESIZE + 16, 37 * TILESIZE + 16, irac_talk, nil)
+    
+    npc_create("Würfeltisch", 1, GENDER_UNSPECIFIED, 13 * TILESIZE + 16, 35 * TILESIZE + 16, dice.dicemanager_talk, nil)
+    npc_create("Würfeltisch", 1, GENDER_UNSPECIFIED, 20 * TILESIZE + 16, 35 * TILESIZE + 16, dice.dicemanager_talk, nil)
+    npc_create("Würfeltisch", 1, GENDER_UNSPECIFIED, 20 * TILESIZE + 16, 39 * TILESIZE + 16, dice.dicemanager_talk, nil)
+    
+    npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 3 * TILESIZE + 16, 35 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+    npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 16 * TILESIZE + 16, 35 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+    npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 17 * TILESIZE + 16, 35 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+    npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 3 * TILESIZE + 16, 40 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+    
+    npc_create("Roulette", 1, GENDER_UNSPECIFIED, 5 * TILESIZE + 16, 35 * TILESIZE + 16, roulette.roulette_talk, nil)
+    npc_create("Roulette", 1, GENDER_UNSPECIFIED, 5 * TILESIZE + 16, 39 * TILESIZE + 16, roulette.roulette_talk, nil)
+    npc_create("Roulette", 1, GENDER_UNSPECIFIED, 12 * TILESIZE + 16, 39 * TILESIZE + 16, roulette.roulette_talk, nil)
+end)

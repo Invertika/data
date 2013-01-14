@@ -17,12 +17,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
- ---npc_create("Banker", 122, GENDER_UNSPECIFIED, 180 * TILESIZE + 16, 160 * TILESIZE + 16, banker.banker_talk, nil) --- Banker (Debug)
- npc_create("Mercol", 66, GENDER_UNSPECIFIED, 76 * TILESIZE + 16, 27 * TILESIZE + 16, mercol_talk, nil) -- Mercol
- npc_create("Samos", 64, GENDER_UNSPECIFIED, 59 * TILESIZE + 16, 25 * TILESIZE + 16, samos_talk, nil) -- Samos
-
-end)
 
 local function mercol_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Ich wohne hier.",
@@ -89,3 +83,10 @@ local function samos_talk(npc, ch)
     end
     
 end
+
+atinit(function()
+ ---npc_create("Banker", 122, GENDER_UNSPECIFIED, 180 * TILESIZE + 16, 160 * TILESIZE + 16, banker.banker_talk, nil) --- Banker (Debug)
+ npc_create("Mercol", 66, GENDER_UNSPECIFIED, 76 * TILESIZE + 16, 27 * TILESIZE + 16, mercol_talk, nil) -- Mercol
+ npc_create("Samos", 64, GENDER_UNSPECIFIED, 59 * TILESIZE + 16, 25 * TILESIZE + 16, samos_talk, nil) -- Samos
+
+end)

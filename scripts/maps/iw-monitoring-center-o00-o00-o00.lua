@@ -18,20 +18,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-    npc_create("Sei", 111, GENDER_UNSPECIFIED, 11 * TILESIZE + 16, 34 * TILESIZE + 16, sei_talk, nil) --- Sei
-    npc_create("Jo", 124, GENDER_UNSPECIFIED, 22 * TILESIZE + 16, 32 * TILESIZE + 16, jo_talk, nil) --- Jo
-    npc_create("Leo", 146, GENDER_UNSPECIFIED, 57 * TILESIZE + 16, 23 * TILESIZE + 16, leo_talk, nil) --- Leo
-    npc_create("Meg", 65, GENDER_UNSPECIFIED, 20 * TILESIZE + 16, 32 * TILESIZE + 16, meg_talk, nil) --- Meg
-    npc_create("Amy", 18, GENDER_UNSPECIFIED, 14 * TILESIZE + 16, 9 * TILESIZE + 16, amy_talk, nil) --- Amy
-
-    npc_create("Bert", 28, GENDER_UNSPECIFIED, 34 * TILESIZE + 16, 9 * TILESIZE + 16, bert_talk, nil) --- Bert
-    npc_create("Sascha", 54, GENDER_UNSPECIFIED, 15 * TILESIZE + 16, 14 * TILESIZE + 16, sascha_talk, nil) --- Sascha
-    npc_create("David", 21, GENDER_UNSPECIFIED, 53 * TILESIZE + 16, 11 * TILESIZE + 16, david_talk, nil) --- David
-    npc_create("Jan", 50, GENDER_UNSPECIFIED, 41 * TILESIZE + 16, 21 * TILESIZE + 16, jan_talk, nil) --- Jan
-    npc_create("Jens", 64, GENDER_UNSPECIFIED, 21 * TILESIZE + 16, 27 * TILESIZE + 16, jens_talk, nil) --- Jens
-    npc_create("Lora", 55, GENDER_UNSPECIFIED, 12 * TILESIZE + 16, 21 * TILESIZE + 16, lora_talk, nil) --- Lora
-end)
 
 local function sei_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
@@ -131,3 +117,18 @@ local function lora_talk(npc, ch)
       "Ah da ist der neue Bericht. Schauen wir mal rein.",
       "Noch 40 Berichte zum lesen. Na dann wollen wir mal..."))
 end
+
+atinit(function()
+    npc_create("Sei", 111, GENDER_UNSPECIFIED, 11 * TILESIZE + 16, 34 * TILESIZE + 16, sei_talk, nil) --- Sei
+    npc_create("Jo", 124, GENDER_UNSPECIFIED, 22 * TILESIZE + 16, 32 * TILESIZE + 16, jo_talk, nil) --- Jo
+    npc_create("Leo", 146, GENDER_UNSPECIFIED, 57 * TILESIZE + 16, 23 * TILESIZE + 16, leo_talk, nil) --- Leo
+    npc_create("Meg", 65, GENDER_UNSPECIFIED, 20 * TILESIZE + 16, 32 * TILESIZE + 16, meg_talk, nil) --- Meg
+    npc_create("Amy", 18, GENDER_UNSPECIFIED, 14 * TILESIZE + 16, 9 * TILESIZE + 16, amy_talk, nil) --- Amy
+
+    npc_create("Bert", 28, GENDER_UNSPECIFIED, 34 * TILESIZE + 16, 9 * TILESIZE + 16, bert_talk, nil) --- Bert
+    npc_create("Sascha", 54, GENDER_UNSPECIFIED, 15 * TILESIZE + 16, 14 * TILESIZE + 16, sascha_talk, nil) --- Sascha
+    npc_create("David", 21, GENDER_UNSPECIFIED, 53 * TILESIZE + 16, 11 * TILESIZE + 16, david_talk, nil) --- David
+    npc_create("Jan", 50, GENDER_UNSPECIFIED, 41 * TILESIZE + 16, 21 * TILESIZE + 16, jan_talk, nil) --- Jan
+    npc_create("Jens", 64, GENDER_UNSPECIFIED, 21 * TILESIZE + 16, 27 * TILESIZE + 16, jens_talk, nil) --- Jens
+    npc_create("Lora", 55, GENDER_UNSPECIFIED, 12 * TILESIZE + 16, 21 * TILESIZE + 16, lora_talk, nil) --- Lora
+end)

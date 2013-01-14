@@ -18,6 +18,7 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 require "scripts/libs/special"
 
+
 atinit(function()
  --npc_create("Nomo", 20, GENDER_UNSPECIFIED, 48 * TILESIZE + 16, 23 * TILESIZE + 16, nomo_talk, nil) --- Nomo
 end)

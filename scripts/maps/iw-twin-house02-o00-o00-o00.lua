@@ -18,9 +18,6 @@ require "scripts/lua/npclib"
 require "scripts/libs/barber"
 require "scripts/libs/invertika"
 
-atinit(function()
-    npc_create("Rocer", 60, GENDER_UNSPECIFIED, 16 * TILESIZE + 16, 16 * TILESIZE + 16, rocer_talk, nil) -- Rocer (2. Zwilling)
-end)
 
 
 local function rocer_talk(npc, ch)
@@ -91,3 +88,7 @@ local function rocer_talk(npc, ch)
           "Ich bin als erstes geboren!"))
     end
 end
+
+atinit(function()
+    npc_create("Rocer", 60, GENDER_UNSPECIFIED, 16 * TILESIZE + 16, 16 * TILESIZE + 16, rocer_talk, nil) -- Rocer (2. Zwilling)
+end)

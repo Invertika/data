@@ -19,10 +19,6 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 
-atinit(function()
-    npc_create("Saya", 7, GENDER_UNSPECIFIED, 43 * TILESIZE + 16, 15 * TILESIZE + 16, saya_talk, nil) --- Saya
-    npc_create("Tetse", 138, GENDER_UNSPECIFIED, 45 * TILESIZE + 16, 23 * TILESIZE + 16, tetse_talk, nil) --- Tetse
-end)
 
 local function saya_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
@@ -68,3 +64,8 @@ local function tetse_talk(npc, ch)
           "Warst du an ihrem Grab?"))
     end
 end
+
+atinit(function()
+    npc_create("Saya", 7, GENDER_UNSPECIFIED, 43 * TILESIZE + 16, 15 * TILESIZE + 16, saya_talk, nil) --- Saya
+    npc_create("Tetse", 138, GENDER_UNSPECIFIED, 45 * TILESIZE + 16, 23 * TILESIZE + 16, tetse_talk, nil) --- Tetse
+end)

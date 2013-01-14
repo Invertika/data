@@ -17,9 +17,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-    npc_create("Metatron", 36, GENDER_UNSPECIFIED, 17 * TILESIZE + 16, 21 * TILESIZE + 16, metatron_talk, nil) --- Metatron
-end)
 
 local function metatron_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
@@ -27,3 +24,7 @@ local function metatron_talk(npc, ch)
       "Durch mich spricht sie...",
       "So höre mir zu..."))
 end
+
+atinit(function()
+    npc_create("Metatron", 36, GENDER_UNSPECIFIED, 17 * TILESIZE + 16, 21 * TILESIZE + 16, metatron_talk, nil) --- Metatron
+end)

@@ -18,6 +18,7 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 require "scripts/libs/banker"
 
+
 atinit(function()
     npc_create("Banker", 11, GENDER_UNSPECIFIED, 24 * TILESIZE + 16, 28 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
     npc_create("Banker", 11, GENDER_UNSPECIFIED, 29 * TILESIZE + 16, 27 * TILESIZE + 16, banker.banker_talk, nil) --- Banker

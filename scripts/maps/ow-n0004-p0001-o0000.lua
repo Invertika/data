@@ -19,10 +19,6 @@ require "scripts/libs/invertika"
 
 require "scripts/libs/warp"
 
-atinit(function()
- create_inter_map_warp_trigger(41, 29, 39, 51) --- Intermap warp
- npc_create("Bolum", 42, GENDER_UNSPECIFIED, 26 * TILESIZE + 16, 59 * TILESIZE + 16, bolum_talk, nil)
-end)
 
 local function bolum_talk(npc, ch)
     local queststring = "nelaro_vodel_quests"
@@ -51,3 +47,8 @@ local function bolum_talk(npc, ch)
         npc_message(npc, ch, "Hi.")
     end
 end
+
+atinit(function()
+ create_inter_map_warp_trigger(41, 29, 39, 51) --- Intermap warp
+ npc_create("Bolum", 42, GENDER_UNSPECIFIED, 26 * TILESIZE + 16, 59 * TILESIZE + 16, bolum_talk, nil)
+end)

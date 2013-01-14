@@ -18,23 +18,6 @@ require "scripts/lua/npclib"
 require "scripts/libs/banker"
 require "scripts/libs/invertika"
 
-atinit(function() 
- npc_create("Banker", 11, GENDER_UNSPECIFIED, 45 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
- npc_create("Banker", 11, GENDER_UNSPECIFIED, 53 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
- npc_create("Banker", 11, GENDER_UNSPECIFIED, 60 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
- npc_create("Banker", 11, GENDER_UNSPECIFIED, 67 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
- npc_create("Banker", 11, GENDER_UNSPECIFIED, 75 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
- npc_create("Banker", 11, GENDER_UNSPECIFIED, 83 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
- 
- --NPCs
- wache = npc_create("Wache", 29, GENDER_UNSPECIFIED, 30 * TILESIZE + 16, 87 * TILESIZE + 16, wache_talk, nil) --- Wache
- npc_create("Wache", 29, GENDER_UNSPECIFIED, 36 * TILESIZE + 16, 87 * TILESIZE + 16, wache_talk, nil) --- Wache
- 
- npc_create("Mertox", 2, GENDER_UNSPECIFIED, 24 * TILESIZE + 16, 24 * TILESIZE + 16, mertox_talk, nil) --- Mertox
- 
-  -- Trigger für die Überwachung des Bereiches
- trigger_create(30 * TILESIZE, 84 * TILESIZE, 7 * TILESIZE, 3 * TILESIZE, wache_trigger, 1, true) --- Trigger
-end)
 
 local function wache_trigger(ch, id)
    if (being_type(ch) ~= TYPE_MONSTER) then --- Nur Player durchlassen
@@ -64,3 +47,20 @@ local function mertox_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Zur Zeit gibt es keine Wirtschaftskenngrößen.",
         "Kommen sie später wieder."))
 end
+atinit(function() 
+ npc_create("Banker", 11, GENDER_UNSPECIFIED, 45 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
+ npc_create("Banker", 11, GENDER_UNSPECIFIED, 53 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
+ npc_create("Banker", 11, GENDER_UNSPECIFIED, 60 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
+ npc_create("Banker", 11, GENDER_UNSPECIFIED, 67 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
+ npc_create("Banker", 11, GENDER_UNSPECIFIED, 75 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
+ npc_create("Banker", 11, GENDER_UNSPECIFIED, 83 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
+ 
+ --NPCs
+ wache = npc_create("Wache", 29, GENDER_UNSPECIFIED, 30 * TILESIZE + 16, 87 * TILESIZE + 16, wache_talk, nil) --- Wache
+ npc_create("Wache", 29, GENDER_UNSPECIFIED, 36 * TILESIZE + 16, 87 * TILESIZE + 16, wache_talk, nil) --- Wache
+ 
+ npc_create("Mertox", 2, GENDER_UNSPECIFIED, 24 * TILESIZE + 16, 24 * TILESIZE + 16, mertox_talk, nil) --- Mertox
+ 
+  -- Trigger für die Überwachung des Bereiches
+ trigger_create(30 * TILESIZE, 84 * TILESIZE, 7 * TILESIZE, 3 * TILESIZE, wache_trigger, 1, true) --- Trigger
+end)

@@ -17,20 +17,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-    schedule_every(5, explosion)
-    nalaf = npc_create("Nalaf", 11, GENDER_UNSPECIFIED, 41 * TILESIZE + 16, 35 * TILESIZE + 16, nalaf_talk, nil)
-    invertika.create_npc_talk_random(nalaf,
-      {"Hm. das scheint nicht zu klappen...",
-      "Wäre auch ein Wunder wenn es funktioniert hätte.",
-      "Achtung! Bitte einen Schritt zurücktreten!"}) --TODO: Mehr Auswahl
-    warves = npc_create("Warves", 7, GENDER_UNSPECIFIED, 45 * TILESIZE + 16, 38 * TILESIZE + 16, warves_talk, nil)
-    invertika.create_npc_talk_random(warves,
-      {"Probier das hier mal.",
-      "Ich probier mal eine neue Mischung.",
-      "Hmm..."}) -- TODO: Mehr Auswahl
-
-end)
 
 local function explosion()
     effect_create(5, 41 * TILESIZE + 16, 37 * TILESIZE + 16)
@@ -100,3 +86,18 @@ local function warves_talk(npc, ch)
       "Vorsicht mit den Reagenzgläsern!",
       "Wir experimentieren hier mit neuen Mitteln.")) -- TODO: Mehr Varianten
 end
+
+atinit(function()
+    schedule_every(5, explosion)
+    nalaf = npc_create("Nalaf", 11, GENDER_UNSPECIFIED, 41 * TILESIZE + 16, 35 * TILESIZE + 16, nalaf_talk, nil)
+    invertika.create_npc_talk_random(nalaf,
+      {"Hm. das scheint nicht zu klappen...",
+      "Wäre auch ein Wunder wenn es funktioniert hätte.",
+      "Achtung! Bitte einen Schritt zurücktreten!"}) --TODO: Mehr Auswahl
+    warves = npc_create("Warves", 7, GENDER_UNSPECIFIED, 45 * TILESIZE + 16, 38 * TILESIZE + 16, warves_talk, nil)
+    invertika.create_npc_talk_random(warves,
+      {"Probier das hier mal.",
+      "Ich probier mal eine neue Mischung.",
+      "Hmm..."}) -- TODO: Mehr Auswahl
+
+end)

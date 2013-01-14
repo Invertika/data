@@ -20,14 +20,6 @@ require "scripts/libs/invertika"
 
 require "scripts/libs/warp"
 
-atinit(function()
-  create_inter_map_warp_trigger(78, 90, 80, 68) --- Intermap warp
-  sign.create_sign(147, 79, "Denkmal des großen Fehlerbehebers")
-  
-  trigger_create(36 * TILESIZE, 97 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, statue_trigger, 1, true);
-  
-  npc_create("Statue", 1, GENDER_UNSPECIFIED, 36 * TILESIZE + 16, 93 * TILESIZE + 16, statue_talk, nil)
-end)
 
 local function statue_talk(npc, ch)
     queststring = "monument-of-bugfixer-entry-statue-quest"
@@ -103,3 +95,11 @@ local function statue_trigger(ch, id)
         chr_warp(ch, nil, 33 * TILESIZE + 16, posY(ch))
     end
 end
+atinit(function()
+  create_inter_map_warp_trigger(78, 90, 80, 68) --- Intermap warp
+  sign.create_sign(147, 79, "Denkmal des großen Fehlerbehebers")
+  
+  trigger_create(36 * TILESIZE, 97 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, statue_trigger, 1, true);
+  
+  npc_create("Statue", 1, GENDER_UNSPECIFIED, 36 * TILESIZE + 16, 93 * TILESIZE + 16, statue_talk, nil)
+end)

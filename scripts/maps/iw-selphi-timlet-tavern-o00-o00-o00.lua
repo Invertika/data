@@ -19,10 +19,6 @@ require "scripts/libs/banker"
 require "scripts/libs/slotmachine"
 require "scripts/libs/invertika"
 
-atinit(function()
- npc_create("Brecht", 21, GENDER_UNSPECIFIED, 20 * TILESIZE + 16, 15 * TILESIZE + 16, brecht_talk, nil) --- Brecht
- npc_create("Chodar", 40, GENDER_UNSPECIFIED, 38 * TILESIZE + 16, 18 * TILESIZE + 16, chodar_talk, nil) --- Chodar
-end)
 
 local function brecht_talk(npc, ch)
     npc_message(npc, ch, "Ich sehe schon du bist durstig. Was möchtest du?")
@@ -100,3 +96,8 @@ local function chodar_talk(npc, ch)
                                                          "Auf bessere Zeiten!"))
     end
 end
+
+atinit(function()
+ npc_create("Brecht", 21, GENDER_UNSPECIFIED, 20 * TILESIZE + 16, 15 * TILESIZE + 16, brecht_talk, nil) --- Brecht
+ npc_create("Chodar", 40, GENDER_UNSPECIFIED, 38 * TILESIZE + 16, 18 * TILESIZE + 16, chodar_talk, nil) --- Chodar
+end)

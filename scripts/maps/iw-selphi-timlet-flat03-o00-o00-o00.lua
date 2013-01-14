@@ -17,10 +17,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
- npc_create("...", 1, GENDER_UNSPECIFIED, 68 * TILESIZE + 16, 18 * TILESIZE + 16, tresor_talk, nil) --- Tresor
- npc_create("Ceech", 54, GENDER_UNSPECIFIED, 38 * TILESIZE + 16, 22 * TILESIZE + 16, ceech_talk, nil) --- Ceech
-end)
 
 local function tresor_talk(npc, ch)
     -- quest init
@@ -143,3 +139,8 @@ local function ceech_talk(npc, ch)
         "Hör auf zu stören!"))
     end
 end
+
+atinit(function()
+ npc_create("...", 1, GENDER_UNSPECIFIED, 68 * TILESIZE + 16, 18 * TILESIZE + 16, tresor_talk, nil) --- Tresor
+ npc_create("Ceech", 54, GENDER_UNSPECIFIED, 38 * TILESIZE + 16, 22 * TILESIZE + 16, ceech_talk, nil) --- Ceech
+end)

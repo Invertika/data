@@ -17,9 +17,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-    npc_create("Egam", 19, GENDER_UNSPECIFIED, 19 * TILESIZE + 16, 27 * TILESIZE + 16, egam_talk, nil)
-end)
 
 local function egam_talk(npc, ch)
     npc_message(npc, ch, "Was kann ich für sie tuen?")
@@ -46,3 +43,7 @@ local function egam_talk(npc, ch)
         end
     end
 end
+
+atinit(function()
+    npc_create("Egam", 19, GENDER_UNSPECIFIED, 19 * TILESIZE + 16, 27 * TILESIZE + 16, egam_talk, nil)
+end)

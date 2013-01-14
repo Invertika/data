@@ -17,9 +17,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-    npc_create("Velera", 78, GENDER_UNSPECIFIED, 24 * TILESIZE + 16, 27 * TILESIZE + 16, velera_talk, nil)
-end)
 
 local function velera_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
@@ -30,3 +27,7 @@ local function velera_talk(npc, ch)
       "Ich bin Velera. Wie bitte? Ja ich bin vergeben.",
       "Heute ist mal wieder einer dieser seltsamen Tage.")) 
 end
+
+atinit(function()
+    npc_create("Velera", 78, GENDER_UNSPECIFIED, 24 * TILESIZE + 16, 27 * TILESIZE + 16, velera_talk, nil)
+end)

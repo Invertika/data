@@ -20,22 +20,6 @@ require "scripts/libs/invertika"
 
 require "scripts/libs/warp"
 
-atinit(function()
- create_inter_map_warp_trigger(19001, 19001, 19001, 19001) --- Intermap warp
- npc_create("Nethek", 1, GENDER_UNSPECIFIED, 36 * TILESIZE, 154 * TILESIZE + 16, nethek_talk, nil) --- Nethek
- npc_create("Monty", 49, GENDER_UNSPECIFIED, 107 * TILESIZE + 16, 92 * TILESIZE + 16, monty_talk, nil) --- Monty
- 
- -- Scheudle
-   schedule_every(2, function()
-    ShowNextMessageForTherapy()
-  end)
- 
-  -- NPCs
- annabell=npc_create("Annabell", 23, GENDER_UNSPECIFIED, 140 * TILESIZE + 16, 39 * TILESIZE + 16, annabell_talk, nil) --- Annabell
- herbert=npc_create("Herbert", 61, GENDER_UNSPECIFIED, 143 * TILESIZE + 16, 41 * TILESIZE + 16, herbert_talk, nil) --- Herbert
- miriam=npc_create("Miriam", 79, GENDER_UNSPECIFIED, 137 * TILESIZE + 16, 42 * TILESIZE + 16, miriam_talk, nil) --- Miriam
- ben=npc_create("Ben", 86, GENDER_UNSPECIFIED, 136 * TILESIZE + 16, 46 * TILESIZE + 16, ben_talk, nil) --- Ben
-end)
 
 therapyState=0;
 
@@ -225,3 +209,20 @@ local function ben_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Nicht mal hier kann ich meinen Bogen weglegen.",
       "Ich muss noch hart an mir arbeiten."))
 end
+
+atinit(function()
+ create_inter_map_warp_trigger(19001, 19001, 19001, 19001) --- Intermap warp
+ npc_create("Nethek", 1, GENDER_UNSPECIFIED, 36 * TILESIZE, 154 * TILESIZE + 16, nethek_talk, nil) --- Nethek
+ npc_create("Monty", 49, GENDER_UNSPECIFIED, 107 * TILESIZE + 16, 92 * TILESIZE + 16, monty_talk, nil) --- Monty
+ 
+ -- Scheudle
+   schedule_every(2, function()
+    ShowNextMessageForTherapy()
+  end)
+ 
+  -- NPCs
+ annabell=npc_create("Annabell", 23, GENDER_UNSPECIFIED, 140 * TILESIZE + 16, 39 * TILESIZE + 16, annabell_talk, nil) --- Annabell
+ herbert=npc_create("Herbert", 61, GENDER_UNSPECIFIED, 143 * TILESIZE + 16, 41 * TILESIZE + 16, herbert_talk, nil) --- Herbert
+ miriam=npc_create("Miriam", 79, GENDER_UNSPECIFIED, 137 * TILESIZE + 16, 42 * TILESIZE + 16, miriam_talk, nil) --- Miriam
+ ben=npc_create("Ben", 86, GENDER_UNSPECIFIED, 136 * TILESIZE + 16, 46 * TILESIZE + 16, ben_talk, nil) --- Ben
+end)

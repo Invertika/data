@@ -18,9 +18,6 @@ require "scripts/lua/npclib"
 
 
 
-atinit(function()
-    npc_create("Naltiae", 22, GENDER_UNSPECIFIED, 27 * TILESIZE + 16, 36 * TILESIZE + 16, naltia_talk, nil)
-end)
 
 local function naltia_talk(npc, ch)
     npc_message(npc, ch, "Möchtest du Medizin kaufen?")
@@ -40,3 +37,6 @@ local function naltia_talk(npc, ch)
     end
     npc_message(npc, ch, "Tschüß")
 end
+atinit(function()
+    npc_create("Naltiae", 22, GENDER_UNSPECIFIED, 27 * TILESIZE + 16, 36 * TILESIZE + 16, naltia_talk, nil)
+end)

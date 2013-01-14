@@ -18,13 +18,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-    hobel = npc_create("Hobel", 60, GENDER_UNSPECIFIED, 33 * TILESIZE + 16, 36 * TILESIZE + 16, hobel_talk, nil)
-    invertika.create_npc_talk_random(hobel,
-      {"Hilfe! Hilfe! Ein Geist!!",
-      "Ich hab ein Brett vorm Kopf.",
-      "Kann man das trinken oder ist das Strom?"})
-end)
 
 local function hobel_talk(npc, ch)
     local queststring = "nelaro_water_quest"
@@ -114,3 +107,11 @@ local function hobel_talk(npc, ch)
         npc_message(npc, ch, "Hallo")
     end
 end
+
+atinit(function()
+    hobel = npc_create("Hobel", 60, GENDER_UNSPECIFIED, 33 * TILESIZE + 16, 36 * TILESIZE + 16, hobel_talk, nil)
+    invertika.create_npc_talk_random(hobel,
+      {"Hilfe! Hilfe! Ein Geist!!",
+      "Ich hab ein Brett vorm Kopf.",
+      "Kann man das trinken oder ist das Strom?"})
+end)

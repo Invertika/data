@@ -11,9 +11,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-    npc_create("Trutim", 2, GENDER_UNSPECIFIED, 23 * TILESIZE + 16, 32 * TILESIZE + 16, trutim_talk, nil)
-end)
 
 local function trutim_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
@@ -23,3 +20,6 @@ local function trutim_talk(npc, ch)
       "Nur Personen mit Wohnrecht in Burg Cedric dürfen dieses Lager benutzen."
       ))
 end
+atinit(function()
+    npc_create("Trutim", 2, GENDER_UNSPECIFIED, 23 * TILESIZE + 16, 32 * TILESIZE + 16, trutim_talk, nil)
+end)

@@ -16,9 +16,6 @@
 
 require "scripts/lua/npclib"
 
-atinit(function()
- npc_create("Vertox", 29, GENDER_UNSPECIFIED, 28 * TILESIZE + 16, 25 * TILESIZE + 16, vertox_talk, nil) --- Vertox -> Verkauft Sprengstoff
-end)
 
 local function vertox_talk(npc, ch)
     npc_message(npc, ch, "Du benötigst Sprengstoff? Da bist du hier genau richtig!")
@@ -40,3 +37,7 @@ local function vertox_talk(npc, ch)
         end
     end
 end
+
+atinit(function()
+ npc_create("Vertox", 29, GENDER_UNSPECIFIED, 28 * TILESIZE + 16, 25 * TILESIZE + 16, vertox_talk, nil) --- Vertox -> Verkauft Sprengstoff
+end)

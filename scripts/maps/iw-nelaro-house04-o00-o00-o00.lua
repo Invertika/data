@@ -18,14 +18,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-    --TODO: bessere Namen
-    npc_create("Koch", 52, GENDER_UNSPECIFIED, 33 * TILESIZE + 16, 38 * TILESIZE + 16, koch_talk, nil)
-    npc_create("Ghang", 60, GENDER_UNSPECIFIED, 20 * TILESIZE + 16, 37 * TILESIZE + 16, ghang_talk, nil)
-    npc_create("Estform", 117, GENDER_UNSPECIFIED, 2 * TILESIZE + 16, 31 * TILESIZE + 16, estform_talk, nil)
-    npc_create("Ingawu", 17, GENDER_UNSPECIFIED, 19 * TILESIZE + 16, 29 * TILESIZE + 16, ingawu_talk, nil)
-    npc_create("Ackona", 4, GENDER_UNSPECIFIED, 32 * TILESIZE + 16, 30 * TILESIZE + 16, ackona_talk, nil)
-end)
 
 local function koch_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
@@ -56,3 +48,12 @@ local function ackona_talk(npc, ch)
       "Hi, wenn Dir auch so warm ist hier drinnen hilft es vielleicht, z.B. Deine Waffe abzulegen.",
       "Der Kamin ist selbstverständlich gerade nicht in Betrieb, es ist ja schließlich warm genug hier drinnen."))
 end
+
+atinit(function()
+    --TODO: bessere Namen
+    npc_create("Koch", 52, GENDER_UNSPECIFIED, 33 * TILESIZE + 16, 38 * TILESIZE + 16, koch_talk, nil)
+    npc_create("Ghang", 60, GENDER_UNSPECIFIED, 20 * TILESIZE + 16, 37 * TILESIZE + 16, ghang_talk, nil)
+    npc_create("Estform", 117, GENDER_UNSPECIFIED, 2 * TILESIZE + 16, 31 * TILESIZE + 16, estform_talk, nil)
+    npc_create("Ingawu", 17, GENDER_UNSPECIFIED, 19 * TILESIZE + 16, 29 * TILESIZE + 16, ingawu_talk, nil)
+    npc_create("Ackona", 4, GENDER_UNSPECIFIED, 32 * TILESIZE + 16, 30 * TILESIZE + 16, ackona_talk, nil)
+end)

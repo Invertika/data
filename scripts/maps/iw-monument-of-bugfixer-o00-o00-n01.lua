@@ -12,13 +12,6 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 require "scripts/libs/nethek"
 
-atinit(function()
-    nethek.create_netheksaeule(47 * TILESIZE, 8 * TILESIZE + 16)
-    
-    --TODO: bessere Namen
-    npc_create("Priscilla", 148, GENDER_UNSPECIFIED, 48 * TILESIZE + 16, 16 * TILESIZE + 16, priscilla_talk, nil)
-    --create_npc("burgermeister")
-end)
 
 local function priscilla_talk(npc, ch)
     local queststring = "monument_of_bugfixer_flower_quest"
@@ -78,3 +71,10 @@ local function burgermeister_talk(npc, ch)
     --Get Quest
     local quest_var_flower = invertika.get_quest_status(ch, queststring)
 end
+atinit(function()
+    nethek.create_netheksaeule(47 * TILESIZE, 8 * TILESIZE + 16)
+    
+    --TODO: bessere Namen
+    npc_create("Priscilla", 148, GENDER_UNSPECIFIED, 48 * TILESIZE + 16, 16 * TILESIZE + 16, priscilla_talk, nil)
+    --create_npc("burgermeister")
+end)

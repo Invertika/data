@@ -18,11 +18,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-    --TODO: Change NPC Sprite
-    npc_create("Dache", 21, GENDER_UNSPECIFIED, 23 * TILESIZE + 16, 38 * TILESIZE + 16, dache_talk, nil)
-    npc_create("Fohon", 5 , GENDER_UNSPECIFIED, 29 * TILESIZE + 16, 36 * TILESIZE + 16, fohon_talk, nil)
-end)
 
 local function dache_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
@@ -60,3 +55,8 @@ local function fohon_talk(npc, ch)
         end
     end
 end
+atinit(function()
+    --TODO: Change NPC Sprite
+    npc_create("Dache", 21, GENDER_UNSPECIFIED, 23 * TILESIZE + 16, 38 * TILESIZE + 16, dache_talk, nil)
+    npc_create("Fohon", 5 , GENDER_UNSPECIFIED, 29 * TILESIZE + 16, 36 * TILESIZE + 16, fohon_talk, nil)
+end)

@@ -17,10 +17,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-    ---npc_create("Banker", 122, GENDER_UNSPECIFIED, 180 * TILESIZE + 16, 160 * TILESIZE + 16, banker.banker_talk, nil) --- Banker (Debug)
-    npc_create("Icero", 80, GENDER_UNSPECIFIED, 29 * TILESIZE + 16, 29 * TILESIZE + 16, icero_talk, nil) --- Icero
-end)
 
 local function icero_talk(npc, ch)
     local quest_string = "roststock_icero_quest"
@@ -108,3 +104,8 @@ local function icero_talk(npc, ch)
           "Ich versuche mich zu bessern."))
     end
 end
+
+atinit(function()
+    ---npc_create("Banker", 122, GENDER_UNSPECIFIED, 180 * TILESIZE + 16, 160 * TILESIZE + 16, banker.banker_talk, nil) --- Banker (Debug)
+    npc_create("Icero", 80, GENDER_UNSPECIFIED, 29 * TILESIZE + 16, 29 * TILESIZE + 16, icero_talk, nil) --- Icero
+end)

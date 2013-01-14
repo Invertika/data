@@ -18,9 +18,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-    npc_create("Rhosor", 133, GENDER_UNSPECIFIED, 26 * 32 + 16, 38 * TILESIZE + 16, rhosor_talk, nil)
-end)
 
 local function rhosor_talk(npc, ch)
     npc_message(npc, ch, "Tag, Was gibt es?")
@@ -55,3 +52,6 @@ local function rhosor_talk(npc, ch)
         end
     end
 end
+atinit(function()
+    npc_create("Rhosor", 133, GENDER_UNSPECIFIED, 26 * 32 + 16, 38 * TILESIZE + 16, rhosor_talk, nil)
+end)

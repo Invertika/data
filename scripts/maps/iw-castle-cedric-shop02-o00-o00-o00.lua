@@ -17,10 +17,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-    --TODO change sprite
-    npc_create("Toffi", 81, GENDER_UNSPECIFIED, 22 * TILESIZE + 16, 27 * TILESIZE + 16, toffi_talk, nil)
-end)
 
 local function toffi_talk(npc, ch)
     npc_message(npc, ch, "Tag, Was gibt es?")
@@ -55,3 +51,8 @@ local function toffi_talk(npc, ch)
         end
     end
 end
+
+atinit(function()
+    --TODO change sprite
+    npc_create("Toffi", 81, GENDER_UNSPECIFIED, 22 * TILESIZE + 16, 27 * TILESIZE + 16, toffi_talk, nil)
+end)

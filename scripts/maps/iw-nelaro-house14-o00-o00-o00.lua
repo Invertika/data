@@ -18,9 +18,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-    npc_create("Vodel", 57, GENDER_UNSPECIFIED, 31 * TILESIZE + 16, 37 * TILESIZE + 16, vodel_talk, nil)
-end)
 
 local function vodel_talk(npc, ch)
     local queststring_vodel = "nelaro_vodel_quests"
@@ -209,3 +206,7 @@ local function vodel_talk(npc, ch)
         npc_message(npc, ch, "Später werde ich dir ein neues Rätsel stellen, jetzt ist es noch zu früh.")
     end
 end
+
+atinit(function()
+    npc_create("Vodel", 57, GENDER_UNSPECIFIED, 31 * TILESIZE + 16, 37 * TILESIZE + 16, vodel_talk, nil)
+end)

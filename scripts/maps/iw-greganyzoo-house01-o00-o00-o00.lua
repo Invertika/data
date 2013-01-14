@@ -17,10 +17,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-    --TODO change Sprite id
-    npc_create("Geban", 120, GENDER_UNSPECIFIED, 23 * TILESIZE + 16, 27  * TILESIZE + 16, geban_talk, nil)
-end)
 
 local function geban_talk(npc, ch)
     npc_message(npc, ch, "Hallo, was kann ich für sie tuen?")
@@ -41,3 +37,8 @@ local function geban_talk(npc, ch)
         end
     end
 end
+
+atinit(function()
+    --TODO change Sprite id
+    npc_create("Geban", 120, GENDER_UNSPECIFIED, 23 * TILESIZE + 16, 27  * TILESIZE + 16, geban_talk, nil)
+end)

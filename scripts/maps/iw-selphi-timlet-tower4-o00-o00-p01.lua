@@ -17,9 +17,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
- npc_create("Averin", 29, GENDER_UNSPECIFIED, 15 * TILESIZE + 16, 15 * TILESIZE + 16, averin_talk, nil) --- Elmo
-end)
 
 local function averin_talk(npc, ch)
         invertika.init_quest_status(ch, "selphi_timlet_royal_pass")
@@ -72,3 +69,7 @@ local function averin_talk(npc, ch)
     end
 
 end
+
+atinit(function()
+ npc_create("Averin", 29, GENDER_UNSPECIFIED, 15 * TILESIZE + 16, 15 * TILESIZE + 16, averin_talk, nil) --- Elmo
+end)

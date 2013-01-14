@@ -16,6 +16,7 @@
 
 require "scripts/lua/npclib"
 
+
 atinit(function()
     ---npc_create("Banker", 122, GENDER_UNSPECIFIED, 180 * TILESIZE + 16, 160 * TILESIZE + 16, banker.banker_talk, nil) --- Banker (Debug)
 end)

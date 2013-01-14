@@ -18,9 +18,6 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 require "scripts/libs/special"
 
-atinit(function()
- npc_create("Nomo", 20, GENDER_UNSPECIFIED, 48 * TILESIZE + 16, 23 * TILESIZE + 16, nomo_talk, nil) --- Nomo
-end)
 
 local function nomo_talk(npc, ch)
     local count = chr_inv_count(ch, 40010) 
@@ -37,3 +34,6 @@ local function nomo_talk(npc, ch)
         npc_message(npc, ch, "Du bist in Besitz des Schlüssels. Willkommen auf der dunklen Seite. Die Kekse liegen im Haus.")
     end
 end
+atinit(function()
+ npc_create("Nomo", 20, GENDER_UNSPECIFIED, 48 * TILESIZE + 16, 23 * TILESIZE + 16, nomo_talk, nil) --- Nomo
+end)

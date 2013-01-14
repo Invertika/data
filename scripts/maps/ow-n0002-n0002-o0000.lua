@@ -19,13 +19,6 @@ require "scripts/libs/invertika"
 
 require "scripts/libs/warp"
 
-atinit(function()
- create_inter_map_warp_trigger(12, 2, 14, 24) --- Intermap warp
- 
- npc_create("Peter", 46, GENDER_UNSPECIFIED, 78 * TILESIZE + 16, 42 * TILESIZE + 16, peter_talk, nil) --- Peter
- npc_create("Hans", 46, GENDER_UNSPECIFIED, 88 * TILESIZE + 16, 43 * TILESIZE + 16, hans_talk, nil) --- Hans
- npc_create("Siegfried", 46, GENDER_UNSPECIFIED, 101 * TILESIZE + 16, 42 * TILESIZE + 16, siegfried_talk, nil) --- Siegfried
-end)
 
 local function peter_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Gerade Kanten und symmetrisch muss es sein.",
@@ -63,3 +56,11 @@ local function siegfried_talk(npc, ch)
       "Diese Blume zerstört die Perfektion.",
       "Neeeeeeeeeeeeeeiiiiiiiiiiiiinnnnnnnn, diese Blume darf nicht sein."))
 end
+
+atinit(function()
+ create_inter_map_warp_trigger(12, 2, 14, 24) --- Intermap warp
+ 
+ npc_create("Peter", 46, GENDER_UNSPECIFIED, 78 * TILESIZE + 16, 42 * TILESIZE + 16, peter_talk, nil) --- Peter
+ npc_create("Hans", 46, GENDER_UNSPECIFIED, 88 * TILESIZE + 16, 43 * TILESIZE + 16, hans_talk, nil) --- Hans
+ npc_create("Siegfried", 46, GENDER_UNSPECIFIED, 101 * TILESIZE + 16, 42 * TILESIZE + 16, siegfried_talk, nil) --- Siegfried
+end)

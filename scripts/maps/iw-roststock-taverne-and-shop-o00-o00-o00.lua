@@ -17,12 +17,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
- npc_create("Björn", 64, GENDER_UNSPECIFIED, 75 * TILESIZE + 16, 24 * TILESIZE + 16, bjoern_talk, nil) --- Banker (Debug)
- npc_create("Rodhonu", 51, GENDER_UNSPECIFIED, 43 * TILESIZE + 16, 34 * TILESIZE + 16, rodhonu_talk, nil) --- Rodhonu (Waffenschmied?)
- npc_create("Iaugh", 21, GENDER_UNSPECIFIED, 93 * TILESIZE + 16, 34 * TILESIZE + 16, iaugh_talk, nil) --- Iaugh
-
-end)
 
 local function bjoern_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Velera sucht mich? Einen Schluck trinke ich aber noch.",
@@ -78,3 +72,10 @@ local function iaugh_talk(npc, ch)
         npc_message(npc, ch, "Komm bald wieder.")
 end
 
+
+atinit(function()
+ npc_create("Björn", 64, GENDER_UNSPECIFIED, 75 * TILESIZE + 16, 24 * TILESIZE + 16, bjoern_talk, nil) --- Banker (Debug)
+ npc_create("Rodhonu", 51, GENDER_UNSPECIFIED, 43 * TILESIZE + 16, 34 * TILESIZE + 16, rodhonu_talk, nil) --- Rodhonu (Waffenschmied?)
+ npc_create("Iaugh", 21, GENDER_UNSPECIFIED, 93 * TILESIZE + 16, 34 * TILESIZE + 16, iaugh_talk, nil) --- Iaugh
+
+end)

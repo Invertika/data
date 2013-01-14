@@ -22,54 +22,6 @@ require "scripts/libs/sign"
 
 require "scripts/libs/warp"
 
-atinit(function()
-    create_inter_map_warp_trigger(nil, 33, 43, 55) --- Intermap warp
-    nethek.create_netheksaeule(103 * TILESIZE, 110 * TILESIZE + 16) ---Netheksäule
-
-    sign_entrance = "Burg Cedric"
-    sign.create_sign(104, 185, sign_entrance) --- Schild Burgeingang
-
-    trigger_create(101 * TILESIZE, 176 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, wache_trigger, 1, true)
-    ---trigger_create(101 * TILESIZE, 183 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, wache_cache_trigger, 1, true)
-
-    diem = npc_create("Diem", 139, GENDER_UNSPECIFIED, 60 * TILESIZE + 16, 160 * TILESIZE + 16, diem_talk, npclib.walkaround_wide)
-    invertika.create_npc_talk_random(diem,
-      {"Kauft Leute! Kauft!",
-      "Beste Waren! Hergestellt in den königlichen Schmieden!",
-      "Sehen Sie! Dieses Schwert ist unzerbrechlich! ZACK. Oh...",
-      "Kommen Sie meine Herren. Diese Waffen sind die Besten."})
-      
-    
-    create_chris()
-
-    npc_create("Estjdian", 120, GENDER_UNSPECIFIED, 156 * TILESIZE + 16, 160 * TILESIZE + 16, estjdian_talk, nil)
-
-    npc_create("Palastwache", 26, GENDER_UNSPECIFIED, 58 * TILESIZE + 16, 100 * TILESIZE + 16, palastwache_talk, nil)
-    npc_create("Palastwache", 26, GENDER_UNSPECIFIED, 61 * TILESIZE + 16, 100 * TILESIZE + 16, palastwache_talk, nil)
-
-    --Bankwachen
-    npc_create("Wache", 26, GENDER_UNSPECIFIED, 146 * TILESIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
-    npc_create("Wache", 26, GENDER_UNSPECIFIED, 149 * TILESIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
-    
-    --Casinowache
-    npc_create("Wache", 26, GENDER_UNSPECIFIED, 52 * TILESIZE + 16, 149 * TILESIZE + 16, wache_casino_talk, nil)
-
-    --Außenwachen
-    wache_unten_links = npc_create("Wache", 26, GENDER_UNSPECIFIED, 101 * TILESIZE + 16, 179 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
-    wache_unten_rechts = npc_create("Wache", 26, GENDER_UNSPECIFIED, 103 * TILESIZE + 16, 179 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
-    
-    --Innentorwachen
-    npc_create("Wache", 26, GENDER_UNSPECIFIED, 100 * TILESIZE + 16, 137 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
-    npc_create("Wache", 26, GENDER_UNSPECIFIED, 104 * TILESIZE + 16, 137 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
-
-    cedric = npc_create("Cedric", 39, GENDER_UNSPECIFIED, 81 * TILESIZE + 16, 97 * TILESIZE + 16, cedric_talk, nil)
-
-    -- Cedric´s Rede
-    --invertika.schedule_every_day(17, 59, 00, cedric_speech)
-
-    -- Feuerwerk
-    --invertika.schedule_every_day(18, 00, 00, firework_round)
-end)
 
 local function create_chris()
     local d = os.date("*t")
@@ -360,3 +312,52 @@ local function palastwache_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element("Wir bewachen den Palast Cedric´s.",
       "Im Haus hinter uns wohnt Cedric und seine Frau Ormylt"))
 end
+
+atinit(function()
+    create_inter_map_warp_trigger(nil, 33, 43, 55) --- Intermap warp
+    nethek.create_netheksaeule(103 * TILESIZE, 110 * TILESIZE + 16) ---Netheksäule
+
+    sign_entrance = "Burg Cedric"
+    sign.create_sign(104, 185, sign_entrance) --- Schild Burgeingang
+
+    trigger_create(101 * TILESIZE, 176 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, wache_trigger, 1, true)
+    ---trigger_create(101 * TILESIZE, 183 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, wache_cache_trigger, 1, true)
+
+    diem = npc_create("Diem", 139, GENDER_UNSPECIFIED, 60 * TILESIZE + 16, 160 * TILESIZE + 16, diem_talk, npclib.walkaround_wide)
+    invertika.create_npc_talk_random(diem,
+      {"Kauft Leute! Kauft!",
+      "Beste Waren! Hergestellt in den königlichen Schmieden!",
+      "Sehen Sie! Dieses Schwert ist unzerbrechlich! ZACK. Oh...",
+      "Kommen Sie meine Herren. Diese Waffen sind die Besten."})
+      
+    
+    create_chris()
+
+    npc_create("Estjdian", 120, GENDER_UNSPECIFIED, 156 * TILESIZE + 16, 160 * TILESIZE + 16, estjdian_talk, nil)
+
+    npc_create("Palastwache", 26, GENDER_UNSPECIFIED, 58 * TILESIZE + 16, 100 * TILESIZE + 16, palastwache_talk, nil)
+    npc_create("Palastwache", 26, GENDER_UNSPECIFIED, 61 * TILESIZE + 16, 100 * TILESIZE + 16, palastwache_talk, nil)
+
+    --Bankwachen
+    npc_create("Wache", 26, GENDER_UNSPECIFIED, 146 * TILESIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
+    npc_create("Wache", 26, GENDER_UNSPECIFIED, 149 * TILESIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
+    
+    --Casinowache
+    npc_create("Wache", 26, GENDER_UNSPECIFIED, 52 * TILESIZE + 16, 149 * TILESIZE + 16, wache_casino_talk, nil)
+
+    --Außenwachen
+    wache_unten_links = npc_create("Wache", 26, GENDER_UNSPECIFIED, 101 * TILESIZE + 16, 179 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
+    wache_unten_rechts = npc_create("Wache", 26, GENDER_UNSPECIFIED, 103 * TILESIZE + 16, 179 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
+    
+    --Innentorwachen
+    npc_create("Wache", 26, GENDER_UNSPECIFIED, 100 * TILESIZE + 16, 137 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
+    npc_create("Wache", 26, GENDER_UNSPECIFIED, 104 * TILESIZE + 16, 137 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
+
+    cedric = npc_create("Cedric", 39, GENDER_UNSPECIFIED, 81 * TILESIZE + 16, 97 * TILESIZE + 16, cedric_talk, nil)
+
+    -- Cedric´s Rede
+    --invertika.schedule_every_day(17, 59, 00, cedric_speech)
+
+    -- Feuerwerk
+    --invertika.schedule_every_day(18, 00, 00, firework_round)
+end)

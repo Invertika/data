@@ -17,10 +17,6 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-    npc_create("Hatsuli", 141, GENDER_UNSPECIFIED, 12 * TILESIZE + 16, 22 * TILESIZE + 16, hatsuli_talk, nil) --- Hatsuli
-    npc_create("Eldachi", 142, GENDER_UNSPECIFIED, 13 * TILESIZE + 16, 22 * TILESIZE + 16, eldachi_talk, nil) --- Eldachi
-end)
 
 local function hatsuli_talk(npc, ch)
     npc_message(npc, ch, invertika.get_random_element(
@@ -35,3 +31,8 @@ local function eldachi_talk(npc, ch)
       "Ach hätte ich doch nur ein Klavier.",
       "Irgendwoher kenne ich dich..."))
 end
+
+atinit(function()
+    npc_create("Hatsuli", 141, GENDER_UNSPECIFIED, 12 * TILESIZE + 16, 22 * TILESIZE + 16, hatsuli_talk, nil) --- Hatsuli
+    npc_create("Eldachi", 142, GENDER_UNSPECIFIED, 13 * TILESIZE + 16, 22 * TILESIZE + 16, eldachi_talk, nil) --- Eldachi
+end)
