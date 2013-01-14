@@ -60,5 +60,5 @@ end
 
 --- Erzeugt einen NPC für die Netheksäule
 function create_elevator_selphi_timlet_ipsum_house_talk(xpos, ypos)
-	create_npc("Fahrstuhl", 1, xpos, ypos, elevator_selphi_timlet_ipsum_house_talk, nil) --- Fahrstuhl
+	npc_create("Fahrstuhl", 1, GENDER_UNSPECIFIED, xpos, ypos, elevator_selphi_timlet_ipsum_house_talk, nil) --- Fahrstuhl
 end

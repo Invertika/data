@@ -24,7 +24,7 @@ atinit(function()
  create_inter_map_warp_trigger(98, 108, 96, 86) --- Intermap warp
  nethek.create_netheksaeule(107 * TILESIZE, 125 * TILESIZE + 16) --- Netheksäule
 
- create_npc("Oughad", 46, 73 * TILESIZE + 16, 119 * TILESIZE + 16, oughad_talk, nil)
+ npc_create("Oughad", 46, GENDER_UNSPECIFIED, 73 * TILESIZE + 16, 119 * TILESIZE + 16, oughad_talk, nil)
 end)
 
 function oughad_talk(npc, ch)

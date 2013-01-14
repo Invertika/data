@@ -19,7 +19,7 @@ require "scripts/libs/invertika"
 
 
 atinit(function()
-    create_npc("Vervtia", 144, 29 * TILESIZE + 16, 38 * TILESIZE + 16, vervtia_talk, npclib.walkaround_small)
+    npc_create("Vervtia", 144, GENDER_UNSPECIFIED, 29 * TILESIZE + 16, 38 * TILESIZE + 16, vervtia_talk, npclib.walkaround_small)
 end)
 
 function vervtia_talk(npc, ch)

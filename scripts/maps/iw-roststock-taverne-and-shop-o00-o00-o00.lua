@@ -18,9 +18,9 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
- create_npc("Björn", 64, 75 * TILESIZE + 16, 24 * TILESIZE + 16, bjoern_talk, nil) --- Banker (Debug)
- create_npc("Rodhonu", 51, 43 * TILESIZE + 16, 34 * TILESIZE + 16, rodhonu_talk, nil) --- Rodhonu (Waffenschmied?)
- create_npc("Iaugh", 21, 93 * TILESIZE + 16, 34 * TILESIZE + 16, iaugh_talk, nil) --- Iaugh
+ npc_create("Björn", 64, GENDER_UNSPECIFIED, 75 * TILESIZE + 16, 24 * TILESIZE + 16, bjoern_talk, nil) --- Banker (Debug)
+ npc_create("Rodhonu", 51, GENDER_UNSPECIFIED, 43 * TILESIZE + 16, 34 * TILESIZE + 16, rodhonu_talk, nil) --- Rodhonu (Waffenschmied?)
+ npc_create("Iaugh", 21, GENDER_UNSPECIFIED, 93 * TILESIZE + 16, 34 * TILESIZE + 16, iaugh_talk, nil) --- Iaugh
 
 end)
 

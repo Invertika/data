@@ -12,7 +12,7 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
-    create_npc("Echver", 57, 40 * TILESIZE + 16, 22 * TILESIZE + 16, echver_talk, nil)
+    npc_create("Echver", 57, GENDER_UNSPECIFIED, 40 * TILESIZE + 16, 22 * TILESIZE + 16, echver_talk, nil)
 end)
 
 function echver_talk(npc, ch)

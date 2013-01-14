@@ -20,8 +20,8 @@ require "scripts/libs/invertika"
 
 atinit(function()
     --TODO: Change NPC Sprite
-    create_npc("Dache", 21, 23 * TILESIZE + 16, 38 * TILESIZE + 16, dache_talk, nil)
-    create_npc("Fohon", 5 , 29 * TILESIZE + 16, 36 * TILESIZE + 16, fohon_talk, nil)
+    npc_create("Dache", 21, GENDER_UNSPECIFIED, 23 * TILESIZE + 16, 38 * TILESIZE + 16, dache_talk, nil)
+    npc_create("Fohon", 5 , GENDER_UNSPECIFIED, 29 * TILESIZE + 16, 36 * TILESIZE + 16, fohon_talk, nil)
 end)
 
 function dache_talk(npc, ch)

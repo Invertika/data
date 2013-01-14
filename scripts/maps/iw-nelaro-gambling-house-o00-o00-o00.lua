@@ -22,20 +22,20 @@ require "scripts/libs/slotmachine"
 require "scripts/libs/roulette"
 
 atinit(function()
-    create_npc("Irac", 16, 30 * TILESIZE + 16, 37 * TILESIZE + 16, irac_talk, nil)
+    npc_create("Irac", 16, GENDER_UNSPECIFIED, 30 * TILESIZE + 16, 37 * TILESIZE + 16, irac_talk, nil)
     
-    create_npc("Würfeltisch", 1, 13 * TILESIZE + 16, 35 * TILESIZE + 16, dice.dicemanager_talk, nil)
-    create_npc("Würfeltisch", 1, 20 * TILESIZE + 16, 35 * TILESIZE + 16, dice.dicemanager_talk, nil)
-    create_npc("Würfeltisch", 1, 20 * TILESIZE + 16, 39 * TILESIZE + 16, dice.dicemanager_talk, nil)
+    npc_create("Würfeltisch", 1, GENDER_UNSPECIFIED, 13 * TILESIZE + 16, 35 * TILESIZE + 16, dice.dicemanager_talk, nil)
+    npc_create("Würfeltisch", 1, GENDER_UNSPECIFIED, 20 * TILESIZE + 16, 35 * TILESIZE + 16, dice.dicemanager_talk, nil)
+    npc_create("Würfeltisch", 1, GENDER_UNSPECIFIED, 20 * TILESIZE + 16, 39 * TILESIZE + 16, dice.dicemanager_talk, nil)
     
-    create_npc("Slotmaschine", 1, 3 * TILESIZE + 16, 35 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
-    create_npc("Slotmaschine", 1, 16 * TILESIZE + 16, 35 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
-    create_npc("Slotmaschine", 1, 17 * TILESIZE + 16, 35 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
-    create_npc("Slotmaschine", 1, 3 * TILESIZE + 16, 40 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+    npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 3 * TILESIZE + 16, 35 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+    npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 16 * TILESIZE + 16, 35 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+    npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 17 * TILESIZE + 16, 35 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+    npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 3 * TILESIZE + 16, 40 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
     
-    create_npc("Roulette", 1, 5 * TILESIZE + 16, 35 * TILESIZE + 16, roulette.roulette_talk, nil)
-    create_npc("Roulette", 1, 5 * TILESIZE + 16, 39 * TILESIZE + 16, roulette.roulette_talk, nil)
-    create_npc("Roulette", 1, 12 * TILESIZE + 16, 39 * TILESIZE + 16, roulette.roulette_talk, nil)
+    npc_create("Roulette", 1, GENDER_UNSPECIFIED, 5 * TILESIZE + 16, 35 * TILESIZE + 16, roulette.roulette_talk, nil)
+    npc_create("Roulette", 1, GENDER_UNSPECIFIED, 5 * TILESIZE + 16, 39 * TILESIZE + 16, roulette.roulette_talk, nil)
+    npc_create("Roulette", 1, GENDER_UNSPECIFIED, 12 * TILESIZE + 16, 39 * TILESIZE + 16, roulette.roulette_talk, nil)
 end)
 
 function irac_talk(npc, ch)

@@ -20,11 +20,11 @@ require "scripts/libs/invertika"
 
 atinit(function()
     --TODO: bessere Namen
-    create_npc("Koch", 52, 33 * TILESIZE + 16, 38 * TILESIZE + 16, koch_talk, nil)
-    create_npc("Ghang", 60, 20 * TILESIZE + 16, 37 * TILESIZE + 16, ghang_talk, nil)
-    create_npc("Estform", 117, 2 * TILESIZE + 16, 31 * TILESIZE + 16, estform_talk, nil)
-    create_npc("Ingawu", 17, 19 * TILESIZE + 16, 29 * TILESIZE + 16, ingawu_talk, nil)
-    create_npc("Ackona", 4, 32 * TILESIZE + 16, 30 * TILESIZE + 16, ackona_talk, nil)
+    npc_create("Koch", 52, GENDER_UNSPECIFIED, 33 * TILESIZE + 16, 38 * TILESIZE + 16, koch_talk, nil)
+    npc_create("Ghang", 60, GENDER_UNSPECIFIED, 20 * TILESIZE + 16, 37 * TILESIZE + 16, ghang_talk, nil)
+    npc_create("Estform", 117, GENDER_UNSPECIFIED, 2 * TILESIZE + 16, 31 * TILESIZE + 16, estform_talk, nil)
+    npc_create("Ingawu", 17, GENDER_UNSPECIFIED, 19 * TILESIZE + 16, 29 * TILESIZE + 16, ingawu_talk, nil)
+    npc_create("Ackona", 4, GENDER_UNSPECIFIED, 32 * TILESIZE + 16, 30 * TILESIZE + 16, ackona_talk, nil)
 end)
 
 function koch_talk(npc, ch)

@@ -33,8 +33,8 @@ atinit(function()
     
     trigger_create(34 * TILESIZE, 99 * TILESIZE, 1 * TILESIZE, 1 * TILESIZE, "key_trigger", 0, true)
     
-    create_npc("Robert", 64, 64 * TILESIZE, 117 * TILESIZE + 16, robert_talk, nil) --- Robert
-    create_npc("Issen", 146, 139 * TILESIZE + 16, 113 * TILESIZE + 16, issen_talk, nil) --- Issen
+    npc_create("Robert", 64, GENDER_UNSPECIFIED, 64 * TILESIZE, 117 * TILESIZE + 16, robert_talk, nil) --- Robert
+    npc_create("Issen", 146, GENDER_UNSPECIFIED, 139 * TILESIZE + 16, 113 * TILESIZE + 16, issen_talk, nil) --- Issen
 end)
 
 function robert_talk(npc, ch)

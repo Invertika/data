@@ -19,18 +19,18 @@ require "scripts/libs/banker"
 require "scripts/libs/invertika"
 
 atinit(function() 
- create_npc("Banker", 11, 45 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
- create_npc("Banker", 11, 53 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
- create_npc("Banker", 11, 60 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
- create_npc("Banker", 11, 67 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
- create_npc("Banker", 11, 75 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
- create_npc("Banker", 11, 83 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
+ npc_create("Banker", 11, GENDER_UNSPECIFIED, 45 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
+ npc_create("Banker", 11, GENDER_UNSPECIFIED, 53 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
+ npc_create("Banker", 11, GENDER_UNSPECIFIED, 60 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
+ npc_create("Banker", 11, GENDER_UNSPECIFIED, 67 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
+ npc_create("Banker", 11, GENDER_UNSPECIFIED, 75 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
+ npc_create("Banker", 11, GENDER_UNSPECIFIED, 83 * TILESIZE + 16, 85 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
  
  --NPCs
- wache = create_npc("Wache", 29, 30 * TILESIZE + 16, 87 * TILESIZE + 16, wache_talk, nil) --- Wache
- create_npc("Wache", 29, 36 * TILESIZE + 16, 87 * TILESIZE + 16, wache_talk, nil) --- Wache
+ wache = npc_create("Wache", 29, GENDER_UNSPECIFIED, 30 * TILESIZE + 16, 87 * TILESIZE + 16, wache_talk, nil) --- Wache
+ npc_create("Wache", 29, GENDER_UNSPECIFIED, 36 * TILESIZE + 16, 87 * TILESIZE + 16, wache_talk, nil) --- Wache
  
- create_npc("Mertox", 2, 24 * TILESIZE + 16, 24 * TILESIZE + 16, mertox_talk, nil) --- Mertox
+ npc_create("Mertox", 2, GENDER_UNSPECIFIED, 24 * TILESIZE + 16, 24 * TILESIZE + 16, mertox_talk, nil) --- Mertox
  
   -- Trigger für die Überwachung des Bereiches
  trigger_create(30 * TILESIZE, 84 * TILESIZE, 7 * TILESIZE, 3 * TILESIZE, "wache_trigger", 1, true) --- Trigger

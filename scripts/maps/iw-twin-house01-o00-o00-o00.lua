@@ -19,7 +19,7 @@ require "scripts/libs/barber"
 require "scripts/libs/invertika"
 
 atinit(function()
-    create_npc("Blyther", 60, 15 * TILESIZE + 16, 13 * TILESIZE + 16, blyther_talk, nil) --- Blyther (1. Zwilling)
+    npc_create("Blyther", 60, GENDER_UNSPECIFIED, 15 * TILESIZE + 16, 13 * TILESIZE + 16, blyther_talk, nil) --- Blyther (1. Zwilling)
 end)
 
 

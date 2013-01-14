@@ -12,7 +12,7 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
-    create_npc("Trutim", 2, 23 * TILESIZE + 16, 32 * TILESIZE + 16, trutim_talk, nil)
+    npc_create("Trutim", 2, GENDER_UNSPECIFIED, 23 * TILESIZE + 16, 32 * TILESIZE + 16, trutim_talk, nil)
 end)
 
 function trutim_talk(npc, ch)

@@ -28,8 +28,8 @@ atinit(function()
     sign.create_sign(62, 106, sign_entrance) --- Schild Ortseingang
     sign.create_sign(95, 47, sign_entrance) --- Schild Ortseingang
 
-    create_npc("Awond", 120, 159 * TILESIZE, 40 * TILESIZE, awond_talk, nil)
-    mordyno = create_npc("Mordyno", 147, 101 * TILESIZE + 16, 109 * TILESIZE + 16, mordyno_talk, npclib.walkaround_wide)
+    npc_create("Awond", 120, GENDER_UNSPECIFIED, 159 * TILESIZE, 40 * TILESIZE, awond_talk, nil)
+    mordyno = npc_create("Mordyno", 147, GENDER_UNSPECIFIED, 101 * TILESIZE + 16, 109 * TILESIZE + 16, mordyno_talk, npclib.walkaround_wide)
     invertika.create_npc_talk_random(mordyno,
           {"Kauft Leute! Kauft!", 
           "Hier gibt es nur beste Ware!",
@@ -41,9 +41,9 @@ atinit(function()
           "Die neuste Mode zu Spottpreisen! Kaufen sie, so lange der Vorrat reicht.",
           "Messer jetzt reduziert für nur 50 Aki das Stück! Greifen sie zu!"})
 
-    create_npc("Bache", 45, 116 * TILESIZE + 16, 61 * TILESIZE + 16, bache_talk, nil)
-    create_npc("Cloina", 79, 94 * TILESIZE + 16, 105 * TILESIZE + 16, cloina_talk, nil)
-    create_npc("Brielm", 72, 109 * TILESIZE + 16, 102 * TILESIZE + 16, brielm_talk, nil)
+    npc_create("Bache", 45, GENDER_UNSPECIFIED, 116 * TILESIZE + 16, 61 * TILESIZE + 16, bache_talk, nil)
+    npc_create("Cloina", 79, GENDER_UNSPECIFIED, 94 * TILESIZE + 16, 105 * TILESIZE + 16, cloina_talk, nil)
+    npc_create("Brielm", 72, GENDER_UNSPECIFIED, 109 * TILESIZE + 16, 102 * TILESIZE + 16, brielm_talk, nil)
 end)
 
 function awond_talk(npc, ch)

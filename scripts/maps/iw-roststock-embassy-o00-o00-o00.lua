@@ -19,7 +19,7 @@ require "scripts/libs/invertika"
 require "scripts/libs/banker"
 
 atinit(function()
- create_npc("Botschafter", 66, 51 * TILESIZE + 16, 31 * TILESIZE + 16, botschafter_talk, nil)
+ npc_create("Botschafter", 66, GENDER_UNSPECIFIED, 51 * TILESIZE + 16, 31 * TILESIZE + 16, botschafter_talk, nil)
 end)
 
 function botschafter_talk(npc, ch)

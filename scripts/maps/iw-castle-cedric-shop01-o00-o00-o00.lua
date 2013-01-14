@@ -18,7 +18,7 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
-    worrany = create_npc("Worrany", 69, 22 * TILESIZE + 16, 27 * TILESIZE + 16, worrany_talk, nil)
+    worrany = npc_create("Worrany", 69, GENDER_UNSPECIFIED, 22 * TILESIZE + 16, 27 * TILESIZE + 16, worrany_talk, nil)
 
     -- CRASHT DEN SERVER! Erst auskommentieren sobald der Bug gefixt ist.
     -- schedule_in(10, worrany_walkleft)

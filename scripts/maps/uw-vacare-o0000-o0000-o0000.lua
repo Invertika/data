@@ -24,34 +24,34 @@ atinit(function()
  trigger_create(115 * TILESIZE, 15 * TILESIZE, 50 * TILESIZE, 23 * TILESIZE, "firststart_trigger", 0, true) --- Erste Meldung
  
  -- Zelan
- create_npc("Zelan", 58, 132 * TILESIZE + 16, 21 * TILESIZE + 16, zelan_talk, nil) --- Zelan
+ npc_create("Zelan", 58, GENDER_UNSPECIFIED, 132 * TILESIZE + 16, 21 * TILESIZE + 16, zelan_talk, nil) --- Zelan
  
  -- Zeitungsjunge
- create_npc("Jack", 34, 159 * TILESIZE + 16, 31 * TILESIZE + 16, jack_talk, nil) --- Jack
+ npc_create("Jack", 34, GENDER_UNSPECIFIED, 159 * TILESIZE + 16, 31 * TILESIZE + 16, jack_talk, nil) --- Jack
  
  -- Zaun NPC 
- create_npc("Ancoise", 25, 137 * TILESIZE + 16, 41 * TILESIZE + 16, ancoise_talk, nil) --- Ancoise
+ npc_create("Ancoise", 25, GENDER_UNSPECIFIED, 137 * TILESIZE + 16, 41 * TILESIZE + 16, ancoise_talk, nil) --- Ancoise
 
  -- Kampf NPC
- create_npc("Kolbert", 30, 156 * TILESIZE + 16, 66 * TILESIZE + 16, kolbert_talk, nil) --- Kolbert
+ npc_create("Kolbert", 30, GENDER_UNSPECIFIED, 156 * TILESIZE + 16, 66 * TILESIZE + 16, kolbert_talk, nil) --- Kolbert
  
  -- Levelup NPC
- create_npc("Syntyche", 25, 142 * TILESIZE + 16, 110 * TILESIZE + 16, syntyche_talk, nil) --- Syntyche
+ npc_create("Syntyche", 25, GENDER_UNSPECIFIED, 142 * TILESIZE + 16, 110 * TILESIZE + 16, syntyche_talk, nil) --- Syntyche
  
  -- Handel Valaia 
- create_npc("Valaia", 60, 102 * TILESIZE + 16, 83 * TILESIZE + 16, valaia_talk, nil) --- Valaia
+ npc_create("Valaia", 60, GENDER_UNSPECIFIED, 102 * TILESIZE + 16, 83 * TILESIZE + 16, valaia_talk, nil) --- Valaia
  
  -- Regeln Asam 
- create_npc("Asam", 72, 66 * TILESIZE + 16, 130 * TILESIZE + 16, asam_talk, nil) --- Asam
+ npc_create("Asam", 72, GENDER_UNSPECIFIED, 66 * TILESIZE + 16, 130 * TILESIZE + 16, asam_talk, nil) --- Asam
  
  -- Kommunikation mit Spielern Essar
- create_npc("Essar", 21, 68 * TILESIZE + 16, 124 * TILESIZE + 16, essar_talk, nil)
+ npc_create("Essar", 21, GENDER_UNSPECIFIED, 68 * TILESIZE + 16, 124 * TILESIZE + 16, essar_talk, nil)
  
  -- Leben und Sterben Corona  
- create_npc("Corona", 12, 89 * TILESIZE + 16, 135 * TILESIZE + 16, corona_talk, nil) --- Corona 
+ npc_create("Corona", 12, GENDER_UNSPECIFIED, 89 * TILESIZE + 16, 135 * TILESIZE + 16, corona_talk, nil) --- Corona 
  
  -- Verlassen des Vacare
- create_npc("Vacaria", 1, 103 * TILESIZE, 139 * TILESIZE + 16, vacaria_talk, nil) --- Vacaria
+ npc_create("Vacaria", 1, GENDER_UNSPECIFIED, 103 * TILESIZE, 139 * TILESIZE + 16, vacaria_talk, nil) --- Vacaria
 end)
 
 --- Erster Start

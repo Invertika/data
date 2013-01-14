@@ -19,7 +19,7 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
-    hobel = create_npc("Hobel", 60, 33 * TILESIZE + 16, 36 * TILESIZE + 16, hobel_talk, nil)
+    hobel = npc_create("Hobel", 60, GENDER_UNSPECIFIED, 33 * TILESIZE + 16, 36 * TILESIZE + 16, hobel_talk, nil)
     invertika.create_npc_talk_random(hobel,
       {"Hilfe! Hilfe! Ein Geist!!",
       "Ich hab ein Brett vorm Kopf.",

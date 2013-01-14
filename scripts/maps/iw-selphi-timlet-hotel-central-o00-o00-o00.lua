@@ -18,7 +18,7 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
- create_npc("Rezeptionist", 20, 44 * TILESIZE + 16, 57 * TILESIZE + 16, rezeptionist_talk, nil) --- Rezeptionist
+ npc_create("Rezeptionist", 20, GENDER_UNSPECIFIED, 44 * TILESIZE + 16, 57 * TILESIZE + 16, rezeptionist_talk, nil) --- Rezeptionist
 end)
 
 function rezeptionist_talk(npc, ch)

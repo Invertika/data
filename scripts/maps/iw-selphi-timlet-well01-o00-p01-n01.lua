@@ -23,17 +23,17 @@ local waypointstate = {}
 
 atinit(function()
     --- NPCs
-    tano[1] = create_npc("Irdath", 89, 35 * TILESIZE + 16, 44 * TILESIZE + 16, tano1_talk, npclib.walkaround_small) --- Ta No 1 (Ta No am Eingang)
-    tano[2] = create_npc("Rhaor", 91, 42 * TILESIZE + 16, 36 * TILESIZE + 16, tano2_talk, nil) --- Ta No 2 (Schatzkammer Wächter)
-    tano[3] = create_npc("Karl", 92, 25 * TILESIZE + 16, 41 * TILESIZE + 16, tano3_talk, nil) --- Ta No 3 (Verkäufer)
-    tano[4] = create_npc("Samos", 93, 67 * TILESIZE + 16, 14 * TILESIZE + 16, tano4_talk, nil) --- Ta No 4 (Sektenführer)
-    tano[5] = create_npc("Ceria", 94, 20 * TILESIZE + 16, 20 * TILESIZE + 16, tano5_talk, nil) --- Ta No 5 (Köchin)
-    tano[6] = create_npc("Enlelm", 95, 19 * TILESIZE + 16, 19 * TILESIZE + 16, tano6_talk, nil) --- Ta No 6 (Küchenhilfe)
-    tano[7] = create_npc("Byler", 96, 17 * TILESIZE + 16, 24 * TILESIZE + 16, tano7_talk, nil) --- Ta No 7 (Normal m)
-    tano[8] = create_npc("Lyril", 97, 21 * TILESIZE + 16, 24 * TILESIZE + 16, tano8_talk, nil) --- Ta No 8 (Normal f)
-    tano[9] = create_npc("Iawar", 98, 26 * TILESIZE + 16, 24 * TILESIZE + 16, tano9_talk, nil) --- Ta No 9 (Normal m)
-    tano[10] = create_npc("Isskel", 99, 18 * TILESIZE + 16, 29 * TILESIZE + 16, tano10_talk, nil) --- Ta No 10 (Normal m)
-    tano[11] = create_npc("Kahlan", 100, 22 * TILESIZE + 16, 29 * TILESIZE + 16, tano11_talk, nil) --- Ta No 11 (Normal f)
+    tano[1] = npc_create("Irdath", 89, GENDER_UNSPECIFIED, 35 * TILESIZE + 16, 44 * TILESIZE + 16, tano1_talk, npclib.walkaround_small) --- Ta No 1 (Ta No am Eingang)
+    tano[2] = npc_create("Rhaor", 91, GENDER_UNSPECIFIED, 42 * TILESIZE + 16, 36 * TILESIZE + 16, tano2_talk, nil) --- Ta No 2 (Schatzkammer Wächter)
+    tano[3] = npc_create("Karl", 92, GENDER_UNSPECIFIED, 25 * TILESIZE + 16, 41 * TILESIZE + 16, tano3_talk, nil) --- Ta No 3 (Verkäufer)
+    tano[4] = npc_create("Samos", 93, GENDER_UNSPECIFIED, 67 * TILESIZE + 16, 14 * TILESIZE + 16, tano4_talk, nil) --- Ta No 4 (Sektenführer)
+    tano[5] = npc_create("Ceria", 94, GENDER_UNSPECIFIED, 20 * TILESIZE + 16, 20 * TILESIZE + 16, tano5_talk, nil) --- Ta No 5 (Köchin)
+    tano[6] = npc_create("Enlelm", 95, GENDER_UNSPECIFIED, 19 * TILESIZE + 16, 19 * TILESIZE + 16, tano6_talk, nil) --- Ta No 6 (Küchenhilfe)
+    tano[7] = npc_create("Byler", 96, GENDER_UNSPECIFIED, 17 * TILESIZE + 16, 24 * TILESIZE + 16, tano7_talk, nil) --- Ta No 7 (Normal m)
+    tano[8] = npc_create("Lyril", 97, GENDER_UNSPECIFIED, 21 * TILESIZE + 16, 24 * TILESIZE + 16, tano8_talk, nil) --- Ta No 8 (Normal f)
+    tano[9] = npc_create("Iawar", 98, GENDER_UNSPECIFIED, 26 * TILESIZE + 16, 24 * TILESIZE + 16, tano9_talk, nil) --- Ta No 9 (Normal m)
+    tano[10] = npc_create("Isskel", 99, GENDER_UNSPECIFIED, 18 * TILESIZE + 16, 29 * TILESIZE + 16, tano10_talk, nil) --- Ta No 10 (Normal m)
+    tano[11] = npc_create("Kahlan", 100, GENDER_UNSPECIFIED, 22 * TILESIZE + 16, 29 * TILESIZE + 16, tano11_talk, nil) --- Ta No 11 (Normal f)
 	
     --- Blickrichtungen
     --- schedule_in(1, function()

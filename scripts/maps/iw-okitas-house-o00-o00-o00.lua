@@ -20,8 +20,8 @@ require "scripts/libs/invertika"
 
 
 atinit(function()
-    create_npc("Saya", 7, 43 * TILESIZE + 16, 15 * TILESIZE + 16, saya_talk, nil) --- Saya
-    create_npc("Tetse", 138, 45 * TILESIZE + 16, 23 * TILESIZE + 16, tetse_talk, nil) --- Tetse
+    npc_create("Saya", 7, GENDER_UNSPECIFIED, 43 * TILESIZE + 16, 15 * TILESIZE + 16, saya_talk, nil) --- Saya
+    npc_create("Tetse", 138, GENDER_UNSPECIFIED, 45 * TILESIZE + 16, 23 * TILESIZE + 16, tetse_talk, nil) --- Tetse
 end)
 
 function saya_talk(npc, ch)

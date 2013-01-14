@@ -20,14 +20,14 @@ require "scripts/libs/invertika"
 require "scripts/libs/dice"
 
 atinit(function() 
- create_npc("Slotmaschine", 1, 25 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
- create_npc("Slotmaschine", 1, 27 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
- create_npc("Slotmaschine", 1, 29 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
- create_npc("Slotmaschine", 1, 31 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
- create_npc("Slotmaschine", 1, 33 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
- create_npc("Slotmaschine", 1, 35 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
- create_npc("Daniela", 10, 25 * TILESIZE + 16, 27 * TILESIZE + 16, daniela_talk, nil)
- create_npc("Würfeltisch", 1, 30 * TILESIZE + 16, 25 * TILESIZE + 16, dice.dicemanager_talk, nil)
+ npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 25 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+ npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 27 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+ npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 29 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+ npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 31 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+ npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 33 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+ npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 35 * TILESIZE + 16, 23 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+ npc_create("Daniela", 10, GENDER_UNSPECIFIED, 25 * TILESIZE + 16, 27 * TILESIZE + 16, daniela_talk, nil)
+ npc_create("Würfeltisch", 1, GENDER_UNSPECIFIED, 30 * TILESIZE + 16, 25 * TILESIZE + 16, dice.dicemanager_talk, nil)
 end)
 
 function daniela_talk(npc, ch)

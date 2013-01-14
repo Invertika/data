@@ -18,11 +18,11 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
-  create_npc("Marc", 61, 24 * TILESIZE + 16, 22 * TILESIZE + 16, marc_talk, nil) --- Marc
+  npc_create("Marc", 61, GENDER_UNSPECIFIED, 24 * TILESIZE + 16, 22 * TILESIZE + 16, marc_talk, nil) --- Marc
   
-  create_npc("Richard", 25, 36 * TILESIZE + 16, 19 * TILESIZE + 16, richard_talk, nil) --- Richard
-  create_npc("Dean", 28, 53 * TILESIZE + 16, 18 * TILESIZE + 16, dean_talk, nil) --- Dean
-  create_npc("Anderson", 46, 58 * TILESIZE + 16, 24 * TILESIZE + 16, anderson_talk, nil) --- Anderson
+  npc_create("Richard", 25, GENDER_UNSPECIFIED, 36 * TILESIZE + 16, 19 * TILESIZE + 16, richard_talk, nil) --- Richard
+  npc_create("Dean", 28, GENDER_UNSPECIFIED, 53 * TILESIZE + 16, 18 * TILESIZE + 16, dean_talk, nil) --- Dean
+  npc_create("Anderson", 46, GENDER_UNSPECIFIED, 58 * TILESIZE + 16, 24 * TILESIZE + 16, anderson_talk, nil) --- Anderson
 end)
 
 function marc_talk(npc, ch)

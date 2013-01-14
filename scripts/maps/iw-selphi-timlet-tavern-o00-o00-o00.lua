@@ -20,8 +20,8 @@ require "scripts/libs/slotmachine"
 require "scripts/libs/invertika"
 
 atinit(function()
- create_npc("Brecht", 21, 20 * TILESIZE + 16, 15 * TILESIZE + 16, brecht_talk, nil) --- Brecht
- create_npc("Chodar", 40, 38 * TILESIZE + 16, 18 * TILESIZE + 16, chodar_talk, nil) --- Chodar
+ npc_create("Brecht", 21, GENDER_UNSPECIFIED, 20 * TILESIZE + 16, 15 * TILESIZE + 16, brecht_talk, nil) --- Brecht
+ npc_create("Chodar", 40, GENDER_UNSPECIFIED, 38 * TILESIZE + 16, 18 * TILESIZE + 16, chodar_talk, nil) --- Chodar
 end)
 
 function brecht_talk(npc, ch)

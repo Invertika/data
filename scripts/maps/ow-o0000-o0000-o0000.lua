@@ -32,44 +32,44 @@ Wir müssen darauf hinweisen, dass bei Diebstahl ein Ladenverbot verhängt wird 
  sign.create_sign(146, 160, "Baden und Angeln verboten!") -- Schild vor dem Wasserloch
 
  -- NPCs
- create_npc("Elmo", 7, 176 * TILESIZE + 16, 154 * TILESIZE + 16, elmo_talk, nil) --- Elmo
- create_npc("Sam", 7, 183 * TILESIZE + 16, 154 * TILESIZE + 16, sam_talk, nil) --- Sam
- create_npc("Julia", 10, 170 * TILESIZE + 16, 152 * TILESIZE + 16, julia_talk, nil) --- Julia
- create_npc("Jane", 12, 182 * TILESIZE + 16, 145 * TILESIZE + 16, jane_talk, nil) --- Jane
- create_npc("Bruce", 7, 190 * TILESIZE + 16, 160 * TILESIZE + 16, bruce_talk, nil) --- Bruce
- create_npc("Felix", 42, 187 * TILESIZE + 16, 94 * TILESIZE + 16, felix_talk, nil) --- Felix
- create_npc("Saria", 10, 42 * TILESIZE + 16, 100 * TILESIZE + 16, saria_talk, nil) --- Saria
- create_npc("Nobur", 17, 186 * TILESIZE + 16, 179 * TILESIZE + 16, nobur_talk, nil) --- Nobur
- create_npc("Alex", 24, 76 * TILESIZE + 16, 10 * TILESIZE + 16, alex_talk, nil) --- Alex
- create_npc("Inard", 61, 74 * TILESIZE + 16, 142 * TILESIZE + 16, inard_talk, nil) --- Inard
- create_npc("Belart", 41, 108 * TILESIZE + 16, 132 * TILESIZE + 16, belart_talk, nil) --- Belart
- create_npc("Imangi", 67, 138 * TILESIZE + 16, 157 * TILESIZE + 16, imangi_talk, nil) --- Imangi
- create_npc("Ortana", 8, 97 * TILESIZE + 16, 49 * TILESIZE + 16, ortana_talk, nil) --- Ortana
- create_npc("Tonver", 8, 17 * TILESIZE + 16, 181 * TILESIZE + 16, tonver_talk, nil) --- Tonver
- create_npc("Elmes", 46, 114 * TILESIZE + 16, 180 * TILESIZE + 16, elmes_talk, nil) --- Elmes
- create_npc("Nepuret", 30, 90 * TILESIZE + 16, 185 * TILESIZE + 16, nepuret_talk, nil) --- Nepuret
- create_npc("Nero", 24, 162 * TILESIZE + 16, 175 * TILESIZE + 16, nero_talk, nil) --- Nero
- create_npc("Bernie", 40, 13 * TILESIZE + 16, 9 * TILESIZE + 16, bernie_talk, nil) --- Bernie
- create_npc("Valeria", 10, 26 * TILESIZE + 16, 49 * TILESIZE + 16, valeria_talk, nil) --- Valeria
+ npc_create("Elmo", 7, GENDER_UNSPECIFIED, 176 * TILESIZE + 16, 154 * TILESIZE + 16, elmo_talk, nil) --- Elmo
+ npc_create("Sam", 7, GENDER_UNSPECIFIED, 183 * TILESIZE + 16, 154 * TILESIZE + 16, sam_talk, nil) --- Sam
+ npc_create("Julia", 10, GENDER_UNSPECIFIED, 170 * TILESIZE + 16, 152 * TILESIZE + 16, julia_talk, nil) --- Julia
+ npc_create("Jane", 12, GENDER_UNSPECIFIED, 182 * TILESIZE + 16, 145 * TILESIZE + 16, jane_talk, nil) --- Jane
+ npc_create("Bruce", 7, GENDER_UNSPECIFIED, 190 * TILESIZE + 16, 160 * TILESIZE + 16, bruce_talk, nil) --- Bruce
+ npc_create("Felix", 42, GENDER_UNSPECIFIED, 187 * TILESIZE + 16, 94 * TILESIZE + 16, felix_talk, nil) --- Felix
+ npc_create("Saria", 10, GENDER_UNSPECIFIED, 42 * TILESIZE + 16, 100 * TILESIZE + 16, saria_talk, nil) --- Saria
+ npc_create("Nobur", 17, GENDER_UNSPECIFIED, 186 * TILESIZE + 16, 179 * TILESIZE + 16, nobur_talk, nil) --- Nobur
+ npc_create("Alex", 24, GENDER_UNSPECIFIED, 76 * TILESIZE + 16, 10 * TILESIZE + 16, alex_talk, nil) --- Alex
+ npc_create("Inard", 61, GENDER_UNSPECIFIED, 74 * TILESIZE + 16, 142 * TILESIZE + 16, inard_talk, nil) --- Inard
+ npc_create("Belart", 41, GENDER_UNSPECIFIED, 108 * TILESIZE + 16, 132 * TILESIZE + 16, belart_talk, nil) --- Belart
+ npc_create("Imangi", 67, GENDER_UNSPECIFIED, 138 * TILESIZE + 16, 157 * TILESIZE + 16, imangi_talk, nil) --- Imangi
+ npc_create("Ortana", 8, GENDER_UNSPECIFIED, 97 * TILESIZE + 16, 49 * TILESIZE + 16, ortana_talk, nil) --- Ortana
+ npc_create("Tonver", 8, GENDER_UNSPECIFIED, 17 * TILESIZE + 16, 181 * TILESIZE + 16, tonver_talk, nil) --- Tonver
+ npc_create("Elmes", 46, GENDER_UNSPECIFIED, 114 * TILESIZE + 16, 180 * TILESIZE + 16, elmes_talk, nil) --- Elmes
+ npc_create("Nepuret", 30, GENDER_UNSPECIFIED, 90 * TILESIZE + 16, 185 * TILESIZE + 16, nepuret_talk, nil) --- Nepuret
+ npc_create("Nero", 24, GENDER_UNSPECIFIED, 162 * TILESIZE + 16, 175 * TILESIZE + 16, nero_talk, nil) --- Nero
+ npc_create("Bernie", 40, GENDER_UNSPECIFIED, 13 * TILESIZE + 16, 9 * TILESIZE + 16, bernie_talk, nil) --- Bernie
+ npc_create("Valeria", 10, GENDER_UNSPECIFIED, 26 * TILESIZE + 16, 49 * TILESIZE + 16, valeria_talk, nil) --- Valeria
 
- create_npc("Alaria", 79, 170 * TILESIZE + 16, 182 * TILESIZE + 16, seller.seller_talk, nil) --- Verkäufer
- create_npc("Lidi", 71, 171 * TILESIZE + 16, 79 * TILESIZE + 16, lidi_talk, nil) -- Lidi
+ npc_create("Alaria", 79, GENDER_UNSPECIFIED, 170 * TILESIZE + 16, 182 * TILESIZE + 16, seller.seller_talk, nil) --- Verkäufer
+ npc_create("Lidi", 71, GENDER_UNSPECIFIED, 171 * TILESIZE + 16, 79 * TILESIZE + 16, lidi_talk, nil) -- Lidi
 
- create_npc("Wache", 25, 39 * TILESIZE + 16, 51 * TILESIZE + 16, colloseumwache_talk, nil) --- Colloseumwache
- create_npc("Wache", 25, 44 * TILESIZE + 16, 51 * TILESIZE + 16, colloseumwache_talk, nil) --- Colloseumwache
+ npc_create("Wache", 25, GENDER_UNSPECIFIED, 39 * TILESIZE + 16, 51 * TILESIZE + 16, colloseumwache_talk, nil) --- Colloseumwache
+ npc_create("Wache", 25, GENDER_UNSPECIFIED, 44 * TILESIZE + 16, 51 * TILESIZE + 16, colloseumwache_talk, nil) --- Colloseumwache
 
- create_npc("Wache", 29, 26 * TILESIZE + 16, 165 * TILESIZE + 16, bankwache_talk, nil) --- Bankwache
- create_npc("Wache", 29, 31 * TILESIZE + 16, 165 * TILESIZE + 16, bankwache_talk, nil) --- Bankwache
- create_npc("Wache", 29, 45 * TILESIZE + 16, 165 * TILESIZE + 16, bankwache_talk, nil) --- Bankwache
- create_npc("Wache", 29, 49 * TILESIZE + 16, 165 * TILESIZE + 16, bankwache_talk, nil) --- Bankwache
+ npc_create("Wache", 29, GENDER_UNSPECIFIED, 26 * TILESIZE + 16, 165 * TILESIZE + 16, bankwache_talk, nil) --- Bankwache
+ npc_create("Wache", 29, GENDER_UNSPECIFIED, 31 * TILESIZE + 16, 165 * TILESIZE + 16, bankwache_talk, nil) --- Bankwache
+ npc_create("Wache", 29, GENDER_UNSPECIFIED, 45 * TILESIZE + 16, 165 * TILESIZE + 16, bankwache_talk, nil) --- Bankwache
+ npc_create("Wache", 29, GENDER_UNSPECIFIED, 49 * TILESIZE + 16, 165 * TILESIZE + 16, bankwache_talk, nil) --- Bankwache
 
- create_npc("Stadtwache", 27, 110 * TILESIZE + 16, 196 * TILESIZE + 16, stadtwache_talk, nil) --- Stadtwache
- create_npc("Stadtwache", 27, 117 * TILESIZE + 16, 196 * TILESIZE + 16, stadtwache_talk, nil) --- Stadtwache
+ npc_create("Stadtwache", 27, GENDER_UNSPECIFIED, 110 * TILESIZE + 16, 196 * TILESIZE + 16, stadtwache_talk, nil) --- Stadtwache
+ npc_create("Stadtwache", 27, GENDER_UNSPECIFIED, 117 * TILESIZE + 16, 196 * TILESIZE + 16, stadtwache_talk, nil) --- Stadtwache
 
- wache1 = create_npc("Palastwache", 27, 143 * TILESIZE + 16, 68 * TILESIZE + 16, palastwache_talk, nil) --- Palastwache
- create_npc("Palastwache", 27, 150 * TILESIZE + 16, 68 * TILESIZE + 16, palastwache_talk, nil) --- Palastwache
- wache2 = create_npc("Palastwache", 27, 181 * TILESIZE + 16, 68 * TILESIZE + 16, palastwache_talk, nil) --- Palastwache
- create_npc("Palastwache", 27, 188 * TILESIZE + 16, 68 * TILESIZE + 16, palastwache_talk, nil) --- Palastwache
+ wache1 = npc_create("Palastwache", 27, GENDER_UNSPECIFIED, 143 * TILESIZE + 16, 68 * TILESIZE + 16, palastwache_talk, nil) --- Palastwache
+ npc_create("Palastwache", 27, GENDER_UNSPECIFIED, 150 * TILESIZE + 16, 68 * TILESIZE + 16, palastwache_talk, nil) --- Palastwache
+ wache2 = npc_create("Palastwache", 27, GENDER_UNSPECIFIED, 181 * TILESIZE + 16, 68 * TILESIZE + 16, palastwache_talk, nil) --- Palastwache
+ npc_create("Palastwache", 27, GENDER_UNSPECIFIED, 188 * TILESIZE + 16, 68 * TILESIZE + 16, palastwache_talk, nil) --- Palastwache
 
  --- Trigger für die Überwachung des Torbereiches
  trigger_create(145 * TILESIZE, 17 * TILESIZE, 5 * TILESIZE, 52 * TILESIZE, "wache_trigger", 1, true) --- Trigger Tor 1
@@ -88,11 +88,11 @@ Wir müssen darauf hinweisen, dass bei Diebstahl ein Ladenverbot verhängt wird 
  trigger_create(87 * TILESIZE, 151 * TILESIZE, TILESIZE, TILESIZE, "amulet_trigger", 10, true)
 
  ---Weihnachten
- --create_npc("Rentier", 74, 177 * TILESIZE + 16, 185 * TILESIZE + 16, rentier_talk, nil) --- Rentier
- --create_npc("Weihnachtsmann", 9, 184 * TILESIZE + 16, 185 * TILESIZE + 16, weihnachtsmann_talk, nil) --- Weihnachtsman
+ --npc_create("Rentier", 74, GENDER_UNSPECIFIED, 177 * TILESIZE + 16, 185 * TILESIZE + 16, rentier_talk, nil) --- Rentier
+ --npc_create("Weihnachtsmann", 9, GENDER_UNSPECIFIED, 184 * TILESIZE + 16, 185 * TILESIZE + 16, weihnachtsmann_talk, nil) --- Weihnachtsman
 
  ---Neujahr
- ---create_npc("Feuerwerker", 139, 177 * TILESIZE + 16, 185 * TILESIZE + 16, fireworker_talk, npclib.walkaround_small)
+ ---npc_create("Feuerwerker", 139, GENDER_UNSPECIFIED, 177 * TILESIZE + 16, 185 * TILESIZE + 16, fireworker_talk, npclib.walkaround_small)
 end)
 
 --Zeitabhägige Events

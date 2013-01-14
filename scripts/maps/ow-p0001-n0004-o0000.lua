@@ -25,7 +25,7 @@ atinit(function()
  nethek.create_netheksaeule(97 * TILESIZE, 127 * TILESIZE + 16) ---Netheksäule
  
   -- NPCs
- create_npc("Asgard", 47, 139 * TILESIZE + 16, 96 * TILESIZE + 16, asgard_talk, nil) --- Asgard
+ npc_create("Asgard", 47, GENDER_UNSPECIFIED, 139 * TILESIZE + 16, 96 * TILESIZE + 16, asgard_talk, nil) --- Asgard
 end)
 
 function asgard_talk(npc, ch)

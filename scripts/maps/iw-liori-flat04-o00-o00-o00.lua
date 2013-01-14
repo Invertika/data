@@ -18,7 +18,7 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
-    create_npc("Metatron", 36, 17 * TILESIZE + 16, 21 * TILESIZE + 16, metatron_talk, nil) --- Metatron
+    npc_create("Metatron", 36, GENDER_UNSPECIFIED, 17 * TILESIZE + 16, 21 * TILESIZE + 16, metatron_talk, nil) --- Metatron
 end)
 
 function metatron_talk(npc, ch)

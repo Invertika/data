@@ -32,9 +32,9 @@ atinit(function()
  trigger_create(71 * TILESIZE, 191 * TILESIZE, 14 * TILESIZE, 1 * TILESIZE, "ausgang_trigger", 2, true)
 
  
- wache_oben = create_npc("Wache", 26, 140 * TILESIZE + 16, 180 * TILESIZE + 16, wache_talk, nil)
- create_npc("Wache", 26, 138 * TILESIZE + 16, 186 * TILESIZE + 16, wache_talk, nil)
- wache_ausgang = create_npc("Wache", 26, 71 * TILESIZE + 16, 192 * TILESIZE + 16, wache_ausgang_talk, nil)
+ wache_oben = npc_create("Wache", 26, GENDER_UNSPECIFIED, 140 * TILESIZE + 16, 180 * TILESIZE + 16, wache_talk, nil)
+ npc_create("Wache", 26, GENDER_UNSPECIFIED, 138 * TILESIZE + 16, 186 * TILESIZE + 16, wache_talk, nil)
+ wache_ausgang = npc_create("Wache", 26, GENDER_UNSPECIFIED, 71 * TILESIZE + 16, 192 * TILESIZE + 16, wache_ausgang_talk, nil)
 end)
 
 function wache_talk(npc, ch)

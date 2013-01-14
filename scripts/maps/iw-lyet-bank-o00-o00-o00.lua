@@ -19,9 +19,9 @@ require "scripts/libs/invertika"
 require "scripts/libs/banker"
 
 atinit(function()
-    create_npc("Banker", 11, 20 * TILESIZE + 16, 33 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
-    create_npc("Banker", 11, 24 * TILESIZE + 16, 33 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
-    create_npc("Banker", 11, 28 * TILESIZE + 16, 33 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
-    create_npc("Banker", 11, 32 * TILESIZE + 16, 33 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
-    create_npc("Banker", 11, 36 * TILESIZE + 16, 33 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
+    npc_create("Banker", 11, GENDER_UNSPECIFIED, 20 * TILESIZE + 16, 33 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
+    npc_create("Banker", 11, GENDER_UNSPECIFIED, 24 * TILESIZE + 16, 33 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
+    npc_create("Banker", 11, GENDER_UNSPECIFIED, 28 * TILESIZE + 16, 33 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
+    npc_create("Banker", 11, GENDER_UNSPECIFIED, 32 * TILESIZE + 16, 33 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
+    npc_create("Banker", 11, GENDER_UNSPECIFIED, 36 * TILESIZE + 16, 33 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
 end)

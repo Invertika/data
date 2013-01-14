@@ -9,7 +9,7 @@ postman = {}
 GIFTS = {{id=40005, name="Madenschleim"}, {id=40004, name="Skorpionstachel"}, {id=40006, name="Casino Münzen"}}
 
 function create_postman_npc(id, name, sprite, x, y, possible_designations, itemid)
-    new_postman = create_npc("Postmann_" .. name, sprite, x, y, postman_talk, nil)
+    new_postman = npc_create("Postmann_" .. name, sprite, GENDER_UNSPECIFIED, x, y, postman_talk, nil)
     table.insert(postman, {npc=new_postman, id=id, name=name, designations=possible_designations, item=itemid})
 end
 

@@ -19,7 +19,7 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
-    create_npc("Vodel", 57, 31 * TILESIZE + 16, 37 * TILESIZE + 16, vodel_talk, nil)
+    npc_create("Vodel", 57, GENDER_UNSPECIFIED, 31 * TILESIZE + 16, 37 * TILESIZE + 16, vodel_talk, nil)
 end)
 
 function vodel_talk(npc, ch)

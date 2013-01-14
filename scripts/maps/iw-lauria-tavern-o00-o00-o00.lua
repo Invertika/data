@@ -19,7 +19,7 @@ require "scripts/libs/invertika"
 
 
 atinit(function()
-    create_npc("mosris", 44, 29 * TILESIZE + 16, 35 * TILESIZE + 16, mosris_talk, nil)
+    npc_create("mosris", 44, GENDER_UNSPECIFIED, 29 * TILESIZE + 16, 35 * TILESIZE + 16, mosris_talk, nil)
 end)
 
 function mosris_talk(npc, ch)

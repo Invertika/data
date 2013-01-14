@@ -18,8 +18,8 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
-    create_npc("Luor", 20, 34 * TILESIZE + 16, 24 * TILESIZE + 16, luor_talk, nil) --- Luor
-    create_npc("Krenel", 54, 41 * TILESIZE + 16, 56 * TILESIZE + 16, krenel_talk, nil) --- Krenel
+    npc_create("Luor", 20, GENDER_UNSPECIFIED, 34 * TILESIZE + 16, 24 * TILESIZE + 16, luor_talk, nil) --- Luor
+    npc_create("Krenel", 54, GENDER_UNSPECIFIED, 41 * TILESIZE + 16, 56 * TILESIZE + 16, krenel_talk, nil) --- Krenel
 end)
 
 function luor_talk(npc, ch)

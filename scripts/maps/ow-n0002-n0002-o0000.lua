@@ -22,9 +22,9 @@ require "scripts/libs/warp"
 atinit(function()
  create_inter_map_warp_trigger(12, 2, 14, 24) --- Intermap warp
  
- create_npc("Peter", 46, 78 * TILESIZE + 16, 42 * TILESIZE + 16, peter_talk, nil) --- Peter
- create_npc("Hans", 46, 88 * TILESIZE + 16, 43 * TILESIZE + 16, hans_talk, nil) --- Hans
- create_npc("Siegfried", 46, 101 * TILESIZE + 16, 42 * TILESIZE + 16, siegfried_talk, nil) --- Siegfried
+ npc_create("Peter", 46, GENDER_UNSPECIFIED, 78 * TILESIZE + 16, 42 * TILESIZE + 16, peter_talk, nil) --- Peter
+ npc_create("Hans", 46, GENDER_UNSPECIFIED, 88 * TILESIZE + 16, 43 * TILESIZE + 16, hans_talk, nil) --- Hans
+ npc_create("Siegfried", 46, GENDER_UNSPECIFIED, 101 * TILESIZE + 16, 42 * TILESIZE + 16, siegfried_talk, nil) --- Siegfried
 end)
 
 function peter_talk(npc, ch)

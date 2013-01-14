@@ -26,9 +26,9 @@ atinit(function()
     sign_entrance = "Alexia"
     sign.create_sign(84, 132, sign_entrance) --- Schild Ortseingang
 
-    create_npc("Regret", 8, 55 * TILESIZE + 16, 173 * TILESIZE + 16, regret_talk, nil) --- Regret 
-    create_npc("Holbert", 63, 129 * TILESIZE + 16, 120 * TILESIZE + 16, holbert_talk, nil) --- Holbert
-    create_npc("Vektor", 11, 134 * TILESIZE + 16, 120 * TILESIZE + 16, vektor_talk, nil) --- Vektor
+    npc_create("Regret", 8, GENDER_UNSPECIFIED, 55 * TILESIZE + 16, 173 * TILESIZE + 16, regret_talk, nil) --- Regret 
+    npc_create("Holbert", 63, GENDER_UNSPECIFIED, 129 * TILESIZE + 16, 120 * TILESIZE + 16, holbert_talk, nil) --- Holbert
+    npc_create("Vektor", 11, GENDER_UNSPECIFIED, 134 * TILESIZE + 16, 120 * TILESIZE + 16, vektor_talk, nil) --- Vektor
 end)
 
 function regret_talk(npc, ch)

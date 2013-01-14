@@ -19,7 +19,7 @@ require "scripts/libs/invertika"
 
 atinit(function()
     --TODO change sprite
-    create_npc("Toffi", 81, 22 * TILESIZE + 16, 27 * TILESIZE + 16, toffi_talk, nil)
+    npc_create("Toffi", 81, GENDER_UNSPECIFIED, 22 * TILESIZE + 16, 27 * TILESIZE + 16, toffi_talk, nil)
 end)
 
 function toffi_talk(npc, ch)

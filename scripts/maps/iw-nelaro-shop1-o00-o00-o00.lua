@@ -19,7 +19,7 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
-    create_npc("Rhosor", 133, 26 * 32 + 16, 38 * TILESIZE + 16, rhosor_talk, nil)
+    npc_create("Rhosor", 133, GENDER_UNSPECIFIED, 26 * 32 + 16, 38 * TILESIZE + 16, rhosor_talk, nil)
 end)
 
 function rhosor_talk(npc, ch)

@@ -26,7 +26,7 @@ atinit(function()
   
   trigger_create(36 * TILESIZE, 97 * TILESIZE, 2 * TILESIZE, 2 * TILESIZE, "statue_trigger", 1, true);
   
-  create_npc("Statue", 1, 36 * TILESIZE + 16, 93 * TILESIZE + 16, statue_talk, nil)
+  npc_create("Statue", 1, GENDER_UNSPECIFIED, 36 * TILESIZE + 16, 93 * TILESIZE + 16, statue_talk, nil)
 end)
 
 function statue_talk(npc, ch)

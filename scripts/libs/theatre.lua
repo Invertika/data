@@ -41,7 +41,7 @@ function Theatre:new(x, y, width, height)
     schedule_every(2, function()
       Theatre:NextStep()
     end)
-    self.Monologa = create_npc("Monologa", 44, 41 * TILESIZE + 16, 17 * TILESIZE + 16,
+    self.Monologa = npc_create("Monologa", 44, GENDER_UNSPECIFIED, 41 * TILESIZE + 16, 17 * TILESIZE + 16,
       self.monologa_talk, nil) --- Monologa
 	return res
 end

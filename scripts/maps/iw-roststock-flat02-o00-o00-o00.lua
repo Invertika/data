@@ -18,8 +18,8 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
-    ---create_npc("Banker", 122, 180 * TILESIZE + 16, 160 * TILESIZE + 16, banker.banker_talk, nil) --- Banker (Debug)
-    create_npc("Icero", 80, 29 * TILESIZE + 16, 29 * TILESIZE + 16, icero_talk, nil) --- Icero
+    ---npc_create("Banker", 122, GENDER_UNSPECIFIED, 180 * TILESIZE + 16, 160 * TILESIZE + 16, banker.banker_talk, nil) --- Banker (Debug)
+    npc_create("Icero", 80, GENDER_UNSPECIFIED, 29 * TILESIZE + 16, 29 * TILESIZE + 16, icero_talk, nil) --- Icero
 end)
 
 function icero_talk(npc, ch)

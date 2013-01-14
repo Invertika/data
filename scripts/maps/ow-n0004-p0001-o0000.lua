@@ -21,7 +21,7 @@ require "scripts/libs/warp"
 
 atinit(function()
  create_inter_map_warp_trigger(41, 29, 39, 51) --- Intermap warp
- create_npc("Bolum", 42, 26 * TILESIZE + 16, 59 * TILESIZE + 16, bolum_talk, nil)
+ npc_create("Bolum", 42, GENDER_UNSPECIFIED, 26 * TILESIZE + 16, 59 * TILESIZE + 16, bolum_talk, nil)
 end)
 
 function bolum_talk(npc, ch)

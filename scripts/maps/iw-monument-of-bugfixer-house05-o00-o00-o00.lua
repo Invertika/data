@@ -12,7 +12,7 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
-  create_npc("Umach", 111, 13 * TILESIZE + 16, 25 * TILESIZE + 16, umach_talk, nil)
+  npc_create("Umach", 111, GENDER_UNSPECIFIED, 13 * TILESIZE + 16, 25 * TILESIZE + 16, umach_talk, nil)
 end)
 
 function umach_talk(npc, ch)

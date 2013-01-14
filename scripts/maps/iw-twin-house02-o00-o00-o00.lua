@@ -19,7 +19,7 @@ require "scripts/libs/barber"
 require "scripts/libs/invertika"
 
 atinit(function()
-    create_npc("Rocer", 60, 16 * TILESIZE + 16, 16 * TILESIZE + 16, rocer_talk, nil) -- Rocer (2. Zwilling)
+    npc_create("Rocer", 60, GENDER_UNSPECIFIED, 16 * TILESIZE + 16, 16 * TILESIZE + 16, rocer_talk, nil) -- Rocer (2. Zwilling)
 end)
 
 

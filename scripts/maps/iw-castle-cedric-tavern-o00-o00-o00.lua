@@ -18,7 +18,7 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
-    create_npc("Egam", 19, 19 * TILESIZE + 16, 27 * TILESIZE + 16, egam_talk, nil)
+    npc_create("Egam", 19, GENDER_UNSPECIFIED, 19 * TILESIZE + 16, 27 * TILESIZE + 16, egam_talk, nil)
 end)
 
 function egam_talk(npc, ch)

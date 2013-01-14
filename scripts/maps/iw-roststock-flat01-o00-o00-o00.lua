@@ -18,7 +18,7 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
 atinit(function()
-    create_npc("Velera", 78, 24 * TILESIZE + 16, 27 * TILESIZE + 16, velera_talk, nil)
+    npc_create("Velera", 78, GENDER_UNSPECIFIED, 24 * TILESIZE + 16, 27 * TILESIZE + 16, velera_talk, nil)
 end)
 
 function velera_talk(npc, ch)

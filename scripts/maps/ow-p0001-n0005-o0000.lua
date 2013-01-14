@@ -45,8 +45,8 @@ atinit(function()
  sign.create_sign(135, 99, signText) -- Warnschild
 
  -- Wachen
- wache = create_npc("Wache", 29, 96 * TILESIZE + 16, 96 * TILESIZE + 16, wache_talk, nil) --- Wache
- create_npc("Wache", 29, 106 * TILESIZE + 16, 96 * TILESIZE + 16, wache_talk, nil) --- Wache
+ wache = npc_create("Wache", 29, GENDER_UNSPECIFIED, 96 * TILESIZE + 16, 96 * TILESIZE + 16, wache_talk, nil) --- Wache
+ npc_create("Wache", 29, GENDER_UNSPECIFIED, 106 * TILESIZE + 16, 96 * TILESIZE + 16, wache_talk, nil) --- Wache
  
  -- Trigger für die Überwachung des Torbereiches
  trigger_create(98 * TILESIZE, 93 * TILESIZE, 7 * TILESIZE, 6 * TILESIZE, "wache_trigger", 1, true) --- Trigger Tor

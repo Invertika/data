@@ -19,7 +19,7 @@ require "scripts/libs/invertika"
 
 atinit(function()
     --TODO change Sprite id
-    create_npc("Geban", 120, 23 * TILESIZE + 16, 27  * TILESIZE + 16, geban_talk, nil)
+    npc_create("Geban", 120, GENDER_UNSPECIFIED, 23 * TILESIZE + 16, 27  * TILESIZE + 16, geban_talk, nil)
 end)
 
 function geban_talk(npc, ch)

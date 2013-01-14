@@ -18,6 +18,6 @@ require "scripts/lua/npclib"
 require "scripts/libs/barber"
 
 atinit(function()
- ---create_npc("Banker", 122, 180 * TILESIZE + 16, 160 * TILESIZE + 16, banker.banker_talk, nil) --- Banker (Debug)
- create_npc("Umet", 4, 28 * TILESIZE + 16, 23 * TILESIZE + 16, barber2_talk, nil) --- Umet (Friseur)
+ ---npc_create("Banker", 122, GENDER_UNSPECIFIED, 180 * TILESIZE + 16, 160 * TILESIZE + 16, banker.banker_talk, nil) --- Banker (Debug)
+ npc_create("Umet", 4, GENDER_UNSPECIFIED, 28 * TILESIZE + 16, 23 * TILESIZE + 16, barber2_talk, nil) --- Umet (Friseur)
 end)

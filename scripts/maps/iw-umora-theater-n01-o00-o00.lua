@@ -19,7 +19,7 @@ require "scripts/lua/npclib"
 
 
 atinit(function()
-     create_npc("Tom", 138, 25 * TILESIZE, 10 * TILESIZE + 16, tom_talk, nil) --- Tom 
+     npc_create("Tom", 138, GENDER_UNSPECIFIED, 25 * TILESIZE, 10 * TILESIZE + 16, tom_talk, nil) --- Tom 
 end)
 
 function tom_talk(npc, ch)

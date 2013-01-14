@@ -21,16 +21,16 @@ require "scripts/libs/slotmachine"
 require "scripts/libs/roulette"
 
 atinit(function()
-    create_npc("Daniel", 63, 19 * TILESIZE + 16, 27 * TILESIZE + 16 , daniel_talk, nil)
+    npc_create("Daniel", 63, GENDER_UNSPECIFIED, 19 * TILESIZE + 16, 27 * TILESIZE + 16 , daniel_talk, nil)
 
-    create_npc("Würfeltisch", 1, 27 * TILESIZE + 16, 26 * TILESIZE + 16, dice.dicemanager_talk, nil)
-    create_npc("Würfeltisch", 1, 27 * TILESIZE + 16, 29 * TILESIZE + 16, dice.dicemanager_talk, nil)
+    npc_create("Würfeltisch", 1, GENDER_UNSPECIFIED, 27 * TILESIZE + 16, 26 * TILESIZE + 16, dice.dicemanager_talk, nil)
+    npc_create("Würfeltisch", 1, GENDER_UNSPECIFIED, 27 * TILESIZE + 16, 29 * TILESIZE + 16, dice.dicemanager_talk, nil)
     
-    create_npc("Slotmaschine", 1, 39 * TILESIZE + 16, 27 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
-    create_npc("Slotmaschine", 1, 39 * TILESIZE + 16, 30 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+    npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 39 * TILESIZE + 16, 27 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
+    npc_create("Slotmaschine", 1, GENDER_UNSPECIFIED, 39 * TILESIZE + 16, 30 * TILESIZE + 16, slotmachine.slotmachine_talk, nil)
 
-    create_npc("Roulette", 1, 31 * TILESIZE + 16, 26 * TILESIZE + 16, roulette.roulette_talk, nil)
-    create_npc("Roulette", 1, 31 * TILESIZE + 16, 29 * TILESIZE + 16, roulette.roulette_talk, nil)
+    npc_create("Roulette", 1, GENDER_UNSPECIFIED, 31 * TILESIZE + 16, 26 * TILESIZE + 16, roulette.roulette_talk, nil)
+    npc_create("Roulette", 1, GENDER_UNSPECIFIED, 31 * TILESIZE + 16, 29 * TILESIZE + 16, roulette.roulette_talk, nil)
 end)
 
 function daniel_talk(npc, ch)

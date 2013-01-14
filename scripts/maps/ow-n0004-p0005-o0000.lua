@@ -32,7 +32,7 @@ atinit(function()
     trigger_create(101 * TILESIZE, 176 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "wache_trigger", 1, true)
     ---trigger_create(101 * TILESIZE, 183 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "wache_cache_trigger", 1, true)
 
-    diem = create_npc("Diem", 139, 60 * TILESIZE + 16, 160 * TILESIZE + 16, diem_talk, npclib.walkaround_wide)
+    diem = npc_create("Diem", 139, GENDER_UNSPECIFIED, 60 * TILESIZE + 16, 160 * TILESIZE + 16, diem_talk, npclib.walkaround_wide)
     invertika.create_npc_talk_random(diem,
       {"Kauft Leute! Kauft!",
       "Beste Waren! Hergestellt in den königlichen Schmieden!",
@@ -42,27 +42,27 @@ atinit(function()
     
     create_chris()
 
-    create_npc("Estjdian", 120, 156 * TILESIZE + 16, 160 * TILESIZE + 16, estjdian_talk, nil)
+    npc_create("Estjdian", 120, GENDER_UNSPECIFIED, 156 * TILESIZE + 16, 160 * TILESIZE + 16, estjdian_talk, nil)
 
-    create_npc("Palastwache", 26, 58 * TILESIZE + 16, 100 * TILESIZE + 16, palastwache_talk, nil)
-    create_npc("Palastwache", 26, 61 * TILESIZE + 16, 100 * TILESIZE + 16, palastwache_talk, nil)
+    npc_create("Palastwache", 26, GENDER_UNSPECIFIED, 58 * TILESIZE + 16, 100 * TILESIZE + 16, palastwache_talk, nil)
+    npc_create("Palastwache", 26, GENDER_UNSPECIFIED, 61 * TILESIZE + 16, 100 * TILESIZE + 16, palastwache_talk, nil)
 
     --Bankwachen
-    create_npc("Wache", 26, 146 * TILESIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
-    create_npc("Wache", 26, 149 * TILESIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
+    npc_create("Wache", 26, GENDER_UNSPECIFIED, 146 * TILESIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
+    npc_create("Wache", 26, GENDER_UNSPECIFIED, 149 * TILESIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
     
     --Casinowache
-    create_npc("Wache", 26, 52 * TILESIZE + 16, 149 * TILESIZE + 16, wache_casino_talk, nil)
+    npc_create("Wache", 26, GENDER_UNSPECIFIED, 52 * TILESIZE + 16, 149 * TILESIZE + 16, wache_casino_talk, nil)
 
     --Außenwachen
-    wache_unten_links = create_npc("Wache", 26, 101 * TILESIZE + 16, 179 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
-    wache_unten_rechts = create_npc("Wache", 26, 103 * TILESIZE + 16, 179 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
+    wache_unten_links = npc_create("Wache", 26, GENDER_UNSPECIFIED, 101 * TILESIZE + 16, 179 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
+    wache_unten_rechts = npc_create("Wache", 26, GENDER_UNSPECIFIED, 103 * TILESIZE + 16, 179 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
     
     --Innentorwachen
-    create_npc("Wache", 26, 100 * TILESIZE + 16, 137 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
-    create_npc("Wache", 26, 104 * TILESIZE + 16, 137 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
+    npc_create("Wache", 26, GENDER_UNSPECIFIED, 100 * TILESIZE + 16, 137 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
+    npc_create("Wache", 26, GENDER_UNSPECIFIED, 104 * TILESIZE + 16, 137 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
 
-    cedric = create_npc("Cedric", 39, 81 * TILESIZE + 16, 97 * TILESIZE + 16, cedric_talk, nil)
+    cedric = npc_create("Cedric", 39, GENDER_UNSPECIFIED, 81 * TILESIZE + 16, 97 * TILESIZE + 16, cedric_talk, nil)
 
     -- Cedric´s Rede
     --invertika.schedule_every_day(17, 59, 00, cedric_speech)
@@ -76,9 +76,9 @@ function create_chris()
     local create_chris_on_fields_time = os.time{year=d.year, month=d.month, day=12,
                           hour=0, min=00, sec=0}
     if os.difftime(os.time(), create_chris_on_fields_time) > 0 then
-        create_npc("Chris", 141, 156 * TILESIZE + 16, 148 * TILESIZE + 16, chris_talk, npclib.walkaround_wide) -- Auf den Getreidefeldern
+        npc_create("Chris", 141, GENDER_UNSPECIFIED, 156 * TILESIZE + 16, 148 * TILESIZE + 16, chris_talk, npclib.walkaround_wide) -- Auf den Getreidefeldern
     else
-        create_npc("Chris", 141, 50 * TILESIZE + 16, 118 * TILESIZE + 16, chris_talk, npclib.walkaround_map) -- Im oberem Teil Burg Cedric's
+        npc_create("Chris", 141, GENDER_UNSPECIFIED, 50 * TILESIZE + 16, 118 * TILESIZE + 16, chris_talk, npclib.walkaround_map) -- Im oberem Teil Burg Cedric's
     end
 end
 

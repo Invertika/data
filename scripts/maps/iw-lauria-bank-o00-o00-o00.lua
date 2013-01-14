@@ -20,5 +20,5 @@ require "scripts/libs/banker"
 
 
 atinit(function()
-    create_npc("Banker", 11, 34 * TILESIZE + 16, 37 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
+    npc_create("Banker", 11, GENDER_UNSPECIFIED, 34 * TILESIZE + 16, 37 * TILESIZE + 16, banker.banker_talk, nil) --- Banker
 end)

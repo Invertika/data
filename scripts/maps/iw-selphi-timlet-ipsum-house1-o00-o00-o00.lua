@@ -19,7 +19,7 @@ require "scripts/libs/invertika"
 require "scripts/libs/special"
 
 atinit(function()
- create_npc("Nomo", 20, 48 * TILESIZE + 16, 23 * TILESIZE + 16, nomo_talk, nil) --- Nomo
+ npc_create("Nomo", 20, GENDER_UNSPECIFIED, 48 * TILESIZE + 16, 23 * TILESIZE + 16, nomo_talk, nil) --- Nomo
 end)
 
 function nomo_talk(npc, ch)

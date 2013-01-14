@@ -145,5 +145,5 @@ end
 
 --- Erzeugt einen NPC für die Netheksäule
 function create_netheksaeule(xpos, ypos)
-	create_npc("Netheksäule", 1, xpos, ypos, netheksaeule_talk, nil) --- Netheksäule
+	npc_create("Netheksäule", 1, GENDER_UNSPECIFIED, xpos, ypos, netheksaeule_talk, nil) --- Netheksäule
 end

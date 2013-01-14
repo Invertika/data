@@ -4,10 +4,10 @@
 -- Dieses Skript stellt Funktionalität für den Frisör zu Verfügung              --
 --                                                                              --
 -- Beispielaufrufe                                                              --
--- create_npc("Barber", 100, 51 * TILESIZE + 16, 38 * TILESIZE + 16,            --
+-- npc_create("Barber", 100, GENDER_UNSPECIFIED, 51 * TILESIZE + 16, 38 * TILESIZE + 16,            --
 -- Barber, nil)                                                                 --
 --                                                                              --
--- create_npc("Barber 2", 100, 52 * TILESIZE + 16, 38 * TILESIZE + 16,          --
+-- npc_create("Barber 2", 100, GENDER_UNSPECIFIED, 52 * TILESIZE + 16, 38 * TILESIZE + 16,          --
 -- npclib.talk(Barber, {14, 15, 16}, {}), nil)                                  --
 ----------------------------------------------------------------------------------
 --  Copyright 2009-2011 The Invertika Development Team                          --
