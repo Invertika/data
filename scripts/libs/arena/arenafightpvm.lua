@@ -1,6 +1,6 @@
 --- Class ArenaFightPvM
 
-require("data/scripts/libs/invertika")
+require("scripts/libs/invertika")
 
 MONSTER_SPAWN_SCATTER = 1000
 
