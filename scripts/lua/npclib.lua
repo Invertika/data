@@ -18,6 +18,7 @@
 
 module("npclib", package.seeall);
 
+
 -- Update function walkaround_small
 -- makes the NPC walk around in a 64x64 pixel square around its start location.
 -- Useful for NPCs which are supposed to stay on a specific spot but
@@ -30,8 +31,8 @@ local wasmall_starty = {}
 function walkaround_small(npc)
   if not wasmall_timer[npc] then
     wasmall_timer[npc] = 1
-    wasmall_startx[npc] = mana.posX(npc)
-    wasmall_starty[npc] = mana.posY(npc)
+    wasmall_startx[npc] = posX(npc)
+    wasmall_starty[npc] = posY(npc)
   end
 
   wasmall_timer[npc] = wasmall_timer[npc] + 1
@@ -40,7 +41,7 @@ function walkaround_small(npc)
     wasmall_timer[npc] = math.random(1, 10)
     local x = math.random(-32, 32) + wasmall_startx[npc]
     local y = math.random(-32, 32) + wasmall_starty[npc]
-    mana.being_walk(npc, x, y, 2)
+    being_walk(npc, x, y, 2)
   end
 end
 
@@ -57,8 +58,8 @@ local wawide_starty = {}
 function walkaround_wide(npc)
   if not wawide_timer[npc] then
     wawide_timer[npc] = 1
-    wawide_startx[npc] = mana.posX(npc)
-    wawide_starty[npc] = mana.posY(npc)
+    wawide_startx[npc] = posX(npc)
+    wawide_starty[npc] = posY(npc)
   end
 
   wawide_timer[npc] = wawide_timer[npc] + 1
@@ -67,7 +68,7 @@ function walkaround_wide(npc)
     wawide_timer[npc] = math.random(1, 10)
     local x = math.random(-128, 128) + wawide_startx[npc]
     local y = math.random(-128, 128) + wawide_starty[npc]
-    mana.being_walk(npc, x, y, 2)
+    being_walk(npc, x, y, 2)
   end
 end
 
@@ -87,9 +88,9 @@ function walkaround_map(npc)
 
   if wam_timer[npc] == 50 then
     wam_timer[npc] = math.random(1, 10)
-    local x = math.random(-128, 128) + mana.posX(npc)
-    local y = math.random(-128, 128) + mana.posY(npc)
-    mana.being_walk(npc, x, y, 2)
+    local x = math.random(-128, 128) + posX(npc)
+    local y = math.random(-128, 128) + posY(npc)
+    being_walk(npc, x, y, 2)
   end
 end
 
@@ -101,7 +102,7 @@ function talk(f, ...)
     end
 end
 
--- Allows NPC that only say one thing
+--- Allows NPC that only say one thing
 function auto_talk(...)
     local a = {...}
     return function(npc, ch)
@@ -111,7 +112,7 @@ end
 
 function _talk(npc, ch, messages)
     for i, v in ipairs(messages) do
-        do_message(npc, ch, v)
+        npc_message(npc, ch, v)
     end
-    do_npc_close(npc, ch)
 end
+

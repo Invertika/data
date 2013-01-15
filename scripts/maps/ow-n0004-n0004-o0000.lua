@@ -21,6 +21,7 @@ require "scripts/libs/sign"
 
 require "scripts/libs/warp"
 
+
 atinit(function()
     create_inter_map_warp_trigger(36, 26, 38, 48) --- Intermap warp
     nethek.create_netheksaeule(122 * TILESIZE, 114 * TILESIZE + 16) --- Netheksäule
@@ -31,5 +32,5 @@ atinit(function()
     sign.create_sign(122, 68, "\"Statue von Er--i--l--mon\"\n\nZu gedenken des Gründers von Liori. Sein Name soll uns auf ewig in Erinnerung bleiben!")
 
     --NPCs
-    create_npc("Deaqon", 35, 94 * TILESIZE + 16, 103 * TILESIZE + 16, seller.seller_talk, nil) --- Verkäufer
+    npc_create("Deaqon", 35, GENDER_UNSPECIFIED, 94 * TILESIZE + 16, 103 * TILESIZE + 16, seller.seller_talk, nil) --- Verkäufer
 end)

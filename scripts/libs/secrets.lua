@@ -32,7 +32,7 @@ local secrets = {}
 -- @param moneyamount Menge des zu erzeugenden Geldes
 function create_secret(xpos, ypos, secretid, itemid, amount, moneyamount)
     local secretindex = #secrets + 1
-    mana.trigger_create(xpos*TILESIZE, ypos*TILESIZE, TILESIZE, TILESIZE, "secret_activate", secretindex, true)
+    trigger_create(xpos*TILESIZE, ypos*TILESIZE, TILESIZE, TILESIZE, secret_activate, secretindex, true)
     secrets[secretindex] = {}
     secrets[secretindex][0] = itemid
     secrets[secretindex][1] = amount
@@ -43,12 +43,12 @@ end
 
 function secret_activate(being, secretindex)
     -- Teste auf Spieler
-    if mana.being_type(being) == TYPE_CHARACTER then
+    if being_type(being) == TYPE_CHARACTER then
         -- Teste auf bereits gefunden
         local quest_var_name = get_quest_var_name(secretindex)
-        if mana.get_quest_var(being, quest_var_name) ~= nil then
+        if get_quest_var(being, quest_var_name) ~= nil then
             -- Geheimnis ausgeben
-            mana.chr_set_quest(being, quest_var_name, 1)
+            chr_set_quest(being, quest_var_name, 1)
             distribute_reward(being, secretindex)
         end
     end
@@ -59,7 +59,7 @@ function get_quest_var_name(secretindex)
 end
 
 function distribute_reward(being, secretindex)
-    mana.chatmessage(being, "Du hast ein Geheimnis gefunden!")
+    chat_message(being, "Du hast ein Geheimnis gefunden!")
     if (secrets[secretindex][3] ~= nil) and (secrets[secretindex][2] ~= 0) then
         invertika.add_money(being, secrets[secretindex][3])
     end

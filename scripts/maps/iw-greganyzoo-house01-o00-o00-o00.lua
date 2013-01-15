@@ -17,28 +17,28 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-    --TODO change Sprite id
-    create_npc("Geban", 120, 23 * TILESIZE + 16, 27  * TILESIZE + 16, geban_talk, nil)
-end)
 
-function geban_talk(npc, ch)
-    do_message(npc, ch, "Hallo, was kann ich für sie tuen?")
+local function geban_talk(npc, ch)
+    npc_message(npc, ch, "Hallo, was kann ich für sie tuen?")
 
         while true do
-        local v = do_choice(npc, ch,
+        local v = npc_choice(npc, ch,
           "Kaufen.",
           "Nichts. Danke.")
 
         if v == 1 then
-            mana.npc_trade(npc, ch, false, {
+            npc_trade(npc, ch, false, {
               {40049, 10, 1500}
               })
             break
         elseif v == 2 then
-            do_message(npc, ch, "Wiedersehen.")
+            npc_message(npc, ch, "Wiedersehen.")
             break
         end
     end
-    do_npc_close(npc, ch)
 end
+
+atinit(function()
+    --TODO change Sprite id
+    npc_create("Geban", 120, GENDER_UNSPECIFIED, 23 * TILESIZE + 16, 27  * TILESIZE + 16, geban_talk, nil)
+end)

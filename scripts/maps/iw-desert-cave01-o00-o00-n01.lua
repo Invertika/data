@@ -19,6 +19,7 @@ require "scripts/libs/invertika"
 require "scripts/libs/sign"
 require "scripts/libs/secrets"
 
+
 atinit(function()
     sign.create_sign(65, 40, "Vorsicht! Hier lauern gefährliche Monster (deutlich gefährlicher als die Fledermäuse). Weitergehen auf eigene Gefahr!")
     --secrets.create_secret(42, 18, "MAP20156_1", nil, nil, 500)

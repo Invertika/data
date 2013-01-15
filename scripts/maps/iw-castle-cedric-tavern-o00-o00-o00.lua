@@ -17,18 +17,15 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-    create_npc("Egam", 19, 19 * TILESIZE + 16, 27 * TILESIZE + 16, egam_talk, nil)
-end)
 
-function egam_talk(npc, ch)
-    do_message(npc, ch, "Was kann ich für sie tuen?")
+local function egam_talk(npc, ch)
+    npc_message(npc, ch, "Was kann ich für sie tuen?")
     while true do
-        local v = do_choice(npc, ch,
+        local v = npc_choice(npc, ch,
           "Kaufen.",
           "Nichts. Danke.")
         if v == 1 then
-            mana.npc_trade(npc, ch, false,
+            npc_trade(npc, ch, false,
               {{30009, 25, 150},
               {30010, 25, 150},
               {30011, 290, 205},
@@ -41,9 +38,12 @@ function egam_talk(npc, ch)
               {30007, 300, 200}})
             break
         elseif v == 2 then
-            do_message(npc, ch, "Einen guten Tag noch.")
+            npc_message(npc, ch, "Einen guten Tag noch.")
             break
         end
     end
-    do_npc_close(npc, ch)
 end
+
+atinit(function()
+    npc_create("Egam", 19, GENDER_UNSPECIFIED, 19 * TILESIZE + 16, 27 * TILESIZE + 16, egam_talk, nil)
+end)

@@ -19,7 +19,8 @@ require "scripts/libs/seller"
 
 require "scripts/libs/warp"
 
+
 atinit(function()
  create_inter_map_warp_trigger(23, 13, 25, 35) --- Intermap warp
- create_npc("Klero", 107, 94 * TILESIZE + 16, 124 * TILESIZE + 16, seller.seller_talk, nil) --- Verkäufer
+ npc_create("Klero", 107, GENDER_UNSPECIFIED, 94 * TILESIZE + 16, 124 * TILESIZE + 16, seller.seller_talk, nil) --- Verkäufer
 end)

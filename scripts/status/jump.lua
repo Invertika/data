@@ -14,22 +14,22 @@
 
 function tick(target, ticknumber)
     if (ticknumber % 50 == 0) then
-        mana.being_say(target, "I have the jumping bug!")
+        being_say(target, "I have the jumping bug!")
     end
 
     -- So, status direkt mal entfernen, dadurch wird er unbrauchbar
-    if (mana.being_get_status_time(target, 2) > 5) then
-        mana.being_set_status_time(target, 2, 1)
+    if (being_get_status_time(target, 2) > 5) then
+        being_set_status_time(target, 2, 1)
     end
 
 --    Schliesslich wollen wir, dass der Status auch wieder weg geht
---    if (mana.being_get_status_time(target, 2) < 2000) then
---        mana.being_set_status_time(target, 2, 6000)
+--    if (being_get_status_time(target, 2) < 2000) then
+--        being_set_status_time(target, 2, 6000)
 --    end
 
     if (ticknumber % 50 ~= 0) then return end
 
-    local victims = mana.get_beings_in_circle(mana.posX(target), mana.posY(target), 64)
+    local victims = get_beings_in_circle(posX(target), posY(target), 64)
     local count = #victims
 
     if i == 0 then return end
@@ -46,14 +46,14 @@ function tick(target, ticknumber)
             victim = nil
             i = -1
         else
-            i = mana.being_type(victim)
+            i = being_type(victim)
         end
     until (i == TYPE_MONSTER or i == TYPE_CHARACTER or remaining == 0)
 
     if (victim == nil) then return end
 
-    mana.being_remove_status(target, 2)
+    being_remove_status(target, 2)
 
-    mana.being_apply_status(victim, 2, ticknumber)
-    mana.being_say(victim, "Now I have the jumping bug")
+    being_apply_status(victim, 2, ticknumber)
+    being_say(victim, "Now I have the jumping bug")
 end

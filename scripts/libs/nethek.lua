@@ -25,7 +25,7 @@ DEFAULT_Y = 4832;
 
 --- Setzt die Warp Map
 function set_nethek_warp_map(ch, mapID)
-	mana.chr_set_quest(ch, "nethek_warp_map", mapID)
+	chr_set_quest(ch, "nethek_warp_map", mapID)
 end
 
 --- Gibt die Warp Map zurück
@@ -40,7 +40,7 @@ end
 
 --- Setzt die Warp Position X in Pixel
 function set_nethek_warp_x(ch, posX)
-	mana.chr_set_quest(ch, "nethek_warp_x", posX)
+	chr_set_quest(ch, "nethek_warp_x", posX)
 end
 
 --- Gibt die Warpposition X in Pixel zurück
@@ -55,7 +55,7 @@ end
 
 --- Setzt die Warp Position Y in Pixel
 function set_nethek_warp_y(ch, posY)
-	mana.chr_set_quest(ch, "nethek_warp_y", posY)
+	chr_set_quest(ch, "nethek_warp_y", posY)
 end
 
 --- Gibt die Warpposition Y in Pixel zurück
@@ -73,7 +73,7 @@ function get_oblation_money(ch)
 	local acc_bal = get_quest_var(ch, "nethek_oblation_money")
 	
 	if acc_bal=="" then
-		mana.chr_set_quest(ch, "nethek_oblation_money", 0)
+		chr_set_quest(ch, "nethek_oblation_money", 0)
 		return 0
 	else
 		return tonumber(acc_bal)
@@ -82,41 +82,41 @@ end
 
 --- Geld opfern
 function immolate_money(npc, ch, money)
-	local PlayerMoney=mana.chr_money(ch)
+	local PlayerMoney=chr_money(ch)
 	
 	if PlayerMoney >= money then
-		mana.chr_money_change(ch, -money)
+		chr_money_change(ch, -money)
 		local acc_bal = get_oblation_money(ch)
-		mana.chr_set_quest(ch, "nethek_oblation_money", acc_bal+money)
-		do_message(npc, ch, "Dein Opfer wurde angenommen!")
+		chr_set_quest(ch, "nethek_oblation_money", acc_bal+money)
+		npc_message(npc, ch, "Dein Opfer wurde angenommen!")
 	else
-		do_message(npc, ch, "Soviel Geld hast du nicht!")	
+		npc_message(npc, ch, "Soviel Geld hast du nicht!")	
 	end
 end
 
 
 --- Talkfunktion für die Netheksäuke
 function netheksaeule_talk(npc, ch) --- NPC für die Netheksäule
-	do_message(npc, ch, "Was moechtest du?")
+	npc_message(npc, ch, "Was moechtest du?")
 	
 	while true do
-		local v = do_choice(npc, ch, "Deinen Segen.",
+		local v = npc_choice(npc, ch, "Deinen Segen.",
 								     "Geld opfern.",
 								     "Nichts. Danke.")
 								
 		if v == 1 then
-		    local x = mana.posX(npc)
-			local y = mana.posY(npc) + 64
+		    local x = posX(npc)
+			local y = posY(npc) + 64
 			
 			set_nethek_warp_x(ch, x)
 			set_nethek_warp_y(ch, y)
-			set_nethek_warp_map(ch, mana.get_map_id())
+			set_nethek_warp_map(ch, get_map_id())
 			
-			do_message(npc, ch, "Xenti Taree. Mein Segen.")
+			npc_message(npc, ch, "Xenti Taree. Mein Segen.")
 			
 			break;
 		elseif v == 2 then
-			local v2 = do_choice(npc, ch, "500", "1000", "2000", "5000", "10000", "25000", "50000","Nichts opfern")
+			local v2 = npc_choice(npc, ch, "500", "1000", "2000", "5000", "10000", "25000", "50000","Nichts opfern")
 					if v2 == 1 then --- 500
 						immolate_money(npc, ch, 500)
 					elseif v2 == 2 then --- 1000
@@ -136,15 +136,14 @@ function netheksaeule_talk(npc, ch) --- NPC für die Netheksäule
 					end
 			break;
 		elseif v == 3 then
-			do_message(npc, ch, "Gehe deinen Weg, Wanderer der Äonen.")
+			npc_message(npc, ch, "Gehe deinen Weg, Wanderer der Äonen.")
 			break
 		end
 	end
 	
-	do_npc_close(npc, ch)
 end
 
 --- Erzeugt einen NPC für die Netheksäule
 function create_netheksaeule(xpos, ypos)
-	create_npc("Netheksäule", 1, xpos, ypos, netheksaeule_talk, nil) --- Netheksäule
+	npc_create("Netheksäule", 1, GENDER_UNSPECIFIED, xpos, ypos, netheksaeule_talk, nil) --- Netheksäule
 end

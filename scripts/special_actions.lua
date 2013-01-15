@@ -23,13 +23,13 @@ specialCost[3] = 1000
 function use_special(ch, id)
 	-- perform whatever the special with the ID does
 	if id == 1 then
-		mana.being_say(ch, "Kaaame...Haaame... HAAAAAA!")
+		being_say(ch, "Kaaame...Haaame... HAAAAAA!")
 	end
 	if id == 2 then
-		mana.being_say(ch, "HAA-DOKEN!")
+		being_say(ch, "HAA-DOKEN!")
 	end
 	if id == 3 then
-		mana.being_say(ch, "Sonic BOOM")
+		being_say(ch, "Sonic BOOM")
 	end
 end
 

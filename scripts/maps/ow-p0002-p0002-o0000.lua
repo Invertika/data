@@ -19,6 +19,7 @@ require "scripts/libs/nethek"
 
 require "scripts/libs/warp"
 
+
 atinit(function()
  create_inter_map_warp_trigger(86, 96, 84, 74) --- Intermap warp
  nethek.create_netheksaeule(154 * TILESIZE, 19 * TILESIZE + 16) --- Netheksäule

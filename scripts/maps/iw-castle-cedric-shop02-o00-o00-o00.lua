@@ -17,22 +17,18 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-    --TODO change sprite
-    create_npc("Toffi", 81, 22 * TILESIZE + 16, 27 * TILESIZE + 16, toffi_talk, nil)
-end)
 
-function toffi_talk(npc, ch)
-    do_message(npc, ch, "Tag, Was gibt es?")
+local function toffi_talk(npc, ch)
+    npc_message(npc, ch, "Tag, Was gibt es?")
     
     while true do
-        local v = do_choice(npc, ch,
+        local v = npc_choice(npc, ch,
           "Kaufen.",
           "Verkaufen.",
           "Nichts. Danke.")
                          
         if v == 1 then
-            mana.npc_trade(npc, ch, false,
+            npc_trade(npc, ch, false,
               {{10001, 20, 50},
               {10002, 60, 1000},
               {10009, 60, 1000},
@@ -41,7 +37,7 @@ function toffi_talk(npc, ch)
               })
             break
         elseif v == 2 then
-            mana.npc_trade(npc, ch, true,
+            npc_trade(npc, ch, true,
               {{10001, 20, 5},
               {10002, 60, 100},
               {10009, 60, 100},
@@ -50,9 +46,13 @@ function toffi_talk(npc, ch)
               })
             break
         elseif v == 3 then
-            do_message(npc, ch, "Beehren sie uns bald wieder.")
+            npc_message(npc, ch, "Beehren sie uns bald wieder.")
             break
         end
     end
-    do_npc_close(npc, ch)
 end
+
+atinit(function()
+    --TODO change sprite
+    npc_create("Toffi", 81, GENDER_UNSPECIFIED, 22 * TILESIZE + 16, 27 * TILESIZE + 16, toffi_talk, nil)
+end)

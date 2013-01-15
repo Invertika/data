@@ -18,31 +18,31 @@
 require "scripts/lua/npclib"
 require "scripts/libs/sign"
 
+
+local function gerhard_talk(npc, ch)
+    -- Dieser Händler könnte später mal Speed verkaufen.
+    npc_message(npc, ch, "Bist du ein Mitglied der Stadtwache? Nein? Sehr gut, was kann ich für dich tun?")
+    while true do
+        local v = npc_choice(npc, ch, "Kaufen.",
+                                     "Verkaufen.",
+                                     "Nichts. Danke.")
+        if v == 1 then
+            npc_trade(npc, ch, false, { {30025, 10, 2000}, {30003, 10, 300}, {20023, 10, 12490} })
+            break
+        elseif v == 2 then
+            npc_trade(npc, ch, true)
+            break
+        elseif v == 3 then
+            npc_message(npc, ch, "Wenn die Stadtwache wegen dir von mir erfährt, kannst du dir gleich schonmal deinen Grabstein aussuchen!")
+            break
+        end
+    end
+end
+
 atinit(function()
     sign.create_sign(24, 7, "Gerhards ganz gewöhnlicher Gebrauchtwarenladen \
 \
 Ganz bestimmt nicht geheim oder schwer zu finden oder so ^^\
 Deshalb wird hier auch nicht mit illegaler Ware gehandelt.");
-    create_npc("Gerhard", 104, 27 * TILESIZE + 16, 5 * TILESIZE + 16, gerhard_talk, nil) --- Gerhard
+    npc_create("Gerhard", 104, GENDER_UNSPECIFIED, 27 * TILESIZE + 16, 5 * TILESIZE + 16, gerhard_talk, nil) --- Gerhard
 end)
-
-function gerhard_talk(npc, ch)
-    -- Dieser Händler könnte später mal Speed verkaufen.
-    do_message(npc, ch, "Bist du ein Mitglied der Stadtwache? Nein? Sehr gut, was kann ich für dich tun?")
-    while true do
-        local v = do_choice(npc, ch, "Kaufen.",
-                                     "Verkaufen.",
-                                     "Nichts. Danke.")
-        if v == 1 then
-            mana.npc_trade(npc, ch, false, { {30025, 10, 2000}, {30003, 10, 300}, {20023, 10, 12490} })
-            break
-        elseif v == 2 then
-            mana.npc_trade(npc, ch, true)
-            break
-        elseif v == 3 then
-            do_message(npc, ch, "Wenn die Stadtwache wegen dir von mir erfährt, kannst du dir gleich schonmal deinen Grabstein aussuchen!")
-            break
-        end
-    end
-    do_npc_close(npc, ch)
-end
