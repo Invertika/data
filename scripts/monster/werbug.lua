@@ -10,7 +10,7 @@
 
 require "scripts/libs/invertika"
 
-function update(mob)
+local function update(mob)
   local r = math.random(0, 200);
   if r == 0 then
     being_say(mob, invertika.get_random_element(
@@ -25,7 +25,7 @@ function update(mob)
   end
 end
 
-function strike(mob, victim, hit)
+local function strike(mob, victim, hit)
   if hit > 0 then
     being_say(mob, "Nimm dies! "..hit.." HP verloren!")
     being_say(victim, "Neeeiiiiiiiiiin!")
@@ -34,3 +34,7 @@ function strike(mob, victim, hit)
     being_say(victim, "Mhhhhh...")
   end
 end
+
+local werbug = get_monster_class("Werbug")
+werbug:on_update(update)
+werbug:on_damage(strike)
