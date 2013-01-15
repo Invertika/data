@@ -16,28 +16,28 @@
 
 require "scripts/lua/npclib"
 
-atinit(function()
- create_npc("Vertox", 29, 28 * TILESIZE + 16, 25 * TILESIZE + 16, vertox_talk, nil) --- Vertox -> Verkauft Sprengstoff
-end)
 
-function vertox_talk(npc, ch)
-    do_message(npc, ch, "Du benötigst Sprengstoff? Da bist du hier genau richtig!")
+local function vertox_talk(npc, ch)
+    npc_message(npc, ch, "Du benötigst Sprengstoff? Da bist du hier genau richtig!")
     
     while true do 
-        local v = do_choice(npc, ch, "Kaufen.",
+        local v = npc_choice(npc, ch, "Kaufen.",
                          "Verkaufen.",
                          "Nichts. Danke.")
                                    
         if v == 1 then
-            mana.npc_trade(npc, ch, false, { {40025, 20, 650}})
+            npc_trade(npc, ch, false, { {40025, 20, 650}})
             break
         elseif v == 2 then
-            mana.npc_trade(npc, ch, true)
+            npc_trade(npc, ch, true)
             break
         elseif v == 3 then
-            do_message(npc, ch, "Bis zum nächsten Mal!")
+            npc_message(npc, ch, "Bis zum nächsten Mal!")
             break
         end
     end
-    do_npc_close(npc, ch)
 end
+
+atinit(function()
+ npc_create("Vertox", 29, GENDER_UNSPECIFIED, 28 * TILESIZE + 16, 25 * TILESIZE + 16, vertox_talk, nil) --- Vertox -> Verkauft Sprengstoff
+end)

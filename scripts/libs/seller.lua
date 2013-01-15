@@ -19,14 +19,13 @@ require "scripts/lua/npclib"
 
 --- NPC Talk Funktion
 function seller_talk(npc, ch)
-    local sellcase = mana.npc_trade(npc, ch, true)
+    local sellcase = npc_trade(npc, ch, true)
     if sellcase == 0 then
-      do_message(npc, ch, "Hi, was möchtest du verkaufen?")
+      npc_message(npc, ch, "Hi, was möchtest du verkaufen?")
     elseif sellcase == 1 then
-      do_message(npc, ch, "Ich bin an deinen Sachen nicht interessiert.")
+      npc_message(npc, ch, "Ich bin an deinen Sachen nicht interessiert.")
     else
-      do_message(npc, ch, "Hmm irgendetwas stimmt nicht...")
+      npc_message(npc, ch, "Hmm irgendetwas stimmt nicht...")
     end
     
-    do_npc_close(npc, ch)
 end

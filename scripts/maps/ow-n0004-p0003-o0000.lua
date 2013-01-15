@@ -19,18 +19,12 @@ require "scripts/libs/invertika"
 
 require "scripts/libs/warp"
 
-atinit(function()
- create_inter_map_warp_trigger(43, 31, 41, 53) --- Intermap warp
 
- --TODO Change Sprite ID
- create_npc("Betirambo", 21, 101 * TILESIZE + 16, 145 * TILESIZE + 16, betirambo_talk, betirambo_update)
-end)
-
-function betirambo_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Willst du ein Eis haben?",
+local function betirambo_talk(npc, ch)
+    npc_message(npc, ch, invertika.get_random_element("Willst du ein Eis haben?",
       "Ein Eis?"))
     while true do
-        local v = do_choice(npc, ch,
+        local v = npc_choice(npc, ch,
           invertika.get_random_element("Jep",
           "Jap",
           "Jo",
@@ -39,7 +33,7 @@ function betirambo_talk(npc, ch)
           "Nö",
           "Zu kalt für Eis"))
         if v == 1 then
-            mana.npc_trade(npc, ch, false, {
+            npc_trade(npc, ch, false, {
               {30029, 1, 675}
               })
             break
@@ -47,10 +41,16 @@ function betirambo_talk(npc, ch)
             break
         end
     end
-    do_message(npc, ch, "Bis bald")
-    do_npc_close(npc, ch)
+    npc_message(npc, ch, "Bis bald")
 end
 
-function betirambo_update(npc)
+local function betirambo_update(npc)
     --walkaround_map(npc)
 end
+
+atinit(function()
+ create_inter_map_warp_trigger(43, 31, 41, 53) --- Intermap warp
+
+ --TODO Change Sprite ID
+ npc_create("Betirambo", 21, GENDER_UNSPECIFIED, 101 * TILESIZE + 16, 145 * TILESIZE + 16, betirambo_talk, betirambo_update)
+end)

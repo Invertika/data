@@ -12,15 +12,8 @@ require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 require "scripts/libs/nethek"
 
-atinit(function()
-    nethek.create_netheksaeule(47 * TILESIZE, 8 * TILESIZE + 16)
-    
-    --TODO: bessere Namen
-    create_npc("Priscilla", 148, 48 * TILESIZE + 16, 16 * TILESIZE + 16, priscilla_talk, nil)
-    --create_npc("burgermeister")
-end)
 
-function priscilla_talk(npc, ch)
+local function priscilla_talk(npc, ch)
     local queststring = "monument_of_bugfixer_flower_quest"
     
     --Init Quest
@@ -30,47 +23,46 @@ function priscilla_talk(npc, ch)
     local quest_var = invertika.get_quest_status(ch, queststring)
     
     if quest_var == 0 then
-        do_message(npc, ch, "Das da hinter uns ist der Große Fehlerbeheber.")
-        do_message(npc, ch, "Wie gerne würde ich seine Statue mit einer Blume dekorieren.")
-        do_message(npc, ch, "Leider wachsen bei uns keine.")
-        do_message(npc, ch, "Und einfach rausgehen ist nicht.")
-        do_message(npc, ch, "Unsere Augen haben sich zu stark an die hier unten herrschende Dunkelheit gewöhnt, sagt zumindest jeder..")
-        do_message(npc, ch, "Du siehst aus wie jemand, der von weit herkommt.")
-        do_message(npc, ch, "Würdest du mir bitte eine bringen?")
+        npc_message(npc, ch, "Das da hinter uns ist der Große Fehlerbeheber.")
+        npc_message(npc, ch, "Wie gerne würde ich seine Statue mit einer Blume dekorieren.")
+        npc_message(npc, ch, "Leider wachsen bei uns keine.")
+        npc_message(npc, ch, "Und einfach rausgehen ist nicht.")
+        npc_message(npc, ch, "Unsere Augen haben sich zu stark an die hier unten herrschende Dunkelheit gewöhnt, sagt zumindest jeder..")
+        npc_message(npc, ch, "Du siehst aus wie jemand, der von weit herkommt.")
+        npc_message(npc, ch, "Würdest du mir bitte eine bringen?")
     
         while true do
-            local c = do_choice(npc, ch, "Ja, natürlich.",
+            local c = npc_choice(npc, ch, "Ja, natürlich.",
               "Nein, sorry")
             if c == 1 then
-                do_message(npc, ch, "Ich danke dir.")
+                npc_message(npc, ch, "Ich danke dir.")
                 --Set Quest
                 invertika.set_quest_status(ch, queststring, 1)
                 break
             elseif c == 2 then
-                do_message(npc, ch, "ok")
+                npc_message(npc, ch, "ok")
                 break
             end
         end
     
     elseif quest_var == 1 then
-        if mana.chr_inv_count(ch, 40053) > 0 then
-            do_message(npc, ch, "Ich danke dir.")
+        if chr_inv_count(ch, 40053) > 0 then
+            npc_message(npc, ch, "Ich danke dir.")
             --Set Quest
             invertika.set_quet_status(ch, queststring, 2)
 			invertika.add_items(ch, 40053, -1, "Blume")
-        elseif mana.chr_inv_count(ch, 40053) == 0 then
-            do_message(npc, ch, invertika.get_random_element(
+        elseif chr_inv_count(ch, 40053) == 0 then
+            npc_message(npc, ch, invertika.get_random_element(
 			  "Bitte, bringe mir die Blume.",
 			  "Ich würde in einer Art 'Garten' nach einer Blume fragen."
 			  ))
         end
     elseif quest_var == 2 then
-        do_message(npc, ch, "Sieht die Statue nicht schön aus mit der Blume?")
+        npc_message(npc, ch, "Sieht die Statue nicht schön aus mit der Blume?")
     end
-    do_npc_close(npc, ch)
 end
 
-function burgermeister_talk(npc, ch)
+local function burgermeister_talk(npc, ch)
     local queststring = "monument_of_bugfixer_flower_quest"
     
     --Init Quest
@@ -79,3 +71,10 @@ function burgermeister_talk(npc, ch)
     --Get Quest
     local quest_var_flower = invertika.get_quest_status(ch, queststring)
 end
+atinit(function()
+    nethek.create_netheksaeule(47 * TILESIZE, 8 * TILESIZE + 16)
+    
+    --TODO: bessere Namen
+    npc_create("Priscilla", 148, GENDER_UNSPECIFIED, 48 * TILESIZE + 16, 16 * TILESIZE + 16, priscilla_talk, nil)
+    --create_npc("burgermeister")
+end)

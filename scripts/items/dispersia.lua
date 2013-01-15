@@ -17,23 +17,23 @@ function get_distance(x1, y1, x2, y2)
 end
 
 function kaboom(my_user, my_x, my_y)
-    local affected_beings = mana.get_beings_in_circle(my_x, my_y, DAMAGE_RADIUS)
-    -- mana.being_say(my_user, table.getn(affected_beings))
+    local affected_beings = get_beings_in_circle(my_x, my_y, DAMAGE_RADIUS)
+    -- being_say(my_user, table.getn(affected_beings))
     for nr, being in pairs(affected_beings) do
-        local distance = get_distance(my_x, my_y, mana.posX(being), mana.posY(being))
+        local distance = get_distance(my_x, my_y, posX(being), posY(being))
         local damage = DAMAGE_DAMAGE * math.pow(DAMAGE_FACTOR_DECREASE, distance)
-        -- mana.being_say(being, string.format("Name: %s, Distanz: %s, Damage: %s",
-        --                mana.being_get_name(being), distance, damage))
-        mana.being_damage(being, damage, DAMAGE_DELTA, DAMAGE_ACCURACY, DAMAGE_PHYSICAL, ELEMENT_FIRE)
+        -- being_say(being, string.format("Name: %s, Distanz: %s, Damage: %s",
+        --                being_get_name(being), distance, damage))
+        being_damage(being, damage, DAMAGE_DELTA, DAMAGE_ACCURACY, DAMAGE_PHYSICAL, ELEMENT_FIRE)
     end
-    mana.effect_create(151, my_x, my_y)
+    effect_create(151, my_x, my_y)
 end
 
 function use(user)
-    -- mana.being_say(user, "Debug 1")
-    x = mana.posX(user)
-    y = mana.posY(user)
-    -- mana.chr_set_quest(user, "debug", 1)
-    -- mana.being_say(user, get_quest_var(user, "debug"))
+    -- being_say(user, "Debug 1")
+    x = posX(user)
+    y = posY(user)
+    -- chr_set_quest(user, "debug", 1)
+    -- being_say(user, get_quest_var(user, "debug"))
     schedule_in(5, kaboom(user, x, y))
 end

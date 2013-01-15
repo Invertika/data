@@ -25,8 +25,8 @@ GHOST_ID=22
 function death_spawn_ghost(ch)
     if math.random() < CHANCE_GHOST_SPAWNS then
         --- Geist wird gespawnt
-        local x = mana.posX(ch)
-        local y = mana.posY(ch)
-        mana.monster_create(GHOST_ID, x, y)
+        local x = posX(ch)
+        local y = posY(ch)
+        monster_create(GHOST_ID, x, y)
     end
 end

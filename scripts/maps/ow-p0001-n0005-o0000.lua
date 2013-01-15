@@ -22,6 +22,43 @@ require "scripts/libs/sign"
 
 require "scripts/libs/warp"
 
+
+illegalCount=0;
+
+local function wache_trigger(ch, id)
+   if (being_type(ch) ~= TYPE_MONSTER) then --- Nur Player durchlassen
+     local count = chr_inv_count(ch, 40010)
+     
+     if count == 0 then
+       local x = posX(ch)
+       local y = posY(ch)
+       chr_warp(ch, get_map_id(), x, 90 * TILESIZE) 
+       
+       being_say(wache, invertika.get_random_element("Keinen Schritt weiter!",
+      "Verlassen sie sofort dieses Gelände!",
+      "Kein Zutritt!"))
+       
+       illegalCount=illegalCount+1
+       
+       being_damage(ch, 500, 250, 10075, 0, 0)
+     else
+       if illegalCount==0 then
+         being_say(wache, invertika.get_random_element("Willkommen Sir.",
+        "Sir.",
+        "Keine besonderen Vorkommnise, Sir."))
+       else
+         being_say(wache, "Sir, es wurden " + tostring(illegalCount) + " illegale Übertritte registriert.")
+         illegalCount=0
+       end
+     end
+  end
+ end
+ 
+local function wache_talk(npc, ch)
+    npc_message(npc, ch, invertika.get_random_element("Verschwinden Sie!",
+        "Kein Zutritt!"))
+end
+
 atinit(function()
  create_inter_map_warp_trigger(70, 82, nil, 60) --- Intermap warp
  nethek.create_netheksaeule(96 * TILESIZE, 113 * TILESIZE + 16) --- Netheksäule
@@ -45,47 +82,10 @@ atinit(function()
  sign.create_sign(135, 99, signText) -- Warnschild
 
  -- Wachen
- wache = create_npc("Wache", 29, 96 * TILESIZE + 16, 96 * TILESIZE + 16, wache_talk, nil) --- Wache
- create_npc("Wache", 29, 106 * TILESIZE + 16, 96 * TILESIZE + 16, wache_talk, nil) --- Wache
+ wache = npc_create("Wache", 29, GENDER_UNSPECIFIED, 96 * TILESIZE + 16, 96 * TILESIZE + 16, wache_talk, nil) --- Wache
+ npc_create("Wache", 29, GENDER_UNSPECIFIED, 106 * TILESIZE + 16, 96 * TILESIZE + 16, wache_talk, nil) --- Wache
  
  -- Trigger für die Überwachung des Torbereiches
- mana.trigger_create(98 * TILESIZE, 93 * TILESIZE, 7 * TILESIZE, 6 * TILESIZE, "wache_trigger", 1, true) --- Trigger Tor
+ trigger_create(98 * TILESIZE, 93 * TILESIZE, 7 * TILESIZE, 6 * TILESIZE, wache_trigger, 1, true) --- Trigger Tor
  
 end)
-
-illegalCount=0;
-
-function wache_trigger(ch, id)
-   if (mana.being_type(ch) ~= TYPE_MONSTER) then --- Nur Player durchlassen
-     local count = mana.chr_inv_count(ch, 40010)
-     
-     if count == 0 then
-       local x = mana.posX(ch)
-       local y = mana.posY(ch)
-       mana.chr_warp(ch, mana.get_map_id(), x, 90 * TILESIZE) 
-       
-       mana.being_say(wache, invertika.get_random_element("Keinen Schritt weiter!",
-      "Verlassen sie sofort dieses Gelände!",
-      "Kein Zutritt!"))
-       
-       illegalCount=illegalCount+1
-       
-       mana.being_damage(ch, 500, 250, 10075, 0, 0)
-     else
-       if illegalCount==0 then
-         mana.being_say(wache, invertika.get_random_element("Willkommen Sir.",
-        "Sir.",
-        "Keine besonderen Vorkommnise, Sir."))
-       else
-         mana.being_say(wache, "Sir, es wurden " + tostring(illegalCount) + " illegale Übertritte registriert.")
-         illegalCount=0
-       end
-     end
-  end
- end
- 
-function wache_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Verschwinden Sie!",
-        "Kein Zutritt!"))
-      do_npc_close(npc, ch)
-end

@@ -13,6 +13,7 @@ require "scripts/libs/secrets"
 require "scripts/lua/npclib"
 
 
+
 atinit(function()
   --secrets.create_secret(16, 62, "MAP20255_1", nil, nil, 250)
 end)

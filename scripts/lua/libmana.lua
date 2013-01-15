@@ -16,343 +16,112 @@
 
 require "scripts/lua/libmana-constants"
 
+-- A table that provides access to persistent variables of the current map
+map = setmetatable({}, {
+    __index = function(_, key)
+        return getvar_map(key)
+    end,
+    __newindex = function(_, key, value)
+        setvar_map(key, value)
+    end,
+})
 
--- Table that associates to each NPC pointer the handler function that is
--- called when a player starts talking to an NPC.
-local npc_talk_functs = {}
-local npc_update_functs = {}
+-- A table that provides access to persistent global world variables
+world = setmetatable({}, {
+    __index = function(_, key)
+        return getvar_world(key)
+    end,
+    __newindex = function(_, key, value)
+        setvar_world(key, value)
+    end,
+})
 
--- Table that associates to each Character pointer its state with respect to
--- NPCs (only one at a time). A state is an array with four fields:
--- . 1: pointer to the NPC the player is currently talking to.
--- . 2: coroutine running the NPC handler.
--- . 3: next event the NPC expects from the server.
---      (1 = npc_next, 2 = npc_choose, 3 = quest_reply, 4 = 1+3)
--- . 4: countdown (in minutes) before the state is deleted.
--- . 5: name of the expected quest variable. (optional)
-local states = {}
+-- Some convenient shortcuts for the different log levels
+function ERROR(...) log(LOG_ERROR, table.concat({...}, " ")) end
+function WARN(...)  log(LOG_WARN,  table.concat({...}, " ")) end
+function INFO(...)  log(LOG_INFO,  table.concat({...}, " ")) end
+function DEBUG(...) log(LOG_DEBUG, table.concat({...}, " ")) end
 
 -- Array containing the function registered by atinit.
 local init_fun = {}
 
--- Tick timer used during update to clean obsolete states.
-local timer
-
--- Creates an NPC and associates the given handler.
--- Note: Cannot be called until map initialization has started.
-function create_npc(name, id, x, y, talkfunct, updatefunct)
-  local npc = mana.npc_create(name, id, x, y)
-  if talkfunct then npc_talk_functs[npc] = talkfunct end
-  if updatefunct then npc_update_functs[npc] = updatefunct end
-  return npc
-end
-
--- Waits for the player to acknowledge the previous message, if any.
-function do_wait()
-  coroutine.yield(0)
-end
-
--- Sends an npc message to a player.
--- Note: Does not wait for the player to acknowledge the message.
-function do_message(npc, ch, msg)
-  -- Wait for the arrival of a pending acknowledgment, if any.
-  coroutine.yield(0)
-  mana.npc_message(npc, ch, msg)
-  -- An acknowledgment is pending, but do not wait for its arrival.
-  coroutine.yield(1)
-end
-
--- Sends an NPC question to a player and waits for its answer.
-function do_choice(npc, ch, ...)
-  -- Wait for the arrival of a pending acknowledgment, if any.
-  coroutine.yield(0)
-  mana.npc_choice(npc, ch, ...)
-  -- Wait for player choice.
-  return coroutine.yield(2)
-end
-
--- Sends an NPC integer ask to a player and waits for its answer.
-function do_ask_integer(npc, ch, min_num, max_num, ...)
-  -- Wait for the arrival of a pending acknowledgment, if any.
-  coroutine.yield(0)
-  mana.npc_ask_integer(npc, ch, min_num, max_num, ...)
-  -- Wait for player answer.
-  return coroutine.yield(2)
-end
-
--- Sends an NPC string ask to a player and waits for its answer.
-function do_ask_string(npc, ch)
-  -- Wait for the arrival of a pending acknowledgment, if any.
-  coroutine.yield(0)
-  mana.npc_ask_string(npc, ch)
-  -- Wait for player answer.
-  return coroutine.yield(2)
-end
-
--- Sends an NPC request to send letter to a player and waits for them to
--- send the letter.
-function do_post(npc, ch)
-  coroutine.yield(0)
-  mana.npc_post(npc, ch)
-  return coroutine.yield(1)
-end
-
--- Gets the value of a quest variable.
--- Calling this function while an acknowledment is pending is desirable, so
--- that lag cannot be perceived by the player.
-function get_quest_var(ch, name)
-  -- Query the server and return immediatly if a value is available.
-  local value = mana.chr_get_quest(ch, name)
-  if value then return value end
-  -- Wait for database reply.
-  return coroutine.yield(3, name)
-end
-
--- Gets the post for a user.
-function getpost(ch)
-  mana.chr_get_post(ch)
-  return coroutine.yield(3)
-end
-
--- Processes as much of an NPC handler as possible.
-local function process_npc(w, ...)
-  local co = w[2]
-  local pending = (w[3] == 4)
-  local first = true
-  while true do
-    local b, v, u
-    if first then
-      -- First time, resume with the arguments the coroutine was waiting for.
-      b, v, u = coroutine.resume(co, ...)
-      first = false
-    else
-      -- Otherwise, simply resume.
-      b, v, u = coroutine.resume(co)
-    end
-
-    if not b then print("LUA error: ", v)end
-
-    if not b or not v then
-      -- Either there was an error, or the handler just finished its work.
-      return
-    elseif v == 2 then
-      -- The coroutine needs a user choice from the server, so wait for it.
-      w[3] = 2
-      break
-    elseif v == 3 then
-      -- The coroutine needs the value of a quest variable from the server.
-      w[5] = u
-      if pending then
-        -- The coroutine has also sent a message to the user, so do not
-        -- forget about it, as it would flood the user with new messages.
-        w[3] = 4
-      else
-        w[3] = 3
-      end
-      break
-    elseif pending then
-      -- The coroutine is about to interact with the user. But the previous
-      -- action has not been acknowledged by the user yet, so wait for it.
-      w[3] = 1
-      break
-    elseif v == 1 then
-      -- A message has just been sent. But the coroutine can keep going in case
-      -- there is still some work to do while waiting for user acknowledgment.
-      pending = true
-    end
-  end
-  -- Restore the countdown, as there was some activity.
-  w[4] = 5
-  return true
-end
-
--- Called by the game whenever a player starts talking to an NPC.
--- Creates a coroutine based on the registered NPC handler.
-function npc_start(npc, ch)
-  states[ch] = nil
-  local h = npc_talk_functs[npc]
-  if not h then return end
-  local w = { npc, coroutine.create(h) }
-  if process_npc(w, npc, ch) then
-    states[ch] = w
-    if not timer then
-      timer = 600
-    end
-  end
-  -- coroutine.resume(w)
-  -- do_npc_close(npc, ch)
-end
-
-function do_npc_close(npc, ch)
-    mana.npc_end(npc, ch)
-end
-
--- Called by the game whenever a player keeps talking to an NPC.
--- Checks that the NPC expects it, and processes the respective coroutine.
-function npc_next(npc, ch)
-  local w = states[ch]
-  if w then
-    local w3 = w[3]
-    if w3 == 4 then
-      w[3] = 3
-      return
-    elseif w3 == 1 and process_npc(w) then
-      return
-    end
-  end
-  states[ch] = nil
-end
-
--- Called by the game whenever a player selects a particular reply.
--- Checks that the NPC expects it, and processes the respective coroutine.
-function npc_choose(npc, ch, u)
-  local w = states[ch]
-  if not (w and w[1] == npc and w[3] == 2 and process_npc(w, u)) then
-    states[ch] = nil
-  end
-end
-
-function npc_integer(npc, ch, u)
-  local w = states[ch]
-  if not (w and w[1] == npc and w[3] == 2 and process_npc(w, u)) then
-    states[ch] = nil
-  end
-end
-
-function npc_string(npc, ch, u)
-  local w = states[ch]
-  if not (w and w[1] == npc and w[3] == 2 and process_npc(w, u)) then
-    states[ch] = nil
-  end
-end
-
--- Called by the game when a player sends a letter.
-function npc_post(npc, ch, sender, letter)
-  local w = states[ch]
-  if not (w and w[1] == npc and w[3] == 1 and process_npc(w, sender, letter)) then
-    states[ch] = nil
-  end
-end
-
--- Called by the game whenever the value of a quest variable is known.
--- Checks that the NPC expects it, and processes the respective coroutine.
--- Note: the check for NPC correctness is missing, but it should never matter.
-function quest_reply(ch, name, value)
-  local w = states[ch]
-  if w then
-    local w3 = w[3]
-    if (w3 == 3 or w3 == 4) and w[5] == name then
-      w[5] = nil
-      if process_npc(w, value) then
-        return
-      end
-    end
-  end
-  states[ch] = nil
-end
-
-function post_reply(ch, sender, letter)
-  local w = states[ch]
-  if w then
-    local w3 = w[3]
-    if (w3 == 3 or w3 == 4) then
-      if process_npc(w, sender, letter) then
-        return
-      end
-    end
-  end
-  states[ch] = nil
-end
-
--- Called by the game every tick for each NPC.
-function npc_update(npc)
-  local h = npc_update_functs[npc];
-  if h then h(npc) end;
-end
-
--- Called by the game every tick.
--- Checks for scheduled function calls
--- Cleans obsolete connections.
-function update()
-  -- check the scheduler
-  check_schedule()
-
-  -- Run every minute only, in order not to overload the server.
-  if not timer then return end
-  timer = timer - 1
-  if timer ~= 0 then return end
-  -- Free connections that have been inactive for 3-4 minutes.
-  for k, w in pairs(states) do
-    local t = w[4] - 1
-    if t == 0 then
-      states[k] = nil
-    else
-      w[4] = t
-    end
-  end
-  -- Restart timer if there are still some pending states.
-  if next(states) then
-    timer = 600
-  else
-    timer = nil
-  end
-end
-
--- Registers a function so that is is executed during map initialization.
-function atinit(f)
-  init_fun[#init_fun + 1] = f
-end
-
--- Called by the game for creating NPCs embedded into maps.
--- Delays the creation until map initialization is performed.
--- Note: Assumes that the "npc_handler" global field contains the NPC handler.
-function create_npc_delayed(name, id, x, y)
-  -- Bind the name to a local variable first, as it will be reused.
-  local h = npc_handler
-  atinit(function() create_npc(name, id, x, y, h, nil) end)
-  npc_handler = nil
-end
-
--- Called during map initialization.
--- Executes all the functions registered by atinit.
-function initialize()
-  for i,f in ipairs(init_fun) do
-    f()
-  end
-  init_fun = nil
-end
-
-
--- SCHEDULER
-
--- Table of scheduled jobs. A job is an array with 3 elements:
+-- Set of scheduled jobs. The key is the mapid or 0 for no map.
+-- The value is an array with 3 elements:
 -- 0: the UNIX timestamp when it is executed
 -- 1: the function which is executed
 -- 2: nil when it is a one-time job. Repetition interval is seconds when it is
 --    a repeated job.
 local scheduler_jobs = {}
 
+-- checks for jobs which have to be executed, executes them and reschedules
+-- them when they are repeated jobs.
+local function check_schedule(mapid)
+  local current_time = os.time()
+  local jobs
+
+  jobs = scheduler_jobs[mapid or 0]
+
+  if not jobs then return end
+
+  while #jobs ~= 0 and current_time >= jobs[#jobs][0] do
+    -- retreive the job and remove it from the schedule
+    local job = jobs[#jobs]
+    table.remove(jobs)
+    -- reschedule the job when it is a repeated job
+    if job[2] then
+        schedule_every(job[2], job[1])
+    end
+    -- execute the job
+    job[1]()
+  end
+end
+
+-- Registered as the function to call every tick.
+local function update()
+    check_schedule()
+end
+
+-- Registered as function to call every map tick.
+-- Checks for scheduled function calls
+local function mapupdate(mapid)
+    check_schedule(mapid)
+end
+
+-- Registers a function so that it is executed during map initialization.
+function atinit(f)
+  local map_id = get_map_id()
+  init_fun[map_id] = init_fun[map_id] or {}
+  table.insert(init_fun[map_id], f)
+end
+
+-- Called by the game for creating NPCs embedded into maps.
+-- Delays the creation until map initialization is performed.
+-- Note: Assumes that the "npc_handler" global field contains the NPC handler.
+local function create_npc_delayed(name, id, GENDER_UNSPECIFIED, gender, x, y)
+  -- Bind the name to a local variable first, as it will be reused.
+  local h = npc_handler
+  atinit(function() npc_create(name, id, gender, x, y, h) end)
+  npc_handler = nil
+end
+
+-- Called during map initialization, for each map.
+-- Executes all the functions registered by atinit.
+local function map_initialize()
+  local functions = init_fun[get_map_id()]
+  if not functions then return end
+  for i,f in ipairs(functions) do
+    f()
+  end
+  init_fun[get_map_id()] = nil
+end
+
+
+-- SCHEDULER
+
 -- compare function used to sort the scheduler_jobs table.
 -- the jobs which come first are at the end of the table.
 local function job_cmp(job1, job2)
   return (job1[0] > job2[0])
-end
-
--- checks for jobs which have to be executed, executes them and reschedules
--- them when they are repeated jobs.
-function check_schedule()
-  if #scheduler_jobs==0 then return end
-  while os.time() > scheduler_jobs[#scheduler_jobs][0] do
-    -- retreive the job and remove it from the schedule
-    job = scheduler_jobs[#scheduler_jobs]
-	table.remove(scheduler_jobs)
-	-- reschedule the job when it is a repeated job
-	if job[2] then
-		schedule_every(job[2], job[1])
-	end
-	-- execute the job
-	job[1]()
-  end
 end
 
 -- schedules a function call to be executed once in n seconds
@@ -361,8 +130,10 @@ function schedule_in(seconds, funct)
   job[0] = os.time() + seconds
   job[1] = funct
   job[2] = nil
-  table.insert(scheduler_jobs, job)
-  table.sort(scheduler_jobs, job_cmp)
+  local map_id = get_map_id() or 0 -- if no map context
+  scheduler_jobs[map_id] = scheduler_jobs[map_id] or {}
+  table.insert(scheduler_jobs[map_id], job)
+  table.sort(scheduler_jobs[map_id], job_cmp)
 end
 
 -- schedules a function call to be executed at regular intervals of n seconds
@@ -371,10 +142,69 @@ function schedule_every(seconds, funct)
   job[0] = os.time() + seconds
   job[1] = funct
   job[2] = seconds
-  table.insert(scheduler_jobs, job)
-  table.sort(scheduler_jobs, job_cmp)
+  local map_id = get_map_id() or 0 -- if no map context
+  scheduler_jobs[map_id] = scheduler_jobs[map_id] or {}
+  table.insert(scheduler_jobs[map_id], job)
+  table.sort(scheduler_jobs[map_id], job_cmp)
 end
 
+-- schedules a function call to be executed at a given date
+function schedule_per_date(my_year, my_month, my_day, my_hour, my_minute, funct)
+  local job = {}
+  job[0] = os.time{year = my_year, month = my_month, day = my_day,
+                   hour = my_hour, min = my_minute}
+  job[1] = funct
+  job[2] = nil
+  local map_id = get_map_id() or 0 -- if no map context
+  scheduler_jobs[map_id] = scheduler_jobs[map_id] or {}
+  table.insert(scheduler_jobs[map_id], job)
+  table.sort(scheduler_jobs[map_id], job_cmp)
+end
+
+-- MAP/WORLD VARIABLES NOTIFICATIONS
+local onmapvar_functs = {}
+local onworldvar_functs = {}
+
+local function on_mapvar_callback(key, value)
+  local functs = onmapvar_functs[key]
+  local mapid = get_map_id()
+  for func, map in pairs(functs) do
+    if map == mapid then
+      func(key, value)
+    end
+  end
+end
+
+local function on_worldvar_callback(key, value)
+  local functs = onworldvar_functs[key]
+  for func, _ in pairs(functs) do
+    func(key, value)
+  end
+end
+
+function on_mapvar_changed(key, funct)
+  if not onmapvar_functs[key] then
+    onmapvar_functs[key] = {}
+    on_mapvar_changed(key, on_mapvar_callback)
+  end
+  onmapvar_functs[key][funct] = get_map_id()
+end
+
+function on_worldvar_changed(key, funct)
+  if not onworldvar_functs[key] then
+    onworldvar_functs[key] = {}
+    on_worldvar_changed(key, on_worldvar_callback)
+  end
+  onworldvar_functs[key][funct] = true
+end
+
+function remove_mapvar_listener(key, funct)
+  onmapvar_functs[key][funct] = nil
+end
+
+function remove_worldvar_listener(key, funct)
+  onworldvar_functs[key][funct] = nil
+end
 
 -- DEATH NOTIFICATIONS
 local ondeath_functs = {}
@@ -387,7 +217,7 @@ function on_death(being, funct)
     ondeath_functs[being] = {}
   end
   table.insert(ondeath_functs[being], funct)
-  mana.being_register(being)
+  being_register(being)
 end
 
 -- requests the gameserver to notify the script engine when the being
@@ -397,11 +227,11 @@ function on_remove(being, funct)
     onremove_functs[being] = {}
   end
   table.insert(onremove_functs[being], funct)
-  mana.being_register(being)
+  being_register(being)
 end
 
--- called by the engine when a registred being dies.
-function death_notification(being)
+-- Registered as callback for when a registered being dies.
+local function death_notification(being)
   if type(ondeath_functs[being]) == "table" then
     for i,funct in pairs(ondeath_functs[being]) do
       funct()
@@ -410,8 +240,8 @@ function death_notification(being)
   end
 end
 
--- called by the engine when a registred being is removed.
-function remove_notification(being)
+-- Registered as callback for when a registered being is removed.
+local function remove_notification(being)
   if type(onremove_functs[being]) == "table" then
     for i,funct in pairs(onremove_functs[being]) do
       funct()
@@ -423,61 +253,23 @@ end
 
 
 -- Below are some convenience methods added to the engine API
-
-mana.chr_money_change = function(ch, amount)
-  return mana.chr_inv_change(ch, 0, amount)
+chr_money_change = function(ch, amount)
+  being_set_base_attribute(
+                            ch,
+                            ATTR_GP,
+                            being_get_base_attribute(ch, ATTR_GP) + amount)
 end
 
-mana.chr_money = function(ch)
-  return mana.chr_inv_count(ch, 0)
+chr_money = function(ch)
+  return being_get_base_attribute(ch, ATTR_GP)
 end
 
+-- Register callbacks
+on_update(update)
+on_mapupdate(mapupdate)
 
+on_create_npc_delayed(create_npc_delayed)
+on_map_initialize(map_initialize)
 
-function cast(ch, arg)
-	if arg == 1 then
-		mana.being_say(ch, "Kaaame...Haaame... HAAAAAA!")
-	end
-	if arg == 2 then
-		mana.being_say(ch, "HAA-DOKEN!")
-	end
-	if arg == 3 then
-		mana.being_say(ch, "Sonic BOOM")
-	end
-
-end
-
--- schedules a function call to be executed at a given date
-function schedule_per_date(my_year, my_month, my_day, my_hour, my_minute, funct)
-  -- TODO: Add parameters checks.
-  local job = {}
-  job[0] = os.time{year = my_year, month = my_month, day = my_day, hour = my_hour, min = my_minute}
-  job[1] = funct
-  job[2] = nil
-  table.insert(scheduler_jobs, job)
-  table.sort(scheduler_jobs, job_cmp)
-end
--- Functions below will be put in the functions/ folder:
--- Returns a date in string format
-function get_date(my_year, my_month, my_day)
-    local s_days = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" }
-    local s_months = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }
-    local temp = os.date("*t", os.time{year = my_year, month = my_month, day = my_day, hour = 0})
-    -- A simple date: Sunday 04 September 2005
-    -- return s_days[temp.wday].." "..my_day.." "..s_months[my_month].." "..my_year
-    --E.g.: Sunday, September 04th 2005
-    local s_day_rank = "th" -- English specificity
-    if (my_day == 1 or my_day == 11 or my_day == 21 or my_day == 31) then
-        s_day_rank = "st"
-    elseif (my_day == 2 or my_day == 22) then
-        s_day_rank = "nd"
-    end
-    return s_days[temp.wday]..", "..s_months[my_month].." "..my_day..s_day_rank.." "..my_year
-end
--- Returns the number of days within a given month
-function get_nbr_days(my_month, my_year)
-    if (my_month%2) ~= 0 or my_month == 8 then return 31 end
-    if my_month ~= 2 or mois > 8 then return 30 end
-    if (((my_year%4) == 0 and (my_year%100) ~= 0) or (my_year%400) == 0) then return 29 end
-    return 28
-end
+on_being_death(death_notification)
+on_being_remove(remove_notification)

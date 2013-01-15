@@ -4,10 +4,10 @@
 -- Dieses Skript stellt Funktionalität für den Frisör zu Verfügung              --
 --                                                                              --
 -- Beispielaufrufe                                                              --
--- create_npc("Barber", 100, 51 * TILESIZE + 16, 38 * TILESIZE + 16,            --
+-- npc_create("Barber", 100, GENDER_UNSPECIFIED, 51 * TILESIZE + 16, 38 * TILESIZE + 16,            --
 -- Barber, nil)                                                                 --
 --                                                                              --
--- create_npc("Barber 2", 100, 52 * TILESIZE + 16, 38 * TILESIZE + 16,          --
+-- npc_create("Barber 2", 100, GENDER_UNSPECIFIED, 52 * TILESIZE + 16, 38 * TILESIZE + 16,          --
 -- npclib.talk(Barber, {14, 15, 16}, {}), nil)                                  --
 ----------------------------------------------------------------------------------
 --  Copyright 2009-2011 The Invertika Development Team                          --
@@ -67,7 +67,6 @@ function barber1_talk(npc, ch, data)
     -- Nothing to show? Then we can return
     if #color_ids == 0 and #style_ids == 0 then
         return -- Since we haven't shown any windows, we can safely
-               -- return without a do_npc_close
     end
 
     local result = 0
@@ -99,11 +98,11 @@ function barber1_talk(npc, ch, data)
 
     -- Choose an appropriate message
     if result == 1 then
-        do_message(npc, ch, "Hello! What style would you like today?")
+        npc_message(npc, ch, "Hello! What style would you like today?")
     elseif result == 2 then
-        do_message(npc, ch, "Hello! What color would you like today?")
+        npc_message(npc, ch, "Hello! What color would you like today?")
     else
-        do_message(npc, ch, "Hello! What can I do for you today?")
+        npc_message(npc, ch, "Hello! What can I do for you today?")
     end
 
     print("#styles ==", #styles)
@@ -111,7 +110,7 @@ function barber1_talk(npc, ch, data)
     -- Repeat until the user selects nothing
     repeat
         if (result == 1) then -- Do styles
-            result = do_choice(npc, ch, "Bald", styles, "Supprise me", "Never mind")
+            result = npc_choice(npc, ch, "Bald", styles, "Supprise me", "Never mind")
 
             result = result -1
 
@@ -124,16 +123,16 @@ function barber1_talk(npc, ch, data)
             print("Style ==", result)
 
             if (result == 0) then
-                mana.chr_set_hair_style(ch, 0)
+                chr_set_hair_style(ch, 0)
                 result = 1
             elseif (result <= #styles) then
-                mana.chr_set_hair_style(ch, style_ids[result])
+                chr_set_hair_style(ch, style_ids[result])
                 result = 1
             else --"Never mind"
                 result = 3
             end
         elseif (result == 2) then -- Do colors
-            result = do_choice(npc, ch, colors, "Supprise me", "Never mind")
+            result = npc_choice(npc, ch, colors, "Supprise me", "Never mind")
 
             --Random
             if (result == #colors + 1) then
@@ -141,7 +140,7 @@ function barber1_talk(npc, ch, data)
             end
 
             if (result <= #colors) then
-                mana.chr_set_hair_color(ch, color_ids[result - 1])
+                chr_set_hair_color(ch, color_ids[result - 1])
                 result = 2
             else --"Never mind"
                 result = 3
@@ -150,24 +149,23 @@ function barber1_talk(npc, ch, data)
 
         -- If we have both styles and colors, show the main menu
         if #styles > 0 and #colors > 0 then
-            result = do_choice(npc, ch, "Change my style", "Change my color", "Never mind")
+            result = npc_choice(npc, ch, "Change my style", "Change my color", "Never mind")
         end
     until result >= 3 --While they've choosen a valid option that isn't "Never mind"
 
     -- Let's close up
-    do_message(npc, ch, "Thank you. Come again!")
-    do_npc_close(npc, ch)
+    npc_message(npc, ch, "Thank you. Come again!")
 end
 
 -- Frisörfunktion -> Invertika
 function barber2_talk(npc, ch)
-    do_message(npc, ch, "Guten Tag da drüben! Was darfs sein? Neuen Haarschnitt? Oder nur die Farbe ändern?")
+    npc_message(npc, ch, "Guten Tag da drüben! Was darfs sein? Neuen Haarschnitt? Oder nur die Farbe ändern?")
     while true do
-        local v = do_choice(npc, ch, "Neuen Haarschnitt bitte!", "Einmal Färben!", "Nein danke.")
+        local v = npc_choice(npc, ch, "Neuen Haarschnitt bitte!", "Einmal Färben!", "Nein danke.")
         if v == 1 then
-            do_message(npc, ch, "Welcher Schnitt darf es denn sein?")
+            npc_message(npc, ch, "Welcher Schnitt darf es denn sein?")
             while true do
-                local v2 = do_choice(npc, ch, "Kurzer Zopf", "Pilzkopf", "Kurzhaar", "Emo", "Irokese", "Schmalzlocke",
+                local v2 = npc_choice(npc, ch, "Kurzer Zopf", "Pilzkopf", "Kurzhaar", "Emo", "Irokese", "Schmalzlocke",
                                               "Scheitel", "lang und glatt", "kurze Locken", "Zöpfe",
                                               "lange Locken", "Schulterlang", "Zopf", "Wellen", "Mähne", "Dutt")
                            
@@ -207,20 +205,20 @@ function barber2_talk(npc, ch)
                 end
                 
                 if costs ~= 0 then
-                    do_message(npc, ch, string.format("Das würde %s Aki kosten! Soll ich dir deine Haare nun schneiden?", costs))
+                    npc_message(npc, ch, string.format("Das würde %s Aki kosten! Soll ich dir deine Haare nun schneiden?", costs))
                     while true do
-                        local v3 = do_choice(npc, ch, "Ja", "Nein")
+                        local v3 = npc_choice(npc, ch, "Ja", "Nein")
                         if v3 == 1 then
-                            if mana.chr_money(ch) >= costs then
-                                mana.chr_money_change(ch, -costs)
-                                mana.chr_set_hair_style(ch, v2)
-                                do_message(npc, ch, "Der neue Schnitt steht dir gut!")
+                            if chr_money(ch) >= costs then
+                                chr_money_change(ch, -costs)
+                                chr_set_hair_style(ch, v2)
+                                npc_message(npc, ch, "Der neue Schnitt steht dir gut!")
                             else
-                                do_message(npc, ch, "Du hast nicht genug Geld bei dir!")
+                                npc_message(npc, ch, "Du hast nicht genug Geld bei dir!")
                             end
                             break
                         elseif v3 == 2 then
-                            do_message(npc, ch, "Auf Wiedersehen")
+                            npc_message(npc, ch, "Auf Wiedersehen")
                             break
                         end
                     end
@@ -229,25 +227,25 @@ function barber2_talk(npc, ch)
             end
             break
         elseif v == 2 then
-            do_message(npc, ch, "Welche Farbe willst du?")
+            npc_message(npc, ch, "Welche Farbe willst du?")
             while true do
-                local v2 = do_choice(npc, ch, "Blond", "Grün", "Rot", "Violett", "Grau", "Gelb", "Blau", "Braun",
+                local v2 = npc_choice(npc, ch, "Blond", "Grün", "Rot", "Violett", "Grau", "Gelb", "Blau", "Braun",
                                                "hell Blau", "dunkel Violett", "Schwarz")
                 
                 if v2 >= 1 or v2 <= 11 then
-                    do_message(npc, ch, "Das Färben kostet 100 Aki!")
+                    npc_message(npc, ch, "Das Färben kostet 100 Aki!")
                     while true do
-                        local v3 = do_choice(npc, ch, "Ok. Fang an!", "Nee, dann doch nicht")
+                        local v3 = npc_choice(npc, ch, "Ok. Fang an!", "Nee, dann doch nicht")
                         if v3 == 1 then
-                            if mana.chr_money(ch) >= 100 then
-                                mana.chr_money_change(ch, -100)
-                                mana.chr_set_hair_color(ch, v2 - 1)
+                            if chr_money(ch) >= 100 then
+                                chr_money_change(ch, -100)
+                                chr_set_hair_color(ch, v2 - 1)
                             else
-                                do_message(npc, ch, "Du hast nicht genug Geld dabei!")
+                                npc_message(npc, ch, "Du hast nicht genug Geld dabei!")
                             end
                             break
                         elseif v3 == 2 then
-                            do_message(npc, ch, "Auf Wiedersehn!")
+                            npc_message(npc, ch, "Auf Wiedersehn!")
                             break
                         end
                     end
@@ -256,9 +254,8 @@ function barber2_talk(npc, ch)
             end
             break
         elseif v == 3 then
-            do_message(npc, ch, "Auf Wiedersehn!")
+            npc_message(npc, ch, "Auf Wiedersehn!")
             break
         end
     end
-    do_npc_close(npc, ch)
 end

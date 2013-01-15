@@ -18,12 +18,9 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-    create_npc("Enla", 4, 33 * TILESIZE + 16, 36 * TILESIZE + 16, enla_talk, nil)
-end)
 
-function enla_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Hi, was kann ich für sie tuen?",
+local function enla_talk(npc, ch)
+    npc_message(npc, ch, invertika.get_random_element("Hi, was kann ich für sie tuen?",
       "Hi, was gibt es?",
       "Hi, wie kann ich ihnen helfen?",
       "Hallo, was kann ich für sie tuen?",
@@ -36,12 +33,12 @@ function enla_talk(npc, ch)
       "Was wollen sie hier?!"))
       
     while true do
-        local v = do_choice(npc, ch, "Kaufen.",
+        local v = npc_choice(npc, ch, "Kaufen.",
           "Verkaufen.",
           "Nichts, Danke.")
         
         if v == 1 then
-            mana.npc_trade(npc, ch, false, {
+            npc_trade(npc, ch, false, {
               {10001, 10, 19}, 
               {10013, 10, 159}, 
               {10002, 10, 997}, 
@@ -58,10 +55,10 @@ function enla_talk(npc, ch)
               })
             break
         elseif v == 2 then
-            mana.npc_trade(npc, ch, true)
+            npc_trade(npc, ch, true)
             break
         elseif v == 3 then
-            do_message(npc, ch, invertika.get_random_element("Tschüß",
+            npc_message(npc, ch, invertika.get_random_element("Tschüß",
               "Tschau",
               "Bis Bald",
               "Beehren sie uns bald wieder",
@@ -70,5 +67,7 @@ function enla_talk(npc, ch)
               break
         end
     end
-    do_npc_close(npc, ch)
 end
+atinit(function()
+    npc_create("Enla", 4, GENDER_UNSPECIFIED, 33 * TILESIZE + 16, 36 * TILESIZE + 16, enla_talk, nil)
+end)

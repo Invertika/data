@@ -18,10 +18,10 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-    create_npc("Rezeptionist", 20, 24 * TILESIZE + 16, 37 * TILESIZE + 16, rezeptionist_talk, nil)
-end)
-function rezeptionist_talk(npc, ch)
-   do_message(npc, ch, "Bald werden wir das erste Höhlenhotel Invertikas eröffnen!")
-   do_npc_close(npc, ch)
+local function rezeptionist_talk(npc, ch)
+   npc_message(npc, ch, "Bald werden wir das erste Höhlenhotel Invertikas eröffnen!")
 end
+
+atinit(function()
+    npc_create("Rezeptionist", 20, GENDER_UNSPECIFIED, 24 * TILESIZE + 16, 37 * TILESIZE + 16, rezeptionist_talk, nil)
+end)

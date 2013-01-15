@@ -18,6 +18,7 @@ require "scripts/lua/npclib"
 
 require "scripts/libs/warp"
 
+
 atinit(function()
  create_inter_map_warp_trigger(55, 43, 53, nil) --- Intermap warp
 end)

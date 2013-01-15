@@ -18,30 +18,24 @@
 require "scripts/lua/npclib"
 require "scripts/libs/invertika"
 
-atinit(function()
-    --TODO: Change NPC Sprite
-    create_npc("Dache", 21, 23 * TILESIZE + 16, 38 * TILESIZE + 16, dache_talk, nil)
-    create_npc("Fohon", 5 , 29 * TILESIZE + 16, 36 * TILESIZE + 16, fohon_talk, nil)
-end)
 
-function dache_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element(
+local function dache_talk(npc, ch)
+    npc_message(npc, ch, invertika.get_random_element(
       "Noch ein Drink und dann wars das.",
       "So langsam sehe ich alles doppelt.",
       "Mmmm also ich weiß ja nicht."))
-    do_npc_close(npc, ch)
 end
 
-function fohon_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element(
+local function fohon_talk(npc, ch)
+    npc_message(npc, ch, invertika.get_random_element(
       "Was kann ich für sie tuen?",
       "Was möchten sie?"))
     while true do
-        local v = do_choice(npc, ch,
+        local v = npc_choice(npc, ch,
           "Kaufen.",
           "Nichts. Danke.")
         if v == 1 then
-            mana.npc_trade(npc, ch, false,
+            npc_trade(npc, ch, false,
               {{30009, 25, 150},
               {30010, 25, 150},
               {30011, 290, 205},
@@ -54,11 +48,15 @@ function fohon_talk(npc, ch)
               {30007, 300, 200}})
             break
         elseif v == 2 then
-            do_message(npc, ch, invertika.get_random_element(
+            npc_message(npc, ch, invertika.get_random_element(
               "Einen guten Tag noch.",
               "Einen schönen Tag noch."))
             break
         end
     end
-    do_npc_close(npc, ch)
 end
+atinit(function()
+    --TODO: Change NPC Sprite
+    npc_create("Dache", 21, GENDER_UNSPECIFIED, 23 * TILESIZE + 16, 38 * TILESIZE + 16, dache_talk, nil)
+    npc_create("Fohon", 5 , GENDER_UNSPECIFIED, 29 * TILESIZE + 16, 36 * TILESIZE + 16, fohon_talk, nil)
+end)

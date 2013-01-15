@@ -8,7 +8,7 @@ function use(ch)
     invertika.set_quest_status(ch, quest_string, count) 
 
     if count >=15 then
-        mana.being_say(ch, invertika.get_random_element(
+        being_say(ch, invertika.get_random_element(
           "Und wieder tausende Kilokalorien.",
           "Mist, ich wollte doch nicht mehr so viel essen!",
           "Schon wieder Schokolade? Ich will Gurken!",

@@ -22,68 +22,20 @@ require "scripts/libs/sign"
 
 require "scripts/libs/warp"
 
-atinit(function()
-    create_inter_map_warp_trigger(nil, 33, 43, 55) --- Intermap warp
-    nethek.create_netheksaeule(103 * TILESIZE, 110 * TILESIZE + 16) ---Netheksäule
 
-    sign_entrance = "Burg Cedric"
-    sign.create_sign(104, 185, sign_entrance) --- Schild Burgeingang
-
-    mana.trigger_create(101 * TILESIZE, 176 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "wache_trigger", 1, true)
-    ---mana.trigger_create(101 * TILESIZE, 183 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, "wache_cache_trigger", 1, true)
-
-    diem = create_npc("Diem", 139, 60 * TILESIZE + 16, 160 * TILESIZE + 16, diem_talk, npclib.walkaround_wide)
-    invertika.create_npc_talk_random(diem,
-      {"Kauft Leute! Kauft!",
-      "Beste Waren! Hergestellt in den königlichen Schmieden!",
-      "Sehen Sie! Dieses Schwert ist unzerbrechlich! ZACK. Oh...",
-      "Kommen Sie meine Herren. Diese Waffen sind die Besten."})
-      
-    
-    create_chris()
-
-    create_npc("Estjdian", 120, 156 * TILESIZE + 16, 160 * TILESIZE + 16, estjdian_talk, nil)
-
-    create_npc("Palastwache", 26, 58 * TILESIZE + 16, 100 * TILESIZE + 16, palastwache_talk, nil)
-    create_npc("Palastwache", 26, 61 * TILESIZE + 16, 100 * TILESIZE + 16, palastwache_talk, nil)
-
-    --Bankwachen
-    create_npc("Wache", 26, 146 * TILESIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
-    create_npc("Wache", 26, 149 * TILESIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
-    
-    --Casinowache
-    create_npc("Wache", 26, 52 * TILESIZE + 16, 149 * TILESIZE + 16, wache_casino_talk, nil)
-
-    --Außenwachen
-    wache_unten_links = create_npc("Wache", 26, 101 * TILESIZE + 16, 179 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
-    wache_unten_rechts = create_npc("Wache", 26, 103 * TILESIZE + 16, 179 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
-    
-    --Innentorwachen
-    create_npc("Wache", 26, 100 * TILESIZE + 16, 137 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
-    create_npc("Wache", 26, 104 * TILESIZE + 16, 137 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
-
-    cedric = create_npc("Cedric", 39, 81 * TILESIZE + 16, 97 * TILESIZE + 16, cedric_talk, nil)
-
-    -- Cedric´s Rede
-    --invertika.schedule_every_day(17, 59, 00, cedric_speech)
-
-    -- Feuerwerk
-    --invertika.schedule_every_day(18, 00, 00, firework_round)
-end)
-
-function create_chris()
+local function create_chris()
     local d = os.date("*t")
     local create_chris_on_fields_time = os.time{year=d.year, month=d.month, day=12,
                           hour=0, min=00, sec=0}
     if os.difftime(os.time(), create_chris_on_fields_time) > 0 then
-        create_npc("Chris", 141, 156 * TILESIZE + 16, 148 * TILESIZE + 16, chris_talk, npclib.walkaround_wide) -- Auf den Getreidefeldern
+        npc_create("Chris", 141, GENDER_UNSPECIFIED, 156 * TILESIZE + 16, 148 * TILESIZE + 16, chris_talk, npclib.walkaround_wide) -- Auf den Getreidefeldern
     else
-        create_npc("Chris", 141, 50 * TILESIZE + 16, 118 * TILESIZE + 16, chris_talk, npclib.walkaround_map) -- Im oberem Teil Burg Cedric's
+        npc_create("Chris", 141, GENDER_UNSPECIFIED, 50 * TILESIZE + 16, 118 * TILESIZE + 16, chris_talk, npclib.walkaround_map) -- Im oberem Teil Burg Cedric's
     end
 end
 
-function diem_talk(npc, ch)
-    mana.npc_trade(npc, ch, false, {
+local function diem_talk(npc, ch)
+    npc_trade(npc, ch, false, {
       {10001, 30, 50},
       {10013, 30, 140},
       {10002, 30, 1000},
@@ -100,10 +52,9 @@ function diem_talk(npc, ch)
       {20018, 30, 250},
       {20009, 30, 500}
     })
-    do_npc_close(npc, ch)
 end
 
-function chris_talk(npc, ch)
+local function chris_talk(npc, ch)
 
     local queststring_lazy = "castle_cedric_lazy_chris_quest"
     local queststring_ice = "castle_cedric_chris_ice_quest"
@@ -115,20 +66,20 @@ function chris_talk(npc, ch)
     local quest_var_ice = invertika.get_quest_status(ch, queststring_ice)
     
     if quest_var_lazy == 0 then
-        do_message(npc, ch, "psst")
+        npc_message(npc, ch, "psst")
     end
     
     if quest_var_lazy == 1 then
-        do_message(npc, ch, "Ahrg, garnicht mehr dran gedacht.")
-        do_message(npc, ch, "Habe aber auch keine Lust drauf.")
-        do_message(npc, ch, "Sage ihm, das ich gleich komme.")
-        do_message(npc, ch, "Danke")
+        npc_message(npc, ch, "Ahrg, garnicht mehr dran gedacht.")
+        npc_message(npc, ch, "Habe aber auch keine Lust drauf.")
+        npc_message(npc, ch, "Sage ihm, das ich gleich komme.")
+        npc_message(npc, ch, "Danke")
         --Set Quest
         invertika.set_quest_status(ch, queststring_lazy, 3) -- Quest angenommen und es wurde mit Chris geredet
     end
     
     if quest_var_lazy == 3 then
-        do_message(npc, ch, "Hetz mich nicht so, bin ja schon aufm Weg.")
+        npc_message(npc, ch, "Hetz mich nicht so, bin ja schon aufm Weg.")
     end
     
     if quest_var_lazy == 4 then
@@ -136,21 +87,21 @@ function chris_talk(npc, ch)
         local create_chris_on_fields_time = os.time{year=d.year, month=d.month, day=12,
                                                 hour=0, min=00, sec=0}
         if os.difftime(os.time(), create_chris_on_fields_time) > 0 then
-            do_message(npc, ch, "Du!")
-            do_message(npc, ch, "Los, hol mir ein Eis.")
-            do_message(npc, ch, "Wenn du mir schon diese Schwerstarbeit aufbrockst, kannst du wenigstens für mein leibliches Wohl sorgen.")
-            do_message(npc, ch, "Und, machst du's?")
+            npc_message(npc, ch, "Du!")
+            npc_message(npc, ch, "Los, hol mir ein Eis.")
+            npc_message(npc, ch, "Wenn du mir schon diese Schwerstarbeit aufbrockst, kannst du wenigstens für mein leibliches Wohl sorgen.")
+            npc_message(npc, ch, "Und, machst du's?")
             while true do
-                local s = do_choice(npc, ch, "Ja",
+                local s = npc_choice(npc, ch, "Ja",
                   "Nein")
                 if s == 1 then
-                    do_message(npc, ch, "Danke.")
+                    npc_message(npc, ch, "Danke.")
                     --Set Quests
                     invertika.set_quest_status(ch, queststring_ice, 1) --Eishol Quest anfangen
                     invertika.set_quest_status(ch, queststring_lazy, 5) -- Weg mit der unnützen Quest :D
                     break
                 elseif s == 2 then
-                    do_message(npc, ch, "ok.")
+                    npc_message(npc, ch, "ok.")
                     break
                 end
             end
@@ -158,8 +109,8 @@ function chris_talk(npc, ch)
     end
     
     if quest_var_ice == 1 then
-        if mana.chr_inv_count(ch, 30029) then
-            do_message(npc, ch, "Ich bin dir sehr dankbar.")
+        if chr_inv_count(ch, 30029) then
+            npc_message(npc, ch, "Ich bin dir sehr dankbar.")
             invertika.add_money(ch, 400)
             invertika.add_items(ch, 30029, -1, "Eis")
             invertika.set_quest_status(ch, queststring_ice, 2)
@@ -169,13 +120,12 @@ function chris_talk(npc, ch)
     end
     
     if quest_var_ice == 2 then
-        do_message(npc, ch, "Hi.")
+        npc_message(npc, ch, "Hi.")
     end
     
-    do_npc_close(npc, ch)
 end
 
-function estjdian_talk(npc, ch)
+local function estjdian_talk(npc, ch)
 
     local queststring = "castle_cedric_lazy_chris_quest"
     --Init Quest
@@ -185,23 +135,23 @@ function estjdian_talk(npc, ch)
 
     if quest_var == 0 then
     
-        do_message(npc, ch, "Wo steckt dieser faule Bengel schon wieder...")
-        do_message(npc, ch, "Er sollte schon vor einer halben Stunde zur Arbeit antreten.")
-        do_message(npc, ch, "Von wem ich eigentlich spreche, willst du wissen?")
-        do_message(npc, ch, "Ich spreche von Chris.")
-        do_message(npc, ch, "Er kam früher bereits unpünktlich.")
-        do_message(npc, ch, "Würdest du ihn bitte suchen?")
+        npc_message(npc, ch, "Wo steckt dieser faule Bengel schon wieder...")
+        npc_message(npc, ch, "Er sollte schon vor einer halben Stunde zur Arbeit antreten.")
+        npc_message(npc, ch, "Von wem ich eigentlich spreche, willst du wissen?")
+        npc_message(npc, ch, "Ich spreche von Chris.")
+        npc_message(npc, ch, "Er kam früher bereits unpünktlich.")
+        npc_message(npc, ch, "Würdest du ihn bitte suchen?")
         while true do
-            local s = do_choice(npc, ch, "Ja, na klar.",
+            local s = npc_choice(npc, ch, "Ja, na klar.",
               "Nein, leider nicht.")
             if s == 1 then
-                do_message(npc, ch, "Danke")
+                npc_message(npc, ch, "Danke")
                 --Set Quest
                 invertika.set_quest_status(ch, queststring, 1) -- Quest angenommen
                 break
             elseif s == 2 then
-                do_message(npc, ch, "Hmm, ok.")
-                do_message(npc, ch, "Dann mache ich mich eben selbst auf den Weg.")
+                npc_message(npc, ch, "Hmm, ok.")
+                npc_message(npc, ch, "Dann mache ich mich eben selbst auf den Weg.")
                 invertika.set_quest_status(ch, queststring, 2) -- Quest nicht angenommen
                 break
             end
@@ -209,108 +159,104 @@ function estjdian_talk(npc, ch)
     end
     
     if quest_var == 2 then
-        do_message(npc, ch, "Ah, du hast es dir anders überlegt?")
+        npc_message(npc, ch, "Ah, du hast es dir anders überlegt?")
         while true do
-            local a = do_choice(npc, ch, "Jap",
+            local a = npc_choice(npc, ch, "Jap",
               "nö")
             if a == 1 then
-                do_message(npc, ch, "OK, danke.")
-                do_message(npc, ch, "Besser spät als nie.")
+                npc_message(npc, ch, "OK, danke.")
+                npc_message(npc, ch, "Besser spät als nie.")
                 --Set Quest
                 invertika.set_quest_status(ch, queststring, 1) -- Quest angenommen
                 break
             elseif a == 2 then
-                do_message(npc, ch, "Hmmm, ok")
+                npc_message(npc, ch, "Hmmm, ok")
                 break
             end
         end
     end
     
     if quest_var == 3 then
-        do_message(npc, ch, "Ich danke dir dafür, dass du diesen Nichtsnutz gefunden hast.")
-        do_message(npc, ch, "Hier eine kleine Belohnung für deine Mühen.")
+        npc_message(npc, ch, "Ich danke dir dafür, dass du diesen Nichtsnutz gefunden hast.")
+        npc_message(npc, ch, "Hier eine kleine Belohnung für deine Mühen.")
         invertika.add_money(ch, 250)
         --Set Quest
         invertika.set_quest_status(ch, queststring, 4) -- Quest angenommen und Behlonung vom Estjdian kassiert
     end
     
     if quest_var >= 4 then
-        do_message(npc, ch, "Hoffentlich bessert er sich.")
+        npc_message(npc, ch, "Hoffentlich bessert er sich.")
     end
-    do_npc_close(npc, ch)
 end
 
-function wache_bank_talk(npc, ch)
+local function wache_bank_talk(npc, ch)
     --TODO bessere Texte
-    do_message(npc, ch, "Wir bewachen die Bank.")
-    do_npc_close(npc, ch)
+    npc_message(npc, ch, "Wir bewachen die Bank.")
 end
 
-function wache_casino_talk(npc, ch)
+local function wache_casino_talk(npc, ch)
     --TODO bessere Texte
-    do_message(npc, ch, invertika.get_random_element("Ich bewache das Kasino.",
+    npc_message(npc, ch, invertika.get_random_element("Ich bewache das Kasino.",
       "Glücksspiel kann süchtig machen.",
       "Ohne uns Wachen würde die Stadt im Chaos versinken!"))
-    do_npc_close(npc, ch)
 end
 
-function wache_talk(npc, ch)
+local function wache_talk(npc, ch)
     local quest_string = "burg_cedric_guard_macguffin"
     invertika.init_quest_status(ch, quest_string)
     local q_status = invertika.get_quest_status(ch, quest_string)
     if q_status == 0 then
-        do_message(npc, ch, "Ich habe meinen MacGuffin verloren!")
-        do_message(npc, ch, "Er ist bestimmt im Westen, in der Bolero Höhle, ganz sicher!")
-        do_message(npc, ch, "Woher ich das weiß?")
-        do_message(npc, ch, "Das gehört sich für einen MacGuffin einfach so!")
-        do_message(npc, ch, "Und deshalb lasse ich dich auch nicht in die Stadt, bevor du ihn mir wiedergebracht hast.")
-        do_message(npc, ch, "Obwohl... so, wie DU aussiehst, wird das wohl eh nix...")
+        npc_message(npc, ch, "Ich habe meinen MacGuffin verloren!")
+        npc_message(npc, ch, "Er ist bestimmt im Westen, in der Bolero Höhle, ganz sicher!")
+        npc_message(npc, ch, "Woher ich das weiß?")
+        npc_message(npc, ch, "Das gehört sich für einen MacGuffin einfach so!")
+        npc_message(npc, ch, "Und deshalb lasse ich dich auch nicht in die Stadt, bevor du ihn mir wiedergebracht hast.")
+        npc_message(npc, ch, "Obwohl... so, wie DU aussiehst, wird das wohl eh nix...")
         invertika.set_quest_status(ch, quest_string, 1)
     elseif q_status == 1 then
-        if mana.chr_inv_count(ch, 40047) > 0 then
-            do_message(npc, ch, "Ah, danke für den MacGuffin." ..
+        if chr_inv_count(ch, 40047) > 0 then
+            npc_message(npc, ch, "Ah, danke für den MacGuffin." ..
                                 "Nun darfst du die Stadt betreten.")
             invertika.add_items(ch, 40047, -1, "MacGuffin")
             invertika.set_quest_status(ch, quest_string, 2)
         else
-            do_message(npc, ch, invertika.get_random_element(
+            npc_message(npc, ch, invertika.get_random_element(
               "Wenn du mir keinen MacGuffin bringst, kommst du nicht rein!",
               "Bringe mir einen MacGuffin, dann lasse ich dich rein!",
               "Du findest einen MacGuffin in der Bolero Höhle. " ..
                 "Bringe mir einen davon"))
         end
     elseif q_status == 2 then
-        do_message(npc, ch, invertika.get_random_element(
+        npc_message(npc, ch, invertika.get_random_element(
           "Wir bewachen die Tore der Stadt",
           "Gehe weiter. Du blockierst die Straße.",
           "Ohne uns Wachen, würde die Stadt im Chaos versinken!"))
     end
-    do_npc_close(npc, ch)
 end
 
-function wache_trigger(ch, id)
+local function wache_trigger(ch, id)
     local quest_string = "burg_cedric_guard_macguffin"
     invertika.init_quest_status(ch, quest_string)
     local q_status = invertika.get_quest_status(ch, quest_string)
     
-    if mana.being_type(ch) == TYPE_CHARACTER then
-        if mana.chr_inv_count(ch, 40047) == 0 and q_status <= 1 then
-            local x = mana.posX(ch)
-            mana.chr_warp(ch, nil, x, 180 * TILESIZE + 16)
+    if being_type(ch) == TYPE_CHARACTER then
+        if chr_inv_count(ch, 40047) == 0 and q_status <= 1 then
+            local x = posX(ch)
+            chr_warp(ch, nil, x, 180 * TILESIZE + 16)
             if x < 102 * TILESIZE + 16 then
-                mana.being_say(wache_unten_links, "Bevor ich meinen MacGuffin nicht wiederhabe, kommst du hier nicht durch!")
+                being_say(wache_unten_links, "Bevor ich meinen MacGuffin nicht wiederhabe, kommst du hier nicht durch!")
             else
-                mana.being_say(wache_unten_rechts, "Bevor ich meinen MacGuffin nicht wiederhabe, kommst du hier nicht durch!")
+                being_say(wache_unten_rechts, "Bevor ich meinen MacGuffin nicht wiederhabe, kommst du hier nicht durch!")
             end
         end
     end
 end
 
-function wache_cache_trigger(ch, id)
+local function wache_cache_trigger(ch, id)
     invertika.init_quest_status(ch, "burg_cedric_guard_macguffin")
 end
 
-function firework_round()
+local function firework_round()
     local c = 1
     while c < 50 do
         spawn_effect()
@@ -325,19 +271,18 @@ function firework_round()
     end
 end
 
-function spawn_effect()
-    mana.effect_create(math.random(0, 25),
+local function spawn_effect()
+    effect_create(math.random(0, 25),
                        math.random(44 * TILESIZE, 159 * TILESIZE),
                        math.random(77 * TILESIZE, 133 * TILESIZE))
 end
 
-function cedric_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Ich bin Graf Cedric.",
+local function cedric_talk(npc, ch)
+    npc_message(npc, ch, invertika.get_random_element("Ich bin Graf Cedric.",
       "Fühle dich in meiner Burg wie zu Hause."))
-    do_npc_close(npc, ch)
 end
 
-function cedric_speech()
+local function cedric_speech()
     local speech = {
       "Heute haben wir uns versammelt, um den Wiederaufbau der Burg Cedric zu feiern.",
       "Vor nicht allzu langer Zeit wurde unser gemeinsames Heim von einer Flutwelle überschwemmt.",
@@ -354,7 +299,7 @@ function cedric_speech()
     if not cedric_speech_index then
        cedric_speech_index = 1
     end
-    mana.being_say(cedric, speech[cedric_speech_index])
+    being_say(cedric, speech[cedric_speech_index])
     cedric_speech_index = cedric_speech_index + 1
     if cedric_speech_index <= #speech then
         schedule_in(5, cedric_speech)
@@ -363,8 +308,56 @@ function cedric_speech()
     end
 end
 
-function palastwache_talk(npc, ch)
-    do_message(npc, ch, invertika.get_random_element("Wir bewachen den Palast Cedric´s.",
+local function palastwache_talk(npc, ch)
+    npc_message(npc, ch, invertika.get_random_element("Wir bewachen den Palast Cedric´s.",
       "Im Haus hinter uns wohnt Cedric und seine Frau Ormylt"))
-    do_npc_close(npc, ch)
 end
+
+atinit(function()
+    create_inter_map_warp_trigger(nil, 33, 43, 55) --- Intermap warp
+    nethek.create_netheksaeule(103 * TILESIZE, 110 * TILESIZE + 16) ---Netheksäule
+
+    sign_entrance = "Burg Cedric"
+    sign.create_sign(104, 185, sign_entrance) --- Schild Burgeingang
+
+    trigger_create(101 * TILESIZE, 176 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, wache_trigger, 1, true)
+    ---trigger_create(101 * TILESIZE, 183 * TILESIZE, 3 * TILESIZE, 3 * TILESIZE, wache_cache_trigger, 1, true)
+
+    diem = npc_create("Diem", 139, GENDER_UNSPECIFIED, 60 * TILESIZE + 16, 160 * TILESIZE + 16, diem_talk, npclib.walkaround_wide)
+    invertika.create_npc_talk_random(diem,
+      {"Kauft Leute! Kauft!",
+      "Beste Waren! Hergestellt in den königlichen Schmieden!",
+      "Sehen Sie! Dieses Schwert ist unzerbrechlich! ZACK. Oh...",
+      "Kommen Sie meine Herren. Diese Waffen sind die Besten."})
+      
+    
+    create_chris()
+
+    npc_create("Estjdian", 120, GENDER_UNSPECIFIED, 156 * TILESIZE + 16, 160 * TILESIZE + 16, estjdian_talk, nil)
+
+    npc_create("Palastwache", 26, GENDER_UNSPECIFIED, 58 * TILESIZE + 16, 100 * TILESIZE + 16, palastwache_talk, nil)
+    npc_create("Palastwache", 26, GENDER_UNSPECIFIED, 61 * TILESIZE + 16, 100 * TILESIZE + 16, palastwache_talk, nil)
+
+    --Bankwachen
+    npc_create("Wache", 26, GENDER_UNSPECIFIED, 146 * TILESIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
+    npc_create("Wache", 26, GENDER_UNSPECIFIED, 149 * TILESIZE + 16, 119 * TILESIZE + 16, wache_bank_talk, nil)
+    
+    --Casinowache
+    npc_create("Wache", 26, GENDER_UNSPECIFIED, 52 * TILESIZE + 16, 149 * TILESIZE + 16, wache_casino_talk, nil)
+
+    --Außenwachen
+    wache_unten_links = npc_create("Wache", 26, GENDER_UNSPECIFIED, 101 * TILESIZE + 16, 179 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
+    wache_unten_rechts = npc_create("Wache", 26, GENDER_UNSPECIFIED, 103 * TILESIZE + 16, 179 * TILESIZE + 16, wache_talk, nil) -- Wache Außentor
+    
+    --Innentorwachen
+    npc_create("Wache", 26, GENDER_UNSPECIFIED, 100 * TILESIZE + 16, 137 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
+    npc_create("Wache", 26, GENDER_UNSPECIFIED, 104 * TILESIZE + 16, 137 * TILESIZE + 16, wache_talk, nil) -- Wache Innentor
+
+    cedric = npc_create("Cedric", 39, GENDER_UNSPECIFIED, 81 * TILESIZE + 16, 97 * TILESIZE + 16, cedric_talk, nil)
+
+    -- Cedric´s Rede
+    --invertika.schedule_every_day(17, 59, 00, cedric_speech)
+
+    -- Feuerwerk
+    --invertika.schedule_every_day(18, 00, 00, firework_round)
+end)
