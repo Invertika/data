@@ -153,11 +153,6 @@ local function alaria_talk(npc, ch)
     
 end
 
---- Falle auslösen
-local function trap_trigger_skorpions(ch, id)
-  trap(ch, 21*TILESIZE, 21*TILESIZE,TILESIZE,TILESIZE,10)--- Bibliotheksfunktion
-end
-
 --- Bibliotheksfunktion
 local function trap(ch, x, y, width, height, monsterid)
   if (being_type(ch) == TYPE_CHARACTER) then --- Nur Player löst Falle aus
@@ -182,6 +177,11 @@ local function trap(ch, x, y, width, height, monsterid)
    end
 
  end
+end
+
+--- Falle auslösen
+local function trap_trigger_skorpions(ch, id)
+  trap(ch, 21*TILESIZE, 21*TILESIZE,TILESIZE,TILESIZE,10)--- Bibliotheksfunktion
 end
 
 ---Testfunktionen
