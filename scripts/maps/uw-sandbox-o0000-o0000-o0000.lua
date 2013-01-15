@@ -443,9 +443,11 @@ local function firedemon_update(npc)
       firedemon_timer = 0
       local victims = get_beings_in_circle(posX(npc), posY(npc), 64)
       local i = 1;
-      while (victims[i]) do
-        being_damage(victims[i], 20, 10, 32000, DAMAGE_MAGICAL, ELEMENT_FIRE)
-        i = i + 1
+      for i, being in ipairs(victims) do
+        if being_type(being) == TYPE_CHARACTER or
+           being_type(being) == TYPE_MONSTER then
+          being_damage(being, 20, 10, 32000, DAMAGE_MAGICAL, ELEMENT_FIRE)
+        end
       end
     end
 
