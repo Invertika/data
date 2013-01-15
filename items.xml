@@ -69,15 +69,26 @@
         effect="+5..10 Schaden, 1 Reichweite"
         type="equip-1hand"
         weight="20"
-        weapon-type="101"
-        attack-min="5"
-        attack-delta="5"
-        attack-target="multi"
-        attack-shape="cone"
-        attack-range="32"
-        attack-angle="135"
         max-per-slot="1"
+        attack-action="attack"
         value="5">
+        <effect trigger="equip">
+            <attack
+                skill="101"
+                warmuptime="5"
+                cooldowntime="5"
+                reusetime="5"
+                basedamage="5"
+                deltadamage="5"
+                chancetohit="10"
+                range="32"
+                element="neutral"
+                type="physical"
+            />
+        </effect>
+        <equip>
+            <slot type="hand" required="1" />
+        </equip>
         <sprite>equipment/weapons/dagger.xml</sprite>
         <sound event="strike">weapons/swords/short-sword-miss1.ogg</sound>
         <sound event="hit">weapons/swords/short-sword-hit1.ogg</sound>
@@ -90,16 +101,26 @@
         effect="+18..22 Schaden, 1 Reichweite"
         type="equip-1hand"
         weight="60"
-        weapon-type="101"
-        attack-min="13"
-        attack-delta="4"
-        attack-target="multi"
-        attack-shape="cone"
-        attack-range="32"
-        attack-angle="135"
         max-per-slot="1"
+        attack-action="attack"
         value="100">
-
+        <effect trigger="equip">
+            <attack
+                skill="101"
+                warmuptime="5"
+                cooldowntime="5"
+                reusetime="5"
+                basedamage="13"
+                deltadamage="4"
+                chancetohit="10"
+                range="32"
+                element="neutral"
+                type="physical"
+            />
+        </effect>
+        <equip>
+            <slot type="hand" required="1" />
+        </equip>
         <sprite>equipment/weapons/dagger.xml</sprite>
         <sound event="strike">weapons/swords/short-sword-miss1.ogg</sound>
         <sound event="hit">weapons/swords/short-sword-hit1.ogg</sound>
@@ -115,13 +136,27 @@
         max-per-slot="1"
         weapon-type="bow"
         attack-action="attack_bow"
-        attack-min="100"
-        attack-delta="25"
-        attack-range="3000"
         missile-particle="graphics/particles/arrow.particle.xml"
         view="1200"
+        attack-action="attack"
         value="5000">
-
+        <effect trigger="equip">
+            <attack
+                skill="106"
+                warmuptime="5"
+                cooldowntime="5"
+                reusetime="5"
+                basedamage="100"
+                deltadamage="25"
+                chancetohit="10"
+                range="320"
+                element="neutral"
+                type="physical"
+            />
+        </effect>
+        <equip>
+            <slot type="hand" required="2" />
+        </equip>
         <sprite>equipment/weapons/bow.xml</sprite>
     </item>
         
@@ -142,16 +177,26 @@
         effect="+100..150 Damage, 1 Reichweite"
         type="equip-1hand"
         weight="50"
-        weapon-type="102"
-        attack-min="100"
-        attack-delta="50"
-        attack-target="multi"
-        attack-shape="cone"
-        attack-range="32"
-        attack-angle="135"
         max-per-slot="1"
+        attack-action="attack"
         value="2500">
-
+        <effect trigger="equip">
+            <attack
+                skill="102"
+                warmuptime="5"
+                cooldowntime="5"
+                reusetime="5"
+                basedamage="100"
+                deltadamage="50"
+                chancetohit="10"
+                range="32"
+                element="neutral"
+                type="physical"
+            />
+        </effect>
+        <equip>
+            <slot type="hand" required="1" />
+        </equip>
         <sprite>equipment/weapons/dagger.xml</sprite>
         <sound event="strike">weapons/swords/short-sword-miss1.ogg</sound>
         <sound event="hit">weapons/swords/short-sword-hit1.ogg</sound>
@@ -169,6 +214,10 @@
         attack-action="attack_bow"
         max-per-slot="1"
         value="30000">
+        <equip>
+            <slot type="hand" required="2" />
+        </equip>
+
 
         <sprite>equipment/weapons/bow.xml</sprite>
         <sound event="swing">weapons/swords/weapons/bows/bow_shoot_1.ogg</sound>
@@ -191,16 +240,26 @@
         effect="+25..75 Schaden, 1 Reichweite"
         type="equip-2hand"
         weight="100"
-        weapon-type="102"
-        attack-min="25"
-        attack-delta="50"
-        attack-target="multi"
-        attack-shape="cone"
-        attack-range="32"
-        attack-angle="135"
         max-per-slot="1"
+        attack-action="attack"
         value="200">
-
+        <effect trigger="equip">
+            <attack
+                skill="102"
+                warmuptime="5"
+                cooldowntime="5"
+                reusetime="5"
+                basedamage="25"
+                deltadamage="50"
+                chancetohit="10"
+                range="32"
+                element="neutral"
+                type="physical"
+            />
+        </effect>
+        <equip>
+            <slot type="hand" required="2" />
+        </equip>
         <sprite>equipment/weapons/dagger-erazorknife.xml</sprite>
         <sound event="strike">weapons/swords/short-sword-miss1.ogg</sound>
         <sound event="hit">weapons/swords/short-sword-hit1.ogg</sound>
@@ -213,17 +272,27 @@
         effect="+20..52 Schaden, 1.5 Reichweite"
         type="equip-2hand"
         weight="60"
-        weapon-type="104"
-        attack-min="20"
-        attack-delta="32"
-        attack-target="multi"
-        attack-shape="cone"
-        attack-range="48"
-        attack-angle="135"
         defense="4"
         max-per-slot="1"
+        attack-action="attack"
         value="100">
-
+        <effect trigger="equip">
+            <attack
+                skill="104"
+                warmuptime="5"
+                cooldowntime="5"
+                reusetime="5"
+                basedamage="20"
+                deltadamage="32"
+                chancetohit="10"
+                range="32"
+                element="neutral"
+                type="physical"
+            />
+        </effect>
+        <equip>
+            <slot type="hand" required="2" />
+        </equip>
         <sprite>equipment/weapons/staff.xml</sprite>
         <sound event="strike">weapons/swords/short-sword-miss1.ogg</sound>
         <sound event="hit">weapons/swords/short-sword-hit1.ogg</sound>
@@ -236,17 +305,27 @@
         effect="+200..300 Schaden, 1.5 Reichweite"
         type="equip-2hand"
         weight="60"
-        weapon-type="104"
-        attack-min="200"
-        attack-delta="100"
-        attack-target="multi"
-        attack-shape="cone"
-        attack-range="48"
-        attack-angle="135"
         defense="10"
         max-per-slot="1"
+        attack-action="attack"
         value="3000">
-
+        <effect trigger="equip">
+            <attack
+                skill="104"
+                warmuptime="5"
+                cooldowntime="5"
+                reusetime="5"
+                basedamage="200"
+                deltadamage="100"
+                chancetohit="10"
+                range="32"
+                element="neutral"
+                type="physical"
+            />
+        </effect>
+        <equip>
+            <slot type="hand" required="2" />
+        </equip>
         <sprite>equipment/weapons/staff-blue.xml</sprite>
         <sound event="strike">weapons/swords/short-sword-miss1.ogg</sound>
         <sound event="hit">weapons/swords/short-sword-hit1.ogg</sound>
@@ -259,16 +338,26 @@
         effect="+30..80 Schaden, 1 Reichweite"
         type="equip-2hand"
         weight="100"
-        weapon-type="102"
-        attack-min="30"
-        attack-delta="50"
-        attack-target="multi"
-        attack-shape="cone"
-        attack-range="32"
-        attack-angle="135"
         max-per-slot="1"
+        attack-action="attack"
         value="220">
-
+        <effect trigger="equip">
+            <attack
+                skill="102"
+                warmuptime="5"
+                cooldowntime="5"
+                reusetime="5"
+                basedamage="30"
+                deltadamage="50"
+                chancetohit="10"
+                range="32"
+                element="neutral"
+                type="physical"
+            />
+        </effect>
+        <equip>
+            <slot type="hand" required="2" />
+        </equip>
         <sprite>equipment/weapons/dagger-erazorknife-dark.xml</sprite>
         <sound event="strike">weapons/swords/short-sword-miss1.ogg</sound>
         <sound event="hit">weapons/swords/short-sword-hit1.ogg</sound>
@@ -278,20 +367,30 @@
         image="equipment/weapons/staff-black.png"
         name="Seraphim Nex"
         description="Der legendäre Kampfstab eines Seraphim Nex. Sagenumwoben und sehr selten."
-        effect="+1000..5000 Schaden, 1.5 Reichweite"
+        effect="+2500..5000 Schaden, 1.5 Reichweite"
         type="equip-2hand"
         weight="120"
-        weapon-type="104"
-        attack-min="2500"
-        attack-delta="2500"
-        attack-target="multi"
-        attack-shape="cone"
-        attack-range="48"
-        attack-angle="135"
         defense="10"
         max-per-slot="1"
+        attack-action="attack"
         value="150000">
-
+        <effect trigger="equip">
+            <attack
+                skill="104"
+                warmuptime="5"
+                cooldowntime="5"
+                reusetime="5"
+                basedamage="2500"
+                deltadamage="2500"
+                chancetohit="10"
+                range="32"
+                element="neutral"
+                type="physical"
+            />
+        </effect>
+        <equip>
+            <slot type="hand" required="2" />
+        </equip>
         <sprite>equipment/weapons/staff-black.xml</sprite>
         <sound event="strike">weapons/swords/short-sword-miss1.ogg</sound>
         <sound event="hit">weapons/swords/short-sword-hit1.ogg</sound>
@@ -304,16 +403,26 @@
         effect="+9..14 Schaden, 1 Reichweite"
         type="equip-1hand"
         weight="20"
-        weapon-type="101"
-        attack-min="9"
-        attack-delta="5"
-        attack-target="multi"
-        attack-shape="cone"
-        attack-range="32"
-        attack-angle="135"
         max-per-slot="1"
+        attack-action="attack"
         value="14">
-
+        <effect trigger="equip">
+            <attack
+                skill="101"
+                warmuptime="5"
+                cooldowntime="5"
+                reusetime="5"
+                basedamage="9"
+                deltadamage="5"
+                chancetohit="10"
+                range="32"
+                element="neutral"
+                type="physical"
+            />
+        </effect>
+        <equip>
+            <slot type="hand" required="1" />
+        </equip>
         <sprite>equipment/weapons/dagger.xml</sprite>
         <sound event="strike">weapons/swords/short-sword-miss1.ogg</sound>
         <sound event="hit">weapons/swords/short-sword-hit1.ogg</sound>
@@ -326,16 +435,26 @@
         effect="+5..35"
         type="equip-2hand"
         weight="120"
-        weapon-type="109"
-        attack-min="5"
-        attack-delta="30"
-        attack-target="multi"
-        attack-shape="cone"
-        attack-range="48"
-        attack-angle="45"
         max-per-slot="1"
+        attack-action="attack"
         value="100">
-
+        <effect trigger="equip">
+            <attack
+                skill="109"
+                warmuptime="5"
+                cooldowntime="5"
+                reusetime="5"
+                basedamage="5"
+                deltadamage="305"
+                chancetohit="10"
+                range="32"
+                element="neutral"
+                type="physical"
+            />
+        </effect>
+        <equip>
+            <slot type="hand" required="2" />
+        </equip>
         <sprite>equipment/weapons/axe.xml</sprite>
         <sound event="strike">weapons/swords/short-sword-miss1.ogg</sound>
         <sound event="hit">weapons/swords/short-sword-hit1.ogg</sound>
@@ -348,16 +467,26 @@
         effect="+25..75"
         type="equip-2hand"
         weight="120"
-        weapon-type="109"
-        attack-min="50"
-        attack-delta="25"
-        attack-target="multi"
-        attack-shape="cone"
-        attack-range="48"
-        attack-angle="45"
         max-per-slot="1"
+        attack-action="attack"
         value="200">
-
+        <effect trigger="equip">
+            <attack
+                skill="109"
+                warmuptime="5"
+                cooldowntime="5"
+                reusetime="5"
+                basedamage="50"
+                deltadamage="25"
+                chancetohit="10"
+                range="32"
+                element="neutral"
+                type="physical"
+            />
+        </effect>
+        <equip>
+            <slot type="hand" required="2" />
+        </equip>
         <sprite>equipment/weapons/mining-pick.xml</sprite>
         <sound event="strike">weapons/swords/short-sword-miss1.ogg</sound>
         <sound event="hit">weapons/swords/short-sword-hit1.ogg</sound>
