@@ -244,7 +244,7 @@ function banker_talk(npc, ch)
 		  if acc_bal >= 1000 then --- 1000
         chr_set_quest(ch, "bank_account_balance", acc_bal-1000)
         chr_inv_change(ch, 40018, 1)
-        npc_message(npc, ch, "Bittesehr, hier ist dein Scheck.")
+        npc_message(npc, ch, "Bitte sehr, hier ist dein Scheck.")
       else
         npc_message(npc, ch, "Dein Bankguthaben reicht dafür nicht aus!")
       end
@@ -268,7 +268,7 @@ function banker_talk(npc, ch)
 		  if acc_bal >= 10000 then --- 10000
         chr_set_quest(ch, "bank_account_balance", acc_bal-10000)
         chr_inv_change(ch, 40021, 1)
-        npc_message(npc, ch, "Bittesehr, hier ist dein Scheck.")
+        npc_message(npc, ch, "Bitte sehr, hier ist dein Scheck.")
       else
         npc_message(npc, ch, "Dein Bankguthaben reicht dafür nicht aus!")
       end

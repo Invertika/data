@@ -86,7 +86,7 @@ local function oughad_talk(npc, ch)
             invertika.set_quest_status(ch, quest_string_var, 1)
             invertika.set_quest_status(ch, quest_string_number, number_of_jobs)           
         else
-            npc_message(npc, ch, string.format("Du woltest mehr Maden töten. Töte bitte noch %s Maden.", required_kills - (kills - start_kills)))
+            npc_message(npc, ch, string.format("Du wolltest mehr Maden töten. Töte bitte noch %s Maden.", required_kills - (kills - start_kills)))
         end
     end
 end

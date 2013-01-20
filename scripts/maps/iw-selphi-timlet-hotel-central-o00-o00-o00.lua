@@ -28,7 +28,7 @@ local function rezeptionist_talk(npc, ch)
 
   if chr_inv_count(ch, 40035) > 0 and invertika.get_quest_status(ch, "selphi_timlet_ceech_quest") == 1 then
         npc_message(npc, ch, "Schon wieder eine Klageschrift von Ceech?")
-        npc_message(npc, ch, "Er verklagt alles und jeden. Mich hat er wegen den Kokussnüssen dran gekriegt.")
+        npc_message(npc, ch, "Er verklagt alles und jeden. Mich hat er wegen den Kokusnüssen dran gekriegt.")
         npc_message(npc, ch, "Es wäre unverantwortlich die Kokusnüsse einfach fallen zu lassen.")
         npc_message(npc, ch, "Gewinnt er diese Klage, so erhält er Anspruch auf die Kokusnuss Ernte.")
         npc_message(npc, ch, "Er hat sich schon viele Feinde hier in der Stadt gemacht.")

@@ -69,7 +69,7 @@ end
 
 local function ceech_talk(npc, ch)
     if invertika.get_quest_status(ch, "roststock_icero_quest") == 4 then
-        npc_message(npc, ch, "Du siehst du aus als wolltest du etwas fragen?")
+        npc_message(npc, ch, "Du siehst so aus als wolltest du etwas fragen?")
         while true do
             local v = npc_choice(npc, ch, "Icero braucht einen Psychiater.", "Nein. Nix.")
             if v == 1 then
