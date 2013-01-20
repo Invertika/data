@@ -135,7 +135,7 @@ function start_race()
 end
 
 function race_manager_talk(npc, ch)
-    npc_message(npc, ch, "Willkommen beim Skorpionrennen! Hier kannst du auf ein Skorpion bieten und bekommst, wenn du richtig liegst den Gewinn.")
+    npc_message(npc, ch, "Willkommen beim Skorpionrennen! Hier kannst du auf einen Skorpion bieten und bekommst, wenn du richtig liegst den Gewinn.")
     local answer_choices = {}
     answer_choices[1] = "Auf Skorpion bieten."
     if (winnings[ch] ~= nil) and (winnings[ch] > 0) then
@@ -153,7 +153,7 @@ function race_manager_talk(npc, ch)
                 if scorpions[v2] ~= nil then
                     local betrag = npc_ask_integer(npc, ch, 0, 50000, 100)
                 if betrag <= 0 then break end -- Prüfen ob Ein Wert über Null angegeben wurde.
-                    if status == 0 then --Nur wenn Skorpionen beim Start sind Angebote annehmen.
+                    if status == 0 then --Nur wenn Skorpione beim Start sind Angebote annehmen.
                         if chr_money(ch) >= betrag then
                             invertika.add_money(ch, -betrag)
                             if bets[v2] == nil then bets[v2] = {} end -- ggf. init    ialisie
@@ -164,7 +164,7 @@ function race_manager_talk(npc, ch)
                             end
                             event_scorpion_bet_accepted(v2, ch, betrag)
                         else
-                            npc_message(npc, ch, "Du hast nicht genügen Geld!")
+                            npc_message(npc, ch, "Du hast nicht genügend Geld!")
                         end
                     else
                         npc_message(npc, ch, "Zur Zeit nehme ich keine Gebote an!")
