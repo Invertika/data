@@ -53,7 +53,7 @@ local function chodar_talk(npc, ch)
                             npc_message(npc, ch, "Ahw. Komm wieder wenn du einen kennst!")
                             break
                         elseif v2 == 2 then
-                            npc_message(npc, ch, "Du? Was solls. Hier ist ein Brief. Gib ihn den König. Und Wehe dir! Ich weiß ob du ihn abgeliefert hast!")
+                            npc_message(npc, ch, "Du? Was solls. Hier ist ein Brief. Gib ihn dem König. Und Wehe dir! Ich weiß ob du ihn abgeliefert hast!")
                             invertika.add_items(ch, 40027, 1, "Brief an den König")
                             set_qstatus(3)
                             break
@@ -77,7 +77,7 @@ local function chodar_talk(npc, ch)
                 npc_message(npc, ch, "Ah okay. Komm wieder wenn du einen kennst!")
                 break
             elseif v == 2 then
-                npc_message(npc, ch, "Du? Naja, egal. Hier ist ein Brief. Gib ihm den König. Und wehe dir! Ich weiß ob du ihn abgeliefert hast!")
+                npc_message(npc, ch, "Du? Naja, egal. Hier ist ein Brief. Gib ihn dem König. Und wehe dir! Ich weiß ob du ihn abgeliefert hast!")
                 invertika.add_items(ch, 40027, 1, "Brief an den König")
                 set_qstatus(3)
                 break

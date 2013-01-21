@@ -30,7 +30,7 @@ local function wache_talk(npc, ch)
 end
 
 local function wache_ausgang_talk(npc, ch)
-    npc_message(npc, ch, "Dies ist der Augang. Bitte benutze den Eingang im Osten.")
+    npc_message(npc, ch, "Dies ist der Ausgang. Bitte benutze den Eingang im Osten.")
 end
 
 local function wache_trigger(ch, id)
