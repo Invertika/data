@@ -19,7 +19,7 @@ local function craft_strict(ch, recipe)
     chat_message(ch, "This wouldn't create anything useful")
 end
 
--- this turns multiple occurences of the same item into one by adding up
+-- this turns multiple occurrences of the same item into one by adding up
 -- their amounts and sorts the recipe by item ID.
 -- This makes stuff a lot easier when your crafting system isn't supposed to
 -- care about the order items are in.
