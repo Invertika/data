@@ -49,7 +49,7 @@ local function priscilla_talk(npc, ch)
         if chr_inv_count(ch, 40053) > 0 then
             npc_message(npc, ch, "Ich danke dir.")
             --Set Quest
-            invertika.set_quet_status(ch, queststring, 2)
+            invertika.set_quest_status(ch, queststring, 2)
 			invertika.add_items(ch, 40053, -1, "Blume")
         elseif chr_inv_count(ch, 40053) == 0 then
             npc_message(npc, ch, invertika.get_random_element(
